@@ -1,0 +1,427 @@
+﻿  
+
+<body style="background:rgba(241, 244, 246, 1);">   
+  
+  <script>
+    window.addEventListener('scroll', function() {
+
+        if ((pageYOffset>70) & (window.innerWidth>=992)) 
+            {
+              document.getElementById("scrolling").hidden=true;
+              document.getElementById("scrolling-menu").hidden=true;
+              document.getElementById("scrolling-menu-top").hidden=false;
+            }
+       else 
+           {
+               document.getElementById("scrolling").hidden=false;
+               document.getElementById("scrolling-menu").hidden=false;
+               document.getElementById("scrolling-menu-top").hidden=true;
+           }
+});
+  </script>
+  
+  <header class="animated">
+    <div class="contacts_header_box" id="scrolling">
+      <div class="contacts_header container d-flex align-items-center justify-content-between flex-sm-wrap">
+        <div class="logo-box">
+          <a class="logo" href="/">
+          </a>
+        </div>
+
+        <div class="address_header item_header align-items-center d-none d-lg-flex">
+          <svg class="d-sm-block d-none" width="25" height="19" xmlns="https://www.w3.org/2000/svg">
+            <use xlink:href="../assets/css/img/contacts/contacts.svg#contacts4"></use>
+          </svg>
+          <div class="address_header"><div class="city_header item_header">
+    <!--Ваш город:&nbsp;-->
+    <a href="#city" class="city-arrow btn-modal" data-toggle="modal" rel="nofollow">Москва</a>
+</div>
+<div class="hint_city" >
+              <div class="hint_city_content">Ваш город <div class="city_header item_header">
+    <a href="#city" class="city-arrow btn-modal" data-toggle="modal" rel="nofollow">Москва</a>
+</div></div>
+              <div class="hint_button">
+                 <a class="button button_small cityselect hint_change_city btn-modal" href="#city">Нет</a>
+                 <div class="hint_button_close button button_small">Да</div><i class="corner"></i></div>
+            </div>
+          </div>
+        </div>
+        <a class="email_header item_header d-none d-xl-flex align-items-center" href="mailto:msk@isipto.com" onclick="ym(48630242, 'reachGoal', 'main-header-mail'); fbq('track', 'InitiateCheckout'); return true;" id="scrolling-mail">
+          <svg width="25" height="19" xmlns="https://www.w3.org/2000/svg">
+            <use xlink:href="../assets/css/img/contacts/contacts.svg#contacts2"></use>
+          </svg><span>msk@isipto.com</span></a>
+        <div class="right_header">
+          <div class="right_header_box d-flex align-items-center justify-content-between">
+            <div class="phone_header item_header d-md-flex align-items-center d-none">
+              <div><a id="phone_roistat_msk" href="tel:+79279563573" onclick="ym(48630242,'reachGoal','calltracking'); gtag('event', 'click'); ga('event', 'click'); ym(48630242, 'reachGoal', 'main-header-phone'); fbq('track', 'InitiateCheckout'); return true;"><span class="phone_roistat_msk">8 927 956 35 73</span></a>
+                <div class="free_rf" id="scrolling-tel">Бесплатно по России</div>
+              </div>
+            </div>
+            <a class="btn btn-modal d-md-block d-none krasnaya_knopka" href="#form_up" onclick="ym(48630242, 'reachGoal', 'main-header-lead'); ym(48630242,'reachGoal','calltracking'); fbq('track', 'InitiateCheckout'); return true;"><span>Перезвоните мне</span></a>
+            <a class="btn d-md-none krasnaya_knopka" id="msk_roistat" href="tel:+79279563573" onclick="gtag('event', 'click'); ga('event', 'click'); ym(48630242, 'reachGoal', 'main-header-phone'); ym(48630242,'reachGoal','calltracking'); fbq('track', 'InitiateCheckout'); return true;"><span>Позвонить</span></a>
+            </div>
+        </div>
+      </div>
+    </div>
+    
+    <div id="scrolling-menu">
+    <div class="menu_box d-lg-flex d-none" style="background: #3C4960;">
+      <div class="container">
+        <nav class="d-flex justify-content-between align-items-center">
+        <a class="menu_box_item" href="/autsorsing-pto/"><span>Аутсорсинг ПТО под ключ</span></a>
+          <div class="submenu-box d-flex align-items-center">
+              <a class="active menu_box_item" href="/vedenie-id/" onclick="return false"><span>Исполнительная документация</span></a>
+            <div class="submenu submenu_services" style="width:386px;padding:0px 0px 0px 0px;box-shadow: 0px 0px 0px;background-color: rgba(0, 125, 215, 0);border-radius:0px;">
+              <div style="height:8px;"></div>
+              <div style="box-shadow: 0px 11px 9px 0px rgba(0, 0, 0, 0.14);
+padding:36px 0px 36px 0px;border-radius:16px;background-color:rgba(255, 255, 255, 1);">
+              <a style="font-size:16px;" href="/vedenie-id/podgotovka-ispolnitelnoy-dokumentacii/"><span>Подготовка исполнительной документации</span></a>
+              <a style="font-size:16px;" href="/vedenie-id/"><span>Ведение исполнительной документации</span></a>
+              <a style="font-size:16px;" href="/vedenie-id/ispolnitelnaya-dokumentacziya-obektov/"><span>Исполнительная документация объекта</span></a>
+              <a style="font-size:16px;" href="/uslugi/stroitelnyij-audit/"><span>Аудит исполнительной документации</span></a>
+              <a style="font-size:16px;" href="/vedenie-id/raschet-srokov-rabot-pto/"><span>Расчет сроков работ</span></a>
+              <a style="font-size:16px;" href="/vedenie-id/ceny/"><span>Цены на исполнительную документацию</span></a>
+              <a style="font-size:16px;" href="/vedenie-id/avto-pto/"><span>Автоматизация ПТО</span></a>
+              </div>
+              </div>
+          </div>
+<style>
+    .nav-pills .nav-link {    font-weight:400;font-size:16px;line-height:21.79px; color: rgba(51, 51, 51, 1);    background-color: rgba(255, 255, 255, 1);    padding: 13px;    border-right-style: solid;    border-right-width: 2px;    border-right-color: rgba(229, 232, 238, 1);    border-radius:0px;    width:101%; text-align: left;    }    
+    .nav-pills .nav-link.active, .nav-pills .show .nav-link { font-weight:700;font-size:16px;line-height:21.79px; color: rgba(51, 51, 51, 1);    background-color: rgba(255, 255, 255, 1);    border-right-style: solid;border-right-color: rgba(51, 51, 51, 1);border-right-width: 2px;width:101%;    border-radius:0px;margin-right:2px; text-align: left;    }
+    .submenu-box .submenu a {  font-size:16px; color:rgba(102, 102, 102, 1); }
+    .submenu-box .submenu a:hover { font-size:16px; color: rgba(0, 0, 0, 1); }
+    .menu_box .menu_box_item a:hover { font-weight:700; }
+
+</style>
+          <div class="submenu-box d-flex align-items-center">
+              <a class="menu_box_item" href="/#usligi" onclick="return false"><span>Услуги по ИД</span></a>
+            <div class="submenu submenu_services" style="padding:0px 0px 0px 0px;box-shadow: 0px 0px 0px;background-color: rgba(0, 125, 215, 0);border-radius:0px; width: 100%; max-width:1120px; height: 300px;overflow: auto;margin: auto;position: fixed;top: 110px; left: 0; right: 0;z-index: 999;">
+               <div style="height:8px;"></div>
+                <div class="container"  style="width:1100px;height: 265px;box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.07);
+box-shadow: 0px 11px 9px 0px rgba(0, 0, 0, 0.14);
+padding:36px 5px 0px 5px;border-radius:16px;background-color:rgba(255, 255, 255, 1);">
+
+<div class="d-flex align-items-start">
+  <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical" style="width:250px;border-right-style: solid;border-right-color: rgba(229, 232, 238, 1);border-right-width: 2px;">
+    <button class="nav-link active" id="po_vidam_rabot-tab" data-bs-toggle="pill" data-bs-target="#po_vidam_rabot" type="button" role="tab" aria-controls="po_vidam_rabot"  aria-selected="true">На виды работ</button>
+    <button class="nav-link" id="na_vidy_stroitelsnva-tab" data-bs-toggle="pill" data-bs-target="#na_vidy_stroitelsnva" type="button" role="tab" aria-controls="na_vidy_stroitelsnva" aria-selected="false">На виды строительства</button>
+    <button class="nav-link" id="geodeziya-tab" data-bs-toggle="pill" data-bs-target="#geodeziya" type="button" role="tab" aria-controls="geodeziya" aria-selected="false">Геодезия</button>
+    <div style="height:60px;"></div>
+  </div>
+  <div class="tab-content" id="v-pills-tabContent" style="width:80%;max-width:886px;margin-left:40px;">
+    <div class="tab-pane fade" id="na_vidy_stroitelsnva" role="tabpanel" aria-labelledby="na_vidy_stroitelsnva">
+                <a href="/vedenie-id/podgotovka-ispolnitelnoy-dokumentacii/"><span>Площадочное строительство</span></a>
+                <a href="/uslugi/ispolnitelnaya-dokumentatsiya-na-dorogi/"><span>Автомобильные дороги</span></a>
+                <a href="/uslugi/ispolnitelnaya-dokumentatsiya-na-magistralnye-truboprovody/"><span>Магистральные трубопроводы</span></a>
+                <a href="/uslugi/ispolnitelnaya-dokumentatsiya-mostov/"><span>Мосты, путепроводы, эстакады</span></a>
+                <a href="/uslugi/ispolnitelnaya-dokumentacziya-gazoprovoda/"><span>Газопроводы</span></a>
+                <a href="/uslugi/stroitelnyij-audit/"><span>Аудит исполнительной документации</span></a>
+    </div>
+    <div class="tab-pane fade show active" id="po_vidam_rabot" role="tabpanel" aria-labelledby="po_vidam_rabot-tab">
+        <div class="row">
+            <div class="col-sm-6 col-12">
+                <a href="/uslugi/ispolnitelnaya-dokumentacziya-na-truboprovodyi/"><span>Трубопроводы</span></a>
+                <a href="/uslugi/ispolnitelnaya-dokumentacziya-na-metallokonstrukczii/"><span>Металлоконструкции</span></a>
+                <a href="/uslugi/ispolnitelnaya-dokumentacziya-na-zemlyanyie-rabotyi/"><span>Земляные работы</span></a>
+                <a href="/uslugi/ispolnitelnaya-na-zhelezobetonnyie-konstrukczii/"><span>Железобетонные конструкции</span></a>
+                <a href="/uslugi/ispolnitelnaya-na-vodoprovod-i-kanalizacziyu/"><span>Водопровод и канализация</span></a>
+                <a href="/uslugi/ispolnitelnaya-na-elektromontazhnyie-rabotyi/"><span>Электромонтажные работы</span></a>
+            </div>
+            <div class="col-sm-6 col-12">
+                <a href="/uslugi/ispolnitelnaya-na-avtomatizacziyu-a-atx-ak/"><span>Автоматизация</span></a>
+                <a href="/uslugi/ispolnitelnaya-na-oxrannuyu-pozharnuyu-signalizacziyu/"><span>Пожарная и охранная сигнализация</span></a>
+                <a href="/uslugi/ispolnitelnaya-na-rezervuaryi/"><span>Резервуары</span></a>
+                <a href="/uslugi/geodezicheskie-raboti/"><span>Геодезическое сопровождение</span></a>
+                <a href="/uslugi/ispolnitelnaya-semka/"><span>Геодезическая съемка</span></a>
+                <a href="/uslugi/otoplenie-ventilyaciya-i-kondicionirovanie/"><span>Отопление и вентиляция</span></a>
+            </div>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="geodeziya" role="tabpanel" aria-labelledby="geodeziya">
+                <a href="/uslugi/geodezicheskie-raboti/"><span>Сопровождение строительства</span></a>
+                <a href="/uslugi/ispolnitelnaya-semka/"><span>Исполнительная съемка</span></a>
+    </div>
+  </div>
+</div>
+                </div>
+
+              </div>
+          </div>
+
+          <div class="submenu-box d-flex align-items-center">
+              <a class="menu_box_item" href="/upravlenie-stroitelstvom/"><span>Управление строительством</span></a>
+            <div class="submenu" style="width:270px;padding:0px 0px 0px 0px;box-shadow: 0px 0px 0px;background-color: rgba(0, 125, 215, 0);border-radius:0px;">
+              <div style="height:8px;"></div>
+              <div style="box-shadow: 0px 11px 9px 0px rgba(0, 0, 0, 0.14);
+padding:36px 0px 36px 0px;border-radius:16px;background-color:rgba(255, 255, 255, 1);">
+            <a href="/upravlenie-stroitelstvom/"><span>Управление строительством</span></a>
+            <a href="/upravlenie-stroitelstvom/stroitelnyj-kontrol/"><span>Строительный контроль</span></a>
+              </div>
+              </div>
+          </div>
+
+
+
+
+          
+          <div class="submenu-box d-flex align-items-center">
+              <a class="menu_box_item" href="/o-kompanii/" onclick="return false"><span>О компании</span></a>
+            <div class="submenu" style="width:230px;padding:0px 0px 0px 0px;box-shadow: 0px 0px 0px;background-color: rgba(0, 125, 215, 0);border-radius:0px;">
+              <div style="height:8px;"></div>
+              <div style="box-shadow: 0px 11px 9px 0px rgba(0, 0, 0, 0.14);
+padding:36px 0px 36px 0px;border-radius:16px;background-color:rgba(255, 255, 255, 1);">
+            <a href="/o-kompanii/vypolnennye-raboty/"><span>Выполненные проекты</span></a>
+              <a href="/kontaktyi/"><span>Контакты</span></a>
+              <a href="/o-kompanii/"><span>О компании</span></a>
+              <a href="/o-kompanii/uchastvuem-v-tenderah/"><span>Участвуем в тендерах</span></a>
+              <a href="/o-kompanii/otzyivyi/"><span>Отзывы</span></a>
+              <a href="https://obuchenie.isipto.ru/"><span>Обучение</span></a>
+              <a href="/o-kompanii/inzheneryi-pto-vakansii/"><span>Вакансии</span></a>
+              <a href="/blog/"><span>Блог</span></a>
+              </div>
+              </div>
+          </div>
+          
+          </nav>
+      </div>
+    </div>
+    </div>
+
+    <div id="scrolling-menu-top">
+        <div class="menu_box d-lg-flex d-none" style="background: #3C4960;position: fixed;top:0px;">
+      <div class="container"  style="max-width:85%;">
+        <nav class="d-flex justify-content-between align-items-center">
+        <a class="menu_box_item" href="/autsorsing-pto/"><span>Аутсорсинг ПТО</span></a>
+          <div class="submenu-box d-flex align-items-center">
+              <a class="active menu_box_item" href="/vedenie-id/" onclick="return false"><span>Исполнительная документация</span></a>
+        <div class="submenu submenu_services" style="width:386px;padding:0px 0px 0px 0px;box-shadow: 0px 0px 0px;background-color: rgba(0, 125, 215, 0);border-radius:0px;">
+              <div style="height:8px;"></div>
+              <div style="box-shadow: 0px 11px 9px 0px rgba(0, 0, 0, 0.14);
+padding:36px 0px 36px 0px;border-radius:16px;background-color:rgba(255, 255, 255, 1);">
+              <a style="font-size:16px;" href="/vedenie-id/podgotovka-ispolnitelnoy-dokumentacii/"><span>Подготовка исполнительной документации</span></a>
+              <a style="font-size:16px;" href="/vedenie-id/"><span>Ведение исполнительной документации</span></a>
+              <a style="font-size:16px;" href="/vedenie-id/ispolnitelnaya-dokumentacziya-obektov/"><span>Исполнительная документация объекта</span></a>
+              <a style="font-size:16px;" href="/uslugi/stroitelnyij-audit/"><span>Аудит исполнительной документации</span></a>
+              <a style="font-size:16px;" href="/vedenie-id/raschet-srokov-rabot-pto/"><span>Расчет сроков работ</span></a>
+              <a style="font-size:16px;" href="/vedenie-id/ceny/"><span>Цены на исполнительную документацию</span></a>
+              <a style="font-size:16px;" href="/vedenie-id/avto-pto/"><span>Автоматизация ПТО</span></a>
+              </div>
+        </div>
+          </div>
+          
+          <div class="submenu-box d-flex align-items-center">
+              <a class="menu_box_item" href="/#usligi" onclick="return false"><span>Услуги по ИД</span></a>
+            <div class="submenu submenu_services" style="padding:0px 0px 0px 0px;box-shadow: 0px 0px 0px;background-color: rgba(0, 125, 215, 0);border-radius:0px; width: 100%; max-width:1120px; height: 300px;overflow: auto;margin: auto;position: fixed;top: 40px; left: 0; right: 0;z-index: 999;">
+               <div style="height:8px;"></div>
+                <div class="container"  style="width:1100px;height: 265px;box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.07);
+box-shadow: 0px 11px 9px 0px rgba(0, 0, 0, 0.14);
+padding:36px 5px 0px 5px;border-radius:16px;background-color:rgba(255, 255, 255, 1);">
+
+<div class="d-flex align-items-start">
+  <div class="nav flex-column nav-pills me-3" id="v-pills-tab2" role="tablist" aria-orientation="vertical" style="width:250px;border-right-style: solid;border-right-color: rgba(229, 232, 238, 1);border-right-width: 2px;">
+    <button class="nav-link active" id="po_vidam_rabot-tab2" data-bs-toggle="pill" data-bs-target="#po_vidam_rabot2" type="button" role="tab" aria-controls="po_vidam_rabot2"  aria-selected="true">На виды работ</button>
+    <button class="nav-link" id="na_vidy_stroitelsnva-tab2" data-bs-toggle="pill" data-bs-target="#na_vidy_stroitelsnva2" type="button" role="tab" aria-controls="na_vidy_stroitelsnva2"  aria-selected="false">На виды строительства</button>
+    <button class="nav-link" id="geodeziya-tab2" data-bs-toggle="pill" data-bs-target="#geodeziya2" type="button" role="tab" aria-controls="geodeziya2" aria-selected="false">Геодезия</button>
+    <div style="height:60px;"></div>
+  </div>
+  <div class="tab-content" id="v-pills-tabContent2" style="width:80%;max-width:886px;margin-left:40px;">
+    <div class="tab-pane fade" id="na_vidy_stroitelsnva2" role="tabpanel" aria-labelledby="na_vidy_stroitelsnva2">
+                <a href="/vedenie-id/podgotovka-ispolnitelnoy-dokumentacii/"><span>Площадочное строительство</span></a>
+                <a href="/uslugi/ispolnitelnaya-dokumentatsiya-na-dorogi/"><span>Автомобильные дороги</span></a>
+                <a href="/uslugi/ispolnitelnaya-dokumentatsiya-na-magistralnye-truboprovody/"><span>Магистральные трубопроводы</span></a>
+                <a href="/uslugi/ispolnitelnaya-dokumentatsiya-mostov/"><span>Мосты, путепроводы, эстакады</span></a>
+                <a href="/uslugi/ispolnitelnaya-dokumentacziya-gazoprovoda/"><span>Газопроводы</span></a>
+                <a href="/uslugi/stroitelnyij-audit/"><span>Аудит исполнительной документации</span></a>
+    </div>
+    <div class="tab-pane fade show active" id="po_vidam_rabot2" role="tabpanel" aria-labelledby="po_vidam_rabot-tab2">
+        <div class="row">
+            <div class="col-sm-6 col-12">
+                <a href="/uslugi/ispolnitelnaya-dokumentacziya-na-truboprovodyi/"><span>Трубопроводы</span></a>
+                <a href="/uslugi/ispolnitelnaya-dokumentacziya-na-metallokonstrukczii/"><span>Металлоконструкции</span></a>
+                <a href="/uslugi/ispolnitelnaya-dokumentacziya-na-zemlyanyie-rabotyi/"><span>Земляные работы</span></a>
+                <a href="/uslugi/ispolnitelnaya-na-zhelezobetonnyie-konstrukczii/"><span>Железобетонные конструкции</span></a>
+                <a href="/uslugi/ispolnitelnaya-na-vodoprovod-i-kanalizacziyu/"><span>Водопровод и канализация</span></a>
+                <a href="/uslugi/ispolnitelnaya-na-elektromontazhnyie-rabotyi/"><span>Электромонтажные работы</span></a>
+            </div>
+            <div class="col-sm-6 col-12">
+                <a href="/uslugi/ispolnitelnaya-na-avtomatizacziyu-a-atx-ak/"><span>Автоматизация</span></a>
+                <a href="/uslugi/ispolnitelnaya-na-oxrannuyu-pozharnuyu-signalizacziyu/"><span>Пожарная и охранная сигнализация</span></a>
+                <a href="/uslugi/ispolnitelnaya-na-rezervuaryi/"><span>Резервуары</span></a>
+                <a href="/uslugi/geodezicheskie-raboti/"><span>Геодезическое сопровождение</span></a>
+                <a href="/uslugi/ispolnitelnaya-semka/"><span>Геодезическая съемка</span></a>
+                <a href="/uslugi/otoplenie-ventilyaciya-i-kondicionirovanie/"><span>Отопление и вентиляция</span></a>
+            </div>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="geodeziya2" role="tabpanel" aria-labelledby="geodeziya2">
+                <a href="/uslugi/geodezicheskie-raboti/"><span>Сопровождение строительства</span></a>
+                <a href="/uslugi/ispolnitelnaya-semka/"><span>Исполнительная съемка</span></a>
+    </div>
+  </div>
+</div>
+                </div>
+
+              </div>
+          </div>
+
+          <div class="submenu-box d-flex align-items-center">
+              <a class="menu_box_item" href="/o-kompanii/" onclick="return false"><span>О компании</span></a>
+            <div class="submenu" style="width:230px;padding:0px 0px 0px 0px;box-shadow: 0px 0px 0px;background-color: rgba(0, 125, 215, 0);border-radius:0px;">
+              <div style="height:8px;"></div>
+              <div style="box-shadow: 0px 11px 9px 0px rgba(0, 0, 0, 0.14);
+padding:36px 0px 36px 0px;border-radius:16px;background-color:rgba(255, 255, 255, 1);">
+            <a href="/o-kompanii/vypolnennye-raboty/"><span>Выполненные проекты</span></a>
+              <a href="/kontaktyi/"><span>Контакты</span></a>
+              <a href="/o-kompanii/"><span>О компании</span></a>
+              <a href="/o-kompanii/uchastvuem-v-tenderah/"><span>Участвуем в тендерах</span></a>
+              <a href="/o-kompanii/otzyivyi/"><span>Отзывы</span></a>
+              <a href="https://obuchenie.isipto.ru/"><span>Обучение</span></a>
+              <a href="/o-kompanii/inzheneryi-pto-vakansii/"><span>Вакансии</span></a>
+              <a href="/blog/"><span>Блог</span></a>
+              </div>
+              </div>
+          </div>
+          
+          <div style="width:65px;"></div>
+          
+    <div>
+        <a id="phone_header_top_msk" href="tel:+79279563573" onclick="gtag('event', 'click'); ga('event', 'click'); ym(48630242, 'reachGoal', 'main-header-phone'); fbq('track', 'InitiateCheckout'); return true;" style="color: #FFFFFF;font-weight: 700;font-size: 18px;"><span class="phone_header_top_msk">8 927 956 35 73</span></a>
+    </div>
+            <div style="width:20px;"></div>
+    <div>
+        <a class="btn btn-modal" style="background: #E03B32;border-radius: 3px;font-size:12px;line-height: 12px;padding:10px;padding-left:20px;padding-right:20px;" href="#form_up" onclick="ym(48630242, 'reachGoal', 'main-header-lead'); fbq('track', 'InitiateCheckout'); return true;"><span>Перезвоните мне</span></a>
+    </div>
+
+          </nav>
+      </div>
+    </div>
+    
+    </div>
+    <script>
+        document.getElementById("scrolling-menu-top").hidden=true;
+    </script>
+    
+    <div class="container d-lg-none d-flex">
+      <div class="menu_container">
+        <div class="d-flex align-items-center justify-content-between">
+          <div class="menu_button navbar-toggle collapsed" role="navigation" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <div class="btn-mobile-menu"><span class="toggle"><i></i><i></i><i></i></span></div>
+          </div>
+          <div class="address_header item_header d-flex align-items-center">
+            <svg width="25" height="19" xmlns="https://www.w3.org/2000/svg">
+              <use xlink:href="../assets/css/img/contacts/contacts.svg#contacts4"></use>
+            </svg>
+            <div class="address_header"><div class="city_header item_header">
+    <!--Ваш город:&nbsp;-->
+    <a href="#city" class="city-arrow btn-modal" data-toggle="modal" rel="nofollow">Москва</a>
+</div></div>
+          </div>
+          <a class="email_header item_header" href="mailto:msk@isipto.com" onclick="ym(48630242, 'reachGoal', 'main-header-mail'); fbq('track', 'InitiateCheckout'); return true;">
+            <svg width="25" height="15" xmlns="https://www.w3.org/2000/svg">
+              <use xlink:href="../assets/css/img/contacts/contacts.svg#contacts2"></use>
+            </svg>
+          </a>
+        </div>
+        <div class="nav_mobile justify-content-between align-items-center">
+          <div class="mobile-menu">
+            <div class="mobile-menu-nav d-flex flex-wrap justify-content-between align-items-center">
+              <div class="toogle_menu">
+                <nav class="row flex-wrap justify-content-between align-items-center">
+                <a href="/autsorsing-pto/"><span>Аутсорсинг ПТО под ключ</span></a>    
+                  <div class="menu-block__item" style="--bs-gutter-x:0;">
+                    <div onclick="$(this).toggleClass('open').next().slideToggle();">
+                        <a class="menu-block__item-link" href="/#id" onclick="return false"><span>Исполнительная документация</span></a>
+                        <div class="menu-block-svg d-flex align-items-center justify-content-end">
+                            <div class="menu-block-svg__bg"></div>
+                        </div>
+                    </div>
+                    <div class="submenu">
+                        <a class="submenu_black" href="/vedenie-id/podgotovka-ispolnitelnoy-dokumentacii/"><span>Подготовка исполнительной документации</span></a>
+                        <a class="submenu_black" href="/vedenie-id/"><span>Ведение исполнительной документации</span></a>
+                        <a class="submenu_black" href="/vedenie-id/ispolnitelnaya-dokumentacziya-obektov/"><span>Исполнительная документация объекта</span></a>
+                        <a class="submenu_black" href="/uslugi/stroitelnyij-audit/"><span>Аудит исполнительной документации</span></a>
+                        <a class="submenu_black" href="/vedenie-id/raschet-srokov-rabot-pto/"><span>Расчет сроков работ</span></a>
+                        <a class="submenu_black" href="/vedenie-id/ceny/"><span>Цены на исполнительную документацию</span></a>
+              <a class="submenu_black" href="/vedenie-id/avto-pto/"><span>Автоматизация ПТО</span></a>
+                    </div>
+                  </div>
+
+
+                  <div class="menu-block__item" style="--bs-gutter-x:0;">
+                <div onclick="$(this).toggleClass('open').next().slideToggle();">      
+                      <a class="menu-block__item-link" href="/#usligi" onclick="return false"><span>Услуги по ИД</span></a>
+                    <div class="menu-block-svg d-flex align-items-center justify-content-end">
+                      <div class="menu-block-svg__bg"></div>
+                    </div>
+                </div>
+                    <div class="submenu">
+                        <a class="submenu_black" href="/uslugi/ispolnitelnaya-dokumentacziya-na-truboprovodyi/"><span>Технологические трубопроводы</span></a>
+                        <a class="submenu_black" href="/uslugi/ispolnitelnaya-dokumentatsiya-na-magistralnye-truboprovody/"><span>Магистральные трубопроводы</span></a>
+                        <a class="submenu_black" href="/uslugi/ispolnitelnaya-dokumentacziya-na-metallokonstrukczii/"><span>Металлоконструкции</span></a>
+                        <a class="submenu_black" href="/uslugi/ispolnitelnaya-na-zhelezobetonnyie-konstrukczii/"><span>Железобетонные конструкции</span></a>
+                        <a class="submenu_black" href="/uslugi/ispolnitelnaya-na-elektromontazhnyie-rabotyi/"><span>Электромонтажные работы</span></a>
+                        <a class="submenu_black" href="/uslugi/otoplenie-ventilyaciya-i-kondicionirovanie/"><span>Отопление, вентиляция и кондиционирование</span></a>
+                        <a class="submenu_black" href="/uslugi/ispolnitelnaya-na-vodoprovod-i-kanalizacziyu/"><span>Водопровод и канализация</span></a>
+                        <a class="submenu_black" href="/uslugi/ispolnitelnaya-na-avtomatizacziyu-a-atx-ak/"><span>Автоматизацию</span></a>
+                        <a class="submenu_black" href="/uslugi/ispolnitelnaya-dokumentatsiya-mostov/"><span>Мосты, путепроводы, эстакады</span></a>
+                        <a class="submenu_black" href="/uslugi/ispolnitelnaya-na-rezervuaryi/"><span>Резервуары для нефтепродуктов</span></a>
+                        <a class="submenu_black" href="/uslugi/ispolnitelnaya-dokumentatsiya-na-dorogi/"><span>Автомобильные дороги</span></a>
+                        <a class="submenu_black" href="/uslugi/ispolnitelnaya-dokumentacziya-na-zemlyanyie-rabotyi/"><span>Земляные работы</span></a>
+                        <a class="submenu_black" href="/uslugi/ispolnitelnaya-na-oxrannuyu-pozharnuyu-signalizacziyu/"><span>Пожарная и охранная сигнализация</span></a>
+                        <a class="submenu_black" href="/uslugi/ispolnitelnaya-dokumentacziya-gazoprovoda/"><span>Исполнительно техническая документация на газопровод</span></a>
+                        <a class="submenu_black" href="/uslugi/ispolnitelnaya-na-rezervuaryi/"><span>Исполнительная на резервуары</span></a>
+                    </div>
+                  </div>
+
+                  <div class="menu-block__item" style="--bs-gutter-x:0;">
+                <div onclick="$(this).toggleClass('open').next().slideToggle();">      
+                      <a class="menu-block__item-link" href="/uslugi/geodezicheskie-raboti/" onclick="return false"><span>Геодезия</span></a>
+                    <div class="menu-block-svg d-flex align-items-center justify-content-end">
+                      <div class="menu-block-svg__bg"></div>
+                    </div>
+                </div>
+                    <div class="submenu">
+                        <a class="submenu_black" href="/uslugi/geodezicheskie-raboti/"><span>Сопровождение строительства</span></a>
+                        <a class="submenu_black" href="/uslugi/ispolnitelnaya-semka/"><span>Исполнительная съемка</span></a>
+                    </div>
+                  </div>
+
+                  <div class="menu-block__item" style="--bs-gutter-x:0;">
+                <div onclick="$(this).toggleClass('open').next().slideToggle();">      
+                      <a class="menu-block__item-link" href="/upravlenie-stroitelstvom/" onclick="return false"><span>Управление строительством</span></a>
+                    <div class="menu-block-svg d-flex align-items-center justify-content-end">
+                      <div class="menu-block-svg__bg"></div>
+                    </div>
+                </div>
+                    <div class="submenu">
+                        <a class="submenu_black" href="/upravlenie-stroitelstvom/"><span>Управление строительством</span></a>
+                        <a class="submenu_black" href="/upravlenie-stroitelstvom/stroitelnyj-kontrol/"><span>Строительный контроль</span></a>
+                    </div>
+                  </div>
+
+                  <a href="/o-kompanii/vypolnennye-raboty/"><span>Выполненные проекты</span></a>
+                  <div class="menu-block__item" style="--bs-gutter-x:0;">
+                <div onclick="$(this).toggleClass('open').next().slideToggle();">       
+                      <a class="menu-block__item-link" href="/o-kompanii/" onclick="return false"><span>О компании</span></a>
+                    <div class="menu-block-svg d-flex align-items-center justify-content-end">
+                      <div class="menu-block-svg__bg"></div>
+                    </div>
+                </div>
+                    <div class="submenu">
+                        <a class="submenu_black" href="/o-kompanii/"><span>О компании</span></a>
+                        <a class="submenu_black" href="/kontaktyi/"><span>Контакты</span></a>
+                        <a class="submenu_black" href="/o-kompanii/uchastvuem-v-tenderah/"><span>Участвуем в тендерах</span></a>
+                        <a class="submenu_black" href="/o-kompanii/otzyivyi/"><span>Отзывы</span></a>
+                        <a class="submenu_black" href="https://obuchenie.isipto.ru/"><span>Обучение</span></a>
+                        <a class="submenu_black" href="/o-kompanii/inzheneryi-pto-vakansii/"><span>Вакансии</span></a>
+                        <a class="submenu_black" href="/blog/"><span>Блог</span></a>
+                    </div>
+                  </div>
+                  </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>

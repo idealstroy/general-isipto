@@ -1,0 +1,934 @@
+/* Shared page blocks (avto-pto + pto-program) — mirrors production inline styles */
+
+/* Bleed to 1140px content inside .container (1110 + 15px per side); was -30px (=1170px) */
+@media (min-width: 992px) {
+  .pto-program-page .margin-left-30 {
+    margin-left: -15px;
+  }
+  .pto-program-page .margin-right-30 {
+    margin-right: -15px;
+  }
+}
+
+/* Межблочный интервал между секциями (только .r80, не внутри блоков) */
+.pto-program-page .r80 {
+  height: 100px;
+}
+
+.krasnya_knopka,
+.krasnaya_knopka {
+  background: #e03b32;
+  color: #fff;
+}
+
+.krasnya_knopka:hover,
+.krasnaya_knopka:hover {
+  background: #3d4a61;
+  color: #fff;
+}
+
+.seraya_knopka {
+  background: #e5e5e5;
+  color: #333;
+}
+
+.seraya_knopka:hover {
+  background: #e03b32;
+  color: #fff;
+}
+
+.zoom {
+  transition: transform 0.5s;
+}
+
+.zoom:hover {
+  transform: scale(1.02);
+  cursor: pointer;
+}
+
+/* Tariffs (pto-program) */
+.pto-tariffs__toggle {
+  display: inline-flex;
+  background: #fff;
+  border-radius: 10px;
+  padding: 4px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.pto-tariffs__toggle button {
+  border: 0;
+  background: transparent;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  color: #666;
+  cursor: pointer;
+}
+
+.pto-tariffs__toggle button.is-active {
+  background: #3d4a61;
+  color: #fff;
+}
+
+.pto-tariff-card__price {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-top: auto;
+  padding-top: 32px;
+}
+
+.pto-tariff-card h3 {
+  font-size: 22px;
+  margin: 0;
+}
+
+.pto-tariff-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.pto-tariff-card ul {
+  padding-left: 0;
+  list-style: none;
+  margin: 16px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.pto-tariff-card li {
+  font-size: 15px;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0 0 0 14px;
+  display: block;
+  position: relative;
+}
+
+.pto-tariff-card li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.75em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #e03b32;
+  transform: translateY(-50%);
+}
+
+.pto-tariff-card .btn {
+  margin-top: 16px !important;
+}
+
+.pto-tariff-card__badge {
+  font-size: 12px;
+  font-weight: 600;
+  color: #e03b32;
+  margin: 0 0 8px;
+}
+
+/* You-get section (layout: upravlenie-stroitelstvom services stack) */
+.pto-you-get__intro {
+  font-size: 16px;
+  color: #666;
+  max-width: 780px;
+  margin: 16px auto 0;
+  line-height: 1.5;
+}
+
+.pto-you-get-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.pto-you-get-panel {
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.pto-you-get-panel--gray {
+  background: rgba(229, 229, 229, 1);
+}
+
+.pto-you-get-panel--blue {
+  background: rgba(224, 230, 235, 1);
+}
+
+.pto-you-get-panel--sand {
+  background: rgba(227, 219, 203, 1);
+}
+
+.pto-you-get-panel__inner {
+  padding: 32px 30px 32px 30px;
+}
+
+@media (min-width: 992px) {
+  .pto-you-get-panel--gray,
+  .pto-you-get-panel--blue,
+  .pto-you-get-panel--sand {
+    padding: 0;
+  }
+
+  .pto-you-get-panel__inner {
+    padding: 32px 30px 32px 30px;
+  }
+
+  .pto-you-get-panel__row {
+    display: grid;
+    grid-template-columns: 58.3333% 8.3333% 33.3333%;
+    align-items: stretch;
+    min-height: 100%;
+  }
+
+  .pto-you-get-panel__row > [class*="col-"] {
+    width: auto;
+    max-width: none;
+    flex: none;
+  }
+
+  .pto-you-get-panel__text-col {
+    grid-column: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .pto-you-get-panel__gap-col {
+    grid-column: 2;
+    padding: 0 !important;
+    align-self: stretch;
+  }
+
+  .pto-you-get-panel__media-col {
+    grid-column: 3;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    align-self: stretch;
+    min-height: 100%;
+    height: auto;
+  }
+}
+
+/* Бейдж шага — как SVG-метки в «Признаки проблем…» (upravlenie-stroitelstvom) */
+.pto-you-get-panel__badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 39px;
+  height: 32px;
+  padding: 0 12px;
+  border-radius: 16px;
+  background: #79859f;
+  color: #fff;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.pto-you-get-panel--gray .pto-you-get-panel__badge {
+  background: #777;
+}
+
+.pto-you-get-panel--blue .pto-you-get-panel__badge {
+  background: #79859f;
+}
+
+.pto-you-get-panel--sand .pto-you-get-panel__badge {
+  background: #91856e;
+}
+
+.pto-you-get-panel__badge-num {
+  display: block;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.pto-you-get-panel__badge-gap {
+  height: 24px;
+}
+
+.pto-you-get-panel__title {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.35;
+  color: #333;
+  margin: 0 0 8px;
+}
+
+.pto-you-get-panel__lead {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #666;
+  margin: 0 0 16px;
+}
+
+.pto-you-get-panel__text {
+  font-size: 16px;
+  line-height: 24px;
+  color: #333;
+  margin: 0 0 16px;
+}
+
+.pto-you-get-panel__media-col {
+  padding: 0 !important;
+}
+
+.pto-you-get-panel__img-frame {
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(61, 74, 97, 0.14);
+}
+
+.pto-you-get-panel--blue .pto-you-get-panel__img-frame {
+  box-shadow: 0 6px 18px rgba(61, 74, 97, 0.22);
+}
+
+@media (min-width: 992px) {
+  .pto-you-get-panel__img-frame {
+    height: 88%;
+    max-height: 100%;
+    min-height: 240px;
+  }
+
+  .pto-you-get-panel__img-side {
+    width: 100%;
+    height: 100%;
+    min-height: 240px;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-position: left center;
+  }
+}
+
+.pto-you-get-panel__img-mobile {
+  margin-bottom: 16px;
+}
+
+.pto-you-get-panel__img-mobile .pto-you-get-panel__img-frame {
+  height: auto;
+  min-height: 0;
+}
+
+.pto-you-get-panel__img-el {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.pto-you-get-point {
+  margin-bottom: 16px;
+}
+
+.pto-you-get-point--last {
+  margin-bottom: 0;
+}
+
+.pto-you-get-point__title {
+  margin: 0 0 0 19px;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 700;
+  color: #333;
+  position: relative;
+}
+
+.pto-you-get-panel--gray .pto-you-get-point__title,
+.pto-you-get-panel--sand .pto-you-get-point__title {
+  font-weight: 400;
+}
+
+.pto-you-get-point__mark {
+  position: absolute;
+  left: -20px;
+  color: #e03b32;
+  font-size: 26px;
+  line-height: 1;
+  font-weight: 400;
+}
+
+.pto-you-get-point__text {
+  margin: 0 0 0 19px;
+  font-size: 16px;
+  line-height: 24px;
+  color: #333;
+}
+
+@media (max-width: 991px) {
+  .pto-you-get-stack {
+    gap: 24px;
+  }
+
+  .pto-you-get-panel__inner {
+    padding: 24px 20px;
+  }
+
+  .pto-you-get-panel__title {
+    font-size: 20px;
+  }
+
+}
+
+@media (max-width: 575px) {
+  .pto-you-get-panel__title {
+    font-size: 18px;
+    line-height: 1.3;
+  }
+
+  .pto-you-get-point__title,
+  .pto-you-get-point__text,
+  .pto-you-get-panel__text {
+    font-size: 15px;
+    line-height: 22px;
+  }
+}
+
+/* Problem section (layout: autsorsing-pto «Расчет стоимости и численности…») */
+.pto-problem__intro {
+  font-size: 16px;
+  color: #666;
+  margin: 16px auto 24px;
+  line-height: 1.5;
+}
+
+.pto-problem__heading {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 33px;
+  color: #333;
+  margin: 0;
+}
+
+@media (min-width: 992px) {
+  .pto-problem__row > .col-md-5,
+  .pto-problem__row > .col-md-5 > .row,
+  .pto-problem__row .col-sm-11 {
+    padding-right: 0;
+    margin-right: 0;
+  }
+
+  /* Шире вправо до края рабочей области (1140px); левый край без сдвига */
+  .pto-problem__copy {
+    width: calc(100% + 15px);
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  #problem.container,
+  .pto-problem__row {
+    overflow: visible;
+  }
+}
+
+.pto-problem__copy {
+  width: 100%;
+  padding: 0;
+}
+
+.pto-problem__copy .pto-problem__heading,
+.pto-problem__copy .pto-problem__item {
+  width: 100%;
+  max-width: none;
+  margin-right: 0;
+  padding-right: 0;
+  box-sizing: border-box;
+}
+
+.pto-problem__item {
+  margin: 0 0 8px;
+  padding: 0;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: calc(1em + 8px);
+  color: #333;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.pto-problem__item::before {
+  content: "—";
+  flex-shrink: 0;
+  color: #e03b32;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: calc(1em + 8px);
+}
+
+.pto-problem__item--plain::before {
+  content: none;
+}
+
+.pto-problem__item--plain {
+  margin-bottom: 0;
+  padding-left: calc(0.5em + 8px);
+}
+
+.pto-problem__img-frame {
+  width: 100%;
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  box-shadow: 0 4px 14px rgba(61, 74, 97, 0.14);
+}
+
+.pto-problem__img-el {
+  display: block;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  margin: 0;
+}
+
+
+/* Functionality explorer (isipto palette from style_new / avto-pto) */
+.pto-func-workspace {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pto-func-sidebar {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.pto-func-sidebar__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.pto-func-sidebar__label {
+  font-weight: 700;
+  font-size: 16px;
+  margin: 0;
+  color: #333;
+}
+
+.pto-func-nav-scroll {
+  overflow-x: auto;
+  overflow-y: hidden;
+  margin: 0 -8px;
+  padding: 0 8px 4px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.pto-func-nav-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.pto-func-nav {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 8px;
+  width: max-content;
+  min-width: 100%;
+}
+
+.pto-func-nav button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: auto;
+  flex: 0 0 auto;
+  max-width: 214px;
+  border: 0;
+  border-radius: 10px;
+  padding: 10px 14px;
+  background: rgba(241, 244, 246, 1);
+  text-align: left;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  white-space: normal;
+}
+
+.pto-func-nav button:hover {
+  background: rgba(214, 225, 234, 1);
+}
+
+.pto-func-nav button.is-active {
+  background: #3d4a61;
+  color: #fff;
+}
+
+.pto-func-nav button.is-active .pto-func-nav__num {
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+.pto-func-nav button.pto-func-nav__root.is-active {
+  background: #e03b32;
+}
+
+.pto-func-nav__num {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 13px;
+  background: rgba(224, 59, 50, 0.12);
+  color: #e03b32;
+}
+
+.pto-func-nav__label {
+  line-height: 1.3;
+}
+
+.pto-func-sidebar__stats {
+  display: flex;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.pto-func-stat {
+  flex: 0 0 auto;
+  background: rgba(241, 244, 246, 1);
+  border-radius: 999px;
+  padding: 6px 16px;
+  text-align: center;
+}
+
+.pto-func-stat__line {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.3;
+}
+
+.pto-func-stat__line strong {
+  font-size: 14px;
+  color: #3d4a61;
+  font-weight: 700;
+  margin-right: 4px;
+}
+
+.pto-func-detail {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.pto-func-panel {
+  padding: 24px 24px 0;
+  transition: opacity 0.15s ease;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.pto-func-panel.is-switching {
+  opacity: 0.55;
+}
+
+.pto-func-panel__inner {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+}
+
+.pto-func-panel__title {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0 0 16px;
+  color: #333;
+  flex-shrink: 0;
+}
+
+.pto-func-panel__body {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  flex: 1;
+  min-height: 0;
+}
+
+@media (min-width: 992px) {
+  .pto-func-panel__body {
+    grid-template-columns: minmax(240px, 0.75fr) minmax(0, 1.25fr);
+    gap: 24px;
+    align-items: stretch;
+  }
+
+  .pto-func-panel__media {
+    flex: 1;
+  }
+
+  .pto-func-panel__img {
+    height: 100%;
+    min-height: 320px;
+    object-fit: cover;
+    object-position: top center;
+  }
+}
+
+.pto-func-panel__text {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.pto-func-panel__summary {
+  font-size: 15px;
+  line-height: 1.5;
+  color: #666;
+  margin: 0 0 16px;
+}
+
+.pto-func-panel__media {
+  display: flex;
+  min-height: 0;
+}
+
+.pto-func-panel__img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  border: 1px solid rgba(229, 232, 238, 1);
+  box-shadow: 0 4px 12px rgba(61, 74, 97, 0.08);
+}
+
+.pto-func-panel__bullets-label {
+  font-size: 15px;
+  font-weight: 700;
+  color: #333;
+  margin: 32px 0 10px;
+}
+
+.pto-func-panel__bullets {
+  list-style: none;
+  padding: 0 !important;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.pto-func-panel__bullets li {
+  display: grid;
+  grid-template-columns: 6px 1fr;
+  column-gap: 8px;
+  align-items: start;
+  padding: 0 !important;
+  margin: 0 !important;
+  position: static;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #333;
+}
+
+.pto-func-panel__bullets li::before {
+  content: none;
+  display: none;
+}
+
+.pto-func-panel__bullet {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #e03b32;
+  margin-top: calc(0.75em - 3px);
+}
+
+.pto-func-panel__foot {
+  border-top: 1px solid rgba(229, 232, 238, 1);
+  margin-top: 16px;
+  padding: 32px 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.pto-func-panel__foot-text {
+  font-size: 15px;
+  color: #666;
+  margin: 0;
+  text-align: left;
+  flex: 1;
+  padding-right: 16px;
+}
+
+.pto-func-panel__foot .btn {
+  flex-shrink: 0;
+  margin: 0;
+}
+
+@media (max-width: 767px) {
+  .pto-func-panel__foot {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 24px 0 16px;
+    gap: 16px;
+  }
+
+  .pto-func-panel__foot-text {
+    padding-right: 0;
+  }
+
+  .pto-func-panel__foot .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* CTA form (podgotovka layout) */
+@media (min-width: 720px) {
+  .inp {
+    display: flex;
+    padding-right: 10px;
+  }
+}
+
+/* PTO program: fixed widths scaled 1140/1170 */
+.pto-program-page .pto-subtitle-narrow {
+  max-width: 702px;
+}
+
+.pto-program-page .pto-form-col {
+  max-width: 536px;
+}
+
+.pto-program-page .pto-form-title {
+  max-width: 604px;
+}
+
+.pto-program-page .pto-form-input {
+  max-width: 527px;
+}
+
+.pto-program-page .pto-form-consent {
+  max-width: 253px;
+}
+
+.pto-program-page #about-program .pto-trigger-text {
+  max-width: 195px;
+}
+
+.pto-program-page .pto-id-flow-summary {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.pto-program-page .form-footer {
+  margin-top: 100px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+/* PTO program: responsive (page-wide) */
+@media (max-width: 991px) {
+  .pto-program-page .pto-id-flow-summary {
+    white-space: normal;
+  }
+
+  .pto-program-page .pto-tariffs__toggle {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .pto-program-page .pto-func-sidebar__head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .pto-program-page .first-screen h1 {
+    font-size: 28px !important;
+    line-height: 1.25 !important;
+  }
+
+  .pto-program-page .first-screen__box > div[style*="font-size:24px"] {
+    font-size: 20px !important;
+    line-height: 1.35 !important;
+  }
+
+  .pto-program-page .form-footer__button-box,
+  .pto-program-page .form-new__form .form-footer__button-box {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 16px;
+  }
+
+  .pto-program-page .form-footer__btn,
+  .pto-program-page .form-new__form .form-footer__btn {
+    width: 100%;
+  }
+
+  .pto-program-page .inp {
+    flex-direction: column;
+    padding-right: 0;
+    gap: 12px;
+  }
+
+  .pto-program-page .inp > div[style*="width:8px"] {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .pto-program-page #about-program .pto-trigger-text {
+    max-width: none;
+  }
+
+  .pto-program-page .pto-tariff-card {
+    min-height: 0;
+  }
+
+  .pto-program-page .title {
+    font-size: 24px;
+    line-height: 1.3;
+  }
+}
+
+@media (max-width: 575px) {
+  .pto-program-page .pto-func-nav button {
+    max-width: 200px;
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+
+  .pto-program-page .pto-form-title {
+    font-size: 24px !important;
+  }
+
+  .pto-program-page .d-flex.gap-2.justify-content-between {
+    flex-direction: column;
+    align-items: stretch !important;
+  }
+
+  .pto-program-page .d-flex.gap-2.justify-content-between .btn,
+  .pto-program-page .d-flex.gap-2.justify-content-between .btn-whatsapp-box {
+    width: 100%;
+  }
+}

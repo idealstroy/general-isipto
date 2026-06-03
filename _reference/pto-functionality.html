@@ -1,0 +1,1870 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Обзор возможностей платформы ПТО Онлайн: объекты и проекты, библиотека ИД, журналы, задачи и аналитика." />
+  <link rel="canonical" href="https://pto-app.ru/functionality/" />
+  <title>Функционал платформы  ПТО Онлайн — цифровой ПТО</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/globals.css" />
+  <link rel="stylesheet" href="/styleguide.css" />
+  <link rel="stylesheet" href="/style.css?v=2" />
+  <link rel="stylesheet" href="/css/site.css" />
+  <style>
+    :root {
+      --brand: #3448f0;
+      --brand-dark: #2a38d6;
+      --accent-2: #6366f1;
+      --accent-3: #22d3ee;
+      --ink: #2a2f5b;
+      --ink-soft: #5a6078;
+      --surface: #ffffff;
+      --surface-2: #f5faff;
+      --page-bg: #f5faff;
+      --glass: rgba(255, 255, 255, 0.78);
+      --glass-border: rgba(52, 72, 240, 0.14);
+      --border: rgba(42, 47, 91, 0.12);
+      --shadow: 0 24px 64px rgba(15, 35, 71, 0.12), 0 8px 24px rgba(52, 72, 240, 0.08);
+      --radius-xl: 22px;
+      --radius-lg: 16px;
+      --font: "Manrope", system-ui, -apple-system, sans-serif;
+      --transition: 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+      --current-accent: #3448f0;
+      --text-body: 16px;
+      /* Одинаковая доля синего бренда в фоне сайдбара и в неактивных булетах */
+      --tg-blue-blend: 13%;
+      --tg-sidebar-a: color-mix(in srgb, var(--brand) var(--tg-blue-blend), #3c4866);
+      --tg-sidebar-b: color-mix(in srgb, var(--brand) var(--tg-blue-blend), #323f58);
+      --tg-sidebar-border: rgba(180, 198, 235, 0.12);
+      --tg-row-hover: rgba(255, 255, 255, 0.085);
+      --tg-row-active: rgba(52, 72, 240, 0.52);
+      --tg-text: #eef2f8;
+      --tg-text-muted: #b8c4d6;
+      --tg-caption: #94a3b8;
+      --tg-sidebar-head-overlay: rgba(0, 0, 0, 0.12);
+      --tg-stats-footer-bg: rgba(0, 0, 0, 0.14);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: var(--font);
+      color: var(--ink);
+    }
+
+    body {
+      overflow-x: hidden;
+      overflow-y: auto;
+      background: var(--page-bg);
+    }
+
+    /* Каркас сайта: main между хедером и футером; без min-height:100vh у .wrap футер остаётся в зоне видимости */
+    body > .page-shell {
+      position: relative;
+      z-index: 1;
+    }
+
+    .functionality-main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      min-height: 0;
+      margin-bottom: 100px;
+    }
+
+    /* Фон: слои глубины + мягкие «пятна» в спектре бренда */
+    .ambient {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .ambient__mesh {
+      position: absolute;
+      inset: 0;
+      opacity: 1;
+      background:
+        radial-gradient(ellipse 100% 75% at 12% -15%, rgba(52, 72, 240, 0.16), transparent 55%),
+        radial-gradient(ellipse 70% 50% at 95% 5%, rgba(99, 102, 241, 0.11), transparent 52%),
+        radial-gradient(ellipse 55% 42% at 48% 108%, rgba(34, 211, 238, 0.09), transparent 48%),
+        linear-gradient(185deg, #e3ebff 0%, var(--page-bg) 38%, #eef6ff 100%);
+    }
+
+    .ambient__diagonal {
+      position: absolute;
+      inset: 0;
+      opacity: 1;
+      background: repeating-linear-gradient(
+        -26deg,
+        transparent 0 78px,
+        rgba(52, 72, 240, 0.024) 78px 80px
+      );
+      mask-image: radial-gradient(ellipse 85% 70% at 50% 40%, black 15%, transparent 72%);
+    }
+
+    .ambient__grid {
+      position: absolute;
+      inset: -40px;
+      opacity: 0.18;
+      background-image:
+        linear-gradient(rgba(52, 72, 240, 0.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(52, 72, 240, 0.055) 1px, transparent 1px);
+      background-size: 56px 56px;
+      mask-image: radial-gradient(ellipse 78% 72% at 50% 45%, black 18%, transparent 75%);
+    }
+
+    .ambient__blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(72px);
+    }
+
+    .ambient__blob--1 {
+      width: 460px;
+      height: 460px;
+      background: #5b6cf5;
+      top: -14%;
+      right: -10%;
+      opacity: 0.2;
+    }
+
+    .ambient__blob--2 {
+      width: 340px;
+      height: 340px;
+      background: #2ec4df;
+      bottom: -8%;
+      left: -6%;
+      opacity: 0.12;
+      filter: blur(88px);
+    }
+
+    .ambient__ring {
+      position: absolute;
+      width: min(72vw, 620px);
+      height: min(72vw, 620px);
+      border: 1px solid rgba(52, 72, 240, 0.11);
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-52%, -48%) rotate(-8deg);
+      opacity: 0.55;
+    }
+
+    .ambient__ring--inner {
+      position: absolute;
+      width: min(52vw, 440px);
+      height: min(52vw, 440px);
+      border: 1px solid rgba(99, 102, 241, 0.09);
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -46%) rotate(6deg);
+      opacity: 0.5;
+    }
+
+    @keyframes ribbon-flow {
+      0% {
+        background-position: 0% 50%;
+      }
+      100% {
+        background-position: 100% 50%;
+      }
+    }
+
+    /* —— Каркас страницы —— */
+    .wrap {
+      position: relative;
+      z-index: 1;
+      flex: 1;
+      min-height: 0;
+      padding: 80px 20px;
+      display: flex;
+      flex-direction: column;
+      max-width: 1320px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    /* Заголовок страницы под сквозной шапкой (header.html через /header.js) */
+    .functionality-intro {
+      flex-shrink: 0;
+      margin-bottom: 64px;
+    }
+
+    .functionality-intro__crumbs {
+      margin-bottom: 0.65rem;
+    }
+
+    /* Как .blog-first-screen__title / шкала H1 в site.css */
+    .page-title {
+      margin: 0;
+      font-size: var(--font-size-h1);
+      font-weight: 700;
+      line-height: var(--line-height-h1);
+      letter-spacing: -0.02em;
+      color: var(--color-text);
+    }
+
+    /* —— Рабочая область: две колонки —— */
+    .workspace {
+      flex: 1;
+      min-height: 0;
+      display: flex;
+      align-items: stretch;
+      background: #ffffff;
+      border-radius: var(--radius-xl);
+      box-shadow:
+        var(--shadow),
+        0 0 0 1px rgba(255, 255, 255, 0.88) inset,
+        0 10px 48px rgba(52, 72, 240, 0.06);
+      border: 1px solid rgba(52, 72, 240, 0.09);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .workspace__corner {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 240px;
+      height: 240px;
+      pointer-events: none;
+      opacity: 0.65;
+    }
+
+    .sidebar {
+      width: 31%;
+      min-width: 268px;
+      max-width: 340px;
+      display: flex;
+      flex-direction: column;
+      background: linear-gradient(178deg, var(--tg-sidebar-a) 0%, var(--tg-sidebar-b) 100%);
+      border-right: 1px solid var(--tg-sidebar-border);
+      position: relative;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .sidebar__head {
+      padding: 0.85rem 1rem 0.7rem;
+      border-bottom: 1px solid var(--tg-sidebar-border);
+      background: var(--tg-sidebar-head-overlay);
+    }
+
+    .sidebar__label {
+      margin: 0 0 0.25rem;
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--tg-text-muted);
+    }
+
+    .sidebar__hint {
+      margin: 0;
+      font-size: 0.8125rem;
+      line-height: 1.42;
+      color: var(--tg-caption);
+    }
+
+    .nav-scroll {
+      flex: 1 1 auto;
+      min-height: 0;
+      overflow: visible;
+      padding: 0.45rem 0.45rem 0.55rem;
+    }
+
+    .nav-tree {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .nav-tree button {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+      text-align: left;
+      border: none;
+      border-radius: 10px;
+      background: transparent;
+      font: inherit;
+      cursor: pointer;
+      color: var(--tg-text);
+      transition: background var(--transition), color 0.15s ease;
+      position: relative;
+      min-height: 42px;
+      padding: 0.35rem 0.45rem 0.35rem 0.35rem;
+      border: none;
+    }
+
+    .nav-tree button:hover {
+      background: var(--tg-row-hover);
+    }
+
+    .nav-tree button:hover .nav__label-inner {
+      color: var(--tg-text);
+    }
+
+    .nav-tree button:focus-visible {
+      outline: 2px solid var(--accent-3);
+      outline-offset: -1px;
+    }
+
+    .nav-tree button.is-active {
+      background: var(--tg-row-active);
+      font-weight: 600;
+    }
+
+    .nav-tree button .nav__label-inner {
+      flex: 1;
+      min-width: 0;
+      font-size: 0.875rem;
+      line-height: 1.45;
+      letter-spacing: -0.011em;
+      font-weight: 500;
+      color: var(--tg-text-muted);
+    }
+
+    .nav-tree button.nav__root .nav__label-inner {
+      font-weight: 600;
+      color: var(--tg-text);
+    }
+
+    .nav-tree button.is-active .nav__label-inner {
+      color: #ffffff;
+      font-weight: 600;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.22);
+    }
+
+    .nav-num {
+      box-sizing: border-box;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      padding: 2px;
+      font-size: 0.75rem;
+      font-variant-numeric: tabular-nums;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      background: color-mix(in srgb, var(--brand) var(--tg-blue-blend), rgba(255, 255, 255, 0.14));
+      border: none;
+      flex-shrink: 0;
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.14),
+        0 1px 3px rgba(0, 0, 0, 0.22);
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.45);
+      line-height: 1;
+    }
+
+    .nav-tree button.nav__root .nav-num {
+      width: 28px;
+      height: 28px;
+      padding: 2px;
+      font-size: 0.8125rem;
+      color: #ffffff;
+      background: color-mix(in srgb, var(--brand) var(--tg-blue-blend), rgba(255, 255, 255, 0.17));
+      border: none;
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.16),
+        0 1px 3px rgba(0, 0, 0, 0.22);
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.45);
+    }
+
+    .nav-tree button.is-active .nav-num {
+      width: 28px;
+      height: 28px;
+      padding: 2px;
+      font-size: 0.8125rem;
+      background: #ffffff;
+      color: #3d4659;
+      border: none;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.14);
+      text-shadow: none;
+    }
+
+    .sidebar__stats {
+      margin-top: auto;
+      flex-shrink: 0;
+      padding: 0.55rem 0.75rem 0.65rem;
+      border-top: 1px solid var(--tg-sidebar-border);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 7px;
+      background: var(--tg-stats-footer-bg);
+    }
+
+    .stat-pill {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 11px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.09);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      box-shadow: none;
+      min-width: 0;
+    }
+
+    .stat-pill strong {
+      flex-shrink: 0;
+      font-size: 0.9375rem;
+      font-weight: 700;
+      color: var(--tg-text);
+      line-height: 1.1;
+      text-shadow: none;
+    }
+
+    .stat-pill span {
+      flex: 1;
+      min-width: 0;
+      font-size: 0.75rem;
+      color: #d6dff8;
+      color: color-mix(in srgb, var(--tg-caption) 50%, #ffffff);
+      line-height: 1.38;
+    }
+
+    /* —— Правая панель —— */
+    .detail {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      background: #ffffff;
+    }
+
+    .detail__orb {
+      display: none;
+    }
+
+    .detail__inner {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 1.1rem 2rem 0 2rem;
+      overflow: hidden;
+      min-height: 0;
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.2s ease, transform 0.2s ease;
+      position: relative;
+      z-index: 1;
+    }
+
+    .detail__inner.is-switching {
+      opacity: 0;
+      transform: translateY(6px);
+    }
+
+    .detail__ribbon {
+      height: 6px;
+      width: 100%;
+      flex-shrink: 0;
+      position: relative;
+      z-index: 1;
+      background: linear-gradient(90deg, var(--brand), var(--accent-2) 35%, var(--accent-3) 72%, var(--brand-dark));
+      background-size: 200% 100%;
+      animation: ribbon-flow 16s ease-in-out infinite alternate;
+      margin-bottom: 1.65rem;
+      border-radius: 0 0 3px 3px;
+    }
+
+    .panel-title {
+      margin: 0 0 0.75rem;
+      font-size: clamp(1.4rem, 2.6vw, 1.85rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      color: var(--ink);
+      text-wrap: balance;
+    }
+
+    /*
+      Центральная колонка (ширина как у скрина): вся колонка по центру панели,
+      заголовок и описание — по левому краю вровень с левым краем картинки.
+    */
+    .detail-stack {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      text-align: left;
+    }
+
+    .detail-stack > .panel-title {
+      margin: 0 auto 1rem;
+      width: min(782px, 100%);
+      box-sizing: border-box;
+      text-align: left;
+    }
+
+    .lede {
+      margin: 0 0 1.1rem;
+      padding: 14px 18px;
+      border-radius: 18px;
+      border: 1px solid var(--glass-border);
+      border-left: 4px solid var(--current-accent);
+      background: linear-gradient(135deg, color-mix(in srgb, var(--current-accent) 9%, white) 0%, rgba(255, 255, 255, 0.88) 100%);
+      font-size: var(--text-body);
+      font-weight: 500;
+      line-height: 1.55;
+      color: var(--ink);
+      box-shadow: 0 12px 40px rgba(52, 72, 240, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.95) inset;
+      backdrop-filter: blur(8px);
+    }
+
+    /* Описание + скрин: общая центральная колонка ширины скрина */
+    .feature {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      width: 100%;
+      max-width: min(782px, 100%);
+      margin: 0 auto 1rem;
+      padding: 0;
+      gap: 1.65rem;
+      border: none;
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+    }
+
+    .feature__text {
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+      margin-inline: 0;
+      text-align: left;
+    }
+
+    .feature__summary {
+      margin: 0;
+      font-size: var(--text-body);
+      line-height: 1.55;
+      color: var(--ink-soft);
+      font-weight: 500;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    /* Эталон — реальные пиксели root.jpg (ПТО Онлайн); остальные — cover, обрезка снизу */
+    .feature__img {
+      width: 100%;
+      max-width: 100%;
+      aspect-ratio: 1337 / 614;
+      height: auto;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+      margin: 0;
+      padding: 0;
+      background: #eef1f7;
+      border: none;
+      border-radius: var(--radius-xl, 22px);
+      box-shadow:
+        0 12px 32px rgba(15, 35, 71, 0.16),
+        0 4px 14px rgba(52, 72, 240, 0.12);
+      overflow: hidden;
+    }
+
+    .detail-bullets-wrap {
+      width: 100%;
+      max-width: min(782px, 100%);
+      margin: 0 auto 2.25rem;
+      padding-top: 1.25rem;
+      box-sizing: border-box;
+      text-align: left;
+    }
+
+    .detail-bullets-wrap .section-label.section-label--center {
+      justify-content: flex-start;
+      margin-bottom: 0.65rem;
+    }
+
+    .section-label.section-label--center::after {
+      display: none;
+    }
+
+    .detail-bullets-wrap .bullets {
+      margin-top: 0;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.5rem 0.875rem;
+      align-items: start;
+    }
+
+    .detail-bullets-wrap .bullets li {
+      margin: 0;
+      padding-bottom: 0;
+    }
+
+    .body-stack {
+      display: grid;
+      gap: 0.75rem;
+      margin-bottom: 1.15rem;
+    }
+
+    /* Абзацы и блок «Ключевые возможности» — ниже заголовка/лида (выровняно с зоной пунктов слева) */
+    .panel-title + .body-stack {
+      margin-top: 2.35rem;
+    }
+
+    .lede + .body-stack {
+      margin-top: 1.1rem;
+    }
+
+    .body {
+      margin: 0;
+      font-size: var(--text-body);
+      line-height: 1.58;
+      color: var(--ink-soft);
+    }
+
+    .body strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    .section-label {
+      margin: 0 0 0.6rem;
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--current-accent);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .body-stack + .section-label {
+      margin-top: 1.75rem;
+    }
+
+    .section-label::after {
+      content: "";
+      flex: 1;
+      max-width: 140px;
+      height: 2px;
+      border-radius: 2px;
+      background: var(--brand);
+      opacity: 0.45;
+    }
+
+    .bullets {
+      margin: 0.35rem 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .bullets li {
+      position: relative;
+      margin: 0 0 0.55rem;
+      padding: 0 0 0 calc(10px + 0.75rem);
+      font-size: var(--text-body);
+      line-height: 1.55;
+      color: var(--ink-soft);
+    }
+
+    .bullets li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: calc(0.775em - 5px);
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--brand);
+    }
+
+    .bullets li:last-child {
+      margin-bottom: 0;
+    }
+
+    .foot {
+      margin-top: auto;
+      transform: translateY(-14px);
+      padding: 0.55rem 14px 0.65rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      font-size: 0.85rem;
+      color: var(--ink-soft);
+      line-height: 1.45;
+      border-radius: 14px;
+      background: #f1f5fa;
+    }
+
+    .foot__lead-row {
+      flex: 1;
+      min-width: min(100%, 220px);
+    }
+
+    .foot__lead {
+      display: block;
+      margin: 0;
+      font-size: 16px;
+      line-height: 1.4;
+      color: #2a2f5b;
+    }
+
+    .foot__cta {
+      appearance: none;
+      flex-shrink: 0;
+      margin: 0;
+      font-family: inherit;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: #fff;
+      background: var(--brand);
+      border: none;
+      border-radius: 10px;
+      padding: 8px 14px;
+      cursor: pointer;
+      transition: box-shadow var(--transition), transform 0.15s ease;
+      box-shadow: 0 2px 8px rgba(52, 72, 240, 0.28);
+    }
+
+    .foot__cta:hover {
+      box-shadow: 0 6px 18px rgba(52, 72, 240, 0.38);
+    }
+
+    .foot__cta:active {
+      transform: translateY(1px);
+    }
+
+    .foot__cta:focus-visible {
+      outline: 2px solid var(--brand);
+      outline-offset: 2px;
+    }
+
+    /* Мобильная версия: светлые горизонтальные «табы» как на buildpeer.com/producto + скролл контента */
+    @media (max-width: 1024px) {
+      .wrap {
+        padding: 64px 20px;
+      }
+      .functionality-intro {
+        margin-bottom: 48px;
+      }
+    }
+
+    @media (max-width: 840px) {
+      body {
+        overflow: auto;
+      }
+
+      .wrap {
+        height: auto;
+        min-height: 100%;
+        padding: 48px 12px 24px;
+      }
+
+      .functionality-intro {
+        margin-bottom: 32px;
+      }
+
+      .workspace {
+        flex-direction: column;
+        flex: none;
+        min-height: 0;
+        border-radius: var(--radius-lg);
+        overflow: visible;
+      }
+
+      /* Липкая полоса модулей под сквозной шапкой (header.css: sticky ~56–64px + safe area) */
+      .sidebar {
+        --mob-sticky-under-header: calc(58px + env(safe-area-inset-top, 0px));
+        width: 100%;
+        max-width: none;
+        border-right: none;
+        border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+        flex: 0 0 auto;
+        position: sticky;
+        top: var(--mob-sticky-under-header);
+        z-index: 90;
+        background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+        box-shadow: 0 10px 28px rgba(15, 35, 71, 0.06);
+      }
+
+      .sidebar__head {
+        padding: 0.55rem 12px 0.35rem;
+        border-bottom: none;
+        background: transparent;
+      }
+
+      .sidebar__label {
+        color: #64748b;
+        letter-spacing: 0.06em;
+      }
+
+      .sidebar__hint {
+        display: none;
+      }
+
+      .nav-scroll {
+        flex: none;
+        min-height: 0;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior-x: contain;
+        scroll-snap-type: x proximity;
+        padding: 0.25rem max(8px, env(safe-area-inset-left)) 0.65rem max(8px, env(safe-area-inset-right));
+        touch-action: pan-x;
+        mask-image: linear-gradient(
+          to right,
+          transparent 0,
+          black 10px,
+          black calc(100% - 10px),
+          transparent 100%
+        );
+        -webkit-mask-image: linear-gradient(
+          to right,
+          transparent 0,
+          black 10px,
+          black calc(100% - 10px),
+          transparent 100%
+        );
+      }
+
+      .nav-tree {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: stretch;
+        gap: 8px;
+        padding: 2px 2px 6px;
+        touch-action: pan-x;
+      }
+
+      .nav-tree button {
+        width: auto;
+        flex: 0 0 auto;
+        scroll-snap-align: start;
+        align-items: center;
+        white-space: nowrap;
+        min-height: 44px;
+        min-width: 44px;
+        padding: 0.5rem 1rem;
+        border-radius: 999px;
+        background: #ffffff;
+        border: 1px solid rgba(15, 23, 42, 0.1);
+        color: #334155;
+        box-shadow: 0 1px 2px rgba(15, 35, 71, 0.04);
+        /* pan-x — свайп с кнопки уходит в горизонтальный скролл полосы, не в скролл страницы */
+        touch-action: pan-x pinch-zoom;
+        -webkit-user-select: none;
+        user-select: none;
+      }
+
+      .nav-tree button .nav__label-inner {
+        white-space: nowrap;
+        overflow: visible;
+        color: #475569;
+        font-weight: 500;
+        text-shadow: none;
+      }
+
+      .nav-tree button.nav__root .nav__label-inner {
+        color: #334155;
+        font-weight: 600;
+      }
+
+      .nav-tree button:hover {
+        background: #f8fafc;
+        border-color: rgba(15, 23, 42, 0.14);
+      }
+
+      /*
+        На телефонах :hover «залипает» после tap; общее правило
+        `.nav-tree button:hover .nav__label-inner { color: var(--tg-text) }` даёт светлый текст
+        на светлой пилюле — переопределяем только здесь (под светлые чипы).
+      */
+      .nav-tree button:hover:not(.is-active) .nav__label-inner {
+        color: #475569;
+      }
+
+      .nav-tree button.nav__root:hover:not(.is-active) .nav__label-inner {
+        color: #334155;
+      }
+
+      .nav-tree button:active:not(.is-active) .nav__label-inner {
+        color: #475569;
+      }
+
+      .nav-tree button.nav__root:active:not(.is-active) .nav__label-inner {
+        color: #334155;
+      }
+
+      .nav-tree button:focus-visible {
+        outline: 2px solid var(--brand);
+        outline-offset: 2px;
+      }
+
+      .nav-tree button.is-active {
+        background: var(--brand);
+        border-color: var(--brand);
+        font-weight: 600;
+        box-shadow: 0 4px 18px rgba(52, 72, 240, 0.28);
+      }
+
+      .nav-tree button.is-active .nav__label-inner {
+        color: #ffffff;
+        font-weight: 600;
+      }
+
+      /* Только подписи, как у Buildpeer — без кружков нумерации */
+      .nav-tree button .nav-num {
+        display: none;
+      }
+
+      .sidebar__stats {
+        display: none;
+      }
+
+      .detail__inner {
+        overflow: visible;
+        padding: 1rem 16px max(1.25rem, env(safe-area-inset-bottom));
+      }
+
+      .detail__ribbon {
+        display: none;
+      }
+
+      .detail-stack > .panel-title {
+        margin-bottom: 0.75rem;
+      }
+
+      .feature__summary {
+        -webkit-line-clamp: unset;
+        -webkit-box-orient: unset;
+        display: block;
+        overflow: visible;
+      }
+
+      /* Скрин ближе к полной ширине колонки, как на product-лендингах */
+      .feature {
+        max-width: 100%;
+      }
+
+      .feature__img {
+        width: calc(100% + 32px);
+        max-width: none;
+        margin-left: -16px;
+        margin-right: -16px;
+        border-radius: 14px;
+      }
+
+      .foot {
+        flex-direction: column;
+        align-items: stretch;
+        padding-bottom: max(10px, env(safe-area-inset-bottom));
+        transform: none;
+        margin-top: 1.25rem;
+      }
+
+      .foot__cta {
+        width: 100%;
+        text-align: center;
+        min-height: 44px;
+        padding: 11px 16px;
+        touch-action: manipulation;
+      }
+
+      .detail-bullets-wrap .bullets {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .skip-link {
+      position: absolute;
+      left: -999px;
+      top: 0;
+      z-index: 9999;
+      padding: 10px 16px;
+      margin: 8px;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      font-family: inherit;
+      color: var(--ink);
+      background: #ffffff;
+      border: 2px solid var(--brand);
+      box-shadow: var(--shadow);
+      clip: rect(0, 0, 0, 0);
+      clip-path: inset(50%);
+      overflow: hidden;
+      white-space: nowrap;
+      transition: clip-path var(--transition), clip var(--transition);
+    }
+
+    .skip-link:focus {
+      left: 12px;
+      clip: auto;
+      clip-path: none;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .detail__ribbon {
+        animation: none !important;
+      }
+
+      .detail__inner {
+        transition: none;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="/css/header.css" />
+  <link rel="stylesheet" href="/css/footer.css" />
+</head>
+<body>
+  <div class="ambient" aria-hidden="true">
+    <div class="ambient__mesh"></div>
+    <div class="ambient__diagonal"></div>
+    <div class="ambient__grid"></div>
+    <div class="ambient__blob ambient__blob--1"></div>
+    <div class="ambient__blob ambient__blob--2"></div>
+    <div class="ambient__ring"></div>
+    <div class="ambient__ring ambient__ring--inner"></div>
+  </div>
+
+  <a href="#panel" class="skip-link">К основному содержанию</a>
+
+  <div class="page-shell">
+    <!-- Сквозная шапка: тот же header.html, что на блоге и услугах (/header.js) -->
+    <div id="main-header"></div>
+    <script src="/header.js" defer></script>
+
+    <main class="functionality-main">
+  <div class="wrap">
+    <section class="functionality-intro" aria-labelledby="functionality-page-title">
+      <nav class="wiki-breadcrumb functionality-intro__crumbs" aria-label="Хлебные крошки">
+        <a href="/">Главная</a>
+        <span class="wiki-breadcrumb__sep" aria-hidden="true">→</span>
+        <span class="wiki-breadcrumb__current">Функционал платформы</span>
+      </nav>
+      <h1 id="functionality-page-title" class="page-title">Функционал платформы</h1>
+    </section>
+
+    <div class="workspace">
+      <svg class="workspace__corner" viewBox="0 0 200 200" aria-hidden="true">
+        <defs>
+          <linearGradient id="cg" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color: rgb(52, 72, 240); stop-opacity: 0.14" />
+            <stop offset="55%" style="stop-color: rgb(99, 102, 241); stop-opacity: 0.06" />
+            <stop offset="100%" style="stop-color: rgb(34, 211, 238); stop-opacity: 0" />
+          </linearGradient>
+        </defs>
+        <path fill="url(#cg)" d="M200 0H60L200 140V0z" />
+      </svg>
+
+      <aside class="sidebar">
+        <div class="sidebar__head">
+          <p class="sidebar__label">Каталог модулей</p>
+          <p class="sidebar__hint">Выберите пункт — описание откроется справа без перезагрузки.</p>
+        </div>
+        <div class="nav-scroll">
+          <nav class="nav-tree" aria-label="Структура функционала">
+            <button type="button" class="nav__root is-active" data-id="root" aria-current="true" tabindex="0" aria-controls="panel">
+              <span class="nav-num">П</span>
+              <span class="nav__label-inner">ПТО Онлайн</span>
+            </button>
+            <button type="button" class="nav__child" data-id="objects" tabindex="-1" aria-controls="panel">
+              <span class="nav-num">1</span>
+              <span class="nav__label-inner">Объекты и проекты</span>
+            </button>
+            <button type="button" class="nav__child" data-id="library" tabindex="-1" aria-controls="panel">
+              <span class="nav-num">2</span>
+              <span class="nav__label-inner">Библиотека ИД и шаблоны</span>
+            </button>
+            <button type="button" class="nav__child" data-id="constructor" tabindex="-1" aria-controls="panel">
+              <span class="nav-num">3</span>
+              <span class="nav__label-inner">Конструктор и реестры</span>
+            </button>
+            <button type="button" class="nav__child" data-id="autofill" tabindex="-1" aria-controls="panel">
+              <span class="nav-num">4</span>
+              <span class="nav__label-inner">Автозаполнение документов</span>
+            </button>
+            <button type="button" class="nav__child" data-id="journals" tabindex="-1" aria-controls="panel">
+              <span class="nav-num">5</span>
+              <span class="nav__label-inner">Электронные журналы</span>
+            </button>
+            <button type="button" class="nav__child" data-id="kanban" tabindex="-1" aria-controls="panel">
+              <span class="nav-num">6</span>
+              <span class="nav__label-inner">Доска задач</span>
+            </button>
+            <button type="button" class="nav__child" data-id="statuses" tabindex="-1" aria-controls="panel">
+              <span class="nav-num">7</span>
+              <span class="nav__label-inner">Статусы, сроки и замечания</span>
+            </button>
+            <button type="button" class="nav__child" data-id="completeness" tabindex="-1" aria-controls="panel">
+              <span class="nav-num">8</span>
+              <span class="nav__label-inner">Аналитика</span>
+            </button>
+            <button type="button" class="nav__child" data-id="access" tabindex="-1" aria-controls="panel">
+              <span class="nav-num">9</span>
+              <span class="nav__label-inner">Доступ и история изменений</span>
+            </button>
+            <button type="button" class="nav__child" data-id="storage" tabindex="-1" aria-controls="panel">
+              <span class="nav-num">10</span>
+              <span class="nav__label-inner">Хранение и поиск</span>
+            </button>
+            <button type="button" class="nav__child" data-id="edo" tabindex="-1" aria-controls="panel">
+              <span class="nav-num">11</span>
+              <span class="nav__label-inner">ЭДО</span>
+            </button>
+            <button type="button" class="nav__child" data-id="smety" tabindex="-1" aria-controls="panel">
+              <span class="nav-num">12</span>
+              <span class="nav__label-inner">Сметы</span>
+            </button>
+            <button type="button" class="nav__child" data-id="request" tabindex="-1" aria-controls="panel">
+              <span class="nav-num">13</span>
+              <span class="nav__label-inner">Запрос исходных данных</span>
+            </button>
+          </nav>
+        </div>
+        <div class="sidebar__stats">
+          <div class="stat-pill">
+            <strong>13</strong>
+            <span>инструментов<br />в обзоре</span>
+          </div>
+          <div class="stat-pill">
+            <strong>1</strong>
+            <span>Единый сервис<br />для ПТО</span>
+          </div>
+        </div>
+      </aside>
+
+      <section class="detail">
+        <div class="detail__orb" aria-hidden="true"></div>
+        <div class="detail__ribbon" aria-hidden="true"></div>
+        <div class="detail__inner" id="panel" role="region" aria-live="polite" aria-busy="false" tabindex="-1" aria-labelledby="detail-panel-heading"></div>
+      </section>
+    </div>
+  </div>
+    </main>
+
+    <div id="main-footer"></div>
+    <script src="/footer.js" defer></script>
+
+
+  <!-- Тот же попап заявки на презентацию, что на главной -->
+  <div id="presentation-popup" class="presentation-popup-overlay"
+    style="display: none; opacity: 0; visibility: hidden;">
+    <div class="presentation-popup-content">
+      <button type="button" class="presentation-popup-close" aria-label="Закрыть">✕</button>
+      <div class="element">
+        <form class="group presentation-form-popup" aria-labelledby="presentation-form-title-popup">
+          <p class="presentation-popup-subtitle">Для юридических лиц</p>
+          <h3 id="presentation-form-title-popup" class="text-wrapper-12">Закажите онлайн презентацию сервиса</h3>
+          <div class="group-2">
+            <div class="group-3">
+              <div class="rectangle-4" aria-hidden="true"></div>
+              <input type="text" id="name-input-popup" name="name" class="text-wrapper-13" aria-label="Введите ваше имя"
+                placeholder="Имя" required />
+            </div>
+            <div class="group-4">
+              <div class="rectangle-4" aria-hidden="true"></div>
+              <input type="tel" id="phone-input-popup" name="phone" class="text-wrapper-14"
+                aria-label="Введите ваш телефон" placeholder="Телефон" required />
+            </div>
+          </div>
+          <div class="group-5">
+            <div class="rectangle-5" aria-hidden="true"></div>
+            <p class="div-6">
+              <span class="text-wrapper-15">Нажимая на кнопку, вы даете согласие на обработку своих </span>
+              <a href="/policy.pdf" class="text-wrapper-16">персональных данных</a>
+            </p>
+            <input type="checkbox" id="consent-popup" name="consent" class="union"
+              aria-label="Согласие на обработку персональных данных" />
+            <button class="MDS-public-TW-button-3" type="submit">
+              <span class="button-text-2">Заказать презентацию</span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div id="success-modal" class="success-modal-overlay" style="display: none; opacity: 0; visibility: hidden;">
+    <div class="success-modal-content">
+      <button type="button" class="success-modal-close" aria-label="Закрыть">✕</button>
+      <h3 class="success-modal-title">Спасибо что выбрали нас</h3>
+      <img src="/img/success_icon.png?v=2" alt="Успешно" class="success-modal-icon" />
+      <p class="success-modal-text">Мы уже получили вашу заявку<br />и скоро перезвоним</p>
+    </div>
+  </div>
+
+  </div>
+
+  <script>
+    (function () {
+      const BRAND_ACCENT = "#3448f0";
+
+      const CONTENT = {
+        root: {
+          title: "ПТО Онлайн — цифровой ПТО",
+          summary: "Облачная платформа для исполнительной документации на объекте: объекты, библиотека ИД, журналы, задачи и аналитика — всё в одном рабочем пространстве.",
+          image: "/images/functionality/root.jpg",
+          imageAlt: "Скриншот: ПТО Онлайн",
+          bullets: [
+            "Объекты, документы, журналы — в одном сервисе",
+            "Контроль статусов и сроков по работам",
+            "Поиск, хранение и аналитика по объекту"
+          ]
+        },
+        objects: {
+          title: "Объекты и проекты",
+          summary: "Создавайте объекты и настраивайте реквизиты участников, формы журналов и договорные параметры. Команда объекта и роли определяют доступ и ответственность.",
+          image: "/images/functionality/objects.jpg",
+          imageAlt: "Скриншот: Объекты и проекты",
+          bullets: [
+            "Реквизиты и участники проекта",
+            "Выбор формы журналов под объект",
+            "Команда, роли и архивирование"
+          ]
+        },
+        library: {
+          title: "Библиотека ИД и шаблоны",
+          summary: "Единая библиотека ИД по объекту и шифрам: создавайте документы по шаблонам или добавляйте готовые файлы. Комментарии и выгрузка в Word/Excel — из карточки документа.",
+          image: "/images/functionality/library.jpg",
+          imageAlt: "Скриншот: Библиотека ИД и шаблоны",
+          bullets: [
+            "Шаблоны и готовые файлы",
+            "Связь с шифрами работ",
+            "Выгрузка в Word/Excel"
+          ]
+        },
+        constructor: {
+          title: "Конструктор и реестры",
+          summary: "Создавайте свои шаблоны актов и журналов: поля, переменные и печатные формы DOCX/Excel. Собирайте документы в реестры и контролируйте готовность комплекта.",
+          image: "/images/functionality/constructor.jpg",
+          imageAlt: "Скриншот: Конструктор и реестры",
+          bullets: [
+            "Свои поля и переменные",
+            "Печатные формы DOCX/Excel",
+            "Реестры для сдачи"
+          ]
+        },
+        autofill: {
+          title: "Автозаполнение документов",
+          summary: "Автозаполнение реквизитов из справочников и распознавание сканов/сертификатов. Подстановка работ из ведомости и голосовой ввод для больших текстов ускоряют оформление.",
+          image: "/images/functionality/autofill.jpg",
+          imageAlt: "Скриншот: Автозаполнение документов",
+          bullets: [
+            "Подстановка реквизитов из справочников",
+            "Распознавание сканов и сертификатов",
+            "Голосовой ввод для текстов"
+          ]
+        },
+        journals: {
+          title: "Электронные журналы",
+          summary: "Электронные ОЖР и входной контроль по выбранным формам. Записи связаны с документами, доступна история изменений и выгрузка в Word/Excel.",
+          image: "/images/functionality/journals.jpg",
+          imageAlt: "Скриншот: Электронные журналы",
+          bullets: [
+            "ОЖР по выбранной форме",
+            "Входной контроль материалов",
+            "История и выгрузка"
+          ]
+        },
+        kanban: {
+          title: "Доска задач",
+          summary: "Канбан и таблица задач по объектам: статусы, сроки, приоритеты и массовые действия. Привязывайте задачи к реестрам и настраивайте дополнительные поля.",
+          image: "/images/functionality/kanban.jpg",
+          imageAlt: "Скриншот: Доска задач",
+          bullets: [
+            "Канбан и таблица задач",
+            "Поиск, фильтры, приоритеты",
+            "Ответственные и сроки"
+          ]
+        },
+        statuses: {
+          title: "Статусы, сроки и замечания",
+          summary: "Статусы документов и сроки по шифрам помогают контролировать прогресс и просрочки. Замечания и обсуждения фиксируются в комментариях к документам и реестрам.",
+          image: "/images/functionality/statuses.jpg",
+          imageAlt: "Скриншот: Статусы, сроки и замечания",
+          bullets: [
+            "Статусы документов и реестров",
+            "Сроки по шифрам и подсветка просрочек",
+            "Замечания и обсуждения"
+          ]
+        },
+        completeness: {
+          title: "Аналитика",
+          summary: "Аналитика показывает готовность по шифрам и реестрам, счётчики статусов и динамику во времени. Реестры собирают пакет документов для проверки и сдачи.",
+          image: "/images/functionality/completeness.jpg",
+          imageAlt: "Скриншот: Аналитика",
+          bullets: [
+            "Сводка готовности по шифрам",
+            "Контроль реестров и замечаний",
+            "Счётчики статусов по документам"
+          ]
+        },
+        access: {
+          title: "Доступ и история изменений",
+          summary: "Роли и права определяют доступ к организации и объектам, а команда объекта — кто видит и редактирует данные. История изменений помогает отслеживать правки ключевых записей.",
+          image: "/images/functionality/access.jpg",
+          imageAlt: "Скриншот: Доступ и история изменений",
+          bullets: [
+            "Роли и права пользователей",
+            "Команда объекта и доступ",
+            "История изменений"
+          ]
+        },
+        storage: {
+          title: "Хранение и поиск",
+          summary: "Файлы и документы хранятся по объектам и шифрам, а сертификаты — в общей базе организации. Поиск по номеру, материалу и срокам помогает быстро находить нужное.",
+          image: "/images/functionality/storage.jpg",
+          imageAlt: "Скриншот: Хранение и поиск",
+          bullets: [
+            "Хранение по объектам и шифрам",
+            "Общая база сертификатов",
+            "Поиск по номеру и срокам"
+          ]
+        },
+        edo: {
+          title: "ЭДО",
+          summary: "Через ЭДО можно обмениваться документацией прямо в ПТО Онлайн без переключения. Подписывайте документы с помощью ЭЦП и отправляйте контрагентам.",
+          image: "/images/functionality/edo.jpg",
+          imageAlt: "Скриншот: Электронный документооборот",
+          bullets: [
+            "Обмен документами без переключения",
+            "Подписание с помощью ЭЦП",
+            "Прямая отправка контрагентам"
+          ]
+        },
+        smety: {
+          title: "Сметы",
+          summary: "Сервис позволяет подгружать сметы, автоматически извлекает из них данные о видах, объёмах работ и единицах измерения, чтобы сразу внести их в ведомости работ.",
+          image: "/images/functionality/smety.png",
+          imageAlt: "Скриншот: Сметы",
+          bullets: [
+            "Загрузка смет напрямую в систему",
+            "Извлечение видов и объёмов работ",
+            "Автоматическое заполнение ведомостей"
+          ]
+        },
+        request: {
+          title: "Запрос исходных данных",
+          summary: "Отправляйте запросы на предоставление данных прямо из сервиса. Запрашивайте информацию как у зарегистрированных подрядчиков, так и по внешним email-адресам.",
+          image: "/images/functionality/zapros-dannyh.png",
+          imageAlt: "Скриншот: Запрос исходных данных",
+          bullets: [
+            "Отправка запросов прямо из сервиса",
+            "Работа с внутренними подрядчиками",
+            "Отправка на внешние email-адреса"
+          ]
+        }
+      };
+
+      const panel = document.getElementById("panel");
+      const navTree = document.querySelector(".nav-tree");
+      const navScrollStrip = document.querySelector(".nav-scroll");
+      const buttons = navTree ? Array.from(navTree.querySelectorAll("button")) : [];
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const switchDelay = reduceMotion ? 0 : 165;
+
+      const BITRIX_CONFIG = {
+        webhookUrl: "https://isipto.bitrix24.ru/rest/2467/lnall6hhw2qpjtvw",
+        dealCategoryId: 110,
+        dealStageId: "C110:NEW",
+        sourceId: "WEB",
+        dealTitlePrefix: "Заявка на презентацию",
+        assignedById: 1
+      };
+
+      async function callBitrix(method, payload) {
+        payload = payload || {};
+        const url = BITRIX_CONFIG.webhookUrl + "/" + method + ".json";
+        try {
+          const response = await fetch(url, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload)
+          });
+          if (!response.ok) throw new Error("HTTP Error: " + response.status);
+          const data = await response.json();
+          if (data.error) throw new Error("Bitrix API Error: " + (data.error_description || data.error));
+          return data.result;
+        } catch (error) {
+          console.error("Request failed:", error);
+          throw error;
+        }
+      }
+
+      async function findContactId(user) {
+        if (user.phone) {
+          const result = await callBitrix("crm.contact.list", {
+            filter: { PHONE: user.phone },
+            select: ["ID"],
+            order: { ID: "DESC" }
+          });
+          if (result && result.length > 0) return parseInt(result[0].ID, 10);
+        }
+        if (user.email) {
+          const result = await callBitrix("crm.contact.list", {
+            filter: { EMAIL: user.email },
+            select: ["ID"],
+            order: { ID: "DESC" }
+          });
+          if (result && result.length > 0) return parseInt(result[0].ID, 10);
+        }
+        return null;
+      }
+
+      async function createContact(user) {
+        const fields = {
+          NAME: user.name,
+          LAST_NAME: user.surname || "",
+          SOURCE_ID: BITRIX_CONFIG.sourceId,
+          COMMENTS: "Заявка с лендинга pto-app.ru\nГород: " + (user.city || "Не указан")
+        };
+        if (user.phone) fields.PHONE = [{ VALUE: user.phone, VALUE_TYPE: "WORK" }];
+        if (user.email) fields.EMAIL = [{ VALUE: user.email, VALUE_TYPE: "WORK" }];
+
+        const result = await callBitrix("crm.contact.add", { fields });
+        return parseInt(result, 10);
+      }
+
+      async function createDeal(user, contactId) {
+        const titleParts = [BITRIX_CONFIG.dealTitlePrefix, (user.surname || "") + " " + user.name, user.phone]
+          .filter(Boolean)
+          .join(" — ");
+
+        const fields = {
+          TITLE: titleParts,
+          CATEGORY_ID: BITRIX_CONFIG.dealCategoryId,
+          STAGE_ID: BITRIX_CONFIG.dealStageId,
+          CONTACT_IDS: [contactId],
+          ASSIGNED_BY_ID: BITRIX_CONFIG.assignedById,
+          SOURCE_ID: BITRIX_CONFIG.sourceId,
+          SOURCE_DESCRIPTION: "Лендинг pto-app.ru",
+          COMMENTS:
+            "Создано автоматически при отправке формы на сайте.\nГород: " + (user.city || "Не указан")
+        };
+
+        const result = await callBitrix("crm.deal.add", { fields });
+        return parseInt(result, 10);
+      }
+
+      async function processPresentationRequest(user) {
+        try {
+          var contactId = await findContactId(user);
+          if (!contactId) {
+            contactId = await createContact(user);
+          }
+          var dealId = await createDeal(user, contactId);
+          return { contactId: contactId, dealId: dealId };
+        } catch (error) {
+          console.error("Ошибка интеграции:", error.message);
+          throw error;
+        }
+      }
+
+      document.querySelectorAll('form[aria-labelledby^="presentation-form-title"]').forEach(function (form) {
+        form.addEventListener("submit", async function (e) {
+          e.preventDefault();
+          var btn = form.querySelector('button[type="submit"]');
+          var originalText = btn ? btn.innerText : "";
+
+          var consentCheckbox = form.querySelector('input[name="consent"]');
+          if (consentCheckbox && !consentCheckbox.checked) {
+            alert("Пожалуйста, подтвердите согласие на обработку персональных данных.");
+            return;
+          }
+
+          if (btn) {
+            btn.disabled = true;
+            btn.innerText = "Отправка...";
+          }
+
+          var formData = new FormData(form);
+          var nameRaw = formData.get("name") || "";
+          var phone = formData.get("phone");
+          var email = (formData.get("email") || "").trim();
+          var city = (formData.get("city") || "").trim();
+
+          var nameParts = nameRaw.trim().split(/\s+/);
+          var name = nameParts[0] || "Не указано";
+          var surname = nameParts.slice(1).join(" ") || "";
+
+          var userData = { name: name, surname: surname, phone: phone, email: email, city: city };
+
+          try {
+            await processPresentationRequest(userData);
+
+            var popupOverlay = document.getElementById("presentation-popup");
+            if (popupOverlay) {
+              popupOverlay.style.opacity = "0";
+              popupOverlay.style.visibility = "hidden";
+              popupOverlay.classList.remove("show");
+              setTimeout(function () {
+                popupOverlay.style.display = "none";
+              }, 300);
+            }
+
+            form.reset();
+
+            var successModal = document.getElementById("success-modal");
+            if (successModal) {
+              successModal.style.display = "flex";
+              setTimeout(function () {
+                successModal.style.opacity = "1";
+                successModal.style.visibility = "visible";
+                successModal.classList.add("show");
+              }, 10);
+            }
+          } catch (error) {
+            console.error(error);
+            alert("Произошла ошибка при отправке заявки. Пожалуйста, попробуйте позже.");
+          } finally {
+            if (btn) {
+              btn.disabled = false;
+              btn.innerText = originalText;
+            }
+          }
+        });
+      });
+
+      var presentationPopupOverlay = document.getElementById("presentation-popup");
+      function openPresentationPopup() {
+        if (!presentationPopupOverlay) return;
+        presentationPopupOverlay.style.display = "flex";
+        setTimeout(function () {
+          presentationPopupOverlay.style.opacity = "1";
+          presentationPopupOverlay.style.visibility = "visible";
+          presentationPopupOverlay.classList.add("show");
+        }, 10);
+      }
+
+      function closePresentationPopup() {
+        if (!presentationPopupOverlay) return;
+        presentationPopupOverlay.style.opacity = "0";
+        presentationPopupOverlay.style.visibility = "hidden";
+        presentationPopupOverlay.classList.remove("show");
+        setTimeout(function () {
+          presentationPopupOverlay.style.display = "none";
+        }, 300);
+      }
+
+      if (presentationPopupOverlay) {
+        var closeBtn = presentationPopupOverlay.querySelector(".presentation-popup-close");
+        if (closeBtn) closeBtn.addEventListener("click", closePresentationPopup);
+        presentationPopupOverlay.addEventListener("click", function (e) {
+          if (e.target === presentationPopupOverlay) closePresentationPopup();
+        });
+      }
+
+      var successModalEl = document.getElementById("success-modal");
+      if (successModalEl) {
+        function closeSuccessModal() {
+          successModalEl.style.opacity = "0";
+          successModalEl.style.visibility = "hidden";
+          successModalEl.classList.remove("show");
+          setTimeout(function () {
+            successModalEl.style.display = "none";
+          }, 300);
+        }
+
+        var closeSuccessBtn = successModalEl.querySelector(".success-modal-close");
+        if (closeSuccessBtn) closeSuccessBtn.addEventListener("click", closeSuccessModal);
+        successModalEl.addEventListener("click", function (e) {
+          if (e.target === successModalEl) closeSuccessModal();
+        });
+      }
+
+      if (panel) {
+        panel.addEventListener("click", function (e) {
+          var cta = e.target.closest(".foot__cta");
+          if (!cta) return;
+          e.preventDefault();
+          openPresentationPopup();
+        });
+      }
+
+      function setAccent() {
+        document.documentElement.style.setProperty("--current-accent", BRAND_ACCENT);
+      }
+
+      function render(id) {
+        const data = CONTENT[id];
+        if (!data) return "";
+
+        const summaryText = (data.summary || data.lede || "").trim();
+        const summaryHtml = summaryText ? `<p class="feature__summary">${escapeHtml(summaryText)}</p>` : "";
+        const imageSrc = (data.image || "").trim();
+        const mediaHtml = imageSrc
+          ? `<img
+                class="feature__img"
+                src="${escapeHtml(imageSrc)}"
+                alt="${escapeHtml(data.imageAlt || data.title)}"
+                loading="lazy"
+                decoding="async"
+                width="1337"
+                height="614"
+              />`
+          : "";
+
+        const featureHtml = summaryHtml || mediaHtml ? `<div class="feature"><div class="feature__text">${summaryHtml}</div>${mediaHtml}</div>` : "";
+        const bullets = Array.isArray(data.bullets) ? data.bullets.slice(0, 3) : [];
+        const listHtml =
+          bullets.length > 0
+            ? `<div class="detail-bullets-wrap"><p class="section-label section-label--center">Ключевые возможности</p><ul class="bullets">${bullets
+                .map((b) => `<li>${escapeHtml(b)}</li>`)
+                .join("")}</ul></div>`
+            : "";
+
+        return `
+          <div class="detail-stack">
+          <h2 class="panel-title" id="detail-panel-heading">${escapeHtml(data.title)}</h2>
+          ${featureHtml}
+          ${listHtml}
+          </div>
+          <div class="foot">
+            <div class="foot__lead-row">
+              <span class="foot__lead">Оставьте заявку и мы проведем онлайн-презентацию персонально</span>
+            </div>
+            <button type="button" class="foot__cta">Заказать онлайн презентацию</button>
+          </div>
+        `;
+      }
+
+      function escapeHtml(s) {
+        const d = document.createElement("div");
+        d.textContent = s;
+        return d.innerHTML;
+      }
+
+      function scrollNavToButton(btn) {
+        if (!btn) return;
+        if (window.matchMedia("(min-width: 841px)").matches) return;
+        try {
+          var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+          btn.scrollIntoView({
+            inline: "center",
+            block: "nearest",
+            behavior: reduced ? "instant" : "smooth"
+          });
+        } catch (err) {
+          try {
+            btn.scrollIntoView(true);
+          } catch (ignore) {}
+        }
+      }
+
+      function navIsHorizontalStrip() {
+        return window.matchMedia("(max-width: 840px)").matches;
+      }
+
+      function setActive(id) {
+        buttons.forEach((btn) => {
+          const is = btn.getAttribute("data-id") === id;
+          btn.classList.toggle("is-active", is);
+          if (is) btn.setAttribute("aria-current", "true");
+          else btn.removeAttribute("aria-current");
+        });
+      }
+
+      function syncTabIndex(activeIdx) {
+        buttons.forEach((btn, i) => {
+          btn.tabIndex = i === activeIdx ? 0 : -1;
+        });
+      }
+
+      function activateByIndex(idx) {
+        if (idx < 0 || idx >= buttons.length) return;
+        const btn = buttons[idx];
+        const id = btn.getAttribute("data-id");
+        syncTabIndex(idx);
+        if (btn.classList.contains("is-active")) return;
+        setActive(id);
+        scrollNavToButton(btn);
+        show(id);
+      }
+
+      function show(id) {
+        panel.setAttribute("aria-busy", "true");
+        setAccent();
+        panel.classList.add("is-switching");
+        window.setTimeout(() => {
+          panel.innerHTML = render(id);
+          panel.classList.remove("is-switching");
+          panel.setAttribute("aria-busy", "false");
+        }, switchDelay);
+      }
+
+      if (navTree) {
+        navTree.addEventListener("keydown", function (e) {
+          var idx = buttons.indexOf(document.activeElement);
+          if (idx === -1) return;
+          var next = idx;
+          var horizStrip = navIsHorizontalStrip();
+          switch (e.key) {
+            case "ArrowDown":
+              e.preventDefault();
+              next = Math.min(idx + 1, buttons.length - 1);
+              break;
+            case "ArrowUp":
+              e.preventDefault();
+              next = Math.max(idx - 1, 0);
+              break;
+            case "ArrowRight":
+              if (!horizStrip) return;
+              e.preventDefault();
+              next = Math.min(idx + 1, buttons.length - 1);
+              break;
+            case "ArrowLeft":
+              if (!horizStrip) return;
+              e.preventDefault();
+              next = Math.max(idx - 1, 0);
+              break;
+            case "Home":
+              e.preventDefault();
+              next = 0;
+              break;
+            case "End":
+              e.preventDefault();
+              next = buttons.length - 1;
+              break;
+            default:
+              return;
+          }
+          if (next !== idx) {
+            activateByIndex(next);
+            buttons[next].focus();
+          }
+        });
+      }
+
+      buttons.forEach((btn, idx) => {
+        btn.addEventListener("click", () => activateByIndex(idx));
+      });
+
+      document.querySelector(".skip-link")?.addEventListener("click", () => {
+        window.requestAnimationFrame(() => panel.focus());
+      });
+
+      var mqNavHoriz = window.matchMedia("(max-width: 840px)");
+      function syncNavAriaOrientation() {
+        if (!navTree) return;
+        if (mqNavHoriz.matches) navTree.setAttribute("aria-orientation", "horizontal");
+        else navTree.removeAttribute("aria-orientation");
+      }
+      syncNavAriaOrientation();
+      if (typeof mqNavHoriz.addEventListener === "function") {
+        mqNavHoriz.addEventListener("change", syncNavAriaOrientation);
+      } else if (typeof mqNavHoriz.addListener === "function") {
+        mqNavHoriz.addListener(syncNavAriaOrientation);
+      }
+
+      /** Горизонтальный свайп по полоске модулей (touch): явный скролл + блок вертикали страницы при горизонтальном замысле. */
+      (function initNavStripTouchScroll() {
+        if (!navScrollStrip || navScrollStrip.dataset.touchNavScroll === "1") return;
+        navScrollStrip.dataset.touchNavScroll = "1";
+
+        var mqStrip = window.matchMedia("(max-width: 840px)");
+        var start = null;
+        var scrollOrigin = 0;
+        var horizontalLock = false;
+        var hadHorizontalDrag = false;
+        var suppressClick = false;
+
+        function stripActive() {
+          return mqStrip.matches;
+        }
+
+        function resetGesture() {
+          start = null;
+          horizontalLock = false;
+          hadHorizontalDrag = false;
+        }
+
+        navScrollStrip.addEventListener(
+          "touchstart",
+          function (e) {
+            if (!stripActive() || !e.touches.length) return;
+            hadHorizontalDrag = false;
+            start = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+            scrollOrigin = navScrollStrip.scrollLeft;
+            horizontalLock = false;
+          },
+          { passive: true }
+        );
+
+        navScrollStrip.addEventListener(
+          "touchmove",
+          function (e) {
+            if (!stripActive() || !start || !e.touches.length) return;
+            var cx = e.touches[0].clientX;
+            var cy = e.touches[0].clientY;
+            var dx = cx - start.x;
+            var dy = cy - start.y;
+
+            if (!horizontalLock) {
+              if (Math.abs(dx) < 12 && Math.abs(dy) < 12) return;
+              if (Math.abs(dy) >= Math.abs(dx)) {
+                resetGesture();
+                return;
+              }
+              horizontalLock = true;
+              hadHorizontalDrag = true;
+            }
+
+            navScrollStrip.scrollLeft = scrollOrigin - dx;
+            e.preventDefault();
+          },
+          { passive: false }
+        );
+
+        function endTouchStrip() {
+          if (stripActive() && hadHorizontalDrag) suppressClick = true;
+          resetGesture();
+        }
+
+        navScrollStrip.addEventListener("touchend", endTouchStrip, { passive: true });
+        navScrollStrip.addEventListener("touchcancel", endTouchStrip, { passive: true });
+        navScrollStrip.addEventListener(
+          "click",
+          function (e) {
+            if (!suppressClick) return;
+            suppressClick = false;
+            e.preventDefault();
+            e.stopPropagation();
+          },
+          true
+        );
+        if (typeof mqStrip.addEventListener === "function") {
+          mqStrip.addEventListener("change", resetGesture);
+        } else if (typeof mqStrip.addListener === "function") {
+          mqStrip.addListener(resetGesture);
+        }
+      })();
+
+      setAccent();
+      syncTabIndex(0);
+      panel.innerHTML = render("root");
+      scrollNavToButton(buttons[0]);
+    })();
+  </script>
+</body>
+</html>

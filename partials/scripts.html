@@ -1,0 +1,330 @@
+﻿
+
+
+
+<script type="text/javascript" src="https://isipto.ru/jquery.min.js"></script>
+
+<script type="bogus" class="js-whatsapp-message-container">Ответьте на мои вопросы. Обращение номер: {roistat_visit}</script> 
+  <script src="/assets/components/minifyx/cache/scripts_6a58c300e2.min.js"></script>
+<div>
+
+  <script>
+    $(document).on('af_complete', function(event, response) {
+      var fields = {
+        fio: "ваше имя",
+        phone: "ваш телефон",
+        email: "ваш email",
+      };
+      if (response.success) {
+        var goal = response.form[0].getElementsByClassName('goalMetrika')[0].value;
+        $.fancybox.close();
+        var url = "https://isipto.ru/spasibo";
+        $(location).attr('href', url);
+        // yaglaaction('zayavka');
+        fbq('track', 'Lead');
+        // yaCounter48630242.reachGoal(goal);
+        gtag('event', goal, {
+          'event_category': 'category'
+        });
+      } else {
+        for (var prop in response.data) {
+          AjaxForm.Message.error("Заполните поле '" + fields[prop] + "'");
+        }
+      }
+      response.message = '';
+    });
+  </script>
+
+
+<!-- Roistat Counter Start -->
+<script>
+(function(w, d, s, h, id) {
+    w.roistatProjectId = id; w.roistatHost = h;
+    var p = d.location.protocol == "https:" ? "https://" : "http://";
+    var u = /^.*roistat_visit=[^;]+(.*)?$/.test(d.cookie) ? "/dist/module.js" : "/api/site/1.0/"+id+"/init?referrer="+encodeURIComponent(d.location.href);
+    var js = d.createElement(s); js.charset="UTF-8"; js.async = 1; js.src = p+h+u; var js2 = d.getElementsByTagName(s)[0]; js2.parentNode.insertBefore(js, js2);
+})(window, document, 'script', 'cloud.roistat.com', '9eeaab6aa1565e2aebc52d9060fef0f8');
+</script>
+
+<!-- BEGIN WHATSAPP INTEGRATION WITH ROISTAT -->
+<div class="js-whatsapp-message-container" style="display:none;">Здравствуйте. Проконсультируйте меня.</div>
+<script>
+    (function() {
+        if (window.roistat !== undefined) {
+            handler();
+        } else {
+            var pastCallback = typeof window.onRoistatAllModulesLoaded === "function" ? window.onRoistatAllModulesLoaded : null;
+            window.onRoistatAllModulesLoaded = function () {
+                if (pastCallback !== null) {
+                    pastCallback();
+                }
+                handler();
+            };
+        }
+
+        function handler() {
+            function init() {
+                appendMessageToLinks();
+
+                var delays = [1000, 5000, 15000];
+                setTimeout(function func(i) {
+                    if (i === undefined) {
+                        i = 0;
+                    }
+                    appendMessageToLinks();
+                    i++;
+                    if (typeof delays[i] !== 'undefined') {
+                        setTimeout(func, delays[i], i);
+                    }
+                }, delays[0]);
+            }
+
+            function replaceQueryParam(url, param, value) {
+                var explodedUrl = url.split('?');
+                var baseUrl = explodedUrl[0] || '';
+                var query = '?' + (explodedUrl[1] || '');
+                var regex = new RegExp("([?;&])" + param + "[^&;]*[;&]?");
+                var queryWithoutParameter = query.replace(regex, "$1").replace(/&$/, '');
+                return baseUrl + (queryWithoutParameter.length > 2 ? queryWithoutParameter  + '&' : '?') + (value ? param + "=" + value : '');
+            }
+
+            function appendMessageToLinks() {
+                var message = document.querySelector('.js-whatsapp-message-container').textContent;
+                var text = message.replace(/{roistat_visit}/g, window.roistatGetCookie('roistat_visit'));
+                text = encodeURI(text);
+                var linkElements = document.querySelectorAll('[href*="//wa.me"], [href*="//api.whatsapp.com/send"], [href*="//web.whatsapp.com/send"], [href^="whatsapp://send"]');
+                for (var elementKey in linkElements) {
+                    if (linkElements.hasOwnProperty(elementKey)) {
+                        var element = linkElements[elementKey];
+                        element.href = replaceQueryParam(element.href, 'text', text);
+                    }
+                }
+            }
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', init);
+            } else {
+                init();
+            }
+        };
+    })();
+</script>
+<!-- END WHATSAPP INTEGRATION WITH ROISTAT -->    
+
+  <!-- Rating@Mail.ru counter -->
+  <noscript>
+    <div>
+      <img src="https://top-fwz1.mail.ru/counter?id=3087260;js=na" style="border:0;position:absolute;left:-9999px;" alt="Top.Mail.Ru" />
+    </div>
+  </noscript>
+  <!-- //Rating@Mail.ru counter -->
+
+  <noscript><img src="https://vk.com/rtrg?p=VK-RTRG-437462-dGegZ" style="position:fixed; left:-999px;" alt="VK" /></noscript>
+
+    
+
+  
+</div>
+<div id="monitorSpeed" style="display:none;">0.0084 s;27;0.0677 s;0.0761 s;cache</div>
+
+<script async src="https://isipto.ru/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+	var get_gets = window.location.search;
+	var links_get = document.getElementsByTagName("a");
+	for (var i = 0; i < links_get.length; i++)
+		{
+			if (links_get[i].href.indexOf("#")==-1) { links_get[i].href = links_get[i] + get_gets; }
+		}
+</script>
+
+<style>
+    .zoom {
+        transition: transform .5s;
+    }
+    .zoom:hover {
+        transform: scale(1.02);
+        cursor: pointer;
+    }
+    .overflow {
+    overflow: hidden;
+    }
+    
+@media (max-width:768px) {
+	.container {    
+    overflow: hidden;
+    }
+}
+</style>
+
+<style>
+    .krasnya_knopka { background: #E03B32; color: #FFFFFF; }
+    .krasnya_knopka:hover { background: #3D4A61; color: #FFFFFF; }
+
+    .krasnaya_knopka { background: #E03B32; color: #FFFFFF; }
+    .krasnaya_knopka:hover { background: #3D4A61; color: #FFFFFF; }
+
+    .seraya_knopka { background: #E5E5E5; color: #333333; }
+    .seraya_knopka:hover { background: #E03B32; color: #FFFFFF; }    
+    
+    .belaya_knopka { background: #FFFFFF; color: #333333; }
+    .belaya_knopka:hover { background: #E03B32; color: #FFFFFF; }   
+</style>
+
+
+<script>
+    // Установка антибот cookie
+    document.addEventListener("DOMContentLoaded", function() {
+        document.cookie = "anti_bot_cookie=1; path=/";
+    });
+</script>
+
+<style>
+.grecaptcha-badge { visibility: hidden; }
+    
+.cena_id {
+  right: 10px;
+  bottom: 20px;
+  position:fixed;
+  transition: transform .5s;
+  z-index: 999999;
+}
+.cena_id:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+header .menu_box .menu_box_item span {
+    font-weight: 500;
+    font-size: 16px;
+}
+.breadcrumbs {
+    padding: 15px 0 15px 0px;
+}
+
+.form-footer__checkbox input[type="checkbox"] {
+    margin-right: 8px;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    appearance: auto; /* Важно! Включаем стандартный вид */
+    accent-color: #d60000; /* Только для современных браузеров */
+    border: none;
+    background: none;
+}
+
+</style>
+
+
+<a class="cena_id zoom" onclick="ym(48630242,'reachGoal','/#cena_id');" href="/vedenie-id/ceny/">
+    <img src="/images/cena_id.png">
+</a>
+
+<style>
+  .cookie-popup {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 90%;
+    max-width: 300px;
+    padding: 15px 20px 20px;
+    background-color: rgba(246, 247, 248, 1);
+    color: rgba(51, 51, 51, 1);
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+    z-index: 1000;
+    box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.21);
+    border-radius: 12px;
+    opacity: 1;
+    transform: translateY(0);
+    animation: fadeInUp 0.3s ease-out;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .cookie-popup.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(20px);
+  }
+
+  .cookie-popup p {
+    margin: 0 0 15px;
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  .cookie-buttons {
+    display: flex;
+    justify-content: center;
+  }
+
+  .cookie-popup button {
+    padding: 6px 12px;
+    font-size: 13px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+
+  .cookie-popup .accept {
+    background-color: rgba(224, 59, 50, 1);
+    color: rgba(255, 255, 255, 1);
+  }
+
+  .cookie-popup .accept:hover {
+    background-color: rgba(200, 50, 45, 1);
+  }
+
+  .cookie-close {
+    position: absolute;
+    top: -3px;
+    right: -3px;
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #999;
+    cursor: pointer;
+  }
+
+  .cookie-close:hover {
+    color: #666;
+  }
+</style>
+
+<div id="cookie-popup" class="cookie-popup hidden">
+  <button class="cookie-close" id="close-cookie-popup">&times;</button>
+  <p>Мы собираем файлы "cookie" для повышения удобства использования сайта. Продолжая находиться на сайте, вы соглашаетесь с условиями, указанными <a href="/politika-konfidenczialnosti/">по ссылке</a></p>
+  <div class="cookie-buttons">
+    <button id="accept-cookies" class="accept">Принять</button>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const popup = document.getElementById("cookie-popup");
+    const acceptBtn = document.getElementById("accept-cookies");
+    const closeBtn = document.getElementById("close-cookie-popup");
+
+    const cookieStatus = localStorage.getItem("cookieConsent");
+
+    if (!cookieStatus) {
+      popup.classList.remove("hidden");
+    }
+
+    acceptBtn.addEventListener("click", function () {
+      localStorage.setItem("cookieConsent", "accepted");
+      popup.classList.add("hidden");
+    });
+
+    closeBtn.addEventListener("click", function () {
+      popup.classList.add("hidden");
+    });
+  });
+</script>
+
+
+
+<script type="text/javascript" src="/assets/components/ajaxform/js/default.js"></script>
+<script type="text/javascript">AjaxForm.initialize({"assetsUrl":"\/assets\/components\/ajaxform\/","actionUrl":"\/assets\/components\/ajaxform\/action.php","closeMessage":"\u0437\u0430\u043a\u0440\u044b\u0442\u044c \u0432\u0441\u0435","formSelector":"form.ajax_form","pageId":5237});</script>
+</body>
+</html>
