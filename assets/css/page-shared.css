@@ -72,11 +72,65 @@
 }
 
 .pto-tariff-card__price {
-  font-size: 22px;
+  font-size: 26px;
   font-weight: 700;
   line-height: 1.2;
   margin-top: auto;
   padding-top: 32px;
+}
+
+.tariff-card__tagline {
+  margin: 0 0 16px;
+  font-size: 16px;
+  line-height: 24px;
+  color: rgba(13, 27, 42, 0.66);
+}
+
+.pto-tariff-card__price-main {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: baseline;
+  gap: 8px;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.pto-tariff-card__price-value,
+.pto-tariff-card__price-period {
+  flex: 0 0 auto;
+}
+
+.pto-tariff-card__price-period {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  color: #777777;
+  text-transform: lowercase;
+}
+
+.pto-tariff-card__price-note {
+  min-height: 0;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 400;
+  color: #777777;
+  margin-left: auto;
+  display: inline-flex;
+  align-items: baseline;
+  justify-content: flex-end;
+  white-space: nowrap;
+}
+
+.pto-tariff-card__price-note-value {
+  color: #000000;
+  font-weight: 400;
+}
+
+.pto-tariff-card__price-note-period {
+  color: #777777;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
 }
 
 .pto-tariff-card h3 {
@@ -87,6 +141,10 @@
 .pto-tariff-card {
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
+  border: 2px solid transparent;
+  position: relative;
+  padding-top: 48px !important;
 }
 
 .pto-tariff-card ul {
@@ -121,13 +179,33 @@
 
 .pto-tariff-card .btn {
   margin-top: 16px !important;
+  align-self: flex-start;
+  display: inline-flex !important;
+  width: auto !important;
+  max-width: 100%;
 }
 
 .pto-tariff-card__badge {
   font-size: 12px;
   font-weight: 600;
-  color: #e03b32;
-  margin: 0 0 8px;
+  color: #b7312a;
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  min-height: 28px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: #fde8e6;
+  line-height: 1;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 1;
+}
+
+.pto-tariff-card__badge--placeholder {
+  display: none;
 }
 
 /* You-get section (layout: upravlenie-stroitelstvom services stack) */
@@ -831,6 +909,21 @@
   max-width: 253px;
 }
 
+.pto-program-page .pto-program-hero__media {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.pto-program-page .pto-program-hero__art {
+  width: 118%;
+  max-width: 780px;
+  margin: -12px -52px 0 0;
+  display: block;
+  background: transparent;
+  filter: drop-shadow(0 22px 40px rgba(61, 74, 97, 0.12));
+}
+
 .pto-program-page #about-program .pto-trigger-text {
   max-width: 195px;
 }
@@ -849,6 +942,13 @@
 
 /* PTO program: responsive (page-wide) */
 @media (max-width: 991px) {
+  .pto-program-page .pto-program-hero__art {
+    width: 100%;
+    max-width: 100%;
+    margin-right: 0;
+    filter: none;
+  }
+
   .pto-program-page .pto-id-flow-summary {
     white-space: normal;
   }

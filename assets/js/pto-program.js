@@ -10,7 +10,64 @@
   var toggle = document.querySelector(".pto-tariffs__toggle");
   if (toggle) {
     var tButtons = toggle.querySelectorAll("button[data-billing]");
-    var cards = document.querySelectorAll("[data-price-month][data-price-year]");
+    var cards = document.querySelectorAll("[data-price-base]");
+    var formatter = new Intl.NumberFormat("ru-RU");
+
+    function formatMoney(value) {
+      return formatter.format(Math.round(value)) + " ₽";
+    }
+
+    function formatMonthlyNote(value) {
+      return (
+        '<span class="pto-tariff-card__price-note-value">' +
+        formatMoney(value) +
+        '</span><span class="pto-tariff-card__price-note-period">/ мес</span>'
+      );
+    }
+
+    function getPriceState(card, mode) {
+      var base = Number(card.getAttribute("data-price-base")) || 0;
+      if (!base) {
+        return {
+          value: card.getAttribute("data-price-label") || "",
+          period: "",
+          note: "",
+        };
+      }
+
+      if (mode === "quarter") {
+        var quarterTotal = Math.round(base * 3 * 0.95);
+        return {
+          value: formatMoney(quarterTotal),
+          period: "/ 3 мес",
+          note: formatMonthlyNote(quarterTotal / 3),
+        };
+      }
+
+      if (mode === "halfyear") {
+        var halfYearTotal = Math.round(base * 6 * 0.93);
+        return {
+          value: formatMoney(halfYearTotal),
+          period: "/ 6 мес",
+          note: formatMonthlyNote(halfYearTotal / 6),
+        };
+      }
+
+      if (mode === "year") {
+        var yearTotal = Math.round(base * 12 * 0.9);
+        return {
+          value: formatMoney(yearTotal),
+          period: "/ год",
+          note: formatMonthlyNote(yearTotal / 12),
+        };
+      }
+
+      return {
+        value: formatMoney(base),
+        period: "/ мес",
+        note: "",
+      };
+    }
 
     tButtons.forEach(function (btn) {
       btn.addEventListener("click", function () {
@@ -20,11 +77,13 @@
         });
         cards.forEach(function (card) {
           var priceEl = card.querySelector(".pto-tariff-card__price-value");
-          if (!priceEl) return;
-          priceEl.textContent =
-            mode === "year"
-              ? card.getAttribute("data-price-year")
-              : card.getAttribute("data-price-month");
+          var periodEl = card.querySelector(".pto-tariff-card__price-period");
+          var noteEl = card.querySelector(".pto-tariff-card__price-note");
+          if (!priceEl || !periodEl || !noteEl) return;
+          var state = getPriceState(card, mode);
+          priceEl.textContent = state.value;
+          periodEl.textContent = state.period;
+          noteEl.innerHTML = state.note;
         });
       });
     });

@@ -543,8 +543,8 @@ padding:36px 0px 36px 0px;border-radius:16px;background-color:rgba(255, 255, 255
           </div>
           <div class="r50"></div>
         </div>
-        <div class="col-md-5 none-mobile">
-          <img src="https://isipto.ru/images/avtomatizatsiya-pto-na-stroitelstvo-sm.png" class="img-fluid" alt="Программа ПТО Онлайн">
+        <div class="col-md-5 none-mobile pto-program-hero__media">
+          <img src="../../assets/images/pto-program/hero-monitor-illustration-v1.png" class="img-fluid pto-program-hero__art" alt="Программа ПТО Онлайн">
         </div>
       </div>
     </div>
@@ -955,72 +955,68 @@ padding:36px 0px 36px 0px;border-radius:16px;background-color:rgba(255, 255, 255
 <!-- section: tariffs -->
 <div class="container" id="tariffs">
   <h2 class="title">Тарифы</h2>
-  <p class="text-center" style="font-size:16px;color:#666;">Стоимость указана за компанию. При оплате за год — скидка 20%.</p>
+  <p class="text-center" style="font-size:16px;color:#666;max-width:760px;margin:12px auto 0;">Подберите тариф под размер вашей команды и уровень цифровизации</p>
   <div class="r30"></div>
   <div class="text-center">
-    <div class="pto-tariffs__toggle" role="group" aria-label="Период оплаты">
-      <button type="button" class="is-active" data-billing="month">Помесячно</button>
-      <button type="button" data-billing="year">За год (−20%)</button>
+    <div class="pto-tariffs__toggle" role="group" aria-label="Переключатель периодов оплаты">
+      <button type="button" class="is-active" data-billing="month">Оплата помесячно</button>
+      <button type="button" data-billing="quarter">За 3 месяца (-5%)</button>
+      <button type="button" data-billing="halfyear">За 6 месяцев (-7%)</button>
+      <button type="button" data-billing="year">Оплата за год (-10%)</button>
     </div>
   </div>
   <div style="height:16px;"></div>
   <div class="row margin-left-30 margin-right-30 g-4">
-    <div class="col-12 col-md-6 col-xl-3">
-      <div class="pto-tariff-card pto-tariff-card--constructor h-100" style="background:rgba(255,255,255,1);border-radius:10px;padding:24px;box-shadow:0 2px 6px rgba(0,0,0,0.08);" data-price-month="по запросу" data-price-year="по запросу">
-        <div class="pto-tariff-card__badge">Гибкий</div>
-        <h3 class="h5 fw-bold">Конструктор</h3>
+    <div class="col-12 col-md-6 col-xl-4">
+      <div class="pto-tariff-card h-100" style="background:rgba(255,255,255,1);border-radius:10px;padding:24px;box-shadow:0 2px 6px rgba(0,0,0,0.08);" data-price-base="3900">
+        <div class="pto-tariff-card__badge pto-tariff-card__badge--placeholder">&nbsp;</div>
+        <h3 class="h5 fw-bold">Фрилансер</h3>
+        <p class="tariff-card__tagline">Для индивидуальной работы</p>
         <ul>
-          <li>∞ объектов и пользователей</li>
-          <li>1 пользователь и объект</li>
-          <li>от 10 000 ₽/мес за пользователя</li>
-          <li>от 30 000 ₽/мес за объект</li>
-          <li>25 ГБ на объект, 7 ₽/ГБ сверх лимита</li>
-          <li>Владелец и проверяющий — бесплатно</li>
+          <li>Только 1 пользователь</li>
+          <li>25 ГБ дискового пространства</li>
+          <li>Без ограничений по объектам</li>
         </ul>
-        <div class="pto-tariff-card__price"><span class="pto-tariff-card__price-value">по запросу</span></div>
-        <a class="btn btn-modal krasnya_knopka w-100" href="#form_up">Обсудить тариф</a>
+        <div class="pto-tariff-card__price">
+          <div class="pto-tariff-card__price-main"><span class="pto-tariff-card__price-value">3 900 ₽</span><span class="pto-tariff-card__price-period">/ мес</span><span class="pto-tariff-card__price-note"></span></div>
+        </div>
+        <a class="btn btn_first-screen d-flex align-items-center justify-content-center btn-modal krasnya_knopka" href="#form_up">Выбрать</a>
       </div>
     </div>
-    <div class="col-12 col-md-6 col-xl-3">
-      <div class="pto-tariff-card h-100" style="background:rgba(255,255,255,1);border-radius:10px;padding:24px;box-shadow:0 2px 6px rgba(0,0,0,0.08);" data-price-month="139 200 ₽/мес" data-price-year="111 360 ₽/мес">
-        <div style="font-size:12px;font-weight:600;color:transparent;margin-bottom:8px;">&nbsp;</div>
-        <h3 class="h5 fw-bold">Базовый</h3>
+    <div class="col-12 col-md-6 col-xl-4">
+      <div class="pto-tariff-card h-100" style="background:rgba(255,255,255,1);border-radius:10px;padding:24px;box-shadow:0 2px 6px rgba(0,0,0,0.08);border:2px solid #E03B32;" data-price-base="4800">
+        <div class="pto-tariff-card__badge">Оптимальный</div>
+        <h3 class="h5 fw-bold">Команда</h3>
+        <p class="tariff-card__tagline">Для совместной работы</p>
         <ul>
-          <li>5 объектов, 25 ГБ</li>
-          <li>до 15 пользователей</li>
-          <li>Онбординг и обучение</li>
-          <li>Для небольших компаний и ИП</li>
+          <li>Стоимость за 1 пользователя</li>
+          <li>250 ГБ дискового пространства</li>
+          <li>Без ограничений по объектам</li>
         </ul>
-        <div class="pto-tariff-card__price"><span class="pto-tariff-card__price-value">139 200 ₽/мес</span></div>
-        <a class="btn btn-modal krasnya_knopka w-100" href="#form_up">Выбрать</a>
+        <div class="pto-tariff-card__price">
+          <div class="pto-tariff-card__price-main"><span class="pto-tariff-card__price-value">4 800 ₽</span><span class="pto-tariff-card__price-period">/ мес за пользователя</span><span class="pto-tariff-card__price-note"></span></div>
+        </div>
+        <a class="btn btn_first-screen d-flex align-items-center justify-content-center btn-modal krasnya_knopka" href="#form_up">Выбрать</a>
       </div>
     </div>
-    <div class="col-12 col-md-6 col-xl-3">
-      <div class="pto-tariff-card h-100" style="background:rgba(255,255,255,1);border-radius:10px;padding:24px;box-shadow:0 2px 6px rgba(0,0,0,0.08);border:2px solid #E03B32;" data-price-month="232 000 ₽/мес" data-price-year="185 600 ₽/мес">
-        <div style="font-size:12px;font-weight:600;color:#E03B32;margin-bottom:8px;">Оптимальный</div>
-        <h3 class="h5 fw-bold">Профессиональный</h3>
-        <ul>
-          <li>∞ объектов, 1 ТБ</li>
-          <li>до 50 пользователей</li>
-          <li>Персональный менеджер, SLA 24/7</li>
-          <li>Индивидуальное обучение</li>
-        </ul>
-        <div class="pto-tariff-card__price"><span class="pto-tariff-card__price-value">232 000 ₽/мес</span></div>
-        <a class="btn btn-modal krasnya_knopka w-100" href="#form_up">Выбрать</a>
-      </div>
-    </div>
-    <div class="col-12 col-md-6 col-xl-3">
-      <div class="pto-tariff-card h-100" style="background:rgba(255,255,255,1);border-radius:10px;padding:24px;box-shadow:0 2px 6px rgba(0,0,0,0.08);" data-price-month="индивидуально" data-price-year="индивидуально">
-        <div style="font-size:12px;font-weight:600;color:transparent;margin-bottom:8px;">&nbsp;</div>
+    <div class="col-12 col-md-6 col-xl-4">
+      <div class="pto-tariff-card h-100" style="background:rgba(255,255,255,1);border-radius:10px;padding:24px;box-shadow:0 2px 6px rgba(0,0,0,0.08);" data-price-base="0" data-price-label="Индивидуально">
+        <div class="pto-tariff-card__badge pto-tariff-card__badge--placeholder">&nbsp;</div>
         <h3 class="h5 fw-bold">Энтерпрайз</h3>
+        <p class="tariff-card__tagline">Для крупных компаний и холдингов</p>
         <ul>
-          <li>∞ объектов, диск и пользователи</li>
           <li>Коробочная версия</li>
-          <li>Доработки под ваши процессы</li>
-          <li>Выделенная линия поддержки</li>
+          <li>Индивидуальные доработки</li>
+          <li>Обучение</li>
+          <li>Персональный менеджер</li>
+          <li>Выделенная линия ТП</li>
+          <li>Полный функционал без ограничений</li>
+          <li>Индивидуальные решения для крупных компаний</li>
         </ul>
-        <div class="pto-tariff-card__price"><span class="pto-tariff-card__price-value">индивидуально</span></div>
-        <a class="btn btn-modal krasnya_knopka w-100" href="#form_up">Запросить расчёт</a>
+        <div class="pto-tariff-card__price">
+          <div class="pto-tariff-card__price-main"><span class="pto-tariff-card__price-value">Индивидуально</span><span class="pto-tariff-card__price-period"></span><span class="pto-tariff-card__price-note"></span></div>
+        </div>
+        <a class="btn btn_first-screen d-flex align-items-center justify-content-center btn-modal krasnya_knopka" href="#form_up">Выбрать</a>
       </div>
     </div>
   </div>
