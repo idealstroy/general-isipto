@@ -1,0 +1,10 @@
+import fs from 'node:fs';import path from 'node:path';import {spawn} from 'node:child_process';
+const plan=JSON.parse(fs.readFileSync('_backups/active-roistat-retirement.json','utf8'));
+const manifest=JSON.parse(fs.readFileSync(plan.directory+'/manifest.json','utf8'));
+const pattern=/(?<![A-Za-z0-9_])roistat_hooks(?![A-Za-z0-9_])/g;
+// Validate and prepare the bulk mechanical file rewrite before updating MODX.
+const files=[];for(const m of manifest){if(!/modx-isipto[\\/]assets[\\/](templates|chunks)[\\/]/.test(m.file))continue;const original=fs.readFileSync(path.join(plan.directory,'files',m.file),'utf8');const current=fs.readFileSync(m.file,'utf8');if(current!==original)throw Error('File changed since backup: '+m.file);files.push({file:m.file,original,updated:original.replace(pattern,'bitrix24_hooks')});}
+const backup=fs.readFileSync(plan.directory+'/database-objects.json').toString('base64');const checkOnly=process.argv[2]==='--check';const code="<?php $checkOnly="+(checkOnly?'true':'false')+"; $backup=json_decode(base64_decode('"+backup+"'),true);\n"+fs.readFileSync('deployment/homepage/retire-common-roistat-local.php','utf8').replace(/^<\?php\s*/,'');
+const c=spawn('docker',['exec','--user','www-data','-i','modx-isipto-web-1','php'],{windowsHide:true});c.stdin.end(code);let out='';c.stdout.on('data',b=>out+=b);const errors=fs.createWriteStream(plan.directory+'/migration-errors.log');c.stderr.pipe(errors);const exit=await new Promise((r,j)=>{c.on('error',j);c.on('close',r)});if(exit){fs.writeFileSync(plan.directory+'/migration-stdout-private.log',out);throw Error('MODX migration failed; use the saved exact backup, do not rerun blindly');}
+const report=JSON.parse(out);if(checkOnly){console.log(JSON.stringify(report));process.exit(0);}for(const f of files){const actual=fs.readFileSync(f.file,'utf8');if(actual!==f.original&&actual!==f.updated)throw Error('Unexpected file change during MODX migration: '+f.file);fs.writeFileSync(f.file,f.updated);}
+report.filesUpdated=files.length;fs.writeFileSync(plan.directory+'/migration-result.json',JSON.stringify(report,null,2));console.log(JSON.stringify(report));

@@ -1,0 +1,50 @@
+Changelog for LastModified
+
+1.0.9-pl
+==============
+- Add contexts support
+- Some improvements
+
+1.0.8-pl
+==============
+- Add prevent on session variables names
+
+1.0.7-pl
+==============
+- Add prevent handling for authorized users
+- Some improvements
+
+1.0.6-pl
+==============
+- Add update start page
+- Some improvements
+
+1.0.5-pl
+==============
+- Add update nesting level
+
+1.0.4-pl
+==============
+- Parent 0 bugfix
+- Some improvements
+
+1.0.3-pl
+==============
+- Add update parent editedon functionality
+- Some phpdoc annotation update
+
+1.0.2-pl
+==============
+- Add response directive option
+- Update lexicon files and docs
+- Some improvements
+
+1.0.1-pl
+==============
+- Add maxage and expires options
+- Add HTTP protocol version
+- Update lexicon files and docs
+
+1.0.0-pl
+==============
+- Initial release

@@ -1,0 +1,33 @@
+<form class="recaptcha-form first-screen-form">
+    
+    <input type="hidden" name="recaptcha_token" class="recaptcha-token">
+
+<input type="hidden" name="csrf_token" value="[[+csrf_token]]">
+<input type="hidden" name="form_time" value="[[+form_time]]">
+    <input type="text" name="website" style="display:none">   
+    
+    <div class="first-screen-form__title">Закажите расчет стоимости</div>
+    <input class="callOrderReason" type="hidden" name="reason">
+    <input class="page" type="hidden" name="page" value="[[~[[*id]]? &scheme=`full`]]">
+    <input class="goalMetrika" type="hidden" name="goal" value="lead">
+    <input class="ref_info" name="ref_info" type="hidden" value="">
+
+    <input class="site-message" type="text" name="name" value="">
+    <input class="site-message" type="text" name="firstname" value="">
+    <input class="site-message" type="text" name="lastname" value="">
+    <div class="d-flex align-items-center flex-wrap flex-sm-nowrap">
+        <input class="first-screen-form__input" type="tel" name="phone" placeholder="+7 ( ">
+        
+                <div class="form-footer__checkbox" style="display: flex; align-items: center;gap:6px;line-height: 1.2;">
+            <input type="checkbox" name="agree" required> 
+            <label>
+            <span style="color: #777;font-size: 14px;">
+            Я даю согласие на <a href="/politika-konfidenczialnosti/" style="color:#777;font-weight:500;">обработку своих персональных данных</a>
+            </span></label>
+        </div>
+        
+        
+        
+        <input class="btn btn_margin-left krasnaya_knopka" type="submit" value="Заказать расчет">
+    </div>
+</form>

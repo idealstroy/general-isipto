@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'pdotools',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '9ec231fda3757a61e8c5b87373f18531',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => '0412e501d56dad56e54ed18b52dde114',
+  'native_key' => 'pdoTools.class',
+  'object' => '{"key":"pdoTools.class","value":"pdotools.pdotools","xtype":"textfield","namespace":"pdotools","area":"pdotools_main","editedon":null}',
+);

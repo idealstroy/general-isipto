@@ -1,0 +1,4 @@
+services:
+  web:
+    image: isipto-audit-php73:20261022
+    container_name: isipto-audit-php73-20261022

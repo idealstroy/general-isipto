@@ -1,0 +1,4 @@
+services:
+  web:
+    image: modx-isipto-web:latest
+    container_name: isipto-audit-php74-20261022

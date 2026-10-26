@@ -1,0 +1,168 @@
+@import 'nib'
+@import 'rupture'
+
+/*Зачарование пикселей в ремы*/
+rem() {
+  remified = ()
+  for arg in arguments {
+    push(remified, unit(arg/16, 'rem'))
+  }
+  return remified
+}
+
+/*Адаптив*/
+rupture.scale =       0    576px    767.98px    992px    1200px
+rupture.scale-names =  'xs'     'sm'     'md'     'lg'      'xl'
+
+.contacts-inner
+    margin-top 0
+  &__title
+    font-weight 700
+    font-size 1.5rem
+  #map
+    width 100%
+    height 400px
+
+.contacts-item-box
+  margin-bottom 30px
+  +below(sm)
+    margin-bottom 0
+
+.contacts-item
+  margin 30px 0
+  &:last-child
+    margin-bottom 0
+  &__title
+    color #000
+    font-weight 400
+    font-size rem(24px)
+    line-height rem(30px)
+    +below(md)
+      font-size rem(21px)
+      line-height rem(26px)
+  &__phone
+    font-weight 600
+    font-size rem(29px)!important
+    +below(md)
+      font-size 2.2rem
+  &__svg svg
+    size 25px
+    fill #c9253f
+    margin 7px 15px 0 0
+  &__signature
+    color #758b9e
+    font-size 1rem
+    font-weight 400
+
+.contacts-img
+  +below(sm)
+    height 200px
+
+.page-inner
+  &__button
+    color #000
+    padding 8px 20px
+    border-radius 30px
+    background transparent
+    border 1px solid #ed2c4a
+    &:hover
+      color #fff
+      background #ed2c4a
+
+.prepare__caption
+  color #333
+  font-weight 600
+  font-size 1.875rem
+  margin-bottom 55px
+
+.prepare__button
+  margin-right 25px
+  background #e53d47
+  &:hover
+    color #000
+    background transparent
+
+.prepare__consult
+  color #666
+  font-size 1rem
+  font-weight 400
+  line-height 1.375rem
+  border-bottom 1px dashed #666
+  &:hover
+    border-bottom 1px dashed transparent
+
+.contacts-vantages-inner
+  .contacts-vantages-item
+    &__title
+      color #000
+    svg
+      fill #ed2c4a
+
+.contacts-city
+  &__text
+    font-size rem(22px)
+    line-height rem(27px)
+  &__show
+    color #656565
+    margin-top 5px
+    font-size 13px
+    line-height 19px
+    span
+      transition .3s
+      cursor pointer
+      border-bottom 1px dashed #656565
+      &:hover
+        border-bottom 1px dashed transparent
+
+.team
+  .title_team
+    padding-top 2.9rem
+
+.works
+  .works-maps
+    margin 0 auto
+
+.contacts-item-container
+  +below(sm)
+    margin-bottom 40px
+
+.first_screen_inner
+  margin-top 110px
+  min-height 510px
+  +below(md)
+    margin-top 0
+
+.inner__title
+  margin: 0;
+  font-size: 1.875rem;
+  font-weight: 800;
+  margin-bottom rem(35px)
+  line-height: 1.875rem;
+
+.services_inner
+  background #f3f3f3
+  padding-bottom 40px
+
+.question
+  padding 1px 0 0
+  background-color #f3f3f3
+  .item_question
+    background-color #fff
+    .question_box
+      width 100%
+      padding 30px 25px 10px
+      border-top 1px solid #e5e5e5
+      +below(xs)
+        padding 20px 25px
+      .caption_question
+        width 90%
+        font-size 18px
+        font-weight 600
+        line-height 24px
+        +below(sm)
+          padding 0 20px
+    .text_question
+      font-size 15px
+      font-weight 400
+      line-height 22px
+      padding 0 25px 25px

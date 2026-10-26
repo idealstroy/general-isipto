@@ -1,0 +1,704 @@
+extends template
+block append var
+    -var techkarty_smety = true
+block content
+    .first-screen
+        .headline-box.d-flex.align-items-center.flex-wrap
+            .container
+                .row
+                    .headline-content.col-lg-8.col-12
+                        h1.headline-content__title [[*h1]]
+                        .headline-content__desc КС-2, КС-3, КС-6
+                        .d-flex.align-items-center.justify-content-between.flex-wrap.flex-md-nowrap
+                            <a class="headline-content__button btn-modal" rel="nofollow" href="#form_up" data-reason="Заказать, от 2500 рублей" data-header="Заказать, от 2500 рублей" data-subtitle=" ">Заказать, от 2500 рублей</a>
+                            a.headline-content__consult.btn-modal.d-flex.align-items-center(rel="nofollow" href="#form_up" data-reason="Бесплатная консультация специалиста" data-header="Бесплатная консультация" data-subtitle=" ")
+                                svg
+                                    use(xlink:href='/assets/css/img/techkarta/sprite.svg#phone2')
+                                span Бесплатная консультация специалиста
+                    .headline-geography.d-flex.align-items-end.flex-wrap.col-lg-4.col-12
+                        .headline-geography__img
+                        .headline-geography__text.d-flex.align-items-center
+                            svg
+                                use(xlink:href='/assets/css/img/techkarta/sprite.svg#location2')
+                            span Работаем по всей России без выходных
+        .container.vantages-container
+            .vantages-box
+                .row.
+                    <div class="row">
+                        <div class="col-xl-3 col-sm-6 col-12">
+                            <div class="vantages-item d-flex">
+                                <div class="vantages-item__img"><img class="image-load" data-src="/assets/css/img/techkarta/vantages/vantages1.svg" alt="Срок разработки от 1 дня" src="#"></div>
+                                <div class="vantages-item__content">
+                                    <div class="vantages-item__title">Срок разработки от 1 дня</div>
+                                    <div class="vantages-item__text">С выездами на строительную площадку по необходимости</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-sm-6 col-12">
+                            <div class="vantages-item d-flex">
+                                <div class="vantages-item__img"><img class="image-load" data-src="/assets/css/img/techkarta/vantages/vantages2.svg" alt="Аттестованные специалисты" src="#"></div>
+                                <div class="vantages-item__content">
+                                    <div class="vantages-item__title"> Аттестованные специалисты</div>
+                                    <div class="vantages-item__text">С опытом работы более 5 лет</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-sm-6 col-12">
+                            <div class="vantages-item d-flex">
+                                <div class="vantages-item__img"><img class="image-load" data-src="/assets/css/img/techkarta/vantages/vantages3.svg" alt="100% гарантия на все работы" src="#"></div>
+                                <div class="vantages-item__content">
+                                    <div class="vantages-item__title"> 100% гарантия на все работы</div>
+                                    <div class="vantages-item__text">Четко пропишем в договоре и предоставим надежную гарантию до ввода объекта в эксплуатацию</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-sm-6 col-12">
+                            <div class="vantages-item d-flex">
+                                <div class="vantages-item__img"><img class="image-load" data-src="/assets/css/img/techkarta/vantages/vantages4.svg" alt="Оплата" src="#"></div>
+                                <div class="vantages-item__content">
+                                    <div class="vantages-item__title">Оплата
+                                        <br>с НДС</div>
+                                    <div class="vantages-item__text">Мы юридическое лицо, у нас есть СРО</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                //-.row.
+                    {if $_modx->resource.vantages}
+                        {set $rows = json_decode($_modx->resource.vantages, true)}
+                        {foreach $rows as $i=>$row}
+                            <div class="col-xl-3 col-sm-6 col-12">
+                              <div class="vantages-item d-flex">
+                                <div class="vantages-item__img"><img class="image-load" data-src="/smety/dist/img/vantages/{$row.image}" alt=""></div>
+                                <div class="vantages-item__content">
+                                  <div class="vantages-item__title">{$row.title}</div>
+                                  <div class="vantages-item__text">{$row.text}</div>
+                                </div>
+                              </div>
+                            </div>
+                            {if $i == 3}
+                                {break}
+                            {/if}
+                        {/foreach}
+                    {/if}
+                //-.col-xl-3.col-sm-6.col-12
+                    .vantages-item.d-flex
+                        .vantages-item__img
+                            img(src=dist + '/img/vantages/vantages1.svg' alt="")
+                        .vantages-item__content
+                            .vantages-item__title Срок разработки от 1 дня
+                            .vantages-item__text с выездами на строительную площадку по необходимости
+
+    .develop.screen
+        .container
+            .row.develop-head
+                .col-md-6.col-12.d-flex.align-items-start
+                    div
+                        .develop__img
+                    .develop__headline-box
+                        .develop__title Разрабатываем
+                        .develop__subtitle Работаем в Смета.ру, ГРАНД-смета, Турбосметчик, WinRIK и во всех отраслевых базах
+                        //-.develop__subtitle Таким образом реализация намеченных плановых заданий требуют от нас анализа позиций
+                .col-md-6.col-12.d-flex.align-items-end.justify-content-md-end.flex-wrap
+                    .develop__questions
+                        a.d-block.btn-modal(rel="nofollow" href="#form_up" data-reason="Бесплатная консультация специалиста" data-header="Бесплатная консультация" data-subtitle=" ") Возникли вопросы?
+                        .d-block Мы вам перезвоним
+
+            .develop-item-smeta-box.d-flex.flex-wrap.
+                <div class="develop-item-smeta-box d-flex flex-wrap">
+                    <a class="develop-item-smeta modal d-flex col-lg-4 col-sm-6 col-12" rel="nofollow" href="#form-modal" data-reason="Рассчитать стоимость - Сметы объектов промышленного строительства:" data-header="Рассчитать стоимость" data-subtitle="Сметы объектов промышленного строительства:">
+                        <div>
+                            <div class="develop-item-smeta__img"></div>
+                        </div>
+                        <div class="develop-item-smeta__content">
+                            <div class="develop-item-smeta__title">Сметы объектов промышленного строительства:</div>
+                            <div class="develop-item-smeta__desc">трубопроводы, резервуары, технологические помещения</div>
+                            <div class="develop-item-smeta__calculate">Рассчитать стоимость</div>
+                        </div>
+                    </a>
+
+                    <a class="develop-item-smeta modal d-flex col-lg-4 col-sm-6 col-12" rel="nofollow" href="#form-modal" data-reason="Рассчитать стоимость - Сметы объектов гражданского строительства:" data-header="Рассчитать стоимость" data-subtitle="Сметы объектов гражданского строительства:">
+                        <div>
+                            <div class="develop-item-smeta__img"></div>
+                        </div>
+                        <div class="develop-item-smeta__content">
+                            <div class="develop-item-smeta__title">Сметы объектов гражданского строительства:</div>
+                            <div class="develop-item-smeta__desc">жилые дома, общественные здания, торговые комплексы, склады, гаражи</div>
+                            <div class="develop-item-smeta__calculate">Рассчитать стоимость</div>
+                        </div>
+                    </a>
+
+                    <a class="develop-item-smeta modal d-flex col-lg-4 col-sm-6 col-12" rel="nofollow" href="#form-modal" data-reason="Рассчитать стоимость - Сметы объектов транспортного строительства:" data-header="Рассчитать стоимость" data-subtitle="Сметы объектов транспортного строительства:">
+                        <div>
+                            <div class="develop-item-smeta__img"></div>
+                        </div>
+                        <div class="develop-item-smeta__content">
+                            <div class="develop-item-smeta__title">Сметы объектов транспортного строительства:</div>
+                            <div class="develop-item-smeta__desc">дороги, линейные объекты, мосты, тоннели</div>
+                            <div class="develop-item-smeta__calculate">Рассчитать стоимость</div>
+                        </div>
+                    </a>
+
+                    <a class="develop-item-smeta modal d-flex col-lg-4 col-sm-6 col-12" rel="nofollow" href="#form-modal" data-reason="Рассчитать стоимость - Сметы объектов гидротехнического назначения:" data-header="Рассчитать стоимость" data-subtitle="Сметы объектов гидротехнического назначения:">
+                        <div>
+                            <div class="develop-item-smeta__img"></div>
+                        </div>
+                        <div class="develop-item-smeta__content">
+                            <div class="develop-item-smeta__title">Сметы объектов гидротехнического назначения:</div>
+                            <div class="develop-item-smeta__desc">плотины, дамбы, берегоукрепительные сооружения</div>
+                            <div class="develop-item-smeta__calculate">Рассчитать стоимость</div>
+                        </div>
+                    </a>
+
+                    <a class="develop-item-smeta modal d-flex col-lg-4 col-sm-6 col-12" rel="nofollow" href="#form-modal" data-reason="Рассчитать стоимость - Сметы на строительство, монтаж и демонтаж:" data-header="Рассчитать стоимость" data-subtitle="Сметы на строительство, монтаж и демонтаж:">
+                        <div>
+                            <div class="develop-item-smeta__img"></div>
+                        </div>
+                        <div class="develop-item-smeta__content">
+                            <div class="develop-item-smeta__title">Сметы на строительство, монтаж и демонтаж:</div>
+                            <div class="develop-item-smeta__desc">башни, вышки, ЛЭП, линии связи, железнодорожные пути, временные сооружения</div>
+                            <div class="develop-item-smeta__calculate">Рассчитать стоимость</div>
+                        </div>
+                    </a>
+
+                    <a class="develop-item-smeta modal d-flex col-lg-4 col-sm-6 col-12" rel="nofollow" href="#form-modal" data-reason="Рассчитать стоимость - Анализ сметной документации" data-header="Рассчитать стоимость" data-subtitle="Анализ сметной документации">
+                        <div>
+                            <div class="develop-item-smeta__img"></div>
+                        </div>
+                        <div class="develop-item-smeta__content">
+                            <div class="develop-item-smeta__title">Анализ сметной документации</div>
+                            <div class="develop-item-smeta__desc">дороги, линейные объекты, мосты, тоннели</div>
+                            <div class="develop-item-smeta__calculate">Рассчитать стоимость</div>
+                        </div>
+                    </a>
+
+                </div>
+
+            //-.develop-item-smeta-box.d-flex.flex-wrap.
+                {if $_modx->resource.services_main}
+                    {set $rows = json_decode($_modx->resource.services_main, true)}
+                    {foreach $rows as $row}
+
+                        <a class="develop-item-smeta modal d-flex col-lg-4 col-sm-6 col-12" rel="nofollow" href="#form-modal" data-reason="Рассчитать стоимость - {$row.title}" data-header="Рассчитать стоимость" data-subtitle="{$row.title}">
+                            <div>
+                                <div class="develop-item-smeta__img"></div>
+                            </div>
+                            <div class="develop-item-smeta__content">
+                                <div class="develop-item-smeta__title">{$row.title}</div>
+                                <div class="develop-item-smeta__desc">{$row.text}</div>
+                                <div class="develop-item-smeta__calculate">Рассчитать стоимость</div>
+                            </div>
+                        </a>
+
+                    {/foreach}
+                {/if}
+
+    .vantages-services
+        .container
+            .vantages-services-box.d-flex.flex-wrap
+                .vantages-services-item.col-md-4.col-12
+                    .vantages-services-item__content.d-flex.align-items-center
+                        .vantages-services-item__img
+                            svg
+                                use(xlink:href='/assets/css/img/smety/vantages-services.svg#vantages-services1')
+                        .vantages-services-item__text Согласуем готовую смету в экспертных организациях
+
+                .vantages-services-item.col-md-4.col-12
+                    .vantages-services-item__content.d-flex.align-items-center
+                        .vantages-services-item__img
+                            svg
+                                use(xlink:href='/assets/css/img/smety/vantages-services.svg#vantages-services2')
+                        .vantages-services-item__text Выедем на объект для обмеров и согласования
+
+                .vantages-services-item.col-md-4.col-12
+                    .vantages-services-item__content.d-flex.align-items-center
+                        .vantages-services-item__img
+                            svg
+                                use(xlink:href='/assets/css/img/smety/vantages-services.svg#vantages-services3')
+                        .vantages-services-item__text Проверим отчетные документы и акты
+
+    .info.screen
+        .container
+            .row.info-head
+                .col-12.col-md-6.d-flex.align-items-start
+                    div
+                        .info__img
+                    .info__title Наши гарантии
+                //-.col-12.col-md-6.d-flex.align-items-end.justify-content-end.flex-wrap
+                    .info__text {$_modx->resource['subtitle_info']}
+            .row.
+                <div class="info-item d-flex align-items-start col-md-6 col-12">
+                    <div>
+                        <div class="info-item__img"></div>
+                    </div>
+                    <div class="info-item__content">
+                        <div class="info-item__title">Соблюдение сроков</div>
+                        <div class="info-item__text">Смета бесплатно, если не успели в срок по договору. 100% исполнение условий договора</div>
+                    </div>
+                </div>
+                <div class="info-item d-flex align-items-start col-md-6 col-12">
+                    <div>
+                        <div class="info-item__img"></div>
+                    </div>
+                    <div class="info-item__content">
+                        <div class="info-item__title">Сборники цен</div>
+                        <div class="info-item__text">Составляем сметы в нормативных базах ФЕР, ГЭСН, ТЕР, ТСН, СН2012</div>
+                    </div>
+                </div>
+                <div class="info-item d-flex align-items-start col-md-6 col-12">
+                    <div>
+                        <div class="info-item__img"></div>
+                    </div>
+                    <div class="info-item__content">
+                        <div class="info-item__title">Круглосуточная поддержка</div>
+                        <div class="info-item__text">Для партнеров на связи 24 / 7</div>
+                    </div>
+                </div>
+                <div class="info-item d-flex align-items-start col-md-6 col-12">
+                    <div>
+                        <div class="info-item__img"></div>
+                    </div>
+                    <div class="info-item__content">
+                        <div class="info-item__title">Сметы под ключ</div>
+                        <div class="info-item__text">КС-2, КС-3 к составленным нами сметам — бесплатно</div>
+                    </div>
+                </div>
+                <div class="info-item d-flex align-items-start col-md-6 col-12">
+                    <div>
+                        <div class="info-item__img"></div>
+                    </div>
+                    <div class="info-item__content">
+                        <div class="info-item__title">Опытные сметчики</div>
+                        <div class="info-item__text">Все сметчики имеют высшее строительное образование и практический опыт строительных работ</div>
+                    </div>
+                </div>
+                <div class="info-item d-flex align-items-start col-md-6 col-12">
+                    <div>
+                        <div class="info-item__img"></div>
+                    </div>
+                    <div class="info-item__content">
+                        <div class="info-item__title">Оплата легко и просто</div>
+                        <div class="info-item__text">Оплата любым удобным способом. Приступаем к работе в день оплаты</div>
+                    </div>
+                </div>
+            //-.row.
+                {if $_modx->resource.info}
+                    {set $rows = json_decode($_modx->resource.info, true)}
+                    {foreach $rows as $i=>$row}
+                        <div class="info-item d-flex align-items-start col-md-6 col-12">
+                            <div>
+                              <div class="info-item__img"></div>
+                            </div>
+                            <div class="info-item__content">
+                              <div class="info-item__title">{$row.title}</div>
+                              <div class="info-item__text">{$row.text}</div>
+                            </div>
+                        </div>
+                    {/foreach}
+                {/if}
+
+            //-.info-item.d-flex.align-items-start.col-md-6.col-12
+                div
+                    .info-item__img
+                .info-item__content
+                    .info-item__title Название пункта для примера
+                    .info-item__text Таким образом реализация намеченных плановых заданий требуют от нас анализа позиций, занимаемых участниками в отношении поставленных задач.
+    //-img.js-lazy-image(data-src='/dist/img/theOrder.jpg')
+    .theOrder.background-load.screen.d-flex.align-items-center
+        .container
+            .theOrder-box
+                .row.develop-head
+                    .col-md-6.col-12.d-flex.align-items-start
+                        div
+                            .develop__img
+                        .develop__headline-box
+                            .develop__title Порядок работы
+                            .develop__subtitle Любые правки в течение 3 часов до полного принятия заказчиком
+                    .col-md-6.col-12.d-flex.align-items-end.justify-content-md-end.flex-wrap
+                        .develop__questions
+                            a.d-block.btn-modal(rel="nofollow" href="#form_up" data-reason="Бесплатная консультация специалиста" data-header="Бесплатная консультация" data-subtitle=" ") Возникли вопросы?
+                            .d-block Мы вам перезвоним
+                .d-flex.flex-wrap.
+                    <div class="d-flex flex-wrap">
+                        <div class="theOrder-item">
+                            <div class="d-flex align-items-center">
+                                <div>
+                                    <div class="theOrder-item__number d-flex align-items-center justify-content-center">1</div>
+                                </div>
+                                <div class="theOrder-item__text">Отправляете заявку или звоните нам по телефону</div>
+                            </div>
+                        </div>
+                        <div class="theOrder-item">
+                            <div class="d-flex align-items-center">
+                                <div>
+                                    <div class="theOrder-item__number d-flex align-items-center justify-content-center">2</div>
+                                </div>
+                                <div class="theOrder-item__text">Оценка вашего проекта, подписание договора</div>
+                            </div>
+                        </div>
+                        <div class="theOrder-item">
+                            <div class="d-flex align-items-center">
+                                <div>
+                                    <div class="theOrder-item__number d-flex align-items-center justify-content-center">3</div>
+                                </div>
+                                <div class="theOrder-item__text">Разрабатываем ТК от 2-х дней лучшими специалистами РФ</div>
+                            </div>
+                        </div>
+                        <div class="theOrder-item">
+                            <div class="d-flex align-items-center">
+                                <div>
+                                    <div class="theOrder-item__number d-flex align-items-center justify-content-center">4</div>
+                                </div>
+                                <div class="theOrder-item__text"> Вы получаете готовые документы</div>
+                            </div>
+                        </div>
+                    </div>
+
+    .demand
+        .container
+            .demand__headline-box
+                .develop__title Работаем в Смета.ру, ГРАНД-смета, Турбосметчик, WinRIK и во всех отраслевых базах
+            .row
+                .col-lg-6.col-12
+                    .demand-box.
+                        <div class="demand-item d-flex align-items-start">
+                            <div>
+                                <div class="demand-item__img">
+                                    <img src="/assets/css/img/techkarta/vantages/vantages1.svg" alt="Срок разработки от 1 дня">
+                                </div>
+                            </div>
+                            <div class="demand-item__content">
+                                <div class="demand-item__title">Срок разработки от 1 дня</div>
+                                <div class="demand-item__text">С выездами на строительную площадку по необходимости</div>
+                            </div>
+                        </div>
+                        <div class="demand-item d-flex align-items-start">
+                            <div>
+                                <div class="demand-item__img">
+                                    <img src="/assets/css/img/techkarta/vantages/vantages2.svg" alt="Все специалисты аттестованы">
+                                </div>
+                            </div>
+                            <div class="demand-item__content">
+                                <div class="demand-item__title">Все специалисты аттестованы</div>
+                                <div class="demand-item__text">В нашем штате только опытные и одни из лучших специалистов РФ</div>
+                            </div>
+                        </div>
+                        <div class="demand-item d-flex align-items-start">
+                            <div>
+                                <div class="demand-item__img">
+                                    <img src="/assets/css/img/techkarta/vantages/vantages3.svg" alt="Гарантия">
+                                </div>
+                            </div>
+                            <div class="demand-item__content">
+                                <div class="demand-item__title">Гарантия</div>
+                                <div class="demand-item__text">Четко пропишем в договоре и предоставим надежную гарантию до ввода объекта в эксплуатацию.</div>
+                            </div>
+                        </div>
+                        <div class="demand-item d-flex align-items-start">
+                            <div>
+                                <div class="demand-item__img">
+                                    <img src="/assets/css/img/techkarta/vantages/vantages4.svg" alt="Оплата по договору с НДС">
+                                </div>
+                            </div>
+                            <div class="demand-item__content">
+                                <div class="demand-item__title">Оплата по договору с НДС</div>
+                                <div class="demand-item__text">Мы юридическое лицо, оплата по договору с НДС. Вам не нужно содержать штат сотрудников и платить лишние налоги</div>
+                            </div>
+                        </div>
+
+                    // div
+                        {if $_modx->resource.demand}
+                            {set $rows = json_decode($_modx->resource.demand, true)}
+                            {foreach $rows as $row}
+                                <div class="demand-item d-flex align-items-start">
+                                    <div>
+                                      <div class="demand-item__img">
+                                        <img src="/techkarty/dist/img/vantages/{$row.image}" alt="">
+                                      </div>
+
+                                    </div>
+                                    <div class="demand-item__content">
+                                      <div class="demand-item__title">{$row.title}</div>
+                                      <div class="demand-item__text">{$row.text}</div>
+                                    </div>
+                                 </div>
+                            {/foreach}
+                        {/if}
+                    //-.info-item.d-flex.align-items-start
+                        div
+                            .info-item__img
+                        .info-item__content
+                            .info-item__title Название пункта для примера
+                            .info-item__text Таким образом реализация намеченных плановых заданий требуют от нас анализа позиций, занимаемых участниками в отношении поставленных задач.
+
+                .col-lg-6.col-12
+                    .d-flex.align-items-start
+                        //-div
+                            .develop__img
+                        .demand__headline-box
+                            .develop__title Надежно, в срок и с гарантией
+                    .demand-docs.d-flex.justify-content-center.
+                        <a class="docs-item" href="/assets/docs/svidetelstvo_sro.jpg" data-fancybox="docs">
+                            <div class="docs-item__img">
+                                <img class="image-load" data-src="/assets/docs/svidetelstvo_sro_min.jpg" alt="Свидетельство СРО" src="#">
+                            </div>
+                            <div class="docs-item__title">Свидетельство СРО</div>
+                        </a>
+
+                        <a class="docs-item" href="/assets/docs/vyipiska-iz-sro.pdf" data-fancybox="docs">
+                            <div class="docs-item__img">
+                                <img class="image-load" data-src="/assets/docs/vyp_sro_prev.jpg" alt="Выписка из СРО" src="#">
+                            </div>
+                            <div class="docs-item__title">Выписка из СРО</div>
+                        </a>
+
+                    //-div.
+                        {if $_modx->resource.docs}
+                            {set $rows = json_decode($_modx->resource.docs, true)}
+                            {foreach $rows as $row}
+                                {set $image = $_modx->runSnippet('!pthumb', [
+                                    'input' => '/techkarty/dist/img-user/docs/' ~ $row.image,
+                                    'options' => 'w=155&h=200&zc=1',
+                                ])}
+                                <a class="docs-item" href="/techkarty/dist/img-user/docs/{$row.image}" data-fancybox="docs">
+                                    <div class="docs-item__img">
+                                        <img class="image-load" data-src="{$image}" alt="{$row.title}">
+                                        <div class="img__hover d-flex align-items-center justify-content-center">
+                                            <svg>
+                                                <use xlink:href='/techkarty/dist/img/sprite.svg#search'></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="docs-item__title">{$row.title}</div>
+                                </a>
+                            {/foreach}
+                        {/if}
+
+                        <a class="docs-item" href="/techkarty/dist/img-user/docs/svidetelstvo_sro.jpg" data-fancybox="docs">
+                            <div class="docs-item__img">
+                                <img class="image-load" data-src="/techkarty/dist/img-user/docs/svidetelstvo_sro_min.jpg" alt="Свидетельство СРО">
+                                <div class="img__hover d-flex align-items-center justify-content-center">
+                                    <svg>
+                                        <use xlink:href='/techkarty/dist/img/sprite.svg#search'></use>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="docs-item__title">Свидетельство СРО</div>
+                        </a>
+
+                        <a class="docs-item" href="/techkarty/dist/img-user/docs/vyipiska-iz-sro.pdf" data-fancybox="docs">
+                            <div class="docs-item__img">
+                                <img class="image-load" data-src="/techkarty/dist/img-user/docs/vyp_sro_prev.jpg" alt="Выписка из СРО">
+                                <div class="img__hover d-flex align-items-center justify-content-center">
+                                    <svg>
+                                        <use xlink:href='/techkarty/dist/img/sprite.svg#search'></use>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="docs-item__title">Выписка из СРО</div>
+                        </a>
+                    .demands-gallery.d-flex.justify-content-center.
+                        <a class="demands-gallery__img" href="/assets/css/img/techkarta/gallery/1.jpg" data-fancybox="gallery">
+                            <img class="image-load" data-src="[[phpthumbon? &input=`/assets/css/img/techkarta/gallery/1.jpg` &options=`h=250&w=142`]]" alt="Галерея" src="#">
+                        </a>
+                        <a class="demands-gallery__img" href="/assets/css/img/techkarta/gallery/2.jpg" data-fancybox="gallery">
+                            <img class="image-load" data-src="[[phpthumbon? &input=`/assets/css/img/techkarta/gallery/2.jpg` &options=`h=250&w=142&zc=1`]]" alt="Галерея" src="#">
+                        </a>
+                        <a class="demands-gallery__img" href="/assets/css/img/techkarta/gallery/3.jpg" data-fancybox="gallery">
+                            <img class="image-load" data-src="[[phpthumbon? &input=`/assets/css/img/techkarta/gallery/3.jpg` &options=`h=250&w=142&zc=1`]]" alt="Галерея" src="#">
+                        </a>
+                        <a class="demands-gallery__img" href="/assets/css/img/techkarta/gallery/4.jpg" data-fancybox="gallery">
+                            <img class="image-load" data-src="[[phpthumbon? &input=`/assets/css/img/techkarta/gallery/4.jpg` &options=`h=250&w=142&zc=1`]]" alt="Галерея" src="#">
+                        </a>
+                        <a class="demands-gallery__img" href="/assets/css/img/techkarta/gallery/5.jpg" data-fancybox="gallery">
+                            <img class="image-load" data-src="[[phpthumbon? &input=`/assets/css/img/techkarta/gallery/5.jpg` &options=`h=250&w=142&zc=1`]]" alt="Галерея" src="#">
+                        </a>
+
+                    //- div.
+                        {if $_modx->resource.gallery}
+                            {set $rows = json_decode($_modx->resource.gallery, true)}
+                            {foreach $rows as $row}
+                                {set $image = $_modx->runSnippet('!pthumb', [
+                                    'input' => '/techkarty/dist/img-user/gallery/' ~ $row.image,
+                                    'options' => 'w=72&h=72&zc=1',
+                                ])}
+                                <a class="demands-gallery__img" href="/dist/img-user/gallery/{$row.image}" data-fancybox="gallery">
+                                    <img class="image-load" data-src="{$image}" alt="">
+                                </a>
+                            {/foreach}
+                        {/if}
+                    //-a.demands-gallery__img(href="")
+                        img(src=dist + '/img/gallery/gallery1.jpg')
+
+    .r10
+    .r20
+    .r20.d-lg-block.d-none
+    .container
+        .our-clients
+            .our-clients__maps-box
+                img.our-clients__maps.image-load(data-src="../assets/css/img/main/maps.jpg" alt="Более 450 клиентов по России")
+            .our-clients__content
+                .our-clients__title Более <span>450 клиентов</span> по России
+                .our-clients__subtitle В их числе
+                ul.our-clients__ul
+                    li.our-clients__li Нефтеперерабатывающие  заводы
+                    li.our-clients__li Нефтяные месторождения
+                    li.our-clients__li Трубопроводы
+                    li.our-clients__li Заводы химического производства
+                    li.our-clients__li Автомагистрали и железные дороги
+                    li.our-clients__li Оборонные объекты
+                    li.our-clients__li Рудники
+    .r10
+    .r20
+    .r20.d-lg-block.d-none
+
+    .r20
+    .r20
+    .container
+        .bl1
+            .bl1__item-box
+                .bl1__item
+                    img.bl1__item-img.image-load(data-src="../assets/css/img/main/maps1.jpg" alt="Закажите исполнительную документацию со скидкой 25%")
+                    .bl1__item-content
+                        .bl1__item-title 100 инженеров ПТО
+                        .bl1__item-text Вылетают на объекты по России
+            .bl1__item-box
+                .bl1__item
+                    img.bl1__item-img.image-load(data-src="../assets/css/img/main/maps2.jpg" alt="Закажите исполнительную документацию со скидкой 25%")
+                    .bl1__item-content
+                        .bl1__item-title 29 разделов исполнительной
+                        .bl1__item-text Подготовим и сдадим заказчику
+            .bl1__item-box
+                .bl1__item
+                    img.bl1__item-img.image-load(data-src="../assets/css/img/main/maps3.jpg" alt="Закажите исполнительную документацию со скидкой 25%")
+                    .bl1__item-content
+                        .bl1__item-title Аттестованные инженеры
+                        .bl1__item-text Все инженеры имеют удостоверения
+    .r20
+    .r20
+
+    //-.review#review
+        .container
+            .d-flex.align-items-start
+                div
+                    .develop__img
+                .develop__headline-box
+                    .develop__title {$_modx->resource['title_review']}
+            .review-box.d-flex.justify-content-center.flex-wrap.
+                {if $_modx->resource.review}
+                    {set $rows = json_decode($_modx->resource.review, true)}
+                    {foreach $rows as $row}
+                        {set $image = $_modx->runSnippet('!pthumb', [
+                            'input' => '/dist/img-user/review/' ~ $row.image,
+                            'options' => 'w=190&h=246&zc=1',
+                        ])}
+                        <div class="review-item">
+                            <a class="review-item__img" href="/dist/img-user/review/{$row.image}" data-fancybox="review" data-caption="{$row.title}">
+                                <img class="image-load" data-src="{$image}" alt="{$row.title}" >
+                                <div class="img__hover d-flex align-items-center justify-content-center">
+                                    <svg>
+                                        <use href='/dist/img/sprite.svg#search'></use>
+                                    </svg>
+                                </div>
+                            </a>
+                        </div>
+                    {/foreach}
+                {/if}
+
+            //- for (var i = 1; i < 7; i++)
+                a.review-item(href="")
+                    .review-item__img
+                        img(src=dist + '/img/review/review1.jpg' alt="")
+
+    .questions
+        .container
+            .develop-head.d-flex.align-items-start
+                div
+                    .develop__img
+                .develop__headline-box
+                    .develop__title Вопросы и ответы
+
+            div.
+                <div class="questions-item d-flex flex-wrap">
+                    <div class="item-visible d-flex align-items-center justify-content-between">
+                      <div class="item-visible__title">Какие гарантии на выполненные работы вы предоставляете?</div>
+                    </div>
+                    <div class="item-hide">
+                      <p></p><p><span>- Мы даем юридические гарантии качества нашей работы - оформление договора с гарантией возврата денег</span></p><p></p>
+                    </div>
+                </div>
+
+                <div class="questions-item d-flex flex-wrap">
+                    <div class="item-visible d-flex align-items-center justify-content-between">
+                      <div class="item-visible__title">Какими специалистами вы располагаете?</div>
+                    </div>
+                    <div class="item-hide">
+                      <p></p><p><span>- В штате компании имеются инженеры ПТО, инженеры-сметчики, проектировщики и инженеры геодезисты, что позволяет нам выполнять широкий круг задач.</span></p><p></p>
+                    </div>
+                </div>
+
+                <div class="questions-item d-flex flex-wrap">
+                    <div class="item-visible d-flex align-items-center justify-content-between">
+                      <div class="item-visible__title">Могут ли ваши инженеры присутствовать на объекте?</div>
+                    </div>
+                    <div class="item-hide">
+                      <p></p><p><span>Да, конечно. Вы можете заключить с нами договор о почасовой оплате специалиста, в этом случае инженер работает на объекте.</span><br><span>Вы можете определить нужное количество часов, что очень удобно - позволит сэкономить бюджет.</span></p><p></p>
+                    </div>
+                </div>
+
+    //-#prefooter
+    //-.prefooter.screen#six
+        .container
+            .row
+                .col-lg-6.col-12
+                    .prefooter-left
+                        .prefooter-left__text Более&nbsp
+                            span 245 клиентов<br>
+                            | по всей стране
+                        .prefooter-left__img
+                            img(class="image-load" data-src=dist + 'img/map.png' alt="")
+                        //-a.prefooter-left__button.modal(rel="nofollow" href="#form-modal" data-reason="Рассчитать стоимость" data-header="Рассчитать стоимость" data-subtitle=" ") Рассчитать стоимость
+                .col-lg-6.col-12
+                    .prefooter-right
+                        .preefooter-contacts.d-flex.flex-wrap
+                            .prefooter-phone.d-flex
+                                svg
+                                    use(xlink:href=dist + 'img/sprite.svg#phone')
+                                .header-phone
+                                    <a id="phone_roistat_footer" class="header-phone__title" href="tel:"><span class="phone_roistat"></span></a>
+                                    .header-phone__text Работаем без выходных
+                            .prefooter-mail.d-flex.align-items-center
+                                svg
+                                    use(xlink:href=dist + 'img/sprite.svg#mail')
+                                <a href="mailto:{$_modx->resource['email']}"> {$_modx->resource['email']} </a>
+                        .prefooter-form
+                            .prefooter-form__title Остались вопросы?
+                            | {'!AjaxForm' | snippet : [
+                            |      'snippet'=>'FormIt',
+                            |      'frontend_css'=>'',
+                            |      'frontend_js'=>'',
+                            |      'form'=>'form_question2',
+                            |      'hooks'=>'email,FormItSaveForm,roistat_hooks',
+                            |      'emailSubject'=>'Новая заявка (остались вопросы?)',
+                            |      'emailTo'=>$_modx->config.email_to,
+                            |      'emailTpl' => 'tpl.form',
+                            |      'validate'=>'fio:required,phone:required',
+                            |      'fieldNames'=>'fio==Имя,phone==Телефон,page==Страница',
+                            |      'validationErrorMessage'=>'В форме имеются ошибки!',
+                            |      'successMessage'=>'Сообщение успешно отправлено!'
+                            | ]}
+
+                            //-form.form
+                                .form-item.d-flex.flex-wrap
+                                    label Ваше имя
+                                    input.form-item__input.form-control(type="text")
+                                .form-item.d-flex.flex-wrap
+                                    label Ваше имя
+                                    input.form-item__input.form-control(type="text")
+                                .form-item.d-flex.align-items-end
+                                    input.form-item__button.form-item__input(type="submit" value="Перезвоните мне")
+                                .prefooter-form__confid Я согласен на&nbsp;
+                                    a.modal-text(rel="nofollow" href="#visible_accept") обработку персональных данных&nbsp;
+                                    | согласно&nbsp;
+                                    a.modal-text(rel="nofollow" href="#visible_confid") политике конфиденциальности

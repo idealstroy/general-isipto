@@ -1,0 +1,426 @@
+@import 'nib'
+@import 'rupture'
+
+/*Зачарование пикселей в ремы*/
+rem() {
+  remified = ()
+  for arg in arguments {
+    push(remified, unit(arg/16, 'rem'))
+  }
+  return remified
+}
+
+/*Адаптив*/
+rupture.scale =       0    576px    767.98px    992px    1200px
+rupture.scale-names =  'xs'     'sm'     'md'     'lg'      'xl'
+
+.ppr-transneft
+  padding-top rem(50px)
+
+.ppr-transneft-header
+  padding 30px
+  background #f24941
+  border-radius 7px 7px 0 0
+
+.ppr-transneft-left
+  color #fff
+  &__signature
+    font-weight 400
+    font-size 1.5rem
+    margin-right 10px
+    line-height 2.5rem
+  &__img img
+    size 27px
+  &__caption
+    margin 15px 0
+    font-weight 700
+    line-height 3rem
+    font-size 2.75rem
+    +below(xs)
+      font-size 1.9rem
+      line-height 2.2rem
+  &__subcaption
+    font-weight 400
+    font-size 1.375rem
+    margin-bottom 30px
+    line-height 1.625rem
+
+.ppr-transneft-right
+  background #fff
+  padding 90px 35px
+  border-radius 130px
+  &__img
+    max-width 100%
+    +below(xs)
+      margin 0 auto 30px
+  &__price
+    font-weight 600
+    font-size 2.625rem
+    line-height 2.75rem
+    margin-bottom 13px
+  &__signature
+    font-weight 300
+    margin-right 10px
+    font-size 1.375rem
+    line-height 1.75rem
+  &__content
+    padding-left 25px
+    +below(xs)
+      padding 0
+  &__svg svg
+    size 25px
+
+.ppr-transneft-body
+  padding 30px
+  background #fff
+  +below(sm)
+    padding 30px 0
+  &__caption
+    font-weight 700
+    font-size 1.5rem
+    margin-bottom 10px
+    line-height 1.5rem
+  &__subcaption
+    font-weight 400
+    font-size 1.125rem
+    line-height 1.5rem
+    margin-bottom 10px
+
+.ppr-transneft-li
+  padding 15px 0
+  &:last-child
+    padding-bottom 0
+  &__number
+    color #fff
+    size 35px
+    flex none
+    margin-right 15px
+    background #f24941
+    border-radius 50%
+  &__text
+    width 90%
+
+.ppr-transneft-ul
+  margin-bottom 30px
+  padding-bottom 30px
+  border-bottom 1px solid #e3e3e3
+  &:last-child
+    margin-bottom 0
+    padding-bottom 0
+    border-bottom 1px solid transparent
+
+
+/*.ppr-transneft-block
+  padding-bottom rem(50px)
+  &__caption
+    font-size 2rem
+    font-weight 600
+    text-align center
+    line-height 1.5rem
+    padding rem(55px 0)
+  &__signature
+    color #999
+    margin 0 auto
+    font-size 1rem
+    font-weight 400
+    text-align center
+    border-bottom 1px
+    line-height 1.5rem
+    padding-top rem(35px)
+
+.ppr-transneft-item
+  &__svg svg
+    size 55px
+    margin-right 18px
+  &__text
+    font-weight 600
+    font-size 1.125rem
+    line-height 1.5rem*/
+
+.ui.label>.close.icon, .ui.label>.delete.icon
+  margin 0!important
+  position absolute
+  right 7px
+  top 29%
+  size 10px
+
+i.icon.delete:before
+  content ""
+  width 10px!important
+  height 10px!important
+  background-image url('img/close.svg') !important
+  background-size cover!important
+  position absolute
+  right 0
+  top 0
+
+.ui.multiple.dropdown>.label
+  position relative
+  padding 0.357143em 2.25714em .35714286em 0.785714em
+
+.normal.dropdown
+  margin-bottom 20px
+  padding 0 35px 0 20px!important
+  .text
+    width 100%
+    height 38px
+
+.calculate-box
+  input
+    &::-webkit-input-placeholder
+    color #c7c7c8
+    &::-moz-placeholder
+      color #c7c7c8
+    &:-ms-input-placeholder
+      color #c7c7c8
+    &::placeholder
+      color #c7c7c8
+  .input-text
+    width 100%
+    height 38px
+    padding 0 20px
+    border-radius .28571429rem
+    border 1px solid rgba(34,36,38,.15)
+
+.ui.multiple.search.dropdown>.text
+  margin 0!important
+
+.calculate-item.noactive
+  display none!important
+
+.calculate-box__subtitle
+  font-size 22px
+  margin 30px 0 20px
+
+.ui.multiple.search.dropdown>input.search, .ui.multiple.search.dropdown>input.search
+  margin 10px 0!important
+
+.ui.selection.dropdown
+  border 3px solid #EDEDED
+
+/*.ui.dropdown>.dropdown.icon:before
+  color rgb(236, 118, 117)
+
+.ui.dropdown .menu .selected.item, .ui.dropdown .menu>.item:hover
+  background rgba(236,118,117,0.141)*/
+
+.ui.label
+  transition .3s
+  /*background-color rgba(242, 73, 64, 0.15)*/
+
+/*a.ui.label:hover, a.ui.labels .label:hover
+  background-color rgba(242, 73, 65, 0.3)*/
+.calculate-result-box
+  padding-bottom 23px
+.calculate-result
+  color #fff
+  height 100%
+  font-size 25px
+  font-weight bold
+  text-align center
+  border-radius 7px
+  background #f24941
+  padding 40px 15px 15px
+  &__caption
+    font-weight normal
+    font-size rem(36px)
+    line-height rem(42px)
+  &__price
+    font-weight bold
+    text-align center
+    font-size rem(65px)
+    line-height rem(76px)
+    +below(lg)
+      font-size rem(55px)
+    +below(md)
+      margin-bottom 30px
+  &__button
+    color #f24941
+    cursor pointer
+    font-size 18px
+    font-weight 400
+    padding 10px 40px
+    border-radius 30px
+    background #ffffff
+    &:hover
+      background #f1f1f1
+
+.services-item-right .services-item-button
+  +below(xs)
+    margin 0 auto
+
+.calculate
+  padding-bottom rem(40px)
+
+.ui.label
+  cursor pointer
+
+.calculate-first-screen
+  margin 0 auto
+
+.first-screen-ppr
+  background url('img/ppr/first-screen.jpg') center/cover no-repeat
+  +below(xs)
+    background-position 35% 50%
+
+.ppr-vantages
+  margin rem(50px 0)
+  &__item
+    margin-bottom rem(20px)
+    &:last-child
+      margin-bottom 0
+  &__icon
+    size 38px
+    fill #D34841
+    margin-right 20px
+  &__text
+    font-size rem(24px)
+    line-height rem(33px)
+    span
+      font-weight bold
+
+  /*.develop-item
+    cursor default
+    &:hover
+      transform none
+      box-shadow none*/
+
+.develop
+  padding rem(50px 0 20px)
+  &__title
+    font-weight 600
+    text-align center
+    font-size rem(34px)
+    line-height rem(39px)
+  &__subtitle
+    font-weight 400
+    text-align center
+    font-size rem(28px)
+    line-height rem(33px)
+    margin rem(5px 0 40px)
+  .vantages-box
+    margin-top rem(60px)
+    padding-bottom 30px
+    +below(md)
+      padding-bottom rem(15px)
+  .develop-images
+    &__item:nth-child(2),&__item:nth-child(3)
+      +below(xs)
+        display none
+    &__item
+      padding 0 15px
+      width 33.3333%
+      +below(xs)
+        width 100%
+      img
+        width 100%
+
+.calculate-item.ui.dropdown
+  display: block;
+  width: 100%;
+  min-width: 0;
+
+.calculate
+  &__svg
+    fill #D34841
+    size 50px 60px
+    margin-right 25px
+
+.develop
+  padding-bottom 20px
+  background-color #f3f3f3
+
+.calculate-footer
+  color #444
+  margin 20px 0
+  font-size 16px
+
+.vantages
+  overflow hidden
+  background-color #f3f3f3
+  .vantages_box
+    padding rem(25px 15px)
+    +below(sm)
+      margin-top rem(30px)
+      padding rem(30px 15px 55px)
+    .item_vantages:last-child
+      margin-bottom 0
+    .title_vantages
+      font-size 22px
+      margin-bottom 10px
+    .item_vantages
+      margin-bottom 20px
+      +below(md)
+        margin-bottom 40px
+      .number_vantages
+        +below(lg)
+          img
+            width 100%
+      .text_info
+        font-size 15px
+        font-weight 400
+        line-height 24px
+        padding 0 15px
+
+.developing-ppr
+  padding 30px 0
+  margin-top 40px
+  background #f3f3f3
+  &__left
+    position relative
+    top -65px
+    width 350px
+    margin 0 30px -35px 0
+    +below(sm)
+      top 0
+      order 2
+      margin 0 0 30px 0
+  &__right
+    +below(sm)
+      width 100%
+  &__title
+    font-weight 600
+    font-size 18px
+    line-height 25px
+    margin-bottom 30px
+  &__title_no-margin
+    margin 0
+  &__right-box
+    column-count 2
+    +below(md)
+      column-count 1
+  &__right-box-item
+    display flex
+    align-items center
+    margin-bottom 20px
+  &__right-box-item-svg
+    size 16px
+    margin-right 16px
+  &__right-box-item-text
+    color #333333
+    font-size 15px
+  &__examples-text
+    margin 5px 0
+    color #777777
+    font-size 14px
+    line-height 27px
+  &__examples-img-box
+    position relative
+    display block
+    &:after
+      content ''
+      position absolute
+      top 0
+      left 0
+      width 100%
+      height 100%
+      background url('img/ppr/mask_examples.png') center/cover no-repeat
+  &__examples-img
+    max-width 100%
+    margin auto
+    display block
+
+.develop-content
+  font-size 15px
+  &__svg svg
+    margin-right 15px

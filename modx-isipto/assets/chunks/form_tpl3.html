@@ -1,0 +1,63 @@
+<form class="recaptcha-form form_up" method="post" enctype="multipart/form-data" action="[[~[[*id]]]]">
+    
+    <input type="hidden" name="recaptcha_token" class="recaptcha-token">
+
+<input type="hidden" name="csrf_token" value="[[+csrf_token]]">
+<input type="hidden" name="form_time" value="[[+form_time]]">
+    <input type="text" name="website" style="display:none">
+    
+    <input class="callOrderReason" type="hidden" name="reason">
+    <input class="page" type="hidden" name="page" value="[[~[[*id]]? &scheme=`full`]]">
+    <input class="goalMetrika" type="hidden" name="goal" value="lead">
+    <input class="ref_info" name="ref_info" type="hidden" value="">
+    <div class="block">
+        <label>Ваше имя</label>
+        <input class="name_up input_up name" type="text" name="fio" value="">
+    </div>
+    <div class="block">
+        <label>Ваш телефон</label>
+        <input class="phone_up input_up phone" type="tel" name="phone" value="">
+    </div>
+
+    <div class="block">
+        <div class="title_upload">Загрузите рабочую документацию<br><span>(необязательно для заполнения)</span></div>
+        [[!AjaxUpload?
+            &uid=`image`
+            &allowedExtensions=`rar,zip,7z,xlsx,xls,cdw,dwg,doc,docx,pdf`
+            &maxFiles=`3`
+            &thumbX=`96`
+            &thumbY=`96`
+            &maxFilesizeMb = `130`
+        ]]
+    </div>
+
+    <div class="block">
+        <label for="activity">Род деятельности <span>(необязательно для заполнения)</span></label>
+        <select name="activity" id="activity" class="input_up">
+            <option value="Промышленное производство" data-display="Промышленное производство">Промышленное производство</option>
+            <option value="Нефтяная и газовая промышленность">Нефтяная и газовая промышленность</option>
+            <option value="Строительство путей сообщения">Строительство путей сообщения</option>
+            <option value="Гражданское строительство">Гражданское строительство</option>
+            <option value="Другое">Другое</option>
+        </select>
+    </div>
+
+    <div class="block">
+        <label>Что необходимо? <span>(необязательно для заполнения)</span></label>
+        <textarea name="comments" class="input_up textarea_up"></textarea>
+    </div>
+    
+        <div class="form-footer__checkbox" style="display: flex; align-items: center;gap:6px;line-height: 1.2;">
+            <input type="checkbox" name="agree" required> 
+            <label>
+            <span style="color: #777;font-size: 14px;">
+            Я даю согласие на <a href="/politika-konfidenczialnosti/" style="color:#777;font-weight:500;">обработку своих персональных данных</a>
+            </span></label>
+        </div>
+    
+    
+    <div class="block">
+        <input class="bottom_up" type="submit" value="Отправить">
+    </div>
+
+</form>

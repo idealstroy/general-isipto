@@ -1,0 +1,8 @@
+.ssh/
+/Semantic core/
+/_backups/
+/.env
+/dist/
+/.playwright-cli/
+/output/playwright/
+/modx-isipto/_preview/outsourcing-pto/

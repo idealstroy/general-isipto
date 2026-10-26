@@ -1,0 +1,3 @@
+import fs from 'node:fs';import {spawn} from 'node:child_process';
+const p=JSON.parse(fs.readFileSync('_backups/active-direct-bitrix.json','utf8'));
+const c=spawn('docker',['exec','--user','www-data','-i','modx-isipto-web-1','php'],{windowsHide:true});fs.createReadStream('deployment/homepage/backup-local-crm-db.php').pipe(c.stdin);let data='';c.stdout.on('data',b=>data+=b);c.stderr.resume();const code=await new Promise((r,j)=>{c.on('error',j);c.on('close',r)});if(code)throw Error('Backup failed');JSON.parse(data);fs.writeFileSync(p.directory+'/modx-chunks.json',data);console.log('Original MODX chunks backed up; no settings changed');

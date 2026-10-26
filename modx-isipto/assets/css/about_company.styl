@@ -1,0 +1,294 @@
+@import 'nib'
+@import 'rupture'
+
+
+/*Зачарование пикселей в ремы*/
+rem() {
+  remified = ()
+  for arg in arguments {
+    push(remified, unit(arg/16, 'rem'))
+  }
+  return remified
+}
+
+/*Адаптив*/
+rupture.scale =       0    576px    767.98px    992px    1200px
+rupture.scale-names =  'xs'     'sm'     'md'     'lg'      'xl'
+
+
+.about-company-inner
+  position relative
+  background url('img/about_company/first-screen.jpg') center/cover no-repeat
+  +below(xs)
+    background-position 35% 50%
+  &__button
+    color #fff
+  &__title
+    color #2e2e2e
+    font-weight 700
+    font-size 2.25rem
+    margin-bottom 40px
+    line-height 2.95rem
+  &__subtitle
+    font-size 20px
+    line-height 27px
+    font-weight bold
+    margin-bottom 15px
+  &__content
+    position relative
+    z-index 1
+  .breadcrumbs
+    top 0
+    position absolute
+  .crumbs
+    span
+      color #000
+    a span
+      color #000
+  &__img
+    background url('img/about_company/logo.png') right/contain no-repeat
+
+.about-company-docs
+  color #fff
+  padding 30px 0 40px
+  background url('img/about_company/bg.jpg') center/cover no-repeat
+  &__item
+    width 50%
+    padding 0 7px
+    text-align center
+    .img_docs-box
+      height auto
+  &__signature
+    width: 100%;
+    text-align center
+    font-size 18px
+    line-height 24px
+    +below(sm)
+      margin-bottom 25px
+
+.about-company-inner__button
+  color #fff
+
+.about-company-vantages
+  margin-top -55px
+  +below(sm)
+    margin-top -25px
+  .vantages-item
+    padding 1.5625rem
+    background-color #fff
+    border 1px solid #d7dfe4
+    &__svg svg
+      size 60px
+      margin-right 15px
+    &__title
+      font-weight 600
+      font-size 1.125rem
+    &__text
+      color #666666
+      font-size 1rem
+      font-weight 400
+
+.about-company-vantages, .your-department
+  background #f4f4f4
+
+.your-department
+  &__title
+    font-weight 600
+    line-height 2rem
+    font-size 1.875rem
+    margin-bottom 30px
+  &__subtitle
+    font-weight 400
+    line-height 2rem
+    font-size 1.375rem
+    margin-bottom 30px
+  img
+    width 100%
+
+.industry-item
+  padding 20px
+  margin-bottom 30px
+  border 1px dashed #f1b8bd
+  &__svg svg
+    size 55px
+    fill #dd5b51
+    margin-right 15px
+  &__text
+    font-weight 600
+    font-size rem(16px)
+    line-height rem(22px)
+    +below(md)
+      color #bebebe
+
+.about-information
+  padding-top rem(50px)
+
+.information-item
+  &__title
+    color #3f3f3f
+    font-weight 700
+    font-size 1.813rem
+    margin-bottom 10px
+    line-height 2.125rem
+  &__text p
+    margin-bottom 15px
+
+.certificate-sro
+  &__content
+    margin-left 10px
+  &__title
+    color #333
+    font-weight 600
+    font-size 1.125rem
+  &__href
+    color #999
+    font-weight 400
+    font-size 0.75rem
+    span
+      border-bottom 1px dashed #999
+    &:hover
+      span
+        border-bottom 1px dashed transparent
+
+.about-signature
+  &__svg svg
+    size 48px
+    margin-right 15px
+  &__text
+    color #333
+    font-weight 600
+    font-size 1.125rem
+    line-height 1.4rem
+
+.information-item-box
+  margin-bottom 25px
+
+.useful-inner
+  padding-bottom 35px
+
+.about-company-bottom
+  margin 0 auto
+  padding-top rem(40px)
+  &__text
+    font-weight 400
+    line-height 2rem
+    text-align center
+    font-size 1.375rem
+    padding-bottom rem(40px)
+  &__or
+    width 100%
+    color #ccc
+    margin-top 5px
+    font-size 1rem
+    font-weight 400
+    text-align center
+    line-height 1.375rem
+  .prepare__consult
+    color #666
+    margin-left 0
+
+.your-department
+  img
+    width 100%
+    border-radius 3px
+  &__title
+    font-weight 800
+  &__img-secondary
+    margin-bottom 30px
+    img
+      width 100%
+      height 164px
+      +below(md)
+        height 112px
+      +below(xs)
+        height auto
+
+.docs-item
+  margin 0 7px 35px
+  &__img
+    display block
+    position relative
+    img
+      width 100%
+  &:hover .img__hover
+    opacity 1
+  &__title
+    color #666
+    font-weight 400
+    margin-top 10px
+    text-align center
+    font-size rem(15px)
+    +below(lg)
+      font-size rem(14px)
+
+.about-information
+  img
+    border 1px solid #dfdfdf
+
+.your-department__img-main
+  +below(sm)
+    margin-bottom 30px
+
+.useful
+  background-color #f3f3f3
+.useful-item
+  margin-bottom rem(30px)
+  &__img
+    img
+      size 82px
+      border-radius 7px
+  &__text
+    font-weight 400
+    padding-left 15px
+    font-size rem(15px)
+    line-height rem(22px)
+
+.about-company-list
+  font-size rem(20px)
+  line-height rem(27px)
+  &__item
+    margin 10px 0
+  &__item-icon svg
+    size 16px
+    fill #D34841
+    margin-right 10px
+
+.about-company-signature
+  margin-top 20px
+  &__text
+    font-size 18px
+    line-height 25px
+  &__icon svg
+    size 16px
+    margin 5px 10px 0 0
+
+.about_company
+  padding-bottom rem(20px)
+  background-color #f3f3f3
+  .text_about
+    font-size rem(15px)
+    font-weight 400
+    line-height rem(24px)
+    margin-bottom 30px
+    +below(md)
+      margin-bottom 0
+  .slideshow_box
+    +below(md)
+      margin 1rem auto
+  .slideshow_about
+    .img_about
+      img
+        width 100%
+  .docs
+    padding-bottom 0
+
+.about_company
+  .img_docs
+    transition .5s
+    margin-bottom 30px
+    border 1px solid #d6d6d6
+    box-shadow 15px 20px 30px -10px #d6d6d6
+    &:hover
+      box-shadow none
+    img
+      width 100%

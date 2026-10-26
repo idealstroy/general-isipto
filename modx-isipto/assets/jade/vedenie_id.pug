@@ -1,0 +1,352 @@
+extends template
+block append var
+  -var title = "Главная"
+  -var inner=true
+  -var form_footer = true
+  -var blog = true
+block content
+  //- section.question.first_screen_inner
+      .container
+          +crumbs()
+          h1.inner__title [[*longtitle]]
+          | [[getImageList? &tvname=`questions` &tpl=`questions` &docid=`1` &limit=`0`]] <br><br>
+
+  link(rel="stylesheet" type="text/css" href=assets + "css/vedenie.css")
+
+  section.first-screen.first-screen_crumbs
+    .container
+      +crumbs()
+      .first-screen__box
+        h1.first-screen__title(style="max-width: 780px;") [[*h1]]
+        .first-screen__subtitle Делегируйте сдачу объекта с юридической гарантией
+        .row
+          .first-screen__item-box.col-lg-10.col-12
+            .first-screen__item.d-flex.align-items-center
+              .first-screen__item-icon.d-flex.align-items-center.justify-content-center
+                <svg width="20" height="25" viewBox="0 0 20 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M10.027 0C6.21243 0 3.11621 3.1086 3.11621 6.94171C3.11621 10.5087 5.79312 13.444 9.23535 13.8384V21.5618H10.7153V13.8494C14.2084 13.5024 16.9377 10.5429 16.9377 6.94171C16.9377 3.10705 13.8446 0 10.027 0ZM10.2731 2.51722C9.03834 2.51311 7.85249 2.99957 6.97633 3.86964C6.10016 4.7397 5.60543 5.92213 5.60092 7.1569C5.60092 8.18175 4.59775 7.69255 4.59775 6.15837C4.60226 4.9236 5.09699 3.74118 5.97315 2.87111C6.84932 2.00104 8.03517 1.51458 9.26994 1.51869C10.8119 1.51869 11.3042 2.51722 10.2731 2.51722ZM12.501 18.6796V17.2461C16.0368 17.5635 20 18.7106 20 20.9739C20 23.4478 14.9687 24.7405 10.0008 24.7405C5.0298 24.7405 0 23.4478 0 20.9739C0 18.7725 3.85943 17.6471 7.54238 17.3204V18.7555C3.80215 19.127 1.72459 20.2773 1.72459 20.9554C1.72459 21.7433 4.64587 23.2791 10.0008 23.2791C15.3526 23.2791 18.2739 21.7433 18.2739 20.9554C18.2739 20.3237 16.3356 19.0636 12.501 18.6796Z" fill="#E03B32"/>
+                </svg>
+              .first-screen__item-text Ведение на объекте
+            .first-screen__item.d-flex.align-items-center
+              .first-screen__item-icon.d-flex.align-items-center.justify-content-center
+                <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5.26316 8.42105H6.31579C6.59496 8.42105 6.86271 8.31015 7.06011 8.11274C7.25752 7.91534 7.36842 7.6476 7.36842 7.36842C7.36842 7.08925 7.25752 6.82151 7.06011 6.6241C6.86271 6.42669 6.59496 6.31579 6.31579 6.31579H5.26316C4.98398 6.31579 4.71624 6.42669 4.51884 6.6241C4.32143 6.82151 4.21053 7.08925 4.21053 7.36842C4.21053 7.6476 4.32143 7.91534 4.51884 8.11274C4.71624 8.31015 4.98398 8.42105 5.26316 8.42105ZM9.47368 14.7368H5.26316C4.98398 14.7368 4.71624 14.8477 4.51884 15.0452C4.32143 15.2426 4.21053 15.5103 4.21053 15.7895C4.21053 16.0686 4.32143 16.3364 4.51884 16.5338C4.71624 16.7312 4.98398 16.8421 5.26316 16.8421H9.47368C9.75286 16.8421 10.0206 16.7312 10.218 16.5338C10.4154 16.3364 10.5263 16.0686 10.5263 15.7895C10.5263 15.5103 10.4154 15.2426 10.218 15.0452C10.0206 14.8477 9.75286 14.7368 9.47368 14.7368ZM9.47368 10.5263H5.26316C4.98398 10.5263 4.71624 10.6372 4.51884 10.8346C4.32143 11.032 4.21053 11.2998 4.21053 11.5789C4.21053 11.8581 4.32143 12.1259 4.51884 12.3233C4.71624 12.5207 4.98398 12.6316 5.26316 12.6316H9.47368C9.75286 12.6316 10.0206 12.5207 10.218 12.3233C10.4154 12.1259 10.5263 11.8581 10.5263 11.5789C10.5263 11.2998 10.4154 11.032 10.218 10.8346C10.0206 10.6372 9.75286 10.5263 9.47368 10.5263ZM16.7579 7.76842C16.8385 7.57673 16.8605 7.36545 16.8212 7.16125C16.7818 6.95705 16.6829 6.76908 16.5368 6.62105L10.2211 0.305263C10.134 0.223385 10.0345 0.155875 9.92632 0.105263C9.8949 0.1008 9.863 0.1008 9.83158 0.105263L9.53684 0H3.15789C2.32037 0 1.51715 0.332706 0.924926 0.924926C0.332706 1.51715 0 2.32037 0 3.15789V17.8947C0 18.7323 0.332706 19.5355 0.924926 20.1277C1.51715 20.7199 2.32037 21.0526 3.15789 21.0526H9.47368C9.75286 21.0526 10.0206 20.9417 10.218 20.7443C10.4154 20.5469 10.5263 20.2792 10.5263 20C10.5263 19.7208 10.4154 19.4531 10.218 19.2557C10.0206 19.0583 9.75286 18.9474 9.47368 18.9474H3.15789C2.87872 18.9474 2.61098 18.8365 2.41357 18.6391C2.21617 18.4417 2.10526 18.1739 2.10526 17.8947V3.15789C2.10526 2.87872 2.21617 2.61098 2.41357 2.41357C2.61098 2.21617 2.87872 2.10526 3.15789 2.10526H8.42105V5.26316C8.42105 6.10068 8.75376 6.90391 9.34598 7.49613C9.9382 8.08835 10.7414 8.42105 11.5789 8.42105H15.7895C15.9973 8.42002 16.2001 8.35749 16.3725 8.24135C16.5448 8.12521 16.6789 7.96065 16.7579 7.76842ZM11.5789 6.31579C11.2998 6.31579 11.032 6.20489 10.8346 6.00748C10.6372 5.81007 10.5263 5.54233 10.5263 5.26316V3.58947L13.2526 6.31579H11.5789ZM18.9474 10.5263H13.6842C13.405 10.5263 13.1373 10.6372 12.9399 10.8346C12.7425 11.032 12.6316 11.2998 12.6316 11.5789V20C12.6321 20.1904 12.6842 20.3771 12.7825 20.5403C12.8807 20.7034 13.0214 20.8368 13.1895 20.9263C13.3541 21.0108 13.538 21.0505 13.7229 21.0412C13.9077 21.032 14.0868 20.9742 14.2421 20.8737L16.3158 19.5053L18.4211 20.8737C18.5783 20.9646 18.7564 21.0133 18.9381 21.015C19.1197 21.0168 19.2987 20.9715 19.4577 20.8835C19.6166 20.7955 19.7501 20.668 19.8451 20.5131C19.9402 20.3583 19.9935 20.1815 20 20V11.5789C20 11.2998 19.8891 11.032 19.6917 10.8346C19.4943 10.6372 19.2265 10.5263 18.9474 10.5263ZM17.8947 18.0211L16.9053 17.3579C16.7312 17.2402 16.5259 17.1774 16.3158 17.1774C16.1057 17.1774 15.9004 17.2402 15.7263 17.3579L14.7368 18.0211V12.6316H17.8947V18.0211Z" fill="#E03B32"/>
+                </svg>
+              .first-screen__item-text Заключаем договор с НДС
+            .first-screen__item.d-flex.align-items-center
+              .first-screen__item-icon.d-flex.align-items-center.justify-content-center
+                <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M19.8415 16.6511L16.8332 11.456C17.4488 10.3254 17.7695 9.05785 17.7656 7.77053C17.7656 5.70966 16.947 3.73319 15.4897 2.27594C14.0324 0.818678 12.056 0 9.9951 0C7.93423 0 5.95776 0.818678 4.5005 2.27594C3.04325 3.73319 2.22457 5.70966 2.22457 7.77053C2.22075 9.05785 2.54144 10.3254 3.15703 11.456L0.148727 16.6511C0.0511085 16.8202 -0.000192338 17.012 5.41884e-07 17.2073C0.000193421 17.4025 0.051873 17.5942 0.149826 17.7631C0.247778 17.932 0.388539 18.0721 0.557907 18.1692C0.727276 18.2663 0.91926 18.317 1.11449 18.3162H4.30041L5.92112 21.047C5.97576 21.1375 6.04304 21.2198 6.12093 21.2913C6.32672 21.4896 6.60108 21.6009 6.88689 21.6021H7.0423C7.20989 21.5791 7.37002 21.5182 7.51046 21.4239C7.6509 21.3297 7.76795 21.2045 7.85265 21.0581L9.9951 17.3727L12.1375 21.0914C12.2235 21.2358 12.3411 21.3587 12.4815 21.451C12.6218 21.5433 12.7813 21.6026 12.9479 21.6243H13.1033C13.393 21.626 13.6718 21.5145 13.8804 21.3135C13.955 21.246 14.0187 21.1674 14.0691 21.0803L15.6898 18.3496H18.8757C19.0713 18.3503 19.2636 18.2994 19.4332 18.2019C19.6028 18.1045 19.7437 17.9639 19.8415 17.7945C19.9452 17.6219 20 17.4242 20 17.2228C20 17.0214 19.9452 16.8238 19.8415 16.6511ZM6.87579 18.3496L5.88782 16.6955C5.79054 16.5314 5.6526 16.3952 5.48733 16.2999C5.32205 16.2046 5.13501 16.1535 4.94425 16.1516H3.02382L4.61123 13.3986C5.70435 14.4519 7.08206 15.162 8.5742 15.4412L6.87579 18.3496ZM9.9951 13.3209C8.89734 13.3209 7.82423 12.9954 6.91147 12.3855C5.99872 11.7756 5.28731 10.9088 4.86722 9.89457C4.44712 8.88037 4.33721 7.76437 4.55137 6.68771C4.76553 5.61104 5.29415 4.62205 6.07039 3.84582C6.84662 3.06959 7.83561 2.54096 8.91227 2.3268C9.98894 2.11264 11.1049 2.22255 12.1191 2.64265C13.1333 3.06274 14.0002 3.77415 14.6101 4.6869C15.22 5.59966 15.5455 6.67277 15.5455 7.77053C15.5455 9.24258 14.9607 10.6543 13.9198 11.6952C12.8789 12.7361 11.4672 13.3209 9.9951 13.3209ZM15.0459 16.1516C14.8552 16.1535 14.6681 16.2046 14.5029 16.2999C14.3376 16.3952 14.1997 16.5314 14.1024 16.6955L13.1144 18.3496L11.4271 15.4079C12.914 15.123 14.2866 14.4136 15.379 13.3653L16.9664 16.1183L15.0459 16.1516Z" fill="#E03B32"/>
+                </svg>
+              .first-screen__item-text Работаем со спец. счетами
+            .first-screen__item.d-flex.align-items-center
+              .first-screen__item-icon.d-flex.align-items-center.justify-content-center
+                <svg width="20" height="14" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17.9964 8.16713V7.99721C17.9974 6.92771 17.7838 5.86888 17.3683 4.88338C16.9529 3.89789 16.3439 3.00575 15.5775 2.25978C14.6828 1.38915 13.593 0.744879 12.3989 0.380619H12.3489C11.5118 0.116869 10.6378 -0.0113586 9.76011 0.000788781C7.66944 0.115542 5.7017 1.0251 4.25973 2.54325C2.81776 4.06141 2.01063 6.07333 2.00358 8.16713C1.33555 8.40213 0.772237 8.86597 0.413424 9.4765C0.0546103 10.087 -0.0765517 10.8048 0.0431684 11.5028C0.162889 12.2008 0.525765 12.8339 1.06753 13.2899C1.60929 13.746 2.29497 13.9956 3.00313 13.9945H16.9969C17.705 13.9956 18.3907 13.746 18.9325 13.2899C19.4742 12.8339 19.8371 12.2008 19.9568 11.5028C20.0766 10.8048 19.9454 10.087 19.5866 9.4765C19.2278 8.86597 18.6645 8.40213 17.9964 8.16713ZM16.9969 11.9954H3.00313C2.73803 11.9954 2.48379 11.8901 2.29634 11.7027C2.10889 11.5152 2.00358 11.261 2.00358 10.9959C2.00358 10.7308 2.10889 10.4765 2.29634 10.2891C2.48379 10.1016 2.73803 9.99631 3.00313 9.99631H5.00224C5.26733 9.99631 5.52157 9.891 5.70903 9.70355C5.89648 9.5161 6.00179 9.26186 6.00179 8.99676C6.00179 8.73166 5.89648 8.47742 5.70903 8.28997C5.52157 8.10252 5.26733 7.99721 5.00224 7.99721H4.00268C4.04827 6.96048 4.345 5.95034 4.86734 5.05365C5.38968 4.15696 6.12201 3.40057 7.00134 2.84951V5.9981C7.00134 6.2632 7.10665 6.51744 7.2941 6.70489C7.48156 6.89235 7.7358 6.99766 8.00089 6.99766C8.26599 6.99766 8.52023 6.89235 8.70769 6.70489C8.89514 6.51744 9.00045 6.2632 9.00045 5.9981V2.08985C9.27176 2.04453 9.5454 2.01449 9.82008 1.99989H10C10.3355 2.00297 10.6701 2.03643 10.9996 2.09985V5.9981C10.9996 6.2632 11.1049 6.51744 11.2923 6.70489C11.4798 6.89235 11.734 6.99766 11.9991 6.99766C12.2642 6.99766 12.5184 6.89235 12.7059 6.70489C12.8933 6.51744 12.9987 6.2632 12.9987 5.9981V2.81953C13.4227 3.06504 13.8182 3.35668 14.1781 3.68914C14.7544 4.24879 15.2124 4.91851 15.5249 5.65855C15.8374 6.3986 15.9981 7.19389 15.9973 7.99721H14.9978C14.7327 7.99721 14.4784 8.10252 14.291 8.28997C14.1035 8.47742 13.9982 8.73166 13.9982 8.99676C13.9982 9.26186 14.1035 9.5161 14.291 9.70355C14.4784 9.891 14.7327 9.99631 14.9978 9.99631H16.9969C17.262 9.99631 17.5162 10.1016 17.7037 10.2891C17.8911 10.4765 17.9964 10.7308 17.9964 10.9959C17.9964 11.261 17.8911 11.5152 17.7037 11.7027C17.5162 11.8901 17.262 11.9954 16.9969 11.9954Z" fill="#E03B32"/>
+                </svg>
+              .first-screen__item-text Собственный штат инженеров
+
+      .d-flex.justify-content-between
+        noindex.btn-whatsapp-box
+          a.btn-whatsapp(href="https://wa.me/79279563573" rel="nofollow")
+            .btn-whatsapp__text НАПИСАТЬ В WHATSAPP
+            svg.btn-whatsapp__icon(xmlns="http://www.w3.org/2000/svg")
+              use(xlink:href="/assets/css/img/whatsapp.svg#whatsapp")
+        a.btn.btn_first-screen.d-flex.align-items-center.justify-content-center.btn-modal(href="#form_up" rel="nofollow" data-reason="Заказать звонок" data-header="Заказать звонок" onclick="ym(48630242, 'reachGoal', 'main-1st'); fbq('track', 'InitiateCheckout'); return true;") Заказать звонок
+
+  section.container
+    .r20
+    .r20
+    h2.title Порядок ведения исполнительной документации по договору
+    .complex-main
+      .complex-main__box
+        .complex-main__item-box
+          .complex-main__head-box
+            .complex-main__head-img
+              img.image-load.complex-main__head-img(src="#" data-src="../assets/css/img/vedenie_id/complex1.png" alt="Инженеры по ведению исполнительной документации дополнят ваш штат")
+            h3.complex-main__head-title Инженеры по ведению исполнительной документации дополнят ваш штат
+          .complex-main__item
+            h4.complex-main__item-title Принимаем не освоенный участок строительства
+            p.complex-main__item-text Приезжаем на объект, знакомимся с контролирующими и принимающими органами
+          .complex-main__item
+            h4.complex-main__item-title Приступаем к ведению по ранее составленному техническому заданию
+            p.complex-main__item-text Подготавливаем исполнительную техническую документацию
+          .complex-main__item
+            h4.complex-main__item-title Формируем папки под сдачу
+            p.complex-main__item-text Комплектуем весь объем документов под ПСД заказчика – соблюдаем требования к ведению
+          .complex-main__item
+            h4.complex-main__item-title Сдаем документацию на ввереный участок строительства
+            p.complex-main__item-text Укомплектованные папки подписываем и без вашего вмешательства сдаем в архив
+        .complex-main__img-box
+          img.image-load.complex-main__img(src="#" data-src="../assets/css/img/vedenie_id/complex1.png" alt="Инженеры по ведению исполнительной документации дополнят ваш штат")
+      a.btn.btn_h50.btn_width-full-m.btn-modal(href="#form_up" rel="nofollow" data-reason="Заказать звонок" data-header="Заказать звонок") Заказать звонок
+    .r20
+    .r10
+    .complex-main
+      .complex-main__box
+        .complex-main__item-box
+          div
+            .complex-main__head-box
+              .complex-main__head-img
+                img.image-load.complex-main__head-img(src="#" data-src="../assets/css/img/vedenie_id/complex2.png" alt="Ведение исполнительной под нашу ответственность")
+              h3.complex-main__head-title Ведение исполнительной под нашу ответственность
+            .complex-main__item
+              h4.complex-main__item-title Заключаем официальный договор и определяем объем работ
+              p.complex-main__item-text Изучаем проект и сметы
+            .complex-main__item
+              h4.complex-main__item-title Подбираем команду инженеров нужной специализации
+              p.complex-main__item-text Определяем виды работ и выезжаем на объект
+            .complex-main__item
+              h4.complex-main__item-title Ведем исполнительную и сдаем заказчику
+              p.complex-main__item-text Согласовываем изменения в проекте, разрабатываем, сдаем на архивное хранение
+            .complex-main__item
+              h4.complex-main__item-title Еженедельно отчитываемся
+              p.complex-main__item-text Предоставляем таблицы прогресса сдачи
+          a.btn.btn_h50.btn_width-full-m.btn-modal(href="#form_up" rel="nofollow" data-reason="Заказать звонок" data-header="Заказать звонок") Заказать звонок
+        .complex-main__img-box
+          img.image-load.complex-main__img(src="#" data-src="../assets/css/img/vedenie_id/complex2.png" alt="Ведение исполнительной под нашу ответственность")
+
+    .r20
+    .r10
+    .complex-main
+      .complex-main__box
+        .complex-main__item-box
+          .complex-main__head-box
+            .complex-main__head-img
+              img.image-load.complex-main__head-img(src="#" data-src="../assets/css/img/vedenie_id/complex3.png" alt="Ведение ИД улучшит производственные процессы")
+            h3.complex-main__head-title Ведение ИД улучшит производственные процессы
+          .complex-main__item
+            h4.complex-main__item-title Организуем процесс сбора и проверки папок ваших подрядчиков
+            p.complex-main__item-text Настраиваем процесс сбора и проверки ИД в одном месте
+          .complex-main__item
+            h4.complex-main__item-title Согласуем изменения в проекте
+            p.complex-main__item-text Готовим и подаем документы на согласование изменений в службу заказчика
+          .complex-main__item
+            h4.complex-main__item-title Формируем и комплектуем конечный пакет документации
+            p.complex-main__item-text Готовим папки под перечень приемо-сдаточной документации
+          .complex-main__item
+            h4.complex-main__item-title Сдаем полный комплект надзорным органам и заказчику
+            p.complex-main__item-text Подписываем и сдаем в архив. Отчитываемся заказчику
+        .complex-main__img-box
+          img.image-load.complex-main__img(src="#" data-src="../assets/css/img/vedenie_id/complex3.png" alt="Ведение ИД улучшит производственные процессы" style="position: absolute; right: 0; bottom: 0;")
+      a.btn.btn_h50.btn_width-full-m.btn-modal(href="#form_up" rel="nofollow" data-reason="Заказать звонок" data-header="Заказать звонок") Заказать звонок
+    .r70
+
+  section.bg.bg_gray-linear
+    .r30
+    .container
+      .block5
+        h3.block5__title Договор на ведение технической исполнительной документации
+        .block5__text
+          p —   Определяет объем работ – техническое задание, сроки его выполнения и количество задействованных инженеров ПТО. Договор определяет нашу зону ответственности сроками ведения, сдачи и качеством исполнительной
+          p —   Ведение исполнительной осуществляется по календарному графику. Подготовка и подписание по графику – результат нашей работы
+        a.block5__btn.btn.btn_h50.btn_width-full-m.btn-modal(href="#form_up" rel="nofollow" data-reason="Запросить договор" data-header="Запросить договор") Запросить договор
+        img.block5__img.image-load(src="#" data-src="../assets/css/img/vedenie_id/block5.png" alt="Договор на ведение технической исполнительной документации")
+
+  section.container
+    .r70
+    h3.title Порядок ведения исполнительной документации по договору
+    .block6
+      h4.block6__title Средняя цена составляет
+      .block6__box
+        img.block6__number.image-load(src="#" data-src="../assets/css/img/vedenie_id/block6_1.5.png" alt="1.5%")
+        .block6__text
+          p.block6__text-item от суммы на которую нужно закрыть объем СМР
+          p.block6__text-item от суммы полученной вами за сданную исполнительную
+      img.block6__img.image-load(src="#" data-src="../assets/css/img/vedenie_id/block6.png" alt="1.5%")
+
+  .our-objects(style="padding-top:0;")
+    .r70
+    .container
+      h3.title Мы работаем на этих объектах
+      .our-objects__box-global
+        .our-objects__box.row
+          .our-objects__item-box
+            .our-objects__item
+              img.our-objects__item-img.image-load(src="#" data-src="/assets/css/img/tenders/works/1.jpg" alt="ЗапСибНефтехим-2")
+              .our-objects__item-content
+                .our-objects__item-title ЗапСибНефтехим-2
+                .our-objects__item-text Сдали разделы
+                  span ТХ, КМ, КЖ, АС
+          .our-objects__item-box
+            .our-objects__item
+              img.our-objects__item-img.image-load(src="#" data-src="/assets/css/img/tenders/works/7.jpg" alt="Месторождения им. Требса, Титова")
+              .our-objects__item-content
+                .our-objects__item-title Месторождения им. Требса, Титова
+                .our-objects__item-text Сдали разделы
+                  span ТХ, ВК, ЭМ, ЭО
+          .our-objects__item-box
+            .our-objects__item
+              img.our-objects__item-img.image-load(src="#" data-src="/assets/css/img/tenders/works/3.jpg" alt="Строительство НПС 32")
+              .our-objects__item-content
+                .our-objects__item-title Строительство НПС 32
+                .our-objects__item-text Сдали разделы
+                  span КМ, КЖ, ВК, ОВ, ПТ, АР, МО
+          .our-objects__item-box
+            .our-objects__item
+              img.our-objects__item-img.image-load(src="#" data-src="/assets/css/img/tenders/works/4.jpg" alt="Реконструкция завода Полиэф")
+              .our-objects__item-content
+                .our-objects__item-title Реконструкция завода Полиэф
+                .our-objects__item-text Сдали разделы
+                  span КЖ, АР, КМ, ТХ, ЭМ, ПС, СС, АТХ
+          .our-objects__item-box
+            .our-objects__item
+              img.our-objects__item-img.image-load(src="#" data-src="/assets/css/img/tenders/works/5.jpg" alt="Москва-Сити")
+              .our-objects__item-content
+                .our-objects__item-title Москва-Сити
+                .our-objects__item-text Сдали разделы
+                  span ОВ, ЭМ, ОПС, ПС, ВК
+          .our-objects__item-box
+            .our-objects__item
+              img.our-objects__item-img.image-load(src="#" data-src="/assets/css/img/tenders/works/6.jpg" alt="Трубопровод Восточная Сибирь - Тихий океан")
+              .our-objects__item-content
+                .our-objects__item-title Трубопровод Восточная Сибирь - Тихий океан
+                .our-objects__item-text Сдали разделы
+                  span Х, КМ, КЖ, земляные работы
+          .our-objects__item-box
+            .our-objects__item
+              img.our-objects__item-img.image-load(src="#" data-src="/assets/css/img/tenders/works/8.jpg" alt="Золоторудное месторождение. Чита")
+              .our-objects__item-content
+                .our-objects__item-title Золоторудное месторождение. Чита
+                .our-objects__item-text Сдали разделы
+                  span АР, ЭОМ, СС, ОПС, ОВИК, НВК
+          .our-objects__item-box
+            .our-objects__item
+              img.our-objects__item-img.image-load(src="#" data-src="/assets/css/img/tenders/works/9.jpg" alt="ТрансУголь. Угольный терминал п. Ванино")
+              .our-objects__item-content
+                .our-objects__item-title ТрансУголь. Угольный терминал п. Ванино
+                .our-objects__item-text Сдали разделы
+                  span КМ, АР, ЭОМ
+
+        .our-objects__hide
+          .our-objects__box.row
+            .our-objects__item-box
+              .our-objects__item
+                img.our-objects__item-img.image-load(src="#" data-src="/assets/css/img/tenders/works/10.jpg" alt="НПС «Филино»")
+                .our-objects__item-content
+                  .our-objects__item-title НПС «Филино»
+                  .our-objects__item-text Сдали разделы
+                    span АР, КР, ТХ, КМ
+            .our-objects__item-box
+              .our-objects__item
+                img.our-objects__item-img.image-load(src="#" data-src="/assets/css/img/tenders/works/11.jpg" alt="Перинатальный центр. Сургут")
+                .our-objects__item-content
+                  .our-objects__item-title Перинатальный центр. Сургут
+                  .our-objects__item-text Сдали разделы
+                    span АР, КР
+            .our-objects__item-box
+              .our-objects__item
+                img.our-objects__item-img.image-load(src="#" data-src="/assets/css/img/tenders/works/12.jpg" alt="Газопровод ЛУПИНГ")
+                .our-objects__item-content
+                  .our-objects__item-title Газопровод ЛУПИНГ
+                  .our-objects__item-text Сдали разделы
+                    span АК, ЭМ, ОЭ
+            .our-objects__item-box
+              .our-objects__item
+                img.our-objects__item-img.image-load(src="#" data-src="/assets/css/img/tenders/works/13.jpg" alt="Реконструкция трассы М-5 «УРАЛ»")
+                .our-objects__item-content
+                  .our-objects__item-title Реконструкция трассы М-5 «УРАЛ»
+                  .our-objects__item-text Сдали разделы
+                    span ТХ
+            .our-objects__item-box
+              .our-objects__item
+                img.our-objects__item-img.image-load(src="#" data-src="/assets/css/img/tenders/works/14.jpg" alt="КУПН Газпромнефть-МНПЗ")
+                .our-objects__item-content
+                  .our-objects__item-title КУПН Газпромнефть-МНПЗ
+                  .our-objects__item-text Сдали разделы
+                    span ТХ
+            .our-objects__item-box
+              .our-objects__item
+                img.our-objects__item-img.image-load(src="#" data-src="/assets/css/img/tenders/works/15.jpg" alt="НПЗ ОАО «Газпром нефтехим Салават».")
+                .our-objects__item-content
+                  .our-objects__item-title НПЗ ОАО «Газпром нефтехим Салават».
+                  .our-objects__item-text Сдали разделы
+                    span ТХ
+            .our-objects__item-box
+              .our-objects__item
+                img.our-objects__item-img.image-load(src="#" data-src="/assets/css/img/tenders/works/16.jpg" alt="Пропарочный комплекс. Комсмольск-на-Амуре")
+                .our-objects__item-content
+                  .our-objects__item-title Пропарочный комплекс. Комсмольск-на-Амуре
+                  .our-objects__item-text Сдали разделы
+                    span КЖ, КМ, ТХ, АР, ОВ, ЭОМ, НВК
+            .our-objects__item-box
+              .our-objects__item
+                img.our-objects__item-img.image-load(src="#" data-src="/assets/css/img/tenders/works/17.jpg" alt="Селекционно-генетический центр. Башкирия")
+                .our-objects__item-content
+                  .our-objects__item-title Селекционно-генетический центр. Башкирия
+                  .our-objects__item-text Сдали разделы
+                    span ОВ, НВК, АР, КМ, КЖ, ОВК, ТН
+
+      .btn.btn_border-black.btn_weight-normal.btn_center.btn_bg-transparent.btn_bg-transparent-no-hover.btn_our-works
+        .btn__text Смотреть все работы
+        .btn__icon
+
+  .container
+    .r70
+    .form-new
+      .row
+        .form-new__box.col-lg-10
+          .row.justify-content-between
+            .col-xl-8.col-lg-9.col-md-10.col-12
+              .form-new__form-box
+                .form-new__title Закажите звонок руководителя проектов
+                .form-new__subtitle-box.d-flex.align-items-center
+                  svg.form-new__subtitle-svg(xmlns="https://www.w3.org/2000/svg")
+                    use(xlink:href="../assets/css/img/ppr/sprite.svg#form-icon")
+                  .form-new__subtitle Расскажем, как строится процесс ведения и ценообразования
+
+                | [[!AjaxForm?
+                | &snippet=`FormIt`
+                | &frontend_css=``
+                | &form=`project_form`
+                | &hooks=`email,FormItSaveForm,roistat_hooks`
+                | &emailSubject=`Новая заявка `
+                | &emailTpl=`template_form1`
+                | &emailTo=`[[+email_to]]`
+                | &validate=`fio:required,phone:required`
+                | &fieldNames=`fio==Имя,phone==Телефон,page==Страница`
+                | &validationErrorMessage=`В форме содержатся ошибки!`
+                | &successMessage=`Сообщение успешно отправлено`
+                | ]]
+            .form-new__box-right.col-xl-4.col-lg-3.col-md-2
+              img.form-new__box-img(src="../assets/css/img/vedenie_id/form.png" alt="Закажите звонок руководителя проектов")
+              .form-new__box-signature
+                .form-new__box-signature-title Яна Черная
+                .form-new__box-signature-subtitle Руководитель проектов
+
+  .container
+    .r70
+    h3.title Ведение исполнительной документации на объекте решает 4 вопроса
+    .block7
+      .block7__item.block7__item-big(style="background-image: url('../assets/css/img/vedenie_id/block7_1.png');")
+        h4.block7__item-title Повышенние производительности
+        p.block7__item-text Выработка опытных инженеров в<br> среднем выше на 30% штатных
+      .block7__item(style="background-image: url('../assets/css/img/vedenie_id/block7_2.png');")
+        h4.block7__item-title Регулярная оплата
+        p.block7__item-text Получение денег за освоенные объемы СМР
+      .block7__item(style="background-image: url('../assets/css/img/vedenie_id/block7_3.png');")
+        h4.block7__item-title Контроль
+        p.block7__item-text Осведомленность о проценте выполненного объема
+      .block7__item.block7__item-big(style="background-image: url('../assets/css/img/vedenie_id/block7_4.png');")
+        h4.block7__item-title Отсутствие кадрового голода
+        p.block7__item-text Отпадает необходимость найма<br> инженеров
+    .r70
+
+  .docs
+    .r20
+    .r20
+    .container
+      .title Отзывы
+      .docs__signature.d-flex
+        svg.docs__signature-icon(xmlns="http://www.w3.org/2000/svg")
+          use(xlink:href="/assets/css/img/type_jobs/geodez/sprite.svg#review")
+        .docs__signature-text Почитайте что о нас пишут
+      .docs-box.row.flex-nowrap [[getImageList? &tvname=`docs` &tpl=`docs` &docid=`1` &limit=`6`]]
+      .r20.d-md-none
+      a.review-btn.d-flex.justify-content-end(href="[[++base_url]]o-kompanii/otzyivyi/")
+        .review-btn__title Смотреть все
+        .review-btn__icon-box
+          svg.review-btn__icon(xmlns="http://www.w3.org/2000/svg")
+            use(xlink:href="/assets/css/img/review/review.svg#review")
+    .r20
+    .r20

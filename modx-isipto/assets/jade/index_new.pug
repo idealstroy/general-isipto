@@ -1,0 +1,384 @@
+extends template
+block append var
+  -var title = "Главная"
+  -var form_footer = false
+  -var blog = true
+  -var index_main = true
+
+block content
+  //- section.question.first_screen_inner
+      .container
+          +crumbs()
+          h1.inner__title [[*longtitle]]
+          | [[getImageList? &tvname=`questions` &tpl=`questions` &docid=`1` &limit=`0`]] <br><br>
+
+  link(rel="stylesheet" type="text/css" href=assets + "css/index_new.css")
+
+  section.first-screen
+    .container
+      .first-screen__box
+        h1.first-screen__title(style="max-width: 650px;") [[*h1]]
+        .first-screen__subtitle Услуги аутсорсинга ПТО по РФ
+        .row
+          .first-screen__item-box.col-lg-10.col-12
+            .first-screen__item.d-flex.align-items-center
+              .first-screen__item-icon.d-flex.align-items-center.justify-content-center
+                <svg width="20" height="25" viewBox="0 0 20 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M10.027 0C6.21243 0 3.11621 3.1086 3.11621 6.94171C3.11621 10.5087 5.79312 13.444 9.23535 13.8384V21.5618H10.7153V13.8494C14.2084 13.5024 16.9377 10.5429 16.9377 6.94171C16.9377 3.10705 13.8446 0 10.027 0ZM10.2731 2.51722C9.03834 2.51311 7.85249 2.99957 6.97633 3.86964C6.10016 4.7397 5.60543 5.92213 5.60092 7.1569C5.60092 8.18175 4.59775 7.69255 4.59775 6.15837C4.60226 4.9236 5.09699 3.74118 5.97315 2.87111C6.84932 2.00104 8.03517 1.51458 9.26994 1.51869C10.8119 1.51869 11.3042 2.51722 10.2731 2.51722ZM12.501 18.6796V17.2461C16.0368 17.5635 20 18.7106 20 20.9739C20 23.4478 14.9687 24.7405 10.0008 24.7405C5.0298 24.7405 0 23.4478 0 20.9739C0 18.7725 3.85943 17.6471 7.54238 17.3204V18.7555C3.80215 19.127 1.72459 20.2773 1.72459 20.9554C1.72459 21.7433 4.64587 23.2791 10.0008 23.2791C15.3526 23.2791 18.2739 21.7433 18.2739 20.9554C18.2739 20.3237 16.3356 19.0636 12.501 18.6796Z" fill="#E03B32"/>
+                </svg>
+              .first-screen__item-text Работаем находясь на объекте
+            .first-screen__item.d-flex.align-items-center
+              .first-screen__item-icon.d-flex.align-items-center.justify-content-center
+                <svg width="21" height="23" viewBox="0 0 21 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17.9704 2.24631H15.7241V0H13.4778V2.24631H6.73892V0H4.49261V2.24631H2.24631C1.00747 2.24631 0 3.25377 0 4.49261V20.2167C0 21.4556 1.00747 22.4631 2.24631 22.4631H17.9704C19.2093 22.4631 20.2167 21.4556 20.2167 20.2167V4.49261C20.2167 3.25377 19.2093 2.24631 17.9704 2.24631ZM17.9727 20.2167H2.24631V6.73892H17.9704L17.9727 20.2167Z" fill="#E03B32"/>
+                <path d="M8.98494 17.3124L15.3948 10.9026L13.8066 9.31445L8.98494 14.1361L6.40955 11.5608L4.82141 13.1489L8.98494 17.3124Z" fill="#E03B32"/>
+                </svg>
+              .first-screen__item-text Сопровождаем до завершения проекта
+
+      .d-flex.justify-content-between
+        noindex.btn-whatsapp-box
+          a.btn-whatsapp(href="https://wa.me/79279563573" rel="nofollow")
+            .btn-whatsapp__text НАПИСАТЬ В WHATSAPP
+            svg.btn-whatsapp__icon(xmlns="http://www.w3.org/2000/svg")
+              use(xlink:href="/assets/css/img/whatsapp.svg#whatsapp")
+        a.btn.btn_first-screen.d-flex.align-items-center.justify-content-center.btn-modal(href="#form_up" rel="nofollow" data-reason="Заказать расчет" data-header="Заказать расчет" onclick="ym(48630242, 'reachGoal', 'main-1st'); fbq('track', 'InitiateCheckout'); return true;") Заказать расчет
+
+  section
+    .r70
+    .container
+      h2.title Исполнительная документация в строительстве для генподрядных и подрядных организаций
+      .r10
+      p.description Учитывая отрасль строительства и текущую ситуацию, вы можете выбрать подходящий формат сотрудничества с нами
+      .block1
+        .block1__item
+          .block1__img-box
+            img.block1__img.image-load(src="#" data-src="../assets/css/img/index_new/block1_1.jpg" alt="Ведение исполнительной документации")
+            .block1__signature На протяжении всего строительства
+          .block1__content
+            .block1__text
+              .block1__title Ведение исполнительной документации
+              ul.block1__content-list
+                li.block1__content-item Cопровождаем весь цикл СМР от нулевого уровня до ввода объекта в эксплуатацию
+                li.block1__content-item Еженедельно отчитываемся о прогрессе сдачи документации
+                li.block1__content-item Сдаем готовый комплект исполнительной в архив заказчика
+              p Несем юридическую ответственность по договору
+            div
+              a.block1__btn(href="[[++base_url]]vedenie-id/") Подробнее
+
+        .block1__item
+          .block1__img-box
+            img.block1__img.image-load(src="#" data-src="../assets/css/img/index_new/block1_2.jpg" alt="Ведение исполнительной документации")
+            .block1__signature Формируем на завершенное строительство
+          .block1__content
+            .block1__text
+              .block1__title Подготовка исполнительной документации
+              ul.block1__content-list
+                li.block1__content-item Усиливаем ваш ПТО на объекте
+                li.block1__content-item Ускоряем сдачу документации завершенных объемов строительства
+                li.block1__content-item Оформляем недостающую исполнительную для получения оплаты
+              p Обладаем полной материально-технической базой для выполнения сложных и масштабных проектов
+            div
+              a.block1__btn(href="[[++base_url]]vedenie-id/podgotovka-ispolnitelnoy-dokumentacii/") Подробнее
+      .r50
+      .block2
+        .block2__content
+          h3.block2__title Мы инжиниринговая компания
+          p.block2__subtitle — Сопровождаем строительство, техническое перевооружение, реконструкцию объектов промышленного и гражданского назначения
+          a.block2__btn(href="[[++base_url]]o-kompanii/") Читать больше
+        .block2__img-box
+          img.block2__img.image-load.d-lg-block.d-none(src="#" data-src="../assets/css/img/index_new/note.png" alt="Мы инжиниринговая компания")
+          img.block2__img.image-load.d-lg-none(src="#" data-src="../assets/css/img/index_new/note-mobile.png" alt="Мы инжиниринговая компания")
+  .r70
+  .container
+    h3.title Охватим состав исполнительной технической документации
+    .block3
+      .block3__icon-box
+        <svg class="block3__icon" width="22" height="25" viewBox="0 0 22 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M21.6391 17.9977L18.6822 15.0937C18.5687 14.9812 18.4335 14.8919 18.2846 14.831C18.1357 14.7701 17.976 14.7387 17.8147 14.7387C17.6535 14.7387 17.4938 14.7701 17.3449 14.831C17.196 14.8919 17.0608 14.9812 16.9473 15.0937L12.5731 19.3897C12.4599 19.5018 12.3703 19.6348 12.3095 19.781C12.2487 19.9272 12.2178 20.0838 12.2188 20.2417V23.1457C12.2188 23.4639 12.3475 23.7692 12.5766 23.9942C12.8058 24.2193 13.1166 24.3457 13.4406 24.3457H16.3974C16.5582 24.3466 16.7176 24.3163 16.8665 24.2566C17.0154 24.1969 17.1508 24.1089 17.2649 23.9977L21.6391 19.7017C21.7536 19.5901 21.8445 19.4574 21.9065 19.3112C21.9686 19.1649 22.0005 19.0081 22.0005 18.8497C22.0005 18.6913 21.9686 18.5344 21.9065 18.3882C21.8445 18.242 21.7536 18.1092 21.6391 17.9977ZM15.8843 21.9457H14.6624V20.7457L17.8147 17.6497L19.0366 18.8497L15.8843 21.9457ZM8.55329 21.9457H3.66597C3.34192 21.9457 3.03115 21.8193 2.80201 21.5942C2.57287 21.3692 2.44415 21.0639 2.44415 20.7457V3.9457C2.44415 3.62744 2.57287 3.32222 2.80201 3.09717C3.03115 2.87213 3.34192 2.7457 3.66597 2.7457H9.77512V6.3457C9.77512 7.30048 10.1613 8.21615 10.8487 8.89128C11.5361 9.56641 12.4685 9.94569 13.4406 9.94569H17.1061V11.1457C17.1061 11.464 17.2348 11.7692 17.464 11.9942C17.6931 12.2193 18.0039 12.3457 18.3279 12.3457C18.652 12.3457 18.9627 12.2193 19.1919 11.9942C19.421 11.7692 19.5497 11.464 19.5497 11.1457V8.7457V8.6737C19.537 8.56346 19.5124 8.45485 19.4764 8.3497V8.2417C19.4177 8.11831 19.3393 8.00489 19.2443 7.9057L11.9133 0.705703C11.8123 0.612362 11.6968 0.5354 11.5712 0.477703C11.5347 0.472615 11.4977 0.472615 11.4612 0.477703L11.0703 0.345703H3.66597C2.69383 0.345703 1.7615 0.724988 1.07408 1.40012C0.386672 2.07525 0.000488281 2.99092 0.000488281 3.9457V20.7457C0.000488281 21.7005 0.386672 22.6161 1.07408 23.2913C1.7615 23.9664 2.69383 24.3457 3.66597 24.3457H8.55329C8.87734 24.3457 9.18811 24.2193 9.41725 23.9942C9.64639 23.7692 9.77512 23.4639 9.77512 23.1457C9.77512 22.8274 9.64639 22.5222 9.41725 22.2972C9.18811 22.0721 8.87734 21.9457 8.55329 21.9457ZM12.2188 4.4377L15.3833 7.5457H13.4406C13.1166 7.5457 12.8058 7.41927 12.5766 7.19423C12.3475 6.96918 12.2188 6.66396 12.2188 6.3457V4.4377ZM6.10963 14.7457H13.4406C13.7647 14.7457 14.0754 14.6193 14.3046 14.3942C14.5337 14.1692 14.6624 13.864 14.6624 13.5457C14.6624 13.2274 14.5337 12.9222 14.3046 12.6972C14.0754 12.4721 13.7647 12.3457 13.4406 12.3457H6.10963C5.78558 12.3457 5.47481 12.4721 5.24567 12.6972C5.01653 12.9222 4.8878 13.2274 4.8878 13.5457C4.8878 13.864 5.01653 14.1692 5.24567 14.3942C5.47481 14.6193 5.78558 14.7457 6.10963 14.7457ZM6.10963 9.94569H7.33146C7.65551 9.94569 7.96629 9.81927 8.19542 9.59422C8.42456 9.36918 8.55329 9.06396 8.55329 8.7457C8.55329 8.42744 8.42456 8.12221 8.19542 7.89717C7.96629 7.67213 7.65551 7.5457 7.33146 7.5457H6.10963C5.78558 7.5457 5.47481 7.67213 5.24567 7.89717C5.01653 8.12221 4.8878 8.42744 4.8878 8.7457C4.8878 9.06396 5.01653 9.36918 5.24567 9.59422C5.47481 9.81927 5.78558 9.94569 6.10963 9.94569ZM8.55329 17.1457H6.10963C5.78558 17.1457 5.47481 17.2721 5.24567 17.4972C5.01653 17.7222 4.8878 18.0274 4.8878 18.3457C4.8878 18.6639 5.01653 18.9692 5.24567 19.1942C5.47481 19.4193 5.78558 19.5457 6.10963 19.5457H8.55329C8.87734 19.5457 9.18811 19.4193 9.41725 19.1942C9.64639 18.9692 9.77512 18.6639 9.77512 18.3457C9.77512 18.0274 9.64639 17.7222 9.41725 17.4972C9.18811 17.2721 8.87734 17.1457 8.55329 17.1457Z" fill="#E03B32"/>
+        </svg>
+      .block3__content
+        ul.block3__content-text
+          li.block3__content-item Трубопроводы магистральные и промысловые для нефти и газа
+          li.block3__content-item Трубопроводы технологические
+          li.block3__content-item Монтаж вертикальных цилиндрических стальных резервуаров
+          li.block3__content-item Железобетонные резервуары для нефти и нефтепродуктов
+          li.block3__content-item Автомобильные дороги
+          li.block3__content-item Геодезическая документация
+          li.block3__content-item Земляные работы
+          li.block3__content-item Архитектурно-строительные решения
+          li.block3__content-item Конструкции железобетонные
+          li.block3__content-item Конструкции металлические
+          li.block3__content-item Наружные сети газоснабжения
+          li.block3__content-item Газоснабжение. Внутренние устройства
+          li.block3__content-item Водоснабжения и канализации
+          li.block3__content-item Водопровод и канализация
+          li.block3__content-item Тепломеханические решения тепловых сетей и котельных
+          li.block3__content-item Отопление, вентиляция и кондиционирование
+          li.block3__content-item Электромонтажные работы
+          li.block3__content-item Автоматизация
+          li.block3__content-item Линейные сооружения магистральных и внутризоновых
+          li.block3__content-item Охранная, пожарная и охранно-пожарная сигнализация
+          li.block3__content-item Монтаж спринклерной системы пожаротушения
+          li.block3__content-item Технология производства
+  .r70
+  .bg.bg_f6f7f8
+    .container
+      .r30
+      h3.title Соответствие нормативам и порядку ведения
+      .block4
+        .block4__item
+          .block4__head
+            .block4__title Стандарты
+            .block4__icon-box
+              <svg class="block4__icon" width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16 0H3C1.794 0 0 0.799 0 3V17C0 19.201 1.794 20 3 20H18V18H3.012C2.55 17.988 2 17.806 2 17C2 16.899 2.009 16.809 2.024 16.727C2.136 16.151 2.608 16.01 3.012 16H18V2C18 1.46957 17.7893 0.960859 17.4142 0.585786C17.0391 0.210714 16.5304 0 16 0ZM16 9L14 8L12 9V2H16V9Z" fill="white"/>
+            </svg>
+          .block4__text
+            p Соблюдаем требования по ИД нефтегазового, промышленного, жилого, дорожного, гидротехнического строительства. Качество документации строго соответствует нормативам РД, СНиП, ГОСТ, СП, СН, ПБ и другим
+            p Сдаем исполнительную технологически-сложных объектов строительства федерального и регионального значения
+        .block4__item
+          .block4__head
+            .block4__title Процесс
+            .block4__icon-box
+              <svg class="block4__icon" width="24" height="19" viewBox="0 0 24 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M21.6 2.375H12L9.6 0H2.4C1.08 0 0 1.06875 0 2.375V16.625C0 17.9312 1.08 19 2.4 19H21.6C22.92 19 24 17.9312 24 16.625V4.75C24 3.44375 22.92 2.375 21.6 2.375ZM19.128 15.4375L15.6 13.395L12.072 15.4375L13.008 11.4831L9.9 8.82313L13.992 8.47875L15.6 4.75L17.208 8.47875L21.3 8.82313L18.192 11.4831L19.128 15.4375Z" fill="white"/>
+              </svg>
+          .block4__text
+            p Подготавливаем, согласовываем, подписываем исполнительную в надзорных органах и сдаем на архивное хранение
+            p Процесс протекает с соблюдением актуальных нормативов и минимальным количеством замечаний, что сокращает время сдачи каждого раздела и поднимает производительность ПТО
+    .r50
+
+  .our-objects(style="padding-top:0;")
+    .r20
+    .r20.d-lg-block.d-none
+    .container
+      h3.title Мы работаем на этих объектах
+      .our-objects__box-global
+        .our-objects__box.row
+          .our-objects__item-box
+            .our-objects__item
+              img.our-objects__item-img.image-load(src="#" data-src="/assets/css/img/tenders/works/1.jpg" alt="")
+              .our-objects__item-content
+                .our-objects__item-title ЗапСибНефтехим-2
+                .our-objects__item-text Подготовили и сдали исполнительную по разделам
+                  span ТХ, КМ, КЖ, АС
+          .our-objects__item-box
+            .our-objects__item
+              img.our-objects__item-img.image-load(src="#" data-src="/assets/css/img/tenders/works/7.jpg" alt="")
+              .our-objects__item-content
+                .our-objects__item-title Месторождения им. Требса, Титова
+                .our-objects__item-text Подготовили и сдали исполнительную по разделам
+                  span ТХ, ВК, ЭМ, ЭО
+          .our-objects__item-box
+            .our-objects__item
+              img.our-objects__item-img.image-load(src="#" data-src="/assets/css/img/tenders/works/3.jpg" alt="")
+              .our-objects__item-content
+                .our-objects__item-title Строительство НПС 32
+                .our-objects__item-text Подготовили и сдали исполнительную по разделам
+                  span КМ, КЖ, ВК, ОВ, ПТ, АР, МО
+          .our-objects__item-box
+            .our-objects__item
+              img.our-objects__item-img.image-load(src="#" data-src="/assets/css/img/tenders/works/4.jpg" alt="")
+              .our-objects__item-content
+                .our-objects__item-title Реконструкция завода Полиэф
+                .our-objects__item-text Подготовили и сдали исполнительную по разделам
+                  span КЖ, АР, КМ, ТХ, ЭМ, ПС, СС, АТХ
+          .our-objects__item-box
+            .our-objects__item
+              img.our-objects__item-img.image-load(src="#" data-src="/assets/css/img/tenders/works/5.jpg" alt="")
+              .our-objects__item-content
+                .our-objects__item-title Москва-Сити
+                .our-objects__item-text Подготовили и сдали исполнительную по разделам
+                  span ОВ, ЭМ, ОПС, ПС, ВК
+          .our-objects__item-box
+            .our-objects__item
+              img.our-objects__item-img.image-load(src="#" data-src="/assets/css/img/tenders/works/6.jpg" alt="")
+              .our-objects__item-content
+                .our-objects__item-title Трубопровод Восточная Сибирь - Тихий океан
+                .our-objects__item-text Подготовили и сдали исполнительную по разделам
+                  span Х, КМ, КЖ, земляные работы
+          .our-objects__item-box
+            .our-objects__item
+              img.our-objects__item-img.image-load(src="#" data-src="/assets/css/img/tenders/works/8.jpg" alt="")
+              .our-objects__item-content
+                .our-objects__item-title Золоторудное месторождение. Чита
+                .our-objects__item-text Подготовили и сдали исполнительную по разделам
+                  span АР, ЭОМ, СС, ОПС, ОВИК, НВК
+          .our-objects__item-box
+            .our-objects__item
+              img.our-objects__item-img.image-load(src="#" data-src="/assets/css/img/tenders/works/9.jpg" alt="")
+              .our-objects__item-content
+                .our-objects__item-title ТрансУголь. Угольный терминал п. Ванино
+                .our-objects__item-text Подготовили и сдали исполнительную по разделам
+                  span КМ, АР, ЭОМ
+
+        .our-objects__hide
+          .our-objects__box.row
+            .our-objects__item-box
+              .our-objects__item
+                img.our-objects__item-img.image-load(src="#" data-src="/assets/css/img/tenders/works/10.jpg" alt="")
+                .our-objects__item-content
+                  .our-objects__item-title НПС «Филино»
+                  .our-objects__item-text Подготовили и сдали исполнительную по разделам
+                    span АР, КР, ТХ, КМ
+            .our-objects__item-box
+              .our-objects__item
+                img.our-objects__item-img.image-load(src="#" data-src="/assets/css/img/tenders/works/11.jpg" alt="")
+                .our-objects__item-content
+                  .our-objects__item-title Перинатальный центр. Сургут
+                  .our-objects__item-text Подготовили и сдали исполнительную по разделам
+                    span АР, КР
+            .our-objects__item-box
+              .our-objects__item
+                img.our-objects__item-img.image-load(src="#" data-src="/assets/css/img/tenders/works/12.jpg" alt="")
+                .our-objects__item-content
+                  .our-objects__item-title Газопровод ЛУПИНГ
+                  .our-objects__item-text Подготовили и сдали исполнительную по разделам
+                    span АК, ЭМ, ОЭ
+            .our-objects__item-box
+              .our-objects__item
+                img.our-objects__item-img.image-load(src="#" data-src="/assets/css/img/tenders/works/13.jpg" alt="")
+                .our-objects__item-content
+                  .our-objects__item-title Реконструкция трассы М-5 «УРАЛ»
+                  .our-objects__item-text Подготовили и сдали исполнительную по разделам
+                    span ТХ
+            .our-objects__item-box
+              .our-objects__item
+                img.our-objects__item-img.image-load(src="#" data-src="/assets/css/img/tenders/works/14.jpg" alt="")
+                .our-objects__item-content
+                  .our-objects__item-title КУПН Газпромнефть-МНПЗ
+                  .our-objects__item-text Подготовили и сдали исполнительную по разделам
+                    span ТХ
+            .our-objects__item-box
+              .our-objects__item
+                img.our-objects__item-img.image-load(src="#" data-src="/assets/css/img/tenders/works/15.jpg" alt="")
+                .our-objects__item-content
+                  .our-objects__item-title НПЗ ОАО «Газпром нефтехим Салават».
+                  .our-objects__item-text Подготовили и сдали исполнительную по разделам
+                    span ТХ
+            .our-objects__item-box
+              .our-objects__item
+                img.our-objects__item-img.image-load(src="#" data-src="/assets/css/img/tenders/works/16.jpg" alt="")
+                .our-objects__item-content
+                  .our-objects__item-title Пропарочный комплекс. Комсмольск-на-Амуре
+                  .our-objects__item-text Подготовили и сдали исполнительную по разделам
+                    span КЖ, КМ, ТХ, АР, ОВ, ЭОМ, НВК
+            .our-objects__item-box
+              .our-objects__item
+                img.our-objects__item-img.image-load(src="#" data-src="/assets/css/img/tenders/works/17.jpg" alt="")
+                .our-objects__item-content
+                  .our-objects__item-title Селекционно-генетический центр. Башкирия
+                  .our-objects__item-text Подготовили и сдали исполнительную по разделам
+                    span ОВ, НВК, АР, КМ, КЖ, ОВК, ТН
+
+      .btn.btn_border-black.btn_weight-normal.btn_center.btn_bg-transparent.btn_bg-transparent-no-hover.btn_our-works
+        .btn__text Смотреть все работы
+        .btn__icon
+
+    .r70
+
+  .docs
+    .r20
+    .r20
+    .container
+      .title Отзывы
+      .docs__signature.d-flex
+        svg.docs__signature-icon(xmlns="http://www.w3.org/2000/svg")
+          use(xlink:href="/assets/css/img/type_jobs/geodez/sprite.svg#review")
+        .docs__signature-text Почитайте что о нас пишут
+      .docs-box.row.flex-nowrap [[getImageList? &tvname=`docs` &tpl=`docs` &docid=`1` &limit=`6`]]
+      a.review-btn.d-flex.justify-content-end(href="[[++base_url]]o-kompanii/otzyivyi/")
+        .review-btn__title Смотреть все
+        .review-btn__icon-box
+          svg.review-btn__icon(xmlns="http://www.w3.org/2000/svg")
+            use(xlink:href="/assets/css/img/review/review.svg#review")
+    .r20
+    .r20
+
+  .r70
+  .container
+    .quote-document.quote-document_inverse.d-flex.justify-content-between.align-items-start
+      .quote-document__author
+        .quote-document__img.d-flex.justify-content-end
+          img.image-load.d-block(src="#" data-src="../assets/images/team/1.jpg" alt="Подготовка исполнительной документации по видам работ")
+        .quote-document__content
+          .quote-document__fio Сергей Гаинцев
+          .quote-document__profess Исполнительный директор
+      .quote-document__text Работаем на объектах от Краснодара до Хабаровска. Сформировали собственный штат инженеров-универсалов, инженеров узконаправленных разделов численностью более 100 человек
+        .quote-document__text-corner
+  .r10
+  .r5
+  .r10
+  .container
+    .our-clients
+      .our-clients__maps-box
+        img.our-clients__maps.image-load(data-src="../assets/css/img/main/maps.jpg" alt="Более 450 клиентов по России")
+      .our-clients__content
+        .our-clients__title Более <span>450 клиентов</span> по России
+        .our-clients__subtitle В их числе
+        ul.our-clients__ul
+          li.our-clients__li Нефтеперерабатывающие  заводы
+          li.our-clients__li Нефтяные месторождения
+          li.our-clients__li Трубопроводы
+          li.our-clients__li Заводы химического производства
+          li.our-clients__li Автомагистрали и железные дороги
+          li.our-clients__li Оборонные объекты
+          li.our-clients__li Рудники
+  .r50
+
+  .container
+    .gallery-new
+      .gallery-new__item-box
+        img.gallery-new__item.gallery-new__item_border-bottom.gallery-new__item_border-right.image-load(src="#" data-src="../assets/css/img/index_new/gallery/1.jpg" alt="")
+        img.gallery-new__item.gallery-new__item_border-bottom.gallery-new__item_border-right.image-load(src="#" data-src="../assets/css/img/index_new/gallery/2.jpg" alt="")
+        img.gallery-new__item.gallery-new__item_border-bottom.gallery-new__item_border-right.image-load(src="#" data-src="../assets/css/img/index_new/gallery/3.jpg" alt="")
+        img.gallery-new__item.gallery-new__item_border-bottom.gallery-new__item_border-right.image-load(src="#" data-src="../assets/css/img/index_new/gallery/4.jpg" alt="")
+      .gallery-new__item-box-big
+        img.gallery-new__item.gallery-new__item_border-bottom.image-load(src="#" data-src="../assets/css/img/index_new/gallery/5.jpg" alt="")
+      .gallery-new__item-box-big
+        img.gallery-new__item.gallery-new__item_border-right.image-load(src="#" data-src="../assets/css/img/index_new/gallery/6.jpg" alt="")
+      .gallery-new__item-box
+        img.gallery-new__item.gallery-new__item_border-bottom.gallery-new__item_border-right.image-load(src="#" data-src="../assets/css/img/index_new/gallery/7.jpg" alt="")
+        img.gallery-new__item.gallery-new__item_border-bottom.image-load(src="#" data-src="../assets/css/img/index_new/gallery/8.jpg" alt="")
+        img.gallery-new__item.gallery-new__item_border-right.image-load(src="#" data-src="../assets/css/img/index_new/gallery/9.jpg" alt="")
+        img.gallery-new__item.image-load(src="#" data-src="../assets/css/img/index_new/gallery/10.jpg" alt="")
+  .r20
+
+  .r50
+  .form-footer
+    .form-footer__title Не нашли, что искали? <br> Закажите звонок, обсудим проект
+    | [[!AjaxForm?
+    | &snippet=`FormIt`
+    | &frontend_css=``
+    | &form=`form_footer`
+    | &hooks=`email,FormItSaveForm,roistat_hooks`
+    | &emailSubject=`Новая заявка `
+    | &emailTpl=`template_form1`
+    | &emailTo=`[[+email_to]]`
+    | &validate=`fio:required,phone:required`
+    | &fieldNames=`fio==Имя,phone==Телефон,page==Страница`
+    | &validationErrorMessage=`В форме содержатся ошибки!`
+    | &successMessage=`Сообщение успешно отправлено`
+    | ]]
+  .r10
+  .r20
+  .r20.d-lg-block.d-none
+
+  .container
+    .r10
+    .r20
+    h3.title Блог
+    .row
+      | [[!pdoResources?
+      | &element = `pdoResources`
+      | &parents = `[[++blog]]`
+      | &tpl=`blog`
+      | &includeTVs=`image_blog,introtext_blog,publishedon`
+      | &sortby=``
+      | &sortdir=`DESC`
+      | &processTVs=`1`
+      | &tvPrefix=``
+      | &limit=`3`
+      | &frontend_css=``
+      | ]]
+    .r20.d-lg-block.d-none

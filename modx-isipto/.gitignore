@@ -1,0 +1,10 @@
+/core/cache/
+/core/cache1/
+/core/config/config.inc.php
+/core/config/config.inc.php.production
+/core/config/config.inc.php.local
+/.migration/
+/.env
+/database/
+/output/
+/.playwright-cli/

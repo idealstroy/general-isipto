@@ -1,0 +1,596 @@
+block var
+    -var title = "Заголовок" //- нужен для быстрого понимания, какой файл к какому макету относится
+    -var inner = false
+    -var index = false
+    -var ppr = false
+    -var type_jobs = false
+    -var inner_no_name = false
+    -var vacancies = false
+    -var techkarty_smety = false
+    -var video_script = false
+    -var blog = false
+    -var about_company = false
+    -var assets = "../assets/" //- ../assets/
+    -var min = ".min" //- .min
+    -var img = assets+"css/img/"
+    -var id_object = false
+    -var tenders = false
+    -var JivoSite = true
+    -var form_footer = true
+    -var tabcolor = "#000" //- перекрашивание вкладки в мобильных браузерах, Яндекс.Браузере и Vivaldi
+
+
+doctype html
+html(lang="ru")
+    block head
+        head
+            meta(http-equiv="X-UA-Compatible" content="IE=edge")
+            meta(name='viewport', content='width=device-width, initial-scale=1, minimum-scale=1')
+            meta(charset='utf-8')
+
+            | [[!*id:is=`337`:then=`<link rel="canonical" href="https://obuchenie.isipto.ru" />`:else=`<link rel="canonical" href="https://obuchenie.isipto.ru/" />`]]
+
+
+            <meta property="og:url" content="https://obuchenie.isipto.ru/" />
+
+            if inner_no_name
+                title [[*seotitle:empty=`[[*longtitle]]`]]
+
+            if inner
+                title [[*seotitle:is=``:then=`[[*longtitle]]`:else=`[[*seotitle]]`]]
+            else
+                title [[*seotitle:is=``:then=`[[*longtitle]]`:else=`[[*seotitle]]`]]
+
+            base(href="[[++site_url]]")
+            //-<link rel="canonical" href="[[*canonical:is=``:then=`[[~[[*id]]? &scheme=`full`]]`:else=`[[*canonical]]`]]" />
+            <meta property="og:locale" content="ru_RU" />
+            <meta property="og:type" content="[[*og_type]]" />
+            <meta property="og:title" content="[[*og_title]]" />
+            <meta property="og:description" content="[[*og_description]]" />
+            | [[*og_site_name:ne=``:then=`<meta property="og:site_name" content="[[*og_site_name]]" />`:else=`<meta property="og:site_name" content="[[++site_name]]" />`]]
+
+            meta(name='description', content='[[*seodescription:empty=`[[*longtitle]]`]]')
+            meta(name='keywords', content='[[*seokeywords]]')
+            meta(property='og:image', content='[[++site_url]]assets/css/img/ogimage.png')
+            meta(name="theme-color" content=tabcolor)
+            <meta name="yandex-verification" content="ac43b6d0dd7f3ea9" />
+
+            <style>
+            |    @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800&display=swap&subset=cyrillic');
+            </style>
+            link(rel="stylesheet" type="text/css" href="https://obuchenie.isipto.ru/assets/css/style.css?v=7.0000000021")
+
+            if JivoSite
+                |    [[!MinifyX?
+                |        &minifyJs=`1`
+                |        &jsTpl=`<script src="[[+file]]" defer></script>`
+                |        &jsSources=`fancybox.js,cookie.js,script.js,svgxuse.js,observer.js,maskedinput.js`
+                |    ]]
+            else
+                |    [[!MinifyX?
+                |        &minifyJs=`1`
+                |        &jsTpl=`<script src="[[+file]]" defer></script>`
+                |        &jsSources=`fancybox.js,cookie.js,script.js,svgxuse.js,observer.js,maskedinput.js,externals-no-jivosite.js`
+                |    ]]
+
+block append var
+    -var video_script = true
+    -var JivoSite = false
+    -var form_footer = false
+    -var vebinar = true
+block content
+    block header
+        | [[pdoField? &id=`1` &field=`email_to` &toPlaceholder=`email_to`]]
+        | [[pdoField? &id=`1` &field=`email` &toPlaceholder=`email`]]
+        | [[pdoField? &id=`1` &field=`phone` &toPlaceholder=`phone`]]
+        | [[pdoField? &id=`1` &field=`address` &toPlaceholder=`address`]]
+
+        header.animated
+            .contacts_header_box
+                .contacts_header.container.d-flex.align-items-center.justify-content-between.flex-sm-wrap
+                    .logo-box
+                        a.logo(href="https://isipto.ru/")
+                    //-.address_header.item_header.align-items-center.d-none.d-lg-flex
+                        svg.d-sm-block.d-none(width="25" height="19" xmlns="https://www.w3.org/2000/svg")
+                            use(xlink:href="../assets/css/img/contacts/contacts.svg#contacts4")
+                        .address_header [[$address]]
+                            .hint_city
+                                .hint_city_content Выбрать город?
+                                .hint_button
+                                    a.button.button_small.cityselect.hint_change_city.btn-modal(href="#city" rel="nofollow") Да
+                                    .hint_button_close.button.button_small Нет
+                                    i.corner
+                    a.email_header.item_header.d-none.d-xl-flex.align-items-center(href="mailto:[[++email]]" onclick="ym(48630242, 'reachGoal', 'main-header-mail'); fbq('track', 'InitiateCheckout'); return true;")
+                        svg(width="25" height="19" xmlns="https://www.w3.org/2000/svg")
+                            use(xlink:href="../assets/css/img/contacts/contacts.svg#contacts2")
+                        span [[++email]]
+                    .right_header
+                        .right_header_box.d-flex.align-items-center.justify-content-between
+                            .phone_header.phone_header_msk.item_header.d-md-flex.align-items-center.d-none
+                                div
+                                    <a id="phone_roistat_[[++key]]" href="tel:+79177303453" onclick="ym(48630242, 'reachGoal', 'main-header-phone'); fbq('track', 'InitiateCheckout'); return true;"><span class="phone_roistat_[[++key]]">8 917 730 34 53</span></a>
+                                    .free_rf Бесплатно по России
+                            a.btn.btn-modal(href="#form_up" rel="nofollow" data-reason="Перезвоните мне" data-header="Перезвоните мне" onclick="ym(48630242, 'reachGoal', 'main-header-lead'); fbq('track', 'InitiateCheckout'); return true;")
+                                span.d-lg-block.d-none Перезвоните мне
+                                span.d-lg-none Позвонить
+            .menu_box.d-lg-flex.d-none
+                .container
+                    nav.d-flex.justify-content-between.align-items-center
+                        .submenu-box.d-flex.align-items-center
+                            a.active.menu_box_item(href="https://isipto.ru/vedenie-id/")
+                                span Ведение исполнительной документации
+                            .submenu.submenu_services
+                                .corner
+                                a(href="https://isipto.ru/vedenie-id/")
+                                    span Ведение исполнительной документации
+                                a(href="https://isipto.ru/vedenie-id/podgotovka-ispolnitelnoy-dokumentacii/")
+                                    span Подготовка исполнительной документации
+                                a(href="https://isipto.ru/vedenie-id/ispolnitelnaya-dokumentacziya-obektov/")
+                                    span Исполнительная документация объекта
+
+                        a.menu_box_item(href="https://isipto.ru/autsorsing-pto/")
+                            span Аутсорсинг ПТО
+
+                        .submenu-box.d-flex.align-items-center
+                            a.active.menu_box_item(href="https://isipto.ru/razrabotka-ppr/")
+                                span Разработка ППР
+                            .submenu.submenu_services
+                                .corner
+                                a(href="https://isipto.ru/razrabotka-ppr/")
+                                    span Разработка ППР, ППРв, ППРпс
+                                a(href="https://isipto.ru/razrabotka-ppr/techkarty/")
+                                    span Технологические карты
+
+                        .submenu-box.d-flex.align-items-center
+                            a.menu_box_item(href="https://isipto.ru/uslugi/")
+                                span Услуги
+                            .submenu.submenu_services
+                                .corner
+                                a(href="https://isipto.ru/uslugi/ispolnitelnaya-dokumentacziya-na-truboprovodyi/")
+                                    span Исполнительная на трубопроводы
+                                a(href="https://isipto.ru/uslugi/ispolnitelnaya-dokumentacziya-na-metallokonstrukczii/")
+                                    span Исполнительная на металлоконструкции
+                                a(href="https://isipto.ru/uslugi/ispolnitelnaya-dokumentacziya-na-zemlyanyie-rabotyi/")
+                                    span Исполнительная на земляные работы
+                                a(href="https://isipto.ru/uslugi/ispolnitelnaya-na-zhelezobetonnyie-konstrukczii/")
+                                    span Исполнительная на железобетонные конструкции
+                                a(href="https://isipto.ru/uslugi/ispolnitelnaya-na-vodoprovod-i-kanalizacziyu/")
+                                    span Исполнительная на водопровод и канализацию
+                                a(href="https://isipto.ru/uslugi/ispolnitelnaya-na-elektromontazhnyie-rabotyi/")
+                                    span Исполнительная на электромонтажные работы
+                                a(href="https://isipto.ru/uslugi/ispolnitelnaya-na-avtomatizacziyu-a-atx-ak/")
+                                    span Исполнительная на автоматизацию
+                                a(href="https://isipto.ru/uslugi/ispolnitelnaya-na-oxrannuyu-pozharnuyu-signalizacziyu/")
+                                    span Исполнительная на пожарную и охранную сигнализацию
+                                a(href="https://isipto.ru/uslugi/ispolnitelnaya-na-rezervuaryi/")
+                                    span Исполнительная на резервуары
+                                a(href="https://isipto.ru/uslugi/geodezicheskie-raboti/")
+                                    span Исполнительная геодезическая документация
+                                a(href="https://isipto.ru/uslugi/otoplenie-ventilyaciya-i-kondicionirovanie/")
+                                    span Исполнительная по отоплению, вентиляции и кондиционированию
+                                a(href="https://isipto.ru/uslugi/stroitelnyij-audit/")
+                                    span Аудит исполнительной документации
+                                a(href="https://isipto.ru/uslugi/smety/")
+                                    span Сметы
+
+                        .submenu-box.d-flex.align-items-center
+                            a.menu_box_item(href="https://isipto.ru/o-kompanii/")
+                                span О компании
+                            .submenu
+                                .corner
+                                a(href="https://isipto.ru/o-kompanii/")
+                                    span О компании
+                                a(href="https://isipto.ru/o-kompanii/uchastvuem-v-tenderah/")
+                                    span Участвуем в тендерах
+                                a(href="https://isipto.ru/o-kompanii/otzyivyi/")
+                                    span Отзывы
+                                a(href="https://obuchenie.isipto.ru")
+                                    span Обучение
+                                a(href="https://isipto.ru/o-kompanii/inzheneryi-pto-vakansii/")
+                                    span Вакансии
+                                a(href="https://isipto.ru/o-kompanii/chastyie-voprosyi/")
+                                    span Часто задаваемые вопросы
+
+                        a.menu_box_item(href="https://isipto.ru/kontaktyi/")
+                            span Контакты
+
+            .container
+                .menu_container.align-items-start.justify-content-between.d-lg-none.d-flex
+                    .nav_mobile.justify-content-between.align-items-center
+                        .mobile-menu
+                            .mobile-menu-nav.d-flex.flex-wrap.justify-content-between.align-items-center
+                                a.mobile_home.d-flex.align-items-center(href="https://isipto.ru/") Главная
+                                .toogle_menu
+                                    nav.row.flex-wrap.justify-content-between.align-items-center
+                                        .menu-block__item
+                                            a.menu-block__item-link(href="https://isipto.ru/vedenie-id/")
+                                                span Ведение исполнительной документации
+                                            .menu-block-svg.d-flex.align-items-center.justify-content-end
+                                                .menu-block-svg__bg
+                                            .submenu
+                                                a.submenu_black(href="https://isipto.ru/vedenie-id/podgotovka-ispolnitelnoy-dokumentacii/")
+                                                    span Подготовка исполнительной документации
+                                                a.submenu_black(href="https://isipto.ru/vedenie-id/ispolnitelnaya-dokumentacziya-obektov/")
+                                                    span Исполнительная документация объекта
+
+                                        a(href="https://isipto.ru/autsorsing-pto/")
+                                            span Аутсорсинг ПТО
+
+                                        .menu-block__item
+                                            a.menu-block__item-link(href="https://isipto.ru/razrabotka-ppr/")
+                                                span Разработка ППР, ППРв, ППРпс
+                                            .menu-block-svg.d-flex.align-items-center.justify-content-end
+                                                .menu-block-svg__bg
+                                            .submenu
+                                                a.submenu_black(href="https://isipto.ru/razrabotka-ppr/techkarty/")
+                                                    span Технологические карты
+
+                                        .menu-block__item
+                                            a.menu-block__item-link(href="https://isipto.ru/uslugi/")
+                                                span Услуги
+                                            .menu-block-svg.d-flex.align-items-center.justify-content-end
+                                                .menu-block-svg__bg
+                                            .submenu
+                                                a(href="https://isipto.ru/uslugi/ispolnitelnaya-dokumentacziya-na-truboprovodyi/")
+                                                    span Исполнительная на трубопроводы
+                                                a(href="https://isipto.ru/uslugi/ispolnitelnaya-dokumentacziya-na-metallokonstrukczii/")
+                                                    span Исполнительная на металлоконструкции
+                                                a(href="https://isipto.ru/uslugi/ispolnitelnaya-dokumentacziya-na-zemlyanyie-rabotyi/")
+                                                    span Исполнительная на земляные работы
+                                                a(href="https://isipto.ru/uslugi/ispolnitelnaya-na-zhelezobetonnyie-konstrukczii/")
+                                                    span Исполнительная на железобетонные конструкции
+                                                a(href="https://isipto.ru/uslugi/ispolnitelnaya-na-vodoprovod-i-kanalizacziyu/")
+                                                    span Исполнительная на водопровод и канализацию
+                                                a(href="https://isipto.ru/uslugi/ispolnitelnaya-na-elektromontazhnyie-rabotyi/")
+                                                    span Исполнительная на электромонтажные работы
+                                                a(href="https://isipto.ru/uslugi/ispolnitelnaya-na-avtomatizacziyu-a-atx-ak/")
+                                                    span Исполнительная на автоматизацию
+                                                a(href="https://isipto.ru/uslugi/ispolnitelnaya-na-oxrannuyu-pozharnuyu-signalizacziyu/")
+                                                    span Исполнительная на пожарную и охранную сигнализацию
+                                                a(href="https://isipto.ru/uslugi/ispolnitelnaya-na-rezervuaryi/")
+                                                    span Исполнительная на резервуары
+                                                a(href="https://isipto.ru/uslugi/geodezicheskie-raboti/")
+                                                    span Исполнительная геодезическая документация
+                                                a(href="https://isipto.ru/uslugi/otoplenie-ventilyaciya-i-kondicionirovanie/")
+                                                    span Исполнительная по отоплению, вентиляции и кондиционированию
+                                                a(href="https://isipto.ru/uslugi/stroitelnyij-audit/")
+                                                    span Аудит исполнительной документации
+                                                a(href="https://isipto.ru/uslugi/smety/")
+                                                    span Сметы
+                                        .menu-block__item
+                                            a.menu-block__item-link(href="https://isipto.ru/o-kompanii/")
+                                                span О компании
+                                            .menu-block-svg.d-flex.align-items-center.justify-content-end
+                                                .menu-block-svg__bg
+                                            .submenu
+                                                a(href="https://isipto.ru/o-kompanii/uchastvuem-v-tenderah/")
+                                                    span Участвуем в тендерах
+                                                a(href="https://isipto.ru/o-kompanii/otzyivyi/")
+                                                    span Отзывы
+                                                a(href="https://obuchenie.isipto.ru")
+                                                    span Обучение
+                                                a(href="https://isipto.ru/o-kompanii/inzheneryi-pto-vakansii/")
+                                                    span Вакансии
+                                                a(href="https://isipto.ru/o-kompanii/chastyie-voprosyi/")
+                                                    span Часто задаваемые вопросы
+                                        a(href="https://isipto.ru/kontaktyi/")
+                                            span Контакты
+
+
+                    div(class="btn-mobile-menu menu_button navbar-toggle collapsed" role="navigation" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false")
+                        span(class="toggle")
+                            i
+                            i
+                            i
+
+    .first-screen
+        .container
+            h1.title.title_font-normal [[*h1]]
+
+block footer
+    if form_footer
+        .r10
+        .r20
+        .r20.d-lg-block.d-none
+        .form-footer
+            .form-footer__title Не нашли, что искали? <br> Закажите звонок, обсудим проект
+            | [[!AjaxForm?
+            | &snippet=`FormIt`
+            | &frontend_css=``
+            | &form=`form_footer`
+            | &hooks=`email,FormItSaveForm,roistat_hooks`
+            | &emailSubject=`Новая заявка `
+            | &emailTpl=`template_form1`
+            | &emailTo=`[[+email_to]]`
+            | &validate=`fio:required,phone:required`
+            | &fieldNames=`fio==Имя,phone==Телефон,page==Страница`
+            | &validationErrorMessage=`В форме содержатся ошибки!`
+            | &successMessage=`Сообщение успешно отправлено`
+            | ]]
+        .r10
+        .r20
+        .r20.d-lg-block.d-none
+
+    footer
+        .container
+            .footer__box
+                .footer__left
+                    a.footer__left-logo-href(href="https://isipto.ru/")
+                        svg.footer__left-logo(xmlns="http://www.w3.org/2000/svg")
+                            use(xlink:href="/assets/css/img/sprite-main.svg#logo_footer")
+                    .footer__left-info
+                        a.footer__left-info-item.footer__left-info-confid(href="https://isipto.ru/politika-konfidenczialnosti/") Политика конфиденциальности
+                        a.footer__left-info-item.footer__left-info-copyright © 2018-2020 все права защищены
+                .footer__center
+                    .footer__center-left
+                        a.footer__center-item(href="https://isipto.ru/o-kompanii/") О компании
+                        a.footer__center-item(href="https://isipto.ru/o-kompanii/otzyivyi/") Отзывы
+                        a.footer__center-item(href="https://isipto.ru/kontaktyi/") Контакты
+                    .footer__center-right
+                        a.footer__center-item(href="/") Исполнительная документация
+                        //-a.footer__center-item(href="") Восстановление исполнительной документации
+                        a.footer__center-item(href="https://isipto.ru/razrabotka-ppr/") Проекты производства работ - ППР
+                        a.footer__center-item(href="https://isipto.ru/blog/") Блог
+                .footer__right
+                    a.footer__right-phone#phone_roistat_footer_all(href="tel:" onclick="ym(48630242, 'reachGoal', 'footer-phone'); fbq('track', 'InitiateCheckout'); return true;") 8 800 350 23 98
+                    .footer__right-time-work-box
+                        .footer__right-time-work
+                            span.footer__right-time-days Пн-Пт
+                            span.footer__right-time-time 9.00-18.00
+                        .footer__right-time-work
+                            span.footer__right-time-days Сб-Вс
+                            span.footer__right-time-time 9.00-18.00
+
+block modal
+    if index
+        .form-modal.form-modal_md#form_quiz
+            .form-modal__title.callOrderHeader Заказать звонок
+            .modal-body
+                .modal-body__text
+                    #my-content
+                        | [[!AjaxForm?
+                        | &snippet=`FormIt`
+                        | &frontend_css=``
+                        | &form=`form_quiz`
+                        | &hooks=`email,FormItSaveForm,roistat_hooks_quiz`
+                        | &emailSubject=`Новая заявка (квиз)`
+                        | &emailTpl=`template_quiz`
+                        | &emailTo=`[[+email_to]]`
+                        | &validate=`phone:required`
+                        | &fieldNames=`phone==Телефон`
+                        | &emailMultiSeparator=`<br />`
+                        | &validationErrorMessage=`В форме содержатся ошибки!`
+                        | &successMessage=`Сообщение успешно отправлено`
+                        | ]]
+
+    //-.modal.fade#form_calculate(role="dialog" tabindex='-1')
+        .modal-dialog.modal-md
+            .modal-content
+                .modal-header
+                    .modal-title.title_up.callOrderHeader Рассчитать стоимость
+                    button.close(data-dismiss="modal") &times;
+                .modal-body
+                    .modal-text
+                        | [[!AjaxForm?
+                        | &snippet=`FormIt`
+                        | &frontend_css=``
+                        | &form=`form_tpl3`
+                        | &preHooks=`Formit2AjaxUpload`
+                        | &hooks=`AjaxUpload2Formit,AjaxUploadAttachments,email,FormItSaveForm,roistat_hooks`
+                        | &ajaxuploadFieldname=`image`
+                        | &ajaxuploadTarget=`/images/user/`
+                        | &ajaxuploadUid=`image`
+                        | &emailSubject=`Новая заявка`
+                        | &emailTpl=`template_form3`
+                        | &emailTo=`[[+email_to]]`
+                        | &validate=`fio:required,phone:required`
+                        | &fieldNames=`fio==Имя,phone==Телефон,page==Страница`
+                        | &validationErrorMessage=`В форме содержатся ошибки!`
+                        | &successMessage=`Сообщение успешно отправлено`
+                        | ]]
+
+
+    //-.modal.fade#form_up(role="dialog" tabindex='-1')
+        .modal-dialog.modal-sm
+            .modal-content
+                .modal-header
+                    .modal-title.title_up.callOrderHeader Заказать звонок
+                    button.close(data-dismiss="modal") &times;
+                .modal-body
+                    .modal-text
+                        | [[!AjaxForm?
+                        | &snippet=`FormIt`
+                        | &frontend_css=``
+                        | &form=`form_tpl1`
+                        | &hooks=`email,FormItSaveForm,roistat_hooks`
+                        | &emailSubject=`Новая заявка`
+                        | &emailTpl=`template_form1`
+                        | &emailTo=`[[+email_to]]`
+                        | &validate=`fio:required,phone:required,name:blank,firstname:blank,lastname:blank`
+                        | &fieldNames=`fio==Имя,phone==Телефон,page==Страница`
+                        | &validationErrorMessage=`В форме содержатся ошибки!`
+                        | &successMessage=`Сообщение успешно отправлено`
+                        | ]]
+    .form-modal.form_up#form_up
+        .form-modal__title.callOrderHeader Заказать звонок
+        .modal-body
+            .modal-body__text
+                | [[!AjaxForm?
+                | &snippet=`FormIt`
+                | &frontend_css=``
+                | &form=`form_tpl1`
+                | &hooks=`email,FormItSaveForm,roistat_hooks`
+                | &emailSubject=`Новая заявка`
+                | &emailTpl=`template_form1`
+                | &emailTo=`[[+email_to]]`
+                | &validate=`fio:required,phone:required,name:blank,firstname:blank,lastname:blank`
+                | &fieldNames=`fio==Имя,phone==Телефон,page==Страница`
+                | &validationErrorMessage=`В форме содержатся ошибки!`
+                | &successMessage=`Сообщение успешно отправлено`
+                | ]]
+
+
+
+    //-.modal.fade#form-success(role="dialog" tabindex='-1')
+        .modal-dialog.modal-lg
+            .modal-content
+                .modal-header
+                    .modal-title.title_up Спасибо, что выбрали нашу компанию!
+                    button.close(data-dismiss="modal") &times;
+                .modal-body
+                    .modal-text
+                        .form-modal__success
+                            //-.form-modal__text Спасибо, что выбрали нашу компанию!
+                            //-iframe(src='https://www.youtube.com/embed/s-OhRvSBf5A', frameborder='0', allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture', allowfullscreen='')
+                            //-.form-modal__text(style="margin-top: 20px;font-size: 1.05rem") Посмотрите видео эксурсию по нашему офису, пока ожидаете звонка специалиста.
+                            //-svg(xlink:width="38" height="42" xmlns="http://www.w3.org/2000/svg")
+                                use(href="../assets/css/img/success.svg#success")
+                                .form-modal__text Ожидайте звонка<br> специалиста.
+
+    .form-modal.form-modal_md#acceptModal
+        noindex
+            .form-modal__title.callOrderHeader Согласие на обработку персональных данных
+            .modal-body
+                .modal-body__text [[pdoField? &id=`[[++site_start]]` &field=`politikaAccept`]]
+    .form-modal.form-modal_md#politikaModal
+        noindex
+            .form-modal__title.callOrderHeader Политика конфиденциальности
+            .modal-body
+                .modal-body__text [[pdoField? &id=`[[++site_start]]` &field=`politikaConfidency`]]
+
+    //-| [[!*id:is=`[[++site_start]]`:then=`[[$city1]]`:else=`[[$city2]]`]]
+
+block scripts
+    script(type="text/javascript" src="https://obuchenie.isipto.ru/jquery.min.js")
+    |{ignore}
+    <script type="bogus" class="js-whatsapp-message-container">Ответьте на мои вопросы. Обращение номер:  {roistat_visit}</script>
+    |{/ignore}
+    //-| [[+MinifyX.javascript]]
+    <script src="https://obuchenie.isipto.ru/assets/components/minifyx/cache/scripts_6a58c300e2.min.js" defer></script>
+
+    if video_script
+        link(rel="stylesheet" type="text/css" href="https://obuchenie.isipto.ru/assets/css/vebinar.css")
+        div.
+            {ignore}
+            <script>
+                $(document).ready(function(){
+              sizeTheVideo();
+              $(window).resize(function(){
+                sizeTheVideo();
+              });
+            });
+
+            function sizeTheVideo(){
+              var aspectRatio = 1.78;
+
+                var video = $('iframe'),
+                    newWidth = $('.video-container').outerWidth(),
+                    halfNewWidth = newWidth/2,
+                    newHeight = newWidth/aspectRatio;
+
+              video.css({"width":newWidth+"px","height":newHeight+"px"});
+            }
+            </script>
+            {/ignore}
+
+    div.
+        {ignore}
+        <script>
+        $(document).on('af_complete', function(event, response) {
+            var fields = {
+                fio: "ваше имя",
+                phone: "ваш телефон",
+                email: "ваш email",
+            };
+            if (response.success) {
+                var goal = response.form[0].getElementsByClassName('goalMetrika')[0].value;
+                $.fancybox.close();
+                var url = "https://obuchenie.isipto.ru[[++base_url]]spasibo";
+                $(location).attr('href',url);
+
+                // yaglaaction('zayavka');
+                fbq('track', 'Lead');
+                // yaCounter48630242.reachGoal(goal);
+                gtag('event', goal, {'event_category': 'category'});
+            } else {
+                for (var prop in response.data) {
+                    AjaxForm.Message.error("Заполните поле '"+fields[prop]+"'");
+                }
+            }
+            response.message='';
+        });
+
+        (function(w, d, s, h, id) {
+            w.roistatProjectId = id; w.roistatHost = h;
+            var p = d.location.protocol == "https:" ? "https://" : "http://";
+            var u = /^.*roistat_visit=[^;]+(.*)?$/.test(d.cookie) ? "/dist/module.js" : "/api/site/1.0/"+id+"/init?referrer="+encodeURIComponent(d.location.href);
+            var js = d.createElement(s); js.charset="UTF-8"; js.async = 1; js.src = p+h+u; var js2 = d.getElementsByTagName(s)[0]; js2.parentNode.insertBefore(js, js2);
+        })(window, document, 'script', 'cloud.roistat.com', '9eeaab6aa1565e2aebc52d9060fef0f8');
+
+        <!-- BEGIN WHATSAPP INTEGRATION WITH ROISTAT -->
+        if ($(window).width() < '992'){
+            (function() {
+                if (window.roistat !== undefined) {
+                    handler();
+                } else {
+                    var pastCallback = typeof window.onRoistatAllModulesLoaded === "function" ? window.onRoistatAllModulesLoaded : null;
+                    window.onRoistatAllModulesLoaded = function () {
+                        if (pastCallback !== null) {
+                            pastCallback();
+                        }
+                        handler();
+                    };
+                }
+
+                function handler() {
+                    function init() {
+                        appendMessageToLinks();
+
+                        var delays = [1000, 5000, 15000];
+                        setTimeout(function func(i) {
+                            if (i === undefined) {
+                                i = 0;
+                            }
+                            appendMessageToLinks();
+                            i++;
+                            if (typeof delays[i] !== 'undefined') {
+                                setTimeout(func, delays[i], i);
+                            }
+                        }, delays[0]);
+                    }
+
+                    function replaceQueryParam(url, param, value) {
+                        var explodedUrl = url.split('?');
+                        var baseUrl = explodedUrl[0] || '';
+                        var query = '?' + (explodedUrl[1] || '');
+                        var regex = new RegExp("([?;&])" + param + "[^&;]*[;&]?");
+                        var queryWithoutParameter = query.replace(regex, "$1").replace(/&$/, '');
+                        return baseUrl + (queryWithoutParameter.length > 2 ? queryWithoutParameter  + '&' : '?') + (value ? param + "=" + value : '');
+                    }
+
+                    function appendMessageToLinks() {
+                        var message = document.querySelector('.js-whatsapp-message-container').text;
+                        var text = message.replace(/{roistat_visit}/g, window.roistatGetCookie('roistat_visit'));
+                        var linkElements = document.querySelectorAll('[href*="//wa.me"], [href*="//api.whatsapp.com/send"], [href*="//web.whatsapp.com/send"], [href^="whatsapp://send"]');
+                        for (var elementKey in linkElements) {
+                            if (linkElements.hasOwnProperty(elementKey)) {
+                                var element = linkElements[elementKey];
+                                element.href = replaceQueryParam(element.href, 'text', text);
+                            }
+                        }
+                    }
+                    if (document.readyState === 'loading') {
+                        document.addEventListener('DOMContentLoaded', init);
+                    } else {
+                        init();
+                    }
+                }
+            })();
+        }
+        <!-- END WHATSAPP INTEGRATION WITH ROISTAT -->
+
+        <!-- Yandex.Metrika counter --> <script type="text/javascript" > (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)}; m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)}) (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym"); ym(48630242, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true }); </script> <noscript><div><img src="https://mc.yandex.ru/watch/48630242" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!-- /Yandex.Metrika counter -->
+
+        </script>
+        <noscript><div><img src="https://mc.yandex.ru/watch/67718179" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+        {/ignore}

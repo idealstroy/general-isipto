@@ -1,0 +1,58 @@
+@import 'nib'
+@import 'rupture'
+
+/*Зачарование пикселей в ремы*/
+rem() {
+  remified = ()
+  for arg in arguments {
+    push(remified, unit(arg/16, 'rem'))
+  }
+  return remified
+}
+
+/*Адаптив*/
+rupture.scale =       0    576px    767.98px    992px    1200px
+rupture.scale-names =  'xs'     'sm'     'md'     'lg'      'xl'
+
+.first-screen
+  background: url(img/outsourcing/first-screen.png) #f6f7f9 80%/auto no-repeat;
+  +below(md)
+    background #f6f7f9
+
+.block8
+  color #fff
+  padding 50px 0 40px
+  background url(img/outsourcing/block8/bg.jpg) 100%/cover no-repeat
+  &__img
+    max-width 100%
+    +below(md)
+      max-width 80%
+      margin: auto;
+      display: block;
+  &__title
+    font-weight bold
+    font-size 30px
+    line-height 41px
+    margin-bottom 25px
+    +below(md)
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 33px;
+
+.block9
+  &__img
+    max-width 100%
+    +below(md)
+      width calc(100% + 30px);
+      margin: 0 -15px;
+      max-width: calc(100% + 30px);
+  &__title
+    font-weight 600
+    font-size 24px
+    line-height 33px
+    color #333333
+    margin-bottom 30px
+  &__content
+    padding-left 90px
+    +below(md)
+      padding-left 0

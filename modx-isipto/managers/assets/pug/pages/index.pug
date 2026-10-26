@@ -1,0 +1,95 @@
+extends ../layout/default.pug
+block append var
+    -var index = true
+block content
+    .page
+        .container
+            .row
+                .page-left.col-lg-4.col-12
+                    a.logo(href="/")
+                    .row
+                        .col-6
+                            .info-item
+                                .info-item__title Всего подписанных договоров
+                                .info-item__subtitle 18
+                        .col-6
+                            .info-item
+                                .info-item__title Общая сумма сделок
+                                .info-item__subtitle(style="font-size:27px") 10 000 000
+                        //-.col-6
+                            .info-item
+                                .info-item__title В среднем на специалиста
+                                .info-item__subtitle 4,5
+                        //-.col-6
+                            .info-item
+                                .info-item__title Всего совершенных звонков
+                                .info-item__subtitle 1898
+                        //-.col-6
+                            .info-item
+                                .info-item__title В среднем CTR на специалиста
+                                .info-item__subtitle 1,1
+
+                .page-right.col-lg-8.col-12
+                    .page-right__title Результаты за&nbsp;
+                        span месяц
+                        //span год
+                    .page-right__subtitle Отдел продаж
+
+                    .managers
+                        //-.managers-item.d-flex
+                            .managers-item__img
+                                img(src="img/manager.jpg")
+                            .managers-item-content
+                                .managers-item-content__title Ильдар Хамитов
+                                .managers-item-content__subtitle Менеджер по продажам
+                                .managers-item-content__sum Сумма сделок:&nbsp;
+                                    span 1 000 000 руб
+                                .specifications.d-flex.justify-content-start
+                                    //-.specifications-item.d-flex.align-items-center
+                                        .specifications-item__number 553
+                                        .specifications-item__text совершенных<br> звонков
+                                    .specifications-item.d-flex.align-items-start
+                                        .specifications-item__number 7
+                                        .specifications-item__text подписанных<br> договоров
+                                    //-.specifications-item.d-flex.align-items-start
+                                        .specifications-item__number 1.2
+                                        .specifications-item__text CTR
+
+                        .managers-item.d-flex
+                            .managers-item__img
+                                img(src="img/manager.jpg")
+                            .managers-item-content
+                                .managers-item-content__title Яна Черная
+                                .managers-item-content__subtitle Менеджер по продажам
+                                .managers-item-content__sum Сумма сделок:&nbsp;
+                                    span 1 000 000 руб
+                                .specifications.d-flex.justify-content-start
+                                    .specifications-item.d-flex.align-items-start
+                                        .specifications-item__number 7
+                                        .specifications-item__text подписанных<br> договоров
+
+                        //-.managers-item.d-flex
+                            .managers-item__img
+                                img(src="img/manager.jpg")
+                            .managers-item-content
+                                .managers-item-content__title Олег Матвеев
+                                .managers-item-content__subtitle Менеджер по продажам
+                                .managers-item-content__sum Сумма сделок:&nbsp;
+                                    span 1 000 000 руб
+                                .specifications.d-flex.justify-content-start
+                                    .specifications-item.d-flex.align-items-start
+                                        .specifications-item__number 7
+                                        .specifications-item__text подписанных<br> договоров
+
+                        //-.managers-item.d-flex
+                            .managers-item__img
+                                img(src="img/manager.jpg")
+                            .managers-item-content
+                                .managers-item-content__title Олег МСК
+                                .managers-item-content__subtitle Менеджер по продажам
+                                .managers-item-content__sum Сумма сделок:&nbsp;
+                                    span 1 000 000 руб
+                                .specifications.d-flex.justify-content-start
+                                    .specifications-item.d-flex.align-items-start
+                                        .specifications-item__number 7
+                                        .specifications-item__text подписанных<br> договоров

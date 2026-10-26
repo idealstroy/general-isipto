@@ -1,0 +1,6 @@
+<?php
+if(PHP_SAPI!=='cli')exit(2);require '/var/www/html/core/config/config.inc.php';if($database_server!=='db')exit(2);require '/var/www/html/config.core.php';require MODX_CORE_PATH.'model/modx/modx.class.php';$modx=new modX();$modx->initialize('web');$bad=array();
+foreach(array('modSnippet','modTemplate','modChunk') as $class)foreach($modx->getCollection($class) as $o){$s=$o->getContent();if(preg_match('~(?:cloud|api)\.roistat\.com/api/|http_build_query\(\$roistatData\)|/roistat/form_~',$s))$bad[]=array($class,$o->get('id'));}
+$guards=array();class SpecialGuardHook{public $errors=array();function getValue($k){return null;}function addError($k,$v){$this->errors[$k]=$v;}}
+foreach(array('bitrix24_hooks_bim','bitrix24_hooks_obuchenie','bitrix24_hooks_quiz','roistat_hooks_bim','roistat_hooks_obuchenie','roistat_hooks_quiz') as $name){$hook=new SpecialGuardHook();$r=$modx->runSnippet($name,array('hook'=>$hook));$guards[$name]=$r===false&&isset($hook->errors['agree']);}
+echo json_encode(array('oldDeliveryDependencies'=>$bad,'guards'=>$guards,'amoSnippetRemoved'=>!$modx->getObject('modSnippet',array('name'=>'roistat_hooks_msk')),'crmRequests'=>0),JSON_UNESCAPED_UNICODE)."\n";if($bad||in_array(false,$guards,true))exit(1);

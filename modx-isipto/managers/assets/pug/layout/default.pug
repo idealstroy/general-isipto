@@ -1,0 +1,50 @@
+//- Пример циклов
+mixin array(amount)
+  - for (var i = 1; i < amount+1; i++)
+  each val in ["1","2","3","4","5"]
+    .item= val
+block var
+  -var tabcolor = "#FFF" //- перекрашивание вкладки в мобильных браузерах, Яндекс.Браузере и Vivaldi
+  -var map = false
+  -var title = "Заголовок"
+  -var img = '' //- /dist/
+  -var authorsProgramm = 'Юдин Антон - yudin-1337@yandex.ru'
+doctype html
+html(lang="ru")
+  block head
+    head
+      meta(http-equiv="X-UA-Compatible" content="IE=edge")
+      meta(name='viewport', content='width=device-width, initial-scale=1, minimum-scale=1')
+      meta(charset='utf-8')
+      base(href="[[++site_url]]")
+      title Заголовок
+      if index
+        title {$_modx->config.site_name} 
+      else
+        title {{pagetitle}} | {$_modx->config.site_name}
+      meta(name='description', content='')
+      meta(name='keywords', content='')
+      meta(name='author', content='Верстка: ' + authorsProgramm + '.')
+      meta(property='og:title', content='')
+      meta(property="og:description" content="")
+      meta(property='og:type', content='website')
+      meta(property='og:url', content='')
+      meta(property='og:image', content='../css/img/ogimage.png')
+      meta(name="theme-color" content=tabcolor)
+      link(rel="stylesheet", href=img+"css/vendor.min.css")
+      link(rel="stylesheet", href=img+"css/main.min.css?v=6")
+  body
+    block header
+
+    block mobilemenu
+    block content
+    block footer
+        
+    block scripts
+      //- Эта jquery будет браться из кэша браузера у пользователей, что быстрее, чем загрузка заново.
+      //-script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js")
+      //- Резервная копия jquery
+      //-script(src="assets/js/jquery-3.3.1.js")
+      script(src=img+"js/vendor.min.js")
+      script(src=img+"js/common.min.js")
+      //-#monitorSpeed(style="display:none;") [^qt^];[^q^];[^p^];[^t^];[^s^]

@@ -1,0 +1,10 @@
+import fs from 'node:fs';import path from 'node:path';import {createHash} from 'node:crypto';
+const p=JSON.parse(fs.readFileSync('_backups/active-roistat-retirement.json','utf8'));const dbPath=p.directory+'/database-objects.json';const db=JSON.parse(fs.readFileSync(dbPath,'utf8'));let repaired=0;
+for(const e of db.objects){const candidates=[e.runtime,e.row[e.field]];for(const target of ['runtime','row']){let text=target==='runtime'?e.runtime:e.row[e.field];if(!text.includes('\uFFFD'))continue;let source=null;if(e.row.static_file){const f=path.join(p.directory,'files','modx-isipto',e.row.static_file);if(fs.existsSync(f))source=fs.readFileSync(f,'utf8');}if(!source)source=candidates.find(s=>!s.includes('\uFFFD'));if(!source)throw Error('Cannot safely repair snapshot encoding for object '+e.row.id);
+// Only permit the exact same text except split UTF-8 characters; do not erase legitimate DB/file differences.
+const parts=text.split(/\uFFFD+/);let offset=0;for(const part of parts){const at=source.indexOf(part,offset);if(at<0)throw Error('Snapshot/file mismatch for '+e.row.id);offset=at+part.length;}
+if(target==='runtime')e.runtime=source;else e.row[e.field]=source;repaired++;}}
+fs.writeFileSync(dbPath,JSON.stringify(db));
+const manifest=JSON.parse(fs.readFileSync(p.directory+'/manifest.json','utf8'));const changed=manifest.filter(m=>/assets[\\/](templates|chunks)[\\/]/.test(m.file));
+const report={completedUtc:new Date().toISOString(),localOnly:true,objectsUpdated:db.objects.length,filesUpdated:changed.length,compatibilityAliases:2,removedFiles:['assets/snippets/roistat_hooks.php','assets/snippets/roistat_hooks_2.php'],specializedHooksPreserved:true,analyticsPreserved:true,crmRequestsDuringTests:0,backupEncodingFieldsRepaired:repaired,postFiles:changed.map(m=>({file:m.file,sha256:createHash('sha256').update(fs.readFileSync(m.file)).digest('hex')}))};
+fs.writeFileSync(p.directory+'/migration-result.json',JSON.stringify(report,null,2));console.log(JSON.stringify({objects:report.objectsUpdated,files:report.filesUpdated,backupEncodingFieldsRepaired:repaired,localOnly:true}));

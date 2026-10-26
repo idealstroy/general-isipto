@@ -1,0 +1,29 @@
+<form class="recaptcha-form d-flex flex-wrap">
+    
+    <input type="hidden" name="recaptcha_token" class="recaptcha-token">
+
+<input type="hidden" name="csrf_token" value="[[+csrf_token]]">
+<input type="hidden" name="form_time" value="[[+form_time]]">
+    <input type="text" name="website" style="display:none">
+    
+    
+    <input class="site-message" type="text" name="name" value="">
+    <input class="site-message" type="text" name="firstname" value="">
+    <input class="site-message" type="text" name="lastname" value="">
+    <div class="techkarta-block">
+        <input class="goalMetrika" type="hidden" name="goal" value="lead">
+        <input class="techkarta-block__input phone" type="tel" name="phone" placeholder="+7 (___) ___-__-__">
+    </div>
+    
+        <div class="form-footer__checkbox">
+            <label><input type="checkbox" name="agree" required> 
+            <span style="color: #777;font-size: 14px;line-height: 14px;">
+            Я даю согласие на <a href="/politika-konfidenczialnosti/" style="color:#777;font-weight:500;">обработку своих персональных данных</a>
+            </span></label>
+        </div>    
+    
+    
+    <div class="techkarta-block">
+        <input class="btn btn_margin-left" type="submit" value="Заказать встречу">
+    </div>
+</form>

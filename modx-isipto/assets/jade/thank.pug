@@ -1,0 +1,13 @@
+extends template
+block append var
+    -var inner = true
+    -var video_script = true
+    -var form_footer = false
+block content
+    .first_screen_inner
+        .container
+            h1.about-company-inner__title.text-center [[*h1]]
+            .row.justify-content-center
+                .video.col-lg-6.col-12
+                    .video-container
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/s-OhRvSBf5A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

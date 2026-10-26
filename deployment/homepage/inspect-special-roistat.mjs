@@ -1,0 +1,2 @@
+import fs from 'node:fs';
+for(const dir of ['modx-isipto/assets/snippets','modx-isipto/roistat'])for(const name of fs.readdirSync(dir)){if(!name.endsWith('.php')||(dir.includes('snippets')&&!name.startsWith('roistat_hooks_')))continue;let s=fs.readFileSync(dir+'/'+name,'utf8');s=s.replace(/(['"](?:key|api_key|token|webhook)['"]\s*=>\s*)['"][^'"]*['"]/gi,'$1"[REDACTED]"').replace(/https?:\/\/[^\s'"<>]+/g,'[URL REDACTED]').replace(/[a-f0-9]{24,}/gi,'[TOKEN REDACTED]');console.log('\nFILE '+dir+'/'+name+'\n'+s);}

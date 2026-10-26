@@ -1,0 +1,99 @@
+[[$header_new]]
+<div class="contacts-inner first_screen_inner"><div class="container">
+
+[[pdoCrumbs? &tplWrapper = `@CODE <div class="breadcrumbs"><div class="crumbs">[[+output]]</div></div>` &tplHome = `@CODE <a href="[[+link]]"><span>Главная</span></a>` &tpl = `@CODE <a href="[[+link]]"><span>[[+menutitle]]</span></a>` &tplCurrent = `@CODE <span>[[+menutitle]]</span>` &outputSeparator = `` &showHome=`1` &showCurrent=`1` ]]
+
+
+
+<div itemscope itemtype="http://schema.org/Organization">
+<div class="row align-items-center">
+    <div class="col-lg-6 col-12">
+        <h1 class="inner__title">[[*h1]]</h1>
+        <span itemprop="name" style="display: none;">ИСИПТО</span>
+    </div>
+</div>
+    
+<div class="contacts-item-box">
+    <div class="row justify-content-between">
+        <div class="contacts-item-container col-lg-5 col-md-6 col-12">
+            <div class="contacts-city"></div>
+            <div class="contacts-item d-flex">
+                <div class="contacts-item__svg">
+                    <svg xmlns="http://www.w3.org/2000/svg"><use xlink:href="../assets/css/img/contacts/contacts.svg#contacts1"></use></svg>
+                </div>
+                <div class="contacts-item__content">
+                    <a class="contacts-item__title contacts-item__phone" id="phone_roistat_contacts_[[++key]]" href="tel:+79279563573" onclick="gtag('event', 'click'); ym(48630242, 'reachGoal', 'footer-phone'); fbq('track', 'InitiateCheckout'); return true;">
+                        <span class="phone_roistat_contacts_[[++key]]" onclick="ym(48630242,'reachGoal','calltracking');" itemprop="telephone">8 927 956 35 73</span>
+                    </a>
+<div class="contacts-item__signature">Бесплатный звонок по РФ</div>
+</div></div>
+<div class="contacts-item d-flex">
+    <div class="contacts-item__svg">
+        <svg xmlns="http://www.w3.org/2000/svg">
+            <use xlink:href="../assets/css/img/contacts/contacts.svg#contacts2"></use>
+        </svg>
+    </div>
+    <div class="contacts-item__content">
+        <a class="contacts-item__title contacts-item__email" href="mailto:[[++email]]">[[++email]]</a>
+        <span itemprop="email" style="display: none;">[[++email]]</span>
+        <div class="contacts-item__signature">Электронная почта</div>
+    </div>
+</div>
+<div class="contacts-item d-flex">
+    <div class="contacts-item__svg">
+        <svg xmlns="http://www.w3.org/2000/svg"><use xlink:href="../assets/css/img/contacts/contacts.svg#contacts3"></use></svg>
+    </div>
+    <div class="contacts-item__content">
+        <div class="contacts-item__title">с 09:00 до 18:00 ч.</div>
+        <div class="contacts-item__signature">Время работы</div>
+    </div>
+</div>[[++address:ne=``:then=`<div class="contacts-item d-flex"><div class="contacts-item__svg"><svg xmlns="http://www.w3.org/2000/svg"><use xlink:href="../assets/css/img/contacts/contacts.svg#contacts4"></use></svg></div><div class="contacts-item__content"><div class="contacts-item__title" itemprop="address" >[[++address]]</div><div class="contacts-item__signature">Адрес</div></div></div>`]]<a class="btn btn-modal d-inline-block krasnaya_knopka" href="#form_up" rel="nofollow" data-reason="Перезвоните мне" data-header="Перезвоните мне" onclick="ym(48630242, 'reachGoal', 'main-header-lead'); fbq('track', 'InitiateCheckout'); return true;"><span class="d-lg-block d-none">Перезвоните мне</span><span class="d-lg-none">Позвонить</span></a></div><div class="contacts-img col-lg-7 col-md-6 d-md-block d-none" style="background:url('../assets/css/img/main/maps.jpg') no-repeat center / contain"></div></div></div></div></div><div class="r50"></div>[[++address:ne=``:then=`<div id="map"></div>`]]
+
+</div>
+
+
+    <link rel="stylesheet" type="text/css" href="../assets/css/inner.css?v=1.0"
+    <script type="text/javascript" src="/jquery.min.js"></script>
+<script src="https://api-maps.yandex.ru/2.1/?apikey=a4aa48a2-43bc-49dc-a6f5-85d2e407b725&lang=ru_RU" type="text/javascript"></script><script src="../assets/js/ymapstouch.min.js"></script><script>/*Яндекс-карта*/
+{ignore}
+ymaps.ready(initMap);
+
+function initMap() {
+    var myMap, objects;
+    myMap = new ymaps.Map('map', {
+        center: [54.736445, 55.995324],
+        zoom: 10,
+        controls: []
+    });
+    ymapsTouchScroll(myMap);
+    var zoomControl = new ymaps.control.ZoomControl({
+        options: {
+            size: "small"
+        }
+    });
+    myMap.controls.add(zoomControl);
+
+    objects = ymaps.geoQuery(ymaps.geocode('[[++address]]'))
+        .addToMap(myMap);
+    objects.then(function () {
+        objects.each(function (object) {
+            object.options.set('iconLayout', 'default#image');
+            object.options.set('iconImageHref', '../assets/css/img/checkpoint.svg');
+            object.options.set('iconImageSize', [55, 45]);
+            object.options.set('iconImageOffset', [-35, -45]);
+        });
+
+        //myMap.behaviors.disable('scrollZoom');
+
+
+        myMap.setBounds(objects.getBounds(), {
+            checkZoomRange: true,
+            zoomMargin: [1000, 20, 20, 20]
+        }).then(function () {
+            myMap.setZoom(16);
+        });
+    });
+}
+{/ignore}</script>
+
+[[$footer_new]]

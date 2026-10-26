@@ -1,0 +1,16 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata>Copyright (C) 2018 by original authors @ fontello.com</metadata>
+<defs>
+<font id="fontello" horiz-adv-x="1000" >
+<font-face font-family="fontello" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
+<missing-glyph horiz-adv-x="1000" />
+<glyph glyph-name="phone" unicode="&#xe801;" d="M200 417c78-156 211-284 367-367l122 122c17 17 39 22 55 11 62-22 128-33 200-33 34 0 56-22 56-56l0-188c0-34-22-56-56-56-522 0-944 422-944 944 0 34 22 56 56 56l194 0c33 0 56-22 56-56 0-66 11-133 33-200 5-16 0-38-11-55l-128-122 0 0z" horiz-adv-x="1000" />
+
+<glyph glyph-name="email" unicode="&#xe802;" d="M608 320l310-265c-12-11-27-17-43-17l-750 0c-16 0-31 6-43 16l310 266 108-95z m-108-32l-418 358c12 10 27 17 43 17l750 0c16 0 32-7 43-17z m438-200l-302 257 302 263 0-520 0 0z m-875 0l0 520 302-263-302-257 0 0z m0 0" horiz-adv-x="1000" />
+
+<glyph glyph-name="location" unicode="&#xe804;" d="M500 850c-203 0-368-165-368-368 0-53 11-104 32-150 92-202 269-415 321-475 3-4 9-7 15-7s12 3 16 7c51 60 228 273 320 475 21 46 32 97 32 150 0 203-165 368-368 368z m0-559c-105 0-191 85-191 191 0 105 86 191 191 191s191-86 191-191c0-106-86-191-191-191z" horiz-adv-x="1000" />
+</font>
+</defs>
+</svg>

@@ -1,0 +1,11 @@
+extends template
+block append var
+    -var title = "Главная"
+    -var inner=true
+    -var form_footer = false
+block content
+    .docs.first_screen_inner
+        .container
+            +crumbs()
+            h1.title [[*h1]]
+            .row [[getImageList? &tvname=`docs` &tpl=`docs` &docid=`1` &limit=`0`]]

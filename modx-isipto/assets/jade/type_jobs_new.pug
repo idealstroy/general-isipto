@@ -1,0 +1,474 @@
+extends template
+block append var
+    -var type_jobs = true
+    -var inner = true
+    -var form_footer = false
+block content
+    section.first-screen.first-screen-type-jobs.first-screen_crumbs(style="background: url('/[[*first_bg]]') center/cover no-repeat")
+        .container.container-first-screen
+            +crumbs()
+            .row
+                .first-screen-left.col-lg-8.col-12
+                    h1.title.title_big.title_big-bold.title_no-margin [[*h1]]
+                    .r10
+                    h2.first-screen-left__subtitle [[*longtitle]]
+                    .ppr-vantages
+                        .ppr-vantages__item.d-flex.align-items-center
+                            svg.ppr-vantages__icon(xmlns="https://www.w3.org/2000/svg")
+                                use(xlink:href="../assets/css/img/ppr/ppr-vantages.svg#ppr-vantages1")
+                            .ppr-vantages__text [[*deadline]]
+                        .ppr-vantages__item.d-flex.align-items-center
+                            svg.ppr-vantages__icon(xmlns="https://www.w3.org/2000/svg")
+                                use(xlink:href="../assets/css/img/ppr/ppr-vantages.svg#ppr-vantages2")
+                            .ppr-vantages__text [[*price_jobs]]
+                        //-.ppr-vantages__item.d-flex.align-items-center
+                            svg.ppr-vantages__icon(xmlns="https://www.w3.org/2000/svg")
+                                use(xlink:href="../assets/css/img/ppr/ppr-vantages.svg#ppr-vantages3")
+                            .ppr-vantages__text Оплата за <span>результат</span>
+
+                    | [[!AjaxForm?
+                    | &snippet=`FormIt`
+                    | &frontend_css=``
+                    | &form=`form_phone_tpl`
+                    | &hooks=`email,FormItSaveForm,roistat_hooks`
+                    | &emailSubject=`Новая заявка`
+                    | &emailTpl=`template_phone_tpl`
+                    | &emailTo=`[[+email_to]]`
+                    | &validate=`phone:required,name:blank,firstname:blank,lastname:blank`
+                    | &fieldNames=`phone==Телефон,page==Страница`
+                    | &validationErrorMessage=`В форме содержатся ошибки!`
+                    | &successMessage=`Сообщение успешно отправлено`
+                    | ]]
+                    //-form.first-screen-form
+                        .first-screen-form__title Получите расчет за 60 мин
+                        .d-flex.align-items-center
+                            input.first-screen-form__input(type="tel" placeholder="+7 ( ")
+                            input.first-screen-form__input.first-screen-form__input--submit(type="submit" value="Заказать расчет")
+
+    .r20
+    .r20
+    .second-type
+        .container
+            .row.align-items-center
+                .col-lg-3.col-md-5.d-md-block.d-none
+                    img.image-load.second-type__img(src="#" data-src="../assets/css/img/type_jobs/geodez/second-type.jpg" alt="Геодезическое сопровождение строительства")
+                .col-lg-9.col-md-7.col-12
+                    .d-flex.align-items-center
+                        img.image-load.second-type__img.d-md-none(src="#" data-src="../assets/css/img/type_jobs/geodez/second-type.jpg" alt="Геодезическое сопровождение строительства")
+                        h3.second-type__title.title Геодезическое сопровождение строительства
+                    .second-type__text Если работа рассчитана менее чем на 12 месяцев, то содержать штат инженеров геодезистов будет дорого. Экономически выгодным будет нанять организацию с готовым штатом, оборудованием и программным обеспечением для выполнения геодезических работ.
+
+    .complex
+        .container
+            .complex__doing
+                .complex__doing-title Что мы делаем
+                .r20
+                .row
+                    .col-lg-9.col-12
+                        .list-icon.d-flex
+                            .list-icon__icon.d-md-flex.d-none.justify-content-center.align-items-center
+                                svg(xmlns="http://www.w3.org/2000/svg")
+                                    use(xlink:href="/assets/css/img/type_jobs/geodez/sprite.svg#complex1")
+                            .list-icon__content
+                                .d-flex.align-items-center
+                                    .list-icon__icon.d-flex.d-md-none.justify-content-center.align-items-center
+                                        svg(xmlns="http://www.w3.org/2000/svg")
+                                            use(xlink:href="/assets/css/img/type_jobs/geodez/sprite.svg#complex1")
+                                    .list-icon__title Разбивочные геодезические работы
+                                .list-icon__text Проводим разбивочные работы на строительных площадках и линейных объектах: трубопроводы, дороги, линии электропередач. В состав работ так же входит вынос в натуру осей, габаритов сооружений и конструкций. Подписываем акт освидетельствования геодезической разбивочной основы ГРО объекта капитального строительства
+                        .list-icon.d-flex
+                            .list-icon__icon.d-md-flex.d-none.justify-content-center.align-items-center
+                                svg(xmlns="http://www.w3.org/2000/svg")
+                                    use(xlink:href="/assets/css/img/type_jobs/geodez/sprite.svg#complex3")
+                            .list-icon__content
+                                .d-flex.align-items-center
+                                    .list-icon__icon.d-flex.d-md-none.justify-content-center.align-items-center
+                                        svg(xmlns="http://www.w3.org/2000/svg")
+                                            use(xlink:href="/assets/css/img/type_jobs/geodez/sprite.svg#complex3")
+                                    .list-icon__title Геодезическое сопровождение строительства
+                                .list-icon__text Контролируем строительные работы, точность переноса проектных точек, линий, и осей от этапа разработки грунта и установки свайного поля до монтажа плит перекрытий на площадочных объектах. На линейных объектах контролируем до завершения полного цикла строительства
+                        .list-icon.d-flex
+                            .list-icon__icon.d-md-flex.d-none.justify-content-center.align-items-center
+                                svg(xmlns="http://www.w3.org/2000/svg")
+                                    use(xlink:href="/assets/css/img/type_jobs/geodez/sprite.svg#complex4")
+                            .list-icon__content
+                                .d-flex.align-items-center
+                                    .list-icon__icon.d-flex.d-md-none.justify-content-center.align-items-center
+                                        svg(xmlns="http://www.w3.org/2000/svg")
+                                            use(xlink:href="/assets/css/img/type_jobs/geodez/sprite.svg#complex4")
+                                    .list-icon__title Исполнительная съемка освоенных работ
+                                .list-icon__text Проводим контрольно-измерительные работы, геодезическую съемку завершенных и текущих работ воизбежании отклонений от проекта. По окончании съемки предоставляем проектные расчеты и фактические для оценки уровня отклонений. Вы сможете принять решение о дальнейшей стройке или приостановке для исправления ошибок
+                        .list-icon.d-flex
+                            .list-icon__icon.d-md-flex.d-none.justify-content-center.align-items-center
+                                svg(xmlns="http://www.w3.org/2000/svg")
+                                    use(xlink:href="/assets/css/img/type_jobs/geodez/sprite.svg#complex5")
+                            .list-icon__content
+                                .d-flex.align-items-center
+                                    .list-icon__icon.d-flex.d-md-none.justify-content-center.align-items-center
+                                        svg(xmlns="http://www.w3.org/2000/svg")
+                                            use(xlink:href="/assets/css/img/type_jobs/geodez/sprite.svg#complex5")
+                                    .list-icon__title Контроль подрядчиков и субподрядчиков
+                                .list-icon__text Не все подрядные организации имеют на площадке инженеров по геодезическим работам, их участки нужно контролировать тоже, потому что они чаще всего имеют отклонения от проекта. Сопровождаем их работу и вовремя указываем на ошибки
+
+                    .col-lg-3.d-lg-flex.d-none.justify-content-end
+                        .complex__item-right
+                            svg(xmlns="http://www.w3.org/2000/svg")
+                                use(xlink:href="/assets/css/img/type_jobs/geodez/sprite.svg#complex-icon")
+
+    section.services
+        .r10
+        .r20
+        .container
+            h3.title Стоимость геодезических работ [[++city_roditel]]
+        .container
+            .quote-document.quote-document_inverse.d-flex.justify-content-between.align-items-start
+                .quote-document__author
+                    .quote-document__img.d-flex.justify-content-end
+                        img.image-load.d-block(src="#" data-src="../assets/images/team/7.jpg" alt="Подготовка исполнительной документации по видам работ")
+                    .quote-document__content
+                        .quote-document__fio Менир Ахметзянов
+                        .quote-document__profess Технический директор
+                .quote-document__text Итоговая стоимость на геодезическое сопровождение строительства зависит от объема и графика работы инженера на объекте. Позвоните нам или оставьте заявку, мы рассчитаем точную стоимость на ваш объем работ
+                    .quote-document__text-corner
+
+            .r10
+            .r20.d-lg-block.d-none
+            .services-box.
+                <div class="services-item services-item_type-jobs d-flex justify-content-between align-items-center">
+                    <div class="services-item-left">
+                        <div class="services-item__caption">
+                            1 инженер-геодезист с оборудованием
+                        </div>
+                    </div>
+                    <div class="services-item-right d-flex justify-content-between align-items-center">
+                        <div class="services-item__price-box d-flex align-items-center flex-md-nowrap flex-wrap">
+                            <div class="services-item__price">
+                                8 ч. раб. день
+                            </div>
+                        </div>
+                        <div class="services-item__price-right">
+                            10 000 р.
+                        </div>
+                    </div>
+                </div>
+                <div class="services-item services-item_type-jobs d-flex justify-content-between align-items-center">
+                    <div class="services-item-left">
+                        <div class="services-item__caption">
+                            1 инженер-геодезист с оборудованием + техник
+                        </div>
+                    </div>
+                    <div class="services-item-right d-flex justify-content-between align-items-center">
+                        <div class="services-item__price-box d-flex align-items-center flex-md-nowrap flex-wrap">
+                            <div class="services-item__price">
+                                8 ч. раб. день
+                            </div>
+                        </div>
+                        <div class="services-item__price-right">
+                            14 000 р.
+                        </div>
+                    </div>
+                </div>
+                <div class="services-item services-item_type-jobs d-flex justify-content-between align-items-center">
+                    <div class="services-item-left">
+                        <div class="services-item__caption">
+                            1 инженер-геодезист с оборудованием
+                        </div>
+                    </div>
+                    <div class="services-item-right d-flex justify-content-between align-items-center">
+                        <div class="services-item__price-box d-flex align-items-center flex-md-nowrap flex-wrap">
+                            <div class="services-item__price">
+                                1 месяц, 5/2
+                            </div>
+                        </div>
+                        <div class="services-item__price-right">
+                            200 000 р.
+                        </div>
+                    </div>
+                </div>
+                <div class="services-item services-item_type-jobs d-flex justify-content-between align-items-center">
+                    <div class="services-item-left">
+                        <div class="services-item__caption">
+                            1 инженер-геодезист с оборудованием + техник
+                        </div>
+                    </div>
+                    <div class="services-item-right d-flex justify-content-between align-items-center">
+                        <div class="services-item__price-box d-flex align-items-center flex-md-nowrap flex-wrap">
+                            <div class="services-item__price">
+                                1 месяц, 5/2
+                            </div>
+                        </div>
+                        <div class="services-item__price-right">
+                            340 000 р.
+                        </div>
+                    </div>
+                </div>
+                <div class="services-item services-item_type-jobs d-flex justify-content-between align-items-center">
+                    <div class="services-item-left">
+                        <div class="services-item__caption">
+                            1 инженер-геодезист с оборудованием + рабочее место
+                        </div>
+                    </div>
+                    <div class="services-item-right d-flex justify-content-between align-items-center">
+                        <div class="services-item__price-box d-flex align-items-center flex-md-nowrap flex-wrap">
+                            <div class="services-item__price">
+                                1 месяц, 5/2
+                            </div>
+                        </div>
+                        <div class="services-item__price-right">
+                            290 000 р.
+                        </div>
+                    </div>
+                </div>
+            .r10
+            .r20.d-lg-block.d-none
+
+    .r20
+    .container
+        .form-new
+            .row
+                .form-new__box.col-lg-10
+                    .row.justify-content-between
+                        .col-xl-8.col-lg-9.col-md-10.col-12
+                            .form-new__form-box
+                                .form-new__title Отправьте заявку на коммерческое предложение по вашему объекту
+                                .form-new__subtitle-box.d-flex.align-items-center
+                                    svg.form-new__subtitle-svg(xmlns="https://www.w3.org/2000/svg")
+                                        use(xlink:href="../assets/css/img/ppr/sprite.svg#form-icon")
+                                    .form-new__subtitle Перезвоним в течении 15 минут
+
+                                | [[!AjaxForm?
+                                | &snippet=`FormIt`
+                                | &frontend_css=``
+                                | &form=`new_form_tpl1`
+                                | &hooks=`email,FormItSaveForm,roistat_hooks`
+                                | &emailSubject=`Новая заявка `
+                                | &emailTpl=`template_form1`
+                                | &emailTo=`[[+email_to]]`
+                                | &validate=`fio:required,phone:required`
+                                | &fieldNames=`fio==Имя,phone==Телефон,page==Страница`
+                                | &validationErrorMessage=`В форме содержатся ошибки!`
+                                | &successMessage=`Сообщение успешно отправлено`
+                                | ]]
+                        .form-new__box-right.col-xl-4.col-lg-3.col-md-2
+                            img.form-new__box-img(src="../assets/css/img/type_jobs/geodez/form1.png" alt="Закажите исполнительную документацию со скидкой 25%")
+
+    .r20
+    .r20
+    .container
+        .title Наше оборудование для исполнительной съемки
+        .bl1
+            .bl1__item-box
+                .bl1__item
+                    img.bl1__item-img(src="../assets/css/img/type_jobs/geodez/15.jpg" alt="Закажите исполнительную документацию со скидкой 25%")
+                    .bl1__item-content
+                        .bl1__item-title Тахеометры
+                        .bl1__item-text Используем на площадочных объектах
+            .bl1__item-box
+                .bl1__item
+                    img.bl1__item-img(src="../assets/css/img/type_jobs/geodez/16.jpg" alt="Закажите исполнительную документацию со скидкой 25%")
+                    .bl1__item-content
+                        .bl1__item-title Геодезические GPS приемники
+                        .bl1__item-text Используем на линейных объектах
+            .bl1__item-box
+                .bl1__item
+                    img.bl1__item-img(src="../assets/css/img/type_jobs/geodez/17.jpg" alt="Закажите исполнительную документацию со скидкой 25%")
+                    .bl1__item-content
+                        .bl1__item-title Оптические нивелиры
+                        .bl1__item-text Используем на всех типах объектов
+
+
+    .complex
+        .r20
+        .r20
+        .complex__result
+            .complex__result-icon
+                svg(xmlns="http://www.w3.org/2000/svg")
+                    use(xlink:href="/st/assets/css/img/sprite-main.svg#complex-result")
+            .row
+                .complex__result-text.col-xl-5.col-md-8.col-12 <span>По результатом каждого этапа работ</span> разрабатывается исполнительная документация
+
+    .list-document-new
+        .r20
+        .r20
+        .container
+            .r20.d-lg-block.d-none
+            h3.title.list-document-new__title [[*title_jobs]]
+            .list-document-new__ul-box
+                ul.list-document-new__ul
+                    li.list-document-new__li Реестр исполнительной документации
+                    li.list-document-new__li Журнал геодезических работ
+                    li.list-document-new__li Журнал невелирования
+                    li.list-document-new__li Журнал тахеометрической съемки
+                    li.list-document-new__li Исполнительная схема геодезической разбивочной основы объекта
+                    li.list-document-new__li Исполнительная схема разбивки осей объекта
+                    li.list-document-new__li Акт освидетельствования геодезической разбивочной основы объекта
+                    li.list-document-new__li Акт разбивки осей объекта
+                    li.list-document-new__li Акт приемки геодезической разбивочной основы
+                    li.list-document-new__li Акт приемки-передачи результатов геодезических работ
+                .list-document-new__icon-box
+                    svg.list-document-new__icon(xmlns="https://www.w3.org/2000/svg")
+                        use(xlink:href="../assets/css/img/type_jobs/geodez/sprite.svg#list")
+
+
+    //-.container
+        .title.title_margin15 Стоимость
+        .title.title_small.title_margin15.title_font-normal Изучим исходные данные, подготовим и отправимм коммерческое предложение
+        .block-list
+            .block-list__title Для расчета стоимости необходимо
+            ul.block-list__ul
+                li.block-list__li Получить от Вас рабочую или проектную документацию
+                li.block-list__li Знать объем выполненных СМР
+                li.block-list__li Знать сроки сдачи
+                li.block-list__li Велась ли исполнительная геодезическа документация с начала строительства
+                li.block-list__li Ознакомиться с реестром документации по которому принимает заказчик
+            a.block-list__btn.btn.btn_nowrap.btn_inline-block.btn-modal(href="#form_up" rel="nofollow" data-reason="Отправить заявку на расчет" data-header="Отправить заявку на расчет" onclick="ym(48630242, 'reachGoal', 'main-1st'); fbq('track', 'InitiateCheckout'); return true;") Отправить заявку на расчет
+            svg.block-list__icon(xmlns="http://www.w3.org/2000/svg")
+                use(xlink:href="/assets/css/img/type_jobs/geodez/sprite.svg#calc")
+
+    .r20
+    .r20
+    .r10
+    .container
+        .sheme-works
+            .title Как с нами работать
+            .sheme-works__box
+                .sheme-works__item
+                    .sheme-works__item-title Первая консультация
+                    .sheme-works__item-text Рассматриваем проектную документацию. Рассчитываем объемы работ, сроки исполнения, требуемые ресурсы
+                .sheme-works__item
+                    .sheme-works__item-title Подготовка технического задания
+                    .sheme-works__item-text Учитываем требований заказчика, особенностей объекта, проводимых геодезических работ
+                .sheme-works__item
+                    .sheme-works__item-title Приезд инженеров геодезистов на строительную площадку
+                    .sheme-works__item-text Прибывшие специалисты приступают к работе по техническому заданию. Производят исполнительную съемку и обработку данных
+                .sheme-works__item
+                    .sheme-works__item-title Обработка исполнительной геодезической съемки
+                    .sheme-works__item-text Камерально обрабатываем полученные результаты, подготавливаем исполнительные геодезические схемы, рассчитываем отклонения от проекта
+                .sheme-works__item
+                    .sheme-works__item-title Подготовка и сдача исполнительной документации
+                    .sheme-works__item-text Подписываем документацию у технадзора, комплектуем папки и передаем заказчику
+    .r20.d-lg-block.d-none
+    .r20
+    .r10
+
+    .docs
+        .r20
+        .r20
+        .container
+            .title Отзывы
+            .docs__signature.d-flex
+                svg.docs__signature-icon(xmlns="http://www.w3.org/2000/svg")
+                    use(xlink:href="/assets/css/img/type_jobs/geodez/sprite.svg#review")
+                .docs__signature-text Почитайте что о нас пишут
+            .docs-box.row.flex-nowrap [[getImageList? &tvname=`docs` &tpl=`docs` &docid=`1` &limit=`6`]]
+            .r20.d-md-none
+            a.review-btn.d-flex.justify-content-end(href="[[++base_url]]o-kompanii/otzyivyi/")
+                .review-btn__title Смотреть все
+                .review-btn__icon-box
+                    svg.review-btn__icon(xmlns="http://www.w3.org/2000/svg")
+                        use(xlink:href="/assets/css/img/review/review.svg#review")
+        .r20
+        .r20
+
+    //-.list-document
+        .container
+            .r10
+            .r20
+            .r20.d-lg-block.d-none
+            h3.title [[*title_jobs]]
+            .row
+                .list-document__ul.col-xl-7.col-lg-8.col-md-9.col-12 [[*list_jobs]]
+                    .list-document__signature *Это основной перечень, конечный определяет заказчик
+                .list-document__img.col-xl-5.col-lg-4.col-md-3.col-12
+                    img.image-load.d-md-block.d-none(src="#" data-src="../assets/css/img/type_jobs/1.jpg" alt="[[*longtitle]]")
+
+        | [[*info_document:ne=``:then=`
+        <div class="info-document">
+        <div class="container">
+        <div class="r20 r20 r10"></div>
+        <h3 class="title">[[*title_info]]</h3>
+        <div class="info-document__subtitle">[[*subtitle_info]]</div>
+        </div>
+        <div class="container">[[getImageList? &tvname=`info_document` &tpl=`info_document` &docid=`[[*id]]` &limit=`0`]]</div>
+        </div>`]]
+
+    //-.d-flex.justify-content-center(style="padding-bottom:3.125rem")
+        a.btn.btn-modal(href="#form_up" rel="nofollow" data-reason="Заказать расчет стоимости" data-header="Заказать расчет стоимости") Заказать расчет стоимости
+
+    //-.info-document
+        .container
+            h3.title_services Стоимость
+            .info-document__subtitle Ценообразование базируется на схеме разработки документации: с присутствием на объекте или удаленно.
+        .container
+
+            //-.info-document-item
+                .row
+                    .col-md-3.col-12.info-document-item__img
+                        img.image-load.d-block(src="#" data-src="../assets/css/img/type_jobs/1.jpg" alt="[[*longtitle]]")
+                    .col-md-9.col-12.info-document-item__content
+                        .info-document-item__title В случае подготовки и сдачи на объекте нам нужно:
+                        ul.info-document-item__text
+                            li Знать срок сдачи объемов, установленный заказчику
+                            li Процент выполнения СМР
+                            li Велась ли документация ранее и если да, то сколько сделано
+                            li Прислать на почту проект или рабочую документацию
+                .info-document-item__content-bottom
+                    p.
+                        Первым этапом рассчитывается количество инженеров ПТО для подготовки документации на трубопровод на выполненные объемы строительства к требуемой дате. Вторым этапом - сколько потребуется для ведения документации в процессе строительства на оставшийся объем.
+                    p.
+                        Рассчитав число инженеров и приняв во внимание местоположение объекта выводится стоимость человеко часа. Итог – это сумма человеко часов задействованных инженеров.
+
+            //-.quote-document.d-flex.justify-content-between.align-items-start
+                .quote-document__text <span>Важный момент</span> – это проверка сделанной документации, но не подписанной технадзором. Правильнее провести аудит и выявить причины, по которым документацию не принята. Частые причины - не устраненные замечания.
+                .quote-document__author
+                    .quote-document__img.d-flex.justify-content-end
+                        img.image-load.d-block(src="#" data-src="../assets/css/img/type_jobs/1.jpg" alt="[[*longtitle]]")
+                    .quote-document__content
+                        .quote-document__fio Менир Ахметзянов
+                        .quote-document__profess Технический директор
+
+    section.about_company
+        .container
+            .r10
+            .r20
+            .r20.d-lg-block.d-none
+            .title [[pdoField? &id=`1` &field=`title_team`]]
+            #ajax-team.our_team_slideshow.row.flex-lg-wrap.flex-nowrap [[getImageList? &tvname=`our_team` &tpl=`our_team` &docid=`1` &limit=`6`]]
+            .btn.btn_weight-normal.btn_center.btn_bg-transparent.btn_team.btn_bg-transparent-no-hover.btn_border-black.show(onclick="ym(48630242, 'reachGoal', 'okompanii-specy-open'); fbq('track', 'InitiateCheckout'); return true;")
+                .btn__text Показать еще
+                .btn__icon
+
+            .r10
+            .r20
+            .r20.d-lg-block.d-none
+
+    .form-footer
+        .form-footer__title Не нашли, что искали? <br> Закажите звонок, обсудим проект
+        | [[!AjaxForm?
+        | &snippet=`FormIt`
+        | &frontend_css=``
+        | &form=`form_footer`
+        | &hooks=`email,FormItSaveForm,roistat_hooks`
+        | &emailSubject=`Новая заявка `
+        | &emailTpl=`template_form1`
+        | &emailTo=`[[+email_to]]`
+        | &validate=`fio:required,phone:required`
+        | &fieldNames=`fio==Имя,phone==Телефон,page==Страница`
+        | &validationErrorMessage=`В форме содержатся ошибки!`
+        | &successMessage=`Сообщение успешно отправлено`
+        | ]]
+
+        //- form.form-footer__form
+            .form-footer__input-box.d-flex.flex-wrap.flex-sm-nowrap
+                input.form-footer__input(type="text" placeholder="Имя")
+                input.form-footer__input(type="text" placeholder="Телефон")
+            .form-footer__button-box.d-flex.flex-wrap.flex-sm-nowrap.align-items-center.justify-content-between
+                .form-footer__confid-box.d-flex.align-items-center
+                    svg.form-footer__confid-icon(xmlns="https://www.w3.org/2000/svg")
+                        use(xlink:href="../assets/css/img/confid.svg#confid")
+                    .form-footer__confid-text Нажимая на кнопку, вы даете согласие на обработку своих персональных данных
+                input.btn.btn_weight-normal.form-footer__btn(type="submit" value="Заказать звонок")
+    .r10
+    .r20
+    .r20.d-lg-block.d-none
+

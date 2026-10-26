@@ -1,0 +1,308 @@
+extends template
+block append var
+    -var inner = true
+    -var about_company = true
+block content
+    .about-company-inner.first_screen_inner.d-flex.align-items-center
+        .container
+            | [[pdoCrumbs?
+            | &tplWrapper = `@CODE <div class="breadcrumbs" style="padding: 35px 0 15px;"><div class="crumbs"> [[+output]] </div></div>`
+            | &tplHome = `@CODE <a href="[[+link]]"><span>Главная</span></a>`
+            | &tpl = `@CODE <a href="[[+link]]"><span>[[+menutitle]]</span></a>`
+            | &tplCurrent = `@CODE <span>[[+menutitle]]</span>`
+            | &outputSeparator = ``
+            | &showHome=`1`
+            | &showCurrent=`1`
+            | ]]
+            .row
+                .col-lg-6.col-12
+                    .about-company-inner__content
+                        h1.about-company-inner__title [[*h1]]
+                        .about-company-inner__subtitle В нашей команде аттестованные
+                        .about-company-list
+                            .about-company-list__item.d-flex.align-items-center
+                                .about-company-list__item-icon
+                                    svg(xmlns="http://www.w3.org/2000/svg")
+                                        use(xlink:href="../assets/css/img/about_company/first-screen.svg#first-screen1")
+                                .about-company-list__item-text Инженеры ПТО
+                            .about-company-list__item.d-flex.align-items-center
+                                .about-company-list__item-icon
+                                    svg(xmlns="http://www.w3.org/2000/svg")
+                                        use(xlink:href="../assets/css/img/about_company/first-screen.svg#first-screen2")
+                                .about-company-list__item-text Инженеры СКК
+                            .about-company-list__item.d-flex.align-items-center
+                                .about-company-list__item-icon
+                                    svg(xmlns="http://www.w3.org/2000/svg")
+                                        use(xlink:href="../assets/css/img/about_company/first-screen.svg#first-screen3")
+                                .about-company-list__item-text Проектировщики
+                            .about-company-list__item.d-flex.align-items-center
+                                .about-company-list__item-icon
+                                    svg(xmlns="http://www.w3.org/2000/svg")
+                                        use(xlink:href="../assets/css/img/about_company/first-screen.svg#first-screen4")
+                                .about-company-list__item-text Сметчики
+                        .about-company-signature.d-flex
+                            .about-company-signature__icon
+                                svg(xmlns="http://www.w3.org/2000/svg")
+                                    use(xlink:href="../assets/css/img/about_company/first-screen.svg#first-screen5")
+                            .about-company-signature__text Опыт работы на промышленных объектах более 5 лет
+                .about-company-inner__img.col-lg-6.col-12
+
+
+                //-ul.about-company-list
+                    li.about-company-list__item
+                        span В нашей команде аттестованные:
+                        ul.about-company-list-inner
+                            li.about-company-list-inner__item
+                                span Инженеры ПТО
+                            li.about-company-list-inner__item
+                                span Инженеры СКК
+                            li.about-company-list-inner__item
+                                span Проектировщики
+                            li.about-company-list-inner__item
+                                span Сметчики
+                    li.about-company-list__item
+                        span Опыт работы на промышленных объектах более 5 лет
+                //-a.page-inner__button.about-company-inner__button(href="" data-toggle="modal" rel="nofollow" data-target="#form_up" data-reason="Бесплатная консультация" data-header="Бесплатная консультация") Бесплатная консультация
+
+    .about-company-vantages
+        .container
+            .row
+                .col-lg-4.col-md-6.col-12
+                    .vantages-item.d-flex.align-items-center
+                        .vantages-item__svg
+                            svg(xmlns="http://www.w3.org/2000/svg")
+                                use(xlink:href="../assets/css/img/about_company/about-vantages.svg#about-vantages1")
+                        .vantages-item__content
+                            .vantages-item__title 60 специалистов
+                            .vantages-item__text с опытом работы от 5 лет
+                .col-lg-4.col-md-6.col-12
+                    .vantages-item.d-flex.align-items-center
+                        .vantages-item__svg
+                            svg(xmlns="http://www.w3.org/2000/svg")
+                                use(xlink:href="../assets/css/img/about_company/about-vantages.svg#about-vantages2")
+                        .vantages-item__content
+                            .vantages-item__title Клиенты по всей России
+                            .vantages-item__text работаем со всеми регионами удаленно и с выездом
+                .col-lg-4.col-md-6.col-12
+                    .vantages-item.d-flex.align-items-center
+                        .vantages-item__svg
+                            svg(xmlns="http://www.w3.org/2000/svg")
+                                use(xlink:href="../assets/css/img/about_company/about-vantages.svg#about-vantages3")
+                        .vantages-item__content
+                            .vantages-item__title Сопровождение
+                            .vantages-item__text от начала строительства и до сдачи объекта
+
+    .about_company
+        .container
+            .r10
+            .r20
+            .r20
+            .row
+                .col-12.col-sm-12.col-md-12.col-lg-6.col-xl-6
+                    h3.title [[pdoField? &id=`1` &field=`title_about`]]
+                    .text_about [[pdoField? &id=`1` &field=`text_about`]]
+                        //-a.presentation_download(href="../assets/docs/isipto-ru_presentation.pdf" target="_blank")
+                            span Скачать презентацию
+                .slideshow_box.col-12.col-sm-8.col-md-8.col-lg-6.col-xl-6
+                    .row [[getImageList? &tvname=`slideshow_about` &tpl=`slideshow_about` &docid=`1` &limit=`0`]]
+
+    section
+        .container
+            .r10
+            .r20
+            .r20.d-lg-block.d-none
+            h3.title [[pdoField? &id=`1` &field=`title_team`]]
+            #ajax-team.our_team_slideshow.row.flex-lg-wrap.flex-nowrap [[getImageList? &tvname=`our_team` &tpl=`our_team` &docid=`1` &limit=`6`]]
+            .btn.btn_weight-normal.btn_center.btn_bg-transparent.btn_team.btn_bg-transparent-no-hover.btn_border-black.show(onclick="ym(48630242, 'reachGoal', 'okompanii-specy-open'); fbq('track', 'InitiateCheckout'); return true;")
+                .btn__text Показать еще
+                .btn__icon
+
+            .r10
+            .r20
+            .r20.d-lg-block.d-none
+
+    .container
+        h3.title Мы зарегистрированная группа компаний ПТО
+    .about-company-docs.docs
+        .container
+            .row
+                .col-md-6.col-12.d-flex.flex-wrap
+                    .about-company-docs__item
+                        .about-company-docs__item-title ООО “ИСИ УФА”
+                        .img_docs
+                            a.img_docs-box(href='/assets/css/img/about_company/docs/1.jpg' data-fancybox='images' data-caption='')
+                                img.about-company-docs__item-img.image-load(data-src='[[phpthumbon? &input=`/assets/css/img/about_company/docs/1.jpg` &options=`h=220&w=310&zc=1`]]' alt='')
+                    .about-company-docs__item
+                        .about-company-docs__item-title ООО “ГК ИСИ”
+                        .img_docs
+                            a.img_docs-box(href='/assets/css/img/about_company/docs/2.jpg' data-fancybox='images' data-caption='')
+                                img.about-company-docs__item-img.image-load(data-src='[[phpthumbon? &input=`/assets/css/img/about_company/docs/2.jpg` &options=`h=220&w=310&zc=1`]]' alt='')
+                    .about-company-docs__signature.d-md-block.d-none Свидетельства о регистрации юридических лиц
+                .col-md-6.col-12.d-flex.flex-wrap
+                    .about-company-docs__signature Выписка из реестра
+                    .about-company-docs__item
+                        .img_docs
+                            a.img_docs-box(href='/assets/css/img/about_company/docs/3.jpg' data-fancybox='images' data-caption='')
+                                img.about-company-docs__item-img.image-load(data-src='[[phpthumbon? &input=`/assets/css/img/about_company/docs/3.jpg` &options=`h=220&w=310&zc=1`]]' alt='')
+                    .about-company-docs__item
+                        .img_docs
+                            a.img_docs-box(href='/assets/css/img/about_company/docs/4.jpg' data-fancybox='images' data-caption='')
+                                img.about-company-docs__item-img.image-load(data-src='[[phpthumbon? &input=`/assets/css/img/about_company/docs/4.jpg` &options=`h=220&w=310&zc=1`]]' alt='')
+                    .about-company-docs__signature СРО проектировщиков
+
+    .about-information
+        .container
+            .information-item-box
+                .row
+                    .col-md-4.col-12
+                        .information-item
+                            .information-item__title Работаем с 2016 года
+                            .information-item__text
+                                p.
+                                    Специализируемся на разработке исполнительной документации более 3-х лет.
+                                p.
+                                    Мы знаем, как строятся здания и прокладываются коммуникации, так как делали это сами.
+                    .col-md-4.col-12
+                        .information-item
+                            .information-item__title Оплата с НДС
+                            .information-item__text
+                                p.
+                                    Мы юридическое лицо, оплата по договору
+                                    с НДС.
+                                p.
+                                    Вам не нужно содержать штат сотрудников
+                                    и платить лишние налоги.
+
+            .row
+                .col-md-4.col-12
+                    .about-signature.d-flex.align-items-center
+                        .about-signature__svg
+                            svg(xmlns="http://www.w3.org/2000/svg")
+                                use(xlink:href="../assets/css/img/about_company/signature.svg#signature")
+                        .about-signature__text Строить с нами, значит сдать в срок
+
+    .container
+        .r10
+        .r30
+        .our-clients
+            .our-clients__maps-box
+                img.our-clients__maps.image-load(data-src="../assets/css/img/main/maps.jpg" alt="Более 450 клиентов по России")
+            .our-clients__content
+                .our-clients__title Более <span>450 клиентов</span> по России
+                .our-clients__subtitle В их числе
+                ul.our-clients__ul
+                    li.our-clients__li Нефтеперерабатывающие  заводы
+                    li.our-clients__li Нефтяные месторождения
+                    li.our-clients__li Трубопроводы
+                    li.our-clients__li Заводы химического производства
+                    li.our-clients__li Автомагистрали и железные дороги
+                    li.our-clients__li Оборонные объекты
+                    li.our-clients__li Рудники
+    .r10
+    .r20
+    .container
+        .bl1
+            .bl1__item-box
+                .bl1__item
+                    img.bl1__item-img.image-load(data-src="../assets/css/img/main/maps1.jpg" alt="Закажите исполнительную документацию со скидкой 25%")
+                    .bl1__item-content
+                        .bl1__item-title 100 инженеров ПТО
+                        .bl1__item-text Вылетают на объекты по России
+            .bl1__item-box
+                .bl1__item
+                    img.bl1__item-img.image-load(data-src="../assets/css/img/main/maps2.jpg" alt="Закажите исполнительную документацию со скидкой 25%")
+                    .bl1__item-content
+                        .bl1__item-title 29 разделов исполнительной
+                        .bl1__item-text Подготовим и сдадим заказчику
+            .bl1__item-box
+                .bl1__item
+                    img.bl1__item-img.image-load(data-src="../assets/css/img/main/maps3.jpg" alt="Закажите исполнительную документацию со скидкой 25%")
+                    .bl1__item-content
+                        .bl1__item-title Аттестованные инженеры
+                        .bl1__item-text Все инженеры имеют удостоверения
+    .r30
+    .r30
+    .r10
+
+    .your-department
+        .r30
+        .r30
+        .container
+            .your-department__title Наши сотрудники за работой
+            //-.your-department__subtitle Значимость этих проблем настолько очевидна, что начало повседневной работы по формированию позиции требуют определения и уточнения модели развития.
+            .row
+                .col-md-6.col-12
+                    .your-department__img-main
+                        a(href='/assets/css/img/about_company/1.jpg', data-fancybox='images1' data-caption='Инженеры ПТО на объекте')
+                            img.image-load(src="#" data-src="[[phpthumbon? &input=`/assets/css/img/about_company/1.JPG` &options=`h=540&w=350&zc=1`]]" alt="Инженеры ПТО на объекте [[++city_roditel]]")
+
+                .col-md-6.col-12
+                    .row
+                        .col-6
+                            .your-department__img-secondary
+                                a(href='/assets/css/img/about_company/222.jpg', data-fancybox='images1' data-caption='Инженеры ПТО на аутсорсе')
+                                    img.image-load(src="#" data-src='[[!phpthumbon? &input=`/assets/css/img/about_company/222.jpg` &options=`h=160&w=160&zc=1`]]' alt='Инженеры ПТО на аутсорсе [[++city_roditel]]')
+                        .col-6
+                            .your-department__img-secondary
+                                a(href='/assets/css/img/about_company/3.jpg', data-fancybox='images1' data-caption='План для ППР')
+                                    img.image-load(src="#" data-src='[[!phpthumbon? &input=`/assets/css/img/about_company/3.JPG` &options=`h=160&w=160`]]' alt='План для ППР [[++city_roditel]]')
+                        .col-6
+                            .your-department__img-secondary
+                                a(href='/assets/css/img/about_company/4.jpg', data-fancybox='images1' data-caption='Исполнительная схема на геодезию')
+                                    img.image-load(src="#" data-src='[[!phpthumbon? &input=`/assets/css/img/about_company/4.jpg` &options=`h=160&w=160&zc=1`]]' alt='Исполнительная схема на геодезию [[++city_roditel]]')
+                        .col-6
+                            .your-department__img-secondary
+                                a(href='/assets/css/img/about_company/5.jpg', data-fancybox='images1' data-caption='Инженеры пто на дорожное строительство')
+                                    img.image-load(src="#" data-src='[[!phpthumbon? &input=`/assets/css/img/about_company/5.jpg` &options=`h=160&w=160&zc=1`]]' alt='Инженеры пто на дорожное строительство [[++city_roditel]]')
+
+    .useful.useful-inner
+        .container
+            .r10
+            .r20.d-lg-block.d-none
+            .title Мы полезны для тех, кто ведет:
+            .row
+                .col-xl-4.col-md-6.col-12
+                    .useful-item.d-flex.align-items-center
+                        .useful-item__img
+                            img.image-load(src="#" data-src="../assets/css/img/useful/6.jpg" alt="Строительство технологических трубопроводов (нефтепровод, газпровод)")
+                        .useful-item__text Строительство технологических трубопроводов (нефтепровод, газпровод)
+                .col-xl-4.col-md-6.col-12
+                    .useful-item.d-flex.align-items-center
+                        .useful-item__img
+                            img.image-load(src="#" data-src="../assets/css/img/useful/5.jpg" alt="Строительство производственных зданий")
+                        .useful-item__text Строительство производственных зданий
+                .col-xl-4.col-md-6.col-12
+                    .useful-item.d-flex.align-items-center
+                        .useful-item__img
+                            img.image-load(src="#" data-src="../assets/css/img/useful/4.jpg" alt="Общестроительные работы (бетонные, каменные, монтажные, земляные геодезические, подготовительные, инженерно-проектировочные)")
+                        .useful-item__text Общестроительные работы (бетонные, каменные, монтажные, земляные геодезические, подготовительные, инженерно-проектировочные)
+                .col-xl-4.col-md-6.col-12
+                    .useful-item.d-flex.align-items-center
+                        .useful-item__img
+                            img.image-load(src="#" data-src="../assets/css/img/useful/3.jpg" alt="Работы по инженерным сетям (водоснабжение и водоотведение, теплоснабжение, электроснабжение, вентиляция)")
+                        .useful-item__text Работы по инженерным сетям (водоснабжение и водоотведение, теплоснабжение, электроснабжение, вентиляция)
+                .col-xl-4.col-md-6.col-12
+                    .useful-item.d-flex.align-items-center
+                        .useful-item__img
+                            img.image-load(src="#" data-src="../assets/css/img/useful/2.jpg" alt="Монтаж и демонтаж слаботочных систем (противопожарные сигнализация, дымоудаление)")
+                        .useful-item__text Монтаж и демонтаж слаботочных систем (противопожарные сигнализация, дымоудаление)
+                .col-xl-4.col-md-6.col-12
+                    .useful-item.d-flex.align-items-center
+                        .useful-item__img
+                            img.image-load(src="#" data-src="../assets/css/img/useful/1.jpg" alt="Монтаж и демонтаж систем пожаротушения")
+                        .useful-item__text Монтаж и демонтаж систем пожаротушения
+
+
+    //-.container
+        .about-company-bottom.col-lg-9.col-md-9.col-12
+            .about-company-bottom__text Значимость этих проблем настолько очевидна, что начало повседневной работы по формированию позиции требуют определения и уточнения модели развития.
+            .d-flex.justify-content-center.flex-wrap
+                a.page-inner__button.about-company-inner__button.prepare__button(href="" data-toggle="modal" rel="nofollow" data-target="#form_up" data-reason="Рассчитать стоимость" data-header="Рассчитать стоимость") Рассчитать стоимость
+                .about-company-bottom__or или
+                a.prepare__consult(href="" data-toggle="modal" rel="nofollow" data-target="#form_up" data-reason="Консультация специалиста" data-header="Консультация специалиста") Консультация специалиста
+
+    //-.container
+        #vk_groups
+        <script type="text/javascript">
+        |    VK.Widgets.Group("vk_groups", {mode: 0, width: "auto", height: "180"}, 169753296);
+        </script>

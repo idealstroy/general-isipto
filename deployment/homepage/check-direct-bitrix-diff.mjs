@@ -1,0 +1,11 @@
+import fs from 'node:fs';
+import {createHash} from 'node:crypto';
+import {spawn} from 'node:child_process';
+const b=JSON.parse(fs.readFileSync('_backups/active-direct-bitrix.json','utf8'));
+const before=JSON.parse(fs.readFileSync(b.directory+'/modx-chunks.json','utf8'));
+const c=spawn('docker',['exec','--user','www-data','-i','modx-isipto-web-1','php'],{windowsHide:true});fs.createReadStream('deployment/homepage/verify-direct-bitrix-local.php').pipe(c.stdin);let data='';c.stdout.on('data',v=>data+=v);c.stderr.resume();const code=await new Promise((r,j)=>{c.on('error',j);c.on('close',r)});if(code)throw Error('Native form verification failed');
+const v=JSON.parse(data),hash=s=>createHash('sha256').update(s).digest('hex');
+for(const f of ['form_tpl1','form_footer'])if(hash(before[f].snippet)!==v.forms[f].sourceSha256)throw Error(f+' was changed');
+if(hash(before.footer_new.snippet.replace('&hooks=`FormItSaveForm,roistat_hooks`','&hooks=`FormItSaveForm,bitrix24_hooks`'))!==v.footerSha256)throw Error('Unexpected popup chunk changes');
+const original=fs.readFileSync(b.directory+'/home_solution.html','utf8');if(hash(original.replace('&hooks=`FormItSaveForm,roistat_hooks`','&hooks=`FormItSaveForm,bitrix24_hooks`'))!==v.homeSha256)throw Error('Unexpected homepage changes');
+v.confirmed={formMarkupUnchanged:true,homepageOnlyHookChanged:true,popupOnlyHookChanged:true};fs.writeFileSync(b.directory+'/verification.json',JSON.stringify(v,null,2));console.log(JSON.stringify(v,null,2));

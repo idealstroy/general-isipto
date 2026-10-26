@@ -1,0 +1,47 @@
+<form class="recaptcha-form form-manager-input d-flex justify-content-between">
+    
+    <input type="hidden" name="recaptcha_token" class="recaptcha-token">
+
+<input type="hidden" name="csrf_token" value="[[+csrf_token]]">
+<input type="hidden" name="form_time" value="[[+form_time]]">
+    <input type="text" name="website" style="display:none">
+    
+    
+    <input class="callOrderReason" type="hidden" name="reason">
+    <input class="page" type="hidden" name="page" value="[[~[[*id]]? &scheme=`full`]]">
+    <input class="goalMetrika" type="hidden" name="goal" value="lead">
+    <input class="ref_info" name="ref_info" type="hidden" value="">
+
+    <input class="site-message" type="text" name="name" value="">
+    <input class="site-message" type="text" name="firstname" value="">
+    <input class="site-message" type="text" name="lastname" value="">
+
+    <div class="form-manager-input__left">
+        <div class="block">
+            <label class="form-manager-input__label" for="e2bf6935-3aa0-fb90-6db5-187764f77973">Ваше имя</label>
+            <input class="form-manager-input__input input_up name" id="e2bf6935-3aa0-fb90-6db5-187764f77973" type="text" name="fio" value="" />
+        </div>
+        <div class="block">
+            <label class="form-manager-input__label" for="8ce6eca1-fba5-1fc7-1250-d791ee6cc2ed">Ваш телефон</label>
+            <input class="form-manager-input__input input_up phone" id="8ce6eca1-fba5-1fc7-1250-d791ee6cc2ed" type="tel" name="phone" value="" />
+        </div>
+        <div class="confid confid1">Нажимая кнопку отрпавить вы соглашаетесь с условиями <a href="#" data-toggle="modal" rel="nofollow" data-target="#politikaModal">политики конфиденциальности</a> и <a href="#" data-toggle="modal" rel="nofollow" data-target="#acceptModal">обработки персональных данных</a></div>
+    </div>
+    <div class="form-manager-input__right">
+        <div class="block">
+            <label class="form-manager-input__label" for="3949f443-1342-77d8-9b3e-e15f6eb05882">Комментарий <span class="d-xl-inline d-none">или вопрос</span></label>
+            <textarea class="form-manager-input__input form-manager-input__textarea input_up" id="3949f443-1342-77d8-9b3e-e15f6eb05882" name="comments" placeholder="необязательное поле"></textarea>
+        </div>
+        
+        
+                <div class="form-footer__checkbox" style="display: flex; align-items: center;gap:6px;line-height: 1.2;">
+            <input type="checkbox" name="agree" required> 
+            <label>
+            <span style="color: #777;font-size: 14px;">
+            Я даю согласие на <a href="/politika-konfidenczialnosti/" style="color:#777;font-weight:500;">обработку своих персональных данных</a>
+            </span></label>
+        </div>
+        
+        <input class="input_form submit_form" type="submit" value="Отправить" />
+    </div>
+</form>

@@ -1,0 +1,12 @@
+extends template
+block append var
+    -var title = "Главная"
+    -var inner=true
+    -var form_footer = false
+    -var blog = true
+block content
+    section.question.first_screen_inner
+        .container
+            +crumbs()
+            h1.inner__title [[*h1]]
+            | [[getImageList? &tvname=`questions` &tpl=`questions` &docid=`1` &limit=`0`]] <br><br>

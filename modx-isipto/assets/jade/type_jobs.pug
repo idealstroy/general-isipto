@@ -1,0 +1,189 @@
+extends template
+block append var
+    -var type_jobs = true
+    -var inner = true
+block content
+    section.first-screen.first-screen-type-jobs.first-screen_crumbs
+        .container.container-first-screen
+            +crumbs()
+            .row
+                .first-screen-left.col-lg-8.col-12
+                    h1.title.title_big.title_big-bold.title_no-margin [[*h1]]
+                    .r10
+                    h2.first-screen-left__subtitle [[*longtitle]]
+                    .ppr-vantages
+                        .ppr-vantages__item.d-flex.align-items-center
+                            svg.ppr-vantages__icon(xmlns="https://www.w3.org/2000/svg")
+                                use(xlink:href="../assets/css/img/ppr/ppr-vantages.svg#ppr-vantages1")
+                            .ppr-vantages__text [[*deadline]]
+                        .ppr-vantages__item.d-flex.align-items-center
+                            svg.ppr-vantages__icon(xmlns="https://www.w3.org/2000/svg")
+                                use(xlink:href="../assets/css/img/ppr/ppr-vantages.svg#ppr-vantages2")
+                            .ppr-vantages__text [[*price_jobs]]
+                        //-.ppr-vantages__item.d-flex.align-items-center
+                            svg.ppr-vantages__icon(xmlns="https://www.w3.org/2000/svg")
+                                use(xlink:href="../assets/css/img/ppr/ppr-vantages.svg#ppr-vantages3")
+                            .ppr-vantages__text Оплата за <span>результат</span>
+
+                    | [[!AjaxForm?
+                    | &snippet=`FormIt`
+                    | &frontend_css=``
+                    | &form=`form_phone_tpl`
+                    | &hooks=`email,FormItSaveForm,roistat_hooks`
+                    | &emailSubject=`Новая заявка`
+                    | &emailTpl=`template_phone_tpl`
+                    | &emailTo=`[[+email_to]]`
+                    | &validate=`phone:required,name:blank,firstname:blank,lastname:blank`
+                    | &fieldNames=`phone==Телефон,page==Страница`
+                    | &validationErrorMessage=`В форме содержатся ошибки!`
+                    | &successMessage=`Сообщение успешно отправлено`
+                    | ]]
+                    //-form.first-screen-form
+                        .first-screen-form__title Получите расчет за 60 мин
+                        .d-flex.align-items-center
+                            input.first-screen-form__input(type="tel" placeholder="+7 ( ")
+                            input.first-screen-form__input.first-screen-form__input--submit(type="submit" value="Заказать расчет")
+
+    .list-document-new
+        .r20
+        .r20
+        .container
+            .r20.d-lg-block.d-none
+            h3.title.list-document-new__title [[*title_jobs]]
+            .list-document-new__ul-box
+                ul.list-document-new__ul [[*list_jobs]]
+                .list-document-new__icon-box
+                    svg.list-document-new__icon(xmlns="https://www.w3.org/2000/svg")
+                        use(xlink:href="../assets/css/img/type_jobs/geodez/sprite.svg#list")
+        .r20.d-none.d-lg-block
+        .r10
+
+    //- old
+        .list-document
+            .container
+                .r10
+                .r20
+                .r20.d-lg-block.d-none
+                h3.title [[*title_jobs]]
+                .row
+                    .list-document__ul.col-xl-7.col-lg-8.col-md-9.col-12 [[*list_jobs]]
+                        .list-document__signature *Это основной перечень, конечный определяет заказчик
+                    .list-document__img.col-xl-5.col-lg-4.col-md-3.col-12
+                        img.image-load.d-md-block.d-none(src="#" data-src="../assets/css/img/type_jobs/1.jpg" alt="[[*longtitle]]")
+
+    | [[*info_document:ne=``:then=`
+    <div class="info-document">
+        <div class="container">
+            <div class="r20"></div>
+            <div class="r20"></div>
+            <h3 class="title">[[*title_info]]</h3>
+            <div class="info-document__subtitle">[[*subtitle_info]]</div>
+        </div>
+        <div class="container">[[getImageList? &tvname=`info_document` &tpl=`info_document` &docid=`[[*id]]` &limit=`0`]]</div>
+    </div>`]]
+
+    .d-flex.justify-content-center(style="padding-top:2.125rem; padding-bottom:3.125rem;")
+        a.btn.btn-modal(href="#form_up" rel="nofollow" data-reason="Заказать расчет стоимости" data-header="Заказать расчет стоимости") Заказать расчет стоимости
+
+    //-.info-document
+        .container
+            h3.title_services Стоимость
+            .info-document__subtitle Ценообразование базируется на схеме разработки документации: с присутствием на объекте или удаленно.
+        .container
+
+            //-.info-document-item
+                .row
+                    .col-md-3.col-12.info-document-item__img
+                        img.image-load.d-block(src="#" data-src="../assets/css/img/type_jobs/1.jpg" alt="[[*longtitle]]")
+                    .col-md-9.col-12.info-document-item__content
+                        .info-document-item__title В случае подготовки и сдачи на объекте нам нужно:
+                        ul.info-document-item__text
+                            li Знать срок сдачи объемов, установленный заказчику
+                            li Процент выполнения СМР
+                            li Велась ли документация ранее и если да, то сколько сделано
+                            li Прислать на почту проект или рабочую документацию
+                .info-document-item__content-bottom
+                    p.
+                        Первым этапом рассчитывается количество инженеров ПТО для подготовки документации на трубопровод на выполненные объемы строительства к требуемой дате. Вторым этапом - сколько потребуется для ведения документации в процессе строительства на оставшийся объем.
+                    p.
+                        Рассчитав число инженеров и приняв во внимание местоположение объекта выводится стоимость человеко часа. Итог – это сумма человеко часов задействованных инженеров.
+
+            //-.quote-document.d-flex.justify-content-between.align-items-start
+                .quote-document__text <span>Важный момент</span> – это проверка сделанной документации, но не подписанной технадзором. Правильнее провести аудит и выявить причины, по которым документацию не принята. Частые причины - не устраненные замечания.
+                .quote-document__author
+                    .quote-document__img.d-flex.justify-content-end
+                        img.image-load.d-block(src="#" data-src="../assets/css/img/type_jobs/1.jpg" alt="[[*longtitle]]")
+                    .quote-document__content
+                        .quote-document__fio Менир Ахметзянов
+                        .quote-document__profess Технический директор
+
+    .container
+        .title Выберите схему подготовки исполнительной документации
+        .scheme-new
+            .scheme-new__item
+                .scheme-new__item-title-head
+                    .scheme-new__item-title Готовим и сдаем документацию находясь на объекте
+                    .scheme-new__item-title-svg-box
+                        svg.scheme-new__item-title-svg(xmlns="http://www.w3.org/2000/svg")
+                            use(xlink:href="/assets/css/img/sprite-main.svg#scheme-new1")
+                .scheme-new__item-content
+                    ul.scheme-new__item-ul
+                        li.scheme-new__item-li Предоставляется группа инженеров ПТО во главе с руководителем, уполномоченным подписывать первичные документы от имени компании
+                        li.scheme-new__item-li Инженеры снабжаются ноутбуками, спецодеждой, мобильной связью. Поэтому от вас потребуется только места для размещения их на объекте
+                        li.scheme-new__item-li По прибытии на объект, инженеры ПТО делают аудит завершенных строительных работ
+                        li.scheme-new__item-li Изучают проектную документацию и согласованные изменения к проекту
+                        li.scheme-new__item-li Подготавливают и сдают исполнительную документацию, сдают поэтапно
+                        li.scheme-new__item-li Собирают подписанные разделы в единый пакет документов и сдают заказчику
+                        li.scheme-new__item-li Подготовка и сдача документации проходит исключительно силами компании
+                    a.scheme-new__item-btn(href="[[++base_url]]vedenie-id/ispolnitelnaya-dokumentacziya-obektov/") Подробнее
+            .scheme-new__item
+                .scheme-new__item-title-head
+                    .scheme-new__item-title Готовим документацию камерально с частичным присутствием
+                    .scheme-new__item-title-svg-box
+                        svg.scheme-new__item-title-svg(xmlns="http://www.w3.org/2000/svg")
+                            use(xlink:href="/assets/css/img/sprite-main.svg#scheme-new2")
+                .scheme-new__item-content
+                    ul.scheme-new__item-ul
+                        li.scheme-new__item-li Инженеры ПТО приезжают на объект, делают аудит и собирают первичные данные
+                        li.scheme-new__item-li Возвращаются в офис и подгатавливают исполнительную документацию
+                        li.scheme-new__item-li Документация отправляется заказчику для проверки технадзором
+                        li.scheme-new__item-li При вынесении замечаний, высылаете их нам для устранения
+                        li.scheme-new__item-li С готовой исполнительной документации инженеры возвращается на объект и защищает перед заказчиком
+
+            a.btn.btn_inline-block.btn_width-full-m.btn_center.btn-modal(href="#form_up" rel="nofollow" data-reason="Заказать звонок специалиста" data-header="Заказать звонок специалиста") Заказать звонок специалиста
+    .r20
+    .r20
+
+    section.about_company
+        .container
+            .r10
+            .r20
+            .r20.d-lg-block.d-none
+            .title [[pdoField? &id=`1` &field=`title_team`]]
+            #ajax-team.our_team_slideshow.row.flex-lg-wrap.flex-nowrap [[getImageList? &tvname=`our_team` &tpl=`our_team` &docid=`1` &limit=`6`]]
+            .btn.btn_weight-normal.btn_center.btn_bg-transparent.btn_team.btn_bg-transparent-no-hover.btn_border-black.show(onclick="ym(48630242, 'reachGoal', 'okompanii-specy-open'); fbq('track', 'InitiateCheckout'); return true;")
+                .btn__text Показать еще
+                .btn__icon
+
+            .r10
+            .r20
+            .r20.d-lg-block.d-none
+
+    .docs
+        .r20
+        .r20
+        .container
+            .title Отзывы
+            .docs__signature.d-flex
+                svg.docs__signature-icon(xmlns="http://www.w3.org/2000/svg")
+                    use(xlink:href="/assets/css/img/type_jobs/geodez/sprite.svg#review")
+                .docs__signature-text Почитайте что о нас пишут
+            .docs-box.row.flex-nowrap [[getImageList? &tvname=`docs` &tpl=`docs` &docid=`1` &limit=`6`]]
+            .r20.d-md-none
+            a.review-btn.d-flex.justify-content-end(href="[[++base_url]]o-kompanii/otzyivyi/")
+                .review-btn__title Смотреть все
+                .review-btn__icon-box
+                    svg.review-btn__icon(xmlns="http://www.w3.org/2000/svg")
+                        use(xlink:href="/assets/css/img/review/review.svg#review")
+        .r20
+        .r20

@@ -1,0 +1,10 @@
+import {spawn} from 'node:child_process';
+import fs from 'node:fs';
+import path from 'node:path';
+const root=process.cwd();const target=path.join(root,'_backups','hosting-readonly-20261021');fs.mkdirSync(target,{recursive:true});
+const out=fs.createWriteStream(path.join(target,'hosting-inventory.json'));const errors=fs.createWriteStream(path.join(target,'ssh-audit.log'));
+const child=spawn('ssh',['-o','BatchMode=yes','-o','StrictHostKeyChecking=yes','-o','ConnectTimeout=15','-o','IdentitiesOnly=yes','-i',path.join(root,'.ssh','isipto_transfer_ed25519_v3'),'idealstroy_1@idealstroy.beget.tech','php'],{windowsHide:true});
+child.stdout.pipe(out);child.stderr.pipe(errors);fs.createReadStream(path.join(root,'deployment/homepage/audit-host-readonly.php')).pipe(child.stdin);
+const code=await new Promise(r=>child.on('close',r));await new Promise(r=>out.end(r));errors.end();if(code!==0)throw new Error('SSH audit failed; inspect private log');
+let data=fs.readFileSync(path.join(target,'hosting-inventory.json'),'utf8');const start=data.indexOf('{');if(start<0)throw new Error('No audit JSON');data=data.slice(start);const report=JSON.parse(data);fs.writeFileSync(path.join(target,'hosting-inventory.json'),JSON.stringify(report,null,2));
+console.log(JSON.stringify({fileCount:Object.keys(report.files).length,totalBytes:Object.values(report.files).reduce((s,x)=>s+x.size,0),phpCli:report.phpCli,phpDirectives:report.phpDirectives,errors:report.errors,dbTables:report.database.tables.length,dbBytes:report.database.tables.reduce((s,x)=>s+x.bytes,0)},null,2));

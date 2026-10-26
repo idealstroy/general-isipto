@@ -1,0 +1,56 @@
+extends template
+block append var
+    -var blog = true
+    -var inner = true
+block content
+    section.first-screen.first-screen-blog
+        .container.container-first-screen
+            +crumbs()
+            h1.first-screen__title.first-screen-blog__title [[*h1]]
+            p.first-screen__subtitle.first-screen-blog__subtitle [[*longtitle]]
+
+    .container
+        .blog-box#pdopage
+            .row.rows
+                | [[!pdoPage?
+                | &element = `pdoResources`
+                | &parents = `[[*id]]`
+                | &ajaxMode = `default`
+                | &tpl=`blog`
+                | &includeTVs=`image_blog,introtext_blog,publishedon`
+                | &sortby=``
+                | &sortdir=`DESC`
+                | &processTVs=`1`
+                | &tvPrefix=``
+                | &limit=`9`
+                | &frontend_css=``
+                | ]]
+            | [[!+page.nav]]
+
+
+
+            //-.blog-item.col-md-4.col-sm-6.col-12
+                a.blog-item__img(href="")
+                    img.image-load.d-block(src="#" data-src="../assets/css/img/blog/1.jpg" alt="")
+                .blog-item__date-box.d-flex.align-items-center
+                    .blog-item__date-icon
+                        svg(xmlns="https://www.w3.org/2000/svg")
+                            use(xlink:href="../assets/css/img/blog/date.svg#date")
+                    .blog-item__date-text 24.10.2019
+                .blog-item__title
+                    a(href="") Тема такая то и такая то и вот еще такая то
+                .blog-item__content.d-inline
+                    p Мы специализируемся на подготовке исполнительной документации с февраля 2016 года. Основные направления компании — подготовка исполнительной документации с предоставлением...
+                a.blog-item__text-moreinfo(href="") Читать статью
+
+
+
+
+            //-.blog-navigation.pagination.d-flex
+                ul.pagination
+
+                a.blog-navigation__item.blog-navigation__item--active.d-flex.justify-content-center.align-items-center(href="") 1
+                a.blog-navigation__item.d-flex.justify-content-center.align-items-center(href="") 2
+                a.blog-navigation__item.d-flex.justify-content-center.align-items-center(href="") 3
+                a.blog-navigation__item.d-flex.justify-content-center.align-items-center(href="") 4
+

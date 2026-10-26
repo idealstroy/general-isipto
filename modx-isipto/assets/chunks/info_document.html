@@ -1,0 +1,34 @@
+<div class="info-document-item">
+    <div class="row">
+        <div class="col-md-3 col-12 info-document-item__img">
+            <img class="image-load d-block" src="#" data-src="[[phpthumbon? &input=`[[+image]]` &options=`w=255&h=255`]]" alt="[[+title]]">
+        </div><div class="col-md-9 col-12 info-document-item__content">
+        <div class="info-document-item__title">
+            [[+title]]
+        </div>
+        [[+list]]
+    </div>
+    </div>
+    <div class="info-document-item__content-bottom">
+        [[+text]]
+    </div>
+</div>
+
+[[+idx:is=`1`:then=`
+<div class="quote-document d-flex justify-content-between align-items-start">
+    <div class="quote-document__text">
+        [[+quote]]
+        <div class="quote-document__text-corner"></div>
+    </div>
+    <div class="quote-document__author">
+        <div class="quote-document__img d-flex justify-content-end"><img class="image-load d-block" src="#" data-src="[[+image_quote:phpthumbon=`w=111&h=111`]]" alt="[[+fio]] - [[+proffess]]"></div>
+        <div class="quote-document__content">
+            <div class="quote-document__fio">[[+fio]]</div>
+            <div class="quote-document__profess">[[+proffess]]</div>
+        </div>
+    </div>
+
+
+
+</div>`
+]]

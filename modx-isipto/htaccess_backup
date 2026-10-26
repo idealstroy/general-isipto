@@ -1,0 +1,396 @@
+# MODX supports Friendly URLs via this .htaccess file. You must serve web
+# pages via Apache with mod_rewrite to use this functionality, and you must
+# change the file name from ht.access to .htaccess.
+#
+# Make sure RewriteBase points to the directory where you installed MODX.
+# E.g., "/modx" if your installation is in a "modx" subdirectory.
+#
+# You may choose to make your URLs non-case-sensitive by adding a NC directive
+# to your rule: RewriteRule ^(.*)$ index.php?q=$1 [L,QSA,NC]
+
+
+Order Allow,Deny
+Allow from all
+Deny from 87.236.21.198 
+Deny from 122.184.140.214
+Deny from 203.76.221.173
+Deny from 203.76.221.174
+Deny from 203.76.221.175
+Deny from 45.177.188.137
+Deny from 45.177.188.138
+Deny from 45.177.188.140
+Deny from 45.177.188.153
+Deny from 109.252.64.22
+Deny from 13.79.130.252
+Deny from 103.92.155.5
+Deny from 103.92.155.16
+Deny from 103.92.155.17
+Deny from 129.226.81.186
+Deny from 188.162.252.138
+Deny from 188.162.252.158
+Deny from 188.162.254.84
+Deny from 188.162.254.100
+Deny from 188.162.252.158
+Deny from 148.253.33.3
+Deny from 115.77.64.32
+Deny from 192.145.205.1
+Deny from 115.186.128.154
+Deny from 95.217.141.56
+Deny from 103.11.216.228
+Deny from 45.193.115.118
+Deny from 191.52.255.96
+Deny from 45.190.184.155
+Deny from 200.72.125.2
+Deny from 115.127.39.28
+Deny from 8.212.150.183
+Deny from 111.90.178.186
+Deny from 105.27.144.62
+Deny from 96.9.88.158
+Deny from 103.178.120.86
+Deny from 38.49.208.37
+Deny from 115.84.91.250
+Deny from 85.13.86.108
+Deny from 13.114.140.105
+Deny from 103.137.45.205
+Deny from 202.62.37.6
+Deny from 95.215.65.49
+Deny from 118.137.38.46
+Deny from 46.29.224.18
+Deny from 128.199.200.213
+Deny from 154.72.81.54
+Deny from 45.160.59.244
+Deny from 59.94.38.248
+Deny from 190.144.122.70
+Deny from 178.216.26.57
+Deny from 75.152.43.234
+Deny from 32.141.214.218
+Deny from 201.49.109.149
+Deny from 179.96.253.122
+Deny from 177.86.217.23
+Deny from 162.243.31.236
+Deny from 102.132.20.150
+Deny from 41.84.154.222
+Deny from 187.103.0.86
+Deny from 177.72.113.242
+Deny from 116.106.158.155
+Deny from 213.207.48.90
+Deny from 43.251.84.100
+Deny from 195.142.25.170
+Deny from 103.178.77.142
+Deny from 202.178.116.91
+Deny from 103.174.18.20
+Deny from 45.252.79.34
+Deny from 104.28.225.121
+Deny from 102.132.20.58
+Deny from 134.122.215.165
+Deny from 171.232.154.50
+Deny from 77.81.29.23
+Deny from 115.127.191.222
+Deny from 104.28.206.182
+Deny from 175.112.128.187
+Deny from 106.201.242.101
+Deny from 165.165.136.182
+Deny from 105.27.127.202
+Deny from 65.126.149.35
+Deny from 170.233.98.88
+Deny from 186.179.100.173
+Deny from 91.72.153.182
+Deny from 115.71.239.220
+Deny from 97.103.36.114
+Deny from 113.160.184.145
+Deny from 136.0.212.252
+Deny from 47.254.149.89
+Deny from 191.52.225.62
+Deny from 187.103.243.105
+Deny from 105.25.145.62
+Deny from 105.25.145.246
+Deny from 105.25.144.174
+Deny from 105.25.144.106
+Deny from 105.25.146.22
+Deny from 105.25.145.58
+Deny from 43.156.106.125
+Deny from 43.156.107.62
+Deny from 167.71.209.107
+Deny from 167.71.209.115
+Deny from 167.71.209.131
+Deny from 167.71.209.182
+Deny from 167.71.210.17
+Deny from 167.71.210.86
+Deny from 167.71.210.85
+Deny from 156.245.131.201
+Deny from 45.201.149.2
+Deny from 45.202.25.102
+Deny from 45.202.25.237
+Deny from 45.204.195.4
+Deny from 45.204.195.20
+Deny from 188.165.192.99
+Deny from 47.251.34.103
+Deny from 188.165.230.167
+Deny from 117.242.46.164
+Deny from 136.228.131.79
+Deny from 124.41.228.26
+Deny from 117.1.157.22
+Deny from 3.143.233.190
+Deny from 185.196.176.155  
+Deny from 192.151.244.177
+Deny from 103.246.84.78  
+Deny from 103.178.79.38
+Deny from 201.20.84.242
+Deny from 114.4.248.110
+Deny from 185.24.196.134
+Deny from 18.191.194.241
+Deny from 54.149.238.226
+Deny from 186.97.152.50
+Deny from 115.78.2.136
+Deny from 138.255.215.78
+Deny from 8.219.8.18
+Deny from 95.164.118.76
+Deny from 103.114.226.110
+Deny from 54.160.247.105
+Deny from 72.14.22.34
+Deny from 89.201.5.51
+Deny from 113.161.7.153
+Deny from 89.187.164.151
+Deny from 38.147.82.35
+Deny from 182.93.75.141
+Deny from 41.190.147.186
+Deny from 149.54.37.60
+Deny from 196.41.63.42
+Deny from 41.220.138.228
+Deny from 3.91.91.162
+Deny from 167.179.44.155
+Deny from 114.9.16.142
+Deny from 203.189.159.116
+Deny from 212.244.120.28
+Deny from 157.230.20.221
+Deny from 152.200.192.142
+Deny from 103.113.152.75
+Deny from 103.134.133.160
+Deny from 177.152.105.196
+Deny from 103.186.128.154
+Deny from 156.245.188.136
+Deny from 62.210.145.140
+
+RewriteEngine On
+
+RewriteCond %{HTTP_USER_AGENT} Bytedance|Bytespider [NC]
+RewriteRule .* - [F,L]
+
+RewriteCond %{HTTP_USER_AGENT} ^.*(AhrefsBot|SolomonoBot|SearchBot|MJ12bot).* [NC]
+RewriteRule .* - [F,L]
+
+RewriteCond %{HTTP_USER_AGENT} CCBot/1.0|CCBot/2.0 [NC]
+RewriteRule .* - [F,L]
+
+RewriteCond %{HTTP_USER_AGENT} Go-http-client/1.1 [NC]
+RewriteRule .* - [F,L]
+
+RewriteCond %{HTTP_USER_AGENT} .*Bytespider.* [NC]
+RewriteRule .* - [R=403,L]
+
+
+RewriteBase /
+
+RewriteRule ^(.*)surgut/surgut/uslugi/ispolnitelnaya-na-vodoprovod-i-kanalizacziyu/surgut/ /404/ [R=301,L]
+RewriteRule ^(.*)surgut/surgut/uslugi/ispolnitelnaya-na-vodoprovod-i-kanalizacziyu/surgut /404/ [R=301,L]
+RewriteRule ^(.*)kaluga/uslugi/podgotovka-ispolnitelnoy-dokumentacii/ /404/ [R=301,L]
+RewriteRule ^(.*)kaluga/uslugi/podgotovka-ispolnitelnoy-dokumentacii /404/ [R=301,L]
+
+
+RewriteRule ^(.*)krasnodar/uslugi/ispolnitelnaya-dokumentatsiya-mostov1/ /404/ [R=301,L]
+RewriteRule ^(.*)krasnodar/uslugi/ispolnitelnaya-dokumentatsiya-mostov1 /404/ [R=301,L]
+
+RewriteRule ^o-kompanii/blog/raznicza-mezhdu-pos-i-ppr/$ blog/raznicza-mezhdu-pos-i-ppr/ [R=301,NC,L]
+
+RewriteRule ^khanty-mansiysk$ khanty-mansiysk/ [R=301,NC,L]
+RewriteRule ^salekhard$ salekhard/ [R=301,NC,L]
+
+RewriteRule ^yaroslavl$ yaroslavl/ [R=301,NC,L]
+
+RewriteRule ^voronezh$ voronezh/ [R=301,NC,L]
+RewriteRule ^volgograd$ volgograd/ [R=301,NC,L]
+RewriteRule ^vladivostok$ vladivostok/ [R=301,NC,L]
+RewriteRule ^ulyanovsk$ ulyanovsk/ [R=301,NC,L]
+RewriteRule ^ufa$ ufa/ [R=301,NC,L]
+RewriteRule ^tyumen$ tyumen/ [R=301,NC,L]
+RewriteRule ^tomsk$ tomsk/ [R=301,NC,L]
+RewriteRule ^tolyatti$ tolyatti/ [R=301,NC,L]
+RewriteRule ^surgut$ surgut/ [R=301,NC,L]
+RewriteRule ^saratov$ saratov/ [R=301,NC,L]
+RewriteRule ^sankt-peterburg$ sankt-peterburg/ [R=301,NC,L]
+RewriteRule ^samara$ samara/ [R=301,NC,L]
+RewriteRule ^ryazan$ ryazan/ [R=301,NC,L]
+RewriteRule ^rostov-na-donu$ rostov-na-donu/ [R=301,NC,L]
+RewriteRule ^perm$ perm/ [R=301,NC,L]
+RewriteRule ^penza$ penza/ [R=301,NC,L]
+RewriteRule ^orenburg$ orenburg/ [R=301,NC,L]
+RewriteRule ^omsk$ omsk/ [R=301,NC,L]
+RewriteRule ^novyj-urengoj$ novyj-urengoj/ [R=301,NC,L]
+RewriteRule ^novosibirsk$ novosibirsk/ [R=301,NC,L]
+RewriteRule ^novokuznetsk$ novokuznetsk/ [R=301,NC,L]
+RewriteRule ^nizhnij-novgorod$ nizhnij-novgorod/ [R=301,NC,L]
+RewriteRule ^nizhnevartovsk$ nizhnevartovsk/ [R=301,NC,L]
+RewriteRule ^naberezhnye-chelny$ naberezhnye-chelny/ [R=301,NC,L]
+RewriteRule ^lipetsk$ lipetsk/ [R=301,NC,L]
+RewriteRule ^krasnoyarsk$ krasnoyarsk/ [R=301,NC,L]
+RewriteRule ^krasnodar$ krasnodar/ [R=301,NC,L]
+RewriteRule ^kirov$ kirov/ [R=301,NC,L]
+RewriteRule ^khabarovsk$ khabarovsk/ [R=301,NC,L]
+RewriteRule ^kazan$ kazan/ [R=301,NC,L]
+RewriteRule ^kaliningrad$ kaliningrad/ [R=301,NC,L]
+RewriteRule ^izhevsk$ izhevsk/ [R=301,NC,L]
+RewriteRule ^irkutsk$ irkutsk/ [R=301,NC,L]
+RewriteRule ^ekaterinburg$ ekaterinburg/ [R=301,NC,L]
+RewriteRule ^chelyabinsk$ chelyabinsk/ [R=301,NC,L]
+RewriteRule ^blagoveshchensk$ blagoveshchensk/ [R=301,NC,L]
+RewriteRule ^barnaul$ barnaul/ [R=301,NC,L]
+RewriteRule ^kemerovo$ kemerovo/ [R=301,NC,L]
+RewriteRule ^tula$ tula/ [R=301,NC,L]
+RewriteRule ^sevastopol$ sevastopol/ [R=301,NC,L]
+RewriteRule ^simferopol$ simferopol/ [R=301,NC,L]
+RewriteRule ^sochi$ sochi/ [R=301,NC,L]
+RewriteRule ^magnitogorsk$ magnitogorsk/ [R=301,NC,L]
+RewriteRule ^ivanovo$ ivanovo/ [R=301,NC,L]
+RewriteRule ^kogalym$ kogalym/ [R=301,NC,L]
+RewriteRule ^kaluga$ kaluga/ [R=301,NC,L]
+
+
+# force url to lowercase if upper case is found
+RewriteCond %{REQUEST_URI} [A-Z] [OR]
+RewriteCond %{QUERY_STRING} [A-Z]
+RewriteRule (.*) /assets/snippets/rewrite-strtolower.php?rewrite-strtolower-url=$1 [QSA,L,NE]
+
+# Rewrite www.domain.com -> domain.com -- used with SEO Strict URLs plugin
+RewriteCond %{HTTP_HOST} .
+RewriteCond %{HTTP_HOST} ^www.(.*)$ [NC]
+RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.php\ HTTP/
+RewriteRule ^index\.php$ https://isipto.ru/ [R=301,L]
+
+
+
+RewriteCond %{THE_REQUEST} //
+# Проверяем, повторяется ли слеш (//) более двух раз.
+RewriteRule .* /404/ [R=301,L]
+# Исключаем все лишние слеши.
+
+#убрать знак вопроса
+RewriteCond %{THE_REQUEST} ^[^\s]+\s+[^?]*?\?
+RewriteCond %{QUERY_STRING} =""
+# Для любых версий Apache:
+RewriteRule .? %{REQUEST_URI}? [R=301,L]
+# Для Apache 2.4+:
+# RewriteRule .? %{REQUEST_URI} [R=301,L,QSD]
+
+#
+# or for the opposite domain.com -> www.domain.com use the following
+# DO NOT USE BOTH
+#
+#RewriteCond %{HTTP_HOST} !^$
+#RewriteCond %{HTTP_HOST} !^www\. [NC]
+#RewriteCond %{HTTP_HOST} (.+)$
+#RewriteRule ^(.*)$ https://www.%1/$1 [R=301,L] .
+
+
+
+# Rewrite secure requests properly to prevent SSL cert warnings, e.g. prevent 
+# https://www.domain.com when your cert only allows https://secure.domain.com
+#RewriteCond %{SERVER_PORT} !^443
+#RewriteRule (.*) https://example-domain-please-change.com/$1 [R=301,L]
+
+
+
+# Redirect the manager to a specific domain - don't rename the ht.access file
+# in the manager folder to use this this rule
+#RewriteCond %{HTTP_HOST} !^example-domain-please-change\.com$ [NC]
+#RewriteCond %{REQUEST_URI} ^/manager [NC]
+#RewriteRule ^(.*)$ https://example-domain-please-change.com/$1 [R=301,L]
+
+
+
+# The Friendly URLs part
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php?q=$1 [L,QSA]
+
+
+
+# Make sure .htc files are served with the proper MIME type, which is critical
+# for XP SP2. Un-comment if your host allows htaccess MIME type overrides.
+
+#AddType text/x-component .htc
+
+
+
+# If your server is not already configured as such, the following directive
+# should be uncommented in order to set PHP's register_globals option to OFF.
+# This closes a major security hole that is abused by most XSS (cross-site
+# scripting) attacks. For more information: http://php.net/register_globals
+#
+# To verify that this option has been set to OFF, open the Manager and choose
+# Reports -> System Info and then click the phpinfo() link. Do a Find on Page
+# for "register_globals". The Local Value should be OFF. If the Master Value
+# is OFF then you do not need this directive here.
+#
+# IF REGISTER_GLOBALS DIRECTIVE CAUSES 500 INTERNAL SERVER ERRORS :
+#
+# Your server does not allow PHP directives to be set via .htaccess. In that
+# case you must make this change in your php.ini file instead. If you are
+# using a commercial web host, contact the administrators for assistance in
+# doing this. Not all servers allow local php.ini files, and they should
+# include all PHP configurations (not just this one), or you will effectively
+# reset everything to PHP defaults. Consult www.php.net for more detailed
+# information about setting PHP directives.
+
+#php_flag register_globals Off
+
+
+
+# For servers that support output compression, you should pick up a bit of
+# speed by un-commenting the following lines.
+
+#php_flag zlib.output_compression On
+#php_value zlib.output_compression_level 5
+
+
+
+# The following directives stop screen flicker in IE on CSS rollovers. If
+# needed, un-comment the following rules. When they're in place, you may have
+# to do a force-refresh in order to see changes in your designs.
+
+#ExpiresActive On
+#ExpiresByType image/gif A2592000
+#ExpiresByType image/jpeg A2592000
+#ExpiresByType image/png A2592000
+#BrowserMatch "MSIE" brokenvary=1
+#BrowserMatch "Mozilla/4.[0-9]{2}" brokenvary=1
+#BrowserMatch "Opera" !brokenvary
+#SetEnvIf brokenvary 1 force-no-vary
+
+#htcache
+<IfModule mod_expires.c>
+  Header append Cache-Control "public"
+  FileETag MTime Size
+  ExpiresActive On
+  ExpiresDefault "access plus 0 minutes"
+  ExpiresByType image/ico "access plus 1 years"
+  ExpiresByType text/css "access plus 1 years"
+  ExpiresByType text/javascript "access plus 1 years"
+  ExpiresByType image/gif "access plus 1 years"
+  ExpiresByType image/jpg "access plus 1 years"
+  ExpiresByType image/jpeg "access plus 1 years"
+  ExpiresByType image/bmp "access plus 1 years"
+  ExpiresByType image/png "access plus 1 years"
+</IfModule>
+
+
+
+RewriteCond %{HTTP_HOST} isipto.com
+RewriteRule (.*) https://isipto.ru/$1 [R=301,L]
+
+Redirect 301 /lp/ https://isipto.ru/
+
+
+
+RewriteEngine On

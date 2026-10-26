@@ -1,0 +1,39 @@
+<form class="recaptcha-form form-new__form">
+    
+   <input type="hidden" name="recaptcha_token" class="recaptcha-token"> 
+    
+    
+  <input class="callOrderReason" type="hidden" name="reason" value="Закажите звонок руководителя проектов">
+  <input class="page" type="hidden" name="page" value="[[~[[*id]]? &scheme=`full`]]">
+  <input class="goalMetrika" type="hidden" name="goal" value="button-gift">
+  <input class="ref_info" name="ref_info" type="hidden" value="">
+
+  <input class="site-message" type="text" name="name" value="">
+  <input class="site-message" type="text" name="firstname" value="">
+  <input class="site-message" type="text" name="lastname" value="">
+
+
+  <input class="form-new__form-input" style="max-width:540px; width:100%;" type="text" placeholder="Имя" name="fio">
+  <br>
+  <input class="form-new__form-input" style="max-width:540px; width:100%;" type="tel" placeholder="Телефон" name="phone">
+
+  <div class="r20"></div>
+  <div class="r20"></div>
+  
+  <div class="form-footer__button-box d-flex flex-wrap flex-sm-nowrap align-items-center justify-content-between" style="max-width:540px; width:100%;" >
+        <div class="form-footer__confid-box d-flex align-items-center">
+            <svg class="form-footer__confid-icon" style="margin-right:0px;" xmlns="https://www.w3.org/2000/svg"><use xlink:href="../assets/css/img/confid.svg#confid"></use></svg>
+            <div class="form-footer__confid-text" style="margin-right:15px; font-weight: 400;font-size: 10px;line-height: 13px; color: #ACACAC;">Нажимая на кнопку, вы даете согласие на обработку своих персональных данных</div>
+        </div>
+        <div class="form-footer__checkbox" style="display: flex; align-items: center;gap:6px;line-height: 1.2;">
+            <input type="checkbox" name="agree" required> 
+            <label>
+            <span style="color: #777;font-size: 14px;">
+            Я даю согласие на <a href="/politika-konfidenczialnosti/" style="text-decoration: underline;font-weight:500;">обработку своих персональных данных</a>
+            </span></label>
+        </div>
+<input class="btn btn_weight-normal form-footer__btn" type="submit" value="Заказать звонок">
+  </div>
+
+  
+</form>

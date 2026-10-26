@@ -1,0 +1,570 @@
+@import 'nib'
+@import 'rupture'
+
+/*Зачарование пикселей в ремы*/
+rem() {
+  remified = ()
+  for arg in arguments {
+    push(remified, unit(arg/16, 'rem'))
+  }
+  return remified
+}
+
+/*Адаптив*/
+rupture.scale =       0    576px    767.98px    992px    1200px
+rupture.scale-names =  'xs'     'sm'     'md'     'lg'      'xl'
+
+.first_screen
+  height auto
+  padding 50px 0
+  margin-top 110px
+  position relative
+  background-size cover
+  background-position center
+  background-image url(img/first_screen.jpg)
+  +below(md)
+    margin-top 0
+  .city-box
+    left 0
+    top -15px
+    padding 7px 15px
+    position absolute
+    background linear-gradient(to right,#fa0201,#f04840)
+    +below(md)
+      display none
+    &__text
+      color #fff
+      font-size 15px
+      font-weight 600
+  &:after
+    content ''
+    top 0
+    left 0
+    width 100%
+    height 100%
+    position absolute
+    background-image url(img/pattern.png)
+  &:before
+    content ''
+    top 0
+    left 0
+    width 100%
+    height 100%
+    position absolute
+    background-color #000000a6
+.first_screen_box
+  z-index 2
+  padding 0
+  color #fff
+  position relative
+  h1
+    font-size rem(35px)
+    font-weight 800
+    text-align center
+    line-height rem(40px)
+    +below(xs)
+      font-size 30px
+  .order_services
+    color #fff
+    margin 0 auto
+    transition .3s
+    font-size 16px
+    cursor pointer
+    font-weight 600
+    line-height 22px
+    padding 20px 15px
+    border-radius 30px
+    background-color #ff5a52
+    &:hover
+      color #fff
+      background-color #0000008c
+  .subtitle_top
+    font-size 22px
+    font-weight 400
+    line-height 22px
+    text-align center
+    padding 10px 0 30px
+.vantages
+  padding 40px 20px
+  position relative
+  background-color #fff
+  +below(lg)
+    padding 40px 40px 0 40px
+  .vantages_block
+    +below(lg)
+      margin-bottom 40px
+    +below(375px)
+      flex-wrap wrap
+    .img_vantages
+      svg
+        size 50px
+        fill #e53d47
+      +below(375px)
+        margin 0 auto 15px
+    .content_vantages
+      padding-left 15px
+      .title_vantages
+        font-weight 600
+        font-size rem(22px)
+        line-height rem(26px)
+      .text_vantages
+        color #666
+        font-size 14px
+        font-weight 400
+        line-height 18px
+        padding-top 15px
+        +below(lg)
+          padding-top 5px
+
+.demands_img
+  z-index 9
+  position relative
+  img
+    width 100%
+    border-radius 7px
+.title_demands
+  z-index 2
+  position relative
+  font-size rem(22px)
+  line-height rem(27px)
+  padding rem(40px 0 15px)
+.demands
+  z-index 2
+  border-radius 7px
+  position relative
+  padding rem(30px)
+  background-color #fff
+  margin-bottom rem(50px)
+  .block_demands
+    color #000
+    font-size rem(18px)
+    line-height rem(24px)
+    margin-bottom 15px
+    border-bottom 1px solid #dddddd
+    ul
+      list-style none
+      padding-left 20px
+      margin-bottom 15px
+      li
+        padding 10px 0
+        position relative
+        &:before
+          content ''
+          position absolute
+          top 17px
+          left -20px
+          size 8px
+          border-radius 50%
+          background #d34841ff
+
+  .block_demands:last-child
+    margin-bottom 0
+    padding-bottom 0
+    border-bottom none
+
+/*.form_main
+  height auto
+  position relative
+  padding rem(50px 0)
+  background-size cover
+  background-image url("img/background_form.jpg")
+  &:after
+    content ''
+    top 0
+    left 0
+    width 100%
+    height 100%
+    position absolute
+    background-image url(img/pattern.png)
+  .vantages_form
+    z-index 1
+    margin 0 -20px
+    position relative
+    padding 20px 15px
+    border-radius 5px
+    background-color #fff
+    +below(xs)
+      margin 0
+      border-radius 5px 5px 0 0
+    .img_vantages_form
+      img
+        width auto
+        +below(md)
+          margin-bottom 30px
+    .content_vantages_form
+      padding-left 15px
+      +below(md)
+        margin-bottom 30px
+      .title_vantages_form
+        font-size rem(22px)
+        font-weight 400
+        line-height rem(26px)
+        margin-bottom 5px
+      .text_vantages_form
+        font-weight 300
+        font-style normal
+        font-size rem(16px)
+        line-height rem(22px)*/
+/*.form
+  z-index 1
+  position relative
+  padding rem(30px 0)
+  background-color #fff
+  border-radius 5px
+  margin-top 30px
+  box-shadow inset 0 5px 85px -15px #c2c2c2
+  .title_form
+    font-size rem(26px)
+    font-weight 400
+    line-height 24px
+    text-align center
+    font-family 'Muller'
+    margin 15px 0 25px
+  form
+    margin 0 auto
+    justify-content space-between
+    .block_input
+      +below(md)
+        width 32%
+      +below(767px)
+        width 100%
+    label
+      width 100%
+      color #777
+      font-size 16px
+      font-weight 400
+      line-height 24px
+    .input_form
+      width 100%
+      height 50px
+      padding 0 15px
+      border-radius 5px
+      border 1px solid #dcdcdc
+      +below(sm)
+        margin-bottom 10px
+      &:focus
+        background-color rgba(255, 0, 0, 0.08) !important
+    .submit_form
+      color #fff
+      padding 0 50px
+      cursor pointer
+      transition 0.5s ease all
+      background-color #dc3b34
+      +below(sm)
+        margin-top 10px
+      &:hover
+        background-color #f24841*/
+.confid
+  margin 15px auto 0
+  color #989898
+  font-size 12px
+  font-weight 400
+  line-height 24px
+  a
+    color #989898
+    border-bottom 1px solid #dcdcdc
+    &:hover
+      border-bottom transparent
+
+/*.title_up
+  font-size 20px
+  font-weight bold
+.form_up
+  .block
+    margin-bottom 15px
+    label
+      width 100%
+    .input_up
+      width 100%
+      height 40px
+      color #323232
+      padding 0 15px
+      background-color #f249410f
+      border 1px solid #e1e1e1
+      &:focus
+        background-color rgba(255, 0, 0, 0.08) !important
+    .bottom_up
+      color #fff
+      width 100%
+      height 50px
+      border none
+      cursor pointer
+      font-size 19px
+      transition .5s
+      background-color #f24941
+      &:hover
+        background-color #d34943
+  .confid_up
+    color #474747
+    font-size 13px
+    text-align center
+    a
+      color #474747
+      border-bottom 1px solid #d2d2d2
+      &:hover
+        border-bottom transparent
+
+
+.form_box
+  z-index 9
+  width 100%
+  height 100%
+  padding 30px
+  margin-top 40px
+  position relative
+  border-radius 7px
+  background-color #fff
+  .section_form.active
+    display block
+  .section_form
+    color #000
+    display none
+    text-align left
+    .header_form
+      height 55px
+      +below(xs)
+        height auto
+      .title_section
+        width 85%
+        color #000
+        font-size rem(24px)
+        font-weight 400
+        line-height rem(29px)
+        +below(md)
+          width 80%
+        +below(sm)
+          width 100%
+      .question_section
+        color #999
+        font-size rem(24px)
+        font-weight 400
+        line-height rem(29px)
+        +below(xs)
+          margin 10px 0
+        span
+          color #000
+    .text_status
+      color #999
+      margin 8px 0
+      font-size 12px
+      font-weight 400
+      line-height 22px
+    .status_box
+      .status
+        width 100%
+        height 5px
+        overflow hidden
+        border-radius 5px
+        background-color #bababa
+        span
+          width 0
+          height 100%
+          display block
+          position relative
+          background #e53d47
+          transition all .3s ease
+    .body_form
+      margin-top 40px
+      height 180px
+      position relative
+      +below(sm)
+        height auto
+      .total-input
+        width 50%
+        height 50px
+        +below(xs)
+          width 100%
+          margin-bottom 15px
+        input
+          width 95%
+          +below(xs)
+            width 100%
+      .input
+        width 49%
+        height 50px
+        padding 0 20px
+        border-radius 7px
+        border 1px solid #e8e8f0
+        background-color #f1f1f1
+        +below(sm)
+          width 100%
+      .check_container
+        width 49%
+        margin-bottom 13px
+        +below(sm)
+          width 100%
+        .img_checkbox
+          img
+            size 60px
+            margin-right 15px
+        label
+          width 100%
+          height 100%
+          cursor pointer
+          padding 10px 15px
+          border-radius 7px
+          transition .3s
+          border 1px solid #e8e8f0
+        .checkbox
+          outline none
+          display inline-flex
+          align-items center
+          user-select none
+        .checkbox.active
+          border 1px solid rgb(229, 61, 71)
+          box-shadow rgba(0, 0, 0, 0.18) 1.7px 5.8px 21px 0px
+        .checkbox input[type="checkbox"],.checkbox input[type="radio"]
+          display none
+        .checkbox input[type="checkbox"]:checked + .check, .checkbox input[type="radio"]:checked + .check
+          background url('img/checkbox.png') 0 0 no-repeat
+          background-position bottom left
+          color #e53d47
+        .checkbox input[type="checkbox"] + .check, .checkbox input[type="radio"] + .check
+          background url('img/checkbox.png') 0 0 no-repeat
+          background-position top left
+          padding-left 40px
+          margin-bottom 0
+          height 21px
+          font-size 15px
+          cursor pointer
+        .checkbox input[type="radio"] + .check
+          background url('img/radio.png') 0 0 no-repeat
+          background-position top left
+          height 21px
+        .checkbox input[type="radio"]:checked + .check
+          background url('img/radio.png') 0 0 no-repeat
+          background-position bottom left
+        .answer_title::selection
+          background-color transparent
+    .button_form
+      width 100%
+      bottom 0
+      position absolute
+      +below(sm)
+        position unset
+        margin-top 30px
+      +below(425px)
+        flex-wrap wrap
+      .button
+        +below(425px)
+          width 100%
+      .prev_form
+        color #ccc
+        border none
+        cursor pointer
+        font-size 16px
+        font-weight 600
+        line-height 22px
+        padding-left 50px
+        position relative
+        background-color transparent
+        +below(425px)
+          padding-left 0
+          margin-bottom 20px
+        span
+          transition .3s
+          border-bottom 1px solid transparent
+        &:hover span
+          border-bottom 1px solid #ccc
+        &:before
+          content ''
+          top 0
+          left 0
+          size 40px 25px
+          padding-left 50px
+          position absolute
+          background-size contain
+          background-repeat no-repeat
+          background-image url('img/quiz_arrow.png')
+          +below(425px)
+            left 20px
+      .next_form
+        color #fff
+        border none
+        cursor pointer
+        transition .3s
+        font-size 16px
+        font-weight 600
+        line-height 22px
+        position relative
+        border-radius 30px
+        background-color #f24941
+        padding 15px 100px 15px 20px
+        +below(425px)
+          padding 15px 0
+        &:hover
+          background-color #c03b34
+        &:before
+          top 13px
+          left auto
+          right 20px
+          transform rotate(180deg)
+          @extend .form_box .section_form .button_form .prev_form:before
+      .prev_form[disabled]
+        cursor not-allowed
+      .next_form[disabled]
+        cursor not-allowed
+        background-color rgba(242, 73, 65, 0.6)
+        &:hover
+          background-color rgba(242, 73, 65, 0.6)*/
+
+
+.text-end
+  &__title
+    font-weight bold
+    font-size rem(23px)
+    line-height rem(28px)
+    margin-bottom rem(20px)
+  &__subtitle
+    margin-bottom 8px
+    font-size rem(18px)
+    line-height rem(23px)
+    text-decoration underline
+.answer-box
+  +below(sm)
+    height 195px
+    overflow-y scroll
+.has-error
+  border 1px solid red
+
+.simplebar-scroll-content
+  width 100%
+  .simplebar-content
+    display flex
+    flex-wrap wrap
+    width 100%
+    justify-content space-between
+
+.techkarta
+  padding rem(40px 0)
+  &__img
+    img
+      width 100%
+  .techkarta-right
+    height 100%
+  &__caption
+    color #000
+    font-weight bold
+    font-size rem(32px)
+    line-height rem(27px)
+    font-style normal
+    border-bottom 1px solid #ccc
+    &:hover
+      border-bottom 1px solid transparent
+    span
+      color #D34841
+  &__subcaption
+    font-style normal
+    font-weight normal
+    font-size rem(16px)
+    margin 15px 0 30px
+    line-height rem(19px)
+  .techkarta-block
+    &__input
+      border none
+      padding 5px 10px
+      background transparent
+      border-bottom 1px solid #A5A5A5
+
+.about_company
+  background #fff

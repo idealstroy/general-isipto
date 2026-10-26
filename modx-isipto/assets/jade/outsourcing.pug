@@ -1,0 +1,363 @@
+extends template
+block append var
+  -var title = "Аутсорсинг ПТО с выездом на объект"
+  -var outsourcing = true
+
+block content
+    section.first-screen.first-screen_crumbs
+        .container
+            +crumbs()
+            .row.justify-content-between
+                .first-screen__box.col-lg-9.col-12
+                    h1.first-screen__title [[*h1]]
+                    p.first-screen__subtitle Штат 100 инженеров ПТО
+                    .row
+                        ul.first-screen__item-box.col-lg-10.col-12
+                            li.first-screen__item.d-flex.align-items-center
+                                .first-screen__item-icon.d-flex.align-items-center.justify-content-center
+                                    <svg width="20" height="13" viewBox="0 0 20 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M18.9909 5.00409C18.7259 5.00409 18.4717 5.10945 18.2843 5.29698C18.0969 5.48452 17.9916 5.73887 17.9916 6.00409V8.59409L11.706 2.29409C11.6131 2.20036 11.5025 2.12597 11.3808 2.0752C11.259 2.02443 11.1284 1.99829 10.9965 1.99829C10.8645 1.99829 10.7339 2.02443 10.6121 2.0752C10.4904 2.12597 10.3798 2.20036 10.2869 2.29409L6.99923 5.59409L1.7129 0.294092C1.52473 0.105788 1.26951 0 1.00339 0C0.737278 0 0.48206 0.105788 0.293887 0.294092C0.105714 0.482395 0 0.73779 0 1.00409C0 1.27039 0.105714 1.52579 0.293887 1.71409L6.28972 7.71409C6.38262 7.80782 6.49314 7.88221 6.61492 7.93298C6.73669 7.98375 6.86731 8.00989 6.99923 8.00989C7.13115 8.00989 7.26176 7.98375 7.38354 7.93298C7.50531 7.88221 7.61584 7.80782 7.70874 7.71409L10.9965 4.41409L16.5826 10.0041H13.9944C13.7293 10.0041 13.4752 10.1094 13.2878 10.297C13.1003 10.4845 12.9951 10.7389 12.9951 11.0041C12.9951 11.2693 13.1003 11.5237 13.2878 11.7112C13.4752 11.8987 13.7293 12.0041 13.9944 12.0041H18.9909C19.1215 12.0025 19.2505 11.9753 19.3706 11.9241C19.6148 11.8226 19.8089 11.6284 19.9103 11.3841C19.9615 11.2639 19.9886 11.1348 19.9902 11.0041V6.00409C19.9902 5.73887 19.8849 5.48452 19.6975 5.29698C19.5101 5.10945 19.2559 5.00409 18.9909 5.00409Z" fill="#E03B32"/>
+                                    </svg>
+                                .first-screen__item-text Снижение рисков просрочки
+                            li.first-screen__item.d-flex.align-items-center
+                                .first-screen__item-icon.d-flex.align-items-center.justify-content-center
+                                    <svg width="21" height="19" viewBox="0 0 21 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16.2076 4.55076H17.161V5.45938C17.161 5.70037 17.2615 5.93148 17.4403 6.10188C17.6191 6.27228 17.8616 6.36801 18.1144 6.36801C18.3673 6.36801 18.6098 6.27228 18.7886 6.10188C18.9674 5.93148 19.0678 5.70037 19.0678 5.45938V4.55076H20.0212C20.2741 4.55076 20.5166 4.45503 20.6954 4.28463C20.8742 4.11423 20.9746 3.88312 20.9746 3.64214C20.9746 3.40116 20.8742 3.17005 20.6954 2.99965C20.5166 2.82925 20.2741 2.73352 20.0212 2.73352H19.0678V1.8249C19.0678 1.58392 18.9674 1.35281 18.7886 1.18241C18.6098 1.01201 18.3673 0.916278 18.1144 0.916278C17.8616 0.916278 17.6191 1.01201 17.4403 1.18241C17.2615 1.35281 17.161 1.58392 17.161 1.8249V2.73352H16.2076C15.9548 2.73352 15.7123 2.82925 15.5335 2.99965C15.3547 3.17005 15.2543 3.40116 15.2543 3.64214C15.2543 3.88312 15.3547 4.11423 15.5335 4.28463C15.7123 4.45503 15.9548 4.55076 16.2076 4.55076ZM18.1144 12.7284C17.5226 12.7313 16.9464 12.909 16.4651 13.2372L14.1293 11.9197C14.2395 11.5937 14.2973 11.2536 14.3009 10.9111C14.2981 10.1074 14.0159 9.32719 13.4984 8.69259C12.9809 8.05798 12.2572 7.60476 11.4407 7.40384V5.29583C12.0768 5.08149 12.6129 4.65974 12.9543 4.1051C13.2957 3.55047 13.4204 2.89867 13.3063 2.26491C13.1922 1.63116 12.8467 1.05624 12.3308 0.641779C11.815 0.227319 11.162 0 10.4873 0C9.8126 0 9.15962 0.227319 8.64377 0.641779C8.12792 1.05624 7.78241 1.63116 7.66832 2.26491C7.55422 2.89867 7.67889 3.55047 8.02028 4.1051C8.36166 4.65974 8.89779 5.08149 9.53391 5.29583V7.40384C8.71735 7.60476 7.99371 8.05798 7.4762 8.69259C6.95868 9.32719 6.67648 10.1074 6.67374 10.9111C6.67728 11.2536 6.73514 11.5937 6.84535 11.9197L4.50954 13.2372C4.02822 12.909 3.45196 12.7313 2.86017 12.7284C2.29449 12.7284 1.7415 12.8882 1.27115 13.1877C0.800794 13.4873 0.434199 13.913 0.217719 14.4111C0.00123927 14.9092 -0.0554017 15.4572 0.0549587 15.986C0.165319 16.5148 0.437724 17.0005 0.837726 17.3817C1.23773 17.7629 1.74736 18.0225 2.30218 18.1277C2.857 18.2329 3.43209 18.1789 3.95471 17.9726C4.47734 17.7663 4.92404 17.4169 5.23832 16.9686C5.5526 16.5204 5.72035 15.9933 5.72035 15.4542C5.71682 15.2081 5.67834 14.9636 5.60594 14.7273L7.79874 13.4825C8.51326 14.1594 9.47981 14.5394 10.4873 14.5394C11.4948 14.5394 12.4613 14.1594 13.1759 13.4825L15.3687 14.7273C15.2089 15.2776 15.2345 15.8618 15.4418 16.3974C15.6491 16.9331 16.0276 17.3932 16.524 17.7128C17.0204 18.0325 17.6096 18.1955 18.2084 18.1789C18.8072 18.1623 19.3854 17.9669 19.8615 17.6204C20.3376 17.2738 20.6874 16.7935 20.8617 16.2472C21.036 15.701 21.0259 15.1164 20.8329 14.5759C20.6399 14.0354 20.2737 13.5663 19.7859 13.2348C19.2981 12.9034 18.7135 12.7262 18.1144 12.7284ZM2.86017 16.3628C2.67161 16.3628 2.48728 16.3096 2.3305 16.2097C2.17371 16.1099 2.05152 15.968 1.97936 15.8019C1.9072 15.6359 1.88832 15.4532 1.9251 15.277C1.96189 15.1007 2.05269 14.9388 2.18602 14.8117C2.31936 14.6847 2.48924 14.5981 2.67418 14.5631C2.85912 14.528 3.05081 14.546 3.22502 14.6148C3.39923 14.6835 3.54813 14.8 3.65289 14.9494C3.75765 15.0988 3.81357 15.2745 3.81357 15.4542C3.81357 15.6952 3.71312 15.9263 3.53432 16.0967C3.35553 16.2671 3.11303 16.3628 2.86017 16.3628ZM10.4873 1.8249C10.6759 1.8249 10.8602 1.87819 11.017 1.97803C11.1738 2.07787 11.296 2.21978 11.3681 2.38581C11.4403 2.55184 11.4592 2.73453 11.4224 2.91078C11.3856 3.08704 11.2948 3.24894 11.1614 3.37601C11.0281 3.50309 10.8582 3.58962 10.6733 3.62468C10.4884 3.65974 10.2967 3.64175 10.1225 3.57298C9.94824 3.50421 9.79935 3.38775 9.69458 3.23832C9.58983 3.0889 9.53391 2.91323 9.53391 2.73352C9.53391 2.49254 9.63436 2.26143 9.81315 2.09103C9.99195 1.92063 10.2344 1.8249 10.4873 1.8249ZM10.4873 12.7284C10.1102 12.7284 9.74152 12.6218 9.42795 12.4221C9.11438 12.2224 8.86998 11.9386 8.72566 11.6065C8.58134 11.2745 8.54358 10.9091 8.61716 10.5566C8.69073 10.2041 8.87233 9.88027 9.139 9.62613C9.40567 9.37198 9.74543 9.19891 10.1153 9.12879C10.4852 9.05867 10.8686 9.09466 11.217 9.2322C11.5654 9.36974 11.8632 9.60266 12.0727 9.90151C12.2823 10.2004 12.3941 10.5517 12.3941 10.9111C12.3941 11.3931 12.1932 11.8553 11.8356 12.1961C11.478 12.5369 10.993 12.7284 10.4873 12.7284ZM18.1144 16.3628C17.9259 16.3628 17.7415 16.3096 17.5848 16.2097C17.428 16.1099 17.3058 15.968 17.2336 15.8019C17.1615 15.6359 17.1426 15.4532 17.1794 15.277C17.2161 15.1007 17.3069 14.9388 17.4403 14.8117C17.5736 14.6847 17.7435 14.5981 17.9284 14.5631C18.1134 14.528 18.3051 14.546 18.4793 14.6148C18.6535 14.6835 18.8024 14.8 18.9071 14.9494C19.0119 15.0988 19.0678 15.2745 19.0678 15.4542C19.0678 15.6952 18.9674 15.9263 18.7886 16.0967C18.6098 16.2671 18.3673 16.3628 18.1144 16.3628Z" fill="#E03B32"/>
+                                    </svg>
+                                .first-screen__item-text Системный подход к работе
+                            li.first-screen__item.d-flex.align-items-center
+                                .first-screen__item-icon.d-flex.align-items-center.justify-content-center
+                                    <svg width="19" height="20" viewBox="0 0 19 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4.99653 8H5.99584C6.26087 8 6.51505 7.89464 6.70245 7.70711C6.88986 7.51957 6.99514 7.26522 6.99514 7C6.99514 6.73478 6.88986 6.48043 6.70245 6.29289C6.51505 6.10536 6.26087 6 5.99584 6H4.99653C4.7315 6 4.47732 6.10536 4.28991 6.29289C4.10251 6.48043 3.99722 6.73478 3.99722 7C3.99722 7.26522 4.10251 7.51957 4.28991 7.70711C4.47732 7.89464 4.7315 8 4.99653 8ZM8.99376 14H4.99653C4.7315 14 4.47732 14.1054 4.28991 14.2929C4.10251 14.4804 3.99722 14.7348 3.99722 15C3.99722 15.2652 4.10251 15.5196 4.28991 15.7071C4.47732 15.8946 4.7315 16 4.99653 16H8.99376C9.25879 16 9.51297 15.8946 9.70037 15.7071C9.88778 15.5196 9.99306 15.2652 9.99306 15C9.99306 14.7348 9.88778 14.4804 9.70037 14.2929C9.51297 14.1054 9.25879 14 8.99376 14ZM8.99376 10H4.99653C4.7315 10 4.47732 10.1054 4.28991 10.2929C4.10251 10.4804 3.99722 10.7348 3.99722 11C3.99722 11.2652 4.10251 11.5196 4.28991 11.7071C4.47732 11.8946 4.7315 12 4.99653 12H8.99376C9.25879 12 9.51297 11.8946 9.70037 11.7071C9.88778 11.5196 9.99306 11.2652 9.99306 11C9.99306 10.7348 9.88778 10.4804 9.70037 10.2929C9.51297 10.1054 9.25879 10 8.99376 10ZM15.909 7.38C15.9855 7.19789 16.0064 6.99718 15.969 6.80319C15.9317 6.6092 15.8378 6.43062 15.6991 6.29L9.70326 0.29C9.62066 0.212216 9.52621 0.148081 9.42346 0.0999999C9.39363 0.0957601 9.36335 0.0957601 9.33352 0.0999999L9.05371 0H2.99792C2.20282 0 1.44029 0.316071 0.87807 0.87868C0.315851 1.44129 0 2.20435 0 3V17C0 17.7956 0.315851 18.5587 0.87807 19.1213C1.44029 19.6839 2.20282 20 2.99792 20H8.99376C9.25879 20 9.51297 19.8946 9.70037 19.7071C9.88778 19.5196 9.99306 19.2652 9.99306 19C9.99306 18.7348 9.88778 18.4804 9.70037 18.2929C9.51297 18.1054 9.25879 18 8.99376 18H2.99792C2.73289 18 2.47871 17.8946 2.2913 17.7071C2.1039 17.5196 1.99861 17.2652 1.99861 17V3C1.99861 2.73478 2.1039 2.48043 2.2913 2.29289C2.47871 2.10536 2.73289 2 2.99792 2H7.99445V5C7.99445 5.79565 8.3103 6.55871 8.87252 7.12132C9.43474 7.68393 10.1973 8 10.9924 8H14.9896C15.1869 7.99901 15.3795 7.93961 15.5431 7.82928C15.7067 7.71895 15.834 7.56262 15.909 7.38ZM10.9924 6C10.7273 6 10.4732 5.89464 10.2858 5.70711C10.0983 5.51957 9.99306 5.26522 9.99306 5V3.41L12.5813 6H10.9924ZM17.9875 10H12.991C12.7259 10 12.4718 10.1054 12.2844 10.2929C12.097 10.4804 11.9917 10.7348 11.9917 11V19C11.9922 19.1809 12.0417 19.3583 12.1349 19.5133C12.2282 19.6682 12.3617 19.795 12.5213 19.88C12.6776 19.9603 12.8522 19.9979 13.0277 19.9892C13.2031 19.9804 13.3731 19.9255 13.5206 19.83L15.4892 18.53L17.4879 19.83C17.6371 19.9164 17.8062 19.9627 17.9787 19.9643C18.1511 19.9659 18.3211 19.9229 18.472 19.8393C18.6229 19.7558 18.7496 19.6346 18.8398 19.4875C18.93 19.3404 18.9807 19.1725 18.9868 19V11C18.9868 10.7348 18.8815 10.4804 18.6941 10.2929C18.5067 10.1054 18.2525 10 17.9875 10ZM16.9882 17.12L16.0489 16.49C15.8836 16.3782 15.6887 16.3185 15.4892 16.3185C15.2898 16.3185 15.0949 16.3782 14.9296 16.49L13.9903 17.12V12H16.9882V17.12Z" fill="#E03B32"/>
+                                    </svg>
+                                .first-screen__item-text Официальный договор и отчетность
+
+                    .d-flex.justify-content-between
+                        noindex.btn-whatsapp-box
+                            a.btn-whatsapp(href="https://wa.me/79279563573" rel="nofollow")
+                                .btn-whatsapp__text НАПИСАТЬ В WHATSAPP
+                                svg.btn-whatsapp__icon(xmlns="http://www.w3.org/2000/svg")
+                                    use(xlink:href="/assets/css/img/whatsapp.svg#whatsapp")
+                        a.btn.btn_first-screen.d-flex.align-items-center.justify-content-center.btn-modal(href="#form_up" rel="nofollow" data-reason="Заказать расчет" data-header="Заказать расчет" onclick="ym(48630242, 'reachGoal', 'main-1st'); fbq('track', 'InitiateCheckout'); return true;") Заказать расчет
+
+    .container
+        .r20
+        .r20
+        h2.title Услуги ПТО с выездом на площадку строительства
+        .complex-main
+            .complex-main__box
+                .complex-main__item-box
+                    .complex-main__head-box
+                        .complex-main__head-img
+                            img.image-load.complex-main__head-img(src="#" data-src="../assets/css/img/outsourcing/complex-main/1_mobile.png" alt="Схема работы аутсорсинга" style="position: relative; top: -10px; width: 110px; left: -10px;")
+                        h4.complex-main__head-title Схема работы аутсорсинга
+                    .complex-main__item
+                        .complex-main__item-title Аудит объемов работ
+                        .complex-main__item-text Проверяем исполнительную документацию, которая велась заказчиком при строительстве до обращения к нам и процент завершения СМР. Проверяем весь объем и виды работ, которые нужно освоить
+                    .complex-main__item
+                        .complex-main__item-title Техническое задание и выполнение работ
+                        .complex-main__item-text.
+                            Предоставляем лист аудита на базе которого готовим, согласовываем техническое задание и прилагаем его к договору на аутсорсинг ПТО. Разрабатываем график производства работ для группы ПТО на весь срок выполнения работ
+
+                            <span style="color: #333333;">Вы будете знать какие разделы документации выполняются и сроки их завершения</span>
+                .complex-main__img-box
+                    img.image-load.complex-main__img(src="#" data-src="../assets/css/img/outsourcing/complex-main/1.png" alt="Схема работы аутсорсинга" style="position: absolute; right: 0; bottom: 0; max-width: 39%;")
+            a.btn.btn_h50.btn_width-full-m.btn-modal(href="#form_up" rel="nofollow" data-reason="Проконсультировать по телефону" data-header="Проконсультировать по телефону") Проконсультировать по телефону
+        .r20
+        .r10
+        .complex-main
+            .complex-main__box
+                .complex-main__item-box
+                    div
+                        .complex-main__head-box
+                            .complex-main__head-img
+                                img.image-load.complex-main__head-img(src="#" data-src="../assets/css/img/outsourcing/complex-main/2_mobile.png" alt="Процесс работы ПТО на объекте")
+                            h4.complex-main__head-title Процесс работы ПТО на объекте
+                        .complex-main__item
+                            .complex-main__item-title Распределение задач
+                            .complex-main__item-text Инженеры прибывают на площадку строительства во главе с руководителем. Группа делится по выполняемым разделам, где каждый инженер ведет свой. Если объем работ по разделу большой, его принимают несколько специалистов и делят на участки
+                        .complex-main__item
+                            .complex-main__item-title Контроль и отчетность
+                            .complex-main__item-text Еженедельные отчеты о выполненных объемах инженеры передают руководителю группы. Он сравнивает результаты с нормативом выработки по исполнительной документации на объект строительства, контролирует соответствие графику работ, отчитывается представителю заказчика и управляющую компанию
+                    a.btn.btn_h50.btn_width-full-m.btn-modal(href="#form_up" rel="nofollow" data-reason="Нужна консультация" data-header="Нужна консультация") Нужна консультация
+                .complex-main__img-box.complex-main__img-box_center
+                    img.image-load.complex-main__img(src="#" data-src="../assets/css/img/outsourcing/complex-main/2.png" alt="Процесс работы ПТО на объекте")
+
+    .r20
+    .r20
+    .r20
+    .r10
+    .container
+        .form-new
+            .row
+                .form-new__box.col-lg-10
+                    .row.justify-content-between
+                        .col-xl-8.col-lg-9.col-md-10.col-12
+                            .form-new__form-box
+                                .form-new__title Закажите звонок руководителя проектов
+                                .form-new__subtitle-box.d-flex.align-items-center
+                                    svg.form-new__subtitle-svg(xmlns="https://www.w3.org/2000/svg")
+                                        use(xlink:href="../assets/css/img/ppr/sprite.svg#form-icon")
+                                    .form-new__subtitle Расскажем о процессе аутсорсинга и ценообразования
+                                | [[!AjaxForm?
+                                | &snippet=`FormIt`
+                                | &frontend_css=``
+                                | &form=`id_form_tpl1`
+                                | &hooks=`email,FormItSaveForm,roistat_hooks`
+                                | &emailSubject=`Новая заявка `
+                                | &emailTpl=`template_form1`
+                                | &emailTo=`[[+email_to]]`
+                                | &validate=`fio:required,phone:required`
+                                | &fieldNames=`fio==Имя,phone==Телефон,page==Страница`
+                                | &validationErrorMessage=`В форме содержатся ошибки!`
+                                | &successMessage=`Сообщение успешно отправлено`
+                                | ]]
+                        .form-new__box-right.col-xl-4.col-lg-3.col-md-2
+                            img.form-new__box-img.image-load(src="#" data-src="../assets/css/img/vedenie_id/form.png" alt="Закажите звонок руководителя проектов")
+                            .form-new__box-signature
+                                .form-new__box-signature-title Яна Черная
+                                .form-new__box-signature-subtitle Руководитель проектов
+    .r20
+    .r20
+    .r30
+    .block8
+        .container
+            .row
+                .col-xl-5.col-lg-4.col-12
+                    h3.block8__title.d-md-none Формула расчета стоимости на аутсорсинг
+                    img.block8__img.d-md-block.d-none(src="../assets/css/img/outsourcing/block8/block8.png" alt="Формула расчета стоимости на аутсорсинг")
+                    img.block8__img.d-md-none(src="../assets/css/img/outsourcing/block8/block8_mobile.png" alt="Формула расчета стоимости на аутсорсинг")
+                .col-xl-7.col-lg-8.col-12
+                    h3.block8__title.d-none.d-md-block Формула расчета стоимости на аутсорсинг
+                    ul.ul.ul_li-line.ul_no-padding
+                        li Рассчитываем весь объем документации на выполненные СМР, накладываем на сроки сдачи заказчику, получаем требуемое количество инженеров для его выполнения
+                        li Считаем норму выработки каждого специалиста в день и месяц на объекте. Оцениваем удаленность объекта строительства, затраты на мобилизацию и проживание группы
+                        li Получаем условную цену одного инженера в час, месяц и итоговую стоимость контракта
+                    .d-none.d-md-block
+                        a.btn.btn_h50.btn_width-full-m.btn-modal(href="#form_up" rel="nofollow" data-reason="Заказать расчет" data-header="Заказать расчет") Заказать расчет
+            .r20
+            span Цена на аутсорсинг складывается из объемов, сложности работ и сроков сдачи. Поэтому составить точный прайс на услуги компании сложно. Статистическая доля затрат составляет 1 - 3% от суммы освоенных объемов
+            .d-md-none.d-block
+                .r20
+                .r20
+                a.btn.btn_h50.btn_width-full-m.btn-modal(href="#form_up" rel="nofollow" data-reason="Заказать рассчет" data-header="Заказать расчет") Заказать расчет
+    .r20
+    .r20
+
+    .block9
+        .container
+            .row
+                .col-xl-5.col-lg-4.col-md-5.col-12
+                    h3.block9__title.d-md-none Гарантии в договоре на аутсорсинг ПТО
+                    img.block9__img.d-none.d-md-block(src="../assets/css/img/outsourcing/block9.jpg" alt="Гарантии в договоре на аутсорсинг ПТО ")
+                    img.block9__img.d-md-none(src="../assets/css/img/outsourcing/block9_mobile.jpg" alt="Гарантии в договоре на аутсорсинг ПТО ")
+                .col-xl-7.col-lg-8.col-md-7.col-12
+                    .block9__content
+                        h3.block9__title.d-none.d-md-block Гарантии в договоре на аутсорсинг ПТО
+                        ul.ul.ul_li-line.ul_no-padding
+                            li Закрепляет, что результатом услуги является сданная исполнительная документация заказчику в требуемом объеме
+                            li Связывает весь объем выполняемых работ и сроки сдачи объемов. При их нарушении работы завершаются за наш счет
+                            li Содержит техническое задание, как неотъемлемую часть
+                            li Фиксирует количество специалистов и состав предоставленной группы ПТО
+                            li Предусматривает этапы работ, сроки, расчет стоимости подготовки и сдачи ИТД
+                            li Регламентирует актирование сданных объемов заказчику строительства. Содержит шаблоны актов
+
+    .r20
+    .r10
+    .container
+        .quote-document.quote-document_inverse.d-flex.justify-content-between.align-items-start
+            .quote-document__author
+                .quote-document__img.d-flex.justify-content-end
+                    img.image-load.d-block(src="#" data-src="../assets/images/team/3.jpg" alt="Подготовка исполнительной документации по видам работ")
+                .quote-document__content
+                    .quote-document__fio Тимур Галлямов
+                    .quote-document__profess Генеральный директор
+            .quote-document__text Мы заинтересованы в исполнении контракта, потому что привязаны к срокам по договору. В противном случае мы несем финансовые убытки
+                .quote-document__text-corner
+    .r20
+    .r20
+
+    .our-objects
+        .container
+            h3.title Мы работаем на этих объектах
+            .our-objects__box-global
+                .our-objects__box.row
+                    .our-objects__item-box
+                        .our-objects__item
+                            img.our-objects__item-img.image-load(src="#" data-src="/assets/css/img/tenders/works/1.jpg" alt="ЗапСибНефтехим-2")
+                            .our-objects__item-content
+                                .our-objects__item-title ЗапСибНефтехим-2
+                                .our-objects__item-text Сдали разделы
+                                    span ТХ, КМ, КЖ, АС
+                    .our-objects__item-box
+                        .our-objects__item
+                            img.our-objects__item-img.image-load(src="#" data-src="/assets/css/img/tenders/works/7.jpg" alt="Месторождения им. Требса, Титова")
+                            .our-objects__item-content
+                                .our-objects__item-title Месторождения им. Требса, Титова
+                                .our-objects__item-text Сдали разделы
+                                    span ТХ, ВК, ЭМ, ЭО
+                    .our-objects__item-box
+                        .our-objects__item
+                            img.our-objects__item-img.image-load(src="#" data-src="/assets/css/img/tenders/works/3.jpg" alt="Строительство НПС 32")
+                            .our-objects__item-content
+                                .our-objects__item-title Строительство НПС 32
+                                .our-objects__item-text Сдали разделы
+                                    span КМ, КЖ, ВК, ОВ, ПТ, АР, МО
+                    .our-objects__item-box
+                        .our-objects__item
+                            img.our-objects__item-img.image-load(src="#" data-src="/assets/css/img/tenders/works/4.jpg" alt="Реконструкция завода Полиэф")
+                            .our-objects__item-content
+                                .our-objects__item-title Реконструкция завода Полиэф
+                                .our-objects__item-text Сдали разделы
+                                    span КЖ, АР, КМ, ТХ, ЭМ, ПС, СС, АТХ
+                    .our-objects__item-box
+                        .our-objects__item
+                            img.our-objects__item-img.image-load(src="#" data-src="/assets/css/img/tenders/works/5.jpg" alt="Москва-Сити")
+                            .our-objects__item-content
+                                .our-objects__item-title Москва-Сити
+                                .our-objects__item-text Сдали разделы
+                                    span ОВ, ЭМ, ОПС, ПС, ВК
+                    .our-objects__item-box
+                        .our-objects__item
+                            img.our-objects__item-img.image-load(src="#" data-src="/assets/css/img/tenders/works/6.jpg" alt="Трубопровод Восточная Сибирь - Тихий океан")
+                            .our-objects__item-content
+                                .our-objects__item-title Трубопровод Восточная Сибирь - Тихий океан
+                                .our-objects__item-text Сдали разделы
+                                    span Х, КМ, КЖ, земляные работы
+                    .our-objects__item-box
+                        .our-objects__item
+                            img.our-objects__item-img.image-load(src="#" data-src="/assets/css/img/tenders/works/8.jpg" alt="Золоторудное месторождение. Чита")
+                            .our-objects__item-content
+                                .our-objects__item-title Золоторудное месторождение. Чита
+                                .our-objects__item-text Сдали разделы
+                                    span АР, ЭОМ, СС, ОПС, ОВИК, НВК
+                    .our-objects__item-box
+                        .our-objects__item
+                            img.our-objects__item-img.image-load(src="#" data-src="/assets/css/img/tenders/works/9.jpg" alt="ТрансУголь. Угольный терминал п. Ванино")
+                            .our-objects__item-content
+                                .our-objects__item-title ТрансУголь. Угольный терминал п. Ванино
+                                .our-objects__item-text Сдали разделы
+                                    span КМ, АР, ЭОМ
+
+                .our-objects__hide
+                    .our-objects__box.row
+                        .our-objects__item-box
+                            .our-objects__item
+                                img.our-objects__item-img.image-load(src="#" data-src="/assets/css/img/tenders/works/10.jpg" alt="НПС «Филино»")
+                                .our-objects__item-content
+                                    .our-objects__item-title НПС «Филино»
+                                    .our-objects__item-text Сдали разделы
+                                        span АР, КР, ТХ, КМ
+                        .our-objects__item-box
+                            .our-objects__item
+                                img.our-objects__item-img.image-load(src="#" data-src="/assets/css/img/tenders/works/11.jpg" alt="Перинатальный центр. Сургут")
+                                .our-objects__item-content
+                                    .our-objects__item-title Перинатальный центр. Сургут
+                                    .our-objects__item-text Сдали разделы
+                                        span АР, КР
+                        .our-objects__item-box
+                            .our-objects__item
+                                img.our-objects__item-img.image-load(src="#" data-src="/assets/css/img/tenders/works/12.jpg" alt="Газопровод ЛУПИНГ")
+                                .our-objects__item-content
+                                    .our-objects__item-title Газопровод ЛУПИНГ
+                                    .our-objects__item-text Сдали разделы
+                                        span АК, ЭМ, ОЭ
+                        .our-objects__item-box
+                            .our-objects__item
+                                img.our-objects__item-img.image-load(src="#" data-src="/assets/css/img/tenders/works/13.jpg" alt="Реконструкция трассы М-5 «УРАЛ»")
+                                .our-objects__item-content
+                                    .our-objects__item-title Реконструкция трассы М-5 «УРАЛ»
+                                    .our-objects__item-text Сдали разделы
+                                        span ТХ
+                        .our-objects__item-box
+                            .our-objects__item
+                                img.our-objects__item-img.image-load(src="#" data-src="/assets/css/img/tenders/works/14.jpg" alt="КУПН Газпромнефть-МНПЗ")
+                                .our-objects__item-content
+                                    .our-objects__item-title КУПН Газпромнефть-МНПЗ
+                                    .our-objects__item-text Сдали разделы
+                                        span ТХ
+                        .our-objects__item-box
+                            .our-objects__item
+                                img.our-objects__item-img.image-load(src="#" data-src="/assets/css/img/tenders/works/15.jpg" alt="НПЗ ОАО «Газпром нефтехим Салават».")
+                                .our-objects__item-content
+                                    .our-objects__item-title НПЗ ОАО «Газпром нефтехим Салават».
+                                    .our-objects__item-text Сдали разделы
+                                        span ТХ
+                        .our-objects__item-box
+                            .our-objects__item
+                                img.our-objects__item-img.image-load(src="#" data-src="/assets/css/img/tenders/works/16.jpg" alt="Пропарочный комплекс. Комсмольск-на-Амуре")
+                                .our-objects__item-content
+                                    .our-objects__item-title Пропарочный комплекс. Комсмольск-на-Амуре
+                                    .our-objects__item-text Сдали разделы
+                                        span КЖ, КМ, ТХ, АР, ОВ, ЭОМ, НВК
+                        .our-objects__item-box
+                            .our-objects__item
+                                img.our-objects__item-img.image-load(src="#" data-src="/assets/css/img/tenders/works/17.jpg" alt="Селекционно-генетический центр. Башкирия")
+                                .our-objects__item-content
+                                    .our-objects__item-title Селекционно-генетический центр. Башкирия
+                                    .our-objects__item-text Сдали разделы
+                                        span ОВ, НВК, АР, КМ, КЖ, ОВК, ТН
+
+            .btn.btn_border-black.btn_weight-normal.btn_center.btn_bg-transparent.btn_bg-transparent-no-hover.btn_our-works
+                .btn__text Смотреть все работы
+                .btn__icon
+
+        .r10.d-lg-block.d-none
+        .r20.d-lg-block.d-none
+
+    .container
+        .r10
+        h3.title Как передать работы на аутсорсинг
+        .complex-main.complex-main_full-img-xs
+            .complex-main__box
+                .complex-main__item-box
+                    ul.ul.ul_li-line.ul_no-padding
+                        li Предоставить проект строительства для расчета объемов
+                        li Получить предварительный расчет количества специалистов на объект
+                        li Согласовать техническое задание – один из важнейших этапов
+                        li Согласовать стоимость, объем, сроки и график выполнения работ
+                        li Получить договор с нашей стороны, согласовать и подписать его
+                        li Внести авансовый платеж на мобилизацию ПТО к месту стройплощадки
+                        li Принять на объекте прибывших инженеров, расположить на рабочем месте
+                .complex-main__img-box
+                    img.image-load.complex-main__img(src="#" data-src="../assets/css/img/outsourcing/complex-main/3.png" alt="Схема работы аутсорсинга" style="position: absolute; left: 0; bottom: 0; max-width: 39%;")
+        .r30
+        .r30
+        .r10
+        h3.title Аутсорсинг ПТО включает
+        .complex-main.complex-main_full-img-xs
+            .complex-main__box
+                .complex-main__item-box
+                    ul.ul.ul_li-line.ul_no-padding
+                        li Присутствие группы специалистов ПТО на объекте с перевахтовкой на весь срок работ
+                        li Аудит ИТД, если это необходимо
+                        li Подготовку исполнительной документации
+                        li Комплектация папок по видам работ строительства
+                        li Формирование исполнительной под реестр заказчика
+                        li Защита у строительного контроля и Технадзора
+                        li Сдача полного комплекта документации заказчику до полного принятия
+                .complex-main__img-box.complex-main__img-box_center
+                    img.image-load.complex-main__img.d-md-block.d-none(src="#" data-src="../assets/css/img/outsourcing/complex-main/4.png" alt="Процесс работы ПТО на объекте" style="position: absolute; right: 0; max-width: 39%;")
+                    img.image-load.complex-main__img.d-md-none(src="#" data-src="../assets/css/img/outsourcing/complex-main/4_mobile.png" alt="Процесс работы ПТО на объекте" style="margin: 0 auto; display: block;")
+
+    .r30
+    .r30
+    .r10
+    .docs
+        .r20
+        .r20
+        .container
+            .title Отзывы
+            .docs__signature.d-flex
+                svg.docs__signature-icon(xmlns="http://www.w3.org/2000/svg")
+                    use(xlink:href="/assets/css/img/type_jobs/geodez/sprite.svg#review")
+                .docs__signature-text Почитайте что о нас пишут
+            .docs-box.row.flex-nowrap [[getImageList? &tvname=`docs` &tpl=`docs` &docid=`1` &limit=`6`]]
+            .r20.d-md-none
+            a.review-btn.d-flex.justify-content-end(href="[[++base_url]]o-kompanii/otzyivyi/")
+                .review-btn__title Смотреть все
+                .review-btn__icon-box
+                    svg.review-btn__icon(xmlns="http://www.w3.org/2000/svg")
+                        use(xlink:href="/assets/css/img/review/review.svg#review")
+        .r20
+        .r20

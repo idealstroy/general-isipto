@@ -1,0 +1,302 @@
+extends template
+block append var
+    -var vacancies = true
+    -var JivoSite = false
+    -var form_footer = false
+block content
+
+    section.first_screen
+        .first_screen_box.container.d-flex.align-items-center.flex-wrap
+            .content_top.text-center.mx-auto.col-xl-7.col-lg-8.col-12
+                h1.title_top [[*h1]]
+                .subtitle_top для работы в Федеральной компании
+                //-a.order_services.d-block.w-75(data-toggle="modal" rel="nofollow" data-target="#form_up" data-reason="Откликнуться на вакансию" data-header="Откликнуться на вакансию") Откликнуться на вакансию
+
+        .container
+            .row
+                .col-12
+                    //-.title_demands Командировка на строительство делового центра «Москва-Сити» г. Москва
+                    //- .demands
+                        .block_demands
+                            .title Условия
+                            ul
+                                li Официальное трудоустройство
+                                li Возраст 23-45 лет
+                                li Опыт работы от 1 года с исполнительной документацией
+                                li Зарплата по результатам собеседования
+                                li Работа на объектах 45/45 (проживание в комфортабельной квартире, транспорт до объекта) оплата производится ежемесячно.
+                                li Работа в офисе 5/7, 8 ч. рабочий день.
+                                li Владение программами (MS Word, MS Excel, AutoCAD/Компас, Photoshop/Paint)
+                        .block_demands
+                            .block_demands_title Обязанности
+                            ul
+                                li Контроль и составление графиков производства работ, лимитно-заборных ведомостей и графиков поставки материалов в соответствии с технологией производства работ.
+                                li Корректировка проектных решений для удешевления стоимости и ускорения строительства.
+                                li Входной контроль проектно-сметной документации.
+                                li Подсчет фактически выполненных работ для составления смет.
+                                li Исполнительная документация, КС 2, КС3, служебная переписка.
+                                li Контроль выдачи проектно-сметной документации на объект строительства.
+                                li Расчет объемов работ для спецификаций проекта.
+                                li Взаимодействие со всеми подразделениями организации по вопросам корректировок ПСД в части расчетов объемов работ.
+                                li Производство всех расчетов в электронном виде с последующим технически грамотным оформлением.
+
+                    .demands
+                        <p><div class="title">Инженер ПТО</div></p>
+
+                        <p><strong>Обязанности:</strong><br>
+
+                        p.
+                            Ведение проектов в части подготовки исполнительной документации, актов приемки работ, специальных журналов.
+                            Подготовка, проверка, комплектация и сдача заказчику исполнительно-технической документации в полном объеме под реестр.
+                            Осуществление производственно - технического сопровождения выполняемых СМР (акты АООК, АОСР, схемы, журналы и т.п.).
+                            Корректировка исполнительных схем, согласование отступлений от проекта.
+                            Взаимодействие с генподрядчиком и субподрядными организациями, строительным контролем и технадзором.
+                            Подготовка отчетов руководителю о проделанной работе.
+
+                        <strong>Требования к кандидату:</strong>
+                        <ul>
+                        <li>Возраст от 24 лет</li>
+                        <li>Опыт работы от 1 года инженером ПТО</li>
+                        <li>Знание графических программ - AutoCAD или Compas, MS Office</li>
+                        <li>Чтение проектной документации</li>
+                        <li>Знание нормативной документации строительства, перечня приемо-сдаточной документации всех разделов строительства</li>
+                        <li>Высокая работоспособность</li>
+                        <li>Самостоятельность в решении задач</li>
+                        <li>Стрессоустойчивость</li>
+                        <li>Быстрая обучаемость</li>
+                        <li>Владение коммуникативными навыками</li>
+                        </ul>
+                        <ul>
+                        <strong>Что мы предлагаем:</strong><br><br>
+                        <li>Возможность выбора объекта: работа ведется на 7-10 объектах одновременно на всей территории РФ.</li>
+                        <li>Проживание и проезд до места работы и обратно за счет Компании.</li>
+                        <li>Удобную для вас длительность вахты (45/30; 60/30).</li>
+                        <li>Возможность профессионального роста благодаря разноплановой и интересной работе на современных объектах строительства.</li>
+                        <li>Возможность обучения – мы поможем вам стать универсальным Инженером ПТО.</li>
+                        <li>Адекватное руководство.</li>
+                        <li>Возможность повышения квалификации – в Компании работает Учебный центр.</li>
+                        <li>Условия работы:</li>
+                        <li>Полностью официальное трудоустройство по ТК РФ.</li>
+                        <li>Постоянная и своевременная оплата (2 раза в месяц). Оплачивается каждый чел/час.</li>
+                        <li>Все сотрудники застрахованы.</li>
+                        </ul>
+                        <p>Если хочешь расти и развиваться - идем к нам!!!</p>
+
+
+            .form
+                //-.title_form Остались вопросы? Мы вам перезвоним
+                | [[!AjaxForm?
+                | &snippet=`FormIt`
+                | &frontend_css=``
+                | &form=`form_tpl2`
+                | &hooks=`email,FormItSaveForm,roistat_hooks`
+                | &emailSubject=`[[*title_form]]`
+                | &emailTpl=`template_form2`
+                | &emailTo=`[[+email_to]],ukhr@isipto.com`
+                | &validate=`fio:required,phone:required,name:blank,firstname:blank,lastname:blank`
+                | &fieldNames=`fio==Имя,phone==Телефон,page==Страница`
+                | &validationErrorMessage=`В форме содержатся ошибки!`
+                | &successMessage=`Сообщение успешно отправлено`
+                | ]]
+                //-form.d-flex.flex-wrap.col-xl-10.col-md-11.col-12
+                    //-input.goalMetrika(type='hidden', name='goal', value='zayavka')
+                    .block_input
+                        label Ваше имя
+                        input.input_form.name(type='text', name='fio', value='')
+                    .block_input
+                        label Телефон
+                        input.input_form.phone(type='tel', name='phone', value='')
+                    .block_input.d-flex.align-items-end
+                        input.input_form.submit_form.cme-btn(type='submit', value='Отправить')
+                    .callme-result
+                .confid.col-xl-10.col-md-11.col-12 Нажимая кнопку перезвоните мне вы соглашаетесь с условиями <a class="modalbox btn-modal" href="#politikaModal" rel="nofollow">политики конфиденциальности</a> и &nbsp;<a class="modalbox btn-modal" href="#acceptModal" rel="nofollow">обработки персональных данных</a>
+            //-.form_box
+                form.form_quiz
+
+                    <!-- Вопрос 1 -->
+                    .section_form.active
+                        .header_form.d-flex.justify-content-between.align-items-center.flex-wrap
+                            .title_section В каком городе Вы проживаете?
+                            .question_section Шаг&nbsp;
+                                span 1 из 8
+                        .text_status Готово 0%
+                        .status_box
+                            .status
+                                span
+                        .body_form
+                            .answer-box.d-flex.flex-wrap.justify-content-between.align-items-start(data-simplebar="init")
+                                input.input.form-control(type='text' placeholder="Уфа" name="Город" required)
+                            .button_form.d-flex.justify-content-between.align-items-center
+                                .div
+                                //-button.button.prev_form(disabled="disabled")
+                                    span Назад
+                                button.button.next_form Далее
+                    <!-- Вопрос 2 -->
+                    .section_form
+                        .header_form.d-flex.justify-content-between.align-items-center.flex-wrap
+                            .title_section Готовы ли Вы к командировкам?
+                            .question_section Шаг&nbsp;
+                                span 2 из 8
+                        .text_status Готово 14%
+                        .status_box
+                            .status
+                                span(style="width: 14%")
+                        .body_form
+                            .answer-box.d-flex.flex-wrap.justify-content-between.align-items-start(data-simplebar="init")
+                                input.input.form-control(type='text', name="Готовность к командировкам" required)
+                            .button_form.d-flex.justify-content-between.align-items-center
+                                button.button.prev_form
+                                    span Назад
+                                button.button.next_form.button_question2 Далее
+                    <!-- Вопрос 3 -->
+                    .section_form
+                        .header_form.d-flex.justify-content-between.align-items-center.flex-wrap
+                            .title_section Опыт работы в должности инженера ПТО
+                            .question_section Шаг&nbsp;
+                                span 3 из 8
+                        .text_status Готово 28%
+                        .status_box
+                            .status
+                                span(style="width: 28%")
+                        .body_form
+                            .answer-box.d-flex.flex-wrap.justify-content-between.align-items-start(data-simplebar="init")
+                                input.input.form-control(type='text', name="Опыт работы в должности инженера ПТО" required)
+                            .button_form.d-flex.justify-content-between.align-items-center
+                                button.button.prev_form
+                                    span Назад
+                                button.button.next_form Далее
+                    <!-- Вопрос 4 -->
+                    .section_form
+                        .header_form.d-flex.justify-content-between.align-items-center.flex-wrap
+                            .title_section Есть ли опыт работы в программе AutoCAD?
+                            .question_section Шаг&nbsp;
+                                span 4 из 8
+                        .text_status Готово 42%
+                        .status_box
+                            .status
+                                span(style="width: 42%")
+                        .body_form
+                            .answer-box.d-flex.flex-wrap.justify-content-between.align-items-start(data-simplebar="init")
+                                input.input.form-control(type='text', name="Есть ли опыт работы в программе AutoCAD" required)
+                            .button_form.d-flex.justify-content-between.align-items-center
+                                button.button.prev_form
+                                    span Назад
+                                button.button.next_form.button_question2 Далее
+                    <!-- Вопрос 5 -->
+                    .section_form
+                        .header_form.d-flex.justify-content-between.align-items-center.flex-wrap
+                            .title_section Трудоустроены ли Вы на данный момент?
+                            .question_section Шаг&nbsp;
+                                span 5 из 8
+                        .text_status Готово 56%
+                        .status_box
+                            .status
+                                span(style="width: 56%")
+                        .body_form
+                            .answer-box.d-flex.flex-wrap.justify-content-between.align-items-start(data-simplebar="init")
+                                input.input.form-control(type='text', name="Трудоустроены ли Вы на данный момент" required)
+                            .button_form.d-flex.justify-content-between.align-items-center
+                                button.button.prev_form
+                                    span Назад
+                                button.button.next_form Далее
+                    <!-- Вопрос 6 -->
+                    .section_form
+                        .header_form.d-flex.justify-content-between.align-items-center.flex-wrap
+                            .title_section В каких разделах строительства Вы себя считаете специалистом?
+                            .question_section Шаг&nbsp;
+                                span 6 из 8
+                        .text_status Готово 73%
+                        .status_box
+                            .status
+                                span(style="width: 73%")
+                        .body_form
+                            .answer-box.d-flex.flex-wrap.justify-content-between.align-items-start(data-simplebar="init")
+                                input.input.form-control(type='text', name="В каких разделах строительства Вы себя считаете специалистом" required)
+                            .button_form.d-flex.justify-content-between.align-items-center
+                                button.button.prev_form
+                                    span Назад
+                                button.button.next_form Отправить
+                    <!-- Вопрос 7 -->
+                    .section_form
+                        .header_form.d-flex.justify-content-between.align-items-center.flex-wrap
+                            .title_section Ваш номер телефона
+                            .question_section Шаг&nbsp;
+                                span 7 из 8
+                        .text_status Готово 89%
+                        .status_box
+                            .status
+                                span(style="width: 80%;")
+                        .body_form
+                            .d-flex.flex-wrap.flex-sm-nowrap
+                                .answer-box.total-input.d-flex.flex-wrap.justify-content-between.align-items-start
+                                    input.input.form-control(type='text' placeholder="Ваше имя", name="Имя" required)
+                                .answer-box.total-input.d-flex.flex-wrap.justify-content-between.align-items-start
+                                    input.input.form-control(type='text' placeholder="Ваш возраст", name="Возраст" required)
+                                .answer-box.total-input.d-flex.flex-wrap.justify-content-between.align-items-start
+                                    input.input.form-control(type='tel' placeholder="8 (", name="Телефон" required)
+
+
+                            .button_form.d-flex.justify-content-between.align-items-center
+                                button.button.prev_form
+                                    span Назад
+                                button.button.next_form.cme-btn(data-ya="zayavka") Отправить
+                    <!-- Вопрос 8 -->
+                    .section_form
+                        .header_form.d-flex.justify-content-between.align-items-center.flex-wrap
+                            .title_section Спасибо за заявку!
+                        .text_status Готово 100%
+                        .status_box
+                            .status
+                                span(style="width: 100%;")
+                        .body_form
+                            .answer-box.d-flex.flex-wrap.justify-content-between.align-items-start
+                                .text-end
+                                    .text-end__title Спасибо за заявку, в ближайшее время с Вами свяжется наш специалист.
+
+
+            //-.city-box
+                .city-box__text Вакансия для вашего города
+    .bg_gray
+        .container
+            .vantages
+                .row
+                    .vantages_block.d-flex.col-xl-3.col-lg-6.col-md-6.col-12
+                        .img_vantages
+                            svg(xmlns="http://www.w3.org/2000/svg")
+                                use(xlink:href="../assets/css/img/vacancies/vantages.svg#vantages1")
+                        .content_vantages
+                            .title_vantages Работа на объекте
+                            .text_vantages с выездами на строительную площадку по необходимости
+                    .vantages_block.d-flex.col-xl-3.col-lg-6.col-md-6.col-12
+                        .img_vantages
+                            svg(xmlns="http://www.w3.org/2000/svg")
+                                use(xlink:href="../assets/css/img/vacancies/vantages.svg#vantages2")
+                        .content_vantages
+                            .title_vantages Официальное трудоустройство
+                            .text_vantages трудоустройство по договору
+                    .vantages_block.d-flex.col-xl-3.col-lg-6.col-md-6.col-12
+                        .img_vantages
+                            svg(xmlns="http://www.w3.org/2000/svg")
+                                use(xlink:href="../assets/css/img/vacancies/vantages.svg#vantages3")
+                        .content_vantages
+                            .title_vantages Полный рабочий день
+                            .text_vantages нормированный график с обедом и отдыхом
+                    .vantages_block.d-flex.col-xl-3.col-lg-6.col-md-6.col-12
+                        .img_vantages
+                            svg(xmlns="http://www.w3.org/2000/svg")
+                                use(xlink:href="../assets/css/img/vacancies/vantages.svg#vantages4")
+                        .content_vantages
+                            .title_vantages Стабильная зарплата
+                            .text_vantages Определяется по результатам собеседования
+
+    .techkarta
+        .container
+            .row
+                .col-md-3
+                    .techkarta__img
+                        img.image-load(src="#" data-src="../assets/css/img/avtootvet.jpg" alt="Обучим всем разделам исполнительной документации")
+                .col-md-9
+                    .techkarta-right.d-flex.align-items-center
+                        .techkarta-right__content
+                            a.techkarta__caption(href="https://obuchenie.isipto.ru[[++base_url]]") Обучаем инженеров ПТО <span>бесплатно</span> [[++city_roditel]]
+                            .techkarta__subcaption Обучим всем разделам исполнительной документации.

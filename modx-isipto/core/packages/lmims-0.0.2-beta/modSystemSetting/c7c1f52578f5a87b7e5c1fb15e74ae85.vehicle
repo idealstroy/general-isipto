@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'lmims',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => 'b75effabfb9ad9101e461faba9311fe2',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => 'c7c1f52578f5a87b7e5c1fb15e74ae85',
+  'native_key' => 'lmims.remove_related_lmims_on_empty_trash',
+  'object' => '{"key":"lmims.remove_related_lmims_on_empty_trash","value":"1","xtype":"combo-boolean","namespace":"lmims","area":"lmims_area","editedon":null}',
+);

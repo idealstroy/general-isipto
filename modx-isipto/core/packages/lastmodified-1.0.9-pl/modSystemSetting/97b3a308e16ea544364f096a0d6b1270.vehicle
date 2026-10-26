@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'lastmodified',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => 'f441c4d02aa23283135e6fb12148705d',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => '97b3a308e16ea544364f096a0d6b1270',
+  'native_key' => 'lastmodified.expires',
+  'object' => '{"key":"lastmodified.expires","value":"3600","xtype":"textfield","namespace":"lastmodified","area":"lastmodified.main","editedon":null}',
+);

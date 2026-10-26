@@ -1,0 +1,1314 @@
+extends template
+block append var
+    -var ppr = true
+    -var inner = true
+block content
+    section.first-screen.first-screen-ppr.first-screen_crumbs
+        .container.container-first-screen
+            +crumbs()
+            .row
+                .first-screen-left.cl-xl-6.col-lg-7.col-md-9.col-12
+                    h1.title.title_big.title_big-bold.title_no-margin [[*h1]]
+                    .r10
+                    h2.first-screen-left__subtitle Проект производства работ под ключ
+                    .ppr-vantages
+                        .ppr-vantages__item.d-flex.align-items-center
+                            svg.ppr-vantages__icon(xmlns="https://www.w3.org/2000/svg")
+                                use(xlink:href="../assets/css/img/ppr/sprite.svg#ppr-vantages1")
+                            .ppr-vantages__text От <span>1 дня</span>
+                        .ppr-vantages__item.d-flex.align-items-center
+                            svg.ppr-vantages__icon(xmlns="https://www.w3.org/2000/svg")
+                                use(xlink:href="../assets/css/img/ppr/sprite.svg#ppr-vantages2")
+                            .ppr-vantages__text От <span>5000 р.</span>
+                        .ppr-vantages__item.d-flex.align-items-center
+                            svg.ppr-vantages__icon(xmlns="https://www.w3.org/2000/svg")
+                                use(xlink:href="../assets/css/img/ppr/sprite.svg#ppr-vantages3")
+                            .ppr-vantages__text Оплата за <span>результат</span>
+
+                //-.first-screen-right.col-12.col-lg-5.d-flex.align-items-center.justify-content-lg-end.justify-content-start
+                    //-.sales
+                        .d-flex.align-items-center
+                            .sales__text Скидка до 14%
+                            .sales__svg
+                                svg(xmlns="https://www.w3.org/2000/svg")
+                                    use(xlink:href="../assets/css/img/sales.svg#sales")
+                        .sales__signature при заключении договора до 15 марта
+
+            //-.row
+                .col-lg-4.col-sm-6.col-12
+                    .develop-item
+                        .develop-item__img
+                            svg(width="45" height="42" xmlns="https://www.w3.org/2000/svg")
+                                use(xlink:href="../assets/css/img/develop/develop-item4.svg#develop-item4")
+                        .develop-item__content ППР по видам работ
+                .col-lg-4.col-sm-6.col-12
+                    .develop-item
+                        .develop-item__img
+                            svg(width="45" height="42" xmlns="https://www.w3.org/2000/svg")
+                                use(xlink:href="../assets/css/img/develop/develop-item2.svg#develop-item2")
+                        .develop-item__content ППР на объект «под ключ»
+                .col-lg-4.col-sm-6.col-12
+                    .develop-item
+                        .develop-item__img
+                            svg(width="45" height="42" xmlns="https://www.w3.org/2000/svg")
+                                use(xlink:href="../assets/css/img/develop/develop-item5.svg#develop-item5")
+                        .develop-item__content ППРпс
+        .container
+            .d-flex.justify-content-between
+                noindex.btn-whatsapp-box
+                    a.btn-whatsapp(href="https://wa.me/79279563573" rel="nofollow")
+                        .btn-whatsapp__text НАПИСАТЬ В WHATSAPP
+                        svg.btn-whatsapp__icon(xmlns="http://www.w3.org/2000/svg")
+                            use(xlink:href="/assets/css/img/whatsapp.svg#whatsapp")
+                a.btn.btn_first-screen.d-flex.align-items-center.justify-content-center.btn-modal(href="#form_up" rel="nofollow" data-reason="Рассчитать стоимость" data-header="Перезвоним через 15 минут" onclick="ym(48630242, 'reachGoal', 'main-1st'); fbq('track', 'InitiateCheckout'); return true;") Заказать звонок
+
+
+    .develop(style="padding-top:0")
+        .container
+            .develop-content
+                .r10
+                .r20
+                .r20.d-lg-block.d-none
+                h3.title Состав ППР
+                .develop-content__content
+                    .row
+                        .col-lg-6.col-12
+                            .d-flex.align-items-center
+                                .develop-content__svg
+                                    svg(width="45" height="54" xmlns="http://www.w3.org/2000/svg")
+                                        use(xlink:href="../assets/css/img/structure/structure.svg#structure1")
+                                <strong>Пояснительная записка, оформленная в соответствии с СП 48.13330.2011, МДС 12-81.2007, МДС 12-29.2006, содержащая:</strong>
+                            p.
+                                <li> данные об объекте<br>
+                                <li> перечень подготовительных мероприятий для выполняемых СМР </li>
+                                <li> описание последовательности и технологии производства работ </li>
+                                <li> мероприятия по охране труда и технике безопасности на объекте </li>
+                                <li> контроль качества на всех этапах </li>
+                                <li> список нормативной литературы </li>
+                        .col-lg-6.col-12
+                            .d-flex.align-items-center
+                                .develop-content__svg
+                                    svg(width="45" height="46" xmlns="http://www.w3.org/2000/svg")
+                                        use(xlink:href="../assets/css/img/structure/structure.svg#structure2")
+                                <strong>Графическая часть ППР с привязкой к объекту и выполняемым видам работ, содержащая:</strong>
+                            p.
+                                <li> ситуационный план </li>
+                                <li> строительный генеральный план </li>
+                                <li> технологические схемы </li>
+                                <li> схемы организации рабочих мест </li>
+                                <li> визуализацию работы строительных машин </li>
+                                <li> график производства работ </li>
+                                <li> ведомость основного применяемого оборудования и инструмента </li>
+                    p.
+                        <strong>Приложения:</strong>
+                    p.
+                        <li> удостоверения о соответствующей аттестации разработчика ППР </li>
+                        <li> свидетельство СРО на проектирование </li>
+
+    .form-modal.form-modal_md#moreinfo-modal1
+        .form-modal__title.callOrderHeader Объект гражданского строительства
+        .modal-body
+            .modal-body__text
+                ul.circle-inside
+                    li Жилые здания
+                    li Общественные здания
+
+    .form-modal.form-modal_md#moreinfo-modal2
+        .form-modal__title.callOrderHeader Объект промышленного строительства
+        .modal-body
+            .modal-body__text
+                ul.circle-inside
+                    li Магистральные нефте-газопроводы
+                    li Технологические трубопроводы
+                    li Резервуары
+                    li Промышленные здания и сооружения
+                    li Котельные
+                    li Трансформаторные подстанции
+                    li Инженерные сети и коммуникации
+
+    .form-modal.form-modal_md#moreinfo-modal3
+        .form-modal__title.callOrderHeader Объект дорожного строительства
+        .modal-body
+            .modal-body__text
+                ul.circle-inside
+                    li Геодезические работы
+                        li Земляные работы
+                        li Устройство земляного полотна
+                        li Расчистка полосы отвода от лесорастительноси
+                        li Устройство водоотвода
+                        li Устройство барьерного ограждения
+                        li Установка дорожных знаков и горизонтальной разметки
+                        li Устройство электроосвещения
+                        li Надземные, подземные пешеходные переходы
+                        li Строительство путепроводов
+
+    .r20
+    .r20
+    .container
+        .form-new
+            .row
+                .form-new__box.col-lg-10
+                    .row.justify-content-between
+                        .col-xl-8.col-lg-9.col-md-10.col-12
+                            .form-new__form-box
+                                .form-new__title Дарим до 5000 р. на первый заказ ППР
+                                .form-new__subtitle-box.d-flex.align-items-center
+                                    svg.form-new__subtitle-svg(xmlns="https://www.w3.org/2000/svg")
+                                        use(xlink:href="../assets/css/img/ppr/sprite.svg#present")
+                                    .form-new__subtitle Отправьте заявку сейчас и гарантировано получите подарок
+
+                                | [[!AjaxForm?
+                                | &snippet=`FormIt`
+                                | &frontend_css=``
+                                | &form=`ppr_form_tpl1`
+                                | &hooks=`email,FormItSaveForm,roistat_hooks`
+                                | &emailSubject=`Новая заявка `
+                                | &emailTpl=`template_form1`
+                                | &emailTo=`[[+email_to]]`
+                                | &validate=`fio:required,phone:required`
+                                | &fieldNames=`fio==Имя,phone==Телефон,page==Страница`
+                                | &validationErrorMessage=`В форме содержатся ошибки!`
+                                | &successMessage=`Сообщение успешно отправлено`
+                                | ]]
+                        .form-new__box-right.col-xl-4.col-lg-3.col-md-2
+                            img.form-new__box-img(src="../assets/css/img/ppr/form1.png" alt="Дарим до 5000 р. на первый заказ ППР")
+                            .form-new__box-signature
+                                .form-new__box-signature-title Владимир Зайцев
+                                .form-new__box-signature-subtitle Руководитель отдела ППР
+
+    .r20
+    .r20
+    .container
+        .title Разработка ППР минимизирует риски
+        .row.flex-wrap
+            .block-info1
+                .block-info1__head
+                    .block-info1__svg-box
+                        svg.block-info1__svg(xmlns="https://www.w3.org/2000/svg")
+                            use(xlink:href="../assets/css/img/ppr/sprite.svg#block_info1")
+                    .block-info1__title Разработаем ППР любой сложности
+                .block-info1__content Даже для Транснефти, Газпрома и Роснефти. Мы хорошо знаем их требования, ГОСТ и СП 48.13330.2011
+            .block-info1
+                .block-info1__head
+                    .block-info1__svg-box
+                        svg.block-info1__svg(xmlns="https://www.w3.org/2000/svg")
+                            use(xlink:href="../assets/css/img/ppr/sprite.svg#block_info2")
+                    .block-info1__title Согласуем ППР с вашим заказчиком
+                .block-info1__content Без вашего участия в процессе. Вы получите уже согласованный ППР.
+            .block-info1
+                .block-info1__head
+                    .block-info1__svg-box
+                        svg.block-info1__svg(xmlns="https://www.w3.org/2000/svg")
+                            use(xlink:href="../assets/css/img/ppr/sprite.svg#block_info3")
+                    .block-info1__title Выдаем ППР по этапам
+                .block-info1__content Чтобы вы уже работали на объекте, пока заказчик проверяет проект
+            .block-info1
+                .block-info1__head
+                    .block-info1__svg-box
+                        svg.block-info1__svg(xmlns="https://www.w3.org/2000/svg")
+                            use(xlink:href="../assets/css/img/ppr/sprite.svg#block_info4")
+                    .block-info1__title Соблюдаем все мельчайшие требования
+                .block-info1__content Наши ППР принимают даже самые придирчивые заказчики
+            .block-info1
+                .block-info1__head
+                    .block-info1__svg-box
+                        svg.block-info1__svg(xmlns="https://www.w3.org/2000/svg")
+                            use(xlink:href="../assets/css/img/ppr/sprite.svg#block_info5")
+                    .block-info1__title Бесплатно устраняем замечания
+                .block-info1__content По необходимости бесплатно устраняем замечания и согласовываем с заказчиком
+            .block-info1
+                .block-info1__head
+                    .block-info1__svg-box
+                        svg.block-info1__svg(xmlns="https://www.w3.org/2000/svg")
+                            use(xlink:href="../assets/css/img/ppr/sprite.svg#block_info6")
+                    .block-info1__title Оплата за результат
+                .block-info1__content Оплата после принятия ППР заказчиком
+
+    .r20
+    .r20
+    .container
+        .title Разрабатываем ППР, ППРв, ППРпc, ТК более 7 лет
+    .developing-ppr
+        .container
+            .d-flex.align-items-center.flex-md-nowrap.flex-wrap
+                img.developing-ppr__left.image-load(src="#" data-src="../assets/css/img/ppr/developing.png" alt="Разрабатываем ППР, ППРв, ППРпc, ТК более 7 лет")
+                .developing-ppr__right
+                    .developing-ppr__title С нашими ППР строят объекты:
+                    .developing-ppr__right-box
+                        .developing-ppr__right-box-item
+                            svg.developing-ppr__right-box-item-svg(xmlns="https://www.w3.org/2000/svg")
+                                use(xlink:href="../assets/css/img/ppr/sprite.svg#developing1")
+                            .developing-ppr__right-box-item-text Нефтегазовой и промышленной отрасли
+                        .developing-ppr__right-box-item
+                            svg.developing-ppr__right-box-item-svg(xmlns="https://www.w3.org/2000/svg")
+                                use(xlink:href="../assets/css/img/ppr/sprite.svg#developing2")
+                            .developing-ppr__right-box-item-text Гражданского строительства
+                        .developing-ppr__right-box-item
+                            svg.developing-ppr__right-box-item-svg(xmlns="https://www.w3.org/2000/svg")
+                                use(xlink:href="../assets/css/img/ppr/sprite.svg#developing3")
+                            .developing-ppr__right-box-item-text Дорожного строительства
+                        .developing-ppr__right-box-item
+                            svg.developing-ppr__right-box-item-svg(xmlns="https://www.w3.org/2000/svg")
+                                use(xlink:href="../assets/css/img/ppr/sprite.svg#developing4")
+                            .developing-ppr__right-box-item-text Военного назначения
+                        .developing-ppr__right-box-item
+                            svg.developing-ppr__right-box-item-svg(xmlns="https://www.w3.org/2000/svg")
+                                use(xlink:href="../assets/css/img/ppr/sprite.svg#developing5")
+                            .developing-ppr__right-box-item-text Особо опасные
+                        .developing-ppr__right-box-item
+                            svg.developing-ppr__right-box-item-svg(xmlns="https://www.w3.org/2000/svg")
+                                use(xlink:href="../assets/css/img/ppr/sprite.svg#developing6")
+                            .developing-ppr__right-box-item-text Повышенной сложности
+
+            .developing-ppr__title.developing-ppr__title_no-margin Посмотрите примеры ППР
+            .row.
+                {if $_modx->resource.ppr_examples}
+                    {set $rows = json_decode($_modx->resource.ppr_examples, true)}
+                    {foreach $rows as $i_main=>$row}
+                        {set $image = $_modx->runSnippet('!phpthumbon', [
+                            'input' => $row.image,
+                            'options' => 'w=160&h=226',
+                        ])}
+
+                        <div class="col-lg-2 col-sm-4 col-6">
+                            <div class="developing-ppr__examples">
+                                <div class="developing-ppr__examples-text">{$row.title}</div>
+                                <a class="developing-ppr__examples-img-box" href="{$row.image_href}" data-fancybox="{$i_main}" data-caption="{$row.title}">
+                                    <img class="developing-ppr__examples-img image-load" src="#" data-src="{$image}" alt="{$row.title}">
+                                </a>
+
+                                {set $rows_inner = json_decode($row.ppr_examples_inner, true)}
+                                {foreach $rows_inner as $i=>$row_inner}
+                                    <a class="developing-ppr__examples-img-box" href="{$row_inner.image}" data-fancybox="{$i_main}" data-caption="{$row.title}"></a>
+                                {/foreach}
+
+                            </div>
+                        </div>
+
+                    {/foreach}
+                {/if}
+
+            //-.developing-ppr__title.developing-ppr__title_no-margin Посмотрите примеры ППР
+            //-.row [[getImageList? &tvname=`ppr_examples` &tpl=`ppr_examples` &docid=`[[*id]]` &limit=`0`]]
+                //-.col-lg-2.col-sm-4.col-6
+                    .developing-ppr__examples
+                        .developing-ppr__examples-text На кирпичную кладку
+                        a.developing-ppr__examples-img-box(href="../assets/css/img/ppr/examples/brickwork/1.jpg" data-fancybox="images1" data-caption="")
+                            img.developing-ppr__examples-img.image-load(src="#" data-src="../assets/css/img/ppr/examples/brickwork/1.jpg" alt="На кирпичную кладку")
+                        a.developing-ppr__examples-img-box(href="../assets/css/img/ppr/examples/brickwork/2.jpg" data-fancybox="images1" data-caption="")
+                        a.developing-ppr__examples-img-box(href="../assets/css/img/ppr/examples/brickwork/3.jpg" data-fancybox="images1" data-caption="")
+
+    section.services
+        .r10
+        .r20
+        .container
+            //-.r10
+            //-.r20
+            h3.title Стоимость разработки ППР по видам работ
+            .services-box
+                .services-item.d-flex.justify-content-between.align-items-center
+                    .services-item-left
+                        .services-item__caption Земляные работы
+                    .services-item-right.d-flex.justify-content-between.align-items-center
+                        .services-item__price от 17 000 руб
+                        a.services-item-button.btn-modal.d-flex.align-items-center(rel='nofollow', href='#form_up', data-reason='Рассчитать стоимость', data-header='Рассчитать стоимость', onclick="ym(48630242, 'reachGoal', 'ppr-3d'); fbq('track', 'InitiateCheckout'); return true;")
+                            .services-item-button__text Заказать расчёт
+                            //-.services-item-button__svg.d-flex.align-items-center
+                                svg(xmlns='http://www.w3.org/2000/svg')
+                                    use(xlink:href='../assets/css/img/services/calc.svg#calc')
+                        //-a.services-item-moreinfo.d-flex.align-items-center(data-toggle='modal', rel='nofollow', data-target='#moreinfo-modal[[+idx]]', href='#')
+                            .services-item-moreinfo__text Подробнее
+                            .services-item-moreinfo__svg.d-flex.align-items-center
+                                svg(xmlns='http://www.w3.org/2000/svg')
+                                    use(xlink:href='../assets/css/img/services/down-arrow.svg#down-arrow')
+                .services-item.d-flex.justify-content-between.align-items-center
+                    .services-item-left
+                        .services-item__caption Монолитные работы
+                    .services-item-right.d-flex.justify-content-between.align-items-center
+                        .services-item__price от 17 000 руб
+                        a.services-item-button.btn-modal.d-flex.align-items-center(rel='nofollow', href='#form_up', data-reason='Рассчитать стоимость', data-header='Рассчитать стоимость', onclick="ym(48630242, 'reachGoal', 'ppr-3d'); fbq('track', 'InitiateCheckout'); return true;")
+                            .services-item-button__text Заказать расчёт
+                            //-.services-item-button__svg.d-flex.align-items-center
+                                svg(xmlns='http://www.w3.org/2000/svg')
+                                    use(xlink:href='../assets/css/img/services/calc.svg#calc')
+                .services-item.d-flex.justify-content-between.align-items-center
+                    .services-item-left
+                        .services-item__caption Кровельные работы
+                    .services-item-right.d-flex.justify-content-between.align-items-center
+                        .services-item__price от 15 000 руб
+                        a.services-item-button.btn-modal.d-flex.align-items-center(rel='nofollow', href='#form_up', data-reason='Рассчитать стоимость', data-header='Рассчитать стоимость', onclick="ym(48630242, 'reachGoal', 'ppr-3d'); fbq('track', 'InitiateCheckout'); return true;")
+                            .services-item-button__text Заказать расчёт
+                            //-.services-item-button__svg.d-flex.align-items-center
+                                svg(xmlns='http://www.w3.org/2000/svg')
+                                    use(xlink:href='../assets/css/img/services/calc.svg#calc')
+                .services-item.d-flex.justify-content-between.align-items-center
+                    .services-item-left
+                        .services-item__caption Отделочные работы
+                    .services-item-right.d-flex.justify-content-between.align-items-center
+                        .services-item__price от 10 000 руб
+                        a.services-item-button.btn-modal.d-flex.align-items-center(rel='nofollow', href='#form_up', data-reason='Рассчитать стоимость', data-header='Рассчитать стоимость', onclick="ym(48630242, 'reachGoal', 'ppr-3d'); fbq('track', 'InitiateCheckout'); return true;")
+                            .services-item-button__text Заказать расчёт
+                            //-.services-item-button__svg.d-flex.align-items-center
+                                svg(xmlns='http://www.w3.org/2000/svg')
+                                    use(xlink:href='../assets/css/img/services/calc.svg#calc')
+                .services-item.d-flex.justify-content-between.align-items-center
+                    .services-item-left
+                        .services-item__caption Электромонтажные работы
+                    .services-item-right.d-flex.justify-content-between.align-items-center
+                        .services-item__price от 15 000 руб
+                        a.services-item-button.btn-modal.d-flex.align-items-center(rel='nofollow', href='#form_up', data-reason='Рассчитать стоимость', data-header='Рассчитать стоимость', onclick="ym(48630242, 'reachGoal', 'ppr-3d'); fbq('track', 'InitiateCheckout'); return true;")
+                            .services-item-button__text Заказать расчёт
+                            //-.services-item-button__svg.d-flex.align-items-center
+                                svg(xmlns='http://www.w3.org/2000/svg')
+                                    use(xlink:href='../assets/css/img/services/calc.svg#calc')
+                .services-item.d-flex.justify-content-between.align-items-center
+                    .services-item-left
+                        .services-item__caption Водоснабжение и канализация
+                    .services-item-right.d-flex.justify-content-between.align-items-center
+                        .services-item__price от 15 000 руб
+                        a.services-item-button.btn-modal.d-flex.align-items-center(rel='nofollow', href='#form_up', data-reason='Рассчитать стоимость', data-header='Рассчитать стоимость', onclick="ym(48630242, 'reachGoal', 'ppr-3d'); fbq('track', 'InitiateCheckout'); return true;")
+                            .services-item-button__text Заказать расчёт
+                            //-.services-item-button__svg.d-flex.align-items-center
+                                svg(xmlns='http://www.w3.org/2000/svg')
+                                    use(xlink:href='../assets/css/img/services/calc.svg#calc')
+                .services-item.d-flex.justify-content-between.align-items-center
+                    .services-item-left
+                        .services-item__caption Сети и системы отопления
+                    .services-item-right.d-flex.justify-content-between.align-items-center
+                        .services-item__price от 15 000 руб
+                        a.services-item-button.btn-modal.d-flex.align-items-center(rel='nofollow', href='#form_up', data-reason='Рассчитать стоимость', data-header='Рассчитать стоимость', onclick="ym(48630242, 'reachGoal', 'ppr-3d'); fbq('track', 'InitiateCheckout'); return true;")
+                            .services-item-button__text Заказать расчёт
+                            //-.services-item-button__svg.d-flex.align-items-center
+                                svg(xmlns='http://www.w3.org/2000/svg')
+                                    use(xlink:href='../assets/css/img/services/calc.svg#calc')
+                .services-item.d-flex.justify-content-between.align-items-center
+                    .services-item-left
+                        .services-item__caption Благоустройство
+                    .services-item-right.d-flex.justify-content-between.align-items-center
+                        .services-item__price от 10 000 руб
+                        a.services-item-button.btn-modal.d-flex.align-items-center(rel='nofollow', href='#form_up', data-reason='Рассчитать стоимость', data-header='Рассчитать стоимость', onclick="ym(48630242, 'reachGoal', 'ppr-3d'); fbq('track', 'InitiateCheckout'); return true;")
+                            .services-item-button__text Заказать расчёт
+                            //-.services-item-button__svg.d-flex.align-items-center
+                                svg(xmlns='http://www.w3.org/2000/svg')
+                                    use(xlink:href='../assets/css/img/services/calc.svg#calc')
+
+            .r20
+            .r20
+            .services-box
+                .services-item.d-flex.justify-content-between.align-items-center
+                    .services-item-left
+                        .services-item__caption ППР на демонтаж зданий
+                    .services-item-right.d-flex.justify-content-between.align-items-center
+                        .services-item__price от 25 000 руб
+                        a.services-item-button.btn-modal.d-flex.align-items-center(rel='nofollow', href='#form_up', data-reason='Рассчитать стоимость', data-header='Рассчитать стоимость', onclick="ym(48630242, 'reachGoal', 'ppr-3d'); fbq('track', 'InitiateCheckout'); return true;")
+                            .services-item-button__text Заказать расчёт
+                            //-.services-item-button__svg.d-flex.align-items-center
+                                svg(xmlns='http://www.w3.org/2000/svg')
+                                    use(xlink:href='../assets/css/img/services/calc.svg#calc')
+                .services-item.d-flex.justify-content-between.align-items-center
+                    .services-item-left
+                        .services-item__caption ППР на разгрузку
+                    .services-item-right.d-flex.justify-content-between.align-items-center
+                        .services-item__price от 20 000 руб
+                        a.services-item-button.btn-modal.d-flex.align-items-center(rel='nofollow', href='#form_up', data-reason='Рассчитать стоимость', data-header='Рассчитать стоимость', onclick="ym(48630242, 'reachGoal', 'ppr-3d'); fbq('track', 'InitiateCheckout'); return true;")
+                            .services-item-button__text Заказать расчёт
+                            //-.services-item-button__svg.d-flex.align-items-center
+                                svg(xmlns='http://www.w3.org/2000/svg')
+                                    use(xlink:href='../assets/css/img/services/calc.svg#calc')
+                .services-item.d-flex.justify-content-between.align-items-center
+                    .services-item-left
+                        .services-item__caption ППР на погрузку
+                    .services-item-right.d-flex.justify-content-between.align-items-center
+                        .services-item__price от 20 000 руб
+                        a.services-item-button.btn-modal.d-flex.align-items-center(rel='nofollow', href='#form_up', data-reason='Рассчитать стоимость', data-header='Рассчитать стоимость', onclick="ym(48630242, 'reachGoal', 'ppr-3d'); fbq('track', 'InitiateCheckout'); return true;")
+                            .services-item-button__text Заказать расчёт
+                            //-.services-item-button__svg.d-flex.align-items-center
+                                svg(xmlns='http://www.w3.org/2000/svg')
+                                    use(xlink:href='../assets/css/img/services/calc.svg#calc')
+                .services-item.d-flex.justify-content-between.align-items-center
+                    .services-item-left
+                        .services-item__caption ППР на монтаж оборудования
+                    .services-item-right.d-flex.justify-content-between.align-items-center
+                        .services-item__price от 25 000 руб
+                        a.services-item-button.btn-modal.d-flex.align-items-center(rel='nofollow', href='#form_up', data-reason='Рассчитать стоимость', data-header='Рассчитать стоимость', onclick="ym(48630242, 'reachGoal', 'ppr-3d'); fbq('track', 'InitiateCheckout'); return true;")
+                            .services-item-button__text Заказать расчёт
+                            //-.services-item-button__svg.d-flex.align-items-center
+                                svg(xmlns='http://www.w3.org/2000/svg')
+                                    use(xlink:href='../assets/css/img/services/calc.svg#calc')
+                .services-item.d-flex.justify-content-between.align-items-center
+                    .services-item-left
+                        .services-item__caption ППР на демонтаж оборудования
+                    .services-item-right.d-flex.justify-content-between.align-items-center
+                        .services-item__price от 25 000 руб
+                        a.services-item-button.btn-modal.d-flex.align-items-center(rel='nofollow', href='#form_up', data-reason='Рассчитать стоимость', data-header='Рассчитать стоимость', onclick="ym(48630242, 'reachGoal', 'ppr-3d'); fbq('track', 'InitiateCheckout'); return true;")
+                            .services-item-button__text Заказать расчёт
+                            //-.services-item-button__svg.d-flex.align-items-center
+                                svg(xmlns='http://www.w3.org/2000/svg')
+                                    use(xlink:href='../assets/css/img/services/calc.svg#calc')
+
+            .r10
+            .r20.d-lg-block.d-none
+
+            h3.title Стоимость разработки ППР на объект под ключ
+            //-.row [[getImageList? &tvname=`services` &tpl=`services` &docid=`[[*id]]` &limit=`5`]]
+            .services-box
+                .services-item.d-flex.justify-content-between.align-items-center
+                    .services-item-left
+                        a.services-item__caption.btn-modal(rel="nofollow" href="#moreinfo-modal1") Объект гражданского строительства
+                    .services-item-right.d-flex.justify-content-between.align-items-center
+                        .services-item__price от <span>17 000</span> руб
+                        a.services-item-button.btn-modal.d-flex.align-items-center(rel="nofollow" href="#form_up" data-reason="Рассчитать стоимость" data-header="Рассчитать стоимость" onclick="ym(48630242, 'reachGoal', 'ppr-2nd'); fbq('track', 'InitiateCheckout'); return true;")
+                            .services-item-button__text Заказать расчёт
+                            //-.services-item-button__svg.d-flex.align-items-center
+                                svg(xmlns="http://www.w3.org/2000/svg")
+                                    use(xlink:href="../assets/css/img/services/calc.svg#calc")
+                        a.services-item-moreinfo.btn-modal.d-flex.align-items-center(rel="nofollow" href="#moreinfo-modal1")
+                            .services-item-moreinfo__text Подробнее
+                            .services-item-moreinfo__svg.d-flex.align-items-center
+                                svg(xmlns="http://www.w3.org/2000/svg")
+                                    use(xlink:href="../assets/css/img/services/down-arrow.svg#down-arrow")
+
+                .services-item.d-flex.justify-content-between.align-items-center
+                    .services-item-left
+                        a.services-item__caption.btn-modal(rel="nofollow" href="#moreinfo-modal2") Объект промышленного строительства
+                    .services-item-right.d-flex.justify-content-between.align-items-center
+                        .services-item__price от <span>15 000</span> руб
+                        a.services-item-button.btn-modal.d-flex.align-items-center(rel="nofollow" href="#form_up" data-reason="Рассчитать стоимость" data-header="Рассчитать стоимость" onclick="ym(48630242, 'reachGoal', 'ppr-2nd'); fbq('track', 'InitiateCheckout'); return true;")
+                            .services-item-button__text Заказать расчёт
+                            //-.services-item-button__svg.d-flex.align-items-center
+                                svg(xmlns="http://www.w3.org/2000/svg")
+                                    use(xlink:href="../assets/css/img/services/calc.svg#calc")
+                        a.services-item-moreinfo.btn-modal.d-flex.align-items-center(rel="nofollow" href="#moreinfo-modal2")
+                            .services-item-moreinfo__text Подробнее
+                            .services-item-moreinfo__svg.d-flex.align-items-center
+                                svg(xmlns="http://www.w3.org/2000/svg")
+                                    use(xlink:href="../assets/css/img/services/down-arrow.svg#down-arrow")
+
+                .services-item.d-flex.justify-content-between.align-items-center
+                    .services-item-left
+                        a.services-item__caption.btn-modal(rel="nofollow" href="#moreinfo-modal3") Объект дорожного строительства
+                    .services-item-right.d-flex.justify-content-between.align-items-center
+                        .services-item__price от <span>17 000</span> руб
+                        a.services-item-button.btn-modal.d-flex.align-items-center(rel="nofollow" href="#form_up" data-reason="Рассчитать стоимость" data-header="Рассчитать стоимость" onclick="ym(48630242, 'reachGoal', 'ppr-2nd'); fbq('track', 'InitiateCheckout'); return true;")
+                            .services-item-button__text Заказать расчёт
+                            //-.services-item-button__svg.d-flex.align-items-center
+                                svg(xmlns="http://www.w3.org/2000/svg")
+                                    use(xlink:href="../assets/css/img/services/calc.svg#calc")
+                        a.services-item-moreinfo.btn-modal.d-flex.align-items-center(rel="nofollow" href="#moreinfo-modal3")
+                            .services-item-moreinfo__text Подробнее
+                            .services-item-moreinfo__svg.d-flex.align-items-center
+                                svg(xmlns="http://www.w3.org/2000/svg")
+                                    use(xlink:href="../assets/css/img/services/down-arrow.svg#down-arrow")
+            .r10
+            .r20
+            .r20.d-lg-block.d-none
+
+    .calculate#calculate
+        .container
+            .r10
+            .r20
+            .r20.d-lg-block.d-none
+            .title.d-flex.align-items-center
+                .calculate__svg
+                    svg(xmlns='http://www.w3.org/2000/svg')
+                        use(xlink:href='../assets/css/img/calculate.svg#calculate')
+                div Онлайн расчет стоимости ППР
+
+            .calculate-box
+                .calculate-item.ui.normal.selection.dropdown
+                    input(type='hidden', name='type-products')
+                    i.dropdown.icon
+                    span.sizer(style='')
+                    .d-flex.align-items-center.default.text Выберите вид ППР
+                    .menu.transition.hidden(tabindex='-1')
+                        .calculate-item__text.type-products-not.item.selected [Не выбрано]
+                        .calculate-item__text.type-products-ppr.item ППР
+                        .calculate-item__text.type-products-pprps.item ППРпс
+                        .calculate-item__text.type-products-pprv.item ППРв
+                .calculate-item.select-ppr.ui.normal.selection.dropdown
+                    input(type='hidden', name='type-child')
+                    i.dropdown.icon
+                    span.sizer(style='')
+                    .d-flex.align-items-center.default.text Выберите вид строительства
+                    .menu.transition.hidden(tabindex='-1')
+                        .type-child0.calculate-item__text.item.selected [Не выбрано]
+                        .type-child1.type-child-civil.item Объект гражданского строительства
+                        .type-child2.type-child-industrial.item Объект промышленного строительства не связаный с технологией производства (АБК, стоянки, благоустройство), резервуар до 5000 м3
+                        .type-child3.type-child-industrial.item Объект промышленного строительства связаный с технологией производства (тех.трубопровод, резервуар более 5000 м3, магистральный трубопровод и пр.)
+
+                .select-pprps
+                    input.calculate-item.input-text.noactive(type="text" placeholder="Количество подъёмных сооружений на объекте")
+
+                .calculate-box__subtitle Выберите тех. карты к ППР
+                .calculate-multiple
+                    .row
+                        .col-lg-9
+                            .row
+                                .col-lg-6.col-12
+                                    .calculate-item.ui.multiple.fluid.search.normal.selection.dropdown
+                                        input(type='hidden', name='type-products')
+                                        i.dropdown.icon
+                                        input.search(autocomplete='off', tabindex='0', style='width: 8px;')
+                                        span.sizer(style='')
+                                        .align-items-center.default.text Общие площадочные работы
+                                        .menu.transition.hidden(tabindex='-1')
+                                            .item.selected(data-price="2500") Геодезические работы
+                                            .item.selected(data-price="2500") Погрузо-разгрузочные работы
+                                            .item.selected(data-price="2500") Входной контроль
+                                            .item.selected(data-price="2500") Устройство строительных безболтовых хомутовых лесов
+                                            .item.selected(data-price="2500") Устройство строительных рамных лесов
+                                            .item.selected(data-price="2500") Устройство строительных клиновых лесов
+                                            .item.selected(data-price="2500") Высотные работы
+                                            .item.selected(data-price="2500") Устройство временных и постоянных проездов/переездов
+                                            .item.selected(data-price="2500") Рекультивация плодородных земель
+                                .col-lg-6.col-12
+                                    .calculate-item.ui.multiple.fluid.search.normal.selection.dropdown
+                                        input(type='hidden', name='type-products')
+                                        i.dropdown.icon
+                                        input.search(autocomplete='off', tabindex='0', style='width: 8px;')
+                                        span.sizer(style='')
+                                        .align-items-center.default.text Общестроительные работы
+                                        .menu.transition.hidden(tabindex='-1')
+                                            .item.selected(data-price="2500") Расчистка  полосы отвода от лесорастительности
+                                            .item.selected(data-price="2500") Земляные работы
+                                            .item.selected(data-price="2500") Монолитные работы
+                                            .item.selected(data-price="2500") Кирпичная кладка стен
+                                            .item.selected(data-price="2500") Устройство стен из газобетонных или керамзитобетонных блоков
+                                            .item.selected(data-price="2500") Устройство вертикальных перегородок из гипсокатроновых стен
+                                            .item.selected(data-price="2500") Монтаж окон
+                                            .item.selected(data-price="2500") Монтаж дверных блоков
+                                            .item.selected(data-price="2500") Гидроизоляция бетонных поверхностей оклеечными изолирующими материалами
+                                            .item.selected(data-price="2500") Гидроизоляция бетонных поверхностей обмазочными битумными ратериалами
+                                            .item.selected(data-price="2500") Гидроизоляция бетонных поверхностей сухими строительными материалами
+                                            .item.selected(data-price="2500") Монтаж металлоконструкций с применением электродуговой сварки
+                                            .item.selected(data-price="2500") Монтаж металлоконструкций на болтах
+                                            .item.selected(data-price="2500") Устройство бурозабивных
+                                            .item.selected(data-price="2500") Устройство буронабивных свай
+                                            .item.selected(data-price="2500") Устройство винтовых свай
+                                            .item.selected(data-price="2500") Устройство стальных забивных свай
+                                            .item.selected(data-price="2500") Монтаж распашных ворот
+                                            .item.selected(data-price="2500") Монтаж откатных ворот
+                                            .item.selected(data-price="2500") Монтаж раздвижных ворот
+                                            .item.selected(data-price="2500") Монтаж вертикальных подъёмных ворот
+                                            .item.selected(data-price="2500") Монтаж вертикальных стен и кровельных покрытий из сендвич панелей
+                                            .item.selected(data-price="2500") Монтаж блок-бокса
+                                            .item.selected(data-price="2500") Устройство отмостки
+
+                                .col-lg-6.col-12
+                                    .calculate-item.ui.multiple.fluid.search.normal.selection.dropdown
+                                        input(type='hidden', name='type-products')
+                                        i.dropdown.icon
+                                        input.search(autocomplete='off', tabindex='0', style='width: 8px;')
+                                        span.sizer(style='')
+                                        .align-items-center.default.text Фасад
+                                        .menu.transition.hidden(tabindex='-1')
+                                            .item.selected(data-price="2500") Устройство вентилируемого фасада из керемических, композитных или металлических материалов
+                                            .item.selected(data-price="2500") Сплошное выравнивание поверхности фасада строительными смесями по утеплителю с его устройством
+                                            .item.selected(data-price="2500") Облицовка гранитными плитами
+                                            .item.selected(data-price="2500") Декоративная отделка фасада с утеплением
+
+                                .col-lg-6.col-12
+                                    .calculate-item.ui.multiple.fluid.search.normal.selection.dropdown
+                                        input(type='hidden', name='type-products')
+                                        i.dropdown.icon
+                                        input.search(autocomplete='off', tabindex='0', style='width: 8px;')
+                                        span.sizer(style='')
+                                        .align-items-center.default.text Кровля
+                                        .menu.transition.hidden(tabindex='-1')
+                                            .item.selected(data-price="2500") Устройство кровли из наплавляемых рулонных  материалов
+                                            .item.selected(data-price="2500") Устройство баластной кровли
+                                            .item.selected(data-price="2500") Устройство металлической скатной кровли
+                                            .item.selected(data-price="2500") Устройство мембранной кровли
+
+                                .col-lg-6.col-12
+                                    .calculate-item.ui.multiple.fluid.search.normal.selection.dropdown
+                                        input(type='hidden', name='type-products')
+                                        i.dropdown.icon
+                                        input.search(autocomplete='off', tabindex='0', style='width: 8px;')
+                                        span.sizer(style='')
+                                        .align-items-center.default.text Отделочные работы
+                                        .menu.transition.hidden(tabindex='-1')
+                                            .item.selected(data-price="2500") Сплошное выравнивание поверхности стен сухими штукатурными смесями
+                                            .item.selected(data-price="2500") Отделка вертикальных поверхностей глазурированной керамической плиткой
+                                            .item.selected(data-price="2500") Укладка напольной керамической (керамогранитной плитки)
+                                            .item.selected(data-price="2500") Окраска выповненных вертикальных поверхностей воднодисперсными составами
+                                            .item.selected(data-price="2500") Цементная армированная стяжка пола
+                                            .item.selected(data-price="2500") Выравнивающая стяжка пола
+                                            .item.selected(data-price="2500") Устройство полимерных напольных покрытий
+                                            .item.selected(data-price="2500") Устройство подвесного потолка типа "Армстронг"
+                                            .item.selected(data-price="2500") Устройство реечного подвесного потолка
+
+                                .col-lg-6.col-12
+                                    .calculate-item.ui.multiple.fluid.search.normal.selection.dropdown
+                                        input(type='hidden', name='type-products')
+                                        i.dropdown.icon
+                                        input.search(autocomplete='off', tabindex='0', style='width: 8px;')
+                                        span.sizer(style='')
+                                        .align-items-center.default.text Инженерные сети
+                                        .menu.transition.hidden(tabindex='-1')
+                                            .item.selected(data-price="2500") Устройство наружных сетей водоснабжения
+                                            .item.selected(data-price="2500") Устройство наружных сетей водоотведения
+                                            .item.selected(data-price="2500") Устройство непроходных каналов
+                                            .item.selected(data-price="2500") Устройство теплотрассы
+                                            .item.selected(data-price="2500") Устройство внутренней сети водоснабжения
+                                            .item.selected(data-price="2500") Устройство внутренней сети водоотведения
+                                            .item.selected(data-price="2500") Устройство сетей электроснабжения
+                                            .item.selected(data-price="2500") Установка запорной арматуры
+                                            .item.selected(data-price="2500") Монтаж щитов электрических
+                                            .item.selected(data-price="2500") Монтаж изделий электроустановочных
+                                            .item.selected(data-price="2500") Монтаж кабеленесущих конструкций
+                                            .item.selected(data-price="2500") Прокладка кабеля
+                                            .item.selected(data-price="2500") Монтаж светотехнического оборудования
+                                            .item.selected(data-price="2500") Подземная прокладка кабелей электроснабжения
+                                            .item.selected(data-price="3500") Монтаж сетей пожарной автоматики
+                                            .item.selected(data-price="2500") Монтаж системы охранной сигнализации
+                                            .item.selected(data-price="2500") Монтаж системы охранного телевидения
+                                            .item.selected(data-price="2500") Монтаж системы радиофикации
+                                            .item.selected(data-price="2500") Монтаж системы кабельного телевидения
+                                            .item.selected(data-price="2500") Монтаж сетей связи
+                                            .item.selected(data-price="2500") Монтаж локальной вичислительной сети
+                                            .item.selected(data-price="2500") Монтаж единой сети часофикации
+                                            .item.selected(data-price="2500") Монтаж системы автоматизации
+                                            .item.selected(data-price="2500") Монтаж опор освещения
+                                            .item.selected(data-price="2500") Монтаж системы заземления
+                                            .item.selected(data-price="2500") Монтаж молниеприёмной сетки
+                                            .item.selected(data-price="3500") Монтаж молниеотвода
+                                            .item.selected(data-price="2500") Монтаж вентиляционных коробов из листовой оцинкованной стали
+                                            .item.selected(data-price="2500") Монтаж приточных вентиляционных установок
+                                            .item.selected(data-price="2500") Монтаж вытяжных вентиляторов
+                                            .item.selected(data-price="2500") Монтаж системы теплоснабжения приточных вытяжных установок
+                                            .item.selected(data-price="2500") Монтаж системы кондиционирования
+                                            .item.selected(data-price="3500") Монтаж системы водяного пожаротушения
+                                            .item.selected(data-price="3500") Монтаж системы газового пожаротушения
+                                            .item.selected(data-price="3500") Монтаж пожарных насосов
+                                            .item.selected(data-price="2500") Монтаж трубопроводов сплинкерной системы пожаротушения
+                                            .item.selected(data-price="2500") Монтаж трубопроводов газовой системы пожаротушения
+                                            .item.selected(data-price="2500") Устройство системы отопления
+                                            .item.selected(data-price="2500") Устройство сборных железобетонных колодцев
+                                            .item.selected(data-price="2500") Монтаж насосов
+                                            .item.selected(data-price="3500") Другое
+
+                                .col-lg-6.col-12
+                                    .calculate-item.ui.multiple.fluid.search.normal.selection.dropdown
+                                        input(type='hidden', name='type-products')
+                                        i.dropdown.icon
+                                        input.search(autocomplete='off', tabindex='0', style='width: 8px;')
+                                        span.sizer(style='')
+                                        .align-items-center.default.text Дорожные работы
+                                        .menu.transition.hidden(tabindex='-1')
+                                            .item.selected(data-price="2500") Устройство земляного полотна
+                                            .item.selected(data-price="2500") Устройство дорожной одежды из асфальтобетонного покрытия
+                                            .item.selected(data-price="2500") Устройство дорожной одежды из железобетонных плит
+                                            .item.selected(data-price="2500") Установка дорожных знаков
+                                            .item.selected(data-price="2500") Нанесение разметки дорожной горизонтальной
+                                            .item.selected(data-price="2500") Установка дорожного ограждения
+
+                                .col-lg-6.col-12
+                                    .calculate-item.ui.multiple.fluid.search.normal.selection.dropdown
+                                        input(type='hidden', name='type-products')
+                                        i.dropdown.icon
+                                        input.search(autocomplete='off', tabindex='0', style='width: 8px;')
+                                        span.sizer(style='')
+                                        .align-items-center.default.text Благоустройство
+                                        .menu.transition.hidden(tabindex='-1')
+                                            .item.selected(data-price="2500") Устройство тротуаров из бетонной плитки
+                                            .item.selected(data-price="2500") Посадка газонов
+                                            .item.selected(data-price="2500") Укладка гранитной плитки
+
+                                .col-lg-6.col-12
+                                    .calculate-item.select-industrial.noactive.ui.multiple.fluid.search.normal.selection.dropdown
+                                        input(type='hidden', name='type-products')
+                                        i.dropdown.icon
+                                        input.search(autocomplete='off', tabindex='0', style='width: 8px;')
+                                        span.sizer(style='')
+                                        .align-items-center.default.text Технологические работы
+                                        .menu.transition.hidden(tabindex='-1')
+                                            .item.selected(data-price="3500") Монтаж системы водоподготовки
+
+                                .col-lg-6.col-12
+                                    .calculate-item.select-industrial.noactive.ui.multiple.fluid.search.normal.selection.dropdown
+                                        input(type='hidden', name='type-products')
+                                        i.dropdown.icon
+                                        input.search(autocomplete='off', tabindex='0', style='width: 8px;')
+                                        span.sizer(style='')
+                                        .align-items-center.default.text Магистральные нефтепроводы
+                                        .menu.transition.hidden(tabindex='-1')
+                                            .item.selected(data-price="2500") Геодезическая подготовка площадки
+                                            .item.selected(data-price="2500") Демонтаж трубопровода
+                                            .item.selected(data-price="2500") Очистканаружной поверхности демонтированного магистрального нефтепровода
+                                            .item.selected(data-price="2500") Входной контроль труб
+                                            .item.selected(data-price="2500") Расчистка трассы от леса и планировку полосы отвода
+                                            .item.selected(data-price="2500") Устройство временных и постоянных переездов
+                                            .item.selected(data-price="2500") Пересечение с кабелем связи
+                                            .item.selected(data-price="2500") Работы при пересечении проектируемого нефтепровода с газопроводом
+                                            .item.selected(data-price="2500") Разработка траншеи
+                                            .item.selected(data-price="2500") Выполнение работ в охранной зоне действующих подземных коммуникаций при пересечении проектируемого нефтепровода с нефте и нефтепродуктопроводами
+                                            .item.selected(data-price="2500") Установка знаков
+                                            .item.selected(data-price="2500") Горизонтальное направленное бурение
+                                            .item.selected(data-price="2500") Укладка трубопровода в траншею
+                                            .item.selected(data-price="2500") Ликвидация технологических разрывов
+                                            .item.selected(data-price="2500") Балластировка трубопровода
+                                            .item.selected(data-price="2500") Засыпка уложенного трубопровода
+                                            .item.selected(data-price="2500") Устройство амбаров для гидроиспытаний
+                                            .item.selected(data-price="2500") Футеровка трубопровода
+                                            .item.selected(data-price="2500") Разработка траншеи со сланей
+                                            .item.selected(data-price="2500") Укладка трубопровода в траншею
+                                            .item.selected(data-price="2500") Укладка трубопровода методом протаскивания
+                                            .item.selected(data-price="2500") Водный переход
+                                            .item.selected(data-price="2500") Изоляция сварных соединений
+                                            .item.selected(data-price="2500") Ремонт изоляции сварных соединений
+                                            .item.selected(data-price="2500") Устройство противоэрозионных перемычек
+                                            .item.selected(data-price="2500") Проведение гидроиспытаний и внутренняя трубная диагностика
+                                            .item.selected(data-price="2500") Катодная поляризация
+                                            .item.selected(data-price="2500") Анодное заземление
+                                            .item.selected(data-price="2500") Изоляция мест приварки катодных выводов ЭХЗ
+                                            .item.selected(data-price="2500") Сооружение ЭХЗ
+                                            .item.selected(data-price="2500") Устройствоподушки и присыпки МН
+                                            .item.selected(data-price="2500") Рекультивация плодородных земель
+                                            .item.selected(data-price="2500") Установка вантуза для впуска и выпуска воздуха
+                                            .item.selected(data-price="2500") Монтаж узла запорной арматуры
+                                            .item.selected(data-price="2500") Монтаж временных камер пуска и приема СОД
+                                            .item.selected(data-price="2500") Испытание участков нефтепровода под переходами через а/д дороги
+                                            .item.selected(data-price="2500") Вытеснение нефти и нефтесодержащих компонентов из магистрального нефтепровода
+
+                                .col-lg-6.col-12
+                                    .calculate-item.select-industrial.noactive.ui.multiple.fluid.search.normal.selection.dropdown
+                                        input(type='hidden', name='type-products')
+                                        i.dropdown.icon
+                                        input.search(autocomplete='off', tabindex='0', style='width: 8px;')
+                                        span.sizer(style='')
+                                        .align-items-center.default.text Резервуары
+                                        .menu.transition.hidden(tabindex='-1')
+                                            .item.selected(data-price="2500") Монтаж резервуара рулонного типа
+                                            .item.selected(data-price="2500") Устройство антикорозионной защиты
+                                            .item.selected(data-price="2500") Устройство свайного основания
+                                            .item.selected(data-price="2500") Монтаж стальных строительных конструкций с применением электродуговой сварки
+
+                                .col-lg-6.col-12
+                                    .calculate-item.select-industrial.noactive.ui.multiple.fluid.search.normal.selection.dropdown
+                                        input(type='hidden', name='type-products')
+                                        i.dropdown.icon
+                                        input.search(autocomplete='off', tabindex='0', style='width: 8px;')
+                                        span.sizer(style='')
+                                        .align-items-center.default.text Операционные ТК (Сварочные работы, неразрушающий контроль)
+                                        .menu.transition.hidden(tabindex='-1')
+                                            .item.selected(data-price="2500") Сборка и сварка кольцевых неповоротных стыков труб
+                                            .item.selected(data-price="2500") Ремонт кольцевых стыков, выполненных ручной дуговой сваркой при устранении дефектов снаружи трубы
+                                            .item.selected(data-price="2500") Механизированный ультразвуковой контроль (МУЗК)
+                                            .item.selected(data-price="2500") Ультразвуковой контроль сварных соединений
+                                            .item.selected(data-price="2500") Визаульный измерительный контроль
+                                            .item.selected(data-price="2500") Радиографический контроль
+                        .col-lg-3.calculate-result-box
+                            .calculate-result.d-flex.flex-column.align-items-center.justify-content-between
+                                .calculate-result__content
+                                    .calculate-result__caption Стоимость
+                                    .calculate-result__price 0
+                                a.calculate-result__button.btn-modal(rel="nofollow" href="#form_up" data-reason="Заказать ППР - Калькулятор" data-header="Заказать ППР") Заказать ППР
+
+                .calculate-footer Затрудняетесь самостоятельно рассчитать стоимость? Закажите звонок специалиста и мы вам поможем.
+                .d-flex
+                    a.btn.btn-modal.item_header.d-none.d-lg-block(rel="nofollow" href="#form_up" data-reason="Заказать звонок" data-header="Заказать звонок" onclick="ym(48630242, 'reachGoal', 'main-header-lead'); fbq('track', 'InitiateCheckout'); return true;") Заказать звонок
+
+
+    .docs
+        .r20
+        .r20
+        .container
+            .title Отзывы
+            .docs__signature.d-flex
+                svg.docs__signature-icon(xmlns="http://www.w3.org/2000/svg")
+                    use(xlink:href="/assets/css/img/type_jobs/geodez/sprite.svg#review")
+                .docs__signature-text Почитайте что о нас пишут
+            .docs-box.row.flex-nowrap [[getImageList? &tvname=`docs` &tpl=`docs` &docid=`1` &limit=`6`]]
+            .r20.d-md-none
+            a.review-btn.d-flex.justify-content-end(href="[[++base_url]]o-kompanii/otzyivyi/")
+                .review-btn__title Смотреть все
+                .review-btn__icon-box
+                    svg.review-btn__icon(xmlns="http://www.w3.org/2000/svg")
+                        use(xlink:href="/assets/css/img/review/review.svg#review")
+        .r20
+        .r20
+
+    .r20
+    .r20
+    .container
+        .form-new
+            .row
+                .form-new__box.col-lg-10
+                    .row.justify-content-between
+                        .col-xl-8.col-lg-9.col-md-10.col-12
+                            .form-new__form-box
+                                .form-new__title Гарантированные скидки до 20% на повторные ППР
+                                .form-new__subtitle-box.d-flex.align-items-center
+                                    svg.form-new__subtitle-svg(xmlns="https://www.w3.org/2000/svg")
+                                        use(xlink:href="../assets/css/img/ppr/sprite.svg#form-icon")
+                                    .form-new__subtitle Отправьте заявку и станьте постоянным клиентом
+
+                                | [[!AjaxForm?
+                                | &snippet=`FormIt`
+                                | &frontend_css=``
+                                | &form=`ppr_form_tpl2`
+                                | &hooks=`email,FormItSaveForm,roistat_hooks`
+                                | &emailSubject=`Новая заявка `
+                                | &emailTpl=`template_form1`
+                                | &emailTo=`[[+email_to]]`
+                                | &validate=`fio:required,phone:required`
+                                | &fieldNames=`fio==Имя,phone==Телефон,page==Страница`
+                                | &validationErrorMessage=`В форме содержатся ошибки!`
+                                | &successMessage=`Сообщение успешно отправлено`
+                                | ]]
+                        .form-new__box-right.col-xl-4.col-lg-3.col-md-2
+                            img.form-new__box-img(src="../assets/css/img/ppr/form2.png" alt="Гарантированные скидки до 20% на повторные ППР")
+
+    .ppr-transneft
+        .container
+            .ppr-transneft-header
+                .row
+                    .ppr-transneft-left.col-lg-5.col-12.d-flex.flex-wrap.flex-direction
+                        .d-flex.align-items-center
+                            .ppr-transneft-left__signature Специальное предложение
+                            .ppr-transneft-left__img
+                                img(src="../assets/css/img/stars.png" alt="ППР для нужд ПАО «Транснефть»")
+                        .ppr-transneft-left__caption ППР для нужд ПАО «Транснефть»
+                        .ppr-transneft-left__subcaption На строительство и реконструкцию участков магистральных нефтепроводов
+
+                    .col-lg-7.col-12
+                        .ppr-transneft-right.d-flex.flex-sm-nowrap.flex-wrap
+                            .ppr-transneft-right__img
+                                img(src="../assets/css/img/logo_transnft.jpg" alt="125 000 рублей")
+                            .ppr-transneft-right__content.d-flex.flex-wrap.align-items-center
+                                div
+                                    .ppr-transneft-right__price 125 000 рублей
+                                    .d-flex.align-items-center
+                                        .ppr-transneft-right__signature Фиксированная стоимость
+                                        .ppr-transneft-right__svg.d-flex.align-items-center
+                                            svg(xlink:width="25" height="25" xmlns="http://www.w3.org/2000/svg")
+                                                use(href="../assets/css/img/transneft.svg#true")
+            .ppr-transneft-body
+                .ppr-transneft-body__caption Состав
+                .ppr-transneft-body__subcaption ППР в соответствии с ОР-91.010.30-КТН-111-12 и изменениями 2 по нормативам ПАО «Транснефть»:
+                .ppr-transneft-ul
+                    .ppr-transneft-li.d-flex
+                        .ppr-transneft-li__number.d-flex.align-items-center.justify-content-center 1
+                        .ppr-transneft-li__text.d-flex.align-items-center Технологические карты в составе и объёме, необходимом для получения допуска к производству работ (порядка 30 штук).
+                    .ppr-transneft-li.d-flex
+                        .ppr-transneft-li__number.d-flex.align-items-center.justify-content-center 2
+                        .ppr-transneft-li__text.d-flex.align-items-center.
+                            Операционные технологические карты (порядка 15 штук):<br>
+                            - Сборки и сварки кольцевых неповоротных стыков труб в соответствии с проектом (труба-труба, труба-отвод, труба-днище, труба-задвижка и другие)
+                            <br>- Ремонта кольцевых стыков, выполненных ручной дуговой сваркой при устранении дефектов,
+                            <br>- Неразрушающего контроля (ВИК, РК, УЗК, МУЗК, ТУЗК и другие)
+
+                    .ppr-transneft-li.d-flex
+                        .ppr-transneft-li__number.d-flex.align-items-center.justify-content-center 3
+                        .ppr-transneft-li__text.d-flex.align-items-center ППР подъёмными сооружениями.
+                .ppr-transneft-body__caption Описание пакета
+                .ppr-transneft-ul.row
+                    .col-lg-4.col-12
+                        .ppr-transneft-li.d-flex
+                            .ppr-transneft-li__number.d-flex.align-items-center.justify-content-center 1
+                            .ppr-transneft-li__text.d-flex.align-items-center Характеристика объекта и условия осуществления строительства
+                        .ppr-transneft-li.d-flex
+                            .ppr-transneft-li__number.d-flex.align-items-center.justify-content-center 2
+                            .ppr-transneft-li__text.d-flex.align-items-center Обеспечение строительства материально–техническими ресурсами
+                        .ppr-transneft-li.d-flex
+                            .ppr-transneft-li__number.d-flex.align-items-center.justify-content-center 3
+                            .ppr-transneft-li__text.d-flex.align-items-center Обеспечение строительства машинами и оборудованием
+                        .ppr-transneft-li.d-flex
+                            .ppr-transneft-li__number.d-flex.align-items-center.justify-content-center 4
+                            .ppr-transneft-li__text.d-flex.align-items-center Обеспечение строительства трудовыми ресурсами
+                        .ppr-transneft-li.d-flex
+                            .ppr-transneft-li__number.d-flex.align-items-center.justify-content-center 5
+                            .ppr-transneft-li__text.d-flex.align-items-center Транспортная схема
+                    .col-lg-4.col-12
+                        .ppr-transneft-li.d-flex
+                            .ppr-transneft-li__number.d-flex.align-items-center.justify-content-center 6
+                            .ppr-transneft-li__text.d-flex.align-items-center Основные решения по организации строительства
+                        .ppr-transneft-li.d-flex
+                            .ppr-transneft-li__number.d-flex.align-items-center.justify-content-center 7
+                            .ppr-transneft-li__text.d-flex.align-items-center Контроль качества и приёмка работ
+                        .ppr-transneft-li.d-flex
+                            .ppr-transneft-li__number.d-flex.align-items-center.justify-content-center 8
+                            .ppr-transneft-li__text.d-flex.align-items-center Порядок оформления исполнительной документации
+                        .ppr-transneft-li.d-flex
+                            .ppr-transneft-li__number.d-flex.align-items-center.justify-content-center 9
+                            .ppr-transneft-li__text.d-flex.align-items-center Меры безопасности при проведении строительно–монтажных работ и охрана труда
+                        .ppr-transneft-li.d-flex
+                            .ppr-transneft-li__number.d-flex.align-items-center.justify-content-center 10
+                            .ppr-transneft-li__text.d-flex.align-items-center Противопожарные мероприятия
+                    .col-lg-4.col-12
+                        .ppr-transneft-li.d-flex
+                            .ppr-transneft-li__number.d-flex.align-items-center.justify-content-center 11
+                            .ppr-transneft-li__text.d-flex.align-items-center Мероприятия по охране окружающей среды
+                        .ppr-transneft-li.d-flex
+                            .ppr-transneft-li__number.d-flex.align-items-center.justify-content-center 12
+                            .ppr-transneft-li__text.d-flex.align-items-center Строительный генеральный план
+                        .ppr-transneft-li.d-flex
+                            .ppr-transneft-li__number.d-flex.align-items-center.justify-content-center 13
+                            .ppr-transneft-li__text.d-flex.align-items-center Схема организации связи при возникновении внештатной ситуации
+                        .ppr-transneft-li.d-flex
+                            .ppr-transneft-li__number.d-flex.align-items-center.justify-content-center 14
+                            .ppr-transneft-li__text.d-flex.align-items-center Календарный план
+            .d-flex.justify-content-center
+                a.btn.btn_light-red.btn-modal.item_header.d-none.d-lg-block(style="color:#fff" rel="nofollow" href="#form_up" data-reason="Заказать ППР" data-header="Заказать ППР" onclick="ym(48630242, 'reachGoal', 'main-header-lead'); fbq('track', 'InitiateCheckout'); return true;") Заказать ППР
+
+
+            //-.ppr-transneft-block(style="padding-bottom:0")
+                .ppr-transneft-block__caption Частые проблемы при самостоятельной подготовке ППР
+                .row
+                    .col-md-4.col-12
+                        .ppr-transneft-item.d-flex
+                            .ppr-transneft-item__svg
+                                svg(xlink:width="38" height="42" xmlns="http://www.w3.org/2000/svg")
+                                    use(href="../assets/css/img/transneft.svg#cancel")
+                            .ppr-transneft-item__text.d-flex.align-items-center Использование устаревшей нормативной базы
+                    .col-md-4.col-12
+                        .ppr-transneft-item.d-flex
+                            .ppr-transneft-item__svg
+                                svg(xlink:width="38" height="42" xmlns="http://www.w3.org/2000/svg")
+                                    use(href="../assets/css/img/transneft.svg#cancel")
+                            .ppr-transneft-item__text.d-flex.align-items-center Отсутствие инженеров по сварочными работам и неразрушающему контролю
+                    .col-md-4.col-12
+                        .ppr-transneft-item.d-flex
+                            .ppr-transneft-item__svg
+                                svg(xlink:width="38" height="42" xmlns="http://www.w3.org/2000/svg")
+                                    use(href="../assets/css/img/transneft.svg#cancel")
+                            .ppr-transneft-item__text.d-flex.align-items-center Не соответствие оформления отраслевому регламенту
+                .row
+                    .col-lg-9.col-12.ppr-transneft-block__signature В итоге увеличиваются сроки согласования ППР, получения допуска к работам, и как следствие – применение штрафных санкций за несоблюдение сроков исполнения контракта.
+
+            //-.ppr-transneft-block
+                .ppr-transneft-block__caption Вам это не грозит, потому что мы:
+                .row
+                    .col-md-4.col-12
+                        .ppr-transneft-item.d-flex
+                            .ppr-transneft-item__svg
+                                svg(xlink:width="38" height="42" xmlns="http://www.w3.org/2000/svg")
+                                    use(href="../assets/css/img/transneft.svg#true")
+                            .ppr-transneft-item__text.d-flex.align-items-center Гарантируем соблюдение сроков разработки и получения допуска к работам
+                    .col-md-4.col-12
+                        .ppr-transneft-item.d-flex
+                            .ppr-transneft-item__svg
+                                svg(xlink:width="38" height="42" xmlns="http://www.w3.org/2000/svg")
+                                    use(href="../assets/css/img/transneft.svg#true")
+                            .ppr-transneft-item__text.d-flex.align-items-center Используем опыт работы с филиалами ПАО «Транснефть» в ваших интересах
+                    .col-md-4.col-12
+                        .ppr-transneft-item.d-flex
+                            .ppr-transneft-item__svg
+                                svg(xlink:width="38" height="42" xmlns="http://www.w3.org/2000/svg")
+                                    use(href="../assets/css/img/transneft.svg#true")
+                            .ppr-transneft-item__text.d-flex.align-items-center Одновременно задействуем узкопрофильных инженеров и наработанную документальную техническую базу
+
+    .techkarta
+        .container
+            .row
+                .col-md-3
+                    .techkarta__img
+                        img.image-load(src="#" data-src="../assets/css/img/avtootvet.jpg" alt="Получите примеры наших тех. карт за 1 мин.")
+                .col-md-9
+                    .techkarta-right.d-flex.align-items-center
+                        .techkarta-right__content
+                            .techkarta__caption Получите примеры наших тех. карт <span>за 1 мин.</span>
+                            .techkarta__subcaption Укажите E-mail, на который хотите их получить
+                            | [[!AjaxForm?
+                            | &snippet=`FormIt`
+                            | &frontend_css=``
+                            | &form=`avtootvet_tpl`
+                            | &hooks=`email,FormItAutoResponder`
+                            | &emailSubject=`Новая заявка`
+                            | &emailTpl=`template_avtootvet`
+                            | &emailTo=`[[+email_to]]`
+                            | &validate=`email:required`
+                            | &fieldNames=`email==Email`
+                            | &validationErrorMessage=`В форме содержатся ошибки!`
+                            | &successMessage=`Сообщение успешно отправлено`
+                            | &fiarFrom=`mail@isipto.com`
+                            | &fiarTpl=`avtootvetResponder_tpl`
+                            | &fiarSubject=`Примеры тех. карт от Идеалстройинвест`
+                            | &fiarToField=`email1`
+                            | ]]
+
+                            //-form.d-flex.flex-wrap
+                                .techkarta-block
+                                    input.techkarta-block__input(type="email" placeholder="example@mail.ru")
+                                .techkarta-block
+                                    input.techkarta-block__submit(type="submit" value="Отправить")
+
+
+    .develop
+        .container
+            .develop__title ППР от 1 дня
+            .develop__subtitle с гарантией на все выполненные работы
+            .develop-images.d-flex.flex-wrap.justify-content-between
+                a.develop-images__item(href="/assets/images/ppr/1.jpg" data-fancybox="ppr")
+                    img.image-load(src="#" data-src="[[phpthumbon? &input=`/assets/images/ppr/1.jpg` &options=`h=340&w=230`]]" alt="Пример выполненного ППР")
+                a.develop-images__item(href="/assets/images/ppr/2.jpg" data-fancybox="ppr")
+                    img.image-load(src="#" data-src="[[phpthumbon? &input=`/assets/images/ppr/2.jpg` &options=`h=340&w=230`]]" alt="Пример выполненного ППР")
+                a.develop-images__item(href="/assets/images/ppr/4.jpg" data-fancybox="ppr")
+                    img.image-load(src="#" data-src="[[phpthumbon? &input=`/assets/images/ppr/4.jpg` &options=`h=340&w=230`]]" alt="Пример выполненного ППР")
+            .row.vantages-box
+                .vantages-item.d-flex.align-items-center.col-lg-4.col-12
+                    div
+                        .vantages-item__img.d-flex.align-items-center.justify-content-center
+                            svg(width="45" height="42" xmlns="http://www.w3.org/2000/svg")
+                                use(xlink:href="../assets/css/img/vantages-item1.svg#vantages-item1")
+                    .vantages-item__text Все замечания устраняем бесплатно
+                .vantages-item.d-flex.align-items-center.col-lg-4.col-12
+                    div
+                        .vantages-item__img.d-flex.align-items-center.justify-content-center
+                            svg(width="32" height="45" xmlns="http://www.w3.org/2000/svg")
+                                use(xlink:href="../assets/css/img/vantages-item2.svg#vantages-item2")
+                    .vantages-item__text Ваш ППР согласуют с первого раза
+                .vantages-item.d-flex.align-items-center.col-lg-4.col-12
+                    div
+                        .vantages-item__img.d-flex.align-items-center.justify-content-center
+                            svg(xlink:width="38" height="42" xmlns="http://www.w3.org/2000/svg")
+                                use(href="../assets/css/img/vantages-item3.svg#vantages-item3")
+                    .vantages-item__text Оперативно разработаем ППР от 1 дня с полноценной гарантией
+
+
+    //-.vantages-company
+        .container
+            .row
+                .vantages-company__img.d-flex.justify-content-center.col-md-6.col-12
+                    img(src="../assets/css/img/vantages-company.png" alt="")
+                h2.vantages-company__text.d-flex.align-items-center.col-md-6.col-12 Разрабатываем и подписываем ППР для объектов любого масштаба
+
+    section#vantages
+    .vantages
+        .container.vantages_box
+            .row.justify-content-center.flex-wrap
+                .col-lg-6.col-12
+                    .row
+                        .item_vantages.col-12(style='margin-bottom: 20px')
+                            .title_vantages
+                                | Работаем с выездом на объект
+                            .text_info(style='padding-left: 0')
+                                | Наши специалисты выезжают на ваш объект в любой точке России для более оперативной и слаженной работы.
+                        .item_vantages.col-12(style='margin-bottom: 20px')
+                            .title_vantages
+                                | Работаем удаленно
+                            .text_info(style='padding-left: 0')
+                                | Мы работаем удаленно, тем самым дополняя или полностью заменяя вам штат квалифицированных специалистов ПТО.
+
+                .col-lg-6.col-12
+                    .row
+                        .item_vantages.col-12(style='margin-bottom: 20px')
+                            .title_vantages
+                                | Оплата по договору с НДС
+                            .text_info(style='padding-left: 0')
+                                | Мы юридическое лицо, оплата по договору с НДС.   Вам не нужно содержать штат сотрудников и платить лишние налоги.
+                        .item_vantages.col-12(style='margin-bottom: 20px')
+                            .title_vantages
+                                | Штат специалистов более 60 человек
+                            .text_info(style='padding-left: 0')
+                                | Наша компания позволяет решить проблему нехватки штатных инженеров в вашей компании, а также их полное отсутствия.
+
+
+    //-.theOrder
+        .container
+            .theOrder__title Порядок работы
+            .d-flex.flex-wrap
+                .theOrder-item
+                    .d-flex.align-items-center
+                        div
+                            .theOrder-item__number.d-flex.align-items-center.justify-content-center 1
+                        .theOrder-item__text Отправляете нам заявку или звоните по телефону
+                .theOrder-item
+                    .d-flex.align-items-center
+                        div
+                            .theOrder-item__number.d-flex.align-items-center.justify-content-center 2
+                        .theOrder-item__text Мы оцениваем ваш объект и подписываем договор
+                .theOrder-item
+                    .d-flex.align-items-center
+                        div
+                            .theOrder-item__number.d-flex.align-items-center.justify-content-center 3
+                        .theOrder-item__text Разрабатываем для вас ППР от 1 дня
+                .theOrder-item
+                    .d-flex.align-items-center
+                        div
+                            .theOrder-item__number.d-flex.align-items-center.justify-content-center 4
+                        .theOrder-item__text Вы получаете готовый ППР
+            .theOrder__line
+
+    .r10
+    .r20
+    .r20.d-lg-block.d-none
+    .container
+        .our-clients
+            .our-clients__maps-box
+                img.our-clients__maps.image-load(data-src="../assets/css/img/main/maps.jpg" alt="Более 450 клиентов по России")
+            .our-clients__content
+                .our-clients__title Более <span>450 клиентов</span> по России
+                .our-clients__subtitle В их числе
+                ul.our-clients__ul
+                    li.our-clients__li Нефтеперерабатывающие  заводы
+                    li.our-clients__li Нефтяные месторождения
+                    li.our-clients__li Трубопроводы
+                    li.our-clients__li Заводы химического производства
+                    li.our-clients__li Автомагистрали и железные дороги
+                    li.our-clients__li Оборонные объекты
+                    li.our-clients__li Рудники
+    .r10
+    .r20
+    .r20.d-lg-block.d-none
+
+    .r20
+    .r20
+    .container
+        .bl1
+            .bl1__item-box
+                .bl1__item
+                    img.bl1__item-img.image-load(data-src="../assets/css/img/main/maps1.jpg" alt="Закажите исполнительную документацию со скидкой 25%")
+                    .bl1__item-content
+                        .bl1__item-title 100 инженеров ПТО
+                        .bl1__item-text Вылетают на объекты по России
+            .bl1__item-box
+                .bl1__item
+                    img.bl1__item-img.image-load(data-src="../assets/css/img/main/maps2.jpg" alt="Закажите исполнительную документацию со скидкой 25%")
+                    .bl1__item-content
+                        .bl1__item-title 29 разделов исполнительной
+                        .bl1__item-text Подготовим и сдадим заказчику
+            .bl1__item-box
+                .bl1__item
+                    img.bl1__item-img.image-load(data-src="../assets/css/img/main/maps3.jpg" alt="Закажите исполнительную документацию со скидкой 25%")
+                    .bl1__item-content
+                        .bl1__item-title Аттестованные инженеры
+                        .bl1__item-text Все инженеры имеют удостоверения
+    .r20
+    .r20
+
+    //-.comparison
+        .container
+            .row
+                .mx-auto.col-12.col-lg-8
+                    .comparison__title Сравнение ваших затрат на ПТО
+                    .comparison__subtitle В качестве примера даны расчеты расходов на содержание и обеспечение условиями труда 1-го штатного инженера ПТО
+                    .row
+                        .col-12.col-sm-6
+                            .comparison-block(style="opacity:0.8")
+                                .comparison-block__title Штатный Инженер ПТО
+                                .comparison-item.d-flex.align-items-center
+                                    .comparison-item__img
+                                        img(src="../assets/css/img/comparison-false.png" alt="")
+                                    .comparison-item__content
+                                        .comparison-item__caption Заработная плата
+                                        .comparison-item__text от 40 000 рублей
+                                .comparison-item.d-flex.align-items-center
+                                    .comparison-item__img
+                                        img(src="../assets/css/img/comparison-false.png" alt="")
+                                    .comparison-item__content
+                                        .comparison-item__caption Отчисления ПФР, соц.страхование и т.д.
+                                        .comparison-item__text 43% от суммы ЗП (от 17 т.р.)
+                                .comparison-item.d-flex.align-items-center
+                                    .comparison-item__img
+                                        img(src="../assets/css/img/comparison-false.png" alt="")
+                                    .comparison-item__content
+                                        .comparison-item__caption Компьютер и орг.техника
+                                        .comparison-item__text от 25 000 рублей на человека
+                                .comparison-item.d-flex.align-items-center
+                                    .comparison-item__img
+                                        img(src="../assets/css/img/comparison-false.png" alt="")
+                                    .comparison-item__content
+                                        .comparison-item__caption Лицензированное ПО за 1 компьютер
+                                        .comparison-item__text от 10 000 рублей
+                                .comparison-item.d-flex.align-items-center
+                                    .comparison-item__img
+                                        img(src="../assets/css/img/comparison-false.png" alt="")
+                                    .comparison-item__content
+                                        .comparison-item__caption Спец. одежда и СИЗ
+                                        .comparison-item__text от 15 000 рублей на 1 чел.
+                                .comparison-item.d-flex.align-items-center
+                                    .comparison-item__img
+                                        img(src="../assets/css/img/comparison-false.png" alt="")
+                                    .comparison-item__content
+                                        .comparison-item__caption Поиск персонала
+                                        .comparison-item__text Возможна «текучка» кадров
+                                .comparison-item.d-flex.align-items-center
+                                    .comparison-item__img
+                                        img(src="../assets/css/img/comparison-false.png" alt="")
+                                    .comparison-item__content
+                                        .comparison-item__caption Возмещение НДС
+                                        .comparison-item__text Нет
+
+                                .comparison-total
+                                    .comparison-total__title Итого затраты на 1-го инженера
+                                    .comparison-total__text от <span>80 000</span> рублей в месяц
+
+                        .col-12.col-sm-6
+                            .comparison-block(style="box-shadow: 10px 10px 30px -8px rgba(255, 255, 255, 0.75)")
+                                .comparison-block__title Заказывая ПТО у нас
+                                .comparison-item.d-flex.align-items-center
+                                    .comparison-item__img
+                                        img(src="../assets/css/img/comparison-true.png" alt="")
+                                    .comparison-item__content
+                                        .comparison-item__caption Заработная плата
+                                        .comparison-item__text Нет
+                                .comparison-item.d-flex.align-items-center
+                                    .comparison-item__img
+                                        img(src="../assets/css/img/comparison-true.png" alt="")
+                                    .comparison-item__content
+                                        .comparison-item__caption Отчисления ПФР, соц.страхование и т.д.
+                                        .comparison-item__text Нет
+                                .comparison-item.d-flex.align-items-center
+                                    .comparison-item__img
+                                        img(src="../assets/css/img/comparison-true.png" alt="")
+                                    .comparison-item__content
+                                        .comparison-item__caption Компьютер и орг.техника
+                                        .comparison-item__text Нет
+                                .comparison-item.d-flex.align-items-center
+                                    .comparison-item__img
+                                        img(src="../assets/css/img/comparison-true.png" alt="")
+                                    .comparison-item__content
+                                        .comparison-item__caption Лицензированное ПО за 1 компьютер
+                                        .comparison-item__text Нет
+                                .comparison-item.d-flex.align-items-center
+                                    .comparison-item__img
+                                        img(src="../assets/css/img/comparison-true.png" alt="")
+                                    .comparison-item__content
+                                        .comparison-item__caption Спец. одежда и СИЗ
+                                        .comparison-item__text Нет
+                                .comparison-item.d-flex.align-items-center
+                                    .comparison-item__img
+                                        img(src="../assets/css/img/comparison-true.png" alt="")
+                                    .comparison-item__content
+                                        .comparison-item__caption Поиск персонала
+                                        .comparison-item__text Лучшие специалисты РФ
+                                .comparison-item.d-flex.align-items-center
+                                    .comparison-item__img
+                                        img(src="../assets/css/img/comparison-true.png" alt="")
+                                    .comparison-item__content
+                                        .comparison-item__caption Возмещение НДС
+                                        .comparison-item__text Да
+
+                                .comparison-total.d-flex.justify-content-between.flex-wrap.flex-md-nowrap
+                                    .comparison-total__content
+                                        .comparison-total__title Стоимость наших услуг
+                                        .comparison-total__text от <span>300</span> рублей
+                                    a.comparison-total__button.d-flex.align-items-center.justify-content-center(data-toggle="modal" rel="nofollow" data-target="#form_up" data-reason="Заказать услуги (блок сравнения затрат на ПТО)" data-header="Заказать") Заказать
+
+
+    //-.container
+        .title_team [[pdoField? &id=`1` &field=`title_team`]]
+        .our_team_slideshow.row [[getImageList? &tvname=`our_team` &tpl=`our_team` &docid=`1` &limit=`8`]]
+        .our-team__info и еще <span>62 специалиста<span> по всей России
+            //-- for (var i = 1; i < 3; i++)
+                .our_team
+                    .img_our_team
+                        img(src="../assets/css/img/our_team0.jpg" alt="")
+                    .name_team Василенко Геннадий Петрович
+                    .profess Заместитель директора
+        //-.docs
+            .container
+                .title_docs.title_team [[*title_license]]
+                .row [[getImageList? &tvname=`license` &tpl=`license` &docid=`1` &limit=`0`]]
+    //-.quiz.d-flex.align-items-center
+        .container
+            .row.justify-content-between
+                .col-xl-6.col-lg-7.col-12
+                    .title_quiz.text-lg-left.text-center.mb-md-0.mb-3 Узнайте стоимость разработки
+                    .subtitle_quiz.text-lg-left.text-center.mb-lg-0.mb-3 исполнительной документации
+                .col-xl-3.col-lg-4.col-12.d-flex.justify-content-end.align-items-center.flex-wrap
+                    .button_quiz.mx-lg-0.mx-auto(data-toggle="modal" rel="nofollow" data-target="#form_quiz") Узнать стоимость
+                    //-a.button_quiz.mx-lg-0.mx-auto(href="#popup:marquiz_5b5ab0c7fdb7080042239b06") Узнать стоимость
+                    .text_button.text-center ответив всего на 5 вопросов

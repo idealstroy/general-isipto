@@ -1,0 +1,37 @@
+services:
+  db:
+    image: mysql:5.7
+    container_name: isipto-direct-rehearsal-db
+    environment:
+      MYSQL_ROOT_PASSWORD: rehearsal_only_root
+      MYSQL_DATABASE: idealstroy_isipt
+      MYSQL_USER: modx
+      MYSQL_PASSWORD: modx_local_password
+    command: --character-set-server=utf8 --collation-server=utf8_general_ci --max_allowed_packet=128M
+    volumes: [rehearsal-db:/var/lib/mysql]
+    networks: [isolated]
+    healthcheck:
+      test: [CMD, mysqladmin, ping, -h, localhost, -uroot, -prehearsal_only_root]
+      interval: 2s
+      timeout: 3s
+      retries: 60
+  php:
+    image: isipto-audit-php73:20261022
+    container_name: isipto-direct-rehearsal-php
+    command: [sleep, infinity]
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - ../../../modx-isipto:/source:ro
+      - ../../../_backups:/backups:ro
+      - ../../../dist:/releases:ro
+      - ../:/tools:ro
+      - rehearsal-site:/var/www
+    networks: [isolated]
+networks:
+  isolated:
+    internal: true
+volumes:
+  rehearsal-db:
+  rehearsal-site:

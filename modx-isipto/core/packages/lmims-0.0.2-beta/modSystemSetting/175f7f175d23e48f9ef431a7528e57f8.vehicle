@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'lmims',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => 'da4a31d6383ae1c0f5d795c712f08306',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => '175f7f175d23e48f9ef431a7528e57f8',
+  'native_key' => 'lmims.core_path',
+  'object' => '{"key":"lmims.core_path","value":"","xtype":"textfield","namespace":"lmims","area":"lmims.paths","editedon":null}',
+);

@@ -1,0 +1,133 @@
+@import 'nib'
+@import 'rupture'
+
+
+/*Зачарование пикселей в ремы*/
+rem() {
+  remified = ()
+  for arg in arguments {
+    push(remified, unit(arg/16, 'rem'))
+  }
+  return remified
+}
+
+/*Адаптив*/
+rupture.scale =       0    576px    767.98px    992px    1200px
+rupture.scale-names =  'xs'     'sm'     'md'     'lg'      'xl'
+
+.first-screen
+  margin-top: 108px;
+  background: url(img/vedenie_id/first-screen.png) #f6f7f9 right/auto no-repeat;
+  background-position: 80% 100%;
+  +below(md)
+    margin-top 0
+  +below(lg)
+    background-position: 130% 100%;
+  +below(sm)
+    background #F6F7F8
+
+.bg_gray-linear
+  background: linear-gradient(91.06deg, #6D798F 0.55%, #6B778D 46.56%, #48546A 98.7%);
+
+.block5
+  position relative
+  color: #FFFFFF;
+  padding-bottom 35px
+  &__title
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 33px;
+    margin-bottom 25px
+  &__text
+    width 50%
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 20px;
+    margin-bottom 50px
+    +below(md)
+      width 100%
+      margin-bottom 30px
+  &__btn
+    color: #333333;
+    background #fff
+  &__img
+    position absolute
+    right 0
+    bottom 0
+    width 300px
+    +below(md)
+      display none
+
+.block6
+  position relative
+  padding 30px
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  &__title
+    color: #333333;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 33px;
+    margin-bottom 40px
+  &__box
+    display flex
+    align-items center
+    +below(sm)
+      flex-wrap wrap
+  &__number
+    max-width 243px
+    width 100%
+    margin-right 40px
+    +below(sm)
+      margin-bottom 30px
+  &__text-item
+    display flex
+    align-items center
+    &:before
+      content ''
+      width 15px
+      height 1px
+      margin-right 10px
+      background #E03B32
+  &__img
+    position absolute
+    bottom 0
+    right 110px
+    width 145px
+    +below(lg)
+      right: 7px;
+    +below(md)
+      display none
+
+.block7
+  display flex
+  flex-wrap wrap
+  margin -15px
+  &__item
+    width calc(40% - 30px)
+    margin 15px
+    padding 28px 100px 28px 50px
+    background-position: bottom right;
+    background-repeat: no-repeat;
+    box-shadow 0 0 20px rgba(0, 0, 0, 0.1)
+    +below(lg)
+      padding-left 20px
+    +below(md)
+      width 100%;
+    +below(xs)
+      background-position: 100% 140%;
+  &__item-big
+    width calc(60% - 30px)
+    +below(lg)
+      width 100%;
+  &__item-title
+    color: #333333;
+    font-size: 18px;
+    line-height: 25px;
+    margin-bottom 8px
+  &__item-text
+    color: #777777;
+    font-size: 15px;
+    line-height: 20px;
+

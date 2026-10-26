@@ -1,0 +1,115 @@
+<div class="form_quiz">
+    <form class="recaptcha-form form_box" id="form_box" action="[[~[[*id]]]]">
+        
+        
+        <input type="hidden" name="recaptcha_token" class="recaptcha-token">
+
+<input type="hidden" name="csrf_token" value="[[+csrf_token]]">
+<input type="hidden" name="form_time" value="[[+form_time]]">
+    <input type="text" name="website" style="display:none">
+        
+        
+        <!-- Вопрос 1 -->
+        <div class="section_form active">
+            <div class="header_form d-flex justify-content-between align-items-center flex-wrap">
+                <div class="title_section">Укажите разделы работ.</div>
+                <div class="question_section">Шаг&nbsp;<span>1 из 3</span></div>
+            </div>
+            <div class="text_status">Готово 0%</div>
+            <div class="status_box">
+                <div class="status"><span style="width: 0;"></span></div>
+            </div>
+            <div class="body_form">
+                <div class="answer-box d-flex flex-wrap justify-content-between align-items-start">
+                    <input name="question1" class="input form-control" type="text" placeholder="" required>
+                    <div class="examples">
+                        Например: земляные, бетонные, КМ, КЖ, ХВС, технологический трубопровод
+                    </div>
+                </div>
+                <div class="button_form d-flex justify-content-between align-items-center">
+                    <div class="div"></div>
+                    <button class="button next_form" disabled="disabled">Далее</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Вопрос 2 -->
+        <div class="section_form">
+            <div class="header_form d-flex justify-content-between align-items-center flex-wrap">
+                <div class="title_section">Опишите характеристики объекта.</div>
+                <div class="question_section">Шаг&nbsp;<span>2 из 3</span></div>
+            </div>
+            <div class="text_status">Готово 33%</div>
+            <div class="status_box">
+                <div class="status"><span style="width: 33%;"></span></div>
+            </div>
+            <div class="body_form">
+                <div class="answer-box d-flex flex-wrap justify-content-between align-items-start">
+                    <input name="question2" class="input form-control" type="text" placeholder="" required>
+                    <div class="examples">
+                        Например: административное здание высотой 5 этажей, объект 5 зданий, длина трубопровода 5 км, надземный, подземный трубопровод
+                    </div>
+                </div>
+                <div class="button_form d-flex justify-content-between align-items-center">
+                    <button class="button prev_form"><span>Назад</span></button>
+                    <button class="button next_form" disabled="disabled">Далее</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Вопрос 3 -->
+        <div class="section_form">
+            <div class="header_form d-flex justify-content-between align-items-center flex-wrap">
+                <div class="title_section">Укажите срок сдачи документации.</div>
+                <div class="question_section">Шаг&nbsp;<span>3 из 3</span></div>
+            </div>
+            <div class="text_status">Готово 66%</div>
+            <div class="status_box">
+                <div class="status"><span style="width: 66%;"></span></div>
+            </div>
+            <div class="body_form">
+                <div class="answer-box d-flex flex-wrap justify-content-between align-items-start">
+                    <input name="question3" class="input form-control" type="text" placeholder="" required>
+                </div>
+                <div class="button_form d-flex justify-content-between align-items-center">
+                    <button class="button prev_form"><span>Назад</span></button>
+                    <button class="button next_form" disabled="disabled">Далее</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Вопрос 4 -->
+        <div class="section_form">
+            <div class="header_form d-flex justify-content-between align-items-center flex-wrap">
+                <div class="title_section">Ваш номер телефона</div>
+                <div class="question_section">&nbsp;<span>&nbsp;</span></div>
+            </div>
+            <div class="text_status">Готово 100%</div>
+            <div class="status_box">
+                <div class="status"><span style="width: 100%;"></span></div>
+            </div>
+            <div class="body_form">
+                <div class="answer-box d-flex flex-wrap justify-content-between align-items-start">
+                    <input name="phone" class="phone input form-control" type="tel" placeholder="+7 (" required>
+                    <input class="callOrderReason" type="hidden" name="reason">
+                    <input class="page" type="hidden" name="page" value="[[~[[*id]]? &scheme=`full`]]">
+                    <input class="goalMetrika" type="hidden" name="goal" value="lead">
+                    <input class="ref_info" name="ref_info" type="hidden" value="">
+                </div>
+                <div class="button_form d-flex justify-content-between align-items-center">
+                    <button class="button prev_form"><span>Назад</span></button>
+                    
+        <div class="form-footer__checkbox" style="display: flex; align-items: center;gap:6px;line-height: 1.2;">
+            <input type="checkbox" name="agree" required> 
+            <label>
+            <span style="color: #777;font-size: 14px;">
+            Я даю согласие на <a href="/politika-konfidenczialnosti/" style="color:#777;font-weight:500;">обработку своих персональных данных</a>
+            </span></label>
+        </div>                    
+                    
+                    <input class="button button_quiz_s" type="submit" value="Отправить">
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

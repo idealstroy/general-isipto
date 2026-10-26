@@ -1,0 +1,76 @@
+[[$header_new]]
+<section class="first-screen-blog" style="background: none;">
+    <div class="container container-first-screen">
+
+[[pdoCrumbs? &tplWrapper = `@CODE <div class="breadcrumbs"><div class="crumbs" itemscope itemtype="https://schema.org/BreadcrumbList">[[+output]]</div></div>` &tplHome = `@CODE <a href="[[+link]]" itemprop="url"><span itemprop="name">Главная</span></a>` &tpl = `@CODE <a href="[[+link]]" itemprop="url"><span itemprop="name">[[+menutitle]]</span></a>` &tplCurrent = `@CODE <span itemprop="name">[[+menutitle]]</span>` &outputSeparator = `` &showHome=`1` &showCurrent=`1` ]]
+ 
+
+</div></section>
+
+<div class="container">
+    <div style="background:rgba(224, 230, 235, 1);border-radius:40px;">
+        <div style="height:24px;"></div>
+        
+        <center>
+        <a href="https://isipto.ru/blog/">
+            <div style="max-width:120px;background:rgba(255, 255, 255, 1);color:rgba(119, 119, 119, 1);padding:5px 15px 5px 15px;border-radius:47px;">Все статьи</div>
+        </a>
+        </center>
+        
+        <div style="height:45px;"></div>
+        
+        <center><h1 style="max-width:790px;font-weight:700;font-size:30px;line-height:32px;">[[*h1]]</h1></center>
+        
+        <div style="height:40px;"></div>
+        
+        <center>
+        [[*image_blog:!empty=`<div class="blog__img" style="max-width:546px;"><img src="[[phpthumbon? &input=`[[*image_blog]]` &options=`w=730&h=475`]]" alt="[[*longtitle]]"></div>`]]
+        </center>
+        
+        
+        <center>
+        <div style="color:rgba(119, 119, 119, 1);">[[*publishedon:date=`%d.%m.%Y`]]</div>
+        </center>
+        
+        <div style="height:16px;"></div>
+        
+    </div>
+</div>
+
+
+<div style="height:40px;"></div>
+
+
+<div class="blog">
+    <div class="container">
+    <div class="row"><div class="blog__content col-lg-8 col-12">
+        
+<div class="blog__text">
+[[*content_text]]<div class="r30"></div>
+<center>
+<a href="https://isipto.ru[[++base_url]]blog/">
+    <button type="button" style="font-weight:600;border:0px; border-radius:47px;padding:5px 15px 5px 15px;background:rgba(225, 237, 253, 1);color:rgba(51, 51, 51, 1);">
+        Все статьи 
+<svg style="margin-left:5px;" xmlns="http://www.w3.org/2000/svg" width="9" height="9" viewBox="0 0 9 9" fill="none">
+<path d="M2.02407 0.944676L7.91343 0.944676M7.91343 0.944676L7.91343 6.83403M7.91343 0.944676L1.04252 7.81559" stroke="#333333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></button>
+</a>
+</center>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="r80"></div>
+
+
+<div class="form-footer overflow">
+  <div class="form-footer__title">Не нашли, что искали?
+    <br> Закажите звонок, обсудим проект</div>[[!AjaxForm? &snippet=`FormIt` &frontend_css=`` &form=`form_footer` &hooks=`FormItSaveForm,bitrix24_hooks` &emailSubject=`Новая заявка ` &emailTpl=`template_form1` &emailTo=`[[+email_to]]` &validate=`fio:required,phone:required` &fieldNames=`fio==Имя,phone==Телефон,page==Страница` &validationErrorMessage=`В форме содержатся ошибки!` &successMessage=`Сообщение успешно отправлено` ]]
+</div>
+
+<div class="r80"></div>
+
+[[$footer_new]]

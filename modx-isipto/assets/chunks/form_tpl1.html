@@ -1,0 +1,46 @@
+<form class="recaptcha-form form_up zakazat_zvonok">
+    
+    
+    <input type="hidden" name="recaptcha_token" class="recaptcha-token">
+
+<input type="hidden" name="csrf_token" value="[[+csrf_token]]">
+<input type="hidden" name="form_time" value="[[+form_time]]">
+    <input type="text" name="website" style="display:none">
+    
+    
+    <input class="callOrderReason" type="hidden" name="reason" value="Заявка - заказ звонка">
+    <input class="page" type="hidden" name="page" value="[[~[[*id]]? &scheme=`full`]]">
+    <input class="goalMetrika" type="hidden" name="goal" value="lead">
+    <input class="ref_info" name="ref_info" type="hidden" value="">
+
+    <input class="site-message" type="text" name="name" value="">
+    <input class="site-message" type="text" name="firstname" value="">
+    <input class="site-message" type="text" name="lastname" value="">
+
+    <div class="block">
+        <input class="name_up input_up pole_zz" type="text" name="fio" value="" placeholder="Имя*" required>
+    </div>
+    <div class="block">
+        <input class="phone_up input_up pole_zz" type="tel" name="phone" value="" placeholder="Телефон*" required>
+    </div>
+    <div class="block">
+        <input class="email_up input_up pole_zz" type="email" name="email" value=""  placeholder="Электронная почта">
+    </div>
+    <br>
+
+<div class="form-footer__button-box d-flex flex-wrap flex-sm-nowrap align-items-center justify-content-between frame_zz">
+        <div class="form-footer__checkbox" style="display: flex; align-items: center;gap:6px;line-height: 1.2;">
+            <input type="checkbox" name="agree" required> 
+            <label>
+            <span style="color: #777;font-size: 14px;">
+            Я даю согласие на <a href="/politika-konfidenczialnosti/" style="text-decoration: underline;font-weight:500;">обработку своих персональных данных</a>
+            </span></label>
+        </div>
+        <input class="btn btn_weight-normal form-footer__btn" type="submit" value="Отправить">
+    </div>
+
+
+            
+    </div>
+
+</form>

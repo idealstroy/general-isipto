@@ -1,0 +1,24 @@
+<form class="recaptcha-form form-footer__form">
+    <input type="hidden" name="recaptcha_token" class="recaptcha-token">
+    
+    <input class="callOrderReason" type="hidden" name="reason" value="Не нашли, что искали? Закажите звонок, обсудим проект">
+    <input class="page" type="hidden" name="page" value="[[~[[*id]]? &scheme=`full`]]">
+    <input class="goalMetrika" type="hidden" name="goal" value="button-gift">
+    <input class="ref_info" name="ref_info" type="hidden" value="">
+
+    <input class="site-message" type="text" name="name" value="">
+    <input class="site-message" type="text" name="firstname" value="">
+    <input class="site-message" type="text" name="lastname" value="">
+
+    <div class="form-footer__input-box d-flex flex-wrap flex-sm-nowrap">
+        <input class="form-footer__input" type="text" placeholder="Имя" name="fio">
+        <input class="form-footer__input" type="text" placeholder="Телефон" name="phone">
+    </div>
+    <div class="form-footer__button-box d-flex flex-wrap flex-sm-nowrap align-items-center justify-content-between">
+        <div class="form-footer__confid-box d-flex align-items-center">
+            <svg class="form-footer__confid-icon" xmlns="https://www.w3.org/2000/svg"><use xlink:href="../assets/css/img/confid.svg#confid"></use></svg>
+            <div class="form-footer__confid-text">Нажимая на кнопку, вы даете согласие на обработку своих персональных данных</div>
+        </div>
+        <input class="btn btn_weight-normal form-footer__btn krasnaya_knopka" type="submit" value="Заказать звонок" onclick="ym(48630242,'reachGoal','form-footer');" onsubmit="handleSubmit()">
+    </div>
+</form>

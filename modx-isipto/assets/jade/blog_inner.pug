@@ -1,0 +1,42 @@
+extends template
+block append var
+    -var blog = true
+    -var inner = true
+    -var form_footer = false
+block content
+    section.first-screen-blog
+        .container.container-first-screen
+            +crumbs()
+            .first-screen-blog__title Блог
+
+    .blog
+        .container
+            .row
+                .blog__content.col-lg-8.col-12
+                    h1.blog__title [[*h1]]
+                    .d-flex.justify-content-center.align-items-center
+                        .blog__content-info.d-flex
+                            .blog__content-article-box.d-flex.align-items-center
+                                .blog__content-article-icon
+                                    svg(xmlns="https://www.w3.org/2000/svg")
+                                        use(xlink:href="../assets/css/img/blog/icon/sprite.svg#article")
+                                .blog__content-article-text Статья
+                            .blog__content-article-box.d-flex.align-items-center
+                                .blog__content-article-icon
+                                    svg(xmlns="https://www.w3.org/2000/svg")
+                                        use(xlink:href="../assets/css/img/blog/icon/sprite.svg#date")
+                                .blog__content-article-text [[*publishedon:date=`%d.%m.%Y`]]
+                            a.blog__content-article-box.d-flex.align-items-center(href="[[++base_url]]/blog/")
+                                .blog__content-article-icon
+                                    svg(xmlns="https://www.w3.org/2000/svg")
+                                        use(xlink:href="../assets/css/img/blog/icon/sprite.svg#blog")
+                                .blog__content-article-text Все статьи
+                    .blog__text
+                        | [[*image_blog:!empty=`<div class="blog__img"><img src="[[phpthumbon? &input=`[[*image_blog]]` &options=`w=730&h=475`]]" alt="[[*longtitle]]"></div>`]]
+                        | [[*content_text]]
+                        .r30
+                        a.review-btn.d-flex.justify-content-end(href="[[++base_url]]/blog/")
+                            .review-btn__title Смотреть все статьи
+                            .review-btn__icon-box
+                                svg.review-btn__icon(xmlns="http://www.w3.org/2000/svg")
+                                    use(xlink:href="/assets/css/img/review/review.svg#review")

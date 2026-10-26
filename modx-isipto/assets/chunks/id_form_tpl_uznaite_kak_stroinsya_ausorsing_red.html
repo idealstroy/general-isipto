@@ -1,0 +1,54 @@
+
+<form class="recaptcha-form form-new__form">
+    
+    <input type="hidden" name="recaptcha_token" class="recaptcha-token">
+    
+    
+    <input class="callOrderReason" type="hidden" name="reason" value="Заявка - расчет стоимости">
+    <input class="page" type="hidden" name="page" value="[[~[[*id]]? &scheme=`full`]]">
+    <input class="goalMetrika" type="hidden" name="goal" value="button-gift">
+    <input class="ref_info" name="ref_info" type="hidden" value="">
+
+      <input class="site-message" type="text" name="name" value="">
+  <input class="site-message" type="text" name="firstname" value="">
+  <input class="site-message" type="text" name="lastname" value="">
+
+<style>
+@media (min-width: 720px) {
+    .inp{
+   display:  flex;
+   padding-right: 10px
+}
+}
+</style>
+  
+<div class="inp">
+      <input class="form-new__form-input" style="max-width:540px; width:100%;background: rgba(61, 74, 97, 0.08);border:0;" type="text" placeholder="Имя" name="fio">
+      <div style="width:8px"></div>
+      <input class="form-new__form-input" style="max-width:540px; width:100%;background: rgba(61, 74, 97, 0.08);border:0;" type="tel" placeholder="Телефон" name="phone">
+</div>
+  <div class="r20"></div>
+
+<div class="none-mobile">
+        <p style="margin-left:19px;"><span style="margin-left:-20px;position:absolute;color:#E03B32;font-size:26px;">•</span> Расчитаем количество специалистов на ваш объем</p>     
+        <p style="margin-left:19px;"><span style="margin-left:-20px;position:absolute;color:#E03B32;font-size:26px;">•</span> Поясним, как документально оформляется  сдача </p>
+        <p style="margin-left:19px;"><span style="margin-left:-20px;position:absolute;color:#E03B32;font-size:26px;">•</span> Расскажем, как строится процесс на стройплощадке</p>
+</div>  
+  <div class="r20"></div>
+  
+    <center>
+  
+  <div class="form-footer__button-box d-flex flex-wrap flex-sm-nowrap align-items-center justify-content-between" style="width:100%;background: rgba(61, 74, 97, 0.08);"" >
+        <div class="form-footer__checkbox" style="display: flex; align-items: center;gap:6px;line-height: 1.2;">
+            <input type="checkbox" name="agree" required> 
+            <label>
+            <span style="color: #777;font-size: 14px;">
+            Я даю согласие на <a href="/politika-konfidenczialnosti/" style="color:#777;font-weight:500;">обработку своих персональных данных</a>
+            </span></label>
+        </div>
+        <input class="btn btn_weight-normal form-footer__btn krasnaya_knopka" type="submit" value="Заказать звонок">
+  </div>
+
+    </center>
+    
+</form>

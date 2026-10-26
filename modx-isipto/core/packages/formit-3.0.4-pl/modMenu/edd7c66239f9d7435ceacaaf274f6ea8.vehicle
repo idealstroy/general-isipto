@@ -1,0 +1,50 @@
+<?php return array (
+  'preserve_keys' => true,
+  'update_object' => true,
+  'unique_key' => 'text',
+  'related_objects' => 
+  array (
+    'Action' => 
+    array (
+      'e8d0ab2c0afae8a1b699351d2ecd5357' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 
+        array (
+          0 => 'namespace',
+          1 => 'controller',
+        ),
+        'class' => 'modAction',
+        'object' => '{"id":1,"namespace":"formit","controller":"index","haslayout":1,"lang_topics":"formit:mgr","assets":"","help_url":"","parent":0}',
+        'guid' => '18862e42b9a78637609dfa48809b9075',
+        'native_key' => 1,
+        'signature' => '9ea20fea6a4604a7d369e86b29854118',
+      ),
+    ),
+  ),
+  'related_object_attributes' => 
+  array (
+    'Action' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 
+      array (
+        0 => 'namespace',
+        1 => 'controller',
+      ),
+    ),
+  ),
+  'namespace' => 'formit',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => 'fa61688d5ca3af6b5b5dcfb71f0c124f',
+  'package' => 'modx',
+  'class' => 'modMenu',
+  'signature' => 'edd7c66239f9d7435ceacaaf274f6ea8',
+  'native_key' => 'formit',
+  'object' => '{"text":"formit","parent":"components","action":1,"description":"formit.menu_desc","icon":"","menuindex":0,"params":"","handler":"","permissions":"","namespace":"core"}',
+);

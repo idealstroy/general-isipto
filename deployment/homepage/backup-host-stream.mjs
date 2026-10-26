@@ -1,0 +1,42 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import {spawn} from 'node:child_process';
+import {createHash} from 'node:crypto';
+import {pipeline} from 'node:stream/promises';
+import {Transform} from 'node:stream';
+const mode=process.argv[2];
+if(!['files','database'].includes(mode))throw Error('Expected files or database');
+const root=process.cwd(), dir=path.resolve(root,process.argv[3]||'_backups/hosting-readonly-20261022');
+const backupRoot=path.resolve(root,'_backups')+path.sep;
+if(!dir.startsWith(backupRoot))throw Error('Backup destination must stay inside workspace _backups');
+fs.mkdirSync(dir,{recursive:true});
+const name=mode==='files'?'hosting-files.tar.gz':'hosting-database.sql.gz';
+const destination=path.join(dir,name),partial=destination+'.partial';
+if(fs.existsSync(destination)||fs.existsSync(partial))throw Error('Backup destination already exists');
+const free=fs.statfsSync(root).bavail*fs.statfsSync(root).bsize;
+if(free<2*1024**3)throw Error('Less than 2 GiB free');
+const hash=createHash('sha256');let bytes=0;
+// Independent 256 MiB gzip members avoid the host's obsolete gzip 1.4 on a >4 GiB tar stream.
+const compressor=`import sys,zlib\ni=sys.stdin\no=sys.stdout\nwhile True:\n b=i.read(1048576)\n if not b: break\n c=zlib.compressobj(1,zlib.DEFLATED,31)\n n=0\n while b:\n  o.write(c.compress(b))\n  n+=len(b)\n  if n>=268435456: break\n  b=i.read(1048576)\n o.write(c.flush())\no.flush()\n`;
+const pythonCode=`exec(bytes(bytearray([${[...Buffer.from(compressor)].join(',')}])))`;
+const command=mode==='files'?`set -o pipefail; tar -C /home/i/idealstroy/isipto.ru/public_html -cf - . | python -c '${pythonCode}'`:'ISIPTO_BACKUP_MODE=database php';
+const child=spawn('ssh',['-o','BatchMode=yes','-o','StrictHostKeyChecking=yes','-o','ConnectTimeout=15','-o','ServerAliveInterval=30','-o','IdentitiesOnly=yes','-i',path.join(root,'.ssh/isipto_transfer_ed25519_v3'),'idealstroy_1@idealstroy.beget.tech',command],{windowsHide:true});
+child.stderr.pipe(fs.createWriteStream(destination+'.log',{flags:'wx'}));
+const exited=new Promise((resolve,reject)=>{child.on('error',reject);child.on('close',resolve);});
+child.stdin.on('error',()=>{});
+if(mode==='files')child.stdin.end();
+else fs.createReadStream(path.join(root,'deployment/homepage/backup-host-stream.php')).pipe(child.stdin);
+const timer=setInterval(()=>console.log(JSON.stringify({mode,MiB:Math.round(bytes/1024**2)})),15000);
+try{
+ await pipeline(child.stdout,new Transform({transform(chunk,encoding,callback){bytes+=chunk.length;if(bytes>free-1024**3){child.kill();callback(Error('Keeping 1 GiB disk reserve'));return;}hash.update(chunk);callback(null,chunk);}}),fs.createWriteStream(partial,{flags:'wx'}));
+ const exitCode=await exited;
+ const log=fs.readFileSync(destination+'.log','utf8');
+ const changedOnly=mode==='files'&&exitCode===1&&log.split(/\r?\n/).filter(x=>x&&!x.startsWith('Welcome to ')).every(x=>/^tar: .*: file changed as we read it$/.test(x));
+ if(exitCode!==0&&!changedOnly)throw Error('Remote backup exited '+exitCode+'; see private log; partial is not an approved backup');
+ const header=Buffer.alloc(3),fd=fs.openSync(partial,'r');fs.readSync(fd,header,0,3,0);fs.closeSync(fd);
+ if(header.toString('hex')!=='1f8b08')throw Error('Output is not gzip; partial is not a backup');
+ fs.renameSync(partial,destination);
+ const result={file:name,bytes,sha256:hash.digest('hex'),completedAt:new Date().toISOString(),remoteWrites:false,liveFileChangeWarning:changedOnly,consistency:'Hot read-only export; MyISAM tables and live files are not an atomic snapshot'};
+ fs.writeFileSync(destination+'.json',JSON.stringify(result,null,2));
+ console.log(JSON.stringify(result));
+}finally{clearInterval(timer);}

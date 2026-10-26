@@ -1,0 +1,312 @@
+extends template
+block append var
+    -var inner=true
+block content
+    link(rel="stylesheet" type="text/css" href=assets + "css/techaudit.css?v=2.00000009")
+    .first-screen
+        .container
+            .row
+                .first-screen-left.col-md-8.col-12
+                    h1.title.title_big.title_big-bold [[*h1]]
+                    .first-screen-left__subtitle Анализируем и сопоставляем данные нормативной, проектной, исполнительной документации. Выявляем отклонения от принятых проектных решений и сроков сдачи объекта.
+                .r20.d-block.d-md-none
+                .first-screen-right.d-flex.flex-wrap.align-items-center.justify-content-end.col-md-4.col-12
+                    a.btn.d-flex.align-items-center.justify-content-center.btn-modal(href="#form_up" rel="nofollow" data-reason="Рассчитать строительный аудит" data-header="Рассчитать строительный аудит") Рассчитать строительный аудит
+                    .first-screen-right__price от 850 рублей
+            .r20
+            .r20
+            .row
+                a.col-lg-4.col-12.btn-modal(href="#form_up" rel="nofollow" data-reason="Расчет стоимости" data-header="Расчет стоимости")
+                    .develop-item.d-flex.flex-column.justify-content-between
+                        div
+                            .develop-item__caption Аудит проектной и рабочей документации
+                            .develop-item__content
+                                p Проверка проектно-сметной документации и стоимости строительных работ;
+                                p Оценка фактически выполненных работ в сравнении с проектно-сметной документацией; анализ исполнительной документации
+                        .develop-button Расчет стоимости
+                a.col-lg-4.col-12.btn-modal(href="#form_up" rel="nofollow" data-reason="Расчет стоимости" data-header="Расчет стоимости")
+                    .develop-item.d-flex.flex-column.justify-content-between
+                        div
+                            .develop-item__caption Аудит исполнительной документации
+                            .develop-item__content
+                                p По выполненным объемам работ на соответствие выполненным работам и  требованиям нормативной документации.
+                                p Состав и порядок ведения ИД при осуществлении строительства, реконструкции, капитального ремонта объектов капитального строительства определен ФС по экологическому, технологическому и атомному надзору (РД-11-02-2006).
+                        .develop-button Расчет стоимости
+                a.col-lg-4.col-12.btn-modal(href="#form_up" rel="nofollow" data-reason="Расчет стоимости" data-header="Расчет стоимости")
+                    .develop-item.d-flex.flex-column.justify-content-between
+                        div
+                            .develop-item__caption Оценим полноту и качество исполнительной документации
+                            .develop-item__content
+                                p Проверка наличия и правильности оформления исполнительной технической документации (в том числе актов скрытых работ, актов промежуточой приемки ответственных конструкций, исполнительной геодезической съемки, общих специальных журналов работ)
+                        .develop-button Расчет стоимости
+
+
+
+    .who-audit
+        .container
+            //-.d-flex.flex-wrap
+                .col-md-4.col-sm-6.col-12.vantages-item.d-flex.align-items-center
+                    .vantages-item__svg
+                        svg(xmlns="http://www.w3.org/2000/svg")
+                            use(xlink:href="/assets/css/img/techaudit/vantages.svg#vantages1")
+                    .vantages-item__content
+                        .vantages-item__caption Выстраиваем коммуникацию
+                        .vantages-item__text между всеми участниками строительства
+                .col-md-4.col-sm-6.col-12.vantages-item.d-flex.align-items-center
+                    .vantages-item__svg
+                        svg(xmlns="http://www.w3.org/2000/svg")
+                            use(xlink:href="/assets/css/img/techaudit/vantages.svg#vantages2")
+                    .vantages-item__content
+                        .vantages-item__caption Выстраиваем коммуникацию
+                        .vantages-item__text между всеми участниками строительства
+                .col-md-4.col-sm-6.col-12.vantages-item.d-flex.align-items-center
+                    .vantages-item__svg
+                        svg(xmlns="http://www.w3.org/2000/svg")
+                            use(xlink:href="/assets/css/img/techaudit/vantages.svg#vantages3")
+                    .vantages-item__content
+                        .vantages-item__caption Выстраиваем коммуникацию
+                        .vantages-item__text между всеми участниками строительства
+                .col-md-4.col-sm-6.col-12.vantages-item.d-flex.align-items-center
+                    .vantages-item__svg
+                        svg(xmlns="http://www.w3.org/2000/svg")
+                            use(xlink:href="/assets/css/img/techaudit/vantages.svg#vantages4")
+                    .vantages-item__content
+                        .vantages-item__caption Выстраиваем коммуникацию
+                        .vantages-item__text между всеми участниками строительства
+                .col-md-4.col-sm-6.col-12.vantages-item.d-flex.align-items-center
+                    .vantages-item__svg
+                        svg(xmlns="http://www.w3.org/2000/svg")
+                            use(xlink:href="/assets/css/img/techaudit/vantages.svg#vantages5")
+                    .vantages-item__content
+                        .vantages-item__caption Выстраиваем коммуникацию
+                        .vantages-item__text между всеми участниками строительства
+                .col-md-4.col-sm-6.col-12.vantages-item.d-flex.align-items-center
+                    .vantages-item__svg
+                        svg(xmlns="http://www.w3.org/2000/svg")
+                            use(xlink:href="/assets/css/img/techaudit/vantages.svg#vantages6")
+                    .vantages-item__content
+                        .vantages-item__caption Выстраиваем коммуникацию
+                        .vantages-item__text между всеми участниками строительства
+            .r10
+            .r20
+            .r20.d-lg-block.d-none
+            .who-audit__title.title Кому необходим аудит?
+            .row
+                .who-audit-item.col-md-4.col-12
+                    .who-audit-content
+                        .d-flex.justify-content-between
+                            .who-audit-content__title Инвесторам-заказчикам
+                            .who-audit-content__svg
+                                svg(xmlns="http://www.w3.org/2000/svg")
+                                    use(xlink:href="/assets/css/img/checkmark.svg#checkmark")
+                        .who-audit-content__text Необходимо для подтверждения объемов выполненных дополнительных работ, а также докажем их обоснованность.
+                        a.who-audit-content__button.develop-button.btn-modal(href="#form_up" rel="nofollow" data-reason="Расчет стоимости" data-header="Расчет стоимости") Расчет стоимости
+                    a.who-audit-item__signature.d-block.btn-modal(href="#form_up" rel="nofollow" data-reason="Необходима консультация?" data-header="Необходима консультация?")
+                        span Необходима консультация?
+                .who-audit-item.col-md-4.col-12
+                    .who-audit-content
+                        .d-flex.justify-content-between
+                            .who-audit-content__title Строительным компаниям
+                            .who-audit-content__svg
+                                svg(xmlns="http://www.w3.org/2000/svg")
+                                    use(xlink:href="/assets/css/img/checkmark.svg#checkmark")
+                        .who-audit-content__text Для подтверждения объемов выполненных работ. Обоснуем целесообразность дополнительных.
+                        a.who-audit-content__button.develop-button.btn-modal(href="#form_up" rel="nofollow" data-reason="Расчет стоимости" data-header="Расчет стоимости") Расчет стоимости
+                    a.who-audit-item__signature.d-block.btn-modal(href="#form_up" rel="nofollow" data-reason="Необходима консультация?" data-header="Необходима консультация?")
+                        span Необходима консультация?
+                .who-audit-item.col-md-4.col-12
+                    .who-audit-content
+                        .d-flex.justify-content-between
+                            .who-audit-content__title При изменении объемов работ
+                            .who-audit-content__svg
+                                svg(xmlns="http://www.w3.org/2000/svg")
+                                    use(xlink:href="/assets/css/img/checkmark.svg#checkmark")
+                        .who-audit-content__text Обоснование дополнительных затрат для заказчика. Решение спорных моментов.<br>
+                        a.who-audit-content__button.develop-button.btn-modal(href="#form_up" rel="nofollow" data-reason="Расчет стоимости" data-header="Расчет стоимости") Расчет стоимости
+                    a.who-audit-item__signature.d-block.btn-modal(href="#form_up" rel="nofollow" data-target="#form_up" data-reason="Необходима консультация?" data-header="Необходима консультация?")
+                        span Необходима консультация?
+
+    .answers
+        .container
+            .r10
+            .r20
+            .r20.d-lg-block.d-none
+            .row
+                .col-md-6.col-12.title.title_white Предоставим ответы на такие вопросы как:
+            .row
+                .col-sm-6.col-12
+                    .answers-item.d-flex
+                        .answers-item__svg
+                            svg(xmlns="http://www.w3.org/2000/svg")
+                                use(xlink:href="/assets/css/img/checkmark.svg#checkmark")
+                        .answers-item__content
+                            .answers-item__title Верна ли первичная исполнительная техническая документация?
+                            .answers-item__text Исполнительных схем инструментальной съемки смонтированных конструкций, частей объекта, сооружений и инженерных коммуникаций
+                .col-sm-6.col-12
+                    .answers-item.d-flex
+                        .answers-item__svg
+                            svg(xmlns="http://www.w3.org/2000/svg")
+                                use(xlink:href="/assets/css/img/checkmark.svg#checkmark")
+                        .answers-item__content
+                            .answers-item__title Верно ли оформлены акты приемки скрытых работ и ответственных конструкций?
+                            .answers-item__text Исполнительных схем инструментальной съемки смонтированных конструкций, частей объекта, сооружений и инженерных коммуникаций
+                .col-sm-6.col-12
+                    .answers-item.d-flex
+                        .answers-item__svg
+                            svg(xmlns="http://www.w3.org/2000/svg")
+                                use(xlink:href="/assets/css/img/checkmark.svg#checkmark")
+                        .answers-item__content
+                            .answers-item__title Верно ли оформлены протоколы испытаний?
+                            .answers-item__text Исполнительных схем инструментальной съемки смонтированных конструкций, частей объекта, сооружений и инженерных коммуникаций
+                .col-sm-6.col-12
+                    .answers-item.d-flex
+                        .answers-item__svg
+                            svg(xmlns="http://www.w3.org/2000/svg")
+                                use(xlink:href="/assets/css/img/checkmark.svg#checkmark")
+                        .answers-item__content
+                            .answers-item__title Верно ли оформлены общие и специальные журналы работ?
+                            .answers-item__text Исполнительных схем инструментальной съемки смонтированных конструкций, частей объекта, сооружений и инженерных коммуникаций
+            .r10
+            .r20
+            .r20.d-lg-block.d-none
+
+    .analysis
+        .container
+            .r10
+            .r20
+            .r20.d-lg-block.d-none
+            .title
+                .row
+                    .col-lg-6.col-12
+                        div Подготовка исполнительной документации на виды работ
+                    .col-lg-6.col-12.d-flex.justify-content-lg-end.justify-content-start
+                        a.who-audit-item__signature.btn-modal(href="#form_up" rel="nofollow" data-reason="Необходима консультация?" data-header="Необходима консультация?")
+                            span Необходима консультация?
+            .services-box [[getImageList? &tvname=`services_desktop` &tpl=`services_desktop` &docid=`[[*id]]` &limit=`0`]]
+
+    .what-works
+        .container
+            .r10
+            .r20
+            .r20.d-lg-block.d-none
+            .what-works__title.title Проведем тщательный анализ:
+            .row
+                .col-lg-4.col-md-6.col-12
+                    .what-works-item.d-flex.align-items-center.justify-content-between
+                        .what-works-item__text Анализ проектной документации
+                        .what-works-item__svg
+                            svg(xmlns="http://www.w3.org/2000/svg")
+                                use(xlink:href="/assets/css/img/checkmark.svg#checkmark")
+                .col-lg-4.col-md-6.col-12
+                    .what-works-item.d-flex.align-items-center.justify-content-between
+                        .what-works-item__text Анализ исполнительной документации
+                        .what-works-item__svg
+                            svg(xmlns="http://www.w3.org/2000/svg")
+                                use(xlink:href="/assets/css/img/checkmark.svg#checkmark")
+                .col-lg-4.col-md-6.col-12
+                    .what-works-item.d-flex.align-items-center.justify-content-between
+                        .what-works-item__text Проверка полноты документации
+                        .what-works-item__svg
+                            svg(xmlns="http://www.w3.org/2000/svg")
+                                use(xlink:href="/assets/css/img/checkmark.svg#checkmark")
+                .col-lg-4.col-md-6.col-12
+                    .what-works-item.d-flex.align-items-center.justify-content-between
+                        .what-works-item__text Изучаем объект проводимых работ
+                        .what-works-item__svg
+                            svg(xmlns="http://www.w3.org/2000/svg")
+                                use(xlink:href="/assets/css/img/checkmark.svg#checkmark")
+                .col-lg-4.col-md-6.col-12
+                    .what-works-item.d-flex.align-items-center.justify-content-between
+                        .what-works-item__text Составляем<br> отчет
+                        .what-works-item__svg
+                            svg(xmlns="http://www.w3.org/2000/svg")
+                                use(xlink:href="/assets/css/img/checkmark.svg#checkmark")
+                .col-lg-4.col-md-6.col-12
+                    .what-works-item.d-flex.align-items-center.justify-content-between
+                        .what-works-item__text Составляем<br> рекомендации
+                        .what-works-item__svg
+                            svg(xmlns="http://www.w3.org/2000/svg")
+                                use(xlink:href="/assets/css/img/checkmark.svg#checkmark")
+
+    .answers
+        .container
+            .r10
+            .r20
+            .r20.d-lg-block.d-none
+            .title.title_white Что в результате получите?
+            .result-box.d-flex.flex-wrap
+                .result-box__svg
+                    svg(xmlns="http://www.w3.org/2000/svg")
+                        use(xlink:href="/assets/css/img/techaudit/result.svg#result")
+                .result-box__svg.result-box__svg-icon
+                    svg(xmlns="http://www.w3.org/2000/svg")
+                        use(xlink:href="/assets/css/img/checkmark.svg#checkmark")
+                .result-box__content
+                    .result-box__title Вы получите развернутый технический отчет, содержащий перечень отсутствующей, не полной или некачественно выполненной документации.
+                    .result-box__text Исполнительных схем инструментальной съемки смонтированных конструкций, частей объекта, сооружений и инженерных коммуникаций
+            .r10
+            .r20
+            .r20.d-lg-block.d-none
+
+    .customers_background
+        .container
+            .r10
+            .r20
+            .r20.d-lg-block.d-none
+            .title [[pdoField? &id=`1` &field=`title_team`]]
+            #ajax-team.our_team_slideshow.row.flex-lg-wrap.flex-nowrap [[getImageList? &tvname=`our_team` &tpl=`our_team` &docid=`1` &limit=`6`]]
+                .btn.btn_weight-normal.btn_center.btn_bg-transparent.btn_team.btn_bg-transparent-no-hover.btn_border-black.show(onclick="ym(48630242, 'reachGoal', 'okompanii-specy-open'); fbq('track', 'InitiateCheckout'); return true;")
+                    .btn__text Показать еще
+                    .btn__icon
+
+    .r10
+    .r20
+    .r20.d-lg-block.d-none
+    .container
+        .our-clients
+            .our-clients__maps-box
+                img.our-clients__maps.image-load(data-src="../assets/css/img/main/maps.jpg" alt="Более 450 клиентов по России")
+            .our-clients__content
+                .our-clients__title Более <span>450 клиентов</span> по России
+                .our-clients__subtitle В их числе
+                ul.our-clients__ul
+                    li.our-clients__li Нефтеперерабатывающие  заводы
+                    li.our-clients__li Нефтяные месторождения
+                    li.our-clients__li Трубопроводы
+                    li.our-clients__li Заводы химического производства
+                    li.our-clients__li Автомагистрали и железные дороги
+                    li.our-clients__li Оборонные объекты
+                    li.our-clients__li Рудники
+    .r10
+    .r20
+    .r20.d-lg-block.d-none
+
+    .r20
+    .r20
+    .container
+        .bl1
+            .bl1__item-box
+                .bl1__item
+                    img.bl1__item-img.image-load(data-src="../assets/css/img/main/maps1.jpg" alt="Закажите исполнительную документацию со скидкой 25%")
+                    .bl1__item-content
+                        .bl1__item-title 100 инженеров ПТО
+                        .bl1__item-text Вылетают на объекты по России
+            .bl1__item-box
+                .bl1__item
+                    img.bl1__item-img.image-load(data-src="../assets/css/img/main/maps2.jpg" alt="Закажите исполнительную документацию со скидкой 25%")
+                    .bl1__item-content
+                        .bl1__item-title 29 разделов исполнительной
+                        .bl1__item-text Подготовим и сдадим заказчику
+            .bl1__item-box
+                .bl1__item
+                    img.bl1__item-img.image-load(data-src="../assets/css/img/main/maps3.jpg" alt="Закажите исполнительную документацию со скидкой 25%")
+                    .bl1__item-content
+                        .bl1__item-title Аттестованные инженеры
+                        .bl1__item-text Все инженеры имеют удостоверения
+    .r20
+    .r20
+
+    //-section.question
+        .container
+            h3.title_question [[pdoField? &id=`1` &field=`title_question`]]
+            | [[getImageList? &tvname=`questions` &tpl=`questions` &docid=`1` &limit=`0`]] <br><br>

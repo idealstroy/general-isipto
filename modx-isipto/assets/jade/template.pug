@@ -1,0 +1,902 @@
+mixin crumbs()
+    | [[pdoCrumbs?
+    | &tplWrapper = `@CODE <div class="breadcrumbs"><div class="crumbs"> [[+output]] </div></div>`
+    | &tplHome = `@CODE <a href="[[+link]]"><span>Главная</span></a>`
+    | &tpl = `@CODE <a href="[[+link]]"><span>[[+menutitle]]</span></a>`
+    | &tplCurrent = `@CODE <span>[[+menutitle]]</span>`
+    | &outputSeparator = ``
+    | &showHome=`1`
+    | &showCurrent=`1`
+    | ]]
+
+
+
+//- Пример циклов
+mixin array(amount)
+    - for (var i = 1; i < amount+1; i++)
+    each val in ["1","2","3","4","5"]
+        .item= val
+block var
+    -var title = "Заголовок" //- нужен для быстрого понимания, какой файл к какому макету относится
+    -var inner = false
+    -var index = false
+    -var index_main = false
+    -var ppr = false
+    -var type_jobs = false
+    -var inner_no_name = false
+    -var vacancies = false
+    -var techkarty_smety = false
+    -var video_script = false
+    -var blog = false
+    -var about_company = false
+    -var assets = "../assets/" //- ../assets/
+    -var min = ".min" //- .min
+    -var img = assets+"css/img/"
+    -var id_object = false
+    -var tenders = false
+    -var outsourcing = false
+    -var JivoSite = true
+    -var form_footer = true
+    -var tabcolor = "#000" //- перекрашивание вкладки в мобильных браузерах, Яндекс.Браузере и Vivaldi
+    -var video = false
+
+//- if index
+    | [[!ab]]
+
+doctype html
+html(lang="ru")
+    block head
+        head
+            meta(http-equiv="X-UA-Compatible" content="IE=edge")
+            meta(name='viewport', content='width=device-width, initial-scale=1, minimum-scale=1')
+            meta(charset='utf-8')
+
+            if index_main
+                | [[*canonical:ne=``:then=`<link rel="canonical" href="[[*canonical]]" />`:else=`<link rel="canonical" href="https://isipto.ru[[++site_url]]" />`]]
+                | [[*og_url:ne=``:then=`<meta property="og:url" content="[[*og_url]]" />`:else=`<meta property="og:url" content="https://isipto.ru[[++site_url]]" />`]]
+            else
+                | [[*canonical:ne=``:then=`<link rel="canonical" href="[[*canonical]]" />`:else=`<link rel="canonical" href="https://isipto.ru[[++site_url]][[~[[*id]]]]" />`]]
+                | [[*og_url:ne=``:then=`<meta property="og:url" content="[[*og_url]]" />`:else=`<meta property="og:url" content="https://isipto.ru[[++site_url]][[~[[*id]]]]" />`]]
+
+            if inner_no_name
+                title [[*seotitle:empty=`[[*longtitle]]`]]
+
+            if inner
+                title [[*seotitle:is=``:then=`[[*longtitle]]`:else=`[[*seotitle]]`]]
+            else
+                title [[*seotitle:is=``:then=`[[*longtitle]]`:else=`[[*seotitle]]`]]
+
+            base(href="[[++site_url]]")
+
+            <meta property="og:locale" content="ru_RU" />
+            <meta property="og:type" content="[[*og_type]]" />
+            <meta property="og:title" content="[[*og_title]]" />
+            <meta property="og:description" content="[[*og_description]]" />
+            <meta name="robots" content="index, follow">
+            | [[*og_site_name:ne=``:then=`<meta property="og:site_name" content="[[*og_site_name]]" />`:else=`<meta property="og:site_name" content="[[++site_name]]" />`]]
+
+            meta(name='description', content='[[*seodescription:empty=`[[*longtitle]]`]]')
+            meta(name='keywords', content='[[*seokeywords]]')
+            meta(property='og:image', content='[[++site_url]]assets/css/img/ogimage.png')
+            meta(name="theme-color" content=tabcolor)
+            <meta name="yandex-verification" content="ac43b6d0dd7f3ea9" />
+            <meta name="google-site-verification" content="jpV6ZS1sfo2LdWXaKLHiFsyZ6RgqH-WkxAQWqrv_9So">
+
+            <link rel="icon" href="/assets/css/img/favicon.svg" type="image/x-icon">
+            <link rel="preconnect" href="https://fonts.gstatic.com">
+            <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+            link(rel="stylesheet" type="text/css" href=assets + "css/style.css?v=7.0000000021")
+
+            if JivoSite
+                |    [[!MinifyX?
+                |        &minifyJs=`1`
+                |        &jsTpl=`<script src="[[+file]]" defer></script>`
+                |        &jsSources=`fancybox.js,cookie.js,script.js,svgxuse.js,observer.js,maskedinput.js`
+                |    ]]
+            else
+                |    [[!MinifyX?
+                |        &minifyJs=`1`
+                |        &jsTpl=`<script src="[[+file]]" defer></script>`
+                |        &jsSources=`fancybox.js,cookie.js,script.js,svgxuse.js,observer.js,maskedinput.js,externals-no-jivosite.js`
+                |    ]]
+
+
+            |{ignore}
+            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-118591216-1"></script>
+
+            <script>
+            |  window.dataLayer = window.dataLayer || [];
+            |  function gtag(){dataLayer.push(arguments);}
+            |  gtag('js', new Date());
+
+            |  gtag('config', 'UA-118591216-1');
+
+            </script>
+            <!-- Yandex.Metrika counter --> <script type="text/javascript" > (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)}; m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)}) (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym"); ym(48630242, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true }); </script> <noscript><div><img src="https://mc.yandex.ru/watch/48630242" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!-- /Yandex.Metrika counter -->
+            |{/ignore}
+
+    body
+        block header
+            | [[pdoField? &id=`1` &field=`email_to` &toPlaceholder=`email_to`]]
+            | [[pdoField? &id=`1` &field=`email` &toPlaceholder=`email`]]
+            | [[pdoField? &id=`1` &field=`phone` &toPlaceholder=`phone`]]
+            | [[pdoField? &id=`1` &field=`address` &toPlaceholder=`address`]]
+
+            header.animated
+                .contacts_header_box
+                    .contacts_header.container.d-flex.align-items-center.justify-content-between.flex-sm-wrap
+                        .logo-box
+                            a.logo(href="[[++base_url]]")
+                        .address_header.item_header.align-items-center.d-none.d-lg-flex
+                            svg.d-sm-block.d-none(width="25" height="19" xmlns="https://www.w3.org/2000/svg")
+                                use(xlink:href="../assets/css/img/contacts/contacts.svg#contacts4")
+                            .address_header [[$address]]
+                                .hint_city
+                                    .hint_city_content Выбрать город?
+                                    .hint_button
+                                        a.button.button_small.cityselect.hint_change_city.btn-modal(href="#city" rel="nofollow") Да
+                                        .hint_button_close.button.button_small Нет
+                                        i.corner
+                        a.email_header.item_header.d-none.d-xl-flex.align-items-center(href="mailto:[[++email]]" onclick="ym(48630242, 'reachGoal', 'main-header-mail'); fbq('track', 'InitiateCheckout'); return true;")
+                            svg(width="25" height="19" xmlns="https://www.w3.org/2000/svg")
+                                use(xlink:href="../assets/css/img/contacts/contacts.svg#contacts2")
+                            span [[++email]]
+                        .right_header
+                            .right_header_box.d-flex.align-items-center.justify-content-between
+                                .phone_header.item_header.d-md-flex.align-items-center.d-none
+                                    div
+                                        <a id="phone_roistat_[[++key]]" href="tel:+79177303453" onclick="ym(48630242, 'reachGoal', 'main-header-phone'); fbq('track', 'InitiateCheckout'); return true;"><span class="phone_roistat_[[++key]]">8 917 730 34 53</span></a>
+                                        .free_rf Бесплатно по России
+                                a.btn.btn-modal.d-md-block.d-none(href="#form_up" rel="nofollow" data-reason="Перезвоните мне" data-header="Перезвоните мне" onclick="ym(48630242, 'reachGoal', 'main-header-lead'); fbq('track', 'InitiateCheckout'); return true;")
+                                    span Перезвоните мне
+
+                                a.btn.d-md-none(class="[[++key]]_roistat-phone-tel" href="tel:+79177303453" onclick="ym(48630242, 'reachGoal', 'main-header-phone'); fbq('track', 'InitiateCheckout'); return true;")
+                                    span Позвонить
+                .menu_box.d-lg-flex.d-none
+                    .container
+                        nav.d-flex.justify-content-between.align-items-center
+                            .submenu-box.d-flex.align-items-center
+                                a.active.menu_box_item(href="[[++base_url]]vedenie-id/")
+                                    span Ведение исполнительной документации
+                                .submenu.submenu_services
+                                    .corner
+                                    a(href="[[++base_url]]vedenie-id/")
+                                        span Ведение исполнительной документации
+                                    a(href="[[++base_url]]vedenie-id/podgotovka-ispolnitelnoy-dokumentacii/")
+                                        span Подготовка исполнительной документации
+                                    a(href="[[++base_url]]vedenie-id/ispolnitelnaya-dokumentacziya-obektov/")
+                                        span Исполнительная документация объекта
+
+                            a.menu_box_item(href="[[++base_url]]autsorsing-pto/")
+                                span Аутсорсинг ПТО
+
+                            .submenu-box.d-flex.align-items-center
+                                a.active.menu_box_item(href="[[++base_url]]razrabotka-ppr/")
+                                    span Разработка ППР
+                                .submenu.submenu_services
+                                    .corner
+                                    a(href="[[++base_url]]razrabotka-ppr/")
+                                        span Разработка ППР, ППРв, ППРпс
+                                    a(href="[[++base_url]]razrabotka-ppr/techkarty/")
+                                        span Технологические карты
+
+                            .submenu-box.d-flex.align-items-center
+                                a.menu_box_item(href="[[++base_url]]uslugi/")
+                                    span Услуги
+                                .submenu.submenu_services
+                                    .corner
+                                    a(href="[[++base_url]]uslugi/ispolnitelnaya-dokumentacziya-na-truboprovodyi/")
+                                        span Исполнительная на трубопроводы
+                                    a(href="[[++base_url]]uslugi/ispolnitelnaya-dokumentacziya-na-metallokonstrukczii/")
+                                        span Исполнительная на металлоконструкции
+                                    a(href="[[++base_url]]uslugi/ispolnitelnaya-dokumentacziya-na-zemlyanyie-rabotyi/")
+                                        span Исполнительная на земляные работы
+                                    a(href="[[++base_url]]uslugi/ispolnitelnaya-na-zhelezobetonnyie-konstrukczii/")
+                                        span Исполнительная на железобетонные конструкции
+                                    a(href="[[++base_url]]uslugi/ispolnitelnaya-na-vodoprovod-i-kanalizacziyu/")
+                                        span Исполнительная на водопровод и канализацию
+                                    a(href="[[++base_url]]uslugi/ispolnitelnaya-na-elektromontazhnyie-rabotyi/")
+                                        span Исполнительная на электромонтажные работы
+                                    a(href="[[++base_url]]uslugi/ispolnitelnaya-na-avtomatizacziyu-a-atx-ak/")
+                                        span Исполнительная на автоматизацию
+                                    a(href="[[++base_url]]uslugi/ispolnitelnaya-na-oxrannuyu-pozharnuyu-signalizacziyu/")
+                                        span Исполнительная на пожарную и охранную сигнализацию
+                                    a(href="[[++base_url]]uslugi/ispolnitelnaya-na-rezervuaryi/")
+                                        span Исполнительная на резервуары
+                                    a(href="[[++base_url]]uslugi/geodezicheskie-raboti/")
+                                        span Геодезические работы
+                                    a(href="[[++base_url]]uslugi/otoplenie-ventilyaciya-i-kondicionirovanie/")
+                                        span Исполнительная по отоплению, вентиляции и кондиционированию
+                                    a(href="[[++base_url]]uslugi/stroitelnyij-audit/")
+                                        span Аудит исполнительной документации
+                                    a(href="[[++base_url]]uslugi/smety/")
+                                        span Сметы
+
+                            .submenu-box.d-flex.align-items-center
+                                a.menu_box_item(href="[[++base_url]]o-kompanii/")
+                                    span О компании
+                                .submenu
+                                    .corner
+                                    a(href="[[++base_url]]o-kompanii/")
+                                        span О компании
+                                    a(href="[[++base_url]]o-kompanii#about_company")
+                                        span Специалисты
+                                    a(href="[[++base_url]]o-kompanii/uchastvuem-v-tenderah/")
+                                        span Участвуем в тендерах
+                                    a(href="[[++base_url]]o-kompanii/otzyivyi/")
+                                        span Отзывы
+                                    a(href="https://obuchenie.isipto.ru[[++base_url]]")
+                                        span Обучение
+                                    a(href="[[++base_url]]o-kompanii/inzheneryi-pto-vakansii/")
+                                        span Вакансии
+                                    a(href="[[++base_url]]o-kompanii/chastyie-voprosyi/")
+                                        span Часто задаваемые вопросы
+
+                            a.menu_box_item(href="[[++base_url]]kontaktyi/")
+                                span Контакты
+
+                .container.d-lg-none.d-flex
+                    .menu_container
+                        .d-flex.align-items-center.justify-content-between
+                            div(class="menu_button navbar-toggle collapsed" role="navigation" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false")
+                                .btn-mobile-menu
+                                    span(class="toggle")
+                                        i
+                                        i
+                                        i
+                            .address_header.item_header.d-flex.align-items-center
+                                svg(width="25" height="19" xmlns="https://www.w3.org/2000/svg")
+                                    use(xlink:href="../assets/css/img/contacts/contacts.svg#contacts4")
+                                .address_header [[$address]]
+
+                            a.email_header.item_header(href="mailto:[[++email]]" onclick="ym(48630242, 'reachGoal', 'main-header-mail'); fbq('track', 'InitiateCheckout'); return true;")
+                                svg(width="25" height="15" xmlns="https://www.w3.org/2000/svg")
+                                    use(xlink:href="../assets/css/img/contacts/contacts.svg#contacts2")
+                        .nav_mobile.justify-content-between.align-items-center
+                            .mobile-menu
+                                .mobile-menu-nav.d-flex.flex-wrap.justify-content-between.align-items-center
+                                    .toogle_menu
+                                        nav.row.flex-wrap.justify-content-between.align-items-center
+                                            .menu-block__item
+                                                a.menu-block__item-link(href="[[++base_url]]vedenie-id/")
+                                                    span Ведение исполнительной документации
+                                                .menu-block-svg.d-flex.align-items-center.justify-content-end
+                                                    .menu-block-svg__bg
+                                                .submenu
+                                                    a.submenu_black(href="[[++base_url]]vedenie-id/podgotovka-ispolnitelnoy-dokumentacii/")
+                                                        span Подготовка исполнительной документации
+                                                    a.submenu_black(href="[[++base_url]]vedenie-id/ispolnitelnaya-dokumentacziya-obektov/")
+                                                        span Исполнительная документация объекта
+
+                                            a(href="[[++base_url]]autsorsing-pto/")
+                                                span Аутсорсинг ПТО
+
+                                            .menu-block__item
+                                                a.menu-block__item-link(href="[[++base_url]]razrabotka-ppr/")
+                                                    span Разработка ППР, ППРв, ППРпс
+                                                .menu-block-svg.d-flex.align-items-center.justify-content-end
+                                                    .menu-block-svg__bg
+                                                .submenu
+                                                    a.submenu_black(href="[[++base_url]]razrabotka-ppr/techkarty/")
+                                                        span Технологические карты
+
+                                            .menu-block__item
+                                                a.menu-block__item-link(href="[[++base_url]]uslugi/")
+                                                    span Услуги
+                                                .menu-block-svg.d-flex.align-items-center.justify-content-end
+                                                    .menu-block-svg__bg
+                                                .submenu
+                                                    a(href="[[++base_url]]uslugi/ispolnitelnaya-dokumentacziya-na-truboprovodyi/")
+                                                        span Исполнительная на трубопроводы
+                                                    a(href="[[++base_url]]uslugi/ispolnitelnaya-dokumentacziya-na-metallokonstrukczii/")
+                                                        span Исполнительная на металлоконструкции
+                                                    a(href="[[++base_url]]uslugi/ispolnitelnaya-dokumentacziya-na-zemlyanyie-rabotyi/")
+                                                        span Исполнительная на земляные работы
+                                                    a(href="[[++base_url]]uslugi/ispolnitelnaya-na-zhelezobetonnyie-konstrukczii/")
+                                                        span Исполнительная на железобетонные конструкции
+                                                    a(href="[[++base_url]]uslugi/ispolnitelnaya-na-vodoprovod-i-kanalizacziyu/")
+                                                        span Исполнительная на водопровод и канализацию
+                                                    a(href="[[++base_url]]uslugi/ispolnitelnaya-na-elektromontazhnyie-rabotyi/")
+                                                        span Исполнительная на электромонтажные работы
+                                                    a(href="[[++base_url]]uslugi/ispolnitelnaya-na-avtomatizacziyu-a-atx-ak/")
+                                                        span Исполнительная на автоматизацию
+                                                    a(href="[[++base_url]]uslugi/ispolnitelnaya-na-oxrannuyu-pozharnuyu-signalizacziyu/")
+                                                        span Исполнительная на пожарную и охранную сигнализацию
+                                                    a(href="[[++base_url]]uslugi/ispolnitelnaya-na-rezervuaryi/")
+                                                        span Исполнительная на резервуары
+                                                    a(href="[[++base_url]]uslugi/geodezicheskie-raboti/")
+                                                        span Геодезические работы
+                                                    a(href="[[++base_url]]uslugi/otoplenie-ventilyaciya-i-kondicionirovanie/")
+                                                        span Исполнительная по отоплению, вентиляции и кондиционированию
+                                                    a(href="[[++base_url]]uslugi/stroitelnyij-audit/")
+                                                        span Аудит исполнительной документации
+                                                    a(href="[[++base_url]]uslugi/smety/")
+                                                        span Сметы
+                                            .menu-block__item
+                                                a.menu-block__item-link(href="[[++base_url]]o-kompanii/")
+                                                    span О компании
+                                                .menu-block-svg.d-flex.align-items-center.justify-content-end
+                                                    .menu-block-svg__bg
+                                                .submenu
+                                                    a(href="[[++base_url]]o-kompanii#about_company")
+                                                        span Специалисты
+                                                    a(href="[[++base_url]]o-kompanii/uchastvuem-v-tenderah/")
+                                                        span Участвуем в тендерах
+                                                    a(href="[[++base_url]]o-kompanii/otzyivyi/")
+                                                        span Отзывы
+                                                    a(href="https://obuchenie.isipto.ru[[++base_url]]")
+                                                        span Обучение
+                                                    a(href="[[++base_url]]o-kompanii/inzheneryi-pto-vakansii/")
+                                                        span Вакансии
+                                                    a(href="[[++base_url]]o-kompanii/chastyie-voprosyi/")
+                                                        span Часто задаваемые вопросы
+                                            a(href="[[++base_url]]kontaktyi/")
+                                                span Контакты
+
+        block mobilemenu
+        block content
+        block footer
+            if form_footer
+                .r10
+                .r20
+                .r20.d-lg-block.d-none
+                .form-footer
+                    .form-footer__title Не нашли, что искали? <br> Закажите звонок, обсудим проект
+                    | [[!AjaxForm?
+                    | &snippet=`FormIt`
+                    | &frontend_css=``
+                    | &form=`form_footer`
+                    | &hooks=`email,FormItSaveForm,roistat_hooks`
+                    | &emailSubject=`Новая заявка `
+                    | &emailTpl=`template_form1`
+                    | &emailTo=`[[+email_to]]`
+                    | &validate=`fio:required,phone:required`
+                    | &fieldNames=`fio==Имя,phone==Телефон,page==Страница`
+                    | &validationErrorMessage=`В форме содержатся ошибки!`
+                    | &successMessage=`Сообщение успешно отправлено`
+                    | ]]
+                .r10
+                .r20
+                .r20.d-lg-block.d-none
+
+            footer
+                .container
+                    .footer__box
+                        .footer__left
+                            a.footer__left-logo-href(href="/")
+                                svg.footer__left-logo(xmlns="http://www.w3.org/2000/svg")
+                                    use(xlink:href="/assets/css/img/sprite-main.svg#logo_footer")
+                            .footer__left-info
+                                a.footer__left-info-item.footer__left-info-confid(href="[[++base_url]]politika-konfidenczialnosti/") Политика конфиденциальности
+                                a.footer__left-info-item.footer__left-info-copyright © 2018-2020 все права защищены
+                        .footer__center
+                            .footer__center-left
+                                a.footer__center-item(href="[[++base_url]]o-kompanii/") О компании
+                                a.footer__center-item(href="[[++base_url]]o-kompanii/otzyivyi/") Отзывы
+                                a.footer__center-item(href="[[++base_url]]kontaktyi/") Контакты
+                            .footer__center-right
+                                a.footer__center-item(href="[[++base_url]]") Исполнительная документация
+                                //-a.footer__center-item(href="") Восстановление исполнительной документации
+                                a.footer__center-item(href="[[++base_url]]razrabotka-ppr/") Проекты производства работ - ППР
+                                a.footer__center-item(href="[[++base_url]]blog/") Блог
+                        .footer__right
+                            a.footer__right-phone(id="phone_roistat_footer_[[++key]]" href="tel:" onclick="ym(48630242, 'reachGoal', 'footer-phone'); fbq('track', 'InitiateCheckout'); return true;") 8 800 350 23 98
+                            .footer__right-time-work-box
+                                .footer__right-time-work
+                                    span.footer__right-time-days Пн-Пт
+                                    span.footer__right-time-time 9.00-18.00
+                                .footer__right-time-work
+                                    span.footer__right-time-days Сб-Вс
+                                    span.footer__right-time-time 9.00-18.00
+
+        block modal
+            if index
+                .form-modal.form-modal_md#form_quiz
+                    .form-modal__title.callOrderHeader Заказать звонок
+                    .modal-body
+                        .modal-body__text
+                            #my-content
+                                | [[!AjaxForm?
+                                | &snippet=`FormIt`
+                                | &frontend_css=``
+                                | &form=`form_quiz`
+                                | &hooks=`email,FormItSaveForm,roistat_hooks_quiz`
+                                | &emailSubject=`Новая заявка (квиз)`
+                                | &emailTpl=`template_quiz`
+                                | &emailTo=`[[+email_to]]`
+                                | &validate=`phone:required`
+                                | &fieldNames=`phone==Телефон`
+                                | &emailMultiSeparator=`<br />`
+                                | &validationErrorMessage=`В форме содержатся ошибки!`
+                                | &successMessage=`Сообщение успешно отправлено`
+                                | ]]
+
+                //-.form-modal.industry-modal.form-modal_md#industry1
+                    .form-modal__title.callOrderHeader Нефтяная и газовая промышленность
+                    .modal-body
+                        .modal-body__text
+                            .industry
+                                .industry-img.d-flex.flex-wrap.justify-content-between
+                                    img(src="#" data-src="/assets/css/img/first-screen/1/1.jpg" alt="Нефтяная и газовая промышленность")
+                                    img(src="#" data-src="/assets/css/img/first-screen/1/2.jpg" alt="Нефтяная и газовая промышленность")
+                                .industry-content.row
+                                    .industry-content__text.col-12.col-sm-8
+                                        p.
+                                            Особенность подготовки исполнительной документации на объектах нефтегазовой отрасли заключается в высокой ответственности: повышенное внимание к пожарной безопасности, большой объем особо опасных работ, используются дорогие материалы. Поэтому установлены строгие нормативные требования, заказчики требуют полный, подробный пакет исполнительной документации и устанавливают строгий контроль.
+                                    .industry-content__info.col-12.col-sm-4
+                                        .industry-content__img.industry-img
+                                            img(src="#" data-src="[[phpthumbon? &input=`/assets/images/team/7.jpg` &options=`h=144&w=144`]]" alt="Ахметзянов Менир Вализянович")
+                                            .industry-content__experience Опыт в области инженерии
+                                                span.d-block 18 лет
+                                        .industry-content__fio Ахметзянов Менир Вализянович
+                                        .industry-content__profess Технический директор
+                                .industry-vantages.d-flex.flex-wrap
+                                    .industry-vantages-item.col-12.col-lg-4
+                                        .industry-vantages-item__title 5&nbsp;
+                                            span лет
+                                        .industry-vantages-item__text Минимальный опыт наших инженеров в Нефтегазовой области
+                                    .industry-vantages-item.col-12.col-lg-4
+                                        .industry-vantages-item__title 32&nbsp;
+                                            span инженера
+                                        .industry-vantages-item__text Находятся на сегодняшний день на объектах
+                                    .industry-vantages-item.col-12.col-lg-4
+                                        .industry-vantages-item__title 17&nbsp;
+                                            span инженеров
+                                        .industry-vantages-item__text В офисе на подготовке исполнительной документации
+                                .first-screen-info.d-flex.justify-content-center
+                                    a.btn.btn-modal(href="#form_up" rel="nofollow" data-reason="Рассчитать стоимость" data-header="Рассчитать стоимость") Рассчитать стоимость
+
+                //-.form-modal.industry-modal.form-modal_md#industry2
+                    .form-modal__title.callOrderHeader Промышленное производство
+                    .modal-body
+                        .modal-body__text
+                            .industry
+                                .industry-img.d-flex.flex-wrap.justify-content-between
+                                    img(src="#" data-src="/assets/css/img/first-screen/2/1.jpg" alt="Промышленное производство")
+                                    img(src="#" data-src="/assets/css/img/first-screen/2/2.jpg" alt="Промышленное производство")
+                                .industry-content.row
+                                    .industry-content__text.col-12.col-sm-8
+                                        p.
+                                            Особенность подготовки исполнительной документации на объектах промышленного производства заключается в жестких требованиях к объектам данного типа. Из за больших объемов особо опасных работ, особых требований к соблюдению норм и технологий строительства, пожарной и химической безопасности, требуют полный и подробный пакет исполнительной документации. Ведут строгий контроль использования материалов заложенных в проект.
+                                    .industry-content__info.col-12.col-sm-4
+                                        .industry-content__img.industry-img
+                                            img(src="#" data-src="[[phpthumbon? &input=`/assets/images/team/2.jpg` &options=`h=144&w=144`]]" alt="")
+                                            .industry-content__experience Опыт в области инженерии
+                                                span.d-block 14 лет
+                                        .industry-content__fio Фаритов Марат
+                                        .industry-content__profess Ведущий инженер ПТО
+                                .industry-vantages.d-flex.flex-wrap
+                                    .industry-vantages-item.col-12.col-lg-4
+                                        .industry-vantages-item__title 5&nbsp;
+                                            span лет
+                                        .industry-vantages-item__text Минимальный опыт наших инженеров в Нефтегазовой области
+                                    .industry-vantages-item.col-12.col-lg-4
+                                        .industry-vantages-item__title 11&nbsp;
+                                            span инженеров
+                                        .industry-vantages-item__text Находятся на сегодняшний день на объектах
+                                    .industry-vantages-item.col-12.col-lg-4
+                                        .industry-vantages-item__title 17&nbsp;
+                                            span инженеров
+                                        .industry-vantages-item__text В офисе на подготовке исполнительной документации
+                                .first-screen-info.d-flex.justify-content-center
+                                    a.btn.btn-modal(href="#form_up" rel="nofollow" data-reason="Рассчитать стоимость" data-header="Рассчитать стоимость") Рассчитать стоимость
+
+                //-.form-modal.industry-modal.form-modal_md#industry3
+                    .form-modal__title.callOrderHeader Строительство путей сообщения
+                    .modal-body
+                        .modal-body__text
+                            .industry
+                                .industry-img.d-flex.flex-wrap.justify-content-between
+                                    img(src="#" data-src="/assets/css/img/first-screen/3/1.jpg" alt="Строительство путей сообщения")
+                                    img(src="#" data-src="/assets/css/img/first-screen/3/2.jpg" alt="Строительство путей сообщения")
+                                .industry-content.row
+                                    .industry-content__text.col-12.col-sm-8
+                                        p.
+                                            Отличительная черта исполнительной документации на объектах строительства путей сообщения заключается  в присутствии специфических разделов документации, в числе которых контактная сеть электроснабжения для ЖД, системы водоотвода с проезжей части автомобильных дорог и другие. Поэтому состав исполнительной документации отличается от других отраслей. Документацию принимает технадзор в отрасли строительства путей сообщения.
+                                    .industry-content__info.col-12.col-sm-4
+                                        .industry-content__img.industry-img
+                                            img(src="#" data-src="[[phpthumbon? &input=`/assets/images/team/8.jpg` &options=`h=144&w=144`]]" alt="")
+                                            .industry-content__experience Опыт в области инженерии
+                                                span.d-block 15 лет
+                                        .industry-content__fio Михайлов Александр
+                                        .industry-content__profess Ведущий инженер ПТО
+                                .industry-vantages.d-flex.flex-wrap
+                                    .industry-vantages-item.col-12.col-lg-4
+                                        .industry-vantages-item__title 5&nbsp;
+                                            span лет
+                                        .industry-vantages-item__text Минимальный опыт наших инженеров в Нефтегазовой области
+                                    .industry-vantages-item.col-12.col-lg-4
+                                        .industry-vantages-item__title 7&nbsp;
+                                            span инженеров
+                                        .industry-vantages-item__text Находятся на сегодняшний день на объектах
+                                    .industry-vantages-item.col-12.col-lg-4
+                                        .industry-vantages-item__title 17&nbsp;
+                                            span инженеров
+                                        .industry-vantages-item__text В офисе на подготовке исполнительной документации
+                                .first-screen-info.d-flex.justify-content-center
+                                    a.btn.btn-modal(href="#form_up" rel="nofollow" data-reason="Рассчитать стоимость" data-header="Рассчитать стоимость") Рассчитать стоимость
+
+                //-.form-modal.industry-modal.form-modal_md#industry4
+                    .form-modal__title.callOrderHeader Гражданское строительство
+                    .modal-body
+                        .modal-body__text
+                            .industry
+                                .industry-img.d-flex.flex-wrap.justify-content-between
+                                    img(src="#" data-src="/assets/css/img/first-screen/4/1.jpg" alt="Гражданское строительство")
+                                    img(src="#" data-src="/assets/css/img/first-screen/4/2.jpg" alt="Гражданское строительство")
+                                .industry-content.row
+                                    .industry-content__text.col-12.col-sm-8
+                                        p.
+                                            В гражданском строительстве требования к исполнительной документации мягче. Особо опасных работ значительно меньше, чем в нефтегазовой или промышленной отрасли, поэтому перечень исполнительной документации для подготовки меньше.
+                                    .industry-content__info.col-12.col-sm-4
+                                        .industry-content__img.industry-img
+                                            img(src="#" data-src="[[phpthumbon? &input=`/assets/images/team/9.jpg` &options=`h=144&w=144`]]" alt="")
+                                            .industry-content__experience Опыт в области инженерии
+                                                span.d-block 9 лет
+                                        .industry-content__fio Муртазин Ильдар
+                                        .industry-content__profess Ведущий инженер ПТО
+                                .industry-vantages.d-flex.flex-wrap
+                                    .industry-vantages-item.col-12.col-lg-4
+                                        .industry-vantages-item__title 5&nbsp;
+                                            span лет
+                                        .industry-vantages-item__text Минимальный опыт наших инженеров в Нефтегазовой области
+                                    .industry-vantages-item.col-12.col-lg-4
+                                        .industry-vantages-item__title 9&nbsp;
+                                            span инженеров
+                                        .industry-vantages-item__text Находятся на сегодняшний день на объектах
+                                    .industry-vantages-item.col-12.col-lg-4
+                                        .industry-vantages-item__title 17&nbsp;
+                                            span инженеров
+                                        .industry-vantages-item__text В офисе на подготовке исполнительной документации
+                                .first-screen-info.d-flex.justify-content-center
+                                    a.btn.btn-modal(href="#form_up" rel="nofollow" data-reason="Рассчитать стоимость" data-header="Рассчитать стоимость") Рассчитать стоимость
+
+            //-.modal.fade#form_calculate(role="dialog" tabindex='-1')
+                .modal-dialog.modal-md
+                    .modal-content
+                        .modal-header
+                            .modal-title.title_up.callOrderHeader Рассчитать стоимость
+                            button.close(data-dismiss="modal") &times;
+                        .modal-body
+                            .modal-text
+                                | [[!AjaxForm?
+                                | &snippet=`FormIt`
+                                | &frontend_css=``
+                                | &form=`form_tpl3`
+                                | &preHooks=`Formit2AjaxUpload`
+                                | &hooks=`AjaxUpload2Formit,AjaxUploadAttachments,email,FormItSaveForm,roistat_hooks`
+                                | &ajaxuploadFieldname=`image`
+                                | &ajaxuploadTarget=`/images/user/`
+                                | &ajaxuploadUid=`image`
+                                | &emailSubject=`Новая заявка`
+                                | &emailTpl=`template_form3`
+                                | &emailTo=`[[+email_to]]`
+                                | &validate=`fio:required,phone:required`
+                                | &fieldNames=`fio==Имя,phone==Телефон,page==Страница`
+                                | &validationErrorMessage=`В форме содержатся ошибки!`
+                                | &successMessage=`Сообщение успешно отправлено`
+                                | ]]
+
+
+            //-.modal.fade#form_up(role="dialog" tabindex='-1')
+                .modal-dialog.modal-sm
+                    .modal-content
+                        .modal-header
+                            .modal-title.title_up.callOrderHeader Заказать звонок
+                            button.close(data-dismiss="modal") &times;
+                        .modal-body
+                            .modal-text
+                                | [[!AjaxForm?
+                                | &snippet=`FormIt`
+                                | &frontend_css=``
+                                | &form=`form_tpl1`
+                                | &hooks=`email,FormItSaveForm,roistat_hooks`
+                                | &emailSubject=`Новая заявка`
+                                | &emailTpl=`template_form1`
+                                | &emailTo=`[[+email_to]]`
+                                | &validate=`fio:required,phone:required,name:blank,firstname:blank,lastname:blank`
+                                | &fieldNames=`fio==Имя,phone==Телефон,page==Страница`
+                                | &validationErrorMessage=`В форме содержатся ошибки!`
+                                | &successMessage=`Сообщение успешно отправлено`
+                                | ]]
+            .form-modal.form_up#form_up
+                .form-modal__title.callOrderHeader Заказать звонок
+                .modal-body
+                    .modal-body__text
+                        | [[!AjaxForm?
+                        | &snippet=`FormIt`
+                        | &frontend_css=``
+                        | &form=`form_tpl1`
+                        | &hooks=`email,FormItSaveForm,roistat_hooks`
+                        | &emailSubject=`Новая заявка`
+                        | &emailTpl=`template_form1`
+                        | &emailTo=`[[+email_to]]`
+                        | &validate=`fio:required,phone:required,name:blank,firstname:blank,lastname:blank`
+                        | &fieldNames=`fio==Имя,phone==Телефон,page==Страница`
+                        | &validationErrorMessage=`В форме содержатся ошибки!`
+                        | &successMessage=`Сообщение успешно отправлено`
+                        | ]]
+
+
+
+            //-.modal.fade#form-success(role="dialog" tabindex='-1')
+                .modal-dialog.modal-lg
+                    .modal-content
+                        .modal-header
+                            .modal-title.title_up Спасибо, что выбрали нашу компанию!
+                            button.close(data-dismiss="modal") &times;
+                        .modal-body
+                            .modal-text
+                                .form-modal__success
+                                    //-.form-modal__text Спасибо, что выбрали нашу компанию!
+                                    //-iframe(src='https://www.youtube.com/embed/s-OhRvSBf5A', frameborder='0', allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture', allowfullscreen='')
+                                    //-.form-modal__text(style="margin-top: 20px;font-size: 1.05rem") Посмотрите видео эксурсию по нашему офису, пока ожидаете звонка специалиста.
+                                    //-svg(xlink:width="38" height="42" xmlns="http://www.w3.org/2000/svg")
+                                        use(href="../assets/css/img/success.svg#success")
+                                        .form-modal__text Ожидайте звонка<br> специалиста.
+
+            .form-modal.form-modal_md#acceptModal
+                noindex
+                    .form-modal__title.callOrderHeader Согласие на обработку персональных данных
+                    .modal-body
+                        .modal-body__text [[pdoField? &id=`[[++site_start]]` &field=`politikaAccept`]]
+            .form-modal.form-modal_md#politikaModal
+                noindex
+                    .form-modal__title.callOrderHeader Политика конфиденциальности
+                    .modal-body
+                        .modal-body__text [[pdoField? &id=`[[++site_start]]` &field=`politikaConfidency`]]
+
+            | [[!*id:is=`[[++site_start]]`:then=`[[$city1]]`:else=`[[$city2]]`]]
+
+        block addition_css
+            if outsourcing
+                link(rel="stylesheet" type="text/css" href=assets + "css/outsourcing.css?v=1.0")
+
+            if inner
+                link(rel="stylesheet" type="text/css" href=assets + "css/inner.css?v=1.0")
+
+            if ppr
+                link(rel="stylesheet" type="text/css" href=assets + "css/semantic.css")
+                link(rel="stylesheet" type="text/css" href=assets + "css/ppr.css?v=2.000000010")
+
+            if techkarty_smety
+                link(rel="stylesheet" type="text/css" href=assets + "css/techkarty_smety.css")
+
+            if vacancies
+                link(rel="stylesheet" type="text/css" href=assets + "css/vacancies.css")
+
+            if type_jobs
+                link(rel="stylesheet" type="text/css" href=assets + "css/type_jobs.css?v=2.00000004")
+
+            if blog
+                link(rel="stylesheet" type="text/css" href=assets + "css/blog.css")
+
+            if about_company
+                link(rel="stylesheet" type="text/css" href=assets + "css/about_company.css?v=1.0")
+
+            if id_object
+                link(rel="stylesheet" type="text/css" href=assets + "css/id_object.css")
+
+            if tenders
+                link(rel="stylesheet" type="text/css" href=assets + "css/tenders.css")
+
+        block scripts
+            script(type="text/javascript" src="/jquery.min.js")
+            |{ignore}
+            <script type="bogus" class="js-whatsapp-message-container">Ответьте на мои вопросы. Обращение номер:  {roistat_visit}</script>
+            |{/ignore}
+            | [[+MinifyX.javascript]]
+
+            if map
+                <script src="https://api-maps.yandex.ru/2.1/?apikey=a4aa48a2-43bc-49dc-a6f5-85d2e407b725&lang=ru_RU" type="text/javascript"></script>
+                script(src=assets + "js/ymapstouch" + min + ".js")
+                script
+                    include ../js/map.js
+
+            if ppr
+                script(type="text/javascript" src=assets + "js/semantic.min.js" defer)
+                script(type="text/javascript" src=assets + "js/ppr.min.js" defer)
+
+            //- old
+                <script src="//st.yagla.ru/js/y.c.js?h=480a10709730c69062f3c16bdb5dc11b" defer></script>
+            div.
+                {ignore}
+                <script>
+                $(document).on('af_complete', function(event, response) {
+                    var fields = {
+                        fio: "ваше имя",
+                        phone: "ваш телефон",
+                        email: "ваш email",
+                    };
+                    if (response.success) {
+                        var goal = response.form[0].getElementsByClassName('goalMetrika')[0].value;
+                        $.fancybox.close();
+                        var url = "https://isipto.ru[[++base_url]]spasibo";
+                        $(location).attr('href',url);
+
+                        // yaglaaction('zayavka');
+                     fbq('track', 'Lead');
+                        // yaCounter48630242.reachGoal(goal);
+                        gtag('event', goal, {'event_category': 'category'});
+                    } else {
+                        for (var prop in response.data) {
+                            AjaxForm.Message.error("Заполните поле '"+fields[prop]+"'");
+                        }
+                    }
+                    response.message='';
+                });
+                </script>
+
+                <script>
+                    (function(w, d, s, h, id) {
+                        w.roistatProjectId = id; w.roistatHost = h;
+                        var p = d.location.protocol == "https:" ? "https://" : "http://";
+                        var u = /^.*roistat_visit=[^;]+(.*)?$/.test(d.cookie) ? "/dist/module.js" : "/api/site/1.0/"+id+"/init?referrer="+encodeURIComponent(d.location.href);
+                        var js = d.createElement(s); js.charset="UTF-8"; js.async = 1; js.src = p+h+u; var js2 = d.getElementsByTagName(s)[0]; js2.parentNode.insertBefore(js, js2);
+                    })(window, document, 'script', 'cloud.roistat.com', '9eeaab6aa1565e2aebc52d9060fef0f8');
+
+                    <!-- BEGIN WHATSAPP INTEGRATION WITH ROISTAT -->
+                   if ($(window).width() < '992'){
+                        (function() {
+                            if (window.roistat !== undefined) {
+                                handler();
+                            } else {
+                                var pastCallback = typeof window.onRoistatAllModulesLoaded === "function" ? window.onRoistatAllModulesLoaded : null;
+                                window.onRoistatAllModulesLoaded = function () {
+                                    if (pastCallback !== null) {
+                                        pastCallback();
+                                    }
+                                    handler();
+                                };
+                            }
+
+                           function handler() {
+                                function init() {
+                                    appendMessageToLinks();
+
+                                    var delays = [1000, 5000, 15000];
+                                    setTimeout(function func(i) {
+                                        if (i === undefined) {
+                                            i = 0;
+                                        }
+                                        appendMessageToLinks();
+                                        i++;
+                                        if (typeof delays[i] !== 'undefined') {
+                                            setTimeout(func, delays[i], i);
+                                        }
+                                    }, delays[0]);
+                                }
+
+                                function replaceQueryParam(url, param, value) {
+                                    var explodedUrl = url.split('?');
+                                    var baseUrl = explodedUrl[0] || '';
+                                    var query = '?' + (explodedUrl[1] || '');
+                                    var regex = new RegExp("([?;&])" + param + "[^&;]*[;&]?");
+                                    var queryWithoutParameter = query.replace(regex, "$1").replace(/&$/, '');
+                                    return baseUrl + (queryWithoutParameter.length > 2 ? queryWithoutParameter  + '&' : '?') + (value ? param + "=" + value : '');
+                                }
+
+                                function appendMessageToLinks() {
+                                    var message = document.querySelector('.js-whatsapp-message-container').text;
+                                    var text = message.replace(/{roistat_visit}/g, window.roistatGetCookie('roistat_visit'));
+                                    var linkElements = document.querySelectorAll('[href*="//wa.me"], [href*="//api.whatsapp.com/send"], [href*="//web.whatsapp.com/send"], [href^="whatsapp://send"]');
+                                    for (var elementKey in linkElements) {
+                                        if (linkElements.hasOwnProperty(elementKey)) {
+                                            var element = linkElements[elementKey];
+                                            element.href = replaceQueryParam(element.href, 'text', text);
+                                        }
+                                    }
+                                }
+                                if (document.readyState === 'loading') {
+                                    document.addEventListener('DOMContentLoaded', init);
+                                } else {
+                                    init();
+                                }
+                            }
+                        })();
+                    }
+                    <!-- END WHATSAPP INTEGRATION WITH ROISTAT -->
+
+                    setTimeout(function () {
+                        !function(){var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src="https://vk.com/js/api/openapi.js?162",t.onload=function(){VK.Retargeting.Init("VK-RTRG-437462-dGegZ"),VK.Retargeting.Hit()},document.head.appendChild(t)}();
+
+                        !function(f,b,e,v,n,t,s)
+                        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+                            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+                            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+                            n.queue=[];t=b.createElement(e);t.async=!0;
+                            t.src=v;s=b.getElementsByTagName(e)[0];
+                            s.parentNode.insertBefore(t,s)}(window, document,'script',
+                            'https://connect.facebook.net/en_US/fbevents.js');
+                        fbq('init', '1981738315455848');
+                        fbq('track', 'PageView');
+                        fbq('track', 'ViewContent');
+
+                        var _tmr = window._tmr || (window._tmr = []);
+                        _tmr.push({id: "3087260", type: "pageView", start: (new Date()).getTime(), pid: "USER_ID"});
+                        (function (d, w, id) {
+                            if (d.getElementById(id)) return;
+                            var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true; ts.id = id;
+                            ts.src = "https://top-fwz1.mail.ru/js/code.js";
+                            var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);};
+                            if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
+                        })(document, window, "topmailru-code");
+                    }, 3000);
+
+                    (function(){ document.jivositeloaded=0;var widget_id = 'N7qegDIql6';var d=document;var w=window;function l(){var s = d.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = '//code.jivosite.com/script/widget/'+widget_id; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);}
+                        function zy(){
+                            if(w.detachEvent){
+                                w.detachEvent('onscroll',zy);
+                                w.detachEvent('onmousemove',zy);
+                                w.detachEvent('ontouchmove',zy);
+                                w.detachEvent('onresize',zy);
+                            }else {
+                                w.removeEventListener("scroll", zy, false);
+                                w.removeEventListener("mousemove", zy, false);
+                                w.removeEventListener("touchmove", zy, false);
+                                w.removeEventListener("resize", zy, false);
+                            }
+                            if(d.readyState=='complete'){l();}else{if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}
+
+                            var cookie_date = new Date ( );
+                            cookie_date.setTime ( cookie_date.getTime()+60*60*28*1000);
+                            d.cookie = "JivoSiteLoaded=1;path=/;expires=" + cookie_date.toGMTString();
+                        }
+                        if (d.cookie.search ( 'JivoSiteLoaded' )<0){
+                            if(w.attachEvent){
+                                w.attachEvent('onscroll',zy);
+                                w.attachEvent('onmousemove',zy);
+                                w.attachEvent('ontouchmove',zy);
+                                w.attachEvent('onresize',zy);
+                            }else {
+                                w.addEventListener("scroll", zy, {capture: false, passive: true});
+                                w.addEventListener("mousemove", zy, {capture: false, passive: true});
+                                w.addEventListener("touchmove", zy, {capture: false, passive: true});
+                                w.addEventListener("resize", zy, {capture: false, passive: true});
+                            }
+                        }else {zy();}
+                    })();
+                </script>
+
+                <noscript><img height="1" width="1" style="display:none"
+                  src="https://www.facebook.com/tr?id=1981738315455848&ev=PageView&noscript=1"
+                /></noscript>
+
+                <!-- Rating@Mail.ru counter -->
+                <noscript><div>
+                    <img src="https://top-fwz1.mail.ru/counter?id=3087260;js=na" style="border:0;position:absolute;left:-9999px;" alt="Top.Mail.Ru" />
+                </div></noscript>
+                <!-- //Rating@Mail.ru counter -->
+
+                <noscript><img src="https://vk.com/rtrg?p=VK-RTRG-437462-dGegZ" style="position:fixed; left:-999px;" alt="VK"/></noscript>
+                {/ignore}
+
+        if video
+            div.
+                {ignore}
+                <script>
+                function sizeTheVideo(){
+                  var aspectRatio = 1.78;
+
+                    var video = $('iframe'),
+                        newWidth = $('.video-container').outerWidth(),
+                        halfNewWidth = newWidth/2,
+                        newHeight = newWidth/aspectRatio;
+
+                  video.css({"width":newWidth+"px","height":newHeight+"px"});
+                }
+                </script>
+                {/ignore}
+
+                {ignore}
+                <script>
+                    $(document).ready(function(){
+                  sizeTheVideo();
+                  $(window).resize(function(){
+                    sizeTheVideo();
+                  });
+                });
+                </script>
+                {/ignore}
+
+        #monitorSpeed(style="display:none;") [^qt^];[^q^];[^p^];[^t^];[^s^]

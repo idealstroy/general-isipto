@@ -1,0 +1,43 @@
+<style>
+.blog-item__title { font-style: normal; font-weight: 400; font-size: 18px; line-height: 21px; }
+.blog-item__content { font-style: normal; font-weight: 400; font-size: 12px; line-height: 16px; display: flex; align-items: center; color: #616161; }
+.blog-item__content p:last-child { font-weight: 400; font-size: 12px; line-height: 16px; display: flex;
+align-items: center;}
+.blog-item__img img { margin: 0; }
+
+.blog-item__text-moreinfo { font-size: 10px;line-height: 14px; }
+
+@media (max-width: 992px) {
+        .blog-item__title { font-size: 16px; line-height: 16px; font-weight: bold; }
+        .blog-item__content { font-size: 16px; line-height: 16px; }
+        .blog-item__content p:last-child { font-size: 16px; line-height: 16px; }
+        .blog-item__text-moreinfo { font-size: 16px; line-height: 16px; }
+    
+}    
+
+</style>
+<div class="blog-item col-md-4 col-sm-6 col-12">
+    <a href="[[~[[+id]]]]" class="blog-item__img">
+        <img class="image-load image-load d-block" src="#" data-src="[[phpthumbon? &input=`[[+image_blog]]` &options=`w=350&h=230`]]" alt="[[+longtitle]]"></a>
+    <div class="blog-item__date-box d-flex align-items-center">
+        [[*id:is=`[[++site_start]]`:then=`
+        <div class="blog-item__signature">
+            Блог
+        </div>
+        `]]
+
+        <div class="blog-item__date-icon">
+            <svg xmlns="https://www.w3.org/2000/svg">
+                <use xlink:href="../assets/css/img/blog/date.svg#date"></use>
+            </svg>
+        </div>
+        <div class="blog-item__date-text">[[+publishedon:date=`%d.%m.%Y`]]</div>
+    </div>
+    <div class="blog-item__title">
+        <a href="[[~[[+id]]]]">[[+longtitle]]</a>
+    </div>
+    <div class="blog-item__content d-inline">
+        <p>[[+introtext_blog]]</p>
+    </div>
+    <a class="blog-item__text-moreinfo" href="[[~[[+id]]]]">Читать статью</a>
+</div>

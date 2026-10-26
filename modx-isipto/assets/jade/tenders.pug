@@ -1,0 +1,263 @@
+extends template
+block append var
+    -var tenders = true
+    -var inner = true
+block content
+    section.first-screen
+        .container.container-first-screen
+            +crumbs()
+            .row.justify-content-between
+                .first-screen__box.col-12.col-lg-8
+                    h1.title.title_big.title_big-bold [[*h1]]
+                    .row
+                        .first-screen__item-box.col-lg-9.col-12
+                            .first-screen__item.d-flex.align-items-center
+                                .first-screen__item-icon.d-flex.align-items-center.justify-content-center
+                                    svg(xmlns="http://www.w3.org/2000/svg" width="26" height="35")
+                                        use(xlink:href="/assets/css/img/tenders/sprite.svg#medal")
+                                .first-screen__item-text Аккредитованы на 14 площадках
+                            .first-screen__item.d-flex.align-items-center
+                                .first-screen__item-icon.d-flex.align-items-center.justify-content-center
+                                    svg(xmlns="http://www.w3.org/2000/svg" width="35" height="35")
+                                        use(xlink:href="/assets/css/img/tenders/sprite.svg#folder")
+                                .first-screen__item-text Имеем ЭЦП и необходимые документы
+                    .r20
+                    .r20
+                    a.btn.btn-modal(rel="nofollow" href="#form_up" data-reason="Пригласить на тендер" data-header="Пригласить на тендер" onclick="ym(48630242, 'reachGoal', 'main-1st'); fbq('track', 'InitiateCheckout'); return true;") Пригласить на тендер
+
+    .participate
+        .container
+            .row
+                .participate__title.col-lg-6.col-12.d-flex.align-items-center Участвуем в торгах
+                .participate__list.col-lg-6.col-12.d-flex.flex-column.justify-content-between
+                    .participate__list-item.d-flex.align-items-center
+                        .participate__list-item-number.d-flex.align-items-center.justify-content-center 1
+                        .participate__list-item-text По подготовке, сдаче, восстановлению исполнительной документации
+                    .participate__list-item.d-flex.align-items-center
+                        .participate__list-item-number.d-flex.align-items-center.justify-content-center 2
+                        .participate__list-item-text По разработке проектов производства работ ППР, ППРв, ППРпс
+
+    .tenders-sites
+        .container
+            .title.title_big Аккредитованы на площадках
+            .d-flex.flex-wrap.align-items-center
+                .tenders-sites__item-box
+                    img.tenders-sites__item.image-load(src="#" data-src="/assets/css/img/tenders/tenders-sites/1.jpg" alt="Сибур")
+                .tenders-sites__item-box
+                    img.tenders-sites__item.image-load(src="#" data-src="/assets/css/img/tenders/tenders-sites/2.jpg" alt="Электронная площадка России")
+                .tenders-sites__item-box
+                    img.tenders-sites__item.image-load(src="#" data-src="/assets/css/img/tenders/tenders-sites/3.jpg" alt="Портал поставщиков")
+                .tenders-sites__item-box
+                    img.tenders-sites__item.image-load(src="#" data-src="/assets/css/img/tenders/tenders-sites/4.jpg" alt="АГЗРТ")
+                .tenders-sites__item-box
+                    img.tenders-sites__item.image-load(src="#" data-src="/assets/css/img/tenders/tenders-sites/5.jpg" alt="Газнефтеторг")
+                .tenders-sites__item-box
+                    img.tenders-sites__item.image-load(src="#" data-src="/assets/css/img/tenders/tenders-sites/6.jpg" alt="Группа электронных площадок")
+                .tenders-sites__item-box
+                    img.tenders-sites__item.image-load(src="#" data-src="/assets/css/img/tenders/tenders-sites/7.jpg" alt="ТЭК-Торг")
+                .tenders-sites__item-box
+                    img.tenders-sites__item.image-load(src="#" data-src="/assets/css/img/tenders/tenders-sites/8.jpg" alt="B2B Center")
+                .tenders-sites__item-box
+                    img.tenders-sites__item.image-load(src="#" data-src="/assets/css/img/tenders/tenders-sites/9.jpg" alt="Сбербанк-АСТ")
+                .tenders-sites__item-box
+                    img.tenders-sites__item.image-load(src="#" data-src="/assets/css/img/tenders/tenders-sites/10.jpg" alt="ЭТП ММВБ")
+                .tenders-sites__item-box
+                    img.tenders-sites__item.image-load(src="#" data-src="/assets/css/img/tenders/tenders-sites/11.jpg" alt="РАД - российский акционерный дом")
+                .tenders-sites__item-box
+                    img.tenders-sites__item.image-load(src="#" data-src="/assets/css/img/tenders/tenders-sites/12.jpg" alt="Фабрикант")
+                .tenders-sites__item-box
+                    img.tenders-sites__item.image-load(src="#" data-src="/assets/css/img/tenders/tenders-sites/13.jpg" alt="ЭТП ГПБ")
+                .tenders-sites__item-box
+                    img.tenders-sites__item.image-load(src="#" data-src="/assets/css/img/tenders/tenders-sites/14.jpg" alt="Единая торговая электронная площадка")
+
+
+    .invite
+        .container
+            .title.text-center.title_big Пригласите нас на тендер
+            .invite__subtitle.text-center Подадим заявку на вашей площадке за 2 дня
+            .row
+                .col-lg-9.col-12
+                    .list-icon.d-flex
+                        .list-icon__icon.d-flex.justify-content-center.align-items-center
+                            svg(xmlns="http://www.w3.org/2000/svg")
+                                use(xlink:href="/assets/css/img/tenders/sprite.svg#bell")
+                        .list-icon__content
+                            .list-icon__title Получаем приглашение на тендер
+                            .list-icon__text Пригласить можно любым удобным способом: отправить письмо на E-mail, позвонить нам или заказать звонок
+                    .list-icon.d-flex
+                        .list-icon__icon.d-flex.justify-content-center.align-items-center
+                            svg(xmlns="http://www.w3.org/2000/svg")
+                                use(xlink:href="/assets/css/img/id-object/sprite-main.svg#complex3")
+                        .list-icon__content
+                            .list-icon__title Изучаем техническое задание на выполнение работ
+                            .list-icon__text ТЗ – это требование к конечному результату, срокам исполнения, наличию опыта по выполняемым работам, описанию штата специалистов, соответствующих квалификационным требованиям и наличию профильного образования
+                    .list-icon.d-flex
+                        .list-icon__icon.d-flex.justify-content-center.align-items-center
+                            svg(xmlns="http://www.w3.org/2000/svg")
+                                use(xlink:href="/assets/css/img/id-object/sprite-main.svg#complex2")
+                        .list-icon__content
+                            .list-icon__title Подаем документы на участие в тендере
+                            .list-icon__text Собираем полный пакет документов и подаем заявку на участие в торгах. При необходимости предоставим документы на специалистов
+
+                .col-lg-3.d-lg-flex.d-none.justify-content-end
+                    svg.invite__item-right(xmlns="http://www.w3.org/2000/svg")
+                        use(xlink:href="/assets/css/img/tenders/sprite.svg#referee")
+            a.btn.btn-modal(rel="nofollow" href="#form_up" data-reason="Пригласить на тендер" data-header="Пригласить на тендер" onclick="ym(48630242, 'reachGoal', 'main-1st'); fbq('track', 'InitiateCheckout'); return true;") Пригласить на тендер
+
+    .container
+        .work-with-us
+            .work-with-us__title С нами работают потому, что
+            .work-with-us__item.d-flex.align-items-center
+                .work-with-us__icon-box.d-flex.align-items-center.justify-content-center
+                    svg.work-with-us__icon(xmlns="http://www.w3.org/2000/svg")
+                        use(xlink:href="/assets/css/img/tenders/sprite.svg#wrench")
+                .work-with-us__text Долгосрочно работаем на крупных объектах в сфере ТЭК
+            .work-with-us__item.d-flex.align-items-center
+                .work-with-us__icon-box.d-flex.align-items-center.justify-content-center
+                    svg.work-with-us__icon(xmlns="http://www.w3.org/2000/svg")
+                        use(xlink:href="/assets/css/img/tenders/sprite.svg#engineer")
+                .work-with-us__text Направляем до 30 инженеров ПТО на каждый объект
+            .work-with-us__item.d-flex.align-items-center
+                .work-with-us__icon-box.d-flex.align-items-center.justify-content-center
+                    svg.work-with-us__icon(xmlns="http://www.w3.org/2000/svg")
+                        use(xlink:href="/assets/css/img/tenders/sprite.svg#star")
+                .work-with-us__text Выстраиваем связи со смежными службами
+            .work-with-us__item.d-flex.align-items-center
+                .work-with-us__icon-box.d-flex.align-items-center.justify-content-center
+                    svg.work-with-us__icon(xmlns="http://www.w3.org/2000/svg")
+                        use(xlink:href="/assets/css/img/tenders/sprite.svg#location")
+                .work-with-us__text Отправляем инженеров на объект в течении 5 дней
+
+    .our-objects(style="padding-top:0;")
+        .r20
+        .r20.d-lg-block.d-none
+        .container
+            h3.title Мы работаем на этих объектах
+            .our-objects__box-global
+                .our-objects__box.row
+                    .our-objects__item-box
+                        .our-objects__item
+                            img.our-objects__item-img.image-load(src="#" data-src="/assets/css/img/tenders/works/1.jpg" alt="ЗапСибНефтехим-2")
+                            .our-objects__item-content
+                                .our-objects__item-title ЗапСибНефтехим-2
+                                .our-objects__item-text Сдали разделы
+                                    span ТХ, КМ, КЖ, АС
+                    .our-objects__item-box
+                        .our-objects__item
+                            img.our-objects__item-img.image-load(src="#" data-src="/assets/css/img/tenders/works/7.jpg" alt="Месторождения им. Требса, Титова")
+                            .our-objects__item-content
+                                .our-objects__item-title Месторождения им. Требса, Титова
+                                .our-objects__item-text Сдали разделы
+                                    span ТХ, ВК, ЭМ, ЭО
+                    .our-objects__item-box
+                        .our-objects__item
+                            img.our-objects__item-img.image-load(src="#" data-src="/assets/css/img/tenders/works/3.jpg" alt="Строительство НПС 32")
+                            .our-objects__item-content
+                                .our-objects__item-title Строительство НПС 32
+                                .our-objects__item-text Сдали разделы
+                                    span КМ, КЖ, ВК, ОВ, ПТ, АР, МО
+                    .our-objects__item-box
+                        .our-objects__item
+                            img.our-objects__item-img.image-load(src="#" data-src="/assets/css/img/tenders/works/4.jpg" alt="Реконструкция завода Полиэф")
+                            .our-objects__item-content
+                                .our-objects__item-title Реконструкция завода Полиэф
+                                .our-objects__item-text Сдали разделы
+                                    span КЖ, АР, КМ, ТХ, ЭМ, ПС, СС, АТХ
+                    .our-objects__item-box
+                        .our-objects__item
+                            img.our-objects__item-img.image-load(src="#" data-src="/assets/css/img/tenders/works/5.jpg" alt="Москва-Сити")
+                            .our-objects__item-content
+                                .our-objects__item-title Москва-Сити
+                                .our-objects__item-text Сдали разделы
+                                    span ОВ, ЭМ, ОПС, ПС, ВК
+                    .our-objects__item-box
+                        .our-objects__item
+                            img.our-objects__item-img.image-load(src="#" data-src="/assets/css/img/tenders/works/6.jpg" alt="Трубопровод Восточная Сибирь - Тихий океан")
+                            .our-objects__item-content
+                                .our-objects__item-title Трубопровод Восточная Сибирь - Тихий океан
+                                .our-objects__item-text Сдали разделы
+                                    span Х, КМ, КЖ, земляные работы
+                    .our-objects__item-box
+                        .our-objects__item
+                            img.our-objects__item-img.image-load(src="#" data-src="/assets/css/img/tenders/works/8.jpg" alt="Золоторудное месторождение. Чита")
+                            .our-objects__item-content
+                                .our-objects__item-title Золоторудное месторождение. Чита
+                                .our-objects__item-text Сдали разделы
+                                    span АР, ЭОМ, СС, ОПС, ОВИК, НВК
+                    .our-objects__item-box
+                        .our-objects__item
+                            img.our-objects__item-img.image-load(src="#" data-src="/assets/css/img/tenders/works/9.jpg" alt="ТрансУголь. Угольный терминал п. Ванино")
+                            .our-objects__item-content
+                                .our-objects__item-title ТрансУголь. Угольный терминал п. Ванино
+                                .our-objects__item-text Сдали разделы
+                                    span КМ, АР, ЭОМ
+
+                .our-objects__hide
+                    .our-objects__box.row
+                        .our-objects__item-box
+                            .our-objects__item
+                                img.our-objects__item-img.image-load(src="#" data-src="/assets/css/img/tenders/works/10.jpg" alt="НПС «Филино»")
+                                .our-objects__item-content
+                                    .our-objects__item-title НПС «Филино»
+                                    .our-objects__item-text Сдали разделы
+                                        span АР, КР, ТХ, КМ
+                        .our-objects__item-box
+                            .our-objects__item
+                                img.our-objects__item-img.image-load(src="#" data-src="/assets/css/img/tenders/works/11.jpg" alt="Перинатальный центр. Сургут")
+                                .our-objects__item-content
+                                    .our-objects__item-title Перинатальный центр. Сургут
+                                    .our-objects__item-text Сдали разделы
+                                        span АР, КР
+                        .our-objects__item-box
+                            .our-objects__item
+                                img.our-objects__item-img.image-load(src="#" data-src="/assets/css/img/tenders/works/12.jpg" alt="Газопровод ЛУПИНГ")
+                                .our-objects__item-content
+                                    .our-objects__item-title Газопровод ЛУПИНГ
+                                    .our-objects__item-text Сдали разделы
+                                        span АК, ЭМ, ОЭ
+                        .our-objects__item-box
+                            .our-objects__item
+                                img.our-objects__item-img.image-load(src="#" data-src="/assets/css/img/tenders/works/13.jpg" alt="Реконструкция трассы М-5 «УРАЛ»")
+                                .our-objects__item-content
+                                    .our-objects__item-title Реконструкция трассы М-5 «УРАЛ»
+                                    .our-objects__item-text Сдали разделы
+                                        span ТХ
+                        .our-objects__item-box
+                            .our-objects__item
+                                img.our-objects__item-img.image-load(src="#" data-src="/assets/css/img/tenders/works/14.jpg" alt="КУПН Газпромнефть-МНПЗ")
+                                .our-objects__item-content
+                                    .our-objects__item-title КУПН Газпромнефть-МНПЗ
+                                    .our-objects__item-text Сдали разделы
+                                        span ТХ
+                        .our-objects__item-box
+                            .our-objects__item
+                                img.our-objects__item-img.image-load(src="#" data-src="/assets/css/img/tenders/works/15.jpg" alt="НПЗ ОАО «Газпром нефтехим Салават».")
+                                .our-objects__item-content
+                                    .our-objects__item-title НПЗ ОАО «Газпром нефтехим Салават».
+                                    .our-objects__item-text Сдали разделы
+                                        span ТХ
+                        .our-objects__item-box
+                            .our-objects__item
+                                img.our-objects__item-img.image-load(src="#" data-src="/assets/css/img/tenders/works/16.jpg" alt="Пропарочный комплекс. Комсмольск-на-Амуре")
+                                .our-objects__item-content
+                                    .our-objects__item-title Пропарочный комплекс. Комсмольск-на-Амуре
+                                    .our-objects__item-text Сдали разделы
+                                        span КЖ, КМ, ТХ, АР, ОВ, ЭОМ, НВК
+                        .our-objects__item-box
+                            .our-objects__item
+                                img.our-objects__item-img.image-load(src="#" data-src="/assets/css/img/tenders/works/17.jpg" alt="Селекционно-генетический центр. Башкирия")
+                                .our-objects__item-content
+                                    .our-objects__item-title Селекционно-генетический центр. Башкирия
+                                    .our-objects__item-text Сдали разделы
+                                        span ОВ, НВК, АР, КМ, КЖ, ОВК, ТН
+
+            .btn.btn_border-black.btn_weight-normal.btn_center.btn_bg-transparent.btn_bg-transparent-no-hover.btn_our-works
+                .btn__text Показать еще
+                .btn__icon
+
+        .r10.d-lg-block.d-none
+        .r20.d-lg-block.d-none
+
+
+
+

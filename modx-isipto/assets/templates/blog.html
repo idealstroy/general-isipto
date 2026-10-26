@@ -1,0 +1,46 @@
+[[$header_new]]
+<section class="first-screen-blog" style="background:none;">
+    <div class="container container-first-screen">
+
+[[pdoCrumbs? &tplWrapper = `@CODE <div class="breadcrumbs"><div class="crumbs">[[+output]]</div></div>` &tplHome = `@CODE <a href="[[+link]]"><span>Главная</span></a>` &tpl = `@CODE <a href="[[+link]]"><span>[[+menutitle]]</span></a>` &tplCurrent = `@CODE <span>[[+menutitle]]</span>` &outputSeparator = `` &showHome=`1` &showCurrent=`1` ]]
+ 
+<center>
+    
+<div class="r60"></div>     
+    
+    <img src="/images/blog_timur_gallyamov.png" class="img-fluid">
+    <div style="font-weight:700;font-size:14px;">Тимур Галлямов</div>
+    <div style="font-weight:400;font-size:14px;">Генеральный директор</div>
+
+<div class="r30"></div> 
+    
+    
+<h1 class="first-screen__title first-screen-blog__title" style="max-width: 100%;">Блог об управлении строительством и ПТО</h1>
+<p style="font-weight:400;font-size:20px;line-height:27.24px;">Рассматриваем и разбираем актуальные темы</p>
+</center>
+</div></section><div class="container"><div class="blog-box" id="pdopage"><div class="row rows">[[!pdoPage?
+&element = `pdoResources`
+&parents = `[[*id]]`
+&ajaxMode = `default`
+&tpl=`blog-new`
+&includeTVs=`image_blog,introtext_blog,publishedon`
+&sortby=``
+&sortdir=`DESC`
+&processTVs=`1`
+&tvPrefix=``
+&limit=`9`
+&frontend_css=``
+]]</div>[[!+page.nav]]</div></div><div class="r10"></div><div class="r20"></div><div class="r20 d-lg-block d-none"></div><div class="form-footer"><div class="form-footer__title">Не нашли, что искали? <br> Закажите звонок, обсудим проект</div>[[!AjaxForm?
+&snippet=`FormIt`
+&frontend_css=``
+&form=`form_footer`
+&hooks=`FormItSaveForm,bitrix24_hooks`
+&emailSubject=`Новая заявка `
+&emailTpl=`template_form1`
+&emailTo=`[[+email_to]]`
+&validate=`fio:required,phone:required`
+&fieldNames=`fio==Имя,phone==Телефон,page==Страница`
+&validationErrorMessage=`В форме содержатся ошибки!`
+&successMessage=`Сообщение успешно отправлено`
+]]</div><div class="r10"></div><div class="r20"></div><div class="r20 d-lg-block d-none"></div>
+[[$footer_new]]

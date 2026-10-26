@@ -1,0 +1,403 @@
+@import 'nib'
+@import 'rupture'
+@import './var.styl'
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+
+rem() {
+	remified = ()
+	for arg in arguments {
+		push(remified, unit(arg/16, 'rem'))
+	}
+	return remified
+}
+
+rupture.scale =       0    576px    767.98px    992px    1199.98px
+rupture.scale-names =  'xs'     'sm'     'md'     'lg'      'xl'
+
+*
+	padding 0
+	margin 0
+	outline none
+	box-sizing: border-box
+	&::after
+		padding 0
+		margin 0
+		box-sizing: border-box
+	&::before
+		padding 0
+		margin 0
+		box-sizing: border-box
+
+html
+	font-size 16px
+	+below(lg)
+		font-size 15px
+	+below(md)
+		font-size 14px
+	+below(sm)
+		font-size 13px
+	+below(xs)
+		font-size 13px
+
+body
+	line-height 1.5
+	font-family default-text
+
+article, aside, figcaption, figure,
+footer, header, hgroup, main, nav, section
+	display block
+
+ol,li
+	list-style none
+
+h1, h2, h3, h4, h5, h6
+	margin 0
+	font-family default-text
+
+a
+	transition .3s
+	text-decoration none
+	background-color transparent
+	color default-color
+	&:hover
+		color #000
+		text-decoration none
+
+.page
+	height 100%
+	min-height 100vh
+	background-color #f7f7f7
+	.page-left
+		.logo
+			margin 30px 0
+			display block
+			size 275px 68px
+			background-size contain
+			background-repeat no-repeat
+			background-image url('../img/logo.png')
+		.col-6
+			padding 10px
+.info-item
+	width 100%
+	height auto
+	padding 15px 14px
+	margin-bottom 15px
+	border 2px solid #ffffff
+	&__title
+		width 100%
+		color #666
+		font-size 14px
+		font-weight 300
+		text-align center
+		margin-bottom 15px
+	&__subtitle
+		color #999
+		width 100%
+		font-size 27px
+		font-weight 400
+		line-height 22px
+		text-align center
+
+.page-right
+	&__title
+		color #999
+		font-size 50px
+		font-weight 400
+		line-height 55px
+		margin-top 25px
+	&__subtitle
+		color #666
+		font-size 28px
+		font-weight 300
+		line-height 34px
+		margin 25px 0 15px
+	a
+		color #999
+		transition .3s
+		border-bottom 1px solid #999
+		&:hover
+			border-bottom 1px solid transparent
+
+.managers-item:last-child
+	margin-bottom 50px
+.managers-item
+	margin 15px 0
+	position relative
+	padding 30px
+	background-color #fff
+	&__img
+		width 100%
+	img
+			width 100%
+			border-radius 50%
+	.managers-item-content
+		width 100%
+		margin-top 25px
+		.specifications
+			margin 15px 0
+		&__title
+			margin-top 10px
+			font-size 22px
+			font-weight 400
+			line-height 22px
+		&__subtitle
+			color #999
+			font-size 12px
+			font-weight 400
+			line-height 22px
+		&__sum
+			font-size 14px
+
+.specifications-item
+	/*width 37.3333%*/
+	&__number
+		color #f24941
+		font-size 32px
+		font-weight 600
+		line-height 22px
+	&__text
+		color #999
+		font-size 12px
+		font-weight 400
+		line-height 12px
+		margin-top 10px
+	&__progress
+		top 20px
+		right 20px
+		color green
+		font-size 25px
+		line-height 22px
+		text-align right
+		position absolute
+		span
+			color #a9a9a9
+			font-size 15px
+
+.edit
+	.edit-item
+		&__point
+			width 50%
+			padding 10px 0
+	a
+		span
+			color #000000
+			transition .3s
+			border-bottom 1px solid #b8b8b8
+			&:hover
+				border-bottom 1px solid transparent
+
+.form-edit
+	span
+		color #7c7c7c
+		font-size 15px
+	&__item
+		margin-top 15px
+		input
+			width 30%
+			height 34px
+			padding 0 7px
+			margin-top 10px
+			border-radius 3px
+			border 1px solid #d9d9d9
+			&:focus
+				background-color rgba(255,0,0,0.08) !important
+	&__button
+		width 30%
+		height 40px
+		margin-top 30px
+		background-color transparent
+		border 1px solid #f2554d
+		&:hover
+			color #fff
+			cursor pointer
+			transition .3s
+			background-color #f2554d
+
+ #calendar2 {
+	 width: 100%;
+	 font: monospace;
+	 line-height: 1.2em;
+	 font-size: 15px;
+	 text-align: center;
+	 margin-top 20px
+ }
+#calendar2 thead tr:last-child {
+	font-size: small;
+	color: rgb(85, 85, 85);
+}
+#calendar2 thead tr:last-child td {
+	padding 25px 0 10px
+}
+#calendar2 thead tr:nth-child(1) td:nth-child(2) {
+	color: rgb(50, 50, 50);
+}
+#calendar2 thead tr:nth-child(1) td:nth-child(1):hover, #calendar2 thead tr:nth-child(1) td:nth-child(3):hover {
+	cursor: pointer;
+}
+#calendar2 tbody td {
+	padding 10px
+	color #999999
+}
+#calendar2 tbody td:nth-child(n+6), #calendar2 .holiday {
+	color: rgb(231, 140, 92);
+}
+#calendar2 tbody td.today {
+	background #f24941
+	color: #fff;
+}
+
+
+
+
+
+.bg
+	height 768px
+	background-size cover
+	background-repeat no-repeat
+	background-position 50% 50%
+	+below(lg)
+		height 400px
+
+.bg-item
+	&__content
+		color #000
+		padding 40px 15px
+		+below(sm)
+			padding 20px 15px
+	&__title
+		font-weight 700
+		font-size rem(22px)
+		line-height rem(28px)
+		margin-bottom rem(10px)
+	&__text
+		font-weight 400
+		font-size rem(18px)
+		line-height rem(24px)
+		font-family OpenSansLight
+
+.text-idealstroiinvest-item
+	margin-bottom rem(35px)
+	&__title
+		color #000
+		font-weight 600
+		margin-bottom 10px
+		font-size rem(24px)
+		line-height rem(29px)
+		+below(md)
+			font-size 18px
+			line-height 23px
+	&__text
+		color #666
+		font-weight 400
+		font-size rem(16px)
+		line-height rem(22px)
+		font-family "OpenSansLight"
+
+.first-screen
+	padding rem(85px 0 40px)
+	+below(lg)
+		height auto
+	&__content
+		color #fff
+		margin 0 auto
+		text-align center
+	&__title
+		font-weight 700
+		font-size rem(60px)
+		line-height rem(65px)
+		+below(md)
+			font-size rem(40px)
+			line-height rem(45px)
+	&__subtitle
+		font-weight 300
+		font-size rem(20px)
+		line-height rem(28px)
+		padding rem(35px 0 30px)
+		font-family 'OpenSansLight'
+	&__text
+		color #5e5e5e
+		font-weight 600
+		font-size rem(16px)
+
+.first-screen-idealstroiinvest
+	height 1266px
+	position relative
+	+below(lg)
+		height 1130px
+	+below(sm)
+		margin-bottom 100px
+	.bg-item__content
+		bottom 20px
+		position absolute
+		+below(sm)
+			left 0
+			bottom -100px
+
+.bg-item-idealstroiinvest
+	background-color #f9f9f9
+	.bg-idealstroiinvest
+		position relative
+		background-size contain
+		background-position 30% 50%
+		+below(lg)
+			height 730px
+		+below(sm)
+			height 560px
+			margin-top 160px
+		+below(xs)
+			height 410px
+	.bg-item__text
+		+below(sm)
+			margin-bottom 15px
+
+.text-idealstroiinvest
+	left 0
+	top 24%
+	position absolute
+	+below(md)
+		top 20%
+	+below(sm)
+		top -170px
+
+.item-idealstroiinvest-marketing
+	svg
+		size 55px
+		margin-right 20px
+	img
+		width 100%
+		margin 20px 0
+	/*.bg
+		height 285px
+		margin-bottom 20px
+		background-size contain
+		+below(md)
+			height 180px
+		+below(xs)
+			height 100px*/
+
+.managers-win
+	&__img img
+		width 70px
+		height 70px
+		margin 0 auto
+		display block
+		border-radius 50%
+	&__title
+		margin-top 20px
+		font-size 22px
+		font-weight 400
+		line-height 22px
+		text-align center
+
+.table
+	width 100%
+	td, th
+		padding 10px
+		text-align left
+	.active
+		color #188000
+
+.str
+	display: inline;
+	padding: 0 15px;

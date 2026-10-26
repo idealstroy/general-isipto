@@ -1,0 +1,16 @@
+<div class="item_services col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
+    <div class="img_services"><img class="image-load" src="#" data-src="[[+image:phpthumbon=`w=255&h=205`]]" alt="[[+title]]"></div>
+    <div class="info_services">
+        <div class="caption_services">
+            [[+title]]
+        </div>
+        <div class="text_services">
+            [[getImageList? &value=`[[+info_inner]]` &tpl=`info_inner` &docid=`[[*id]]` &limit=`4`]]
+        </div>
+        <div class="price">[[+price]]</div>
+    </div>
+    <a class="calculate" data-toggle="modal" rel="nofollow" data-target="#form_up" data-reason="Рассчитать - [[+title]]" data-header="Рассчитать стоимость" data-goal="main-2rd-2" onclick="ym(48630242, 'reachGoal', 'main-2rd-1'); fbq('track', 'InitiateCheckout'); return true;">
+        Рассчитать стоимость
+    </a>
+    [[+_last:ne=`1`:then=`<div class="deadline">Оперативно, от 1 дня</div>`]]
+</div>

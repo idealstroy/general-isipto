@@ -1,0 +1,240 @@
+[[!index_redirect]]
+[[$header_new]]
+<div class="contacts-inner first_screen_inner"><div class="container">
+    
+[[pdoCrumbs? &tplWrapper = `@CODE <div class="breadcrumbs"><div class="crumbs">[[+output]]</div></div>` &tplHome = `@CODE <a href="[[+link]]"><span>Главная</span></a>` &tpl = `@CODE <a href="[[+link]]"><span>[[+menutitle]]</span></a>` &tplCurrent = `@CODE <span>[[+menutitle]]</span>` &outputSeparator = `` &showHome=`1` &showCurrent=`1` ]]
+
+
+
+<div class="row align-items-center"><div class="col-lg-6 col-12"><h1 class="inner__title">[[*h1]]</h1></div></div><div class="contacts-item-box"><div class="row justify-content-between"><div class="contacts-item-container col-lg-5 col-md-6 col-12"><div class="contacts-city"></div><div class="contacts-item d-flex"><div class="contacts-item__svg"><svg xmlns="http://www.w3.org/2000/svg"><use xlink:href="../assets/css/img/contacts/contacts.svg#contacts1"></use></svg></div><div class="contacts-item__content">
+<a id="phone_roistat_contacts_[[++key]]" class="contacts-item__title contacts-item__phone" href="tel:+79279563573" onclick="ym(48630242, 'reachGoal', 'main-header-phone'); fbq('track', 'InitiateCheckout'); return true;"><span class="phone_roistat_[[++key]]">8 927 956 35 73</span></a>
+<div class="contacts-item__signature">Бесплатный звонок по РФ</div></div></div><div class="contacts-item d-flex"><div class="contacts-item__svg"><svg xmlns="http://www.w3.org/2000/svg"><use xlink:href="../assets/css/img/contacts/contacts.svg#contacts2"></use></svg></div><div class="contacts-item__content"><a class="contacts-item__title contacts-item__email" href="mailto:[[++email]]">[[++email]]</a><div class="contacts-item__signature">Электронная почта</div></div></div><div class="contacts-item d-flex"><div class="contacts-item__svg"><svg xmlns="http://www.w3.org/2000/svg"><use xlink:href="../assets/css/img/contacts/contacts.svg#contacts3"></use></svg></div><div class="contacts-item__content"><div class="contacts-item__title">с 09:00 до 18:00 ч.</div><div class="contacts-item__signature">Время работы</div></div></div>[[++address:ne=``:then=`<div class="contacts-item d-flex"><div class="contacts-item__svg"><svg xmlns="http://www.w3.org/2000/svg"><use xlink:href="../assets/css/img/contacts/contacts.svg#contacts4"></use></svg></div><div class="contacts-item__content"><div class="contacts-item__title">[[++address]]</div><div class="contacts-item__signature">Адрес</div></div></div>`]]<a class="btn btn-modal d-inline-block" href="#form_up" rel="nofollow" data-reason="Перезвоните мне" data-header="Перезвоните мне" onclick="ym(48630242, 'reachGoal', 'main-header-lead'); fbq('track', 'InitiateCheckout'); return true;"><span class="d-lg-block d-none">Перезвоните мне</span><span class="d-lg-none">Позвонить</span></a></div><div class="contacts-img col-lg-7 col-md-6 d-md-block d-none" style="background:url('../assets/css/img/main/maps.jpg') no-repeat center / contain"></div></div></div></div></div><div class="r50"></div>[[++address:ne=``:then=`<div id="map"></div>`]]<footer><div class="container"><div class="footer__box"><div class="footer__left"><a class="footer__left-logo-href" href="/"><svg class="footer__left-logo" xmlns="http://www.w3.org/2000/svg"><use xlink:href="/assets/css/img/sprite-main.svg#logo_footer"></use></svg></a><div class="footer__left-info"><a class="footer__left-info-item footer__left-info-confid" href="[[++base_url]]politika-konfidenczialnosti/">Политика конфиденциальности</a><a class="footer__left-info-item footer__left-info-copyright">© 2018-2020 все права защищены</a></div></div><div class="footer__center"><div class="footer__center-left"><a class="footer__center-item" href="[[++base_url]]o-kompanii/">О компании</a><a class="footer__center-item" href="[[++base_url]]o-kompanii/otzyivyi/">Отзывы</a><a class="footer__center-item" href="[[++base_url]]kontaktyi/">Контакты</a></div><div class="footer__center-right"><a class="footer__center-item" href="[[++base_url]]">Исполнительная документация</a><a class="footer__center-item" href="[[++base_url]]razrabotka-ppr/">Проекты производства работ - ППР</a><a class="footer__center-item" href="[[++base_url]]blog/">Блог</a></div></div><div class="footer__right">
+
+<a class="footer__right-phone" id="phone_roistat_footer_[[++key]]" href="tel:+79279563573" onclick="ym(48630242, 'reachGoal', 'footer-phone'); fbq('track', 'InitiateCheckout'); return true;"><span class="phone_roistat_[[++key]]">8 927 956 35 73</span></a>
+        
+
+
+<div class="footer__right-time-work-box"><div class="footer__right-time-work"><span class="footer__right-time-days">Пн-Пт</span><span class="footer__right-time-time">9.00-18.00</span></div><div class="footer__right-time-work"><span class="footer__right-time-days">Сб-Вс</span><span class="footer__right-time-time">9.00-18.00</span></div></div></div></div></div></footer><div class="form-modal form_up" id="form_up"><div class="form-modal__title callOrderHeader">Заказать звонок</div><div class="modal-body"><div class="modal-body__text">[[!AjaxForm?
+&snippet=`FormIt`
+&frontend_css=``
+&form=`form_tpl1`
+&hooks=`FormItSaveForm,bitrix24_hooks`
+&emailSubject=`Новая заявка`
+&emailTpl=`template_form1`
+&emailTo=`[[+email_to]]`
+&validate=`fio:required,phone:required,name:blank,firstname:blank,lastname:blank`
+&fieldNames=`fio==Имя,phone==Телефон,page==Страница`
+&validationErrorMessage=`В форме содержатся ошибки!`
+&successMessage=`Сообщение успешно отправлено`
+]]</div></div></div><div class="form-modal form-modal_md" id="acceptModal"><noindex><div class="form-modal__title callOrderHeader">Согласие на обработку персональных данных</div><div class="modal-body"><div class="modal-body__text">[[pdoField? &id=`[[++site_start]]` &field=`politikaAccept`]]</div></div></noindex></div><div class="form-modal form-modal_md" id="politikaModal"><noindex><div class="form-modal__title callOrderHeader">Политика конфиденциальности</div><div class="modal-body"><div class="modal-body__text">[[pdoField? &id=`[[++site_start]]` &field=`politikaConfidency`]]</div></div></noindex></div>[[!*id:is=`[[++site_start]]`:then=`[[$city1]]`:else=`[[$city2]]`]]<link rel="stylesheet" type="text/css" href="../assets/css/inner.css?v=1.0"><script type="text/javascript" src="/jquery.min.js"></script>{ignore}<script type="bogus" class="js-whatsapp-message-container">Ответьте на мои вопросы. Обращение номер:  {roistat_visit}</script>{/ignore}
+[[+MinifyX.javascript]]<script src="https://api-maps.yandex.ru/2.1/?apikey=a4aa48a2-43bc-49dc-a6f5-85d2e407b725&lang=ru_RU" type="text/javascript"></script><script src="../assets/js/ymapstouch.min.js"></script><script>/*Яндекс-карта*/
+{ignore}
+ymaps.ready(initMap);
+
+function initMap() {
+    var myMap, objects;
+    myMap = new ymaps.Map('map', {
+        center: [54.736445, 55.995324],
+        zoom: 10,
+        controls: []
+    });
+    ymapsTouchScroll(myMap);
+    var zoomControl = new ymaps.control.ZoomControl({
+        options: {
+            size: "small"
+        }
+    });
+    myMap.controls.add(zoomControl);
+
+    objects = ymaps.geoQuery(ymaps.geocode('г. Уфа, ул. Революционная, д. 111/1'))
+        .addToMap(myMap);
+    objects.then(function () {
+        objects.each(function (object) {
+            object.options.set('iconLayout', 'default#image');
+            object.options.set('iconImageHref', '../assets/css/img/checkpoint.svg');
+            object.options.set('iconImageSize', [55, 45]);
+            object.options.set('iconImageOffset', [-35, -45]);
+        });
+
+        //myMap.behaviors.disable('scrollZoom');
+
+
+        myMap.setBounds(objects.getBounds(), {
+            checkZoomRange: true,
+            zoomMargin: [1000, 20, 20, 20]
+        }).then(function () {
+            myMap.setZoom(16);
+        });
+    });
+}
+{/ignore}</script><div>{ignore}
+<script>
+$(document).on('af_complete', function(event, response) {
+    var fields = {
+        fio: "ваше имя",
+        phone: "ваш телефон",
+        email: "ваш email",
+    };
+    if (response.success) {
+        var goal = response.form[0].getElementsByClassName('goalMetrika')[0].value;
+        $.fancybox.close();
+        var url = "https://isipto.ru[[++base_url]]spasibo";
+        $(location).attr('href',url);
+
+        // yaglaaction('zayavka');
+     fbq('track', 'Lead');
+        // yaCounter48630242.reachGoal(goal);
+        gtag('event', goal, {'event_category': 'category'});
+    } else {
+        for (var prop in response.data) {
+            AjaxForm.Message.error("Заполните поле '"+fields[prop]+"'");
+        }
+    }
+    response.message='';
+});
+</script>
+
+<script>
+    (function(w, d, s, h, id) {
+        w.roistatProjectId = id; w.roistatHost = h;
+        var p = d.location.protocol == "https:" ? "https://" : "http://";
+        var u = /^.*roistat_visit=[^;]+(.*)?$/.test(d.cookie) ? "/dist/module.js" : "/api/site/1.0/"+id+"/init?referrer="+encodeURIComponent(d.location.href);
+        var js = d.createElement(s); js.charset="UTF-8"; js.async = 1; js.src = p+h+u; var js2 = d.getElementsByTagName(s)[0]; js2.parentNode.insertBefore(js, js2);
+    })(window, document, 'script', 'cloud.roistat.com', '9eeaab6aa1565e2aebc52d9060fef0f8');
+
+    <!-- BEGIN WHATSAPP INTEGRATION WITH ROISTAT -->
+   if ($(window).width() < '992'){
+        (function() {
+            if (window.roistat !== undefined) {
+                handler();
+            } else {
+                var pastCallback = typeof window.onRoistatAllModulesLoaded === "function" ? window.onRoistatAllModulesLoaded : null;
+                window.onRoistatAllModulesLoaded = function () {
+                    if (pastCallback !== null) {
+                        pastCallback();
+                    }
+                    handler();
+                };
+            }
+
+           function handler() {
+                function init() {
+                    appendMessageToLinks();
+
+                    var delays = [1000, 5000, 15000];
+                    setTimeout(function func(i) {
+                        if (i === undefined) {
+                            i = 0;
+                        }
+                        appendMessageToLinks();
+                        i++;
+                        if (typeof delays[i] !== 'undefined') {
+                            setTimeout(func, delays[i], i);
+                        }
+                    }, delays[0]);
+                }
+
+                function replaceQueryParam(url, param, value) {
+                    var explodedUrl = url.split('?');
+                    var baseUrl = explodedUrl[0] || '';
+                    var query = '?' + (explodedUrl[1] || '');
+                    var regex = new RegExp("([?;&])" + param + "[^&;]*[;&]?");
+                    var queryWithoutParameter = query.replace(regex, "$1").replace(/&$/, '');
+                    return baseUrl + (queryWithoutParameter.length > 2 ? queryWithoutParameter  + '&' : '?') + (value ? param + "=" + value : '');
+                }
+
+                function appendMessageToLinks() {
+                    var message = document.querySelector('.js-whatsapp-message-container').text;
+                    var text = message.replace(/{roistat_visit}/g, window.roistatGetCookie('roistat_visit'));
+                    var linkElements = document.querySelectorAll('[href*="//wa.me"], [href*="//api.whatsapp.com/send"], [href*="//web.whatsapp.com/send"], [href^="whatsapp://send"]');
+                    for (var elementKey in linkElements) {
+                        if (linkElements.hasOwnProperty(elementKey)) {
+                            var element = linkElements[elementKey];
+                            element.href = replaceQueryParam(element.href, 'text', text);
+                        }
+                    }
+                }
+                if (document.readyState === 'loading') {
+                    document.addEventListener('DOMContentLoaded', init);
+                } else {
+                    init();
+                }
+            }
+        })();
+    }
+    <!-- END WHATSAPP INTEGRATION WITH ROISTAT -->
+
+    setTimeout(function () {
+        !function(){var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src="https://vk.com/js/api/openapi.js?162",t.onload=function(){VK.Retargeting.Init("VK-RTRG-437462-dGegZ"),VK.Retargeting.Hit()},document.head.appendChild(t)}();
+
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1981738315455848');
+        fbq('track', 'PageView');
+        fbq('track', 'ViewContent');
+
+        var _tmr = window._tmr || (window._tmr = []);
+        _tmr.push({id: "3087260", type: "pageView", start: (new Date()).getTime(), pid: "USER_ID"});
+        (function (d, w, id) {
+            if (d.getElementById(id)) return;
+            var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true; ts.id = id;
+            ts.src = "https://top-fwz1.mail.ru/js/code.js";
+            var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);};
+            if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
+        })(document, window, "topmailru-code");
+    }, 3000);
+
+    (function(){ document.jivositeloaded=0;var widget_id = 'N7qegDIql6';var d=document;var w=window;function l(){var s = d.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = '//code.jivosite.com/script/widget/'+widget_id; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);}
+        function zy(){
+            if(w.detachEvent){
+                w.detachEvent('onscroll',zy);
+                w.detachEvent('onmousemove',zy);
+                w.detachEvent('ontouchmove',zy);
+                w.detachEvent('onresize',zy);
+            }else {
+                w.removeEventListener("scroll", zy, false);
+                w.removeEventListener("mousemove", zy, false);
+                w.removeEventListener("touchmove", zy, false);
+                w.removeEventListener("resize", zy, false);
+            }
+            if(d.readyState=='complete'){l();}else{if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}
+
+            var cookie_date = new Date ( );
+            cookie_date.setTime ( cookie_date.getTime()+60*60*28*1000);
+            d.cookie = "JivoSiteLoaded=1;path=/;expires=" + cookie_date.toGMTString();
+        }
+        if (d.cookie.search ( 'JivoSiteLoaded' )<0){
+            if(w.attachEvent){
+                w.attachEvent('onscroll',zy);
+                w.attachEvent('onmousemove',zy);
+                w.attachEvent('ontouchmove',zy);
+                w.attachEvent('onresize',zy);
+            }else {
+                w.addEventListener("scroll", zy, {capture: false, passive: true});
+                w.addEventListener("mousemove", zy, {capture: false, passive: true});
+                w.addEventListener("touchmove", zy, {capture: false, passive: true});
+                w.addEventListener("resize", zy, {capture: false, passive: true});
+            }
+        }else {zy();}
+    })();
+</script>
+
+<noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1981738315455848&ev=PageView&noscript=1"
+/></noscript>
+
+<!-- Rating@Mail.ru counter -->
+<noscript><div>
+    <img src="https://top-fwz1.mail.ru/counter?id=3087260;js=na" style="border:0;position:absolute;left:-9999px;" alt="Top.Mail.Ru" />
+</div></noscript>
+<!-- //Rating@Mail.ru counter -->
+
+<noscript><img src="https://vk.com/rtrg?p=VK-RTRG-437462-dGegZ" style="position:fixed; left:-999px;" alt="VK"/></noscript>
+{/ignore}
+</div><div id="monitorSpeed" style="display:none;">[^qt^];[^q^];[^p^];[^t^];[^s^]</div></body></html>

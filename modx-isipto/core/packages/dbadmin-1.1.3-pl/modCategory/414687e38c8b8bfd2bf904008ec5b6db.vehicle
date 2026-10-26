@@ -1,0 +1,44 @@
+<?php return array (
+  'unique_key' => 'category',
+  'preserve_keys' => false,
+  'update_object' => true,
+  'related_objects' => true,
+  'namespace' => 'dbadmin',
+  'resolve' => 
+  array (
+    0 => 
+    array (
+      'type' => 'file',
+      'body' => '{"source":"dbadmin-1.1.3-pl\\/modCategory\\/414687e38c8b8bfd2bf904008ec5b6db\\/0\\/","target":"return MODX_ASSETS_PATH . \'components\\/\';","name":"dbadmin"}',
+    ),
+    1 => 
+    array (
+      'type' => 'file',
+      'body' => '{"source":"dbadmin-1.1.3-pl\\/modCategory\\/414687e38c8b8bfd2bf904008ec5b6db\\/1\\/","target":"return MODX_CORE_PATH . \'components\\/\';","name":"dbadmin"}',
+    ),
+    2 => 
+    array (
+      'type' => 'php',
+      'body' => '{"source":"dbadmin-1.1.3-pl\\/modCategory\\/414687e38c8b8bfd2bf904008ec5b6db.resolve.tables.resolver","type":"php","name":"resolve.tables"}',
+    ),
+    3 => 
+    array (
+      'type' => 'php',
+      'body' => '{"source":"dbadmin-1.1.3-pl\\/modCategory\\/414687e38c8b8bfd2bf904008ec5b6db.resolve.tables_values.resolver","type":"php","name":"resolve.tables_values"}',
+    ),
+    4 => 
+    array (
+      'type' => 'php',
+      'body' => '{"source":"dbadmin-1.1.3-pl\\/modCategory\\/414687e38c8b8bfd2bf904008ec5b6db.resolve.policy.resolver","type":"php","name":"resolve.policy"}',
+    ),
+  ),
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '0a21452e6f209cfdf1f076a5703f436d',
+  'package' => 'modx',
+  'class' => 'modCategory',
+  'signature' => '414687e38c8b8bfd2bf904008ec5b6db',
+  'native_key' => NULL,
+  'object' => '{"id":null,"parent":0,"category":"dbAdmin","rank":0}',
+);

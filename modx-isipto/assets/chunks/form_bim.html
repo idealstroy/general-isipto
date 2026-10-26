@@ -1,0 +1,32 @@
+<form class="recaptcha-form form-bim" method="POST" action="/assets/components/bitrix24/submit-bim.php" >
+    [[!bitrix24_form_guard]]
+    <input type="hidden" name="recaptcha_token" class="recaptcha-token">
+    
+<input type="hidden" name="csrf_token" value="[[+csrf_token]]">
+<input type="hidden" name="form_time" value="[[+form_time]]">
+    <input type="text" name="website" style="display:none">
+    
+    
+    <input class="callOrderReason" type="hidden" name="reason" value="Принимаем заявки на обучение по курсу BIM моделирование">
+    <input class="page" type="hidden" name="page" value="[[~[[*id]]? &scheme=`full`]]">
+    <input class="goalMetrika" type="hidden" name="goal" value="button-gift">
+    <input class="ref_info" name="ref_info" type="hidden" value="">
+
+    <input class="site-message" type="text" name="name" value="">
+    <input class="site-message" type="text" name="firstname" value="">
+    <input class="site-message" type="text" name="lastname" value="">
+
+    <div class="form-footer__input-box d-flex flex-wrap flex-sm-nowrap">
+        <input class="form-footer__input" type="text" placeholder="Имя" name="fio" required>
+        <input class="form-footer__input" type="text" placeholder="Телефон" name="phone" required>
+    </div>
+    <div class="form-footer__button-box d-flex flex-wrap flex-sm-nowrap align-items-center justify-content-between">
+        <div class="form-footer__checkbox">
+            <label><input type="checkbox" name="agree" required> 
+            <span style="color: #777;font-size: 14px;line-height: 14px;">
+            Я даю согласие на <a href="/politika-konfidenczialnosti/" style="color:#777;font-weight:500;">обработку своих персональных данных</a>
+            </span></label>
+        </div>
+        <input class="btn btn_weight-normal form-footer__btn" type="submit" value="Подать заявку">
+    </div>
+</form>

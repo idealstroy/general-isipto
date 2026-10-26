@@ -1,0 +1,987 @@
+extends template
+block append var
+    -var index = true
+    -var blog = true
+    -var title = "Главная"
+    -var form_footer = false
+
+block content
+    section.first-screen.first-screen_crumbs
+        .container
+            +crumbs()
+            .row.justify-content-between
+                .first-screen__box.col-lg-10.col-12
+                    h1.first-screen__title [[*h1]]
+                    p.first-screen__subtitle Аутсорсинг ПТО вахтовым методом по РФ
+                    .row
+                        ul.first-screen__item-box.col-lg-10.col-12
+                            li.first-screen__item.d-flex.align-items-center
+                                .first-screen__item-icon.d-flex.align-items-center.justify-content-center
+                                    svg(xmlns="http://www.w3.org/2000/svg")
+                                        use(xlink:href="/assets/css/img/sprite-main.svg#first-screen1")
+                                .first-screen__item-text Нефтегазовой промышленности
+                            li.first-screen__item.d-flex.align-items-center
+                                .first-screen__item-icon.d-flex.align-items-center.justify-content-center
+                                    svg(xmlns="http://www.w3.org/2000/svg")
+                                        use(xlink:href="/assets/css/img/sprite-main.svg#first-screen2")
+                                .first-screen__item-text Промышленного строительства
+                            li.first-screen__item.d-flex.align-items-center
+                                .first-screen__item-icon.d-flex.align-items-center.justify-content-center
+                                    svg(xmlns="http://www.w3.org/2000/svg")
+                                        use(xlink:href="/assets/css/img/sprite-main.svg#first-screen3")
+                                .first-screen__item-text Строительства путей сообщения
+                            li.first-screen__item.d-flex.align-items-center
+                                .first-screen__item-icon.d-flex.align-items-center.justify-content-center
+                                    svg(xmlns="http://www.w3.org/2000/svg")
+                                        use(xlink:href="/assets/css/img/sprite-main.svg#first-screen4")
+                                .first-screen__item-text Гражданского строительства
+
+                    .d-flex.justify-content-between
+                        noindex.btn-whatsapp-box
+                            a.btn-whatsapp(href="https://wa.me/79279563573" rel="nofollow")
+                                .btn-whatsapp__text НАПИСАТЬ В WHATSAPP
+                                svg.btn-whatsapp__icon(xmlns="http://www.w3.org/2000/svg")
+                                    use(xlink:href="/assets/css/img/whatsapp.svg#whatsapp")
+                        a.btn.btn_first-screen.d-flex.align-items-center.justify-content-center.btn-modal(href="#form_up" rel="nofollow" data-reason="Заказать расчет" data-header="Заказать расчет" onclick="ym(48630242, 'reachGoal', 'main-1st'); fbq('track', 'InitiateCheckout'); return true;") Заказать расчет
+
+    .container
+        .r20
+        .r20
+        h2.title Комплексная подготовка исполнительной документации на объекте
+        .complex-main
+            .complex-main__box
+                .complex-main__item-box
+                    .complex-main__head-box
+                        .complex-main__head-img
+                            img.image-load.complex-main__head-img(src="#" data-src="../assets/css/img/main/complex1_m.png" alt="Догоняем отставание по сдаче исполнительной документации")
+                        h4.complex-main__head-title Догоняем отставание по сдаче исполнительной документации
+                    .complex-main__item
+                        .complex-main__item-title Проводим аудит на объекте
+                        .complex-main__item-text Прибываем на объект, проверяем имеющуюся исполнительную, рассчитываем оставшийся объем работ
+                    .complex-main__item
+                        .complex-main__item-title Оцениваем трудозатраты и сроки
+                        .complex-main__item-text Рассчитываем количество и специализацию инженеров. Планируем темп подготовки для завершения к установленной дате
+                    .complex-main__item
+                        .complex-main__item-title Составляем техническое задание и приступаем к выполнению
+                        .complex-main__item-text Описываем виды, объем и специфику работ. Составляем план сдачи
+                    .complex-main__item
+                        .complex-main__item-title Сдаем исполнительную по календарному плану
+                        .complex-main__item-text Ежемесячно сдаем заказчику
+                .complex-main__img-box
+                    img.image-load.complex-main__img(src="#" data-src="../assets/css/img/main/complex1.png" alt="Догоняем отставание по сдаче исполнительной документации")
+            a.btn.btn_h50.btn_width-full-m.btn-modal(href="#form_up" rel="nofollow" data-reason="Узнать подробнее по телефону" data-header="Узнать подробнее по телефону") Узнать подробнее по телефону
+        .r20
+        .r10
+        .complex-main
+            .complex-main__box
+                .complex-main__item-box
+                    div
+                        .complex-main__head-box
+                            .complex-main__head-img
+                                img.image-load.complex-main__head-img(src="#" data-src="../assets/css/img/main/complex2_m.png" alt="Помогаем получить “застрявшую” оплату от заказчика")
+                            h4.complex-main__head-title Помогаем получить “застрявшую” оплату от заказчика
+                        .complex-main__item
+                            .complex-main__item-title Анализируем объем не сданной исполнительной технической документации
+                            .complex-main__item-text Выявляем не освоенный объем СМР
+                        .complex-main__item
+                            .complex-main__item-title Готовим техническое задание, кадровый состав и определяем сроки
+                            .complex-main__item-text На основе анализа согласовываем технические задание
+                        .complex-main__item
+                            .complex-main__item-title Выезжаем на объект и приступаем к работе
+                            .complex-main__item-text Готовим исполнительную по техническому заданию
+                        .complex-main__item
+                            .complex-main__item-title Сдаем подписанный комплект папок вашему представителю
+                            .complex-main__item-text Подписываем у технадзора, заказчика и передаем вашему представителю. Вы получаете оплату
+                    a.btn.btn_h50.btn_width-full-m.btn-modal(href="#form_up" rel="nofollow" data-reason="Узнать пошаговое решение подробно" data-header="Узнать пошаговое решение подробно") Узнать пошаговое решение подробно
+                .complex-main__img-box
+                    img.image-load.complex-main__img(src="#" data-src="../assets/css/img/main/complex2.png" alt="Помогаем получить “застрявшую” оплату от заказчика")
+
+        .r20
+        .r10
+        .complex-main
+            .complex-main__box
+                .complex-main__item-box
+                    .complex-main__head-box
+                        .complex-main__head-img
+                            img.image-load.complex-main__head-img(src="#" data-src="../assets/css/img/main/complex3_m.png" alt="Усиливаем ваш ПТО на объекте")
+                        h4.complex-main__head-title Усиливаем ваш ПТО на объекте
+                    .complex-main__item
+                        .complex-main__item-title Оцениеваем объемы и сроки работ
+                        .complex-main__item-text Проводим сравнительный анализ проекта и неосвоенных объемов строительства
+                    .complex-main__item
+                        .complex-main__item-title Формируем группу профильных специалистов, выезжаем на объект
+                        .complex-main__item-text По итогам анализа объекта определяем численность и состав группы
+                    .complex-main__item
+                        .complex-main__item-title Приступаем к работе и сдаем исполнительную
+                        .complex-main__item-text Формируем папки и подписываем параллельно строительству
+                    .complex-main__item
+                        .complex-main__item-title Еженедельно предоставляем таблицу прогресса сдачи
+                        .complex-main__item-text Отображаем в отчете динамику выполнения объемов
+                .complex-main__img-box
+                    img.image-load.complex-main__img(src="#" data-src="../assets/css/img/main/complex3.png" alt="Усиливаем ваш ПТО на объекте")
+            a.btn.btn_h50.btn_width-full-m.btn-modal(href="#form_up" rel="nofollow" data-reason="Узнать об усилении у специалиста" data-header="Узнать об усилении у специалиста") Узнать об усилении у специалиста
+
+    .r20
+    .r20
+    .container
+        h3.title Стоимость решения ваших проблем
+        .statistics-services
+            .statistics-services__title По статистике, стоимость наших услуг
+            .statistics-services__box
+                .statistics-services__left
+                    .statistics-services__percent 1-3%
+                    .statistics-services__text
+                        .statistics-services__text-item от стоимости вашего договора на строительство
+                        .statistics-services__text-item от суммы, “застрявшей” у заказчика
+                .statistics-services__right
+                    img.image-load.complex-main__img(src="#" data-src="../assets/css/img/main/statistics-services.png" alt="Стоимость решения ваших проблем")
+
+    .our-objects(style="padding-top:0;")
+        .r20
+        .r20.d-lg-block.d-none
+        .container
+            h3.title Мы работаем на этих объектах
+            .our-objects__box-global
+                .our-objects__box.row
+                    .our-objects__item-box
+                        .our-objects__item
+                            img.our-objects__item-img.image-load(src="#" data-src="/assets/css/img/tenders/works/1.jpg" alt="ЗапСибНефтехим-2")
+                            .our-objects__item-content
+                                .our-objects__item-title ЗапСибНефтехим-2
+                                .our-objects__item-text Сдали разделы
+                                    span ТХ, КМ, КЖ, АС
+                    .our-objects__item-box
+                        .our-objects__item
+                            img.our-objects__item-img.image-load(src="#" data-src="/assets/css/img/tenders/works/7.jpg" alt="Месторождения им. Требса, Титова")
+                            .our-objects__item-content
+                                .our-objects__item-title Месторождения им. Требса, Титова
+                                .our-objects__item-text Сдали разделы
+                                    span ТХ, ВК, ЭМ, ЭО
+                    .our-objects__item-box
+                        .our-objects__item
+                            img.our-objects__item-img.image-load(src="#" data-src="/assets/css/img/tenders/works/3.jpg" alt="Строительство НПС 32")
+                            .our-objects__item-content
+                                .our-objects__item-title Строительство НПС 32
+                                .our-objects__item-text Сдали разделы
+                                    span КМ, КЖ, ВК, ОВ, ПТ, АР, МО
+                    .our-objects__item-box
+                        .our-objects__item
+                            img.our-objects__item-img.image-load(src="#" data-src="/assets/css/img/tenders/works/4.jpg" alt="Реконструкция завода Полиэф")
+                            .our-objects__item-content
+                                .our-objects__item-title Реконструкция завода Полиэф
+                                .our-objects__item-text Сдали разделы
+                                    span КЖ, АР, КМ, ТХ, ЭМ, ПС, СС, АТХ
+                    .our-objects__item-box
+                        .our-objects__item
+                            img.our-objects__item-img.image-load(src="#" data-src="/assets/css/img/tenders/works/5.jpg" alt="Москва-Сити")
+                            .our-objects__item-content
+                                .our-objects__item-title Москва-Сити
+                                .our-objects__item-text Сдали разделы
+                                    span ОВ, ЭМ, ОПС, ПС, ВК
+                    .our-objects__item-box
+                        .our-objects__item
+                            img.our-objects__item-img.image-load(src="#" data-src="/assets/css/img/tenders/works/6.jpg" alt="Трубопровод Восточная Сибирь - Тихий океан")
+                            .our-objects__item-content
+                                .our-objects__item-title Трубопровод Восточная Сибирь - Тихий океан
+                                .our-objects__item-text Сдали разделы
+                                    span Х, КМ, КЖ, земляные работы
+                    .our-objects__item-box
+                        .our-objects__item
+                            img.our-objects__item-img.image-load(src="#" data-src="/assets/css/img/tenders/works/8.jpg" alt="Золоторудное месторождение. Чита")
+                            .our-objects__item-content
+                                .our-objects__item-title Золоторудное месторождение. Чита
+                                .our-objects__item-text Сдали разделы
+                                    span АР, ЭОМ, СС, ОПС, ОВИК, НВК
+                    .our-objects__item-box
+                        .our-objects__item
+                            img.our-objects__item-img.image-load(src="#" data-src="/assets/css/img/tenders/works/9.jpg" alt="ТрансУголь. Угольный терминал п. Ванино")
+                            .our-objects__item-content
+                                .our-objects__item-title ТрансУголь. Угольный терминал п. Ванино
+                                .our-objects__item-text Сдали разделы
+                                    span КМ, АР, ЭОМ
+
+                .our-objects__hide
+                    .our-objects__box.row
+                        .our-objects__item-box
+                            .our-objects__item
+                                img.our-objects__item-img.image-load(src="#" data-src="/assets/css/img/tenders/works/10.jpg" alt="НПС «Филино»")
+                                .our-objects__item-content
+                                    .our-objects__item-title НПС «Филино»
+                                    .our-objects__item-text Сдали разделы
+                                        span АР, КР, ТХ, КМ
+                        .our-objects__item-box
+                            .our-objects__item
+                                img.our-objects__item-img.image-load(src="#" data-src="/assets/css/img/tenders/works/11.jpg" alt="Перинатальный центр. Сургут")
+                                .our-objects__item-content
+                                    .our-objects__item-title Перинатальный центр. Сургут
+                                    .our-objects__item-text Сдали разделы
+                                        span АР, КР
+                        .our-objects__item-box
+                            .our-objects__item
+                                img.our-objects__item-img.image-load(src="#" data-src="/assets/css/img/tenders/works/12.jpg" alt="Газопровод ЛУПИНГ")
+                                .our-objects__item-content
+                                    .our-objects__item-title Газопровод ЛУПИНГ
+                                    .our-objects__item-text Сдали разделы
+                                        span АК, ЭМ, ОЭ
+                        .our-objects__item-box
+                            .our-objects__item
+                                img.our-objects__item-img.image-load(src="#" data-src="/assets/css/img/tenders/works/13.jpg" alt="Реконструкция трассы М-5 «УРАЛ»")
+                                .our-objects__item-content
+                                    .our-objects__item-title Реконструкция трассы М-5 «УРАЛ»
+                                    .our-objects__item-text Сдали разделы
+                                        span ТХ
+                        .our-objects__item-box
+                            .our-objects__item
+                                img.our-objects__item-img.image-load(src="#" data-src="/assets/css/img/tenders/works/14.jpg" alt="КУПН Газпромнефть-МНПЗ")
+                                .our-objects__item-content
+                                    .our-objects__item-title КУПН Газпромнефть-МНПЗ
+                                    .our-objects__item-text Сдали разделы
+                                        span ТХ
+                        .our-objects__item-box
+                            .our-objects__item
+                                img.our-objects__item-img.image-load(src="#" data-src="/assets/css/img/tenders/works/15.jpg" alt="НПЗ ОАО «Газпром нефтехим Салават».")
+                                .our-objects__item-content
+                                    .our-objects__item-title НПЗ ОАО «Газпром нефтехим Салават».
+                                    .our-objects__item-text Сдали разделы
+                                        span ТХ
+                        .our-objects__item-box
+                            .our-objects__item
+                                img.our-objects__item-img.image-load(src="#" data-src="/assets/css/img/tenders/works/16.jpg" alt="Пропарочный комплекс. Комсмольск-на-Амуре")
+                                .our-objects__item-content
+                                    .our-objects__item-title Пропарочный комплекс. Комсмольск-на-Амуре
+                                    .our-objects__item-text Сдали разделы
+                                        span КЖ, КМ, ТХ, АР, ОВ, ЭОМ, НВК
+                        .our-objects__item-box
+                            .our-objects__item
+                                img.our-objects__item-img.image-load(src="#" data-src="/assets/css/img/tenders/works/17.jpg" alt="Селекционно-генетический центр. Башкирия")
+                                .our-objects__item-content
+                                    .our-objects__item-title Селекционно-генетический центр. Башкирия
+                                    .our-objects__item-text Сдали разделы
+                                        span ОВ, НВК, АР, КМ, КЖ, ОВК, ТН
+
+            .btn.btn_border-black.btn_weight-normal.btn_center.btn_bg-transparent.btn_bg-transparent-no-hover.btn_our-works
+                .btn__text Смотреть все работы
+                .btn__icon
+
+        .r10.d-lg-block.d-none
+        .r20.d-lg-block.d-none
+
+    section.services
+        .r10
+        .r20
+        .container
+            h3.title Подготовка исполнительной документации по видам работ [[++city_roditel]]
+        .container
+            .quote-document.quote-document_inverse.d-flex.justify-content-between.align-items-start
+                .quote-document__author
+                    .quote-document__img.d-flex.justify-content-end
+                        img.image-load.d-block(src="#" data-src="../assets/images/team/7.jpg" alt="Подготовка исполнительной документации по видам работ")
+                    .quote-document__content
+                        .quote-document__fio Менир Ахметзянов
+                        .quote-document__profess Технический директор
+                .quote-document__text Для заказа услуг, выберите нужный вид работ и нажмите кнопку Заказать расчёт. Если у вас их несколько, сообщите об этом по телефону. Рассчитаем стоимость со скидкой
+                    .quote-document__text-corner
+
+            .r10
+            .r20.d-lg-block.d-none
+            .services-box [[getImageList? &tvname=`services_desktop` &tpl=`services_desktop` &docid=`1` &limit=`0`]]
+            .r10
+            .r20.d-lg-block.d-none
+
+    .r20
+    .container
+        .form-new
+            .row
+                .form-new__box.col-lg-10
+                    .row.justify-content-between
+                        .col-xl-8.col-lg-9.col-md-10.col-12
+                            .form-new__form-box
+                                .form-new__title Закажите исполнительную документацию со скидкой 25%
+                                .form-new__subtitle-box.d-flex.align-items-center
+                                    svg.form-new__subtitle-svg(xmlns="https://www.w3.org/2000/svg")
+                                        use(xlink:href="../assets/css/img/ppr/sprite.svg#form-icon")
+                                    .form-new__subtitle Отправьте заявку сейчас и гарантировано получите скидку
+                                | [[!AjaxForm?
+                                | &snippet=`FormIt`
+                                | &frontend_css=``
+                                | &form=`id_form_tpl1`
+                                | &hooks=`email,FormItSaveForm,roistat_hooks`
+                                | &emailSubject=`Новая заявка `
+                                | &emailTpl=`template_form1`
+                                | &emailTo=`[[+email_to]]`
+                                | &validate=`fio:required,phone:required`
+                                | &fieldNames=`fio==Имя,phone==Телефон,page==Страница`
+                                | &validationErrorMessage=`В форме содержатся ошибки!`
+                                | &successMessage=`Сообщение успешно отправлено`
+                                | ]]
+                        .form-new__box-right.col-xl-4.col-lg-3.col-md-2
+                            img.form-new__box-img.image-load(src="#" data-src="../assets/css/img/form1.png" alt="Закажите исполнительную документацию со скидкой 25%")
+                            .form-new__box-signature
+                                .form-new__box-signature-title Сергей Гаинцев
+                                .form-new__box-signature-subtitle Директор
+    .r20
+    .r20
+
+    .container
+        h3.title Выберите схему подготовки исполнительной документации
+        .scheme-new
+            .scheme-new__item
+                .scheme-new__item-title-head
+                    .scheme-new__item-title Готовим и сдаем документацию находясь на объекте
+                    .scheme-new__item-title-svg-box
+                        svg.scheme-new__item-title-svg(xmlns="http://www.w3.org/2000/svg")
+                            use(xlink:href="/assets/css/img/sprite-main.svg#scheme-new1")
+                .scheme-new__item-content
+                    ul.scheme-new__item-ul
+                        li.scheme-new__item-li Группа инженеров ПТО прибывает на объект во главе с руководителем, уполномоченным подписывать первичные документы от имени компании
+                        li.scheme-new__item-li Группа снабжена ноутбуками, спецодеждой, мобильной связью. От вас потребуются только рабочие места
+                        li.scheme-new__item-li Специалисты проводят аудит завершенных строительных работ
+                        li.scheme-new__item-li Изучают проект и согласованные изменения к нему
+                        li.scheme-new__item-li Подготавливают исполнительную и сдают поэтапно
+                        li.scheme-new__item-li Комплектуют подписанные папки документации в единый пакет и сдают заказчику
+                        li.scheme-new__item-li Работа осуществляется исключительно силами компании
+                    a.scheme-new__item-btn(href="[[++base_url]]vedenie-id/ispolnitelnaya-dokumentacziya-obektov/") Подробнее
+            .scheme-new__item
+                .scheme-new__item-title-head
+                    .scheme-new__item-title Готовим документацию камерально с частичным присутствием
+                    .scheme-new__item-title-svg-box
+                        svg.scheme-new__item-title-svg(xmlns="http://www.w3.org/2000/svg")
+                            use(xlink:href="/assets/css/img/sprite-main.svg#scheme-new2")
+                .scheme-new__item-content
+                    ul.scheme-new__item-ul
+                        li.scheme-new__item-li Специалисты приезжают на объект, делают аудит и собирают первичные данные
+                        li.scheme-new__item-li Возвращаются в офис, подготавливают исполнительную техническую документацию
+                        li.scheme-new__item-li Отправляют заказчику на проверку технадзором
+                        li.scheme-new__item-li Пересылаете нам вынесенные замечания - устраняем
+                        li.scheme-new__item-li Инженеры возвращаются на объект с готовым комплектом документации, защищают перед заказчиком
+            a.btn.btn_inline-block.btn_width-full-m.btn_center.btn-modal(href="#form_up" rel="nofollow" data-reason="Заказать звонок специалиста" data-header="Заказать звонок специалиста") Заказать звонок специалиста
+    .r20
+    .r20
+
+    .docs
+        .r20
+        .r20
+        .container
+            .title Отзывы
+            .docs__signature.d-flex
+                svg.docs__signature-icon(xmlns="http://www.w3.org/2000/svg")
+                    use(xlink:href="/assets/css/img/type_jobs/geodez/sprite.svg#review")
+                .docs__signature-text Почитайте что о нас пишут
+            .docs-box.row.flex-nowrap [[getImageList? &tvname=`docs` &tpl=`docs` &docid=`1` &limit=`6`]]
+            .r20.d-md-none
+            a.review-btn.d-flex.justify-content-end(href="[[++base_url]]o-kompanii/otzyivyi/")
+                .review-btn__title Смотреть все
+                .review-btn__icon-box
+                    svg.review-btn__icon(xmlns="http://www.w3.org/2000/svg")
+                        use(xlink:href="/assets/css/img/review/review.svg#review")
+        .r20
+        .r20
+
+    section.about_company
+        .container
+            .r10
+            .r20
+            .r20.d-lg-block.d-none
+            h3.title [[pdoField? &id=`1` &field=`title_team`]]
+            #ajax-team.our_team_slideshow.row.flex-lg-wrap.flex-nowrap [[getImageList? &tvname=`our_team` &tpl=`our_team` &docid=`1` &limit=`6`]]
+            .btn.btn_weight-normal.btn_center.btn_bg-transparent.btn_team.btn_bg-transparent-no-hover.btn_border-black.show(onclick="ym(48630242, 'reachGoal', 'okompanii-specy-open'); fbq('track', 'InitiateCheckout'); return true;")
+                .btn__text Показать еще
+                .btn__icon
+
+            .r10
+            .r20
+            .r20.d-lg-block.d-none
+
+    .container
+        .block-list.block-list_svg
+            .block-list__title Узнайте вилку стоимости исполнительной за 1 день без отправки проекта
+            svg.block-list__icon.block-list__icon_main(xmlns="http://www.w3.org/2000/svg")
+                use(xlink:href="/assets/css/img/sprite-main.svg#price4")
+            ul.block-list__ul
+                li.block-list__li
+                    .block-list__li-svg
+                        svg.block-list__li-icon(xmlns="http://www.w3.org/2000/svg")
+                            use(xlink:href="/assets/css/img/sprite-main.svg#price1")
+                    .block-list__li-text Ответьте на 3 вопроса
+                li.block-list__li
+                    .block-list__li-svg
+                        svg.block-list__li-icon(xmlns="http://www.w3.org/2000/svg")
+                            use(xlink:href="/assets/css/img/sprite-main.svg#price2")
+                    .block-list__li-text Укажите номер телефона
+                li.block-list__li
+                    .block-list__li-svg
+                        svg.block-list__li-icon(xmlns="http://www.w3.org/2000/svg")
+                            use(xlink:href="/assets/css/img/sprite-main.svg#price3")
+                    .block-list__li-text Ожидайте звонка
+            a.block-list__btn.btn.btn_inline-block.btn_border-black.btn_bg-transparent.btn_weight-normal.btn_bg-transparent-no-hover.btn-modal(href="#form_quiz" rel="nofollow" data-reason="Ответить на вопросы за 1 минуту" data-header="Ответить на вопросы за 1 минуту") Ответить на вопросы за 1 минуту
+    .r20
+    .r20
+
+    //-.scheme
+        .container
+            .r10
+            .r20
+            .r20.d-lg-block.d-none
+            h3.title Выбирайте схему подготовки исполнительной документации, подходящую вам
+            .sheme-item
+                .row
+                    .sheme-item__left.col-lg-3.col-12
+                        .sheme-item__img.d-lg-block.d-none
+                            img.d-lg-block.d-none.image-load(src="#" data-src="../assets/css/img/sheme/1.jpg" alt="Готовим и сдаем документацию находясь на объекте")
+                        .d-flex.justify-content-center
+                            a.btn.btn-modal.d-inline-block(href="#form_up" rel="nofollow" data-reason="Рассчитать стоимость - Готовим и сдаем документацию находясь на объекте" data-header="Рассчитать стоимость") Рассчитать стоимость
+                    .sheme-item__right.col-lg-9.col-12
+                        .d-flex
+                            .sheme-item__img.d-flex.d-lg-none.align-items-center
+                                img.d-block.d-lg-none.image-load(src="#" data-src="../assets/css/img/sheme/1_min.jpg" alt="Удаленно готовим документацию по вашему проекту")
+                            .d-flex.align-items-center.sheme-item__title Готовим и сдаем документацию находясь на объекте
+                        ul.sheme-item__ul
+                            li
+                                span По прибытии на объект, инженеры ПТО делают аудит выполненных строительных работ.
+                            li
+                                span Собирают первичные данные по выполненным работам на объекте.
+                            li
+                                span Изучают проектную документацию и согласованные изменения к проекту.
+                            li
+                                span Подготавливают исполнительную документацию по разделам, находясь на объекте; сдают строительному контролю и технадзору каждый раздел поэтапно
+                            li
+                                span Собирают подписанные разделы в единый пакет документов, составляют, подписывают общий журнал работ и сдают подписанный пакет исполнительной документации заказчику.
+                            li
+                                span Предоставленная группа инженеров ПТО имеет своего руководителя, уполномоченного подписывать первичные документы от имени компании.
+                            li
+                                span Инженеры снабжаются ноутбуками, спецодеждой, мобильной связью. Поэтому от вас потребуется только места для размещения их на объекте.
+                            li
+                                span Подготовка и сдача документации будет проходить исключительно силами компании «ИСИ».
+            .sheme-item
+                .row
+                    .sheme-item__left.col-lg-3.col-12
+                        .sheme-item__img.d-lg-block.d-none
+                            img.d-lg-block.d-none.image-load(src="#" data-src="../assets/css/img/sheme/2.jpg" alt="Готовим документацию удаленно с частичным присутствием на объекте")
+                        .d-flex.justify-content-center
+                            a.btn.btn-modal.d-inline-block(rel="nofollow" href="#form_up" data-reason="Рассчитать стоимость - Удаленно готовим исполнительную документацию с частичным присутствием на объекте" data-header="Рассчитать стоимость") Рассчитать стоимость
+                    .sheme-item__right.col-lg-9.col-12
+                        .d-flex
+                            .sheme-item__img.d-flex.d-lg-none.align-items-center
+                                img.d-block.d-lg-none.image-load(src="#" data-src="../assets/css/img/sheme/2_min.jpg" alt="Удаленно готовим документацию по вашему проекту")
+                            .d-flex.align-items-center.sheme-item__title Готовим документацию удаленно с частичным присутствием на объекте
+                        ul.sheme-item__ul
+                            li
+                                span Инженер приезжает на объект, делает аудит и собирает первичные данные.
+                            li
+                                span Собрав данные, инженер ПТО возвращается в офис и подготавливает документацию. В разработке принимают участие инженеры требуемого профиля.
+                            li
+                                span Подготовленная документация отправляется заказчику для первичной проверки строительным контролем и технадзором.
+                            li
+                                span При вынесении замечаний технадзором, вы отправляете их нам, мы их устраняем.
+                            li
+                                span С готовым пакетом исполнительной документации наш инженер ПТО выезжает на объект, защищает, подписывает пакет документации и сдает его вам.
+                            li
+                                span Схема быстро набрала популярность, потому что дает возможность подготовить документацию с экономией бюджета и минимальным вашим участием.
+            .sheme-item
+                .row
+                    .sheme-item__left.col-lg-3.col-12
+                        .sheme-item__img.d-lg-block.d-none
+                            img.d-lg-block.d-none.image-load(src="#" data-src="../assets/css/img/sheme/3.jpg" alt="Удаленно готовим документацию по вашему проекту")
+                        .d-flex.justify-content-center
+                            a.btn.btn-modal.d-inline-block(rel="nofollow" href="#form_up" data-reason="Рассчитать стоимость - Удаленно готовим исполнительную документацию по вашему проекту" data-header="Рассчитать стоимость") Рассчитать стоимость
+                    .sheme-item__right.col-lg-9.col-12
+                        .d-flex
+                            .sheme-item__img.d-flex.d-lg-none.align-items-center
+                                img.d-block.d-lg-none.image-load(src="#" data-src="../assets/css/img/sheme/3_min.jpg" alt="Удаленно готовим документацию по вашему проекту")
+                            .d-flex.align-items-center.sheme-item__title Удаленно готовим документацию по вашему проекту
+                        ul.sheme-item__ul
+                            li
+                                span Предоставляете проект объекта, готовим исполнительную документацию строго по нему.
+                            li
+                                span Согласовываем каждый раздел поэтапно, отправляя его на вашу почту и в случае замечаний – вносим поправки.
+                            li
+                                span По окончании подготовки исполнительной документации, отправляем весь подготовленный комплект документации на вашу почту. Вы самостоятельно согласовываете ее у строительного контроля и технадзора.
+                            li
+                                span Если технадзор выписывает замечания, отправляете их нам. Мы оперативно вносим изменения и отправляем обратно и далее по описанной выше схеме. Мы сопровождаем вас до подписания исполнительной документации.
+                            li
+                                span Схема позволяет сэкономить деньги, но потребует максимального вашего участия.
+            .r20
+
+    //-section#vantages
+    //-.vantages
+        .container.vantages_box
+            .row.justify-content-center.flex-wrap
+                //-.col-lg-5.col-12
+                    .row [[getImageList? &tvname=`vantages_main` &tpl=`vantages_main` &docid=`1` &limit=`2`]]
+                    //-.item_vantages
+                        .text_vantages_msk Работа непосредственно на объекте
+                        .text_info(style='padding-left: 0') Помимо удаленной работы, наши специалисты могут выехать непосредственно на ваш объект в любой точке России, для более оперативной и слаженной работы
+
+                .col-12
+                    .row [[getImageList? &tvname=`vantages` &tpl=`vantages` &docid=`1` &limit=`4`]]
+                //-each val,index in ["Опыт работы специалистов от 5 лет","Высококвалифицированных работников компании","Предоставляем гарантию на выполненные работы"]
+                    .item_vantages.col-12.col-sm-12.col-md-6.col-lg-4.col-xl-4.d-flex.align-items-center
+                        .number_vantages
+                            img(src="../assets/css/img/vantages" + index + ".png" alt="")
+                        .text_info= val
+
+    .r10
+    .r20
+    .r20.d-lg-block.d-none
+    .container
+        .our-clients
+            .our-clients__maps-box
+                img.our-clients__maps.image-load(data-src="../assets/css/img/main/maps.jpg" alt="Более 450 клиентов по России")
+            .our-clients__content
+                .our-clients__title Более <span>450 клиентов</span> по России
+                .our-clients__subtitle В их числе
+                ul.our-clients__ul
+                    li.our-clients__li Нефтеперерабатывающие  заводы
+                    li.our-clients__li Нефтяные месторождения
+                    li.our-clients__li Трубопроводы
+                    li.our-clients__li Заводы химического производства
+                    li.our-clients__li Автомагистрали и железные дороги
+                    li.our-clients__li Оборонные объекты
+                    li.our-clients__li Рудники
+    .r10
+    .r20
+
+    .container
+        .bl1
+            .bl1__item-box
+                .bl1__item
+                    img.bl1__item-img.image-load(data-src="../assets/css/img/main/maps1.jpg" alt="Закажите исполнительную документацию со скидкой 25%")
+                    .bl1__item-content
+                        .bl1__item-title 100 инженеров ПТО
+                        .bl1__item-text Вылетают на объекты по России
+            .bl1__item-box
+                .bl1__item
+                    img.bl1__item-img.image-load(data-src="../assets/css/img/main/maps2.jpg" alt="Закажите исполнительную документацию со скидкой 25%")
+                    .bl1__item-content
+                        .bl1__item-title 29 разделов исполнительной
+                        .bl1__item-text Подготовим и сдадим заказчику
+            .bl1__item-box
+                .bl1__item
+                    img.bl1__item-img.image-load(data-src="../assets/css/img/main/maps3.jpg" alt="Закажите исполнительную документацию со скидкой 25%")
+                    .bl1__item-content
+                        .bl1__item-title Аттестованные инженеры
+                        .bl1__item-text Все инженеры имеют удостоверения
+    .r20
+    .r20
+
+    .r30
+    .form-footer
+        .form-footer__title Не нашли, что искали? <br> Закажите звонок, обсудим проект
+        | [[!AjaxForm?
+        | &snippet=`FormIt`
+        | &frontend_css=``
+        | &form=`form_footer`
+        | &hooks=`email,FormItSaveForm,roistat_hooks`
+        | &emailSubject=`Новая заявка `
+        | &emailTpl=`template_form1`
+        | &emailTo=`[[+email_to]]`
+        | &validate=`fio:required,phone:required`
+        | &fieldNames=`fio==Имя,phone==Телефон,page==Страница`
+        | &validationErrorMessage=`В форме содержатся ошибки!`
+        | &successMessage=`Сообщение успешно отправлено`
+        | ]]
+    .r10
+    .r20
+    .r20.d-lg-block.d-none
+
+    //-.maps_works
+        .container
+            .r20
+            .row
+                .col-md-6.col-12
+                    .title.title_no-margin Работаем по всей России
+                    .r10
+                    .title.title_font-normal Возможен вылет на объект в любой точке РФ
+                    .maps_city
+                        .img_city
+                            img.image-load(src="#" data-src="../assets/css/img/maps_city.jpg" alt="Работаем по всей России: возможен вылет на объект в любой точке РФ")
+                        .text_city Более
+                            span &nbsp;300 клиентов <br>
+                            | по всей стране
+
+                .col-md-6.col-12.docs.objects
+                    .title Выезды на объекты
+                    .row
+                        .col-4
+                            .img_docs
+                                a(href='../assets/images/objects/5.jpg', data-fancybox='images1' data-caption='')
+                                    img.image-load(src="#" data-src='[[phpthumbon? &input=`/assets/images/objects/5.jpg` &options=`h=158&w=88&zc=1`]]' alt='Исполнительная на технологический трубопровод [[++city_roditel]]')
+
+                        .col-4
+                            .img_docs
+                                a(href='../assets/images/objects/6.jpg', data-fancybox='images1' data-caption='')
+                                    img.image-load(src="#" data-src='[[phpthumbon? &input=`/assets/images/objects/6.jpg` &options=`h=158&w=88&zc=1`]]' alt='Инженер ПТО на объекте [[++city_roditel]]')
+
+                        .col-4
+                            .img_docs
+                                a(href='../assets/images/objects/8.jpg', data-fancybox='images1' data-caption='')
+                                    img.image-load(src="#" data-src='/assets/images/objects/8min.jpg' alt='ПТО на крайнем севера')
+
+                        .col-4
+                            .img_docs
+                                a(href='../assets/images/objects/2.jpg', data-fancybox='images1' data-caption='')
+                                    img.image-load(src="#" data-src='[[phpthumbon? &input=`/assets/images/objects/2.jpg` &options=`h=88&w=158&zc=1`]]' alt='Исполнительная документация нпз [[++city_roditel]]')
+
+                        .col-4
+                            .img_docs
+                                a(href='../assets/images/objects/9.jpg', data-fancybox='images1' data-caption='')
+                                    img.image-load(src="#" data-src='/assets/images/objects/9min.jpg' alt='Исполнительная на земляные работы [[++city_roditel]]')
+
+                        .col-4
+                            .img_docs
+                                a(href='../assets/images/objects/7.jpg', data-fancybox='images1' data-caption='')
+                                    img.image-load(src="#" data-src='/assets/images/objects/7min.jpg' alt='Исполнительная на автомобильные дороги [[++city_roditel]]')
+
+                        .col-4
+                            .img_docs
+                                a(href='../assets/images/objects/1.jpg', data-fancybox='images1' data-caption='')
+                                    img.image-load(src="#" data-src='[[phpthumbon? &input=`/assets/images/objects/1.jpg` &options=`h=88&w=158&zc=1`]]' alt='ПТО [[++city_roditel]]')
+
+                        .col-4
+                            .img_docs
+                                a(href='../assets/images/objects/3.jpg', data-fancybox='images1' data-caption='')
+                                    img.image-load(src="#" data-src='[[phpthumbon? &input=`/assets/images/objects/3.jpg` &options=`h=88&w=158&zc=1`]]' alt='Исполнительная на инженерные сети [[++city_roditel]]')
+                        .col-4
+                            .img_docs
+                                a(href='../assets/images/objects/4.jpg', data-fancybox='images1' data-caption='')
+                                    img.image-load(src="#" data-src='[[phpthumbon? &input=`/assets/images/objects/4.jpg` &options=`h=88&w=158&zc=1`]]' alt='Исполнительная документация на тепловые сети [[++city_roditel]]')
+
+
+    //-.comparison
+        .container
+            .row
+                .mx-auto.col-12.col-lg-9.col-xl-8
+                    .comparison__title Нас выбирают потому что
+                    //-.comparison__subtitle В качестве примера даны расчеты расходов на содержание и обеспечение условиями труда 1-го штатного инженера ПТО
+                    .row
+                        .col-12.col-sm-6
+                            .comparison-block(style="opacity:0.8")
+                                .comparison-block__title Собственный штат инженеров
+                                .comparison-item.d-flex.align-items-center
+                                    .comparison-item__img
+                                        img(src="../assets/css/img/comparison-false.png" alt="")
+                                    .comparison-item__content
+                                        //-.comparison-item__caption Заработная плата
+                                        .comparison-item__text Не укладываются в сроки
+                                .comparison-item.d-flex.align-items-center
+                                    .comparison-item__img
+                                        img(src="../assets/css/img/comparison-false.png" alt="")
+                                    .comparison-item__content
+                                        //-.comparison-item__caption Заработная плата
+                                        .comparison-item__text Отсутствует руководитель ПТО
+                                .comparison-item.d-flex.align-items-center
+                                    .comparison-item__img
+                                        img(src="../assets/css/img/comparison-false.png" alt="")
+                                    .comparison-item__content
+                                        //-.comparison-item__caption Отчисления ПФР, соц.страхование и т.д.
+                                        .comparison-item__text Документация имеет много замечаний от надзорных органов
+                                .comparison-item.d-flex.align-items-center
+                                    .comparison-item__img
+                                        img(src="../assets/css/img/comparison-false.png" alt="")
+                                    .comparison-item__content
+                                        //-.comparison-item__caption Компьютер и орг.техника
+                                        .comparison-item__text Нет нужного количества инженеров по профилям
+                                .comparison-item.d-flex.align-items-center
+                                    .comparison-item__img
+                                        img(src="../assets/css/img/comparison-false.png" alt="")
+                                    .comparison-item__content
+                                        //-.comparison-item__caption Лицензированное ПО за 1 компьютер
+                                        .comparison-item__text Штат не всегда справляется с объемами
+                                .comparison-item.d-flex.align-items-center
+                                    .comparison-item__img
+                                        img(src="../assets/css/img/comparison-false.png" alt="")
+                                    .comparison-item__content
+                                        //-.comparison-item__caption Спец. одежда и СИЗ
+                                        .comparison-item__text Сложно найти квалифицированного инженера в штат
+                                .comparison-item.d-flex.align-items-center
+                                    .comparison-item__img
+                                        img(src="../assets/css/img/comparison-false.png" alt="")
+                                    .comparison-item__content
+                                        //-.comparison-item__caption Поиск персонала
+                                        .comparison-item__text Присутствует текучка кадров
+
+
+                                //-.comparison-total
+                                    .comparison-total__title Итого затраты на 1-го инженера
+                                    .comparison-total__text от <span>80 000</span> рублей в месяц
+
+                        .col-12.col-sm-6
+                            .comparison-block(style="box-shadow: 10px 10px 30px -8px rgba(255, 255, 255, 0.75)")
+                                .comparison-block__title Заказывая документацию у нас
+                                .comparison-item.d-flex.align-items-center
+                                    .comparison-item__img
+                                        img(src="../assets/css/img/comparison-true.png" alt="")
+                                    .comparison-item__content
+                                        //-.comparison-item__caption Заработная плата
+                                        .comparison-item__text Сдаем документацию в установленный договором срок
+                                .comparison-item.d-flex.align-items-center
+                                    .comparison-item__img
+                                        img(src="../assets/css/img/comparison-true.png" alt="")
+                                    .comparison-item__content
+                                        //-.comparison-item__caption Отчисления ПФР, соц.страхование и т.д.
+                                        .comparison-item__text Имеем наработанный опыт сдачи документации строительному контролю и технадзору
+                                .comparison-item.d-flex.align-items-center
+                                    .comparison-item__img
+                                        img(src="../assets/css/img/comparison-true.png" alt="")
+                                    .comparison-item__content
+                                        //-.comparison-item__caption Компьютер и орг.техника
+                                        .comparison-item__text Делаем документацию на все виды работ
+                                .comparison-item.d-flex.align-items-center
+                                    .comparison-item__img
+                                        img(src="../assets/css/img/comparison-true.png" alt="")
+                                    .comparison-item__content
+                                        //-.comparison-item__caption Лицензированное ПО за 1 компьютер
+                                        .comparison-item__text Знаем тонкости каждого раздела
+                                .comparison-item.d-flex.align-items-center
+                                    .comparison-item__img
+                                        img(src="../assets/css/img/comparison-true.png" alt="")
+                                    .comparison-item__content
+                                        //-.comparison-item__caption Возмещение НДС
+                                        .comparison-item__text Отправляем инженеров ПТО на объект любого масштаба
+                                .comparison-item.d-flex.align-items-center
+                                    .comparison-item__img
+                                        img(src="../assets/css/img/comparison-true.png" alt="")
+                                    .comparison-item__content
+                                        //-.comparison-item__caption Возмещение НДС
+                                        .comparison-item__text Более 100 инженеров ПТО в штате различного профиля
+
+    //-section.question
+        .container
+            h3.title_question [[pdoField? &id=`1` &field=`title_question`]]
+            | [[getImageList? &tvname=`questions` &tpl=`questions` &docid=`1` &limit=`0`]] <br><br>
+
+    //-.useful
+        .container
+            .useful__title Мы полезны для тех, кто ведет:
+            .row
+                .col-xl-4.col-md-6.col-12
+                    .useful-item.d-flex.align-items-center
+                        .useful-item__img
+                            img(src="../assets/css/img/useful/6.jpg" alt="")
+                        .useful-item__text Строительство технологических трубопроводов (нефтепровод, газпровод)
+                .col-xl-4.col-md-6.col-12
+                    .useful-item.d-flex.align-items-center
+                        .useful-item__img
+                            img(src="../assets/css/img/useful/5.jpg" alt="")
+                        .useful-item__text Строительство производственных зданий
+                .col-xl-4.col-md-6.col-12
+                    .useful-item.d-flex.align-items-center
+                        .useful-item__img
+                            img(src="../assets/css/img/useful/4.jpg" alt="")
+                        .useful-item__text Общестроительные работы (бетонные, каменные, монтажные, земляные геодезические, подготовительные, инженерно-проектировочные)
+                .col-xl-4.col-md-6.col-12
+                    .useful-item.d-flex.align-items-center
+                        .useful-item__img
+                            img(src="../assets/css/img/useful/3.jpg" alt="")
+                        .useful-item__text Работы по инженерным сетям (водоснабжение и водоотведение, теплоснабжение, электроснабжение, вентиляция)
+                .col-xl-4.col-md-6.col-12
+                    .useful-item.d-flex.align-items-center
+                        .useful-item__img
+                            img(src="../assets/css/img/useful/2.jpg" alt="")
+                        .useful-item__text Монтаж и демонтаж слаботочных систем (противопожарные сигнализация, дымоудаление)
+                .col-xl-4.col-md-6.col-12
+                    .useful-item.d-flex.align-items-center
+                        .useful-item__img
+                            img(src="../assets/css/img/useful/1.jpg" alt="")
+                        .useful-item__text Монтаж и демонтаж систем пожаротушения
+
+    //-.comparison
+        .container
+            .row
+                .mx-auto.col-12.col-lg-9.col-xl-8
+                    .comparison__title Сравнение ваших затрат на ПТО
+                    .comparison__subtitle В качестве примера даны расчеты расходов на содержание и обеспечение условиями труда 1-го штатного инженера ПТО
+                    .row
+                        .col-12.col-sm-6
+                            .comparison-block(style="opacity:0.8")
+                                .comparison-block__title Штатный Инженер ПТО
+                                .comparison-item.d-flex.align-items-center
+                                    .comparison-item__img
+                                        img(src="../assets/css/img/comparison-false.png" alt="")
+                                    .comparison-item__content
+                                        .comparison-item__caption Заработная плата
+                                        .comparison-item__text от 40 000 рублей
+                                .comparison-item.d-flex.align-items-center
+                                    .comparison-item__img
+                                        img(src="../assets/css/img/comparison-false.png" alt="")
+                                    .comparison-item__content
+                                        .comparison-item__caption Отчисления ПФР, соц.страхование и т.д.
+                                        .comparison-item__text 43% от суммы ЗП (от 17 т.р.)
+                                .comparison-item.d-flex.align-items-center
+                                    .comparison-item__img
+                                        img(src="../assets/css/img/comparison-false.png" alt="")
+                                    .comparison-item__content
+                                        .comparison-item__caption Компьютер и орг.техника
+                                        .comparison-item__text от 25 000 рублей на человека
+                                .comparison-item.d-flex.align-items-center
+                                    .comparison-item__img
+                                        img(src="../assets/css/img/comparison-false.png" alt="")
+                                    .comparison-item__content
+                                        .comparison-item__caption Лицензированное ПО за 1 компьютер
+                                        .comparison-item__text от 10 000 рублей
+                                .comparison-item.d-flex.align-items-center
+                                    .comparison-item__img
+                                        img(src="../assets/css/img/comparison-false.png" alt="")
+                                    .comparison-item__content
+                                        .comparison-item__caption Спец. одежда и СИЗ
+                                        .comparison-item__text от 15 000 рублей на 1 чел.
+                                .comparison-item.d-flex.align-items-center
+                                    .comparison-item__img
+                                        img(src="../assets/css/img/comparison-false.png" alt="")
+                                    .comparison-item__content
+                                        .comparison-item__caption Поиск персонала
+                                        .comparison-item__text Возможна «текучка» кадров
+                                .comparison-item.d-flex.align-items-center
+                                    .comparison-item__img
+                                        img(src="../assets/css/img/comparison-false.png" alt="")
+                                    .comparison-item__content
+                                        .comparison-item__caption Возмещение НДС
+                                        .comparison-item__text Нет
+
+                                .comparison-total
+                                    .comparison-total__title Итого затраты на 1-го инженера
+                                    .comparison-total__text от <span>80 000</span> рублей в месяц
+
+                        .col-12.col-sm-6
+                            .comparison-block(style="box-shadow: 10px 10px 30px -8px rgba(255, 255, 255, 0.75)")
+                                .comparison-block__title Заказывая ПТО у нас
+                                .comparison-item.d-flex.align-items-center
+                                    .comparison-item__img
+                                        img(src="../assets/css/img/comparison-true.png" alt="")
+                                    .comparison-item__content
+                                        .comparison-item__caption Заработная плата
+                                        .comparison-item__text Нет
+                                .comparison-item.d-flex.align-items-center
+                                    .comparison-item__img
+                                        img(src="../assets/css/img/comparison-true.png" alt="")
+                                    .comparison-item__content
+                                        .comparison-item__caption Отчисления ПФР, соц.страхование и т.д.
+                                        .comparison-item__text Нет
+                                .comparison-item.d-flex.align-items-center
+                                    .comparison-item__img
+                                        img(src="../assets/css/img/comparison-true.png" alt="")
+                                    .comparison-item__content
+                                        .comparison-item__caption Компьютер и орг.техника
+                                        .comparison-item__text Нет
+                                .comparison-item.d-flex.align-items-center
+                                    .comparison-item__img
+                                        img(src="../assets/css/img/comparison-true.png" alt="")
+                                    .comparison-item__content
+                                        .comparison-item__caption Лицензированное ПО за 1 компьютер
+                                        .comparison-item__text Нет
+                                .comparison-item.d-flex.align-items-center
+                                    .comparison-item__img
+                                        img(src="../assets/css/img/comparison-true.png" alt="")
+                                    .comparison-item__content
+                                        .comparison-item__caption Спец. одежда и СИЗ
+                                        .comparison-item__text Нет
+                                .comparison-item.d-flex.align-items-center
+                                    .comparison-item__img
+                                        img(src="../assets/css/img/comparison-true.png" alt="")
+                                    .comparison-item__content
+                                        .comparison-item__caption Поиск персонала
+                                        .comparison-item__text Лучшие специалисты РФ
+                                .comparison-item.d-flex.align-items-center
+                                    .comparison-item__img
+                                        img(src="../assets/css/img/comparison-true.png" alt="")
+                                    .comparison-item__content
+                                        .comparison-item__caption Возмещение НДС
+                                        .comparison-item__text Да
+
+                                .comparison-total.d-flex.justify-content-between.flex-wrap.flex-md-nowrap
+                                    .comparison-total__content
+                                        .comparison-total__title Стоимость наших услуг
+                                        .comparison-total__text от <span>4 800</span> рублей
+                                    a.comparison-total__button.d-flex.align-items-center.justify-content-center(data-toggle="modal" rel="nofollow" data-target="#form_up" data-reason="Заказать услуги (блок сравнения затрат на ПТО)" data-header="Заказать") Заказать
+
+
+
+    //-.our-team__info и еще <span>62 специалиста<span> по всей России
+            //-- for (var i = 1; i < 3; i++)
+                .our_team
+                    .img_our_team
+                        img(src="../assets/css/img/our_team0.jpg" alt="")
+                    .name_team Василенко Геннадий Петрович
+                    .profess Заместитель директора
+
+    //-.if-you
+        .container
+            .if-you__title Умеем решать проблемы строителей
+            .row
+                .col-lg-6.col-12
+                    .if-you-item
+                        .if-you-item__title Образовался затор из неучтенных материалов в сопроводительной документации
+                        .d-flex.flex-wrap
+                            .if-you-point.d-flex.align-items-center
+                                .if-you-point__img
+                                    svg(xmlns="http://www.w3.org/2000/svg")
+                                        use(xlink:href="../assets/css/img/check.svg#check")
+                                .if-you-point__text Составим перечень недостающей
+                            .if-you-point.d-flex.align-items-center
+                                .if-you-point__img
+                                    svg(xmlns="http://www.w3.org/2000/svg")
+                                        use(xlink:href="../assets/css/img/check.svg#check")
+                                .if-you-point__text Подготовим документацию по перечню
+                            .if-you-point.d-flex.align-items-center
+                                .if-you-point__img
+                                    svg(xmlns="http://www.w3.org/2000/svg")
+                                        use(xlink:href="../assets/css/img/check.svg#check")
+                                .if-you-point__text Подготовим акты и журналы входного контроля
+                            .if-you-point.d-flex.align-items-center
+                                .if-you-point__img
+                                    svg(xmlns="http://www.w3.org/2000/svg")
+                                        use(xlink:href="../assets/css/img/check.svg#check")
+                                .if-you-point__text Отправим вам подготовленный пакет документов
+
+                .col-lg-6.col-12
+                    .if-you-item
+                        .if-you-item__title Собственный отдел ПТО не справляется с объемами работ
+                        .d-flex.flex-wrap
+                            .if-you-point.d-flex.align-items-center
+                                .if-you-point__img
+                                    svg(xmlns="http://www.w3.org/2000/svg")
+                                        use(xlink:href="../assets/css/img/check.svg#check")
+                                .if-you-point__text Предоставим инженеров ПТО на объект для усиления штатных
+                            .if-you-point.d-flex.align-items-center
+                                .if-you-point__img
+                                    svg(xmlns="http://www.w3.org/2000/svg")
+                                        use(xlink:href="../assets/css/img/check.svg#check")
+                                .if-you-point__text Возьмем ведение объекта полностью и подпишем документы у заказчика
+
+                .col-lg-6.col-12
+                    .if-you-item
+                        .if-you-item__title Не хватает времени на заполнение журналов СМР
+                        .d-flex.flex-wrap
+                            .if-you-point.d-flex.align-items-center
+                                .if-you-point__img
+                                    svg(xmlns="http://www.w3.org/2000/svg")
+                                        use(xlink:href="../assets/css/img/check.svg#check")
+                                .if-you-point__text Проведем аудит существующей документации
+                            .if-you-point.d-flex.align-items-center
+                                .if-you-point__img
+                                    svg(xmlns="http://www.w3.org/2000/svg")
+                                        use(xlink:href="../assets/css/img/check.svg#check")
+                                .if-you-point__text Подготовим недостающие документы
+                            .if-you-point.d-flex.align-items-center
+                                .if-you-point__img
+                                    svg(xmlns="http://www.w3.org/2000/svg")
+                                        use(xlink:href="../assets/css/img/check.svg#check")
+                                .if-you-point__text Подготовим акты и журналы входного контроля
+                            .if-you-point.d-flex.align-items-center
+                                .if-you-point__img
+                                    svg(xmlns="http://www.w3.org/2000/svg")
+                                        use(xlink:href="../assets/css/img/check.svg#check")
+                                .if-you-point__text Отправим вам полный пакет документов
+
+                .col-lg-6.col-12
+                    .if-you-item
+                        .if-you-item__title Сложно найти профильного инженера по договору найма
+                        .d-flex.flex-wrap
+                            .if-you-point.d-flex.align-items-center
+                                .if-you-point__img
+                                    svg(xmlns="http://www.w3.org/2000/svg")
+                                        use(xlink:href="../assets/css/img/check.svg#check")
+                                .if-you-point__text Вы получите необходимых инженеров ПТО, потому что в нашем штате есть специалисты даже узкого профиля
+
+            .d-flex.justify-content-center.align-items-center
+                a.if-you-button.d-flex.justify-content-center.align-items-center(data-toggle="modal" rel="nofollow" data-target="#form_up" data-reason="Заказать исполнительную документацию" data-header="Заказать исполнительную документацию") Заказать исполнительную документацию

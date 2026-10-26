@@ -1,0 +1,81 @@
+extends template
+block append var
+    -var title = "Главная"
+    -var inner=true
+    -var map=true
+    -var form_footer = false
+block content
+
+    .contacts-inner.first_screen_inner
+        .container
+            +crumbs()
+            .row.align-items-center
+                .col-lg-6.col-12
+                    h1.inner__title [[*h1]]
+
+
+            .contacts-item-box
+                .row.justify-content-between
+                    //-.contacts-item-container.col-lg-3.col-md-6.col-12
+                        .contacts-city
+                            .contacts-city__text Москва
+                            a.contacts-city__show.goto(href="geo:" class="item1" data-map="город Москва, Нижний Сусальный переулок, 5c12")
+                                span Смотреть на карте
+                        .contacts-item.d-flex
+                            .contacts-item__svg
+                                svg(xmlns="http://www.w3.org/2000/svg")
+                                    use(xlink:href="../assets/css/img/contacts/contacts.svg#contacts1")
+                            .contacts-item__content
+                                <a id="msk_roistat_contacts" class="contacts-item__title contacts-item__phone" href="tel:+79279563573"><span class="phone_roistat">8 927 956 35 73</span></a>
+                                .contacts-item__signature Бесплатный звонок по РФ
+                        .contacts-item.d-flex
+                            .contacts-item__svg
+                                svg(xmlns="http://www.w3.org/2000/svg")
+                                    use(xlink:href="../assets/css/img/contacts/contacts.svg#contacts2")
+                            .contacts-item__content
+                                a.contacts-item__title.contacts-item__email(href="mailto:msk@isipto.com") msk@isipto.com
+                                .contacts-item__signature Электронная почта
+                        .contacts-item.d-flex
+                            .contacts-item__svg
+                                svg(xmlns="http://www.w3.org/2000/svg")
+                                    use(xlink:href="../assets/css/img/contacts/contacts.svg#contacts3")
+                            .contacts-item__content
+                                .contacts-item__title с 09:00 до 18:00 ч.
+                                .contacts-item__signature Время работы
+                        a.page-inner__button(href="" data-toggle="modal" rel="nofollow" data-target="#form_up" data-reason="Заказать звонок в МСК" data-header="Заказать звонок") Заказать звонок
+
+                    .contacts-item-container.col-lg-5.col-md-6.col-12
+                        .contacts-city
+                            //-.contacts-city__text Уфа
+                            //-a.contacts-city__show.goto(href="geo:" class="item2" data-map="город Уфа, Революционная, 111/1")
+                                span Смотреть на карте
+                        .contacts-item.d-flex
+                            .contacts-item__svg
+                                svg(xmlns="http://www.w3.org/2000/svg")
+                                    use(xlink:href="../assets/css/img/contacts/contacts.svg#contacts1")
+                            .contacts-item__content
+                                <a id="phone_roistat_contacts_[[++key]]" class="contacts-item__title contacts-item__phone" href="tel:+79177303453"><span class="phone_roistat">8 917 730 34 53</span></a>
+                                .contacts-item__signature Бесплатный звонок по РФ
+                        .contacts-item.d-flex
+                            .contacts-item__svg
+                                svg(xmlns="http://www.w3.org/2000/svg")
+                                    use(xlink:href="../assets/css/img/contacts/contacts.svg#contacts2")
+                            .contacts-item__content
+                                a.contacts-item__title.contacts-item__email(href="mailto:[[++email]]") [[++email]]
+                                .contacts-item__signature Электронная почта
+
+                        .contacts-item.d-flex
+                            .contacts-item__svg
+                                svg(xmlns="http://www.w3.org/2000/svg")
+                                    use(xlink:href="../assets/css/img/contacts/contacts.svg#contacts3")
+                            .contacts-item__content
+                                .contacts-item__title с 09:00 до 18:00 ч.
+                                .contacts-item__signature Время работы
+                        | [[++address:ne=``:then=`<div class="contacts-item d-flex"><div class="contacts-item__svg"><svg xmlns="http://www.w3.org/2000/svg"><use xlink:href="../assets/css/img/contacts/contacts.svg#contacts4"></use></svg></div><div class="contacts-item__content"><div class="contacts-item__title">[[++address]]</div><div class="contacts-item__signature">Адрес</div></div></div>`]]
+
+                        a.btn.btn-modal.d-inline-block(href="#form_up" rel="nofollow" data-reason="Перезвоните мне" data-header="Перезвоните мне" onclick="ym(48630242, 'reachGoal', 'main-header-lead'); fbq('track', 'InitiateCheckout'); return true;")
+                            span.d-lg-block.d-none Перезвоните мне
+                            span.d-lg-none Позвонить
+                    .contacts-img.col-lg-7.col-md-6.d-md-block.d-none(style="background:url('../assets/css/img/main/maps.jpg') no-repeat center / contain")
+    .r50
+    | [[++address:ne=``:then=`<div id="map"></div>`]]

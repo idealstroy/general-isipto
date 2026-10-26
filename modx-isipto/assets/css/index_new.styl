@@ -1,0 +1,224 @@
+@import 'nib'
+@import 'rupture'
+
+
+/*Зачарование пикселей в ремы*/
+rem() {
+  remified = ()
+  for arg in arguments {
+    push(remified, unit(arg/16, 'rem'))
+  }
+  return remified
+}
+
+/*Адаптив*/
+rupture.scale =       0    576px    767.98px    992px    1200px
+rupture.scale-names =  'xs'     'sm'     'md'     'lg'      'xl'
+
+
+.first-screen
+  background: url('img/index_new/first-screen.jpg') #f6f7f9 right/contain no-repeat;
+  +below(sm)
+    background: #f6f7f9;
+
+.block1
+  display flex
+  flex-wrap wrap
+  margin 0 -10px
+  &__item
+    width calc(50% - 20px)
+    margin 0 10px
+    border-radius: 6px;
+    display flex
+    flex-direction column
+    +below(md)
+      width 100%
+  &__img-box
+    position relative
+  &__img
+    width 100%
+    display block
+  &__signature
+    position absolute
+    bottom 0
+    right 0
+    color: #FFFFFF;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 20px;
+    padding 5px 10px
+    background #E1625B
+    border-top-left-radius 15px
+  &__content
+    color: #333333;
+    height: 100%;
+    padding 20px 30px
+    font-size: 15px;
+    line-height: 20px;
+    background: #F6F7F8;
+    display flex
+    flex-direction column
+    justify-content space-between
+    transition .3s
+    border-radius 0 6px 6px 0
+    +below(md)
+      padding 30px 10px
+    &:hover
+      box-shadow: 20px 10px 30px rgba(0, 0, 0, 0.15);
+  &__title
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 33px;
+    color: #333333;
+    margin-bottom 20px
+    +below(md)
+      font-size: 18px;
+      line-height: 25px;
+  &__btn
+    font-size: 15px;
+    line-height: 30px;
+    color: #333333;
+    background: #E5E5E5;
+    border-radius: 3px;
+    padding 10px 30px
+    display: inline-block;
+    margin-top 30px
+    transition .3s
+    +below(md)
+      margin-top 20px
+    &:hover
+      color #fff
+      background #e03b32
+
+.block2
+  color: #fff;
+  border-radius: 6px;
+  background: linear-gradient(91.06deg, #6D798F 0.55%, #6B778D 46.56%, #48546A 98.7%);
+  display flex
+  flex-wrap wrap
+  &__content
+    width 57%
+    padding 30px
+    +below(md)
+      order 2
+      width 100%
+      padding: 10px 10px 30px;
+  &__title
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 33px;
+    margin-bottom 16px
+  &__subtitle
+    font-size: 15px;
+    line-height: 20px;
+    margin-bottom 30px
+  &__img-box
+    width 43%
+    display flex
+    justify-content flex-end
+    +below(md)
+      order 1
+      width 100%
+      padding-top: 25px;
+      background-image: url('img/index_new/note-mobile.jpg');
+  &__img
+    width 100%
+    object-fit cover
+    object-position left
+    +below(md)
+      max-width 333px
+  &__btn
+    color: #333333;
+    height 50px
+    padding 0 30px
+    font-size: 15px;
+    line-height: 30px;
+    background #fff
+    border-radius: 3px;
+    display: inline-flex;
+    align-items: center;
+    &:hover
+      background: #e5e5e5;
+    +below(md)
+      padding-top 10px
+      padding-bottom 10px
+
+.block3
+  position relative
+  padding 10px 30px
+  background: #F6F7F8;
+  border-radius: 6px;
+  &__icon-box
+    position absolute
+    top 15px
+    right 15px
+    size 46px
+    background: #FFFFFF;
+    border-radius: 10px;
+    display flex
+    +below(sm)
+      display none
+  &__icon
+    margin auto
+  &__content-text
+    column-count 2
+    font-size: 15px;
+    line-height: 20px;
+    color: #333333;
+    +below(md)
+      column-count 1
+
+.block4
+  color: #333333;
+  display flex
+  flex-wrap wrap
+  margin 0 -15px
+  &__item
+    width calc(50% - 30px)
+    margin 0 15px
+    padding 30px
+    background #fff
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    +below(sm)
+      width 100%
+  &__head
+    margin-bottom 30px
+    display flex
+    justify-content space-between
+  &__title
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 33px;
+  &__icon-box
+    size 46px
+    background: #E03B32;
+    border-radius: 10px;
+    display flex
+  &__icon
+    margin auto
+  &__text
+    font-size: 15px;
+    line-height: 20px;
+
+.gallery-new
+  display flex
+  flex-wrap wrap
+  border-radius 6px
+  overflow hidden
+  &__item-box
+    width 50%
+    display flex
+    flex-wrap wrap
+  &__item
+    size 50%
+    display block
+
+  &__item-box-big
+    width 50%
+  &__item-box-big &__item
+    size 100%
+  &__item_border-bottom
+    border-bottom: 2px solid #000000;
+  &__item_border-right
+    border-right: 2px solid #000000;

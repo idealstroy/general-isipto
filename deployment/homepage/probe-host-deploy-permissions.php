@@ -1,0 +1,3 @@
+<?php
+if(PHP_SAPI!=='cli'||!isset($stage,$root))exit(2);if($root!=='/home/i/idealstroy/isipto.ru/public_html'||!preg_match('~^/home/i/idealstroy/_codex_releases/direct-forms-[A-Za-z0-9]+$~',$stage))exit(2);
+$file=$stage.'/.permission-probe-'.bin2hex(random_bytes(8));if(file_put_contents($file,'probe')!==5)exit(1);$group=filegroup($root.'/index.php');$already=filegroup($file)===$group;$chmod=chmod($file,0600);$dest=$file.'.renamed';$rename=rename($file,$dest);$removed=unlink($rename?$dest:$file);echo json_encode(array('probeOutsidePublicRoot'=>true,'groupAlreadyCorrect'=>$already,'chmodSucceeded'=>$chmod,'atomicRenameSucceeded'=>$rename,'probeRemoved'=>$removed))."\n";

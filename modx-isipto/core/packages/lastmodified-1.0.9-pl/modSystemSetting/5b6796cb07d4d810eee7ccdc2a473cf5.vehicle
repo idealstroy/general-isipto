@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'lastmodified',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => 'da973ebc51966b2f634e1daa2010707e',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => '5b6796cb07d4d810eee7ccdc2a473cf5',
+  'native_key' => 'lastmodified.maxage',
+  'object' => '{"key":"lastmodified.maxage","value":"3600","xtype":"textfield","namespace":"lastmodified","area":"lastmodified.main","editedon":null}',
+);

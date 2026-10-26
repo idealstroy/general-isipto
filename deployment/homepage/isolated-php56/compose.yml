@@ -1,0 +1,40 @@
+services:
+  db:
+    image: mysql:5.7
+    container_name: isipto-audit-db-20261022
+    environment:
+      MYSQL_ROOT_PASSWORD: audit_only_root
+      MYSQL_DATABASE: idealstroy_isipt
+      MYSQL_USER: modx
+      MYSQL_PASSWORD: modx_local_password
+    command: --character-set-server=utf8 --collation-server=utf8_general_ci --max_allowed_packet=128M
+    volumes:
+      - audit-db:/var/lib/mysql
+    networks: [audit]
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-paudit_only_root"]
+      interval: 2s
+      timeout: 3s
+      retries: 60
+  web:
+    image: isipto-audit-php56:20261022
+    container_name: isipto-audit-php56-20261022
+    environment:
+      ISIPTO_ISOLATED_AUDIT: "1"
+    depends_on:
+      db:
+        condition: service_healthy
+    command: php -d memory_limit=512M -S 0.0.0.0:8080 -t /var/www/html /audit-tools/isolated-router.php
+    volumes:
+      - ../../../modx-isipto:/var/www/html:ro
+      - ../../../_backups/hosting-readonly-20261022/php56-config.inc.php:/var/www/html/core/config/config.inc.php:ro
+      - ../:/audit-tools:ro
+      - ../../../dist/homepage-2026-10-21-20261021T065000115Z:/audit-release:ro
+    tmpfs:
+      - /var/www/html/core/cache:mode=1777
+    networks: [audit]
+networks:
+  audit:
+    internal: true
+volumes:
+  audit-db:

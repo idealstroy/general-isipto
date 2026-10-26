@@ -1,0 +1,19 @@
+{
+  "release": "homepage-2026-10-21",
+  "template": {"name": "Главная — управляемая служба ПТО", "static_file": "assets/templates/home_solution.html", "source": 0},
+  "chunk": {"name": "home_solution_review", "static_file": "assets/templates/home_solution_review.html", "source": 0},
+  "files": [
+    "assets/templates/home_solution.html",
+    "assets/templates/home_solution_review.html",
+    "assets/css/home_solution.css",
+    "assets/js/home_solution.js",
+    "images/preview-pto-automation-clean.png",
+    "images/preview-pto-management-red.png",
+    "images/pto-managed-result-v2.png"
+  ],
+  "tvs": ["canonical", "email_to", "h1", "og_description", "og_site_name", "og_title", "og_type", "og_url", "seodescription", "seokeywords", "seotitle"],
+  "requiredChunks": ["header_new", "footer_new", "our_projects", "form_footer", "form_tpl1", "blog-new-3"],
+  "requiredSnippets": ["AjaxForm", "FormIt", "FormItSaveForm", "roistat_hooks", "pdoCrumbs", "pdoResources", "getImageList"],
+  "databasePolicy": "Register one static template and one static chunk through MODX. Copy base-template TV assignments. Switch only the actual web homepage. Never import the local database.",
+  "releaseGate": "Real popup and inline-form delivery to Roistat and Bitrix24 is NOT verified. Fresh production backup and target preflight are required before activation."
+}

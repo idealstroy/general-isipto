@@ -1,0 +1,50 @@
+<?php return array (
+  'preserve_keys' => true,
+  'update_object' => true,
+  'unique_key' => 'text',
+  'related_objects' => 
+  array (
+    'Action' => 
+    array (
+      '1d8f6a7ad3ed829203769d501817698b' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 
+        array (
+          0 => 'namespace',
+          1 => 'controller',
+        ),
+        'class' => 'modAction',
+        'object' => '{"id":0,"namespace":"dbadmin","controller":"index","haslayout":1,"lang_topics":"dbadmin:default","assets":"","help_url":"","parent":0}',
+        'guid' => 'd1b99a8e8b189b2c188042d932b7a6ae',
+        'native_key' => 0,
+        'signature' => 'a9548d4206b86519314bc7405807a852',
+      ),
+    ),
+  ),
+  'related_object_attributes' => 
+  array (
+    'Action' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 
+      array (
+        0 => 'namespace',
+        1 => 'controller',
+      ),
+    ),
+  ),
+  'namespace' => 'dbadmin',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '90021df0fc20ba9f2184b750c2e2db71',
+  'package' => 'modx',
+  'class' => 'modMenu',
+  'signature' => '372ebb586876b787583b93bffca098a2',
+  'native_key' => 'dbadmin',
+  'object' => '{"text":"dbadmin","parent":"components","action":0,"description":"dbadmin_menu_desc","icon":"images\\/icons\\/plugin.gif","menuindex":0,"params":"","handler":"","permissions":"","namespace":"core"}',
+);

@@ -1,0 +1,10 @@
+<div class="col-lg-2 col-sm-4 col-6">
+    <div class="developing-ppr__examples">
+        <div class="developing-ppr__examples-text">[[+title]]</div>
+        <a class="developing-ppr__examples-img-box" href="[[+image]]" data-fancybox="images1" data-caption="[[+title]]">
+            <img class="developing-ppr__examples-img image-load" src="#" data-src="[[phpthumbon? &input=`[[+image]]` &options=`w=160&h=226`]]" alt="[[+title]]">
+        </a>
+
+        [[getImageList? &tvname=`[[*ppr_examples_inner]]` &tpl=`ppr_examples_inner` &docid=`[[*id]]` &limit=`0`]]
+    </div>
+</div>

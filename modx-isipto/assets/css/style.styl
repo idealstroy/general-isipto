@@ -1,0 +1,2485 @@
+@import 'nib'
+@import 'rupture'
+files = 'bootstrap-grid','fancybox'
+for file in files
+  @import file+'.css'
+@import '../components/ajaxform/css/default.css' //Для AjaxForm добавить параметр &frontend_css=``
+@import '../components/pdotools/css/pdopage.min.css'
+
+
+/*Зачарование пикселей в ремы*/
+rem() {
+  remified = ()
+  for arg in arguments {
+    push(remified, unit(arg/16, 'rem'))
+  }
+  return remified
+}
+
+/*Изменение цвета аттрибута placeholder*/
+placeholder(color)
+  &::-webkit-input-placeholder
+    color #c7c7c8
+  &::-moz-placeholder
+    color #c7c7c8
+  &:-ms-input-placeholder
+    color #c7c7c8
+  &::placeholder
+    color #c7c7c8
+
+/*Адаптив*/
+rupture.scale =       0    576px    767.98px    992px    1200px
+rupture.scale-names =  'xs'     'sm'     'md'     'lg'      'xl'
+
+html
+  font-size 15px
+
+body
+  margin 0
+  overflow-x hidden
+  font-family 'Open Sans'
+
+h1, h2, h3, h4, h5, h6
+  margin 0
+  font-weight normal
+
+p
+  margin 0 0 15px
+
+a
+  transition all 0.5s ease
+  text-decoration none
+  &:hover
+    text-decoration none
+
+/*Цвета*/
+color1 = #ccc
+
+/*Шрифты*/
+font1 = sans-serif
+
+/*Обнуление эффектов при наведении*/
+*:hover, *:active, *:focus
+  outline 0 !important
+  -webkit-appearance none
+
+.btn:focus
+  box-shadow none
+
+/*Антиспам*/
+.sendmessage
+  position absolute
+  size 1px
+  left -99999px
+
+.mx-auto
+  margin auto
+
+.r70
+  width 100%
+  height 70px
+  +below(sm)
+    height 40px
+
+.r50
+  width 100%
+  height 50px
+
+.r30
+  width 100%
+  height 30px
+
+.r20
+  width 100%
+  height 20px
+
+.r10
+  width 100%
+  height 10px
+
+.bg_f6f7f8
+  background #f6f7f8;
+
+
+
+.title
+  color #333333
+  font-weight 800
+  font-size 30px
+  line-height 41px
+  margin-bottom 30px
+  +below(md)
+    font-size 20px
+    line-height 28px
+
+.title_big
+  font-weight bold
+  font-size rem(35px)
+  line-height rem(42px)
+  +below(md)
+    font-size rem(36px)
+    line-height rem(42px)
+  +below(374px)
+    font-size 23px
+    line-height 30px
+
+.title_big-bold
+  font-weight 800
+
+.title_font-normal
+  font-weight normal
+
+.title_no-margin
+  margin 0
+
+.title_white
+  color #fff
+
+.title_center
+  text-align center
+
+.title_small
+  font-size 18px
+  line-height 25px
+
+.title_margin15
+  margin-bottom 15px
+
+.description
+  font-size: 18px;
+  line-height: 25px;
+  color: #333333;
+
+/*Всплывающие формы*/
+.form-modal
+  padding 0
+  width 300px
+  height auto
+  display none
+  margin 0 auto
+  overflow visible
+  border-radius 7px
+  background-color #fff
+  +below(425px)
+    margin 0
+    width 95%
+  &_md
+    width 800px
+    +below(md)
+      width 570px
+    +below(xs)
+      width 95%
+  svg path
+    fill #fff
+  &__title
+    width 88%
+    padding: 1rem;
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: 1px solid #e9ecef;
+  .modal-body
+    &__text
+      padding 15px
+
+.jGrowl
+  z-index 999999 !important
+
+.contacts_header_box
+  z-index: 9;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 -15px 70px 0 rgba(0,0,0,0.17);
+  +below(md)
+    top 0
+    position relative
+
+header
+  top 0
+  width 100%
+  z-index 9
+  position fixed
+  +below(md)
+    position unset
+  nav
+    height 40px
+  .menu_box
+    width 100%
+    opacity 1
+    height: 40px;
+    background-color: #434549;
+    .menu_box_item
+      color: #fff;
+      font-size: 14px;
+      line-height: 22px;
+      position: relative;
+      font-family: "Open Sans";
+      border-bottom: 1px solid transparent;
+      span
+        color #fff
+      &:hover span
+        padding-bottom 2px
+        border-bottom 1px solid #acacac
+  .contacts_header
+    padding 15px
+    font-size 15px
+    font-weight 400
+    line-height 22px
+    +below(md)
+      padding 17px 15px 20px
+    +below(sm)
+      font-size 13px
+      line-height 17px
+    +below(374px)
+      font-size 9px
+    .right_header
+        .btn
+          font-size 12px
+          padding 7px 21px
+          +below(sm)
+            padding-top 4px
+            padding-bottom 4px
+    a
+      +below(sm)
+        color #fff
+    .item_header
+      color #fff
+      padding 0 15px
+      position relative
+      +below(lg)
+        padding-right 15px
+      +below(sm)
+        padding 0 15px
+      svg
+        fill #f24941
+        width 16px
+        height 16px
+        margin-right 10px
+      &:hover
+        color #fff
+    .city_header
+      padding 0
+      color #767676
+      line-height 16px
+      +below(sm)
+        font-size 12px
+      span
+        color #000
+        transition .3s
+        font-weight bold
+        border-bottom 1px solid #bebebe
+        &:hover
+          color #f24941
+          border-bottom 1px solid transparent
+    .address_header
+      span
+        color #000
+        transition .5s
+        /*border-bottom 1px dashed #c2c2c2*/
+        +below(sm)
+          color #fff
+        &:hover
+          border-bottom transparent
+    .email_header
+      span
+        color #333333
+        transition all 0.5s ease
+        border-bottom 1px dashed transparent
+        &:hover
+          border-bottom 1px dashed #c2c2c2
+    .phone_header
+      font-weight bold
+      padding-right 30px
+      +below(sm)
+        padding 0 5px
+      a
+        color #333333
+        font-size 19px
+        +below(sm)
+          color #fff
+      .free_rf
+        font-size: 12px;
+        line-height: 16px;
+        color: #727272;
+        font-weight: normal;
+      span
+        font-weight bold
+
+.logo
+  background-image: url('img/logo_main.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  //height: 34px;
+  height: 39px;
+  width: 162px;
+  display: block;
+  +below(md)
+    height 33px
+    width 155px
+
+.form
+  z-index 1
+  position relative
+  padding rem(30px 0)
+  background-color #fff
+  border-radius 5px
+  box-shadow inset 0 5px 85px -15px #c2c2c2
+  .title_form
+    font-size rem(26px)
+    font-weight 400
+    line-height 24px
+    text-align center
+    margin 15px 0 25px
+  form
+    margin 0 auto
+    justify-content space-between
+    .block_input
+      +below(md)
+        width 32%
+      +below(767px)
+        width 100%
+    label
+      width 100%
+      color #777
+      font-size 16px
+      font-weight 400
+      line-height 24px
+    .input_form
+      width 100%
+      height 50px
+      padding 0 15px
+      border-radius 5px
+      border 1px solid #dcdcdc
+      +below(sm)
+        margin-bottom 10px
+      &:focus
+        background-color rgba(255, 0, 0, 0.08) !important
+    .submit_form
+      color #fff
+      padding 0 50px
+      cursor pointer
+      transition 0.5s ease all
+      background-color #dc3b34
+      +below(sm)
+        margin-top 10px
+      &:hover
+        background-color #f24841
+.confid
+  margin 15px auto 0
+  color #989898
+  font-size 12px
+  font-weight 400
+  line-height 24px
+  a
+    color #989898
+    border-bottom 1px solid #dcdcdc
+    &:hover
+      border-bottom transparent
+
+.our_team_slideshow
+  +below(md)
+    overflow-x scroll
+  .our_team
+    width 16.666%
+    padding 0 15px
+    margin-bottom 25px
+    +below(md)
+      min-width 200px
+    .img_our_team
+      img
+        width 90%
+        display block
+        margin 0 auto
+        border-radius 50%
+        border 1px solid #e6e6e6
+        +below(xs)
+          width 70%
+    .name_team
+      margin-top 25px
+      line-height 22px
+      font-size 17px
+      font-weight 400
+      text-align center
+    .profess
+      color #000
+      font-size 14px
+      margin-top 7px
+      font-weight 500
+      line-height 20px
+      text-align center
+      span
+        color #808080
+        display block
+        font-size 13px
+        margin-top 7px
+        font-weight 300
+        line-height 20px
+
+footer
+  color #777777
+  padding 35px 0 23px
+  background rgba(242, 242, 242, 0.7)
+
+.footer
+  &__box
+    display flex
+    justify-content space-between
+    +below(md)
+      flex-wrap wrap
+  &__left
+    width 210px
+    padding-top 8px
+    +below(md)
+      order 3
+      width 100%
+      padding-top 0
+  &__left-logo-href
+    display block
+    +below(md)
+      display none
+  &__left-logo
+    width 176px
+    height 38px
+    margin-bottom 22px
+    +below(md)
+      width 100%
+  &__left-info
+    font-size 12px
+    line-height 16px
+  &__left-info-confid
+    text-decoration underline
+  &__center
+    width 530px
+    font-size 15px
+    line-height 20px
+    display: flex;
+    justify-content: space-between;
+    +below(lg)
+      width 490px
+    +below(md)
+      width 100%
+      order 2
+      margin 25px 0
+      flex-wrap wrap
+  &__center-item
+    display block
+    color: #777777;
+    margin-bottom 14px
+    &:hover
+      text-decoration underline
+  &__center-left
+    width 90px
+    +below(md)
+      width 100%
+  &__center-right
+    width 360px
+    +below(md)
+      width 100%
+  &__right
+    width 179px
+    +below(md)
+      order 1
+      width 100%
+      text-align center
+  &__right-phone
+    color #000
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 32px;
+    +below(md)
+      color #777777
+  &__right-time-work-box
+    margin-top 10px
+    font-size: 16px;
+    line-height: 26px;
+    text-align right
+    +below(md)
+      display: flex;
+      justify-content: center;
+  &__right-time-days
+    margin-right 15px
+    padding-right 6px
+    border-right 1px solid #C4C4C4
+    +below(md)
+      border-right none
+      padding-right 0
+      margin-right 10px
+  &__right-time-work
+    +below(md)
+      margin-right 12px
+      padding-right 12px
+      border-right 1px solid #C4C4C4
+      &:last-child
+        margin 0
+        padding 0
+        border-right none
+  &__left-info-item
+    display block
+    color #777777
+
+.form_up
+  .block
+    margin-bottom 15px
+    label
+      width 100%
+      display block
+      margin-bottom 10px
+    .input_up
+      width 100%
+      height 40px
+      color #323232
+      padding 0 15px
+      background-color #f249410f
+      border 1px solid #e1e1e1
+      &:focus
+        background-color rgba(255, 0, 0, 0.08) !important
+    .bottom_up
+      color #fff
+      width 100%
+      height 50px
+      border none
+      cursor pointer
+      font-size 19px
+      transition .5s
+      background-color #f24941
+      &:hover
+        background-color #d34943
+  .confid_up
+    color #474747
+    font-size 13px
+    text-align center
+    a
+      color #474747
+      border-bottom 1px solid #d2d2d2
+      &:hover
+        border-bottom transparent
+
+.docs
+  background-color #f3f3f3
+  .docs-box
+    +below(md)
+      overflow-x scroll
+  &__signature
+    margin-bottom 15px
+  &__signature-icon
+    size 107px 17px
+    margin-right 7px
+  &__signature-text
+    flex none
+    color #777777
+    font-size 15px
+    line-height 20px
+  .img_docs-box
+    position relative
+    display block
+    height 225px
+    +below(lg)
+      height 181px
+    +below(md)
+      height 210px
+  .img_docs-box:after
+    content ''
+    position absolute
+    top 0
+    left 0
+    width 101%
+    height 100%
+    background url('img/ppr/mask_examples.png') center/cover no-repeat
+  .img_docs
+    transition .5s
+    overflow hidden
+    border-radius 6px
+    margin-top 15px
+    margin-bottom 30px
+    border 1px solid #d6d6d6
+    box-shadow 2px 2px 4px 2px #d6d6d6
+    +below(sm)
+      margin-bottom 15px
+    &:hover
+      box-shadow none
+    img
+      width 100%
+      height 100%
+      display block
+      border-radius 3px
+  .img_docs-container
+    width 16.666%
+    min-width 16.666%
+    padding 0 15px
+    +below(md)
+      width 180px
+      min-width 180px
+
+.objects
+  background-color #f3f3f3
+
+.hint_city
+  background #fff
+  border 1px solid #bfbfbf
+  border-radius 5px
+  box-shadow 0 0 30px rgba(0,0,0,0.3)
+  margin 20px 0 0
+  position absolute
+  width 187px
+  z-index 10
+  display none
+  +below(sm)
+    display none
+  .hint_city_content
+    color #5d5d5d
+    font-size 14px
+    line-height 22px
+    display block
+    min-height 25px
+    text-align center
+    padding 7px 20px 5px
+    &:hover
+      color #5d5d5d
+  .hint_button
+    text-align center
+    margin 2px 0 10px
+  .button_small
+    height 24px
+    cursor pointer
+    border-top 1px solid #dddddd
+    border-right 1px solid #c2c2c2
+    border-bottom 1px solid #a3a3a3
+    border-left 1px solid #c2c2c2
+    box-shadow 0 1px 0 #dbdbdb
+    font-size 13px
+    line-height 24px
+    white-space nowrap
+    display inline-block
+    padding 0 13px
+    border-radius 5px
+    background-color #f2f2f2
+    background-image linear-gradient(to bottom, #ffffff, #dedede)
+    color #303030
+    text-shadow 0 1px #fff
+    font-weight bold
+    -webkit-user-select none
+    -moz-user-select none
+    -ms-user-select none
+    user-select none
+    text-decoration none
+    &:hover
+      color #f24941
+  .cityselect
+    font-size 13px
+    line-height 24px
+    margin-right 15px
+.corner
+  position absolute
+  top -13.5px
+  left 0
+  width 30px
+  height 14px
+  margin 0 42%
+  &:before
+    left 0
+    top 0
+    content ''
+    display: block;
+    position: absolute;
+    border-style: solid;
+    height: 0;
+    width: 0;
+    border-width 0 15px 14px 15px
+    border-color #b3b2b2 rgba(255,255,255,0)
+  &:after
+    @extend .corner:before
+    left 1px
+    top 1px
+    content ''
+    border-width 0 14px 13px 14px
+    border-color #fff rgba(255,255,255,0)
+
+.city-arrow
+  font-size: 15px;
+  line-height: 20px;
+  color: #333333;
+
+.submenu-box
+  height 100%
+  padding 0 40px
+  cursor pointer
+  position relative
+  +below(xl)
+    padding 0 30px
+  &:hover .submenu
+    opacity 1
+    visibility: visible;
+  &:first-child
+    padding-left 0
+  .submenu
+    position absolute
+    top 40px
+    left 25px
+    z-index 1
+    width 305px
+    padding 23px 0
+    opacity 0
+    visibility hidden
+    background #ffffff
+    border-radius 0 0 7px 7px
+    transition 0.1s ease opacity
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    .corner
+      margin 0
+      left 22px
+      &:after
+        top 6px
+        border-width 0 6px 8px 6px
+      &:before
+        top 5px
+        border-width 0 7px 9px 7px
+    a
+      color #333333
+      display block
+      font-size 14px
+      line-height 19px
+      padding 5px 25px
+      strong
+        color #000
+        font-size 18px
+        margin-bottom 6px
+      span
+        border-bottom 1px solid transparent
+        &:hover
+          border-bottom 1px solid #dcdcdc
+    a:after
+      display none
+  .submenu.submenu_services
+    width 500px
+
+.submenu-box:first-child .submenu
+  left 0
+
+.first-screen
+  margin-top 108px
+  padding rem(80px 0 60px)
+  background url('img/podgotovka_id/first-screen.png') #f6f7f9 right/auto no-repeat
+  background-position 80% 100%
+  background-size: auto;
+  +below(lg)
+    background-position 100% 100%
+  +below(md)
+    margin-top 0
+    background #F6F7F8
+  +below(xs)
+    padding 30px 0
+  &__title
+    color #333333
+    font-weight bold
+    font-size 35px
+    line-height 48px
+    +below(xs)
+      font-size 28px
+      line-height 35px
+  &__subtitle
+    color #333333
+    margin 25px 0 0
+    font-size rem(24px)
+    line-height rem(33px)
+    +below(xs)
+      margin-top 30px
+      font-size: 18px;
+      line-height: 25px;
+
+  &__item-box
+    list-style none
+    margin 30px 0
+    +below(xs)
+      margin-top 15px
+  &__item
+    padding 0
+    margin-bottom 15px
+  &__item:before
+    display none
+  &__item-icon svg
+    size 20px 24px
+    fill #D34841
+    margin-right 15px
+  &__item-text
+    font-size 15px
+    line-height 32px
+
+.first-screen_crumbs
+  padding-top 0 !important
+
+.site-message
+  position absolute
+  left -10000px
+
+.animated
+  -webkit-animation-duration 0.3s
+  animation-duration 0.3s
+  -webkit-animation-fill-mode both
+  animation-fill-mode both
+
+@media (prefers-reduced-motion)
+  .animated
+    -webkit-animation unset !important
+    animation unset !important
+    -webkit-transition none !important
+    transition none !important
+
+  @keyframes scroll-down_animation
+    from
+      transform translateY(0)
+    to
+      transform translateY(-120%)
+
+.scroll-down_animation
+  -webkit-animation-name scroll-down_animation
+  animation-name scroll-down_animation
+
+@keyframes scroll-up_animation
+  from
+    transform translateY(-120%)
+  to
+    transform translateY(0)
+
+.scroll-up_animation
+  -webkit-animation-name scroll-up_animation
+  animation-name scroll-up_animation
+
+.scroll-down
+  top -120%
+
+.scroll-up
+  top 0
+
+.industry-img
+  padding-bottom 30px
+  +below(xs)
+    padding-top 30px
+  img
+    width 48%
+    height 100%
+
+.industry-content
+  font-weight 300
+  font-size rem(15px)
+  line-height rem(22px)
+  &__img
+    text-align center
+    position relative
+    img
+      width 150px
+      border-radius 50%
+  &__experience
+    width 120px
+    left calc(50% - 60px)
+    bottom -40px
+    padding 7px 0
+    color #fff3cd
+    font-weight 600
+    text-align center
+    position absolute
+    border-radius 30px
+    font-size rem(12px)
+    line-height rem(18px)
+    background-color #339900
+    span
+      font-size rem(18px)
+  &__fio
+    font-weight 600
+    margin 55px 0 5px
+    text-align center
+    font-size rem(18px)
+    line-height rem(20px)
+  &__profess
+    color #999
+    font-weight 400
+    text-align center
+    font-size rem(14px)
+    line-height rem(20px)
+
+.industry-vantages
+  padding-top 30px
+  margin-top 30px
+  border-top 1px solid #dcdcdc
+
+.industry-vantages-item
+  +below(md)
+    margin-bottom 25px
+  &__title
+    color #f24941
+    font-weight 600
+
+    margin-bottom 10px
+    font-size rem(36px)
+    line-height rem(20px)
+    span
+      font-size rem(24px)
+  &__text
+    color #333
+    font-weight 300
+    font-size rem(15px)
+    line-height rem(20px)
+
+.vantages-item
+  +below(md)
+    margin-bottom rem(15px)
+  &__img
+    size 80px
+    border-radius 50%
+    margin-right 20px
+    background-color #cc3333
+    svg
+      fill #fff
+  &__text
+    font-size 16px
+    font-weight bold
+
+.services-item-left
+  width 50%
+  &__caption
+    font-weight 600
+    font-size 1.125rem
+
+.services-item
+  width 100%
+  padding 15px 0
+  border-bottom 1px solid rgba(0, 0, 0, 0.05)
+  +below(md)
+    flex-wrap wrap
+    text-align center
+  &__caption
+    color #000
+    transition .3s
+    font-size 18px
+    font-weight 600
+    line-height 25px
+    &:hover
+      color #E03B32
+      text-decoration underline
+  &__price-right
+    color #333333
+    font-size 18px
+    font-weight bold
+    line-height 25px
+  &__price
+    color #333333
+    font-size 15px
+    font-weight bold
+    line-height 20px
+    margin-right 20px
+    +below(md)
+      width 100%
+      margin-top 15px
+      margin-bottom 15px
+      text-align center
+    +below(374px)
+      font-size 14px
+    span
+      font-size 1.11rem
+  &__price-box
+    +below(md)
+      margin 15px 0
+    +below(xs)
+      margin 0 auto 15px
+      justify-content center
+  &__price-old
+    position relative
+    color #777777
+    font-size 15px
+    line-height 20px
+    white-space nowrap
+    &:after
+      position absolute
+      content ''
+      top 9px
+      left -5px
+      width 100%
+      height 1px
+      border-top 1px solid #777777
+      transform rotate(13deg)
+  &__price-sale
+    color #fff
+    padding 2px 3px
+    font-size 13px
+    margin-left 10px
+    font-weight bold
+    line-height 18px
+    border-radius 3px
+    background #E03B32
+
+.services-item-right
+  .services-item-button
+    color #000
+    transition .3s
+    padding 5px 25px
+    border-radius 3px
+    background #ec767524
+    +below(xs)
+      width 100%
+      justify-content center
+    &__text
+      font-size 15px
+      line-height 20px
+      +below(sm)
+        text-align center
+    &:hover
+      color #fff
+      background-color #E03B32
+
+.services-item-right
+  .services-item-moreinfo
+    color #000
+    transition .3s
+    padding 5px 15px
+    margin-left 15px
+    border-radius 30px
+    background #f5f5f6
+    border 1px solid rgba(186, 192, 200, 0.3)
+    +below(md)
+      display none!important
+    +below(374px)
+      width 100%
+      border none
+      margin-left 0
+      background transparent
+    &__text
+      margin 0 auto
+    &__svg svg
+      size 15px
+      fill #bac0c8
+      margin-left 12px
+      +below(374px)
+        display none
+    &:hover
+      color #fff
+      background-color #bac0c8
+      .services-item-moreinfo__svg svg
+        fill #fff
+
+.services-item-left
+  width 35%
+  +below(md)
+    width 100%
+
+.services-item_type-jobs
+  /*.services-item-left
+    width 85%
+    +below(md)
+      width 100%*/
+  .services-item__price-box
+    +below(md)
+      width 100%
+      margin-right 0
+      margin-bottom 0
+  .services-item__price-right
+    +below(md)
+      margin auto
+
+.services-item-right
+  width 55%
+  +below(md)
+    width 100%
+    flex-wrap wrap
+
+/*Мобильное меню*/
+.menu_container.open
+  height 100%
+.toogle_menu
+  width 100%
+  display none
+  margin-top 9px
+.menu_container
+  padding 12px 0
+  transition .7s
+  .nav_mobile
+    color #000
+    width 100%
+    font-size 15px
+    font-weight 600
+    border-radius 30px
+
+.menu_container
+  width 100%
+  position relative
+
+.btn-close
+  size 30px
+  background-image url("img/cancel-menu.svg")
+  background-repeat no-repeat
+  background-size contain
+
+.mobile_home
+  color #000
+  width 100%
+
+.mobile-menu
+  z-index 110
+  +below(320px)
+    width 100%
+  .menu_up
+    clear both
+
+
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover
+  background-color #ddd
+.menu_button span
+  cursor pointer
+  background transparent
+  z-index 1
+  padding 0
+  overflow hidden
+  position: relative;
+
+.menu_button span i
+  width 24px
+  height 3px
+  left 0
+  right 0
+  background-color #333333
+  transition transform .3s ease, opacity .1s ease .1s
+  border-radius 30px
+  display: block;
+  margin-bottom 5px
+  &:last-child
+    margin-bottom 0
+
+.mobile-menu-nav
+  nav
+    height 100%
+    padding 0 15px
+    a
+      width 100%
+      color #000
+      display block
+      padding 8px 40px 8px 0
+  .menu-block
+    &__item
+      width 100%
+      position relative
+      .submenu
+        display none
+        margin 5px 0
+        padding 5px 15px
+        border-top 1px solid #f3f3f3
+        border-bottom 1px solid #f3f3f3
+        .submenu_black
+          color #000
+        a
+          padding 4px 0
+          font-size 14px
+          color #7d7d7d
+    &__item-link
+      position relative
+      display block
+    &-svg
+      position absolute
+      top 0
+      right -10px
+      width 65px
+      height 38px
+      padding-right 20px
+      &__bg
+        z-index 9
+        width 15px
+        height 15px
+        transition .3s
+        background url('../css/img/arrow_city.svg') center/contain no-repeat
+    &-svg.open .menu-block-svg__bg
+      transform rotate(180deg)
+
+.scheme
+  background #f3f3f3
+.sheme-item
+  padding 20px
+  border-radius 7px
+  background #ffffff
+  margin-bottom 20px
+  .sheme-item__left
+    +below(md)
+      order 2
+  .sheme-item__right
+    +below(md)
+      order 1
+  &__img
+    text-align center
+    margin-bottom 50px
+    +below(md)
+      margin 0 15px 15px 0
+    img
+      width 100%
+      border-radius 7px
+      +below(md)
+        width 100px
+  &__title
+    margin 10px 0
+    font-weight 700
+    font-size 1.625rem
+    line-height 1.925rem
+    +below(424px)
+      font-size rem(21px)
+      line-height rem(27px)
+  &__ul
+    padding-left 20px
+    li
+      color #dd5b51
+      padding 5px 0
+      &:before
+        top 12px
+      span
+        color #000
+        font-weight 400
+        font-size 15px
+
+.quiz.visible
+  background-image url('img/bg_quiz.jpg')
+.quiz
+  height 200px
+  background-size cover
+  +below(md)
+    height auto
+    padding 20px 0
+  .title_quiz
+    color white
+    line-height rem(40px)
+    font-size rem(32px)
+    font-weight 600
+    +below(lg)
+      text-align left
+  .subtitle_quiz
+    color #fff
+    font-weight 400
+    margin-top 20px
+    font-size rem(18px)
+    line-height rem(33px)
+    +below(md)
+      margin-bottom 20px
+
+.city_container
+  .city_item
+    padding 5px 0
+    a
+      color #4a4a4a
+      &:hover
+        color #000
+
+/* Safari 7.1+ */
+_::-webkit-full-page-media, _:future, :root .form_main {
+  background: url("img/background_form.jpg")
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .form_main {
+    background: url("img/background_form.jpg")
+  }
+}
+
+ul
+  list-style none
+  padding-left 20px
+  margin-bottom 15px
+  li
+    padding 10px 0
+    position relative
+    &:before
+      content ''
+      position absolute
+      top 17px
+      left -20px
+      width 8px
+      height 8px
+      border-radius 50%
+      background #d34841
+
+.ul
+  &_no-padding
+    padding-left 0
+  &_li-line li:before
+    content '—'
+    position static
+    color #d34841
+    width auto
+    height auto
+    margin-right 10px
+    background transparent
+    display inline-block
+
+.btn
+  color #fff
+  border none
+  cursor pointer
+  font-size 15px
+  line-height 22px
+  text-align center
+  padding: 14px 30px;
+  border-radius 3px
+  background #E03B32
+  -webkit-appearance none
+  transition .3s
+  +below(md)
+    font-size 15px
+    padding-left 10px
+    padding-right 10px
+  +below(sm)
+    padding-top 7px
+    padding-bottom 7px
+
+  &:hover
+    box-shadow 0 5px 10px rgba(0, 0, 0, 0.3)
+  &__icon
+    width 7px
+    height 7px
+    margin-bottom 1px
+    display inline-block
+    border-top 1px solid #212121
+    border-right 1px solid #212121
+    transform rotate(45deg)
+  &__text
+    display inline-block
+    margin-right 7px
+
+.btn_width-full-m
+  +below(md)
+    width 100%
+
+.btn_inline-block
+  display inline-block
+
+.btn_bg-transparent
+  color #000
+  background transparent
+  border 1px solid #D34841
+
+.btn_bg-transparent-no-hover:hover
+  color #000
+  background transparent
+
+.btn_weight-normal
+  font-weight normal
+
+.btn_center
+  margin auto
+  display table
+
+.btn_margin-left
+  margin-left 20px
+  +below(xs)
+    width 100%
+    margin 15px 0 0
+
+.btn_radius
+  border-radius 30px
+
+.btn_h50
+  height 50px
+
+.btn_nowrap
+  white-space nowrap
+
+.btn_border-black
+  border 1px solid #333333
+
+.btn_first-screen
+  height 50px
+  +below(md)
+    width 47%
+    height 52px
+
+.btn_h50
+  height 50px
+  display inline-flex
+  align-items center
+  justify-content center
+
+.our-objects
+  &__box
+    flex-wrap wrap
+    +below(md)
+      flex-wrap nowrap
+  &__box-global
+    +below(md)
+      display flex
+      overflow-x scroll
+    +below(xs)
+      margin-right -15px
+  &__item-box
+    width 25%
+    padding 0 15px
+    margin-bottom 30px
+    +below(md)
+      min-width 290px
+    +below(sm)
+      min-width 300px
+    +below(xs)
+      min-width 255px
+  &__item
+    height 100%
+    overflow hidden
+    border-radius 6px
+    background #F6F7F8
+  &__item-img
+    width 100%
+  &__item-content
+    padding 20px 7px
+    background #F6F7F8
+  &__item-title
+    height 47px
+    color #333333
+    font-weight 600
+    font-size rem(18px)
+    line-height rem(25px)
+    +below(lg)
+      height auto
+  &__item-text
+    margin-top 10px
+    font-size 15px
+    line-height 20px
+    span
+      color #E03B32
+      display block
+      margin-top 10px
+  &__hide
+    display none
+    +below(md)
+      display block
+      margin-left 30px
+  .btn_our-works
+    +below(md)
+      display none
+
+.scheme-new
+  overflow hidden
+  border-radius 6px
+  &__item
+    margin-bottom 30px
+  &__item-title-head
+    display flex
+    align-items center
+    justify-content space-between
+    padding 15px 15px 15px 42px
+    background url("/assets/css/img/main/sheme-new-bg.jpg") center/cover no-repeat;
+    +below(md)
+      padding 14px 16px
+  &__item-title
+    color #333333
+    font-weight 600
+    font-size 18px
+    line-height 25px
+  &__item-title-svg-box
+    size 46px
+    display flex
+    align-items center
+    justify-content center
+    background #FFFFFF
+    border-radius 10px
+    flex none
+    +below(md)
+      display none
+  &__item-title-svg
+    size 26px 18px
+  &__item-content
+    padding 25px 42px
+    border 1px solid rgba(0, 0, 0, 0.1)
+    +below(md)
+      border none
+      padding 15px 0
+  &__item-ul
+    margin 0
+  &__item-btn
+    color #333333
+    font-weight 600
+    margin-top 30px
+    border-radius 3px
+    background #E5E5E5
+    padding 10px 30px
+    text-align center
+    display inline-block
+    +below(md)
+      width 100%
+
+
+.techkarta
+  padding rem(40px  0 30px)
+  &__img
+    img
+      width 100%
+  .techkarta-right
+    height 100%
+  &__caption
+    font-weight bold
+    font-size rem(32px)
+    line-height rem(38px)
+    font-style normal
+    span
+      color #D34841
+  &__subcaption
+    font-style normal
+    font-weight normal
+    font-size rem(16px)
+    margin 15px 0 30px
+    line-height rem(19px)
+  .techkarta-block
+    +below(xs)
+      width 100%
+    &__input
+      border none
+      padding 11px 10px
+      background transparent
+      border-bottom 1px solid #A5A5A5
+      +below(xs)
+        width 100%
+
+// quiz
+.form_box{
+  width:100%;
+  height:100%;
+  border-radius:7px;
+  background-color:#fff;
+}
+.form_box .section_form.active{
+  display:block
+}
+.form_box .section_form{
+  color:#000;
+  display:none;
+  text-align:left;
+}
+@media only screen and (max-width:576px){
+  .form_box .section_form .header_form{
+    height:auto
+  }
+}
+.form_box .section_form .header_form .title_section{
+  width:85%;
+  color:#000;
+  font-size:1.5rem;
+  font-weight:400;
+  line-height:1.8125rem;
+}
+@media only screen and (max-width:992px){
+  .form_box .section_form .header_form .title_section{
+    width:80%
+  }
+}
+@media only screen and (max-width:767px){
+  .form_box .section_form .header_form .title_section{
+    width:100%
+  }
+}
+.form_box .section_form .header_form .question_section{
+  width: 100%;
+  color: #999;
+  font-size: 18px;
+  font-weight: 400;
+  margin-top: 10px;
+  line-height: 1.8125rem;
+}
+@media only screen and (max-width:576px){
+  .form_box .section_form .header_form .question_section{
+    margin:10px 0
+  }
+}
+.form_box .section_form .header_form .question_section span{
+  color:#000
+}
+.form_box .section_form .text_status{
+  color:#999;
+  margin:8px 0;
+  font-size:12px;
+  font-weight:400;
+  line-height:22px
+}
+.form_box .section_form .status_box .status{
+  width:100%;
+  height:5px;
+  overflow:hidden;
+  border-radius:5px;
+  background-color:#bababa;
+}
+.form_box .section_form .status_box .status span{
+  width:0;
+  height:100%;
+  display:block;
+  position:relative;
+  background:#e53d47;
+  transition:all 0.3s ease
+}
+.form_box .section_form .body_form{
+  margin-top:40px;
+  height:505px;
+  position:relative;
+}
+.form_box .section_form .body_form .examples {
+  color: #4f4f4f;
+  font-size: 14px;
+  margin-top: 25px;
+}
+@media only screen and (max-width:767px){
+  .form_box .section_form .body_form{
+    height:auto
+  }
+}
+.form_box .section_form .body_form .input{
+  width:100%;
+  height:50px;
+  padding:0 20px;
+  border-radius:7px;
+  border:1px solid #e8e8f0;
+  background-color:#f1f1f1;
+}
+@media only screen and (max-width:767px){
+  .form_box .section_form .body_form .input{
+    width:100%
+  }
+}
+.form_box .section_form .body_form .check_container{
+  width:49%;
+  margin-bottom:13px;
+}
+@media only screen and (max-width:991px){
+  .form_box .section_form .body_form .check_container{
+    width:100%
+  }
+}
+.form_box .section_form .body_form .check_container .img_checkbox img{
+  width:60px;
+  height:60px;
+  margin-right:15px
+}
+.form_box .section_form .body_form .check_container label{
+  width:100%;
+  height:100%;
+  cursor:pointer;
+  padding:10px 15px;
+  border-radius:7px;
+  transition:0.3s;
+  border:1px solid #e8e8f0
+}
+.form_box .section_form .body_form .check_container .checkbox{
+  outline:none;
+  display:-ms-inline-flexbox;
+  display:inline-box;
+  display:inline-flex;
+  -o-box-align:center;
+  align-items:center;
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none
+}
+.form_box .section_form .body_form .check_container .checkbox.active{
+  border:1px solid #e53d47;
+  box-shadow:rgba(0,0,0,0.18) 1.7px 5.8px 21px 0
+}
+.form_box .section_form .body_form .check_container .checkbox input[type="checkbox"],.form_box .section_form .body_form .check_container .checkbox input[type="radio"]{
+  display:none
+}
+.form_box .section_form .body_form .check_container .checkbox input[type="checkbox"]:checked + .check,.form_box .section_form .body_form .check_container .checkbox input[type="radio"]:checked + .check{
+  background:url("/assets/css/img/checkbox.png") 0 0 no-repeat;
+  background-position:bottom left;
+  color:#e53d47
+}
+.form_box .section_form .body_form .check_container .checkbox input[type="checkbox"] + .check,.form_box .section_form .body_form .check_container .checkbox input[type="radio"] + .check{
+  background:url("/assets/css/img/checkbox.png") 0 0 no-repeat;
+  background-position:top left;
+  padding-left:40px;
+  margin-bottom:0;
+  height:21px;
+  font-size:15px;
+  cursor:pointer
+}
+.form_box .section_form .body_form .check_container .checkbox input[type="radio"] + .check{
+  background:url("/assets/css/img/radio.png") 0 0 no-repeat;
+  background-position:top left;
+  height:21px
+}
+.form_box .section_form .body_form .check_container .checkbox input[type="radio"]:checked + .check{
+  background:url("/assets/css/img/radio.png") 0 0 no-repeat;
+  background-position:bottom left
+}
+.form_box .section_form .body_form .check_container .answer_title::-moz-selection{
+  background-color:transparent
+}
+.form_box .section_form .body_form .check_container .answer_title::selection{
+  background-color:transparent
+}
+.form_box .section_form .button_form{
+  width:100%;
+  bottom:0;
+  position:absolute;
+}
+@media only screen and (max-width:767px){
+  .form_box .section_form .button_form{
+    position:unset;
+    margin-top:30px
+  }
+}
+@media only screen and (max-width:425px){
+  .form_box .section_form .button_form{
+    -webkit-box-lines:multiple;
+    -moz-box-lines:multiple;
+    -o-box-lines:multiple;
+    flex-wrap:wrap
+  }
+}
+@media only screen and (max-width:425px){
+  .form_box .section_form .button_form .button{
+    width:100%
+  }
+}
+.form_box .section_form .button_form .prev_form{
+  color:#ccc;
+  border:none;
+  cursor:pointer;
+  font-size:16px;
+  font-weight:600;
+  line-height:22px;
+  padding-left:50px;
+  position:relative;
+  background-color:transparent;
+}
+@media only screen and (max-width:425px){
+  .form_box .section_form .button_form .prev_form{
+    padding-left:0;
+    margin-bottom:20px
+  }
+}
+.form_box .section_form .button_form .prev_form span{
+  transition:0.3s;
+  border-bottom:1px solid transparent
+}
+.form_box .section_form .button_form .prev_form:hover span{
+  border-bottom:1px solid #ccc
+}
+.form_box .section_form .button_form .prev_form:before,.form_box .section_form .button_form .next_form:before, .button_quiz_s:before{
+  content:'';
+  top:0;
+  left:0;
+  width:40px;
+  height:25px;
+  padding-left:50px;
+  position:absolute;
+  background-size:contain;
+  background-repeat:no-repeat;
+  background-image:url("/assets/css/img/quiz_arrow.png");
+}
+@media only screen and (max-width:425px){
+  .form_box .section_form .button_form .prev_form:before,.form_box .section_form .button_form .next_form:before, .button_quiz_s:before{
+    left:20px
+  }
+}
+.form_box .section_form .button_form .next_form, .button_quiz_s{
+  color:#fff;
+  border:none;
+  cursor:pointer;
+  transition:0.3s;
+  font-size:16px;
+  font-weight:600;
+  line-height:22px;
+  position:relative;
+  border-radius:30px;
+  background-color:#f24941;
+  padding:15px 100px 15px 20px;
+}
+@media only screen and (max-width:425px){
+  .form_box .section_form .button_form .next_form, .button_quiz_s{
+    padding:15px 0
+  }
+}
+.form_box .section_form .button_form .next_form:hover, .button_quiz_s:hover{
+  background-color:#c03b34
+}
+.form_box .section_form .button_form .next_form:before, .button_quiz_s:before{
+  top:13px;
+  left:auto;
+  right:20px;
+  -webkit-transform:rotate(180deg);
+  transform:rotate(180deg);
+}
+.form_box .section_form .button_form .prev_form[disabled]{
+  cursor:not-allowed
+}
+.form_box .section_form .button_form .next_form[disabled]{
+  cursor:not-allowed;
+  background-color:rgba(242,73,65,0.6);
+}
+.form_box .section_form .button_form .next_form[disabled]:hover{
+  background-color:rgba(242,73,65,0.6)
+}
+.text-end__title{
+  font-weight:bold;
+  font-size:1.4375rem;
+  line-height:1.75rem;
+  margin-bottom:1.25rem
+}
+.text-end__subtitle{
+  margin-bottom:8px;
+  font-size:1.125rem;
+  line-height:1.4375rem;
+  text-decoration:underline
+}
+@media only screen and (max-width:767px){
+  .answer-box{
+    height:195px;
+    overflow-y:scroll
+  }
+}
+.simplebar-scroll-content{
+  width:100%;
+}
+::-webkit-scrollbar{
+  -webkit-appearance:none
+}
+::-webkit-scrollbar:vertical{
+  width:12px
+}
+::-webkit-scrollbar:horizontal{
+  height:12px
+}
+::-webkit-scrollbar-thumb{
+  background-color:rgba(0,0,0,0.5);
+  border-radius:10px;
+  border:2px solid #fff
+}
+::-webkit-scrollbar-track{
+  border-radius:10px;
+  background-color:#fff
+}
+
+.form-new
+  margin auto
+  color #333333
+  padding 0 15px
+  background #F6F7F8
+  &__form-box
+    padding 40px 0
+  &__box
+    margin auto
+  &__title
+    font-size 24px
+    line-height 30px
+    font-weight bold
+    margin-bottom 8px
+  &__subtitle-svg
+    flex none
+    size 13px
+    margin-right 7px
+  &__subtitle-box
+    margin-bottom 25px
+  &__subtitle
+    font-size 16px
+    line-height 22px
+  &__form-input
+    height 50px
+    width 250px
+    color #AAAAAA
+    font-size 16px
+    line-height 30px
+    border-radius 3px
+    padding 10px 25px
+    background #FFFFFF
+    border 1px solid #E5E5E5
+    &::-webkit-input-placeholder
+      color #AAAAAA
+    &::-moz-placeholder
+      color #AAAAAA
+    &:-ms-input-placeholder
+      color #AAAAAA
+    &::placeholder
+      color #AAAAAA
+    +below(sm)
+      width 100%
+  &__form-input + &__form-input
+    margin-left 5px
+    +below(sm)
+      margin 10px 0
+  &__form-btn
+    width 269px
+    margin-top 30px
+    +below(sm)
+      width 100%
+      margin-top 15px
+  &__box-right
+    position relative
+    +below(md)
+      left -80px
+    +below(sm)
+      display none
+  &__box-img
+    height 100%
+  &__box-signature
+    position absolute
+    bottom 10px
+    transform translateX(-115%)
+    color #777777
+    font-size 14px
+    line-height 19px
+  &__box-signature-title
+    font-weight bold
+
+
+.block-info1
+  width 33.3333%
+  padding 0 15px
+  margin-bottom 40px
+  +below(sm)
+    width 50%
+  +below(xs)
+    width 100%
+  &__head
+    display flex
+    align-items center
+    margin-bottom 15px
+  &__svg-box
+    size 70px
+    flex none
+    display flex
+    align-items center
+    justify-content center
+    background #ECF3F5
+    border-radius 100%
+    margin-right 27px
+  &__svg
+    size 23px 25px
+  &__title
+    font-size 15px
+    font-weight bold
+    line-height 20px
+  &__content
+    font-size 15px
+
+.quote-document
+  padding-top rem(30px)
+  +below(sm)
+    flex-wrap wrap
+  &__text
+    position relative
+    width 85%
+    color #555555
+    font-size 15px
+    line-height 25px
+    padding 26px 40px
+    border-radius 4px
+    background #FDFDFD
+    border 1px solid #F0F0F0
+    +below(md)
+      width 75%
+    +below(sm)
+      order 2
+      width 100%
+      padding 15px
+      margin-bottom 30px
+    span
+      color #D34841
+    &-corner
+      position absolute
+      top 45%
+      right -10.5px
+      width 16px
+      height 9px
+      transform: rotate(90deg);
+      +below(sm)
+        top: -8px;
+        left: 50px;
+        transform: rotate(355deg);
+      &:before
+        left 0
+        top 0
+        content ''
+        display: block;
+        position: absolute;
+        border-style: solid;
+        height: 0;
+        width: 0;
+        border-width 0 9px 8px 9px
+        border-color #f0f0f0 rgba(255,255,255,0)
+      &:after
+        @extend .quote-document__text-corner:before
+        left 1px
+        top 1px
+        content ''
+        border-width 0 8px 8px 8px
+        border-color #fff rgba(255,255,255,0)
+  &__author
+    width 12%
+    +below(md)
+      width 20%
+    +below(sm)
+      width 100%
+      display flex
+      margin-bottom 20px
+      align-items center
+  &__img img
+    width 121px
+    height 121px
+    max-width 100%
+    max-height 100%
+    border-radius 100%
+  &__content
+    text-align right
+    font-size 11px
+    line-height 15px
+    margin-top 10px
+    +below(sm)
+      margin-left 25px
+  &__fio
+    font-weight bold
+  &_inverse &__text-corner
+    left -11.5px
+    right auto
+    transform rotate(270deg)
+    +below(sm)
+      top: -8px;
+      left: 50px;
+      transform: rotate(355deg);
+  &_inverse &__content
+    text-align left
+
+.form-footer
+  width 730px
+  margin 0 auto
+  padding 30px 90px
+  border-radius 6px
+  background #F6F7F8
+  box-shadow 0 0 20px rgba(0, 0, 0, 0.15)
+  +below(sm)
+    width auto
+    padding-left 15px
+    padding-right 15px
+  &__title
+    font-size 24px
+    line-height 33px
+    font-weight bold
+    text-align center
+    margin-bottom 30px
+  &__input-box
+    margin 0 -3px
+    margin-bottom 30px
+  &__input
+    width 50%
+    height 50px
+    margin 0 3px
+    color #AAAAAA
+    background #fff
+    padding 10px 25px
+    border-radius 3px
+    border 1px solid #E5E5E5
+    +below(xs)
+      width 100%
+      margin-bottom 10px
+  &__button-box
+    padding 18px 25px
+    border-radius 6px
+    background #FFFFFF
+  &__confid-icon
+    flex none
+    size 20px 24px
+    margin-right 13px
+  &__confid-text
+    color #777777
+    font-size 12px
+    line-height 16px
+  &__btn
+    +below(xs)
+      width 100%
+      margin-top 20px
+
+.complex-main
+  position relative
+  padding 30px
+  color #333333
+  border-radius 6px
+  background #F6F7F8
+  +below(md)
+    padding 15px
+    margin 0 -15px
+  &__box
+    display flex
+    +below(md)
+      flex-wrap wrap
+  &:nth-child(odd) &__box &__item-box
+    order 2
+  &__img-box
+    width 40%
+    display flex
+    align-items center
+    justify-content flex-end
+    +below(md)
+      display none
+  &__img-box_center
+    justify-content center
+  &__img
+    max-width 100%
+  &__head-title
+    font-weight 600
+    font-size 24px
+    line-height 33px
+    margin-bottom 15px
+    +below(sm)
+      font-size 18px
+      line-height 25px
+      margin-bottom 0
+  &__head-box
+    +below(md)
+      display flex
+      align-items center
+      margin-bottom 15px
+  &__head-img
+    display none
+    +below(md)
+      width 90px
+      display block
+      margin-right 10px
+  &__item-box
+    width 60%
+    +below(md)
+      order 2
+      width 100%
+  &__item
+    position relative
+    padding-left 17px
+    margin-bottom 20px
+    &:last-child
+      margin-bottom 40px
+    &:before
+      position absolute
+      left 0
+      top 9px
+      content ''
+      size 6px
+      border-radius 100%
+      background #E03B32
+  &__item-title
+    font-size 18px
+    line-height 25px
+    margin-bottom 5px
+    +below(md)
+      font-size 18px
+      line-height 25px
+  &__item-text
+    color #777777
+    font-size 15px
+    line-height 20px
+    +below(md)
+      font-size 15px
+      line-height 20px
+  &_full-img-xs
+    .complex-main__img-box
+      +below(md)
+        display block
+        width 100%
+    .complex-main__img
+      +below(md)
+        position static !important
+        max-width 100% !important
+        margin: 0 -15px;
+
+.statistics-services
+  color #333333
+  padding 30px
+  border-radius 6px
+  box-shadow 0 0 20px rgba(0, 0, 0, 0.1)
+  +below(xs)
+    margin 0 -15px
+  &__title
+    font-weight 600
+    font-size 24px
+    line-height 33px
+  &__box
+    display flex
+    align-items center
+    justify-content space-between
+    +below(md)
+      flex-wrap wrap
+  &__left
+    width 80%
+    display flex
+    align-items center
+    +below(md)
+      order 2
+      width 100%
+      flex-wrap wrap
+  &__right
+    +below(md)
+      margin 30px auto 0
+  &__percent
+    color #E03B32
+    font-size 75px
+    line-height 75px
+    margin-right 30px
+    font-weight bold
+  &__text-item
+    position relative
+    margin 8px 0
+    font-size 15px
+    line-height 20px
+    &:before
+      content ''
+      height 1px
+      width 15px
+      display: inline-block;
+      margin 0 7px 3px 0
+      background #E03B32
+
+.block-list
+  position relative
+  overflow hidden
+  padding 30px 40px
+  border-radius 6px
+  background #F6F7F8
+  box-shadow 0 0 20px rgba(0, 0, 0, 0.15)
+  +below(xs)
+    padding 15px
+  &__title
+    font-weight bold
+    font-size 18px
+    line-height 25px
+    margin-bottom 15px
+  &__ul
+    padding 0
+    margin-bottom 20px
+  &__li
+    display flex
+    &:before
+      display none
+  &__li-icon
+    size 16px
+    margin-right 15px
+  &__icon
+    position absolute
+    bottom -63px
+    right 0
+    width 332px
+    height 332px
+    +below(md)
+      width 132px
+      height 232px
+    +below(xs)
+      display none
+  &__icon_main
+    bottom -70px
+    right -15px
+  &__btn
+    +below(xs)
+      width 100%
+      padding-left 15px
+      padding-right 15px
+  &_svg &__ul
+    padding 0
+    +below(md)
+      margin-top 0
+  &_svg &__ul &__li
+      display flex
+      align-items center
+      &:before
+        display none
+  &__icon_main
+      +below(md)
+        position static
+        display block
+        width 210px
+        height 170px
+        margin 0 auto
+
+.our-clients
+  color #333333
+  display flex
+  flex-wrap wrap
+  align-items flex-end
+  &__maps-box
+    width 50%
+    +below(sm)
+      width 100%
+      order 2
+  &__maps
+    width 100%
+  &__content
+    width 50%
+    padding-left 65px
+    +below(sm)
+      width 100%
+      padding-left 0
+  &__title
+    font-weight bold
+    font-size 30px
+    line-height 35px
+    margin-bottom 15px
+    span
+      color #e03b32
+  &__subtitle
+    font-size 18px
+    line-height 25px
+    font-weight bold
+    margin-bottom 8px
+  &__ul
+    margin 0
+  &__li
+    padding 4px 0
+    &:before
+      top 11px
+
+.bl1
+  display flex
+  flex-wrap wrap
+  margin 0 -15px
+  &__item-box
+    padding 0 15px
+    width 33.33%
+    +below(xs)
+      width 100%
+      margin-bottom 20px
+  &__item-img
+    max-width 100%
+    margin auto
+    display block
+  &__item-content
+    margin-top 15px
+    text-align center
+  &__item-title
+    font-weight 600
+    font-size 18px
+    line-height 25px
+  &__item-text
+    font-size 15px
+    line-height 20px
+    margin-top 3px
+
+.complex
+  overflow hidden
+  &__video-title
+    width 100%
+    margin 20px 0
+    padding 0 15px
+    text-align center
+    font-weight normal
+    font-size 1.875rem
+    line-height 2.5625rem
+  &__fio
+    font-weight bold
+    font-size 14px
+    line-height 16px
+    margin-top 10px
+  &__proffess
+    color #616161
+    font-size 12px
+    line-height 14px
+    font-weight normal
+  &__subtitle
+    margin-top 30px
+    font-weight bold
+    font-size rem(22px)
+    line-height rem(30px)
+  &__text
+    column-count 2
+    margin-top 15px
+    font-size rem(18px)
+    line-height rem(25px)
+    +below(xs)
+      column-count 1
+  &__icon
+    size 130px 20px
+    display block
+    margin-top 15px
+  &__doing-title
+    margin rem(20px 0)
+    font-size rem(30px)
+    line-height rem(41px)
+  &__item-right svg
+    size 163px 173px
+  &__result
+    position relative
+    background #DCE2E4
+    padding rem(40px 15px 20px)
+    &:before
+      content ''
+      position absolute
+      top 0
+      left calc(50% - 20px)
+      width 0
+      height 0
+      border-top 25px solid #FFFFFF
+      border-left 20px solid transparent
+      border-right 20px solid transparent
+    span
+      color #D34841
+  &__result-icon
+    text-align center
+    svg
+      size 47px 53px
+  &__result-text
+    font-size rem(22px)
+    line-height rem(30px)
+    font-weight bold
+    text-align center
+    margin 10px auto 0
+
+.btn-whatsapp-box
+  width 47%
+  display none
+  +below(sm)
+    display flex
+.btn-whatsapp
+  color #fff
+  padding 7px 11px
+  align-items center
+  background #20B038
+  border-radius 3px
+  box-shadow 5px 5px 10px rgba(0, 0, 0, 0.2)
+  display flex
+  +below(xs)
+    padding-top 0
+    padding-bottom 0
+  &__icon
+    size 30px
+    flex none
+    +below(424px)
+      width 22px
+  &__text
+    font-size 14px
+    line-height 20px
+    margin-right 10px
+    +below(424px)
+      font-size 13px
+
+.breadcrumbs
+  position relative
+  z-index 1
+  padding 30px 0
+.crumbs
+  color #737373
+  font-weight 400
+  font-size rem(16px)
+  line-height rem(30px)
+  +below(md)
+    display flex
+    overflow-x: scroll;
+  a
+    color #fff
+    +below(md)
+      white-space nowrap
+  span
+    white-space: nowrap;
+  a
+    span
+      color #737373
+      border-bottom 1px solid #b0b0b0
+      &:hover
+        border-bottom 1px solid transparent
+    &:after
+      color #a6a6a6
+      content "/"
+      padding 0 12px
+      display inline-block
+
+.review-btn
+  &__title
+    font-size: 15px;
+    line-height: 20px;
+    color: #3258E0;
+  &__icon-box
+    size 19px
+    border-radius 50%
+    background #fff
+    margin-left 7px
+    display flex
+  &__icon
+    width 8px
+    height 7px
+    margin auto

@@ -1,0 +1,1043 @@
+@import 'nib'
+@import 'rupture'
+
+/*Адаптив*/
+rupture.scale =       0    576px    767.98px    992px    1200px
+rupture.scale-names =  'xs'     'sm'     'md'     'lg'      'xl'
+
+/*Зачарование пикселей в ремы*/
+rem() {
+  remified = ()
+  for arg in arguments {
+    push(remified, unit(arg/16, 'rem'))
+  }
+  return remified
+}
+
+.form-control
+  transition .3s
+
+.form-control:focus
+  outline 0
+  color #495057
+  border-color #80bdff
+  background-color #fff
+  box-shadow 0 0 0 0.2rem rgba(0, 123, 255, 0.25)
+
+.first-screen
+  position relative
+  background-size cover
+  padding-bottom rem(80px)
+  background-image url('../css/img/techkarta/first-screen.jpg')
+
+  &:after
+    content ''
+    top 0
+    left 0
+    width 100%
+    height 100%
+    position absolute
+    background-image url('../img/pattern.png')
+
+  &:before
+    content ''
+    top 0
+    left 0
+    width 100%
+    height 100%
+    position absolute
+    background-color rgba(0, 0, 0, 0.4)
+
+.vantages-container
+  max-width 1300px
+  +below(md)
+    margin-top 30px
+.background-nav.nav-box
+  background-color #000
+  @media only screen and (max-height: 750px)
+    top 0
+
+.headline-box
+  z-index 1
+  height 350px
+  position relative
+  +below(md)
+    height auto
+
+.headline-content
+  color #fff
+
+  &__title
+    font-weight 700
+    font-size rem(51px)
+    +below(lg)
+      font-size rem(43px)
+    +below(md)
+      font-size rem(36px)
+
+  &__desc
+    font-weight 300
+    font-size rem(36px)
+    margin 15px 0 30px
+    +below(lg)
+      font-size rem(28px)
+
+  &__button
+    color #fff
+    padding 12px 70px
+    border-radius 30px
+    background-color #ff8a00
+    border 1px dashed #ff8a00
+    +below(lg)
+      padding 12px 30px
+
+    &:hover
+      color #fff
+      background-color #0003
+      border 1px dashed #ff8a00
+
+  &__consult
+    +below(sm)
+      margin-top 15px
+
+    &:hover span
+      border-bottom 1px dashed transparent
+
+    svg
+      size 30px
+      fill #a5a6a5
+      margin-right 15px
+
+    span
+      color #fff
+      transition .3s
+      font-weight 400
+      font-size rem(16px)
+      line-height rem(25px)
+      border-bottom 1px dashed #a5a6a5a1
+      +below(xs)
+        font-size 11px
+
+.headline-geography
+  +below(md)
+    margin-top 30px
+
+  &__img
+    width 100%
+    height 180px
+    background url('../css/img/geography.png') no-repeat center
+    background-size contain
+
+  &__text
+    color #fff
+    margin 0 auto
+    font-weight 400
+    margin-bottom 5px
+    font-size rem(16px)
+    line-height rem(22px)
+
+    svg
+      size 30px
+      fill #a5a6a5
+      margin-right 5px
+
+.vantages-box
+  z-index 1
+  position relative
+  padding 45px 30px
+  border 1px solid #8a8a8a
+  +below(lg)
+    padding rem(25px)
+  +below(lg)
+    padding-bottom 0
+
+.vantages-item
+  color #fff
+  +below(lg)
+    margin-bottom rem(25px)
+
+  &__img
+    img
+      size 50px
+      margin-right 15px
+
+  &__title
+    font-weight 700
+    font-size rem(22px)
+    margin-bottom 15px
+    +below(lg)
+      font-size rem(18px)
+
+  &__text
+    color #ccc
+    font-weight 400
+    font-size rem(15px)
+
+.develop
+  padding rem(40px 0)
+  background-color #f3f3f3
+
+  .container
+    position relative
+
+  &__img
+    size 25px
+    margin-top 5px
+    margin-right 25px
+    transform rotate(45deg)
+    border 4px solid #ff8a00
+
+  &__title
+    font-weight 600
+    font-size rem(32px)
+    line-height rem(37px)
+    margin-bottom 15px
+    +below(xs)
+      font-size rem(28px)
+      line-height rem(32px)
+
+  &__subtitle
+    font-size rem(15px)
+    font-weight 400
+
+  &__questions
+    color #999
+    font-weight 400
+    text-align right
+    font-size rem(14px)
+    +below(sm)
+      text-align left
+      margin-top 25px
+
+    a
+      color #333
+      font-size rem(18px)
+      font-weight 400
+      margin-bottom 5px
+      border-bottom 1px dashed #a7a7a7
+
+      &:hover
+        border-bottom 1px dashed transparent
+
+.develop-item
+  transition .3s
+
+  &:hover
+    box-shadow 10px 10px 50px -7px rgba(0, 0, 0, 0.5)
+
+  &__img img
+    width 100%
+
+  &__content
+    height 290px
+    padding 20px
+    margin-top -5px
+    position relative
+    background-color #fff
+    +below(xs)
+      height auto
+      padding-bottom 50px
+
+  &__title
+    font-weight 600
+    margin-bottom 10px
+    font-size rem(22px)
+    line-height rem(26px)
+
+  &__desc
+    font-weight 400
+    font-size rem(16px)
+    line-height rem(22px)
+
+  &__point:first-child
+    border-top none
+
+  &__point
+    display block
+    margin-top 13px
+    padding-top 13px
+    border-top 1px solid #e8e8e8
+
+    &:hover
+      color #fa8700
+
+  &__price
+    bottom 20px
+    font-weight bold
+    position absolute
+    font-size rem(20px)
+
+.develop-info
+  width 62%
+  text-align center
+  margin 0 auto 15px
+
+  &__price
+    color #fff
+    display block
+    padding 12px 0
+    font-weight 700
+    font-size rem(18px)
+    line-height rem(24px)
+    background-color #fa8700
+    border-radius 0 0 7px 7px
+    box-shadow inset 0 40px 60px -20px #db7700
+
+    &:hover
+      color #fff
+      background-color #db7700
+
+  &__time
+    color #999
+    margin-top 5px
+    font-weight 400
+    font-size rem(15px)
+    line-height rem(24px)
+
+.develop-head
+  margin-bottom rem(30px)
+
+.info
+  padding-top 0
+  padding-bottom 40px
+  background-color #f3f3f3
+
+  .info-head
+    margin-bottom rem(40px)
+
+  &__img
+    @extend .develop__img
+
+  &__title
+    margin-bottom 0
+    @extend .develop__title
+
+  &__text
+    font-weight 400
+    font-size rem(15px)
+    line-height rem(22px)
+    +below(sm)
+      margin-top 15px
+
+.info-item
+  margin-bottom 20px
+
+  &__img
+    size 20px
+    margin-top 0
+    background-color #ff8a00
+    @extend .develop__img
+    img
+      size 50px
+      margin-right 15px
+
+  &__title
+    font-weight 600
+    font-size rem(24px)
+    line-height rem(24px)
+    margin-bottom 15px
+
+  &__text
+    font-weight 400
+    font-size rem(16px)
+    line-height rem(22px)
+
+.demand-item:last-child
+  margin-bottom 0
+
+.demand-item
+  margin-bottom 35px
+
+  &__img
+    img
+      size 50px
+      margin-right 15px
+
+  &__title
+    font-weight 600
+    font-size rem(24px)
+    line-height rem(24px)
+    margin-bottom 15px
+
+  &__text
+    font-weight 400
+    font-size rem(16px)
+    line-height rem(22px)
+
+/*.theOrder.visible
+	background-image url('/dist/img/theOrder.jpg')*/
+.theOrder
+  padding 110px 0
+  position relative
+  background-size cover
+  background-image url('img/techkarta/theOrder.jpg')
+  +below(md)
+    padding 40px 0
+    height auto !important
+
+  &:before
+    content ''
+    top 0
+    left 0
+    width 100%
+    height 100%
+    position absolute
+    background-color rgba(0, 0, 0, 0.45)
+
+  .container
+    z-index 1
+    position relative
+    max-width 1230px
+
+  .theOrder-box
+    padding rem(45px 25px)
+    background-color #fff
+    +below(md)
+      padding rem(40px 15px 0)
+
+  &__line
+    height 32px
+    width 880px
+    margin 10px 0 0 20px
+    background-size contain
+    background-repeat no-repeat
+    background-image url('../css/img/theOrder__line.svg')
+    +below(lg)
+      width 715px
+    +below(md)
+      display none
+
+.theOrder-item
+  padding 0
+  width 25%
+  +below(md)
+    width 50%
+    margin-bottom rem(25px)
+  +below(xs)
+    width 100%
+
+  &__number
+    size 50px
+    color #fff
+    font-weight 600
+    border-radius 50%
+    font-size rem(24px)
+    background-color #ff8a00
+
+  &__text
+    font-weight 600
+    padding 0 7px
+    font-size rem(15px)
+    line-height rem(21px)
+
+
+.works
+  padding rem(50px 0 0)
+  background-color #f3f3f3
+
+.slideshow-item
+  transition .3s
+  +below(md)
+    margin-bottom 15px
+
+  &:hover
+    box-shadow 10px 10px 50px -7px rgba(0, 0, 0, .5)
+
+  &__img
+    img
+      width 100%
+
+  .item-content
+    padding 20px
+    height 270px
+    margin-top -3px
+    margin-bottom 15px
+    background-color #fff
+    border-top 1px solid #d7d7d7
+    +below(lg)
+      height 280px
+    +below(md)
+      height auto
+
+    &__title
+      font-weight 600
+      font-size rem(22px)
+      line-height rem(27px)
+      margin-bottom 15px
+
+    &__text
+      font-weight 400
+      font-size rem(16px)
+      line-height rem(22px)
+
+.slick-slide
+  margin 0 10px
+
+.slick-list
+  margin 0 -10px
+
+.slick-dots
+  padding 0
+  display flex
+  margin-top 30px
+  justify-content center
+
+  li
+    size 14px
+    display flex
+    margin 0 5px
+    transition .3s
+    border-radius 50%
+    align-items center
+    justify-content center
+    border 1px solid #f24941
+
+    button
+      border none
+      cursor pointer
+      color transparent
+      background transparent
+
+    &:hover
+      background-color #f24941
+
+  .slick-active
+    background-color #f24941
+
+.arrow_slick
+  top 42%
+  height 65px
+
+.next_slick
+  right -1px
+  left auto
+  background-image url('img/arrow.svg')
+
+.prev_slick
+  left -1px
+  right auto
+  background-image url('img/arrow.svg')
+
+.customers
+  padding-bottom 25px
+  background-color #f3f3f3
+
+  &__item
+    margin 10px
+    padding 5px
+    size 23% 110px
+    background-color #fff
+    +below(lg)
+      width 22%
+    +below(md)
+      width 46%
+    +below(xs)
+      width 50%
+      margin 0
+
+    img
+      +below(sm)
+        display block
+        margin 0 auto
+      +below(xs)
+        width 85%
+
+.demand
+  padding 40px 0
+  background-color #f3f3f3
+
+  &__headline-box
+    width 85%
+    margin-bottom 25px
+    +below(sm)
+      width 100%
+
+.demand-docs, .demands-gallery
+  width 100%
+
+.docs-item
+  margin 0 7px 35px
+
+  &__img
+    display block
+    position relative
+
+    img
+      width 100%
+
+  &:hover .img__hover
+    opacity 1
+
+  &__title
+    color #666
+    font-weight 400
+    margin-top 10px
+    text-align center
+    font-size rem(15px)
+    +below(lg)
+      font-size rem(14px)
+
+.demands-gallery
+  +below(lg)
+    flex-wrap wrap
+
+  &__img
+    img
+      size 72px
+      margin 10px
+      transition .3s
+
+      &:hover
+        box-shadow 10px 10px 50px -7px rgba(0, 0, 0, .5)
+
+.about-box
+  z-index 1
+  position relative
+  padding 30px 15px
+
+
+.our-team
+  width 100%
+  margin 0 -15px 0 -15px
+  +below(xs)
+    margin 0
+
+  .team-item
+    size 100px
+    +below(lg)
+      size 95px
+
+    img
+      border-radius 50%
+
+.review
+  padding rem(40px 0)
+
+  .review-box
+    margin 0 -15px 0 -15px
+
+.review-item
+  margin 15px
+  width 16.666%
+  position relative
+  +below(md)
+    width 33.333%
+  +below(sm)
+    width 40%
+
+  .review-item__img
+    img
+      width 100%
+
+  &:hover .img__hover
+    opacity 1
+
+/*.prefooter
+	padding rem(50px 0)
+	background-color #292929
+.prefooter-left
+	+below(md)
+		padding-bottom 50px
+	&__text
+		color #fff
+		font-size rem(30px)
+		font-weight 300
+		span
+			color #ff8a00
+			font-weight 600
+	&__img
+		margin-bottom 50px
+		+below(md)
+			margin -50px 0 10px
+		img
+			width 100%
+	&__button
+		color #fff
+		padding 12px 20px
+		border-radius 30px
+		background-color #ff8a00
+		border 1px dashed transparent
+		&:hover
+			color #fff
+			border 1px dashed #ff8a00
+			background-color rgba(0,0,0,.2)
+
+.prefooter-mail
+	margin-left 50px
+	+below(424px)
+		margin 20px 0 0
+	a
+		color #fff
+		border-bottom 1px dashed #545454
+		&:hover
+			border-bottom 1px dashed transparent
+	svg
+		fill #ff8a00
+		size 22px 33px
+		margin-right 15px
+.prefooter-phone
+	+below(424px)
+		width 100%
+	a
+		color #fff
+	&__subtitle
+		color #666666
+	svg
+		size 25px
+		fill #ff8a00
+		margin-right 15px
+
+.prefooter-form
+	margin-top 25px
+	background-color #fff
+	padding rem(30px 25px 20px)
+	&__title
+		font-weight 600
+		text-align center
+		margin-bottom 25px
+		font-size rem(32px)
+		line-height rem(35px)
+	.form-item
+		margin-bottom 15px
+	&__confid
+		margin-top 0
+		color #a7a7a7
+		text-align left
+		font-size 13px
+		line-height 23px
+		a
+			color #a7a7a7
+			border-bottom 1px solid rgba(0,0,0,.141)
+			&:hover
+				border-bottom 1px solid transparent*/
+
+#ajax-services
+  top -300px
+  opacity 0
+  position relative
+
+.uk-modal-dialog
+  width 800px
+  padding 20px 20px 0 20px
+  +below(md)
+    width 700px
+  +below(sm)
+    width 530px
+  +below(xs)
+    width 300px
+    padding 15px 15px 0 15px
+  +below(320px)
+    width 250px
+
+.gl-list-location
+  cursor pointer
+  transition .3s
+  padding 3px 0
+  display table
+
+  &:hover
+    color #ff8a00
+
+.img__hover
+  content ''
+  top 0
+  left 0
+  opacity 0
+  width 100%
+  height 100%
+  transition .3s
+  position absolute
+  background-color #000000 8 c
+
+  svg
+    size 50px
+    fill #c5c5c5
+
+#cboxClose
+  top 0
+  bottom auto
+
+.hint_city
+  background #fff
+  border 1px solid #bfbfbf
+  border-radius 5px
+  box-shadow 0 0 30px rgba(0, 0, 0, 0.3)
+  margin 20px 0 0
+  position absolute
+  width 187px
+  z-index 10
+  display none
+  +below(sm)
+    display none
+
+  .hint_city_content
+    font-size 14px
+    line-height 22px
+    display block
+    min-height 25px
+    padding 7px 20px 5px
+
+  .hint_button
+    text-align center
+    margin 2px 0 10px
+
+  .button_small
+    height 24px
+    cursor pointer
+    border-top 1px solid #dddddd
+    border-right 1px solid #c2c2c2
+    border-bottom 1px solid #a3a3a3
+    border-left 1px solid #c2c2c2
+    box-shadow 0 1px 0 #dbdbdb
+    font-size 13px
+    line-height 24px
+    white-space nowrap
+    display inline-block
+    padding 0 13px
+    border-radius 5px
+    background-color #f2f2f2
+    background-image linear-gradient(to bottom, #ffffff, #dedede)
+    color #303030
+    text-shadow 0 1px #fff
+    font-weight bold
+    -webkit-user-select none
+    -moz-user-select none
+    -ms-user-select none
+    user-select none
+    text-decoration none
+
+    &:hover
+      color #f24941
+
+  .cityselect
+    font-size 13px
+    line-height 24px
+    margin 0 0 0 15px
+
+  .corner
+    position absolute
+    top -14px
+    left 0
+    width 30px
+    height 14px
+    margin 0 42%
+
+    &:before
+      left 0
+      top 0
+      content ''
+      display: block;
+      position: absolute;
+      border-style: solid;
+      height: 0;
+      width: 0;
+      border-width 0 15px 14px 15px
+      border-color #b3b2b2 rgba(255, 255, 255, 0)
+
+    &:after
+      @extend .hint_city .corner:before
+      left 1px
+      top 1px
+      content ''
+      border-width 0 14px 13px 14px
+      border-color #fff rgba(255, 255, 255, 0)
+
+.our-team__info
+  font-size 18px
+  text-align center
+  padding-top 20px
+
+  span
+    font-weight bold
+
+.questions
+  padding rem(55px 0 70px)
+  background-color #e8e8e8
+
+  .questions-item:last-child
+    .item-hide
+      padding-bottom 20px
+
+.questions-item
+  padding 0 25px
+  background-color #fff
+
+  .item-visible
+    width 100%
+    cursor pointer
+    padding 20px 0
+    border-bottom 1px solid #e5e5e5
+
+    &__title
+      width 88%
+      font-weight 600
+      line-height rem(24px)
+      font-size rem(18px)
+
+    &__img
+      width 30px
+      height 30px
+      transition 0.4s
+
+      svg
+        size 32px
+
+.item-hide
+  font-size 15px
+  font-weight 400
+  line-height 22px
+  padding 15px 25px 0
+  +below(sm)
+    padding 15px 0 0
+
+.questions-item.active
+  .item-visible
+    &__img
+      transform rotate(180deg)
+
+.develop-per
+  color #000
+  padding rem(30px 0)
+
+  &__item:first-child
+    border-radius 3px 3px 0 0
+
+  &__item:last-child
+    border-radius 0 0 3px 3px
+
+  &__item:nth-child(even)
+    background #e1e1e1
+
+    &:hover
+      background #b8b8b8
+
+  &__item:nth-child(odd)
+    background #ededed
+
+    &:hover
+      background #b8b8b8
+
+  &__item
+    display block
+    padding 15px 20px
+
+#cboxLoadedContent
+  overflow hidden !important
+
+.gl-change-list
+  +below(sm)
+    height 300px
+    padding-bottom 15px
+    overflow-y scroll !important
+
+.header-box__item .city-arrow
+  size 25px 20px
+  padding-left 7px
+
+.customers-box
+  margin 0 -15px
+
+.city-arrow
+  position relative
+
+  &:after
+    content ''
+    top 3px
+    right -20px
+    width 15px
+    height 15px
+    position absolute
+    background-size cover
+    background-image url('../img/arrow_city.svg')
+
+.contacts-vantages-item
+  &__img svg
+    size 60px
+    fill #9fa0a2
+  &__title
+    color white
+    font-weight 600
+    margin-top 10px
+    font-size rem(18px)
+    line-height rem(23px)
+
+.title_contacts
+  padding 45px 15px 0
+  color #fff
+  text-align center
+  font-size rem(38px)
+  font-weight 300
+  line-height 45px
+  +below(md)
+    padding 15px
+
+.vantages-item__img
+  background-color transparent
+
+
+.develop-item-smeta-box
+  margin-bottom 20px
+
+.develop-item-smeta
+  transition .3s
+  padding rem(40px 40px 55px 40px)
+  background-color #fff
+  border 1px solid #dddddd
+
+  &:hover
+    color #fff
+    background-color #ff8a00
+
+    .develop-item-smeta__calculate
+      color #fff
+      border-bottom 1px dashed transparent
+
+    .develop-item-smeta__img
+      background-color #e7e7e7
+
+    .develop-item-smeta__title, .develop-item-smeta__desc
+      color #fff
+
+  &__img
+    size 15px
+    border-radius 50%
+    margin 5px 10px 0 0
+    background-color #ff8a00
+
+  &__title
+    color #000
+    font-weight 600
+    font-size rem(24px)
+    margin-bottom 15px
+
+  &__desc
+    color #000
+    font-weight 400
+    font-size rem(15px)
+    line-height rem(22px)
+
+  &__content
+    position relative
+
+  &__calculate
+    bottom -35px
+    color #4b4b4b
+    font-size 15px
+    transition .3s
+    position absolute
+    border-bottom 1px dashed #727272
+
+.vantages-services
+  padding-bottom rem(50px)
+  background-color #f3f3f3
+
+.vantages-services-item
+  padding rem(0 25px 25px 25px)
+
+  svg
+    size 50px
+    fill #ff8a00
+    margin-right 15px
+
+  &__text
+    font-size rem(16px)

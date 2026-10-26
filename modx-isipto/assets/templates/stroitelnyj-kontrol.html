@@ -1,0 +1,738 @@
+[[$header_new]]
+
+<section itemscope itemtype="http://schema.org/Product" class="first-screen first-screen_crumbs" style='background: #f6f7f9'>
+  <div class="container">
+      
+[[pdoCrumbs? &tplWrapper = `@CODE <div class="breadcrumbs"><div class="crumbs">[[+output]]</div></div>` &tplHome = `@CODE <a href="[[+link]]"><span>Главная</span></a>` &tpl = `@CODE <a href="[[+link]]"><span>[[+menutitle]]</span></a>` &tplCurrent = `@CODE <span>[[+menutitle]]</span>` &outputSeparator = `` &showHome=`1` &showCurrent=`1` ]]
+
+
+
+
+    <div class="row">
+        <div class="col-md-6 col-12">
+        <h1 itemprop="name" class="first-screen__title">[[*h1]]</h1>
+        
+        <div class="r20"></div>
+        <div style="font-weight:400;font-size:24px;">Качество на каждом этапе строительства</div>
+        
+        <div class="row">
+          <ul class="first-screen__item-box col-lg-10 col-12">
+            <li class="first-screen__item d-flex align-items-center">
+              <div class="first-screen__item-icon d-flex align-items-center justify-content-center">
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+<path d="M5.26316 8.4H6.31579C6.59496 8.4 6.86271 8.28937 7.06011 8.09246C7.25752 7.89555 7.36842 7.62848 7.36842 7.35C7.36842 7.07152 7.25752 6.80445 7.06011 6.60754C6.86271 6.41062 6.59496 6.3 6.31579 6.3H5.26316C4.98398 6.3 4.71624 6.41062 4.51884 6.60754C4.32143 6.80445 4.21053 7.07152 4.21053 7.35C4.21053 7.62848 4.32143 7.89555 4.51884 8.09246C4.71624 8.28937 4.98398 8.4 5.26316 8.4ZM9.47368 14.7H5.26316C4.98398 14.7 4.71624 14.8106 4.51884 15.0075C4.32143 15.2044 4.21053 15.4715 4.21053 15.75C4.21053 16.0285 4.32143 16.2955 4.51884 16.4925C4.71624 16.6894 4.98398 16.8 5.26316 16.8H9.47368C9.75286 16.8 10.0206 16.6894 10.218 16.4925C10.4154 16.2955 10.5263 16.0285 10.5263 15.75C10.5263 15.4715 10.4154 15.2044 10.218 15.0075C10.0206 14.8106 9.75286 14.7 9.47368 14.7ZM9.47368 10.5H5.26316C4.98398 10.5 4.71624 10.6106 4.51884 10.8075C4.32143 11.0045 4.21053 11.2715 4.21053 11.55C4.21053 11.8285 4.32143 12.0955 4.51884 12.2925C4.71624 12.4894 4.98398 12.6 5.26316 12.6H9.47368C9.75286 12.6 10.0206 12.4894 10.218 12.2925C10.4154 12.0955 10.5263 11.8285 10.5263 11.55C10.5263 11.2715 10.4154 11.0045 10.218 10.8075C10.0206 10.6106 9.75286 10.5 9.47368 10.5ZM16.7579 7.749C16.8385 7.55778 16.8605 7.34703 16.8212 7.14335C16.7818 6.93966 16.6829 6.75215 16.5368 6.6045L10.2211 0.3045C10.134 0.222827 10.0345 0.155485 9.92632 0.105C9.8949 0.100548 9.863 0.100548 9.83158 0.105L9.53684 0H3.15789C2.32037 0 1.51715 0.331874 0.924926 0.922614C0.332706 1.51335 0 2.31457 0 3.15V17.85C0 18.6854 0.332706 19.4866 0.924926 20.0774C1.51715 20.6681 2.32037 21 3.15789 21H9.47368C9.75286 21 10.0206 20.8894 10.218 20.6925C10.4154 20.4955 10.5263 20.2285 10.5263 19.95C10.5263 19.6715 10.4154 19.4044 10.218 19.2075C10.0206 19.0106 9.75286 18.9 9.47368 18.9H3.15789C2.87872 18.9 2.61098 18.7894 2.41357 18.5925C2.21617 18.3955 2.10526 18.1285 2.10526 17.85V3.15C2.10526 2.87152 2.21617 2.60445 2.41357 2.40754C2.61098 2.21062 2.87872 2.1 3.15789 2.1H8.42105V5.25C8.42105 6.08543 8.75376 6.88665 9.34598 7.47739C9.9382 8.06813 10.7414 8.4 11.5789 8.4H15.7895C15.9973 8.39896 16.2001 8.33659 16.3725 8.22074C16.5448 8.10489 16.6789 7.94075 16.7579 7.749ZM11.5789 6.3C11.2998 6.3 11.032 6.18937 10.8346 5.99246C10.6372 5.79555 10.5263 5.52848 10.5263 5.25V3.5805L13.2526 6.3H11.5789ZM18.9474 10.5H13.6842C13.405 10.5 13.1373 10.6106 12.9399 10.8075C12.7425 11.0045 12.6316 11.2715 12.6316 11.55V19.95C12.6321 20.1399 12.6842 20.3262 12.7825 20.4889C12.8807 20.6516 13.0214 20.7847 13.1895 20.874C13.3541 20.9583 13.538 20.9978 13.7229 20.9886C13.9077 20.9794 14.0868 20.9218 14.2421 20.8215L16.3158 19.4565L18.4211 20.8215C18.5783 20.9122 18.7564 20.9608 18.9381 20.9625C19.1197 20.9642 19.2987 20.919 19.4577 20.8313C19.6166 20.7436 19.7501 20.6163 19.8451 20.4619C19.9402 20.3074 19.9935 20.1311 20 19.95V11.55C20 11.2715 19.8891 11.0045 19.6917 10.8075C19.4943 10.6106 19.2265 10.5 18.9474 10.5ZM17.8947 17.976L16.9053 17.3145C16.7312 17.1971 16.5259 17.1344 16.3158 17.1344C16.1057 17.1344 15.9004 17.1971 15.7263 17.3145L14.7368 17.976V12.6H17.8947V17.976Z" fill="#E03B32"/>
+</svg>
+              </div>
+              <div class="first-screen__item-text" style="font-size:16px;">Контроль качества</div>
+            </li>
+            <li class="first-screen__item d-flex align-items-center">
+              <div class="first-screen__item-icon d-flex align-items-center justify-content-center">
+<svg xmlns="http://www.w3.org/2000/svg" width="21" height="22" viewBox="0 0 21 22" fill="none">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M2.25 1.74951C2.25 1.45114 2.13147 1.165 1.9205 0.954017C1.70952 0.743038 1.42337 0.624512 1.125 0.624512C0.826631 0.624512 0.540483 0.743038 0.329505 0.954017C0.118526 1.165 0 1.45114 0 1.74951L0 20.4995C0 21.1205 0.504 21.6245 1.125 21.6245H19.875C20.1734 21.6245 20.4595 21.506 20.6705 21.295C20.8815 21.084 21 20.7979 21 20.4995C21 20.2011 20.8815 19.915 20.6705 19.704C20.4595 19.493 20.1734 19.3745 19.875 19.3745H2.25V15.2045L5.553 11.6765C5.9895 11.9255 6.495 12.0665 7.032 12.0665C7.713 12.0665 8.34 11.8415 8.844 11.4575L10.9785 13.4495C10.8122 13.9507 10.781 14.4868 10.8879 15.0039C10.9949 15.5209 11.2364 16.0006 11.5879 16.3946C11.9394 16.7886 12.3886 17.083 12.8902 17.248C13.3918 17.413 13.928 17.4428 14.4448 17.3345C14.9615 17.2262 15.4406 16.9835 15.8337 16.6309C16.2268 16.2784 16.52 15.8284 16.6837 15.3264C16.8474 14.8244 16.8758 14.2881 16.7662 13.7716C16.6565 13.2551 16.4126 12.7767 16.059 12.3845L16.062 12.377L17.8005 7.60251C18.4934 7.54043 19.1431 7.23938 19.6384 6.75091C20.1337 6.26245 20.4438 5.61696 20.5155 4.92502C20.5872 4.23308 20.416 3.53774 20.0314 2.95809C19.6468 2.37845 19.0726 1.95057 18.4072 1.74775C17.7417 1.54493 17.0265 1.57978 16.384 1.84634C15.7414 2.1129 15.2115 2.59458 14.8851 3.20887C14.5586 3.82317 14.4559 4.53185 14.5946 5.21355C14.7332 5.89524 15.1046 6.50752 15.645 6.94551L14.0235 11.4005C13.4745 11.3668 12.9266 11.4824 12.438 11.735L10.125 9.57501C10.0867 9.54047 10.0466 9.50793 10.005 9.47751C10.0653 9.03605 10.0264 8.5867 9.89119 8.16216C9.75595 7.73763 9.52776 7.34858 9.22321 7.02335C8.91867 6.69812 8.54544 6.44489 8.13069 6.28208C7.71594 6.11927 7.27011 6.05099 6.82565 6.0822C6.38119 6.11341 5.94927 6.24333 5.56135 6.4625C5.17342 6.68167 4.83925 6.98458 4.58314 7.34918C4.32704 7.71378 4.15545 8.1309 4.08087 8.57017C4.00629 9.00944 4.03059 9.45982 4.152 9.88851L4.107 9.93201L2.25 11.912V1.74951Z" fill="#E03B32"/>
+</svg>
+              </div>
+              <div class="first-screen__item-text" style="font-size:16px;">Проверка документации</div>
+            </li>
+            <li class="first-screen__item d-flex align-items-center">
+              <div class="first-screen__item-icon d-flex align-items-center justify-content-center">
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="22" viewBox="0 0 20 22" fill="none">
+<path d="M19.8415 16.6511L16.8332 11.456C17.4488 10.3254 17.7695 9.05785 17.7656 7.77053C17.7656 5.70966 16.947 3.73319 15.4897 2.27594C14.0324 0.818678 12.056 0 9.9951 0C7.93423 0 5.95776 0.818678 4.5005 2.27594C3.04325 3.73319 2.22457 5.70966 2.22457 7.77053C2.22075 9.05785 2.54144 10.3254 3.15703 11.456L0.148727 16.6511C0.0511085 16.8202 -0.000192338 17.012 5.41884e-07 17.2073C0.000193421 17.4025 0.051873 17.5942 0.149826 17.7631C0.247778 17.932 0.388539 18.0721 0.557907 18.1692C0.727276 18.2663 0.91926 18.317 1.11449 18.3162H4.30041L5.92112 21.047C5.97576 21.1375 6.04304 21.2198 6.12093 21.2913C6.32672 21.4896 6.60108 21.6009 6.88689 21.6021H7.0423C7.20989 21.5791 7.37002 21.5182 7.51046 21.4239C7.6509 21.3297 7.76795 21.2045 7.85265 21.0581L9.9951 17.3727L12.1375 21.0914C12.2235 21.2358 12.3411 21.3587 12.4815 21.451C12.6218 21.5433 12.7813 21.6026 12.9479 21.6243H13.1033C13.393 21.626 13.6718 21.5145 13.8804 21.3135C13.955 21.246 14.0187 21.1674 14.0691 21.0803L15.6898 18.3496H18.8757C19.0713 18.3503 19.2636 18.2994 19.4332 18.2019C19.6028 18.1045 19.7437 17.9639 19.8415 17.7945C19.9452 17.6219 20 17.4242 20 17.2228C20 17.0214 19.9452 16.8238 19.8415 16.6511ZM6.87579 18.3496L5.88782 16.6955C5.79054 16.5314 5.6526 16.3952 5.48733 16.2999C5.32205 16.2046 5.13501 16.1535 4.94425 16.1516H3.02382L4.61123 13.3986C5.70435 14.4519 7.08206 15.162 8.5742 15.4412L6.87579 18.3496ZM9.9951 13.3209C8.89734 13.3209 7.82423 12.9954 6.91147 12.3855C5.99872 11.7756 5.28731 10.9088 4.86722 9.89457C4.44712 8.88037 4.33721 7.76437 4.55137 6.68771C4.76553 5.61104 5.29415 4.62205 6.07039 3.84582C6.84662 3.06959 7.83561 2.54096 8.91227 2.3268C9.98894 2.11264 11.1049 2.22255 12.1191 2.64265C13.1333 3.06274 14.0002 3.77415 14.6101 4.6869C15.22 5.59966 15.5455 6.67277 15.5455 7.77053C15.5455 9.24258 14.9607 10.6543 13.9198 11.6952C12.8789 12.7361 11.4672 13.3209 9.9951 13.3209ZM15.0459 16.1516C14.8552 16.1535 14.6681 16.2046 14.5029 16.2999C14.3376 16.3952 14.1997 16.5314 14.1024 16.6955L13.1144 18.3496L11.4271 15.4079C12.914 15.123 14.2866 14.4136 15.379 13.3653L16.9664 16.1183L15.0459 16.1516Z" fill="#E03B32"/>
+</svg>
+              </div>
+              <div class="first-screen__item-text" style="font-size:16px;">Подтверждение объемов строительства</div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="d-flex justify-content-between">
+          <noindex class="btn-whatsapp-box" onclick="ym(48630242,'reachGoal','Кнопка wp');">
+            <a class="btn-whatsapp" href="https://wa.me/79279563573" rel="nofollow">
+              <div class="btn-whatsapp__text">НАПИСАТЬ В WHATSAPP</div>
+              <svg class="btn-whatsapp__icon" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="/assets/css/img/whatsapp.svg#whatsapp"></use>
+              </svg>
+            </a>
+          </noindex>
+          <a class="btn btn_first-screen d-flex align-items-center justify-content-center btn-modal krasnaya_knopka" href="#form_up" rel="nofollow" data-reason="Заказать расчет" data-header="Заказать расчет" onclick="ym(48630242, 'reachGoal', 'main-1st'); fbq('track', 'InitiateCheckout'); return true;">Заказать расчет</a></div>
+
+
+        
+        </div>
+        
+    <div class="col-md-6 col-12 none-mobile">
+            <img src="/images/stroitelnyj-kontrol.png" class="img-fluid">
+    </div>
+        </div>
+              </div>
+    </div>
+  </div>
+</section>
+
+<div class="r80"></div>
+
+
+<div class="container">
+    
+    <h3 class="title">Выполняем работы по строительному контролю</h3>
+    <div class="r20 none-mobile"></div>
+
+    <div class="row">
+        <div class="col-md-6 col-12">
+                <center>
+                    <img src="/images/zadachi-stroitelnogo-kontrolya.png" class="img-fluid">
+                </center>
+        </div>
+        <div class="col-md-6 col-12  justify-content-center align-self-center">
+            <div class="row">
+                
+
+             
+            <div class="col-sm-12 col-12">    
+            
+            <div class="r30 mobile"></div>
+            
+            
+<div style="font-weight: 700;font-size: 20px;line-height: 27px;color: #333333;">Контроль качества строительно монтажных работ</div>
+<p style="font-weight:400;font-size:16px;line-height:21.79px;">Проверка всех технологических процессов, материалов и конструкций на соответствие проектной документации и строительным нормам</p>
+
+<div class="r30"></div>
+
+<div style="font-weight: 700;font-size: 20px;line-height: 27px;color: #333333;">Подтверждение объема выполненных работ</div>
+<p style="font-weight:400;font-size:16px;line-height:21.79px;">Проверка объемов и подтверждение их соответствия утвержденным сметам и проектам</p>
+
+<div class="r30"></div>
+
+<div style="font-weight: 700;font-size: 20px;line-height: 27px;color: #333333;">Предотвращение дефектов и недоделок</div>
+<p style="font-weight:400;font-size:16px;line-height:21.79px;">Своевременное выявление ошибок и недочетов, что позволяет избежать дорогостоящих исправлений на поздних стадиях строительства</p>
+
+<div class="r30"></div>
+
+<div style="font-weight: 700;font-size: 20px;line-height: 27px;color: #333333;">Оценка финансовых рисков</div>
+<p style="font-weight:400;font-size:16px;line-height:21.79px;">Контроль за завышением смет, достоверности расчетов и предотвращение излишних расходов</p>
+
+          </div>
+        </div>
+        
+        
+    </div>
+</div>
+</div>
+
+<div class="r30"></div>
+
+<div class="container">
+<style>
+    .comment_bubble { min-height:114px;max-width:760px;background:rgba(246, 247, 248, 1);padding: 27px 35px 27px 35px;border-radius:10px;font-weight:400;font-size:16px;line-height:24px;align:Justified; }
+@media (min-width: 992px) {
+    .comment_bubble:before { content: "";position: absolute;right: 5px;top: 139px;width: 0;height: 0;border-top: 30px solid transparent;border-left: 30px solid rgba(246, 247, 248, 1);border-bottom: 0px solid transparent; }
+}
+</style>
+    <div style="background:rgba(246, 247, 248, 1);border-radius:16px;background-image: url(/images/zadachi_str_audita_fon.png);background-position: bottom;background-repeat: no-repeat;background-size: cover;">
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-8 col-12" style="padding:10px 25px 0px 25px;">
+            <div style="height:45px;" class="none-mobile"></div>
+            <div class="comment_bubble">
+            Строительный контроль – это комплекс мероприятий, направленных на обеспечение качества, соблюдение сроков и бюджета, а также соответствие всех этапов строительства проектной документации. Независимый контроль строительно-монтажных и дорожных работ помогает избежать множества рисков, связанных с качеством СМР, экономией средств и соответствием нормам. Заказывая услуги, вы получаете гарантию на успешное завершение проекта, минимизацию рисков и строгую проверку каждого строительного этапа
+            </div>
+            <div style="height:55px;" class="none-mobile"></div>
+        </div>
+        
+        <div class="col-md-3 col-12 justify-content-center align-self-center">
+            <center>
+                <div class="r20 none-mobile"></div>
+                <div class="r20"></div>
+            <div style="width:116px;height:116px;border-radius:200px;background:rgba(198, 188, 170, 1);">    
+                <img src="/images/timur_gallyamov.png" class="img-fluid">
+            </div>
+            <div style="height:13px;"></div>
+            <div style="font-weight:700;font-size:14px;line-height:19.07px;">Тимур Галлямов</div>
+            <div style="font-weight:400;font-size:14px;line-height:19.07px;">Генеральный директор</div>
+            
+            <div class="r10 mobile"></div>
+            <div class="r20 none-mobile"></div>
+            </center>
+        </div>
+        
+    </div>
+    </div>
+</div>
+
+<div class="r80"></div>
+
+
+<div class="container">
+    <h2 class="title">Услуги независимого строительного контроля</h2>
+
+    <center><div style="max-width:900px;font-weight:400;font-size:12px;">Оказание услуг строительного контроля это обеспечение регулярным контролем строительных работ и мерами по управлению качеством. Команда строительного контроля постоянно присутствует на объекте на протяжении всего периода строительства, участвуя в проверках на всех этапах: входном, операционном, промежуточном и финальном</div></center>
+    <div style="height:40px;"></div>
+
+    
+    <div style="background: rgba(246, 247, 248, 1);border-radius: 16px;padding:0px 15px 0px 30px;">
+    <div class="row">
+        <div class="col-md-8 col-12" style="padding:32px 30px 32px 30px;">
+            <div style="font-weight: 700;font-size: 24px;">Проверка качества и соблюдение норм строительства</div>
+            <div style="height:16px;"></div>
+            <center class="mobile">
+                <img src="/images/proverka-kachestva-i-soblyudenie-norm-stroitelstva-mobile.png" class="img-fluid">
+                <div style="height:16px;"></div>
+            </center>
+           
+<div style="margin-left:19px;font-size:16px;line-height: 24px;color: rgba(51, 51, 51, 1);font-weight:700"><span style="margin-left:-20px;position:absolute;color:#E03B32;font-size:26px;">•</span> Проведение лабораторных испытаний</div>
+<div style="margin-left:19px;font-size:16px;line-height: 24px;color: rgba(51, 51, 51, 1);">Проводится проверка наличия и качества лабораторных испытаний материалов и конструкций в соответствии с действующими строительными нормами и условиями договоров</div>
+
+<div style="height:16px;"></div>
+
+<div style="margin-left:19px;font-size:16px;line-height: 24px;color: rgba(51, 51, 51, 1);font-weight:700"><span style="margin-left:-20px;position:absolute;color:#E03B32;font-size:26px;">•</span> Контроль соответствия нормам и стандартам</div>
+<div style="margin-left:19px;font-size:16px;line-height: 24px;color: rgba(51, 51, 51, 1);">Следим за соответствием выполняемых СМР, применяемых материалов и конструкций, проектной документации, строительным нормам, а также стандартам и техническим условиям</div>
+
+<div style="height:16px;"></div>
+
+<div style="margin-left:19px;font-size:16px;line-height: 24px;color: rgba(51, 51, 51, 1);font-weight:700"><span style="margin-left:-20px;position:absolute;color:#E03B32;font-size:26px;">•</span> Качество монтажа</div>
+<div style="margin-left:19px;font-size:16px;line-height: 24px;color: rgba(51, 51, 51, 1);">Участвуем в проверке качества монтажа оборудования и инженерных систем, проведение испытаний оборудования согласно программе и графику, разработанному генеральным подрядчиком</div>
+
+<div style="height:16px;"></div>
+
+<div style="margin-left:19px;font-size:16px;line-height: 24px;color: rgba(51, 51, 51, 1);font-weight:700"><span style="margin-left:-20px;position:absolute;color:#E03B32;font-size:26px;">•</span> Освидетельствование скрытых работ</div>
+<div style="margin-left:19px;font-size:16px;line-height: 24px;color: rgba(51, 51, 51, 1);">Перед тем как скрытые элементы конструкций будут закрыты, мы совместно с ПТО и монтажными организациями проводим осмотр и составляем акты, предупреждая заказчика о возможных проблемах</div>
+
+<div style="height:16px;"></div>
+
+<div style="margin-left:19px;font-size:16px;line-height: 24px;color: rgba(51, 51, 51, 1);font-weight:700"><span style="margin-left:-20px;position:absolute;color:#E03B32;font-size:26px;">•</span> Промежуточное освидетельствование конструкций</div>
+<div style="margin-left:19px;font-size:16px;line-height: 24px;color: rgba(51, 51, 51, 1);">По мере готовности объектов строительства фиксируем промежуточное состояние ответственных конструкций зданий и сооружений</div>
+
+
+        </div>
+        <div class="col-md-4 col-12 none-mobile"  style="border-radius: 16px;background-image: url('/images/proverka-kachestva-i-soblyudenie-norm-stroitelstva-new.png');background-size: cover;">
+        </div>
+    </div>
+</div>
+    
+    
+</div>
+
+
+<div class="r30"></div>
+
+<div class="container">
+<div class="row">
+        <div class="col-md-7 col-12" style="margin-bottom:30px;">
+            <div class="h-100" style="background:rgba(246, 247, 248, 1);border-radius:16px;padding: 24px 24px 24px 24px;min-height:213px;">
+<svg xmlns="http://www.w3.org/2000/svg" width="39" height="40" viewBox="0 0 39 40" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M28.097 18.8764L19.3908 27.5626C18.8802 28.084 18.2242 28.4395 17.5085 28.5827C16.7929 28.7258 16.0506 28.65 15.3787 28.365C14.9347 28.1791 14.5322 27.9063 14.1952 27.5626L9.88217 23.2496C9.66827 23.0708 9.49393 22.8494 9.37027 22.5996C9.24661 22.3497 9.17632 22.0769 9.16389 21.7984C9.15147 21.5199 9.19716 21.2418 9.29808 20.9819C9.39899 20.7221 9.55291 20.4861 9.75004 20.2889C9.94717 20.0918 10.1832 19.9379 10.4431 19.837C10.7029 19.736 10.981 19.6903 11.2595 19.7028C11.538 19.7152 11.8108 19.7855 12.0607 19.9092C12.3105 20.0328 12.5319 20.2072 12.7107 20.4211L16.7228 24.4331L25.1682 15.9877C25.5459 15.61 26.0583 15.3977 26.5925 15.3977C27.1267 15.3977 27.639 15.61 28.0168 15.9877C28.3945 16.3654 28.6067 16.8778 28.6067 17.412C28.6067 17.9462 28.3945 18.4585 28.0168 18.8363L28.097 18.8764Z" fill="#DFA5A2"/><path fill-rule="evenodd" clip-rule="evenodd" d="M37.4251 11.4942C36.9121 10.4325 36.1043 9.54111 35.0981 8.92645L22.119 0.902285C21.167 0.312478 20.0694 0 18.9495 0C17.8296 0 16.7319 0.312478 15.7799 0.902285L2.80085 8.92645C1.80864 9.5541 1.02169 10.4583 0.536929 11.5276C0.0521714 12.5969 -0.10922 13.7847 0.0726353 14.9446L3.42272 35.005C3.66231 36.3941 4.38194 37.6551 5.45611 38.5679C6.53028 39.4808 7.89081 39.9876 9.30042 40H28.5785C30.0354 39.9948 31.4484 39.5003 32.5905 38.5958C33.6685 37.6783 34.3805 36.4038 34.5966 35.005L37.9667 14.9446C38.1312 13.7662 37.9428 12.5655 37.4251 11.4942ZM19.3908 27.5626L28.097 18.8764L28.0168 18.8363C28.3945 18.4585 28.6067 17.9462 28.6067 17.412C28.6067 16.8778 28.3945 16.3654 28.0168 15.9877C27.639 15.61 27.1267 15.3977 26.5925 15.3977C26.0583 15.3977 25.5459 15.61 25.1682 15.9877L16.7228 24.4331L12.7107 20.4211C12.5319 20.2072 12.3105 20.0328 12.0607 19.9092C11.8108 19.7855 11.538 19.7152 11.2595 19.7028C10.981 19.6903 10.7029 19.736 10.4431 19.837C10.1832 19.9379 9.94717 20.0918 9.75004 20.2889C9.55291 20.4861 9.39899 20.7221 9.29808 20.9819C9.19716 21.2418 9.15147 21.5199 9.16389 21.7984C9.17632 22.0769 9.24661 22.3497 9.37027 22.5996C9.49393 22.8494 9.66827 23.0708 9.88217 23.2496L14.1952 27.5626C14.5322 27.9063 14.9347 28.1791 15.3787 28.365C16.0506 28.65 16.7929 28.7258 17.5085 28.5827C18.2242 28.4395 18.8802 28.084 19.3908 27.5626Z" fill="url(#paint0_linear_11239_1988)"/><defs><linearGradient id="paint0_linear_11239_1988" x1="19.0123" y1="0" x2="19.0123" y2="40" gradientUnits="userSpaceOnUse"><stop stop-color="#E03B32"/><stop offset="1" stop-color="#E6746E"/></linearGradient></defs></svg>
+<div class="r30"></div>
+                <div style="font-weight:700;font-size:24px;">Организационный контроль</div>
+                <div style="height:16px;"></div>
+<div style="margin-left:19px;font-size:16px;line-height: 24px;color: rgba(51, 51, 51, 1);font-weight:700"><span style="margin-left:-20px;position:absolute;color:#E03B32;font-size:26px;">•</span> Разработка регламента</div>
+<div style="margin-left:19px;font-size:16px;line-height: 24px;color: rgba(51, 51, 51, 1);">На основе рабочей документации и материалов, предоставленных генеральным подрядчиком, мы разрабатываем детализированный план действий мониторинга строительства, который включает графики СМР</div>
+
+
+<div style="height:16px;"></div>
+
+<div style="margin-left:19px;font-size:16px;line-height: 24px;color: rgba(51, 51, 51, 1);font-weight:700"><span style="margin-left:-20px;position:absolute;color:#E03B32;font-size:26px;">•</span> Проверка допусков подрядчиков</div>
+<div style="margin-left:19px;font-size:16px;line-height: 24px;color: rgba(51, 51, 51, 1);">К ним относятся допуск СРО и сертификаты, удостоверяющие соответствие стандартам</div>
+
+<div style="height:16px;"></div>
+
+<div style="margin-left:19px;font-size:16px;line-height: 24px;color: rgba(51, 51, 51, 1);font-weight:700"><span style="margin-left:-20px;position:absolute;color:#E03B32;font-size:26px;">•</span> Контроль назначения ответственных представителей</div>
+<div style="margin-left:19px;font-size:16px;line-height: 24px;color: rgba(51, 51, 51, 1);">Наличие приказов и документов, которые подтверждают назначение ответственных лиц в подрядных организациях</div>
+
+
+            </div>
+        </div>
+        
+        <div class="col-md-5 col-12" style="margin-bottom:30px;">
+            <div class="h-100" style="background:rgba(246, 247, 248, 1);border-radius:16px;padding: 24px 24px 24px 24px;min-height:213px;">
+<svg xmlns="http://www.w3.org/2000/svg" width="34" height="42" viewBox="0 0 34 42" fill="none"><path d="M0 6C0 2.68629 2.68629 0 6 0H28C31.3137 0 34 2.68629 34 6V36C34 39.3137 31.3137 42 28 42H6C2.68629 42 0 39.3137 0 36V6Z" fill="url(#paint0_linear_11239_2146)"/><path d="M10 27H24M10 33H17M23 10L15 18L11 14" stroke="#DFA5A2" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="paint0_linear_11239_2146" x1="17" y1="0" x2="17" y2="42" gradientUnits="userSpaceOnUse"><stop stop-color="#DF3B32"/><stop offset="1" stop-color="#E5736D"/></linearGradient></defs></svg>   
+<div class="r30"></div>
+                
+                <div style="font-weight:700;font-size:24px;">Проверка проектной документации</div>
+                <div style="height:16px;"></div>
+
+
+<div style="margin-left:19px;font-size:16px;line-height: 24px;color: rgba(51, 51, 51, 1);font-weight:700"><span style="margin-left:-20px;position:absolute;color:#E03B32;font-size:26px;">•</span> Рабочая документация</div>
+<div style="margin-left:19px;font-size:16px;line-height: 24px;color: rgba(51, 51, 51, 1);">Контроль за полнотой и достаточностью рабочей документации на строительной площадке для начала и продолжения работ</div>
+
+<div style="height:16px;"></div>
+
+<div style="margin-left:19px;font-size:16px;line-height: 24px;color: rgba(51, 51, 51, 1);font-weight:700"><span style="margin-left:-20px;position:absolute;color:#E03B32;font-size:26px;">•</span> Техническая документация</div>
+<div style="margin-left:19px;font-size:16px;line-height: 24px;color: rgba(51, 51, 51, 1);">Наличия на площадке ППР, технологических карт и другой необходимой документации</div>
+
+            </div>
+        </div>
+        
+        <div class="col-md-6 col-12" style="margin-bottom:30px;">
+            <div class="h-100" style="background:rgba(246, 247, 248, 1);border-radius:16px;padding: 24px 24px 24px 24px;min-height:213px;">
+
+<svg xmlns="http://www.w3.org/2000/svg" width="36" height="40" viewBox="0 0 36 40" fill="none"><path d="M0 5C0 2.23858 2.23858 0 5 0H27C29.7614 0 32 2.23858 32 5V22H0V5Z" fill="#DFA5A2"/><path fill-rule="evenodd" clip-rule="evenodd" d="M19.62 40C18.6 38.24 18 36.2 18 34C18 27.38 23.38 22 30 22C30.68 22 31.34 22.08 32 22.18V4C32 2.93913 31.5786 1.92172 30.8284 1.17157C30.0783 0.421427 29.0609 0 28 0H16V14L11 11L6 14V0H4C2.93913 0 1.92172 0.421427 1.17157 1.17157C0.421427 1.92172 0 2.93913 0 4V36C0 38.22 1.78 40 4 40H19.62Z" fill="url(#paint0_linear_11238_1854)"/><path d="M28 32V30.4142C28 29.5233 26.9229 29.0771 26.2929 29.7071L22.7071 33.2929C22.3166 33.6834 22.3166 34.3166 22.7071 34.7071L26.2929 38.2929C26.9229 38.9229 28 38.4767 28 37.5858V36H36V32H28Z" fill="#DFA5A2"/><defs><linearGradient id="paint0_linear_11238_1854" x1="18" y1="0" x2="18" y2="40" gradientUnits="userSpaceOnUse"><stop stop-color="#E03B32"/><stop offset="1" stop-color="#E6746E"/></linearGradient></defs></svg>
+<div class="r30"></div>
+
+                <div style="font-weight:700;font-size:24px;">Проверка входного контроля</div>
+                <div style="height:16px;"></div>
+
+
+<div style="margin-left:19px;font-size:16px;line-height: 24px;color: rgba(51, 51, 51, 1);font-weight:700"><span style="margin-left:-20px;position:absolute;color:#E03B32;font-size:26px;">•</span> Материалы и оборудование</div>
+<div style="margin-left:19px;font-size:16px;line-height: 24px;color: rgba(51, 51, 51, 1);">Соответствие установленным стандартам строительных материалов и оборудования, поступающих на площадку и наличие необходимой документации</div>
+
+
+            </div>
+        </div>
+        
+        <div class="col-md-6 col-12" style="margin-bottom:30px;">
+            <div class="h-100" style="background:rgba(246, 247, 248, 1);border-radius:16px;padding: 24px 24px 24px 24px;min-height:213px;">
+<svg xmlns="http://www.w3.org/2000/svg" width="36" height="43" viewBox="0 0 36 43" fill="none"><path d="M25.4685 23.5978C27.1033 22.3117 28.4247 20.6705 29.3328 18.7982C30.2408 16.9259 30.7118 14.8714 30.7101 12.7901H34.6364C34.6384 15.5617 33.9887 18.2947 32.7397 20.7683C31.4908 23.2419 29.6778 25.3865 27.4474 27.0287L32.4102 35.6316C32.9308 36.5342 33.0719 37.6069 32.8024 38.6137C32.5329 39.6204 31.8749 40.4788 30.9732 41L24.0492 28.9976C21.8164 29.9754 19.4052 30.4785 16.9681 30.4753C14.531 30.4785 12.1198 29.9754 9.88704 28.9976L2.96304 41C2.06127 40.4788 1.40327 39.6204 1.13378 38.6137C0.86429 37.6069 1.00538 36.5342 1.52601 35.6316L11.4654 18.3983C10.474 17.4226 9.75896 16.2009 9.39344 14.8581C9.02792 13.5153 9.02496 12.0995 9.38488 10.7552C9.74479 9.41085 10.4547 8.18622 11.442 7.20633C12.4294 6.22643 13.6589 5.52638 15.005 5.17764V1H18.9312V5.17764C20.2773 5.52638 21.5068 6.22643 22.4942 7.20633C23.4815 8.18622 24.1914 9.41085 24.5513 10.7552C24.9112 12.0995 24.9083 13.5153 24.5428 14.8581C24.1772 16.2009 23.4622 17.4226 22.4708 18.3983L25.4685 23.5978ZM22.0723 25.5667L19.0726 20.3653C17.6969 20.7475 16.2432 20.7475 14.8675 20.3653L11.8679 25.5667C13.4908 26.2151 15.2226 26.5473 16.9701 26.5453C18.7722 26.5453 20.4939 26.1975 22.0723 25.5667ZM16.9681 16.7202C18.0094 16.7202 19.0081 16.3061 19.7444 15.5691C20.4807 14.8321 20.8944 13.8324 20.8944 12.7901C20.8944 11.7478 20.4807 10.7482 19.7444 10.0112C19.0081 9.27415 18.0094 8.86009 16.9681 8.86009C15.9268 8.86009 14.9281 9.27415 14.1918 10.0112C13.4555 10.7482 13.0418 11.7478 13.0418 12.7901C13.0418 13.8324 13.4555 14.8321 14.1918 15.5691C14.9281 16.3061 15.9268 16.7202 16.9681 16.7202Z" fill="url(#paint0_linear_11238_1839)"/><path d="M16.9681 16.7202C18.0094 16.7202 19.0081 16.3061 19.7444 15.5691C20.4807 14.8321 20.8944 13.8324 20.8944 12.7901C20.8944 11.7478 20.4807 10.7482 19.7444 10.0112C19.0081 9.27415 18.0094 8.86009 16.9681 8.86009C15.9268 8.86009 14.9281 9.27415 14.1918 10.0112C13.4555 10.7482 13.0418 11.7478 13.0418 12.7901C13.0418 13.8324 13.4555 14.8321 14.1918 15.5691C14.9281 16.3061 15.9268 16.7202 16.9681 16.7202Z" fill="#D28D8A"/><path d="M12.3417 25.7459L12.5957 25.3054C12.4363 25.2497 12.2778 25.1909 12.1203 25.1289L12.3417 25.7459ZM12.3417 25.7459C12.1828 25.6892 12.0248 25.6294 11.8679 25.5667M28.8829 18.58C28.0923 20.2101 26.9766 21.6583 25.6068 22.8366L23.0924 18.4754C24.0067 17.4877 24.6706 16.2922 25.0252 14.9894C25.4139 13.5613 25.4171 12.0556 25.0343 10.6259C24.6515 9.19614 23.8965 7.89366 22.8464 6.85143C21.8885 5.90082 20.7163 5.19778 19.4312 4.80005V1V0.5H18.9312H15.005H14.505V1V4.80005C13.2198 5.19778 12.0477 5.90082 11.0898 6.85143C10.0397 7.89366 9.28466 9.19614 8.90189 10.6259C8.51911 12.0556 8.52226 13.5613 8.911 14.9894C9.26561 16.2921 9.9295 17.4877 10.8438 18.4753L1.0929 35.3817C0.506051 36.3992 0.347043 37.6082 0.650787 38.743C0.954534 39.8777 1.69621 40.8453 2.71284 41.4329L3.14609 41.6833L3.39613 41.2499L10.0993 29.6304C12.2784 30.521 14.6115 30.9784 16.9681 30.9753C19.3247 30.9784 21.6578 30.5209 23.8369 29.6304L30.5401 41.2499L30.7901 41.6833L31.2234 41.4329C32.24 40.8453 32.9817 39.8777 33.2854 38.743C33.5892 37.6082 33.4301 36.3992 32.8433 35.3817L32.8433 35.3817L28.1011 27.1614C30.2314 25.5103 31.9692 23.4038 33.1861 20.9937C34.4703 18.4501 35.1384 15.6397 35.1364 12.7898L35.136 12.2901H34.6364H30.7101H30.2097L30.2101 12.7905C30.2117 14.7961 29.7579 16.7758 28.8829 18.58Z" stroke="url(#paint1_linear_11238_1839)"/><defs><linearGradient id="paint0_linear_11238_1839" x1="17.8182" y1="1" x2="17.8182" y2="41" gradientUnits="userSpaceOnUse"><stop stop-color="#E03B32"/><stop offset="1" stop-color="#E6746E"/></linearGradient><linearGradient id="paint1_linear_11238_1839" x1="17.8182" y1="1" x2="17.8182" y2="41" gradientUnits="userSpaceOnUse"><stop stop-color="#E03B32"/><stop offset="1" stop-color="#E6746E"/></linearGradient></defs></svg>                
+<div class="r30"></div>
+                <div style="font-weight:700;font-size:24px;">Геодезический контроль</div>
+                <div style="height:16px;"></div>
+<div style="margin-left:19px;font-size:16px;line-height: 24px;color: rgba(51, 51, 51, 1);font-weight:700"><span style="margin-left:-20px;position:absolute;color:#E03B32;font-size:26px;">•</span> Проверка геодезических работ</div>
+<div style="margin-left:19px;font-size:16px;line-height: 24px;color: rgba(51, 51, 51, 1);">Отслеживаем выполнение геодезических работ в процессе строительства, а также анализируем исполнительные геодезические схемы</div>
+            </div>
+        </div>
+
+
+
+        <div class="col-md-7 col-12" style="margin-bottom:30px;">
+            <div class="h-100" style="background:rgba(246, 247, 248, 1);border-radius:16px;padding: 24px 24px 24px 24px;min-height:213px;">
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="40" viewBox="0 0 32 40" fill="none"><path d="M29.744 10.4L21.538 2.2C20.9178 1.50852 20.1591 0.955279 19.3111 0.576249C18.4631 0.197219 17.5448 0.000882317 16.616 0H5.334C2.46 0 0 2.4 0 5.4V34.8C0 37.6 2.46 40 5.334 40H26.666C29.538 40 32 37.6 32 34.6V15.4C32 13.4 31.18 11.6 29.744 10.4Z" fill="url(#paint0_linear_11239_1963)"/><path d="M23.3846 26.5246L21.1282 24.2647C21.7436 23.2374 21.9487 22.2102 21.9487 20.9775C21.9487 19.1285 21.1282 17.2795 19.8974 16.0468C17.2308 13.5814 12.7179 13.5814 10.0513 16.2522C8.82051 17.4849 8 19.3339 8 21.183C8 23.032 8.82051 24.881 10.0513 26.1137C11.2821 27.3464 13.1282 28.1682 14.9744 28.1682C16.2051 28.1682 17.2308 27.9627 18.2564 27.3464L20.5128 29.6063C20.9231 30.0172 21.5385 30.2227 21.9487 30.2227C22.359 30.2227 22.9744 30.0172 23.3846 29.6063C24.2051 28.7845 24.2051 27.3464 23.3846 26.5246ZM12.9231 23.2374C11.8974 22.2102 11.8974 20.3612 12.9231 19.1285C13.5385 18.5121 14.1538 18.3067 14.9744 18.3067C15.7949 18.3067 16.4103 18.5121 17.0256 19.1285C18.0513 20.1557 18.0513 22.0048 17.0256 23.2374C15.7949 24.2647 14.1538 24.2647 12.9231 23.2374Z" fill="#DFA5A2"/><defs><linearGradient id="paint0_linear_11239_1963" x1="16" y1="0" x2="16" y2="40" gradientUnits="userSpaceOnUse"><stop stop-color="#E03B32"/><stop offset="1" stop-color="#E6746E"/></linearGradient></defs></svg>
+
+<div class="r30"></div>
+                <div style="font-weight:700;font-size:24px;">Выявление и устранение замечаний</div>
+                <div style="height:16px;"></div>
+
+<div style="margin-left:19px;font-size:16px;line-height: 24px;color: rgba(51, 51, 51, 1);font-weight:700"><span style="margin-left:-20px;position:absolute;color:#E03B32;font-size:26px;">•</span> Разработка регламента</div>
+<div style="margin-left:19px;font-size:16px;line-height: 24px;color: rgba(51, 51, 51, 1);">На основе рабочей документации и материалов, предоставленных генеральным подрядчиком, мы разрабатываем детализированный план действий мониторинга строительства, который включает графики СМР</div>
+
+<div style="height:16px;"></div>
+
+<div style="margin-left:19px;font-size:16px;line-height: 24px;color: rgba(51, 51, 51, 1);font-weight:700"><span style="margin-left:-20px;position:absolute;color:#E03B32;font-size:26px;">•</span> Проверка допусков подрядчиков</div>
+<div style="margin-left:19px;font-size:16px;line-height: 24px;color: rgba(51, 51, 51, 1);">К ним относятся допуск СРО и сертификаты, удостоверяющие соответствие стандартам</div>
+
+<div style="height:16px;"></div>
+
+<div style="margin-left:19px;font-size:16px;line-height: 24px;color: rgba(51, 51, 51, 1);font-weight:700"><span style="margin-left:-20px;position:absolute;color:#E03B32;font-size:26px;">•</span> Контроль назначения ответственных представителей</div>
+<div style="margin-left:19px;font-size:16px;line-height: 24px;color: rgba(51, 51, 51, 1);">Наличие приказов и документов, которые подтверждают назначение ответственных лиц в подрядных организациях</div>
+
+
+
+            </div>
+        </div>
+        
+        <div class="col-md-5 col-12" style="margin-bottom:30px;">
+            <div class="h-100" style="background:rgba(246, 247, 248, 1);border-radius:16px;padding: 24px 24px 24px 24px;min-height:213px;">
+
+<svg xmlns="http://www.w3.org/2000/svg" width="44" height="40" viewBox="0 0 44 40" fill="none"><path d="M24.3672 25.0781C24.0469 25.3984 23.8203 25.7969 23.7109 26.2422L22.5391 30.9375C22.4297 31.3672 22.5547 31.8125 22.8672 32.125C23.1797 32.4375 23.625 32.5625 24.0547 32.4531L28.75 31.2813C29.1875 31.1719 29.5938 30.9453 29.9141 30.625L40.0078 20.5234L34.4609 14.9766L24.3672 25.0781Z" fill="#DFA5A2"/><path fill-rule="evenodd" clip-rule="evenodd" d="M5 0C2.24219 0 0 2.24219 0 5V35C0 37.7578 2.24219 40 5 40H25C27.7578 40 30 37.7578 30 35V33.4922C29.7891 33.5781 29.5781 33.6484 29.3594 33.7031L24.6641 34.875C24.4297 34.9297 24.1953 34.9688 23.9609 34.9844C23.8906 34.9922 23.8203 35 23.75 35H18.75C18.2734 35 17.8438 34.7344 17.6328 34.3125L16.9453 32.9297C16.8125 32.6641 16.5469 32.5 16.2578 32.5C15.9688 32.5 15.6953 32.6641 15.5703 32.9297L14.8828 34.3125C14.6563 34.7734 14.1641 35.0469 13.6563 35C13.1484 34.9531 12.7109 34.6016 12.5703 34.1172L11.25 29.7656L10.4844 32.3281C10.0078 33.9141 8.54688 35 6.89063 35H6.25C5.5625 35 5 34.4375 5 33.75C5 33.0625 5.5625 32.5 6.25 32.5H6.89063C7.44531 32.5 7.92969 32.1406 8.08594 31.6094L9.25 27.7422C9.51562 26.8594 10.3281 26.25 11.25 26.25C12.1719 26.25 12.9844 26.8594 13.25 27.7422L14.1563 30.7578C14.7344 30.2734 15.4688 30 16.25 30C17.4922 30 18.625 30.7031 19.1797 31.8125L19.5234 32.5H20.2188C19.9766 31.8125 19.9297 31.0625 20.1094 30.3281L21.2812 25.6328C21.5 24.75 21.9531 23.9531 22.5938 23.3125L30 15.9063V12.5H17.5C17.5 12.5 17.5 11.3828 17.5 10V0H5ZM17.5 12.5H30L17.5 0V12.5Z" fill="url(#paint0_linear_11239_1950)"/><path d="M41.1797 12.6797C39.9609 11.4609 37.9844 11.4609 36.7578 12.6797L34.4609 14.9766L40.0078 20.5234L42.3047 18.2266C43.5234 17.0078 43.5234 15.0313 42.3047 13.8047L41.1797 12.6797Z" fill="#DFA5A2"/><defs><linearGradient id="paint0_linear_11239_1950" x1="21.6094" y1="0" x2="21.6094" y2="40" gradientUnits="userSpaceOnUse"><stop stop-color="#E03B32"/><stop offset="1" stop-color="#E6746E"/></linearGradient></defs></svg>
+
+<div class="r30"></div>
+                <div style="font-weight:700;font-size:24px;">Подтверждение объемов выполненных СМР</div>
+                <div style="height:16px;"></div>
+                
+<div style="margin-left:19px;font-size:16px;line-height: 24px;color: rgba(51, 51, 51, 1);font-weight:700"><span style="margin-left:-20px;position:absolute;color:#E03B32;font-size:26px;">•</span> Проверка объемов</div>
+<div style="margin-left:19px;font-size:16px;line-height: 24px;color: rgba(51, 51, 51, 1);">Мониторинг объемов и качества строительства для подтверждения выполнения и соответствия нормамативам, чтобы завизировать акты для оплаты</div>
+
+<div style="height:16px;"></div>
+
+<div style="margin-left:19px;font-size:16px;line-height: 24px;color: rgba(51, 51, 51, 1);font-weight:700"><span style="margin-left:-20px;position:absolute;color:#E03B32;font-size:26px;">•</span> Учёт документации</div> 
+<div style="margin-left:19px;font-size:16px;line-height: 24px;color: rgba(51, 51, 51, 1);">Ведем учет объема и стоимости выполненных СМР</div>
+                
+            </div>
+        </div>
+
+
+
+
+        
+        
+</div>    
+    
+</div>
+
+
+
+<div class="r80"></div>
+
+<div class="container">
+    <h2 class="title">Порядок проведения строительного контроля</h2>
+    <div class="row" style="background:rgba(246, 247, 248, 1);border-radius:16px">
+        <div class="col-md-7 col-12" style="padding: 24px 24px 24px 24px;">
+        <center class="mobile">
+            <img src="/images/poryadok-provedeniya-stroitelnogo-kontrolya.png" style="border-radius: 16px;" class="img-fluid">
+            <div class="r20"></div>
+        </center>    
+        
+<div style="max-width:573px;">
+<p style="color:rgba(51, 51, 51, 1);font-size:16px;line-height:24px;">За объектом закрепляется инженер строительного контроля, осуществляющий надзор за строительством. Он проводит весь рабочий день на стройплощадке, контролирует выполнение строительных работ, проверяет исполнительную документацию и участвует в совещаниях</p>
+<div class="r10"></div>
+<p style="color:rgba(51, 51, 51, 1);font-size:16px;line-height:24px;">В зависимости от сложности строительства могут дополнительно привлекаться геодезисты, инженеры ПТО. Для контроля на крупных объектах формируются группы инженеров</p>
+<div class="r10"></div>
+<p style="color:rgba(51, 51, 51, 1);font-size:16px;line-height:24px;">Достижение требуемого качества обеспечивается тщательным подбором специалистов и контролем их деятельности со стороны технического директора.</p>
+<div class="r10"></div>
+<p style="color:rgba(51, 51, 51, 1);font-size:16px;line-height:24px;">Заказчику ежемесячно предоставляется отчет с подробным описанием  текущего состояние работ на стройплощадке</p>            
+</div>
+        </div>
+        <div class="col-md-5 none-mobile" style="border-radius: 0px 16px 16px 0px;background-image: url('/images/poryadok-provedeniya-stroitelnogo-kontrolya.png');background-size: cover;">
+        </div>
+    </div>
+
+</div>    
+
+
+
+
+
+
+
+
+<div class="r80"></div>
+
+
+<div class="container">
+    <h2 class="title">Цена услуг строительного контроля</h2>
+
+    <center>
+        <p style="max-width:897px;font-size:16px;line-height:24px;">
+Стоимость независимого строительного контроля зависит от множества факторов. Чтобы расчитать затраты учитывают три основных фактора
+        </p>
+    </center>
+    
+    <div style="height:40px;"></div>
+    <div class="row">
+        <div class="col-md-4 col-12 justify-content-center align-self-center">
+            <div style="height:24px;" class="mobile"></div>
+            
+            
+            <center class="mobile">
+                <img src="/images/tri-faktora-dlya-rascheta-stoimosti.png" class="img-fluid">
+                <div style="height:16px;"></div>
+            </center>  
+            
+            
+            
+<div style="font-weight:700;font-size:24px;">Три фактора для расчета стоимости</div>
+<div class="r30"></div>
+
+<div style="font-weight:700;font-size:18px;line-height:24.51px;">Оценка объема и сложности работ</div>
+<p style="font-weight:400;font-size:16px;line-height:24px;">Большие проекты требуют более детальной проверки на каждом этапе, что влияет на итоговую цену</p>
+
+<div style="height:20px;"></div>
+
+<div style="font-weight:700;font-size:18px;line-height:24.51px;">Продолжительность строительства</div>
+<p style="font-weight:400;font-size:16px;line-height:24px;">Долгосрочные проекты предполагают более частые и углубленные проверки</p>
+
+<div style="height:20px;"></div>
+
+<div style="font-weight:700;font-size:18px;line-height:24.51px;">Региональные особенности</div>
+<p style="font-weight:400;font-size:16px;line-height:24px;">Стоимость может варьироваться в зависимости от региона, так как в отдаленных округах цены на строительный контроль могут быть выше из-за увеличенных расходов на логистику и условия проживания специалистов</p>            
+
+        </div>
+        
+        <div class="col-md-8 col-12 none-mobile">
+            <img src="/images/tri-faktora-dlya-rascheta-stoimosti.png" class="img-fluid">
+        </div>
+        
+    </div>
+
+</div>
+
+
+
+
+<div class="r30"></div>
+
+
+<div class="container">
+
+<div style="background: rgba(224, 230, 235, 1);border-radius: 16px;padding:32px 30px 32px 30px;">
+    <div class="row">
+        <div class="col-md-9 col-12">
+            <div style="font-weight: 700;font-size: 24px;">Процент стоимости от сметы</div>
+            <div style="height:16px;"></div>
+            
+            <center class="mobile">
+                <img src="/images/protsent-stoimosti-ot-smety.png" class="img-fluid">
+                <div style="height:16px;"></div>
+            </center>
+            
+            <p style="font-weight: 400;font-size: 16px;line-height: 24px;color: #333333;">Обычно стоимость составляет 0,5% — 2% от стоимости объемов строительства</p>
+            
+            <p style="font-weight: 400;font-size: 16px;line-height: 24px;color: #333333;">Для точного расчета вы можете обратиться к нам и быстро получить ориентировочную цену на услуги, исходя из характеристик вашего проекта</p>
+            
+            <div style="height:43px;"></div>
+            
+
+            <a class="btn btn-modal krasnaya_knopka mobile-width" style="font-weight:600;" href="#form_up" rel="nofollow" data-reason="Заказать звонок" data-header="Заказать звонок" onclick="ym(48630242, 'reachGoal', 'main-1st'); fbq('track', 'InitiateCheckout'); return true;">Заказать звонок</a>
+
+
+
+        </div>
+        <div class="col-md-3 col-12 none-mobile">
+            <img src="/images/protsent-stoimosti-ot-smety.png" class="img-fluid">
+        </div>
+    </div>
+</div>
+
+</div>
+
+
+
+<div class="r30"></div>
+
+
+<div class="container">
+    <div style="background: #F6F7F8;border-radius: 16px;padding:0px 15px 0px 15px;">
+    <div class="row">
+    <div class="col-md-1 none-mobile">
+        </div>
+        <div class="col-md-7 col-12">
+            <div class="r70"></div> 
+                <div class="form-new__title" style="font-size:30px;line-height:40px;">Расчитаем стоимость работ</div>
+<div style="max-width:550px; right: 0;">
+            
+            
+                <div class="r20"></div> 
+                <div class="r20"></div> 
+                    [[!AjaxForm? &snippet=`FormIt` &frontend_css=`` &form=`id_form_tpl_uznaite_kak_stroinsya_ausorsing_red` &hooks=`FormItSaveForm,bitrix24_hooks` &emailSubject=`Новая заявка ` &emailTpl=`template_form1` &emailTo=`[[+email_to]]` &validate=`fio:required,phone:required` &fieldNames=`fio==Имя,phone==Телефон,page==Страница` &validationErrorMessage=`В форме содержатся ошибки!` &successMessage=`Сообщение успешно отправлено` ]]
+                <div class="r20"></div> 
+                <div class="r20"></div> 
+
+        </div>
+    </div>
+
+            
+            <div class="col-md-4 none-mobile">
+            <img src="/images/uznaite_kak_stroinsya_ausorsing_ten.png" class="img-fluid niz">    
+        </div>
+        
+        
+    
+</div>
+</div></div>
+
+
+<div class="r80"></div>
+
+
+
+
+<div class="container">
+    <h2 class="title">Этапы работ</h2>
+          
+
+    <div class="r30"></div>
+    
+    
+    <div class="row">
+        <div class="col-md-3 col-12">
+            <div class="h-100"  style="background:rgba(229, 229, 229, 1);min-height:165px;border-radius:16px;">
+<svg style="position:absolute;top:-33px;left: 0;right: 0;margin: 0 auto;" xmlns="http://www.w3.org/2000/svg" width="66" height="66" viewBox="0 0 66 66" fill="none">
+<rect width="66" height="66" rx="16" fill="#3C4961"/>
+<path d="M36.5269 47H31.8442V32.4053C31.8442 31.8812 31.8442 31.3685 31.8442 30.8672C31.8556 30.3545 31.867 29.8532 31.8784 29.3633C31.9012 28.862 31.924 28.3721 31.9468 27.8936C31.7873 28.11 31.5993 28.355 31.3828 28.6284C31.1663 28.9019 30.91 29.2038 30.6138 29.5342L28.4434 31.7729L25.6406 29.0044L32.3569 22.0146H36.5269V47Z" fill="#E0E6EB"/>
+</svg>                
+
+                <div style="height:60px;"></div>
+                <center>
+                    <div style="font-weight:700;font-size:20px;line-height:24px;font-align:center">Анализ проектной документации</div>
+                </center>    
+                
+                <div style="padding:24px 20px 30px 20px;">
+                    <p style="font-weight:400;font-size:16px;line-height:24px">Оценка правильности и полноты предоставленных документов</p>
+                </div>
+            </div>
+            
+            
+            <div style="height:30px;"></div>
+            
+        </div>
+
+<div style="height:60px;" class="mobile"></div>        
+        
+        <div class="col-md-3 col-12">
+            <div class="h-100"  style="background:rgba(229, 229, 229, 1);min-height:165px;border-radius:16px;">
+<svg style="position:absolute;top:-33px;left: 0;right: 0;margin: 0 auto;" xmlns="http://www.w3.org/2000/svg" width="66" height="66" viewBox="0 0 66 66" fill="none">
+<rect width="66" height="66" rx="16" fill="#3C4961"/>
+<path d="M38.6289 47H25.0083V43.5991L29.8105 36.917C30.8359 35.4928 31.6164 34.3136 32.1519 33.3794C32.6873 32.4338 33.0462 31.6021 33.2285 30.8843C33.4222 30.1551 33.519 29.4146 33.519 28.6626C33.519 27.7853 33.3083 27.0903 32.8867 26.5776C32.4766 26.0535 31.8613 25.7915 31.041 25.7915C30.3916 25.7915 29.7764 25.9624 29.1953 26.3042C28.6143 26.646 27.9648 27.2555 27.2471 28.1328L24.9399 25.0225C25.6349 24.2021 26.3185 23.547 26.9907 23.0571C27.6743 22.5558 28.3921 22.1969 29.144 21.9805C29.896 21.764 30.7106 21.6558 31.5879 21.6558C32.9095 21.6558 34.0716 21.9406 35.0742 22.5103C36.0768 23.0685 36.8573 23.849 37.4155 24.8516C37.9738 25.8542 38.2529 27.0277 38.2529 28.3721C38.2529 29.4772 38.1219 30.5311 37.8599 31.5337C37.5978 32.5249 37.1535 33.5617 36.5269 34.644C35.9002 35.7264 35.04 36.9512 33.9463 38.3184L30.6138 42.6934V42.8643H38.6289V47Z" fill="#E0E6EB"/>
+</svg>                
+                <div style="height:60px;"></div>
+                <center>
+                    <div style="font-weight:700;font-size:20px;line-height:24px;font-align:center">Проверка сметной стоимости</div>
+                </center>  
+                
+                <div style="padding:24px 20px 30px 20px;">
+                    <p style="font-weight:400;font-size:16px;line-height:24px">Анализируем сметы на предмет завышенных цен, ведем переговоры с исполнителями и вносим изменения в статьи расходов</p>
+                </div>
+                
+            </div>
+            <div style="height:30px;" class="mobile"></div>
+            <div style="height:30px;"></div>
+        </div>
+        
+<div style="height:60px;" class="mobile"></div>          
+        
+        <div class="col-md-3 col-12">
+            <div class="h-100"  style="background:rgba(229, 229, 229, 1);min-height:165px;border-radius:16px;">
+<svg style="position:absolute;top:-33px;left: 0;right: 0;margin: 0 auto;" xmlns="http://www.w3.org/2000/svg" width="66" height="66" viewBox="0 0 66 66" fill="none">
+<rect width="66" height="66" rx="16" fill="#3C4961"/>
+<path d="M38.3896 27.9961C38.3896 28.8962 38.2301 29.7279 37.9111 30.4912C37.5921 31.2546 37.1136 31.9268 36.4756 32.5078C35.849 33.0775 35.0742 33.5332 34.1514 33.875V33.9775C35.7122 34.3079 36.8857 34.9801 37.6719 35.9941C38.4694 37.0081 38.8682 38.3298 38.8682 39.959C38.8682 41.4629 38.5492 42.7674 37.9111 43.8726C37.2845 44.9777 36.3787 45.8322 35.1938 46.436C34.009 47.0399 32.5905 47.3418 30.9385 47.3418C29.8561 47.3418 28.8706 47.2563 27.9819 47.0854C27.0933 46.9259 26.1533 46.6183 25.1621 46.1626V41.7534C26.0166 42.2547 26.8768 42.6364 27.7427 42.8984C28.6086 43.1605 29.4403 43.2915 30.2378 43.2915C31.5138 43.2915 32.4481 42.9839 33.0405 42.3687C33.6444 41.742 33.9463 40.8704 33.9463 39.7539C33.9463 38.9222 33.7811 38.2443 33.4507 37.7202C33.1317 37.1847 32.6304 36.7917 31.9468 36.541C31.2632 36.279 30.3745 36.1479 29.2808 36.1479H28.0332V32.2002H29.3149C30.2834 32.2002 31.098 32.0578 31.7588 31.7729C32.4196 31.4767 32.9152 31.0552 33.2456 30.5083C33.5874 29.95 33.7583 29.2892 33.7583 28.5259C33.7583 27.6144 33.519 26.9194 33.0405 26.4409C32.5734 25.9624 31.8841 25.7231 30.9727 25.7231C30.5169 25.7231 30.0726 25.7858 29.6396 25.9111C29.2067 26.0365 28.7738 26.2244 28.3408 26.4751C27.9079 26.7144 27.4635 27.022 27.0078 27.3979L25.1621 23.9629C26.1875 23.1198 27.2243 22.5273 28.2725 22.1855C29.332 21.8324 30.534 21.6558 31.8784 21.6558C33.8836 21.6558 35.4673 22.2026 36.6294 23.2964C37.8029 24.3787 38.3896 25.9453 38.3896 27.9961Z" fill="#E0E6EB"/>
+</svg>
+                <div style="height:60px;"></div>
+                <center>
+                    <div style="font-weight:700;font-size:20px;line-height:24px;font-align:center">Контроль <br> строительных работ</div>
+                </center>    
+                
+                <div style="padding:24px 20px 30px 20px;">
+                    <p style="font-weight:400;font-size:16px;line-height:24px">Надзор за ходом строительства на объекте строительства и соответствия строительным нормам</p>
+                </div>
+                
+                
+            </div>
+
+            <div style="height:30px;"></div>
+        </div>
+        
+<div style="height:60px;" class="mobile"></div>          
+        
+        <div class="col-md-3 col-12">
+            <div class="h-100" style="background:rgba(229, 229, 229, 1);min-height:165px;border-radius:16px;">
+<svg style="position:absolute;top:-33px;left: 0;right: 0;margin: 0 auto;" xmlns="http://www.w3.org/2000/svg" width="66" height="66" viewBox="0 0 66 66" fill="none">
+<rect width="66" height="66" rx="16" fill="#3C4961"/>
+<path d="M39.9961 41.9243H37.4668V47H32.8525V41.9243H24.5981V38.1475L32.8184 21.9463H37.4668V38.0449H39.9961V41.9243ZM32.8184 38.0449V32.2686C32.8184 32.0977 32.8184 31.8299 32.8184 31.4653C32.8298 31.0894 32.8411 30.6963 32.8525 30.2861C32.8639 29.8646 32.8753 29.4886 32.8867 29.1582C32.8981 28.8278 32.9095 28.6056 32.9209 28.4917H32.7842C32.6361 28.993 32.4709 29.4658 32.2886 29.9102C32.1063 30.3545 31.9126 30.776 31.7075 31.1748L28.4092 38.0449H32.8184Z" fill="#E0E6EB"/>
+</svg>
+                <div style="height:60px;"></div>
+                <center>
+                    <div style="font-weight:700;font-size:20px;line-height:24px;font-align:center">Итоговая <br> проверка</div>
+                </center>    
+                
+                <div style="padding:24px 20px 30px 20px;">
+                    <p style="font-weight:400;font-size:16px;line-height:24px">Составление заключительного отчета о выполненных объемах с рекомендациями и заключениями</p>
+                </div>
+                
+                
+            </div>
+
+            <div style="height:30px;"></div>
+        </div>
+    </div>
+    
+<div class="r30"></div>
+    
+
+</div>    
+
+
+
+<div class="r80"></div>
+
+
+
+<div class="container">
+    <h2 class="title">Как заказать услугу</h2>
+          
+
+    <div class="r30"></div>
+    
+    
+    <div class="row">
+        <div class="col-md-4 col-12">
+            <div class="h-100"  style="background:rgba(219, 223, 232, 1);border-radius:16px;padding:16px 30px 16px 30px;">
+               <div style="background:rgba(199, 202, 210, 1);padding:5px 15px 5px 15px;border-radius:47px;max-width:72px;color:rgba(119, 119, 119, 1);font-size:14px;font-weight:600;">Шаг 1</div>
+
+                <div style="height:24px;"></div>
+                <center>
+                    <div style="max-width:289px;">
+                    <div style="font-weight:700;font-size:20px;line-height:24px;font-align:center">Свяжитесь с нами</div>
+                    <div style="height:16px;"></div>
+                    <p style="font-weight:400;font-size:16px;line-height:24px">Позвоните или отправьте заявку на сайте, чтобы обсудить детали вашего объекта</p>
+                    </div>
+                    
+                <div style="height:88px;"></div>    
+                <a class="btn btn-modal krasnaya_knopka mobile-width" style="font-weight:600;" href="#form_up" rel="nofollow" data-reason="Заказать звонок" data-header="Заказать звонок" onclick="ym(48630242, 'reachGoal', 'main-1st'); fbq('track', 'InitiateCheckout'); return true;">Заказать звонок</a>
+
+                
+                </center>
+                
+                
+                
+            </div>
+            
+            
+            <div style="height:30px;"></div>
+            
+        </div>
+
+<div style="height:60px;" class="mobile"></div>        
+        
+        <div class="col-md-4 col-12">
+            <div class="h-100"  style="background:rgba(229, 229, 229, 1);border-radius:16px;padding:16px 30px 16px 30px;">
+               <div style="background:rgba(212, 212, 212, 1);padding:5px 15px 5px 15px;border-radius:47px;max-width:72px;color:rgba(119, 119, 119, 1);font-size:14px;font-weight:600;">Шаг 2</div>
+               
+                <div style="height:24px;"></div>
+                <center>
+                    <div style="max-width:289px;">
+                    <div style="font-weight:700;font-size:20px;line-height:24px;font-align:center">Оформите договор</div>
+                    <div style="height:16px;"></div>
+                    <p style="font-weight:400;font-size:16px;line-height:24px">После консультации и расчета мы заключим договор на оказание услуг строительного контроля с указанием объема работ и стоимость услуг</p>
+                    </div>
+                </center>  
+                
+            </div>
+            <div style="height:30px;" class="mobile"></div>
+            <div style="height:30px;"></div>
+        </div>
+        
+<div style="height:60px;" class="mobile"></div>          
+        
+        <div class="col-md-4 col-12">
+            <div class="h-100"  style="background:rgba(227, 219, 203, 1);border-radius:16px;padding:16px 30px 16px 30px;">
+               <div style="background:rgba(204, 196, 181, 1);padding:5px 15px 5px 15px;border-radius:47px;max-width:72px;color:rgba(119, 119, 119, 1);font-size:14px;font-weight:600;">Шаг 3</div>
+
+                <div style="height:24px;"></div>
+                <center>
+                    <div style="max-width:289px;">
+                    <div style="font-weight:700;font-size:20px;line-height:24px;font-align:center">Работаем на объекте</div>
+                    <div style="height:16px;"></div>
+                    <p style="font-weight:400;font-size:16px;line-height:24px">Наши специалисты приедут на объект в любую точку РФ и приступят к работе в соответствии с утвержденным планом и сроками</p>
+                    </div>
+                </center> 
+                
+                
+            </div>
+
+            <div style="height:30px;"></div>
+        </div>
+        
+        
+
+    </div>
+
+</div>  
+
+
+
+
+<div class="r80"></div>
+
+<style>
+    @media (min-width: 992px) {
+     .margin-right-30 { padding:0px 30px 0px 0px; } 
+    }
+    @media (max-width: 992px) {
+     .margin-right-30 { padding:0px 0px 0px 0px; } 
+    }
+    
+    @media (max-width: 992px) {
+     .mobile-width { width:100%;} 
+    }
+    
+</style>
+
+
+
+
+<div class="r80"></div>
+
+<div class="form-footer overflow">
+  <div class="form-footer__title">Не нашли, что искали?
+    <br> Закажите звонок, обсудим проект</div>[[!AjaxForm? &snippet=`FormIt` &frontend_css=`` &form=`form_footer` &hooks=`FormItSaveForm,bitrix24_hooks` &emailSubject=`Новая заявка ` &emailTpl=`template_form1` &emailTo=`[[+email_to]]` &validate=`fio:required,phone:required` &fieldNames=`fio==Имя,phone==Телефон,page==Страница` &validationErrorMessage=`В форме содержатся ошибки!` &successMessage=`Сообщение успешно отправлено` ]]
+</div>
+
+<div class="r80"></div>
+
+[[$footer_new]]

@@ -1,0 +1,27 @@
+extends template
+block append var
+    -var title = "Главная"
+    -var inner=true
+block content
+    .first_screen_inner.services_inner.services
+        .container
+            +crumbs()
+            h1.inner__title [[*h1]]
+
+            section.services
+                .container
+                    .quote-document.quote-document_inverse.d-flex.justify-content-between.align-items-start
+                        .quote-document__author
+                            .quote-document__img.d-flex.justify-content-end
+                                img.image-load.d-block(src="#" data-src="../assets/images/team/7.jpg" alt="Подготовка исполнительной документации по видам работ")
+                            .quote-document__content
+                                .quote-document__fio Менир Ахметзянов
+                                .quote-document__profess Технический директор
+                        .quote-document__text Чтобы заказать исполнительную документацию, выберите нужный вид работ и нажмите кнопку Заказать расчёт. Если у вас несколько видов работ, сообщите об этом по телефону. Мы предоставим рассчет стоимости по каждому виду работ со скидкой.
+                            .quote-document__text-corner
+
+                    .r10
+                    .r20.d-lg-block.d-none
+                    .services-box [[getImageList? &tvname=`services_desktop` &tpl=`services_desktop` &docid=`1` &limit=`0`]]
+                    .r10
+                    .r20.d-lg-block.d-none

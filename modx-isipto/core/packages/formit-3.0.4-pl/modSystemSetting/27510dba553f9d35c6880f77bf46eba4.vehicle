@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'formit',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '5041f472e4b8e4e43360314d042d364e',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => '27510dba553f9d35c6880f77bf46eba4',
+  'native_key' => 'formit.form_encryptkey',
+  'object' => '{"key":"formit.form_encryptkey","value":"","xtype":"textfield","namespace":"formit","area":"system","editedon":null}',
+);
