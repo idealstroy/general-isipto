@@ -153,6 +153,12 @@ class AjaxForm
             ? $scriptProperties['placeholderPrefix']
             : 'fi.';
 
+        // The shared CRM hook reports transport/API failures separately from customer field validation.
+        $deliveryError = $this->modx->getPlaceholder($plPrefix . 'error.bitrix24_delivery');
+        if (!empty($deliveryError)) {
+            return $this->error(strip_tags($deliveryError), array());
+        }
+
         $errors = array();
         foreach ($scriptProperties['fields'] as $k => $v) {
             if (isset($this->modx->placeholders[$plPrefix . 'error.' . $k])) {

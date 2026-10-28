@@ -96,7 +96,8 @@ try {
     }
     $apiCode = $client ? $client->getLastApiError() : null;
     $modx->log(modX::LOG_LEVEL_ERROR, '[bitrix24] Delivery not confirmed: ' . $code . ($apiCode ? ' (' . $apiCode . ')' : ''));
-    $hook->addError('phone', 'Заявка сохранена на сайте, но доставка в CRM не подтверждена. Свяжитесь с нами по телефону');
+    // Delivery is a form-level failure, not a phone validation error. AjaxForm handles this marker centrally.
+    $hook->addError('bitrix24_delivery', 'Заявка сохранена на сайте, но доставка в CRM не подтверждена. Свяжитесь с нами по телефону');
     return false;
 } finally {
     if ($receipt) $receipt->close();

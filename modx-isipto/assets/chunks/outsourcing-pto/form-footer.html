@@ -1,0 +1,31 @@
+<form class="recaptcha-form form-footer__form">
+    <input type="hidden" name="recaptcha_token" class="recaptcha-token">
+
+<input type="hidden" name="csrf_token" value="[[+csrf_token]]">
+<input type="hidden" name="form_time" value="[[+form_time]]">
+    <input type="text" name="website" style="display:none">
+    
+    <input class="callOrderReason" type="hidden" name="reason" value="Не нашли, что искали? Закажите звонок, обсудим проект">
+    <input class="page" type="hidden" name="page" value="[[~[[*id]]? &scheme=`full`]]">
+    <input class="goalMetrika" type="hidden" name="goal" value="button-gift">
+    <input class="ref_info" name="ref_info" type="hidden" value="">
+
+    <input class="site-message" type="text" name="name" value="">
+    <input class="site-message" type="text" name="firstname" value="">
+    <input class="site-message" type="text" name="lastname" value="">
+
+    <div class="form-footer__input-box d-flex flex-wrap flex-sm-nowrap">
+        <input class="form-footer__input" type="text" placeholder="Имя" name="fio">
+        <input class="form-footer__input" type="text" placeholder="Телефон" name="phone">
+    </div>
+    <div class="form-footer__button-box d-flex flex-wrap flex-sm-nowrap align-items-center justify-content-between">
+        <div class="form-footer__checkbox" style="display: flex; align-items: center;gap:6px;line-height: 1.2;">
+            <input type="checkbox" name="agree" required> 
+            <label>
+            <span style="color: #777;font-size: 14px;">
+            Я даю согласие на <a href="/politika-konfidenczialnosti/" style="color:#777;font-weight:500;">обработку своих персональных данных</a>
+            </span></label>
+        </div>
+        <input class="btn btn_weight-normal form-footer__btn krasnaya_knopka" type="submit" value="Получить расчёт" onclick="ym(48630242,'reachGoal','form-footer');">
+    </div>
+</form>

@@ -1,0 +1,11 @@
+import fs from 'node:fs';import assert from 'node:assert/strict';import {createHash} from 'node:crypto';import {spawnSync} from 'node:child_process';
+const p=JSON.parse(fs.readFileSync('_backups/active-crm-ui-fix.json','utf8'));const values=[];
+for(const line of fs.readFileSync('.env','utf8').replace(/^\uFEFF/,'').split(/\r?\n/)){const m=line.match(/^\s*(?:export\s+)?BITRIX24_WEBHOOK_URL\s*=\s*(.*?)\s*$/);if(m)values.push(m[1].replace(/^(['"])(.*)\1$/,'$2'));}
+assert.equal(values.length,1,'Expected one webhook setting');const base=values[0].replace(/\/profile\.json$/,'/');
+let u;try{u=new URL(base);}catch{throw Error('Invalid webhook format');}
+assert(u.protocol==='https:'&&u.hostname==='isipto.bitrix24.ru'&&/^\/rest\/\d+\/[A-Za-z0-9_-]+\/$/.test(u.pathname)&&!u.search&&!u.hash&&!u.username&&!u.port,'Invalid webhook format');
+let auth;try{const r=await fetch(base+'crm.deal.fields.json',{method:'POST',redirect:'error',signal:AbortSignal.timeout(20000)});const j=await r.json();auth={status:r.ok&&j.result?'OK':'FAILED',httpStatus:r.status,apiError:typeof j.error==='string'&&/^[A-Z0-9_]+$/.test(j.error)?j.error:null};}catch{auth={status:'TRANSPORT_FAILED'};}
+const expected=createHash('sha256').update(base).digest('hex');
+const source=`<?php $values=array();foreach(file('/run/secrets/isipto-bitrix24.env',FILE_IGNORE_NEW_LINES) as $line)if(preg_match('/^\\s*(?:export\\s+)?BITRIX24_WEBHOOK_URL\\s*=\\s*(.*?)\\s*$/',$line,$m))$values[]=trim($m[1],"\\\"'");$matches=count($values)===1&&hash('sha256',preg_replace('~/profile\\.json$~','/',trim($values[0])))==='${expected}';echo json_encode(array('matchesRootEnv'=>$matches,'secretPrinted'=>false))."\\n";`;
+const r=spawnSync('docker',['exec','--user','www-data','-i','modx-isipto-web-1','php'],{input:source,encoding:'utf8',windowsHide:true,timeout:30000});fs.writeFileSync(p.directory+'/docker-env-check.log',r.stderr||'');assert.equal(r.status,0,'Docker configuration check failed; see private log');
+const docker=JSON.parse(r.stdout.trim());const report={rootEnv:auth,docker,hostingChanged:false,crmWrites:0};fs.writeFileSync(p.directory+'/local-webhook-current.json',JSON.stringify(report,null,2));console.log(JSON.stringify(report,null,2));if(auth.status!=='OK')process.exitCode=1;

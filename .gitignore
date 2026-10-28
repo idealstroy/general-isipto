@@ -2,7 +2,7 @@
 /Semantic core/
 /_backups/
 /.env
+/bitrix24.env
 /dist/
 /.playwright-cli/
 /output/playwright/
-/modx-isipto/_preview/outsourcing-pto/

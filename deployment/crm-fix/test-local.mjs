@@ -1,0 +1,5 @@
+import fs from 'node:fs';import assert from 'node:assert/strict';import {spawnSync} from 'node:child_process';
+const p=JSON.parse(fs.readFileSync('_backups/active-crm-ui-fix.json','utf8'));
+for(const file of p.files){const r=spawnSync('docker',['exec','--user','www-data','-i','modx-isipto-web-1','php','-l'],{input:fs.readFileSync('modx-isipto/'+file),encoding:'utf8',windowsHide:true,timeout:30000});assert.equal(r.status,0,r.stderr||r.stdout);}
+const r=spawnSync('docker',['exec','--user','www-data','-i','modx-isipto-web-1','php'],{input:fs.readFileSync('deployment/crm-fix/test-form-errors.php'),encoding:'utf8',windowsHide:true,timeout:60000,maxBuffer:2*1024*1024});
+fs.writeFileSync(p.directory+'/local-tests.log',r.stderr||'');fs.writeFileSync(p.directory+'/local-tests.stdout',r.stdout||'');assert.equal(r.status,0,'Native tests failed; inspect private log');const result=JSON.parse(r.stdout);fs.writeFileSync(p.directory+'/local-tests.json',JSON.stringify(result,null,2));console.log(JSON.stringify(result,null,2));
